@@ -1,0 +1,7 @@
+test_draft_publish_and_persistent_list (test_blog.BlogJourney.test_draft_publish_and_persistent_list) ... ok
+test_search_title_and_body_includes_drafts (test_blog.BlogJourney.test_search_title_and_body_includes_drafts) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.216s
+
+OK

@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "title": "Persistence TECHNICAL title",
+    "body": "A cobalt NEEDLE appears in the body",
+    "kind": "technical",
+    "published": true
+  },
+  {
+    "id": 2,
+    "title": "PRIVATE Product intro",
+    "body": "A secret cobalt launch",
+    "kind": "product",
+    "published": false
+  }
+]

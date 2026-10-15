@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "current": {
+    "version": 1,
+    "requirements": {
+      "REQ-PUBLISH": {
+        "text": "Create persistent technical or product posts as drafts, publish explicitly, list only published posts."
+      }
+    }
+  },
+  "active": {
+    "CHG-SEARCH": {
+      "baseline_version": 1,
+      "version": 1,
+      "status": "verified",
+      "delta": [
+        {
+          "requirement_id": "REQ-SEARCH",
+          "old": null,
+          "new": {
+            "text": "Search title and body case-insensitively, including all posts."
+          },
+          "why": "Readers need to find technical posts and product introductions.",
+          "confirmation_ref": "SIMULATED-SEARCH-V1"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TASK-SEARCH",
+          "requirement_ids": [
+            "REQ-SEARCH"
+          ],
+          "change_version": 1
+        }
+      ],
+      "evidence": [
+        {
+          "id": "search-v1-tests",
+          "requirement_ids": [
+            "REQ-SEARCH"
+          ],
+          "change_version": 1,
+          "result": "pass",
+          "ref": "../search-v1-tests.log#sha256-code-040ead77505215308434a8c8c1d60972c3babbc68739236a47be642677db7a0e"
+        }
+      ],
+      "acceptance_ref": "SIMULATED-ACCEPT-SEARCH-V1",
+      "acceptance": {
+        "ref": "SIMULATED-ACCEPT-SEARCH-V1",
+        "change_id": "CHG-SEARCH",
+        "change_version": 1,
+        "baseline_version": 1,
+        "evidence_version": 1
+      }
+    },
+    "CHG-PARALLEL": {
+      "baseline_version": 1,
+      "version": 1,
+      "status": "implementing",
+      "delta": [
+        {
+          "requirement_id": "REQ-SEARCH",
+          "old": null,
+          "new": {
+            "text": "Search published post titles only."
+          },
+          "why": "Readers need to find technical posts and product introductions.",
+          "confirmation_ref": "SIMULATED-PARALLEL"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TASK-SEARCH",
+          "requirement_ids": [
+            "REQ-SEARCH"
+          ],
+          "change_version": 1
+        }
+      ],
+      "evidence": []
+    }
+  },
+  "archived": {}
+}

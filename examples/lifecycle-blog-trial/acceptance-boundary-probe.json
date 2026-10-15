@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "./tools/spec_lifecycle.py",
+    "apply",
+    "<TEMP>/ff-acceptance-probe-md0x21yp",
+    "CHG-SEARCH",
+    "--acceptance-ref",
+    "SIMULATED-ACCEPT-SEARCH-V1"
+  ],
+  "exit_code": 0,
+  "stdout": "{\"passed\": true, \"action\": \"apply\", \"errors\": [], \"limits\": \"Structural guard only; references are not authenticated approval or behavioral proof.\"}\n",
+  "stderr": "",
+  "finding": "An old acceptance reference is accepted when current evidence is valid. The guard does not bind approval references to change versions or authenticate humans. Caller must invalidate and reacquire approval. This isolated probe never modifies the real trial project."
+}

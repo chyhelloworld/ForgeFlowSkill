@@ -1,0 +1,15 @@
+{
+  "command_count": 17,
+  "matching_expected_exit": 17,
+  "positive_commands": 11,
+  "expected_rejections": 6,
+  "tool_commands": 11,
+  "hashes": {
+    "cloud-test/final-run/blog-project/blog.py": "24b91037e5fc7d70c7a866be798e6f8e897036485248aa96d72cd8040d470d9f",
+    "cloud-test/final-run/blog-project/test_blog.py": "7edd5082a19b998f96ab137344d419ad4409f393eaa937031bf19f378bf37172",
+    "cloud-test/final-run/blog-project/.forgeflow/spec-state.json": "125c681462e2f2ee57695caa5c67a75962e15af92c9e3ff16b50df5a98fc58d2",
+    "ff-workflow-skills-0.5.0-rc1/tools/spec_lifecycle.py": "e69f6ac8190be04ad0a127bb0d0b72ff9ead7fa66101c4e1d385c3a0b3e4e2a5",
+    "baseline/blog.py": "f2063dc6d43bc62eca6f2f0a5f4c8cf16119c92712eb6f77495068d37a749e6e",
+    "baseline/test_blog.py": "6b3511032305862413661be72cdc0dff555884c23ccf0fa14b52a5dc90e68b6e"
+  }
+}

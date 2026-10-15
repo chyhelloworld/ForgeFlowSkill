@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "current": {
+    "version": 1,
+    "requirements": {
+      "REQ-SEARCH": {
+        "text": "Search matches title."
+      }
+    }
+  },
+  "active": {
+    "CHG-SEARCH": {
+      "baseline_version": 1,
+      "version": 1,
+      "status": "proposed",
+      "delta": [
+        {
+          "requirement_id": "REQ-SEARCH",
+          "old": {
+            "text": "Search matches title."
+          },
+          "new": {
+            "text": "Search matches title and summary."
+          },
+          "why": "Readers need summary search.",
+          "confirmation_ref": "EXAMPLE ONLY: replace with actual scope confirmation reference"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "TASK-SEARCH",
+          "requirement_ids": [
+            "REQ-SEARCH"
+          ],
+          "change_version": 1
+        }
+      ],
+      "evidence": []
+    }
+  },
+  "archived": {}
+}

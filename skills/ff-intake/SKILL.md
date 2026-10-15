@@ -2,9 +2,9 @@
 name: ff-intake
 description: 只读核对 ForgeFlow 新任务或存量项目的真实状态、规格与工作票有效性，选择当前需要的职责；不写规格、不拆票、不实现。
 metadata:
-  version: "0.4.1-rc1"
+  version: "0.5.0-rc1"
 ---
-# ff-intake 0.4.1-rc1
+# ff-intake 0.5.0-rc1
 
 先读现有项目约定、用户最新目标/确认来源、授权边界、规格与计划，再查实际工作区/代码/未跟踪文件、相关运行证据和任务状态。没有源码或工具访问就标 unknown，不把口述完成当实际完成。
 
@@ -20,3 +20,7 @@ metadata:
 阅读 [状态与证据契约](references/state-contract.md) 处理接手、暂停恢复或中途变更。只指出失效影响及更新责任，不替其他职责写产物。很小的明确修复可用内联规格与单条任务，不要求新文件。readiness 不等于 authorization；状态未知先核查，不能猜测命令已结束或重复启动有副作用的操作。
 
 若收到 ff-handoff 检查点，先对照实际版本、dirty/untracked、部分输出和可观察进程，再判断 valid/stale/missing/unknown；不能只凭交出者叙述盲续。故障定位缺口选 ff-diagnose，已获准实现内的测试驱动选 ff-tdd；它们是按需方法，不是追加固定步骤。
+
+## 规格生命周期
+
+遵循 [规格生命周期契约](references/spec-lifecycle.md)：读取唯一当前基线版本与稳定需求 ID；用活动变更记录旧→新、原因、真实确认引用及受影响任务/证据版本。proposed / implementing / verified / accepted 分开，归档不是接受。只有真实接受的已验证变更可显式提升基线；取消/拒绝归档不合并。旧基线或旧证据冲突必须先协调并重新验证。小修保持最小记录，Mode 0 不存完整讨论，工程状态须有独立授权。工具只做结构检查，不能认证接受或替代真实主流程测试与 CRAP 门禁。

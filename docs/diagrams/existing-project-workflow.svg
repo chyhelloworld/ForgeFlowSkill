@@ -3,8 +3,8 @@
 <text x="50" y="92" class="s">九项主流程职责按需复用；Diagnose / TDD / Handoff 是支线或方法，不绕过就绪与授权。</text>
 <rect x="370" y="140" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="172.0" text-anchor="middle" class="n">ff-intake 只读接手或恢复</text>
-<text x="700.0" y="202.0" text-anchor="middle" class="n">目标/规格/票据/代码/测试/脏工作区</text>
-<text x="700.0" y="232.0" text-anchor="middle" class="n">检查分支、未跟踪文件、运行中任务与环境</text>
+<text x="700.0" y="202.0" text-anchor="middle" class="n">当前有效规格 / 活跃变更 / 必要归档</text>
+<text x="700.0" y="232.0" text-anchor="middle" class="n">核对代码、任务、证据、脏状态与旧操作</text>
 <rect x="370" y="330" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="362.0" text-anchor="middle" class="n">判断材料有效性与下一责任</text>
 <text x="700.0" y="392.0" text-anchor="middle" class="n">valid / stale / missing / unknown</text>
@@ -48,8 +48,8 @@
 <text x="700.0" y="1492.0" text-anchor="middle" class="n">失败修复复验；需求变化回到 Spec/Plan</text>
 <rect x="370" y="1580" width="660" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1612.0" text-anchor="middle" class="n">ff-deliver 当前版本交接（PR 可选）</text>
-<text x="700.0" y="1642.0" text-anchor="middle" class="n">提供证据、短验收步骤、偏差和未验证项</text>
-<text x="700.0" y="1672.0" text-anchor="middle" class="n">人工接受单列；采用 PR 流程且获准才提交</text>
+<text x="700.0" y="1642.0" text-anchor="middle" class="n">验证 / 接受 / 规格合入 / 归档分别记录</text>
+<text x="700.0" y="1672.0" text-anchor="middle" class="n">过期冲突阻塞；取消归档不合入规格</text>
 <rect x="40" y="1230" width="290" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="185.0" y="1262.0" text-anchor="middle" class="n">ff-diagnose · 原因不明</text>
 <text x="185.0" y="1292.0" text-anchor="middle" class="n">复现与证据 → 根因</text>
@@ -60,7 +60,7 @@
 <text x="1215.0" y="1322.0" text-anchor="middle" class="n">重构先审，获准再做</text>
 <rect x="40" y="1780" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="315.0" y="1812.0" text-anchor="middle" class="n">ff-handoff · 暂停/换模型/会话</text>
-<text x="315.0" y="1842.0" text-anchor="middle" class="n">出站检查点：状态、证据、下一步</text>
+<text x="315.0" y="1842.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>
 <text x="315.0" y="1872.0" text-anchor="middle" class="n">与成果 Deliver 分开</text>
 <rect x="810" y="1780" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="1085.0" y="1812.0" text-anchor="middle" class="n">接收方 ff-intake</text>

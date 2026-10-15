@@ -1,0 +1,27 @@
+test_apply_and_archive (__main__.Guards.test_apply_and_archive) ... ok
+test_boolean_acceptance_version_rejected (__main__.Guards.test_boolean_acceptance_version_rejected) ... ok
+test_boolean_evidence_version_rejected (__main__.Guards.test_boolean_evidence_version_rejected) ... ok
+test_boolean_schema_version_rejected (__main__.Guards.test_boolean_schema_version_rejected) ... ok
+test_canceled_rejected_archive (__main__.Guards.test_canceled_rejected_archive) ... ok
+test_cli_apply_archive_and_failed_repeat (__main__.Guards.test_cli_apply_archive_and_failed_repeat) ... ok
+test_cli_validate_readonly_and_failure (__main__.Guards.test_cli_validate_readonly_and_failure) ... ok
+test_conflicting_old (__main__.Guards.test_conflicting_old) ... ok
+test_duplicate_keys_rejected (__main__.Guards.test_duplicate_keys_rejected) ... ok
+test_failed_evidence (__main__.Guards.test_failed_evidence) ... ok
+test_fsync_failure_rollback (__main__.Guards.test_fsync_failure_rollback) ... ok
+test_locked_writer_no_mutation (__main__.Guards.test_locked_writer_no_mutation) ... ok
+test_missing_acceptance_rejected (__main__.Guards.test_missing_acceptance_rejected) ... ok
+test_replace_failure_rollback (__main__.Guards.test_replace_failure_rollback) ... ok
+test_stale_acceptance_rejected (__main__.Guards.test_stale_acceptance_rejected) ... ok
+test_stale_baseline (__main__.Guards.test_stale_baseline) ... ok
+test_stale_evidence (__main__.Guards.test_stale_evidence) ... ok
+test_symlink_ancestor_rejected (__main__.Guards.test_symlink_ancestor_rejected) ... ok
+test_symlink_state_rejected (__main__.Guards.test_symlink_state_rejected) ... ok
+test_unresolved_cannot_archive (__main__.Guards.test_unresolved_cannot_archive) ... ok
+test_unverified_cannot_apply (__main__.Guards.test_unverified_cannot_apply) ... ok
+test_wrong_acceptance_identity_rejected (__main__.Guards.test_wrong_acceptance_identity_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.012s
+
+OK

@@ -1,0 +1,31 @@
+{
+  "commands": 17,
+  "all_expected_exit_codes_match": true,
+  "snapshots": [
+    {
+      "file": "cloud-test/final-run/search-v1-verified.json",
+      "matches": true
+    },
+    {
+      "file": "cloud-test/final-run/interrupted-stale-evidence.json",
+      "matches": true
+    },
+    {
+      "file": "cloud-test/final-run/search-v2-verified.json",
+      "matches": true
+    },
+    {
+      "file": "cloud-test/final-run/search-v2-fresh-acceptance.json",
+      "matches": true
+    },
+    {
+      "file": "cloud-test/final-run/promoted-v2.json",
+      "matches": true
+    },
+    {
+      "file": "cloud-test/final-run/archived-v2.json",
+      "matches": true
+    }
+  ],
+  "lifecycle_sha256": "e69f6ac8190be04ad0a127bb0d0b72ff9ead7fa66101c4e1d385c3a0b3e4e2a5"
+}

@@ -1,0 +1,27 @@
+test_add_delete_requirements (test_spec_lifecycle.LifecycleTests.test_add_delete_requirements) ... ok
+test_apply_then_archive (test_spec_lifecycle.LifecycleTests.test_apply_then_archive) ... ok
+test_bad_links_and_missing_confirmation (test_spec_lifecycle.LifecycleTests.test_bad_links_and_missing_confirmation) ... ok
+test_bool_is_not_version (test_spec_lifecycle.LifecycleTests.test_bool_is_not_version) ... ok
+test_conflicting_old_atomic_rejection (test_spec_lifecycle.LifecycleTests.test_conflicting_old_atomic_rejection) ... ok
+test_corrupt_state_cli_returns_failure (test_spec_lifecycle.LifecycleTests.test_corrupt_state_cli_returns_failure) ... ok
+test_delta_edit_invalidates_versions (test_spec_lifecycle.LifecycleTests.test_delta_edit_invalidates_versions) ... ok
+test_duplicate_json_keys (test_spec_lifecycle.LifecycleTests.test_duplicate_json_keys) ... ok
+test_failed_evidence_blocks_verified (test_spec_lifecycle.LifecycleTests.test_failed_evidence_blocks_verified) ... ok
+test_invalid_archive_and_acceptance_records (test_spec_lifecycle.LifecycleTests.test_invalid_archive_and_acceptance_records) ... ok
+test_lock_collision (test_spec_lifecycle.LifecycleTests.test_lock_collision) ... ok
+test_missing_or_stale_acceptance_rejected (test_spec_lifecycle.LifecycleTests.test_missing_or_stale_acceptance_rejected) ... ok
+test_missing_requirement_coverage (test_spec_lifecycle.LifecycleTests.test_missing_requirement_coverage) ... ok
+test_open_change_cannot_archive (test_spec_lifecycle.LifecycleTests.test_open_change_cannot_archive) ... ok
+test_readonly_validate (test_spec_lifecycle.LifecycleTests.test_readonly_validate) ... ok
+test_reject_apply_without_verification (test_spec_lifecycle.LifecycleTests.test_reject_apply_without_verification) ... ok
+test_stale_baseline_atomic_rejection (test_spec_lifecycle.LifecycleTests.test_stale_baseline_atomic_rejection) ... ok
+test_symlinks_blocked (test_spec_lifecycle.LifecycleTests.test_symlinks_blocked) ... ok
+test_terminal_archive_never_promotes (test_spec_lifecycle.LifecycleTests.test_terminal_archive_never_promotes) ... ok
+test_two_active_changes_invalidate_remaining_baseline (test_spec_lifecycle.LifecycleTests.test_two_active_changes_invalidate_remaining_baseline) ... ok
+test_unknown_mutation_and_missing_change (test_spec_lifecycle.LifecycleTests.test_unknown_mutation_and_missing_change) ... ok
+test_write_failure_keeps_original_and_cleans_temporary (test_spec_lifecycle.LifecycleTests.test_write_failure_keeps_original_and_cleans_temporary) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.017s
+
+OK

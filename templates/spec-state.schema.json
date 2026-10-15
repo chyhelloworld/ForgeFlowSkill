@@ -1,0 +1,287 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:forgeflow:spec-state:1",
+  "title": "ForgeFlow specification lifecycle state",
+  "description": "Shape documentation only. Python validator additionally checks links, versions, transition preconditions and conflicts. No schema establishes authentic approval.",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "current",
+    "active",
+    "archived"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "type": "integer"
+    },
+    "current": {
+      "type": "object",
+      "required": [
+        "version",
+        "requirements"
+      ],
+      "properties": {
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "requirements": {
+          "type": "object",
+          "propertyNames": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          },
+          "additionalProperties": {
+            "$ref": "#/$defs/requirement"
+          }
+        }
+      }
+    },
+    "active": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/change"
+      }
+    },
+    "archived": {
+      "type": "object",
+      "propertyNames": {
+        "type": "string",
+        "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/change"
+      }
+    }
+  },
+  "$defs": {
+    "requirement": {
+      "type": "object",
+      "required": [
+        "text"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "delta": {
+      "type": "object",
+      "required": [
+        "requirement_id",
+        "old",
+        "new",
+        "why",
+        "confirmation_ref"
+      ],
+      "properties": {
+        "requirement_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+        },
+        "old": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/requirement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "new": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/requirement"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "why": {
+          "type": "string",
+          "minLength": 1
+        },
+        "confirmation_ref": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "id",
+        "requirement_ids",
+        "change_version"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          }
+        },
+        "change_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "id",
+        "requirement_ids",
+        "change_version",
+        "ref",
+        "result"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+        },
+        "requirement_ids": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+          }
+        },
+        "change_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result": {
+          "enum": [
+            "pass",
+            "fail"
+          ]
+        }
+      }
+    },
+    "acceptance": {
+      "type": "object",
+      "required": [
+        "ref",
+        "change_id",
+        "change_version",
+        "baseline_version",
+        "evidence_version"
+      ],
+      "properties": {
+        "ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "change_id": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_-]{0,79}$"
+        },
+        "change_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "baseline_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "evidence_version": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "required": [
+        "baseline_version",
+        "version",
+        "status",
+        "delta",
+        "tasks",
+        "evidence"
+      ],
+      "properties": {
+        "baseline_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "proposed",
+            "implementing",
+            "verified",
+            "accepted",
+            "canceled",
+            "rejected"
+          ]
+        },
+        "delta": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/delta"
+          }
+        },
+        "tasks": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/task"
+          }
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "acceptance": {
+          "$ref": "#/$defs/acceptance"
+        },
+        "acceptance_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "applied_version": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "archive_reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "history": {
+          "type": "array",
+          "description": "Prior revision snapshots with version, reason, evidence, acceptance. Informational only."
+        }
+      }
+    }
+  }
+}

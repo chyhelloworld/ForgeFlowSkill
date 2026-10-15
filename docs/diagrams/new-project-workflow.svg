@@ -8,8 +8,8 @@
 <text x="700.0" y="332.0" text-anchor="middle" class="n">ff-grill 澄清用户与成功条件</text>
 <text x="700.0" y="362.0" text-anchor="middle" class="n">已有明确确认可复用，不重复盘问</text>
 <rect x="370" y="470" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="517.0" text-anchor="middle" class="n">ff-spec 定义做什么与如何验收</text>
-<text x="700.0" y="547.0" text-anchor="middle" class="n">需求、非目标、主流程、边界与验收标准</text>
+<text x="700.0" y="517.0" text-anchor="middle" class="n">ff-spec 确认基线与稳定需求 ID</text>
+<text x="700.0" y="547.0" text-anchor="middle" class="n">当前有效规格 + 活跃变更；验收可追踪</text>
 <rect x="40" y="650" width="390" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="235.0" y="682.0" text-anchor="middle" class="n">ff-design 可选</text>
 <text x="235.0" y="712.0" text-anchor="middle" class="n">视觉/交互方向需要选择</text>
@@ -23,8 +23,8 @@
 <text x="700.0" y="712.0" text-anchor="middle" class="n">缺项回到对应责任补齐</text>
 <text x="700.0" y="742.0" text-anchor="middle" class="n">无相关未知可跳过两侧环节</text>
 <rect x="370" y="850" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="897.0" text-anchor="middle" class="n">ff-plan 把规格拆成可执行票据</text>
-<text x="700.0" y="927.0" text-anchor="middle" class="n">依赖、切片、测试、证据、回滚与验收</text>
+<text x="700.0" y="897.0" text-anchor="middle" class="n">ff-plan 把确认变更拆成可执行票据</text>
+<text x="700.0" y="927.0" text-anchor="middle" class="n">任务 → 需求 ID → 验收与版本证据</text>
 <rect x="370" y="1030" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1062.0" text-anchor="middle" class="n">ff-review · plan</text>
 <text x="700.0" y="1092.0" text-anchor="middle" class="n">独立审查计划覆盖与可执行性</text>
@@ -38,13 +38,13 @@
 <text x="700.0" y="1452.0" text-anchor="middle" class="n">独立检查目标/真实主流程及代码风险</text>
 <text x="700.0" y="1482.0" text-anchor="middle" class="n">缺陷返回 Implement；需求偏移返回 Spec</text>
 <rect x="370" y="1570" width="660" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1602.0" text-anchor="middle" class="n">证据充分 + 人工接受状态明确</text>
-<text x="700.0" y="1632.0" text-anchor="middle" class="n">PASS / FAIL / NOT_RUN / BLOCKED / N/A</text>
-<text x="700.0" y="1662.0" text-anchor="middle" class="n">技术完成、用户接受、交付权限分别记录</text>
+<text x="700.0" y="1602.0" text-anchor="middle" class="n">验证与人工接受分别记录</text>
+<text x="700.0" y="1632.0" text-anchor="middle" class="n">verified ≠ accepted ≠ archived</text>
+<text x="700.0" y="1662.0" text-anchor="middle" class="n">基线过期或需求冲突：阻塞规格合入</text>
 <rect x="370" y="1750" width="660" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1782.0" text-anchor="middle" class="n">ff-deliver 汇总与交付</text>
-<text x="700.0" y="1812.0" text-anchor="middle" class="n">采用 PR 流程且获准时准备/提交 PR；否则文件交接</text>
-<text x="700.0" y="1842.0" text-anchor="middle" class="n">PR 是审查载体，不替代规格</text>
+<text x="700.0" y="1782.0" text-anchor="middle" class="n">ff-deliver 交付并记录规格状态</text>
+<text x="700.0" y="1812.0" text-anchor="middle" class="n">满足门槛：规格合入 → 归档；取消：不合入归档</text>
+<text x="700.0" y="1842.0" text-anchor="middle" class="n">PR 可选；不自动合并主分支或发布</text>
 <rect x="40" y="1210" width="290" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="185.0" y="1247.0" text-anchor="middle" class="n">ff-diagnose · 故障支线</text>
 <text x="185.0" y="1277.0" text-anchor="middle" class="n">先复现、证据与定位</text>
@@ -55,7 +55,7 @@
 <text x="1215.0" y="1307.0" text-anchor="middle" class="n">red → green；重构先审</text>
 <rect x="40" y="1930" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="315.0" y="1962.0" text-anchor="middle" class="n">ff-handoff · 任意阶段暂停/换会话</text>
-<text x="315.0" y="1992.0" text-anchor="middle" class="n">出站检查点：实际状态、证据、下一步</text>
+<text x="315.0" y="1992.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>
 <text x="315.0" y="2022.0" text-anchor="middle" class="n">不代表本轮已经最终交付</text>
 <rect x="810" y="1930" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="1085.0" y="1962.0" text-anchor="middle" class="n">接收方 ff-intake · 只读核验</text>

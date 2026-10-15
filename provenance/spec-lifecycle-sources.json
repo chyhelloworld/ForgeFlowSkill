@@ -1,0 +1,23 @@
+{
+  "adaptation": "Concept adaptation only; independently written standard-library code, no OpenSpec copied code or dependency.",
+  "sources": [
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/main/docs/concepts.md",
+      "concept": "Current specifications, active change deltas and historical archives"
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/main/docs/workflows.md",
+      "concept": "Explicit lifecycle stages and archive workflow"
+    },
+    {
+      "url": "https://github.com/Fission-AI/OpenSpec/blob/main/docs/cli.md",
+      "concept": "Separation of inspection/validation and mutation commands"
+    }
+  ],
+  "forgeflow_specific": [
+    "Version-bound requirement/task/evidence/acceptance receipt",
+    "Archive never promotes canceled/rejected change",
+    "Atomic single-file project snapshot",
+    "Mode 0 privacy and proportional inline alternatives"
+  ]
+}

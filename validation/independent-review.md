@@ -1,56 +1,59 @@
-# ForgeFlow 0.4.1-rc1 独立复核
+# ForgeFlow 0.5.0-rc1 独立复核
 
-日期：2026-10-15 UTC。复核者独立于技能包、指南和模拟响应作者；只读检查作者产物，未修改技能包或指南。本文件是复核交付物。
+2026-10-15 UTC。当前结论：下述范围内的生命周期守卫和真实云端主流程复核通过；最终包静态验证与修复后全新接手证据均已核实，当前检查范围无未解决阻塞。本报告不代表用户接受、安装或发布批准。
 
-## 当前结论
+## 独立性、版本与范围
 
-技能包静态内容与指南复核通过；发现项均已由作者修正并复核，当前检查范围内无未解决阻塞。此结论只覆盖下列检查，不代表原生安装、真实项目运行、全部场景执行或用户接受。
+本审核代理独立于实现者及云端测试作者，只读审查技能包，独立测试仅写临时夹具及 validation 交付物。一名真正独立审核者分别覆盖 plan、goal-mainflow、code 三轴，未冒充三位审核者。基线是 0.4.1-rc1，阅读旧 Spec、Review、Routing、前轮复核及候选差异。
 
-## 范围、来源和版本
+实测生命周期工具 SHA256：`e69f6ac8190be04ad0a127bb0d0b72ff9ead7fa66101c4e1d385c3a0b3e4e2a5`。测量及动态结论仅适用于此版本。
 
-- 基线：`../../ff-workflow-0.4.0-20261015/ff-workflow-skills-0.4.0-rc1/`。实际阅读九个 SKILL.md、Implement/Intake/Deliver 相关参考、路由，比较全部旧文件差异。
-- 候选：`../ff-workflow-skills-0.4.1-rc1/`。独立阅读三个新技能全部方法正文及参考、元数据、许可说明、旧技能增量、路由、来源映射、场景模板和验证器。
-- Matt 实际源：`../../matt-skills-manual-20261015/sources/skills/engineering/diagnosing-bugs/SKILL.md`、`engineering/tdd/{SKILL.md,tests.md,mocking.md}`、`productivity/handoff/SKILL.md`。五份源与候选 provenance 快照逐字节一致。
-- 冻结 MANIFEST SHA256：`fd43bb136086d2a65a17c6c36396438fa7494ecb80205caa413c6c14ba04a03e`。
+## Plan：通过（本轮增量）
 
-## 实际执行的检查
+保留原十二技能按需路由、目标/预算/权限边界与独立审核。新增 current / active delta / archived 三类视图，稳定需求 ID、旧新值、变更版本及任务/证据链接没有变成十二阶段串行仪式。指出过“JSON 唯一权威”与旧内联小修相冲突，作者已明确仅在项目获准采用持久化生命周期后使用该唯一快照；小修可用等价内联记录，无需强制新 JSON。
 
-1. 独立运行包内 `tools/validate_package.py`，真实退出码 0：12 skills、29 local links、14 source hashes、129 manifest files、18 scenario templates；errors 为空。只证明静态结构与哈希。
-2. 基线全部 12 份技能 references 文件仍字节一致；旧九技能的实质变动为补充方法衔接，独立 Review、CRAP ≤50/目标约10、NOT_MEASURED、真实用户接受、平台证据与权限边界未被删去。
-3. Diagnose 明确真实用户症状与真实调用链，区别无关失败；最小实用复现、可证伪单变量、预算与间歇次数、可比性能基线、无复现 UNKNOWN、缺正确 seam 不冒充覆盖、探针清理与修后原场景回归均有实质步骤。未强制固定假设数或无限压力，不扩生产仪表权限。
-4. TDD 以已确认范围和公开行为为单位，独立预期、真实 red/green、无测试发现/依赖失败不算 red，拒绝全部测试先行与内部 mock 假证明。Matt 原文将重构留到 review；候选保留 Review 只读建议与范围门控，再由已获准 Implement 实施，不强制每轮重构，也不让审核者改代码。
-5. Handoff 为项目本地已授权短检查点，区别 Deliver，引用同一权威计划；包含 dirty/untracked、部分产物、任务最后可观察状态及权限。Mode 0 当前对话，无秘密/完整会话复制，无自动代理/任务；接收方 Intake 必须核实真实状态，跨环境可读性不能假定。
-6. 独立查看新项目/已有项目两张 PNG 的实际像素及 draw.io/SVG 生成边与文字。新方法为分支，不是十二阶段串行链；Spec/Plan/独立审核/readiness/授权门槛保留。TDD 图示重构表述修正后再次实际查看。HTML 浏览器布局/交互未由本复核执行；作者报告 Chromium socket 权限阻塞，不能将 PNG 观察当作 HTML 桌面/手机浏览器通过。
-7. 检查作者静态变异报告：有效基线与8个错误包检测均有明确结果。未由本复核重新执行这8次变异，不能称其为本复核独立重放，更不能用它证明模型行为。
+Mode 0 不保存完整讨论或 Grill 轨迹；工程规格等另有自身授权时可保存，不能借普通授权扩大讨论记录。文档明确不保存秘密，不自动证明真实接受，不扩大安装、主分支合并、部署、付费或安全权限。历史失败/过期证据保留于 history 或快照，不能重标旧证据；历史内容是说明，不作为现行证明。
 
-## 发现及修复追踪
+## Code：限定范围通过
 
-- 指南原有 red→green→refactor 和泛化“按需重构”易成为必经循环或扩大范围。已由作者修复：red→green→受影响回归；重构先 Review 只读建议/范围门控，较大变化回 Plan/必要时 Spec。正文、示例及两图已复核。
-- 指南暂停/Handoff 原先默认保存，缺少就近 Mode 0 边界。作者最终明确 Mode 0 仅当前回复，模式1/2且对应记录授权才可落盘，通用工程写入授权不能覆盖 Mode 0；四处正文/示例与 HTML 已独立复核。
-- 路由“无需全部所需技能”歧义、三份新 YAML 简介截断已修复；独立确认最终包对应内容。
-- Diagnose 无关配置/导入/fixture 失败不算目标 red 的明确列举已补充，避免 standalone 使用时依赖隐含推论。
+实际运行 `python validation/review_guards.py`，最终 22/22 断言测试通过，日志 `review-guards-fixed.log`。
 
-## 三个模拟响应的独立检查
+覆盖：接受后归档；过期/冲突基线；证据过期或失败；未验证禁止提升；未决禁止归档；取消/拒绝归档不改 current；重复 apply/archive；JSON 重复键；严格版本类型；项目祖先及状态文件软链接；缺失/过期/错误变更 ID/布尔版本接受凭据；CLI JSON、退出码、只读 validate；已有锁拒绝写入；注入 fsync 和 os.replace 失败时原始文件逐字节不变，临时文件与本次锁清理。
 
-检查 `method-behavior-smoke.md` 的完整输入与实际响应，报告 SHA256 `870cfd8f57a02f14b8a1bd788ef0068e01f6ec774da0b1075236fb81e8e1f8e2`；报告记录的全部9份加载文件哈希均与冻结包相同。
+初测 15 个测试中 2 项失败：schema_version=true、evidence.change_version=true 被当作整数 1。已即时通知作者，作者修复后独立重跑通过，初始失败日志保留。软链接祖先路径策略亦已收紧并实测。测试不声称覆盖恶意并发文件系统替换或断电恢复；工具有合作式独占锁，文档禁止并发手改，并明确非分布式事务。仅一次原子替换将 current/active/archive 一并落盘，避免跨文件半更新。
 
-- A：无访问的间歇导出重复。响应明确 NOT_REPRODUCED/UNKNOWN，无伪根因/修复/执行；候选仅作假说，索取最小症状和脱敏材料，并要求真实调用链及间歇频率。边界检查通过。
-- B：新增待办完成与刷新保持。响应拒绝先写全部函数测试，以两个可观察行为顺序 red/green；持久化不能由内存状态或 mock 保存代替；尚无项目则 NOT_RUN，先补真实前置。边界检查通过。
-- C：Mode 0、脏工作区、未知运行中导入、另一电脑接手。响应仅对话检查点，不假称传输/保存/进程结束，不重启导入或自动开代理；Intake 先核对真实文件/状态/权限，未提交改动不等于远程仓库已同步。边界检查通过。
+测试发现旧的非空接受引用可配新证据提升，作者新增结构化 acceptance 凭据，绑定 change_id、change_version、baseline_version、evidence_version 和 ref。独立测试与云端复跑确认旧凭据拒绝、新凭据通过。该记录仍不认证人、不读取真实审批、不防止恶意重标字段；真实用户针对明确版本的接受必须由调用者另行核实。schema/CLI 成功不是语义正确、主流程通过或用户接受证明。
 
-以上为一个响应作者在同一上下文生成的三个合成案例，本复核是另一代理对这些响应的独立检查。不是三次隔离盲测，不是18项场景全量运行，不是统计可靠性证明，也没有真实产品命令、测试、上传或宿主集成。没有以关键词命中替代上面的语义检查；没有把新增入口误称为首次拥有全部这些能力，0.4.0 已有相关原则与部分机制。
+### 实际 CRAP 测量
 
-## 未证范围
+执行 `python validation/measure_review_crap.py`，原始逐函数行集合、执行行、覆盖率、CC、CRAP 与源码哈希保存在 `review-crap.json`。无安装。coverage/radon/mccabe 均未预装，使用 Python stdlib trace 真实行事件、CPython dis 可执行行映射和明确 AST 决策计数法，绝非目测估算，也不冒称 radon 或 basis-path coverage。
 
-native-host-integration / Windows-PowerShell 实机 / 产品端到端 / 真实用户接受：NOT_RUN。HTML 浏览器桌面与手机交互：BLOCKED（作者报告，非本复核复现）。不授权安装、合并、部署、付费或扩大访问。
+CC = 1 + if/for/while/条件表达式/except/assert + 布尔表达式额外操作数 + comprehension 生成器/过滤条件 + try else。覆盖率为同一函数字节码可执行行中真实执行比例，包含内部 comprehension 行，排除函数定义行；该口径不等同分支覆盖，短路布尔分支全部充分覆盖不能由行覆盖推断。
 
-## 最终交付哈希与指南静态复验
+本次新增生产守卫的 17 个顶层函数全部实测，最大 CRAP = 12（check_links，CC12，行覆盖100%），其余均 ≤8；transition 行覆盖约91.30%，CRAP约6.02367。全部 ≤50 硬上限，12 略高于约10优化目标，未为凑数字强行拆分。初期 main 因接口未执行而得72，后补实际缺失的 CLI JSON/退出码/只读/重复操作断言，使接口业务验证完整；未添加无断言刷覆盖测试。
 
-独立只读断言确认两份 SVG 精确嵌入 HTML、SVG 文字在 draw.io 中完整保存、HTML 内部锚点有效；这仍不是浏览器布局或交互测试。最终文件哈希：
+范围排除：旧 validate_package.py 仅版本字符串更新，未改变其逻辑；旧工具全库、测试/计量支撑脚本和云端示范博客不是本生产守卫 CRAP 声明对象，其指标 NOT_MEASURED。不得推广为全仓所有 Python 指标通过或示范博客生产质量通过。
 
-- `guide/FF-中文使用手册.md`: `4bd98c2fde4c41d944f079df621cd8f8fa8277f0a857e89092f454be5858d4b1`
-- `guide/FF-离线图文手册.html`: `0684b6bab633d58b80cac5d626fac16e06faa911b88554dfb525e6fb63337bec`
-- `guide/guide-qa.json`: `4178254d2e3ff7bd49de4beb9d819767239e70355ddb7156003b670a637d6b12`
-- `guide/diagrams/new-project-workflow.png`: `385e4c8c35937a1f473d6e70713c0cdcea5fbfb330421d3093bdb7950d5c59f0`
-- `guide/diagrams/existing-project-workflow.png`: `ab1f57d0219852a0bd4f72dfb7d4fa3ed6c1381e8e798ed8b6be92fdba4f8879`
-- `ff-workflow-skills-0.4.1-rc1/MANIFEST.json`: `fd43bb136086d2a65a17c6c36396438fa7494ecb80205caa413c6c14ba04a03e`
+## Goal-mainflow：通过（一个窄云端案例）
+
+阅读真实博客源码、两项 subprocess 测试、命令日志、状态快照、接受边界探针和接手报告。独立在 `cloud-test/final-run/blog-project` 执行 `python -m unittest -v`，2/2通过；执行最终工具 `validate .`，退出0。博客测试跨进程创建/发布/读取真实 JSON，覆盖技术文章及产品介绍、默认隐藏草稿、显式包含草稿、标题/正文大小写搜索与未命中。
+
+`cloud-test/final-run/execution.jsonl` 为修复后权威记录；独立检查17条命令的实际退出码均等于预期，6份已记录快照的 SHA256 全部匹配，见 `cloud-log-check.json`。其中真实需求中断夹具使 v1 证据失效，重新实现/测试 v2，再用旧接受凭据尝试提升被拒且整份状态字节不变，新凭据提升成功；陈旧并行变化拒绝，accepted/rejected/canceled 归档均保留 current。
+
+旧根目录 execution.jsonl 混有早期失败尝试，不能整体称为通过。历史首轮错误工具路径、次轮将旧证据留在现行集合、旧接受引用绕过的探针都保留，不能伪装成正确业务失败。最终日志与旧尝试明确分离。所有确认和接受都是 SIMULATED 夹具，真实用户仅授权开发测试，不是接受虚构博客产品。
+
+第一位确实 fresh-context 接手者从项目路径与检查点恢复目标，实际运行2项单测及独立持久化搜索旅程；报告明确不证明历史提升过程，发现取消记录标签复用的小问题并未掩盖。修复后另一个 fresh-context 接手者也已提交最终项目报告，按下节单独核实，不借用前版本报告代替。
+
+## 未证范围及边界
+
+原生宿主安装、Windows 实机、生产部署、长期跨模型可靠性、真实人类产品接受：NOT_RUN。一个窄真实项目不等于所有生命周期风险已解决。审核不执行安装、部署、发布或远程仓库修改。
+
+## 冻结包静态复验
+
+独立执行 `PYTHONDONTWRITEBYTECODE=1 python tools/validate_package.py .`，退出0，12 skills / 36 local links / 14 source hashes / 143 manifest files / 20 scenario templates，无错误。报告为 `independent-static-check.json`。先前误省略项目参数的调用返回 list index out of range，纠正调用后通过，不把参数错误称为功能缺陷。另独立执行作者22项 test_spec_lifecycle 单测全部通过。MANIFEST SHA256：`8585e00fe8c1f074599a77b18cbe5d6dc91df1c15da018f51ca77edca04a66f3`。静态结果不证明20场景已执行或宿主安装。
+
+## 修复后全新接手复核
+
+已完整阅读 `cloud-test/final-run/blog-project/HANDOFF_RECEIVER_REPORT.md`（SHA256：`944ac64524e180e234512a68453a7a034e4316295c1e3181db6c0ccae5f03451`）。新接手者只读本项目，恢复正确 v2 目标、当前接受凭据及保留的 v1 失效历史，执行2项单测与独立跨进程持久化旅程，另验证不存在 ID 的 publish 返回2且数据库字节不变。接手者明确不证明历史提升命令或人类接受。
+
+最初检查点未说明代码摘要是 blog.py + test_blog.py 原始字节拼接，接手者先按单文件哈希断言失败，随后从真实字节定位正确配方；测试作者补充检查点配方，接手者重读确认。此失败与修正完整披露，不假称首次零摩擦。独立核对报告中的源码、测试和状态 SHA256 与实际最终文件全部一致。取消夹具 TASK-DELETE 和原因在最终项目已修正。结论限于一次修复后全新上下文的恢复与复验，不等于长期跨模型稳定性。

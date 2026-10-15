@@ -1,6 +1,6 @@
 # ForgeFlow Skill
 
-ForgeFlow（FF）十二接口工作流技能包，版本 **0.4.1-rc1**，2026-10-15 候选版。
+ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc1**，2026-10-15 候选版。
 
 将目标澄清、规格、任务计划、实现、独立审核和交付分开，支持新项目及已有项目接手。按缺口选择最短路径，不要求每次运行全部十二个技能。
 
@@ -30,7 +30,7 @@ ForgeFlow（FF）十二接口工作流技能包，版本 **0.4.1-rc1**，2026-10
 | [ff-tdd](skills/ff-tdd/SKILL.md) | 按公开行为逐个 red/green 与受影响回归 |
 | [ff-handoff](skills/ff-handoff/SKILL.md) | 已授权项目本地短检查点与接手状态 |
 
-新增三个按需方法入口，不是十二个强制串行阶段。
+十二个按需接口，新增机器可校验的规格生命周期，不是十二个强制串行阶段。
 
 ## 安装与校验
 
@@ -45,19 +45,27 @@ python tools/validate_package.py .
 
 当前是尚未安装、尚未完成宿主原生发现与调用验证的候选包。安装、发布、部署和权限扩大都不是本仓库提供的自动动作。
 
-## 验证范围
+## 0.5.0 的主要变化
 
-- 原包静态检查：12 个技能、29 个本地链接、14 个来源哈希、129 个清单文件。
-- evaluations/ 有 18 个场景模板，不是 18 次已运行测试。实际完成的是 3 个同一上下文中的合成案例，并由另一复核者检查；不是真实项目或原生宿主测试。
-- 8 个负向变异测试由作者运行，独立复核者检查报告但未重放；这些只检查静态校验器。
-- 文档契约、图源一致性、HTML 静态结构和 PNG 视觉检查已完成。HTML 浏览器布局与交互检查被环境阻塞，draw.io 交互、宿主原生安装/发现/调用、Windows-PowerShell 实机、产品端到端与真实用户接受均未完成。
-- [独立复核](validation/independent-review.md) · [三个合成案例](validation/method-behavior-smoke.md) · [原包静态证据](evidence/static-package-validation.json) · [负向测试报告](evidence/static-negative-tests.json) · [20 项方法映射](planning/matt-engineering-gap-map.md)
-- 旧版 evidence/package-static-validation.json 与 validation/intake-behavior-smoke.md 保留为 0.4.0 历史证据，不代表当前候选验证。
+- [规格生命周期契约](SPEC-LIFECYCLE.md)：current baseline、独立 change、版本绑定的验收回执及证据、显式 promote、archive 保留历史而不合并基线。
+- [JSON Schema](templates/spec-state.schema.json) 与 [生命周期 CLI](tools/spec_lifecycle.py)：版本类型、过期证据、过期接受记录及基线冲突防护；失败写入保证原文件不变。
+- [生命周期流程图](docs/diagrams/spec-lifecycle.png) 与两个完整场景流程图；十二个技能、中文指南和迁移说明同步更新。
+
+[中文测试过程与结果](测试过程与结果.md)
+
+## 验证范围与证据
+
+- 冻结技能包：12 个技能、36 个本地链接、14 个来源哈希、143 个清单文件；20 个场景模板不是 20 次已运行行为测试。
+- 作者 22 项单元测试和独立复核者 22 项守卫测试分别通过；两套有覆盖重叠，不计为 44 个独立覆盖场景。
+- [真实云端博客 CLI 试验](examples/lifecycle-blog-trial/REPORT.md)：最终日志 17 次命令执行全部符合预期（11 次成功、6 次预期拒绝，其中 11 次调用生命周期工具）。产品单元测试从基线 1 项到搜索阶段 2 项；新上下文接手者实际完成持久化 CLI 主流程。
+- 首轮试验暴露旧验收回执可复用的问题，现已改为绑定 change 版本及基线版本。原失败日志与边界探针保留为历史；以 final-run/ 为最终通过证据。
+- 新工具 17 个函数的自定义 stdlib AST 圈复杂度与 trace 行覆盖 CRAP 最高 12，阈值 50。不是 radon、基路径覆盖或全仓质量结论。
+- [独立复核](validation/independent-review.md) · [最终新上下文接手记录](examples/lifecycle-blog-trial/final-run/blog-project/HANDOFF_RECEIVER_REPORT.md)
+- 验收记录为模拟测试输入，没有真实人类验收。工具不验证证据内容真实性或批准者身份。未完成 Windows 原生、宿主安装/发现/调用、浏览器布局 QA；没有部署或生产就绪结论。
+- 旧 evidence/、历史 method/intake 报告和 independent-review-0.4.1.md 为旧版证据，不代表当前版本验证。
 
 ## 仓库整理与来源
 
-skills/ 中十二个技能与冻结交付包逐字节一致。为公开仓库增加 README、docs 和验证资料；公开证据中的本地绝对路径、私有会话标识与内部编排说明已脱敏。未上传手册制作辅助脚本。报告中原包文件哈希用于原始产物溯源，公开证据副本的当前哈希见根清单；指南从 guide/ 映射到 docs/，原报告的相对工作区路径仅为历史来源说明。
+skills/ 与冻结 0.5.0 包保持逐字节一致。保留旧版来源、许可与无关资料。指南映射至 docs/；真实试验在 examples/lifecycle-blog-trial/。复现实验与复核脚本的工具路径已适配仓库布局。公开证据只脱敏本地工作区、临时目录和私有执行标识，保留失败、模拟批准与测试局限。原始报告内的工件哈希描述脱敏前执行工件；当前公开文件哈希以根清单为准。未收录 .git、Python 缓存；测试数据均为合成。
 
-根目录 MANIFEST.json 是本仓库全部交付文件（不含清单自身与 .git 元数据）的 SHA-256 清单；校验器只新增忽略 .git 元数据的仓库兼容规则。原交付包清单保存在 [provenance/original-package-MANIFEST.json](provenance/original-package-MANIFEST.json)，仅用于原包溯源，不是本仓库当前文件集的清单。原包清单 SHA-256：fd43bb136086d2a65a17c6c36396438fa7494ecb80205caa413c6c14ba04a03e。
-
-上游来源与许可证保留在 provenance/ 及各技能目录的 NOTICE.md、LICENSE-MATT 等文件中。各来源适用其自身许可；本仓库的静态检查不构成额外许可证授权或法律审查。
+根 MANIFEST.json 覆盖所有仓库交付文件（清单自身与 .git 除外）。校验器仅额外忽略 .git。冻结包原清单保存在 provenance/original-package-MANIFEST.json，旧版清单为 provenance/original-package-MANIFEST-0.4.1.json；它们仅用于来源追踪。来源与许可证见 provenance/ 及技能内 NOTICE/LICENSE；静态检查不构成法律审查。

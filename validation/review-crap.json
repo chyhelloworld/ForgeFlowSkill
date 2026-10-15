@@ -1,0 +1,518 @@
+{
+  "source": "./tools/spec_lifecycle.py",
+  "sha256": "e69f6ac8190be04ad0a127bb0d0b72ff9ead7fa66101c4e1d385c3a0b3e4e2a5",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "measurement": "stdlib trace line events / CPython dis.findlinestarts executable lines, excluding top function definition; nested comprehension lines included. AST CC = 1 + if/for/while/conditional-expression/except/assert decisions + boolean operands beyond first + comprehension generators/filters + try else. Not basis-path coverage and not radon. All top-level functions measured, including unused main with observed zero coverage.",
+  "test_scope": "Independent review_guards.py assertion tests; no tests added solely to raise coverage.",
+  "tests_passed": true,
+  "functions": [
+    {
+      "function": "require",
+      "cc": 2,
+      "executable_lines": [
+        17,
+        18
+      ],
+      "hit_lines": [
+        17,
+        18
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "nonempty",
+      "cc": 2,
+      "executable_lines": [
+        22
+      ],
+      "hit_lines": [
+        22
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "integer",
+      "cc": 2,
+      "executable_lines": [
+        26
+      ],
+      "hit_lines": [
+        26
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "identifier",
+      "cc": 2,
+      "executable_lines": [
+        30
+      ],
+      "hit_lines": [
+        30
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "requirement",
+      "cc": 2,
+      "executable_lines": [
+        34
+      ],
+      "hit_lines": [
+        34
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "unique_object",
+      "cc": 2,
+      "executable_lines": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "hit_lines": [
+        38,
+        39,
+        40,
+        41,
+        42
+      ],
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "function": "state_path",
+      "cc": 5,
+      "executable_lines": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "hit_lines": [
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53
+      ],
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "function": "load",
+      "cc": 8,
+      "executable_lines": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "hit_lines": [
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69
+      ],
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "function": "check_delta",
+      "cc": 8,
+      "executable_lines": [
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "hit_lines": [
+        73,
+        74,
+        75,
+        76,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "function": "check_links",
+      "cc": 12,
+      "executable_lines": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "hit_lines": [
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113
+      ],
+      "coverage": 1.0,
+      "crap": 12.0
+    },
+    {
+      "function": "check_change",
+      "cc": 7,
+      "executable_lines": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "hit_lines": [
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "function": "validate",
+      "cc": 5,
+      "executable_lines": [
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "hit_lines": [
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "function": "check_acceptance",
+      "cc": 5,
+      "executable_lines": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158
+      ],
+      "hit_lines": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158
+      ],
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "function": "transition",
+      "cc": 6,
+      "executable_lines": [
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        173,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        185,
+        186
+      ],
+      "hit_lines": [
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        183,
+        186
+      ],
+      "coverage": 0.9130434782608695,
+      "crap": 6.02367
+    },
+    {
+      "function": "atomic_write",
+      "cc": 3,
+      "executable_lines": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        200,
+        201
+      ],
+      "hit_lines": [
+        190,
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        200,
+        201
+      ],
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "function": "mutate",
+      "cc": 1,
+      "executable_lines": [
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        215
+      ],
+      "hit_lines": [
+        205,
+        206,
+        207,
+        208,
+        209,
+        210,
+        211,
+        212,
+        213,
+        215
+      ],
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "main",
+      "cc": 8,
+      "executable_lines": [
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239
+      ],
+      "hit_lines": [
+        219,
+        220,
+        221,
+        222,
+        223,
+        224,
+        225,
+        226,
+        227,
+        228,
+        229,
+        230,
+        232,
+        233,
+        234,
+        235,
+        236,
+        237,
+        238,
+        239
+      ],
+      "coverage": 1.0,
+      "crap": 8.0
+    }
+  ]
+}

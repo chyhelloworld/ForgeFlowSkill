@@ -18,7 +18,7 @@ def manifest(root):
 def mutate(root,kind):
     if kind=='missing_method': shutil.rmtree(root/'skills/ff-handoff')
     elif kind=='wrong_version':
-        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.4.1-rc1','0.4.0-rc1'))
+        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.5.0-rc1','0.4.0-rc1'))
     elif kind=='broken_reference':
         p=root/'skills/ff-diagnose/SKILL.md';p.write_text(p.read_text()+'\n[bad](references/missing.md)\n')
     elif kind=='missing_license': (root/'skills/ff-handoff/LICENSE-MATT').unlink()

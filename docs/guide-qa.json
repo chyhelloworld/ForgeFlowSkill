@@ -1,4 +1,10 @@
 {
+  "spec-lifecycle": {
+    "svg_text_count": 33,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 8,
+    "visual_png_inspected": true
+  },
   "existing-project-workflow": {
     "svg_text_count": 61,
     "drawio_preserves_all_text": true,
@@ -12,7 +18,7 @@
     "visual_png_inspected": true
   },
   "html": {
-    "embedded_diagrams": 2,
+    "embedded_diagrams": 3,
     "svg_exact_matches": true,
     "external_asset_dependencies": 0,
     "browser_layout_test": "BLOCKED: Chromium launch failed: socket() Operation not permitted; desktop/mobile browser interaction NOT_RUN",
@@ -20,9 +26,9 @@
   },
   "guide": {
     "skill_table_entries": 12,
-    "internal_navigation_targets": 22,
-    "local_image_links_valid": 2,
+    "internal_navigation_targets": 28,
+    "local_image_links_valid": 3,
     "host_command_registration": "NOT_TESTED"
   },
-  "rendering": "PNG deterministic Pillow rendering from SVG elements; both PNGs visually inspected. No host integration tested."
+  "rendering": "PNG deterministic Pillow rendering from SVG elements; all three PNGs visually inspected. No host integration tested."
 }

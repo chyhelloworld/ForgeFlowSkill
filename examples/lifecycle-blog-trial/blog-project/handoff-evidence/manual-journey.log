@@ -1,0 +1,42 @@
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json create 'Persistence TECHNICAL title' 'A cobalt NEEDLE appears in the body'
+{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": false}
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json create 'PRIVATE Product intro' 'A secret cobalt launch' --kind product
+{"id": 2, "title": "PRIVATE Product intro", "body": "A secret cobalt launch", "kind": "product", "published": false}
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json list
+[]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search cobalt
+[]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search COBALT --include-drafts
+[{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": false}, {"id": 2, "title": "PRIVATE Product intro", "body": "A secret cobalt launch", "kind": "product", "published": false}]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json publish 1
+{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": true}
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json list
+[{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": true}]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search CoBaLt
+[{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": true}]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search technical
+[{"id": 1, "title": "Persistence TECHNICAL title", "body": "A cobalt NEEDLE appears in the body", "kind": "technical", "published": true}]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search private
+[]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search PRIVATE --include-drafts
+[{"id": 2, "title": "PRIVATE Product intro", "body": "A secret cobalt launch", "kind": "product", "published": false}]
++ python blog.py --db examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json search absent-token
+[]
++ cat examples/lifecycle-blog-trial/blog-project/handoff-evidence/journey.4KyNm8/posts.json
+[
+  {
+    "id": 1,
+    "title": "Persistence TECHNICAL title",
+    "body": "A cobalt NEEDLE appears in the body",
+    "kind": "technical",
+    "published": true
+  },
+  {
+    "id": 2,
+    "title": "PRIVATE Product intro",
+    "body": "A secret cobalt launch",
+    "kind": "product",
+    "published": false
+  }
+]
++ set +x

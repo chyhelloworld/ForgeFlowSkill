@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "current": {
+    "version": 1,
+    "requirements": {
+      "REQ-PUBLISH": {
+        "text": "Create persistent technical or product posts as drafts, publish explicitly, list only published posts."
+      }
+    }
+  },
+  "active": {},
+  "archived": {}
+}

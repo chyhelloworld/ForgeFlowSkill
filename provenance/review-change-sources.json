@@ -1,5 +1,5 @@
 {
-  "user_source": "[private message identifier removed], 2026-10-13T01:59:54Z, relayed by parent",
+  "user_source": "Sentinel_dfe94ec011788191ae1a74272c0eaccd, 2026-10-13T01:59:54Z, relayed by parent",
   "scope": "Three separately evidenced review categories, including MECE and CRAP risk.",
   "verified_on": "2026-10-13",
   "primary_sources": [
@@ -15,8 +15,8 @@
     }
   ],
   "boundaries": "No product metrics claimed; official-source formula separated from user-specified thresholds.",
-  "additional_user_source": "[private message identifier removed], 2026-10-13T02:02:53Z, relayed by parent",
+  "additional_user_source": "Sentinel_35dd4c54c73c8191bc3bfadd333fe5ef, 2026-10-13T02:02:53Z, relayed by parent",
   "additional_scope": "Prefer independent subagent reviews; preserve read-only scope and disclose independence gaps.",
-  "threshold_user_source": "[private message identifier removed], 2026-10-13T02:07:45Z, relayed by parent",
+  "threshold_user_source": "Sentinel_7981c992dd088191a8b83ae287b3184b, 2026-10-13T02:07:45Z, relayed by parent",
   "threshold_scope": "Per-method CRAP at most 50; around 10 or lower optimization goal. User-defined, not official universal threshold."
 }

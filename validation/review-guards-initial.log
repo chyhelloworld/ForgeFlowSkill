@@ -1,0 +1,41 @@
+test_apply_and_archive (__main__.Guards.test_apply_and_archive) ... ok
+test_boolean_evidence_version_rejected (__main__.Guards.test_boolean_evidence_version_rejected) ... FAIL
+test_boolean_schema_version_rejected (__main__.Guards.test_boolean_schema_version_rejected) ... FAIL
+test_canceled_rejected_archive (__main__.Guards.test_canceled_rejected_archive) ... ok
+test_conflicting_old (__main__.Guards.test_conflicting_old) ... ok
+test_duplicate_keys_rejected (__main__.Guards.test_duplicate_keys_rejected) ... ok
+test_failed_evidence (__main__.Guards.test_failed_evidence) ... ok
+test_fsync_failure_rollback (__main__.Guards.test_fsync_failure_rollback) ... ok
+test_locked_writer_no_mutation (__main__.Guards.test_locked_writer_no_mutation) ... ok
+test_replace_failure_rollback (__main__.Guards.test_replace_failure_rollback) ... ok
+test_stale_baseline (__main__.Guards.test_stale_baseline) ... ok
+test_stale_evidence (__main__.Guards.test_stale_evidence) ... ok
+test_symlink_state_rejected (__main__.Guards.test_symlink_state_rejected) ... ok
+test_unresolved_cannot_archive (__main__.Guards.test_unresolved_cannot_archive) ... ok
+test_unverified_cannot_apply (__main__.Guards.test_unverified_cannot_apply) ... ok
+
+======================================================================
+FAIL: test_boolean_evidence_version_rejected (__main__.Guards.test_boolean_evidence_version_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./validation/review_guards.py", line 39, in test_boolean_evidence_version_rejected
+    def test_boolean_evidence_version_rejected(self):self.state['active']['search_change']['evidence'][0]['change_version']=True;self.blocked()
+                                                                                                                                 ^^^^^^^^^^^^^^
+  File "./validation/review_guards.py", line 15, in blocked
+    with self.assertRaises(m.Invalid): m.mutate(self.root,action,'search_change','SIMULATED')
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid not raised
+
+======================================================================
+FAIL: test_boolean_schema_version_rejected (__main__.Guards.test_boolean_schema_version_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "./validation/review_guards.py", line 42, in test_boolean_schema_version_rejected
+    with self.assertRaises(m.Invalid):m.load(self.path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Invalid not raised
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.007s
+
+FAILED (failures=2)
