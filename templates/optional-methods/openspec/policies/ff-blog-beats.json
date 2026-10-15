@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "research",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/research.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    },
+    {
+      "id": "writing-fragments",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/writing-fragments.md"
+      ],
+      "requires": [
+        "research"
+      ],
+      "reviewRequired": true
+    },
+    {
+      "id": "writing-beats",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/writing-beats.md"
+      ],
+      "requires": [
+        "writing-fragments"
+      ],
+      "reviewRequired": true
+    },
+    {
+      "id": "draft",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/draft.md"
+      ],
+      "requires": [
+        "research",
+        "writing-beats"
+      ],
+      "reviewRequired": true
+    }
+  ]
+}

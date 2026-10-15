@@ -1,3 +1,5 @@
+> 0.6.0-experimental.3：本包在下述12项基线上增加5个独立可选方法，总计17项。可只安装所需入口，保留各自references/agents/NOTICE/LICENSE；未获准时不要全局安装。CLI运行时未改变；新增schema示例须显式选取，见docs/FF-可选方法中文使用说明.md。以下0.5安装与验证记录作为基线保留。
+
 # 安装说明：0.5.0-rc3 云端候选
 
 ## 项目本地 FF CLI 与官方 OpenSpec 并存
@@ -33,3 +35,7 @@ Windows PowerShell 示例（路径替换为真实本地路径）：
 先运行 `python tools/validate_package.py .`（Python 3.9+ 与 PyYAML），再核对宿主发现列表、逐个最小加载、相对引用与隔离场景。静态检查、模拟评分和原生安装/调用分别记录。没有自动安装、发布、主分支合并或权限扩大。
 
 回滚保留用户修改并恢复准确安装清单及旧路由。规格状态回滚须按 MIGRATION.md 明确权威源，不能自动重启已退役 Python 写路径或制造两套 current。
+
+## 实验3：可关闭的 CodeGraph 适配器
+
+仅显式启用时辅助静态代码定位，不新增技能或必经门禁。详见 [使用说明](docs/FF-CodeGraph可选适配器.md) 与 [真实试验报告](docs/CodeGraph试验报告.md)。沿用实验2决策索引；旧报告仅代表对应历史版本。

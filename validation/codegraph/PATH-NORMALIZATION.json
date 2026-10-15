@@ -1,0 +1,49 @@
+{
+  "scope": "All manifest-listed public payload bytes, not just JSON top-level fields; nested stdout strings included.",
+  "normalization": "Only absolute local path prefixes replaced by /REDACTED role-labelled prefixes. Original records retained privately outside deliverable. Command outputs are path-normalized observational evidence, not raw byte-identical logs. Upstream test home and temporary test roots also normalized. No runtime code changes.",
+  "preserved": "Numbers, booleans, exit codes, durations, result structures and file counts preserved; source/index hashes still identify original captured inputs, not normalized JSON bytes. Existing ff-spec fingerprints are historical outputs of the original run, not approvals for this normalized evidence.",
+  "changed_files": [
+    {
+      "path": "validation/codegraph/ff-spec-example.json",
+      "replacements": 43,
+      "before_sha256": "4bcbae6b5f589af8408211487b84084c67449e886b4280daa038be92ed24ab47",
+      "after_sha256": "cda8c00d0ea2f6749a4553f2e1b62a2c30ce2a20d9725096fe3d3841a2a851b3"
+    },
+    {
+      "path": "validation/codegraph/raw-trial.json",
+      "replacements": 27,
+      "before_sha256": "80453cd666d4e130673f7aa3c21703e835c514baf3b8014e81e01eff6696309c",
+      "after_sha256": "c66a01fd49395fd7776c7a9a7919253f86fe08357d843188842af96f9659d6e8"
+    },
+    {
+      "path": "validation/codegraph/ruoyi-evidence.json",
+      "replacements": 6,
+      "before_sha256": "21daaa401b33e7def0885793641993264f04e32efe88387157ce2527824c8e7a",
+      "after_sha256": "61024c9a31134fa9d9cf0cf1892c8b81c57dcecd9056e9a73ce7c11f3cdd141d"
+    },
+    {
+      "path": "validation/decision-index/static-mutations.json",
+      "replacements": 2,
+      "before_sha256": "9aaf32f35a135096ea8bf9a63219a9d21892854393c796f07ed3f0888f38d1cb",
+      "after_sha256": "13f7fd336a001dad25367e0eabe6064c4bb97c53163e5b7e9fb219faa4eedb37"
+    },
+    {
+      "path": "validation/openspec-integration/baseline-tests.log",
+      "replacements": 1,
+      "before_sha256": "330013cc1cd812127a1614d93f372ce196203a1874dbb34daf4787375d75e4d0",
+      "after_sha256": "50e3a7d1aa9df1b0f546d7597b65d6b4406b45784e4201851ddbad7f9efaec55"
+    },
+    {
+      "path": "validation/openspec-integration/packaged-upstream-tests.log",
+      "replacements": 1,
+      "before_sha256": "54c2308728589ada8a8cb5020772cdba60e9070f2d0dc455199419711057c223",
+      "after_sha256": "d7d2afa876c6e2aa0b83f8ef4c3877c580e7e8f9d80e078f639f30915535664f"
+    },
+    {
+      "path": "validation/openspec-integration/upstream-tests.log",
+      "replacements": 1,
+      "before_sha256": "a6b2abb0f82760313d4128bdd08907aae7167b6af076c75fbaf107013cce9793",
+      "after_sha256": "a3ce48ed82366df69ca13ed01c54b6d3d5460e2915588449d600848eee793888"
+    }
+  ]
+}

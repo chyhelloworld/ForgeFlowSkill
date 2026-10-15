@@ -1,0 +1,366 @@
+[
+  {
+    "label": "git-init",
+    "command": [
+      "git",
+      "init",
+      "-b",
+      "baseline"
+    ],
+    "seconds": 0.003659,
+    "exit": 0,
+    "stdout": "Initialized empty Git repository in /REDACTED/codegraph-trial/fixture/.git/\n",
+    "stderr": ""
+  },
+  {
+    "label": "git-add",
+    "command": [
+      "git",
+      "add",
+      "."
+    ],
+    "seconds": 0.002028,
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "git-commit",
+    "command": [
+      "git",
+      "-c",
+      "user.name=Fixture",
+      "-c",
+      "user.email=fixture@example.invalid",
+      "commit",
+      "-m",
+      "fixture baseline"
+    ],
+    "seconds": 0.005877,
+    "exit": 0,
+    "stdout": "[baseline (root-commit) 3c0c68e] fixture baseline\n 2 files changed, 6 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 service.py\n",
+    "stderr": ""
+  },
+  {
+    "label": "init",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "init",
+      "/REDACTED/codegraph-trial/fixture",
+      "--yes"
+    ],
+    "seconds": 0.625886,
+    "exit": 0,
+    "stdout": "┌  Initializing CodeGraph\n│\n◆  Initialized in /REDACTED/codegraph-trial/fixture\n│\nScanning files...\nParsing code...\nResolving refs...\nLinking dynamic dispatch...\n│\n◆  Indexed 1 files\n│\n●  3 nodes, 3 edges in 238ms\n│\n└  Done\n\n",
+    "stderr": ""
+  },
+  {
+    "label": "baseline",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "target",
+      "--json"
+    ],
+    "seconds": 0.259138,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:07f5585878004e401473a66fc89f5bb9\",\n      \"kind\": \"function\",\n      \"name\": \"target\",\n      \"qualifiedName\": \"target\",\n      \"filePath\": \"service.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057671298\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "modified-stale",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "target",
+      "--json"
+    ],
+    "seconds": 0.255797,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:07f5585878004e401473a66fc89f5bb9\",\n      \"kind\": \"function\",\n      \"name\": \"target\",\n      \"qualifiedName\": \"target\",\n      \"filePath\": \"service.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057671298\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "sync-modified",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "sync",
+      "/REDACTED/codegraph-trial/fixture"
+    ],
+    "seconds": 0.522872,
+    "exit": 0,
+    "stdout": "┌  Syncing CodeGraph\n│\nScanning files...\nParsing code...\nResolving refs...\n│\n◆  Synced 1 changed files\n│\n●  Modified: 1 — 3 nodes in 44ms\n│\n└  Done\n\n",
+    "stderr": ""
+  },
+  {
+    "label": "modified-fresh",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "replacement",
+      "--json"
+    ],
+    "seconds": 0.244219,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:84d0d88fcad2c6b774bab8ab67163def\",\n      \"kind\": \"function\",\n      \"name\": \"replacement\",\n      \"qualifiedName\": \"replacement\",\n      \"filePath\": \"service.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057672319\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "renamed-stale",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "replacement",
+      "--json"
+    ],
+    "seconds": 0.242962,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:84d0d88fcad2c6b774bab8ab67163def\",\n      \"kind\": \"function\",\n      \"name\": \"replacement\",\n      \"qualifiedName\": \"replacement\",\n      \"filePath\": \"service.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057672319\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "sync-renamed",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "sync",
+      "/REDACTED/codegraph-trial/fixture"
+    ],
+    "seconds": 0.478365,
+    "exit": 0,
+    "stdout": "┌  Syncing CodeGraph\n│\nScanning files...\nParsing code...\nResolving refs...\n│\n◆  Synced 2 changed files\n│\n●  Added: 1, Removed: 1 — 3 nodes in 41ms\n│\n└  Done\n\n",
+    "stderr": ""
+  },
+  {
+    "label": "renamed-fresh",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "replacement",
+      "--json"
+    ],
+    "seconds": 0.236009,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:ee61a8d2114731861c9fe89153cbc0f1\",\n      \"kind\": \"function\",\n      \"name\": \"replacement\",\n      \"qualifiedName\": \"replacement\",\n      \"filePath\": \"renamed.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057673304\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "deleted-stale",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "replacement",
+      "--json"
+    ],
+    "seconds": 0.235973,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:ee61a8d2114731861c9fe89153cbc0f1\",\n      \"kind\": \"function\",\n      \"name\": \"replacement\",\n      \"qualifiedName\": \"replacement\",\n      \"filePath\": \"renamed.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057673304\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "sync-deleted",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "sync",
+      "/REDACTED/codegraph-trial/fixture"
+    ],
+    "seconds": 0.448115,
+    "exit": 0,
+    "stdout": "┌  Syncing CodeGraph\n│\nScanning files...\n│\n◆  Synced 1 changed files\n│\n●  Removed: 1 — 0 nodes in 16ms\n│\n└  Done\n\n",
+    "stderr": ""
+  },
+  {
+    "label": "deleted-fresh",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "replacement",
+      "--json"
+    ],
+    "seconds": 0.230308,
+    "exit": 0,
+    "stdout": "[]\n",
+    "stderr": ""
+  },
+  {
+    "label": "new-branch",
+    "command": [
+      "git",
+      "checkout",
+      "-b",
+      "removed"
+    ],
+    "seconds": 0.003152,
+    "exit": 0,
+    "stdout": "",
+    "stderr": "Switched to a new branch 'removed'\n"
+  },
+  {
+    "label": "git-delete",
+    "command": [
+      "git",
+      "add",
+      "-u"
+    ],
+    "seconds": 0.001613,
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "commit-delete",
+    "command": [
+      "git",
+      "-c",
+      "user.name=Fixture",
+      "-c",
+      "user.email=fixture@example.invalid",
+      "commit",
+      "-m",
+      "remove service"
+    ],
+    "seconds": 0.003888,
+    "exit": 0,
+    "stdout": "[removed 2747d4d] remove service\n 1 file changed, 5 deletions(-)\n delete mode 100644 service.py\n",
+    "stderr": ""
+  },
+  {
+    "label": "switch-baseline",
+    "command": [
+      "git",
+      "checkout",
+      "baseline"
+    ],
+    "seconds": 0.002201,
+    "exit": 0,
+    "stdout": "",
+    "stderr": "Switched to branch 'baseline'\n"
+  },
+  {
+    "label": "branch-stale",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "target",
+      "--json"
+    ],
+    "seconds": 0.238434,
+    "exit": 0,
+    "stdout": "[]\n",
+    "stderr": ""
+  },
+  {
+    "label": "sync-branch",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "sync",
+      "/REDACTED/codegraph-trial/fixture"
+    ],
+    "seconds": 0.470403,
+    "exit": 0,
+    "stdout": "┌  Syncing CodeGraph\n│\nScanning files...\nParsing code...\nResolving refs...\n│\n◆  Synced 1 changed files\n│\n●  Added: 1 — 3 nodes in 41ms\n│\n└  Done\n\n",
+    "stderr": ""
+  },
+  {
+    "label": "branch-fresh",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "query",
+      "target",
+      "--json"
+    ],
+    "seconds": 0.235197,
+    "exit": 0,
+    "stdout": "[\n  {\n    \"node\": {\n      \"id\": \"function:07f5585878004e401473a66fc89f5bb9\",\n      \"kind\": \"function\",\n      \"name\": \"target\",\n      \"qualifiedName\": \"target\",\n      \"filePath\": \"service.py\",\n      \"language\": \"python\",\n      \"startLine\": 1,\n      \"endLine\": 2,\n      \"startColumn\": 0,\n      \"endColumn\": 12,\n      \"signature\": \"()\",\n      \"visibility\": null,\n      \"isExported\": false,\n      \"isAsync\": false,\n      \"isStatic\": false,\n      \"isAbstract\": false,\n      \"updatedAt\": 1792057675178\n    },\n    \"score\": 91.07976207944387\n  }\n]\n",
+    "stderr": ""
+  },
+  {
+    "label": "public-commit",
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "seconds": 0.001965,
+    "exit": 0,
+    "stdout": "13db1fcef36bee9ce45d2d636a1d4e8f5ed5bbc3\n",
+    "stderr": ""
+  },
+  {
+    "label": "public-index",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "index",
+      "/REDACTED/codegraph-trial/ruoyi",
+      "--quiet"
+    ],
+    "seconds": 1.967176,
+    "exit": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "label": "public-explore",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "explore",
+      "selectUserList",
+      "--path",
+      "/REDACTED/codegraph-trial/ruoyi"
+    ],
+    "seconds": 0.385706,
+    "exit": 0,
+    "stdout": "**Exploration: selectUserList**\n\nFound 73 symbols across 5 files.\n\n**Blast radius — what depends on these (update/verify before editing)**\n\n- `selectUserList` (ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java:21) — 1 caller in `ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java`; no tests found within 3 caller hops\n- `selectUserList` (ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java:20) — 2 callers in `ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java`; no tests found within 3 caller hops\n- `selectUserList` (ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:75) — 1 caller in `ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java`; no tests found within 3 caller hops\n- `selectUserList` (ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml:60) — 1 caller in `ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java`; no tests found within 3 caller hops\n- `list` (ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysLogininforController.java:38) — 1 caller in `ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysLogininforController.java`; no tests found within 3 caller hops\n\n**Source Code**\n\n> The code below is the **verbatim, current on-disk source** of these files — re-read from disk on this call and line-numbered, byte-for-byte identical to what the Read tool returns. It is NOT a summary, outline, or stale cache. Treat each block as a Read you have already performed: do not Read a file shown here.\n\n**`ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml`** — selectUserList(method)\n\n```xml\n57\t\t\t    left join sys_role r on r.role_id = ur.role_id\n58\t    </sql>\n59\t    \n60\t    <select id=\"selectUserList\" parameterType=\"SysUser\" resultMap=\"SysUserResult\">\n61\t\t\tselect u.user_id, u.dept_id, u.nick_name, u.user_name, u.email, u.avatar, u.phonenumber, u.sex, u.status, u.del_flag, u.login_ip, u.login_date, u.create_by, u.create_time, u.remark, d.dept_name, d.leader from sys_user u\n62\t\t\tleft join sys_dept d on u.dept_id = d.dept_id\n63\t\t\twhere u.del_flag = '0'\n64\t\t\t<if test=\"userId != null and userId != 0\">\n65\t\t\t\tAND u.user_id = #{userId}\n66\t\t\t</if>\n67\t\t\t<if test=\"userName != null and userName != ''\">\n68\t\t\t\tAND u.user_name like concat('%', #{userName}, '%')\n69\t\t\t</if>\n70\t\t\t<if test=\"status != null and status != ''\">\n71\t\t\t\tAND u.status = #{status}\n72\t\t\t</if>\n73\t\t\t<if test=\"phonenumber != null and phonenumber != ''\">\n74\t\t\t\tAND u.phonenumber like concat('%', #{phonenumber}, '%')\n75\t\t\t</if>\n76\t\t\t<if test=\"params.beginTime != null and params.beginTime != ''\"><!-- 开始时间检索 -->\n77\t\t\t\tAND date_format(u.create_time,'%Y%m%d') &gt;= date_format(#{params.beginTime},'%Y%m%d')\n78\t\t\t</if>\n79\t\t\t<if test=\"params.endTime != null and params.endTime != ''\"><!-- 结束时间检索 -->\n80\t\t\t\tAND date_format(u.create_time,'%Y%m%d') &lt;= date_format(#{params.endTime},'%Y%m%d')\n81\t\t\t</if>\n82\t\t\t<if test=\"deptId != null and deptId != 0\">\n83\t\t\t\tAND (u.dept_id = #{deptId} OR u.dept_id IN ( SELECT t.dept_id FROM sys_dept t WHERE find_in_set(#{deptId}, ancestors) ))\n84\t\t\t</if>\n85\t\t\t<!-- 数据范围过滤 -->\n86\t\t\t${params.dataScope}\n87\t\t</select>\n88\t\t\n89\t\t<select id=\"selectAllocatedList\" parameterType=\"SysUser\" resultMap=\"SysUserResult\">\n90\t\t    select distinct u.user_id, u.dept_id, u.user_name, u.nick_name, u.email, u.phonenumber, u.status, u.create_time\n```\n\n**`ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java`** — selectUserList(method), SysUserMapper(interface), selectUnallocatedList(method), selectUserByUserName(method), insertUser(method), selectAllocatedList(method), +12 more\n\n```java\n1\tpackage com.ruoyi.system.mapper;\n2\t\n3\timport java.util.Date;\n4\timport java.util.List;\n5\timport org.apache.ibatis.annotations.Param;\n6\timport com.ruoyi.common.core.domain.entity.SysUser;\n7\t\n8\t/**\n9\t * 用户表 数据层\n10\t * \n11\t * @author ruoyi\n12\t */\n13\tpublic interface SysUserMapper\n14\t{\n15\t    /**\n16\t     * 根据条件分页查询用户列表\n17\t     * \n18\t     * @param sysUser 用户信息\n19\t     * @return 用户信息集合信息\n20\t     */\n21\t    public List<SysUser> selectUserList(SysUser sysUser);\n22\t\n23\t    /**\n24\t     * 根据条件分页查询已配用户角色列表\n25\t     * \n26\t     * @param user 用户信息\n27\t     * @return 用户信息集合信息\n28\t     */\n29\t    public List<SysUser> selectAllocatedList(SysUser user);\n30\t\n31\t    /**\n32\t     * 根据条件分页查询未分配用户角色列表\n33\t     * \n34\t     * @param user 用户信息\n35\t     * @return 用户信息集合信息\n36\t     */\n37\t    public List<SysUser> selectUnallocatedList(SysUser user);\n38\t\n39\t    /**\n40\t     * 通过用户名查询用户\n41\t     * \n42\t     * @param userName 用户名\n43\t     * @return 用户对象信息\n44\t     */\n45\t    public SysUser selectUserByUserName(String userName);\n46\t\n47\t    /**\n48\t     * 通过用户ID查询用户\n49\t     * \n50\t     * @param userId 用户ID\n51\t     * @return 用户对象信息\n52\t     */\n53\t    public SysUser selectUserById(Long userId);\n54\t\n55\t    /**\n56\t     * 新增用户信息\n57\t     * \n58\t     * @param user 用户信息\n59\t     * @return 结果\n60\t     */\n61\t    public int insertUser(SysUser user);\n62\t\n63\t    /**\n64\t     * 修改用户信息\n65\t     * \n66\t     * @param user 用户信息\n67\t     * @return 结果\n68\t     */\n69\t    public int updateUser(SysUser user);\n70\t\n71\t    /**\n72\t     * 修改用户头像\n73\t     * \n74\t     * @param userId 用户ID\n75\t     * @param avatar 头像地址\n76\t     * @return 结果\n77\t     */\n78\t    public int updateUserAvatar(@Param(\"userId\") Long userId, @Param(\"avatar\") String avatar);\n79\t\n80\t    /**\n81\t     * 修改用户状态\n82\t     * \n83\t     * @param userId 用户ID\n84\t     * @param status 状态\n85\t     * @return 结果\n86\t     */\n87\t    public int updateUserStatus(@Param(\"userId\") Long userId, @Param(\"status\") String status);\n88\t\n89\t    /**\n90\t     * 更新用户登录信息（IP和登录时间）\n91\t     * \n92\t     * @param userId 用户ID\n93\t     * @param loginIp 登录IP地址\n94\t     * @param loginDate 登录时间\n95\t     * @return 结果\n96\t     */\n97\t    public int updateLoginInfo(@Param(\"userId\") Long userId, @Param(\"loginIp\") String loginIp, @Param(\"loginDate\") Date loginDate);\n98\t\n99\t    /**\n100\t     * 重置用户密码\n101\t     * \n102\t     * @param userId 用户ID\n103\t     * @param password 密码\n104\t     * @return 结果\n105\t     */\n106\t    public int resetUserPwd(@Param(\"userId\") Long userId, @Param(\"password\") String password);\n107\t\n108\t    /**\n109\t     * 通过用户ID删除用户\n110\t     * \n111\t     * @param userId 用户ID\n112\t     * @return 结果\n113\t     */\n114\t    public int deleteUserById(Long userId);\n115\t\n116\t    /**\n117\t     * 批量删除用户信息\n118\t     * \n119\t     * @param userIds 需要删除的用户ID\n120\t     * @return 结果\n121\t     */\n122\t    public int deleteUserByIds(Long[] userIds);\n123\t\n124\t    /**\n125\t     * 校验用户名称是否唯一\n126\t     * \n127\t     * @param userName 用户名称\n128\t     * @return 结果\n129\t     */\n130\t    public SysUser checkUserNameUnique(String userName);\n131\t\n132\t    /**\n133\t     * 校验手机号码是否唯一\n134\t     *\n135\t     * @param phonenumber 手机号码\n136\t     * @return 结果\n137\t     */\n138\t    public SysUser checkPhoneUnique(String phonenumber);\n139\t\n140\t    /**\n141\t     * 校验email是否唯一\n142\t     *\n143\t     * @param email 用户邮箱\n144\t     * @return 结果\n145\t     */\n146\t    public SysUser checkEmailUnique(String email);\n147\t}\n```\n\n**`ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java`** — calls(calls), references(references), instantiates(instantiates), com.ruoyi.system.service.impl(namespace), selectUserRoleGroup(method), checkUserAllowed(calls), +35 more\n\n```java\n11\timport org.springframework.stereotype.Service;\n12\timport org.springframework.transaction.annotation.Transactional;\n13\timport org.springframework.util.CollectionUtils;\n14\timport com.ruoyi.common.annotation.DataScope;\n15\timport com.ruoyi.common.constant.UserConstants;\n16\timport com.ruoyi.common.core.domain.entity.SysRole;\n17\timport com.ruoyi.common.core.domain.entity.SysUser;\n18\timport com.ruoyi.common.exception.ServiceException;\n19\timport com.ruoyi.common.utils.SecurityUtils;\n20\timport com.ruoyi.common.utils.StringUtils;\n21\timport com.ruoyi.common.utils.bean.BeanValidators;\n22\timport com.ruoyi.common.utils.spring.SpringUtils;\n23\timport com.ruoyi.system.domain.SysPost;\n24\timport com.ruoyi.system.domain.SysUserPost;\n25\timport com.ruoyi.system.domain.SysUserRole;\n26\timport com.ruoyi.system.mapper.SysPostMapper;\n27\timport com.ruoyi.system.mapper.SysRoleMapper;\n28\timport com.ruoyi.system.mapper.SysUserMapper;\n29\timport com.ruoyi.system.mapper.SysUserPostMapper;\n30\timport com.ruoyi.system.mapper.SysUserRoleMapper;\n31\timport com.ruoyi.system.service.ISysConfigService;\n32\timport com.ruoyi.system.service.ISysDeptService;\n33\timport com.ruoyi.system.service.ISysUserService;\n34\t\n35\t/**\n36\t * 用户 业务层处理\n37\t * \n38\t * @author ruoyi\n39\t */\n40\t@Service\n41\tpublic class SysUserServiceImpl implements ISysUserService\n42\t{\n43\t    private static final Logger log = LoggerFactory.getLogger(SysUserServiceImpl.class);\n44\t\n45\t    @Autowired\n46\t    private SysUserMapper userMapper;\n\n... (gap) ...\n\n72\t     * @param user 用户信息\n73\t     * @return 用户信息集合信息\n74\t     */\n75\t    @Override\n76\t    @DataScope(deptAlias = \"d\", userAlias = \"u\")\n77\t    public List<SysUser> selectUserList(SysUser user)\n78\t    {\n79\t        return userMapper.selectUserList(user);\n80\t    }\n81\t\n82\t    /**\n83\t     * 根据条件分页查询已分配用户角色列表\n84\t     * \n85\t     * @param user 用户信息\n86\t     * @return 用户信息集合信息\n87\t     */\n88\t    @Override\n89\t    @DataScope(deptAlias = \"d\", userAlias = \"u\")\n90\t    public List<SysUser> selectAllocatedList(SysUser user)\n91\t    {\n92\t        return userMapper.selectAllocatedList(user);\n93\t    }\n94\t\n95\t    /**\n96\t     * 根据条件分页查询未分配用户角色列表\n97\t     * \n98\t     * @param user 用户信息\n99\t     * @return 用户信息集合信息\n100\t     */\n101\t    @Override\n102\t    @DataScope(deptAlias = \"d\", userAlias = \"u\")\n103\t    public List<SysUser> selectUnallocatedList(SysUser user)\n104\t    {\n105\t        return userMapper.selectUnallocatedList(user);\n106\t    }\n107\t\n108\t    /**\n109\t     * 通过用户名查询用户\n110\t     * \n111\t     * @param userName 用户名\n112\t     * @return 用户对象信息\n113\t     */\n114\t    @Override\n115\t    public SysUser selectUserByUserName(String userName)\n116\t    {\n117\t        return userMapper.selectUserByUserName(userName);\n118\t    }\n119\t\n120\t    /**\n121\t     * 通过用户ID查询用户\n\n... (gap) ...\n\n169\t     * @param user 用户信息\n170\t     * @return 结果\n171\t     */\n172\t    @Override\n173\t    public boolean checkUserNameUnique(SysUser user)\n174\t    {\n175\t        Long userId = StringUtils.isNull(user.getUserId()) ? -1L : user.getUserId();\n176\t        SysUser info = userMapper.checkUserNameUnique(user.getUserName());\n177\t        if (StringUtils.isNotNull(info) && info.getUserId().longValue() != userId.longValue())\n178\t        {\n179\t            return UserConstants.NOT_UNIQUE;\n180\t        }\n181\t        return UserConstants.UNIQUE;\n182\t    }\n183\t\n184\t    /**\n185\t     * 校验手机号码是否唯一\n186\t     *\n187\t     * @param user 用户信息\n188\t     * @return\n189\t     */\n190\t    @Override\n191\t    public boolean checkPhoneUnique(SysUser user)\n192\t    {\n193\t        Long userId = StringUtils.isNull(user.getUserId()) ? -1L : user.getUserId();\n194\t        SysUser info = userMapper.checkPhoneUnique(user.getPhonenumber());\n195\t        if (StringUtils.isNotNull(info) && info.getUserId().longValue() != userId.longValue())\n196\t        {\n197\t            return UserConstants.NOT_UNIQUE;\n198\t        }\n199\t        return UserConstants.UNIQUE;\n200\t    }\n201\t\n202\t    /**\n203\t     * 校验email是否唯一\n\n... (gap) ...\n\n497\t     * @return 结果\n498\t     */\n499\t    @Override\n500\t    public String importUser(List<SysUser> userList, Boolean isUpdateSupport, String operName)\n501\t    {\n502\t        if (StringUtils.isNull(userList) || userList.size() == 0)\n503\t        {\n504\t            throw new ServiceException(\"导入用户数据不能为空！\");\n505\t        }\n506\t        int successNum = 0;\n507\t        int failureNum = 0;\n\n... (gap) ...\n\n512\t            try\n513\t            {\n514\t                // 验证是否存在这个用户\n515\t                SysUser u = userMapper.selectUserByUserName(user.getUserName());\n516\t                if (StringUtils.isNull(u))\n517\t                {\n518\t                    BeanValidators.validateWithException(validator, user);\n519\t                    deptService.checkDeptDataScope(user.getDeptId());\n520\t                    String password = configService.selectConfigByKey(\"sys.user.initPassword\");\n521\t                    user.setPassword(SecurityUtils.encryptPassword(password));\n522\t                    user.setCreateBy(operName);\n523\t                    userMapper.insertUser(user);\n524\t                    successNum++;\n525\t                    successMsg.append(\"<br/>\" + successNum + \"、账号 \" + user.getUserName() + \" 导入成功\");\n526\t                }\n527\t                else if (isUpdateSupport)\n528\t                {\n529\t                    BeanValidators.validateWithException(validator, user);\n530\t                    checkUserAllowed(u);\n531\t                    checkUserDataScope(u.getUserId());\n532\t                    deptService.checkDeptDataScope(user.getDeptId());\n533\t                    user.setUserId(u.getUserId());\n534\t                    user.setDeptId(u.getDeptId());\n535\t                    user.setUpdateBy(operName);\n536\t                    userMapper.updateUser(user);\n537\t                    successNum++;\n538\t                    successMsg.append(\"<br/>\" + successNum + \"、账号 \" + user.getUserName() + \" 更新成功\");\n539\t                }\n\n... (gap) ...\n\n554\t        if (failureNum > 0)\n555\t        {\n556\t            failureMsg.insert(0, \"很抱歉，导入失败！共 \" + failureNum + \" 条数据格式不正确，错误如下：\");\n557\t            throw new ServiceException(failureMsg.toString());\n558\t        }\n559\t        else\n560\t        {\n```\n\n**`ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java`** — checkUserAllowed(calls), checkUserAllowed(method), checkUserDataScope(calls), checkUserDataScope(method), insertUser(calls), insertUser(method), +27 more\n\n```java\n17\t     * @param user 用户信息\n18\t     * @return 用户信息集合信息\n19\t     */\n20\t    public List<SysUser> selectUserList(SysUser user);\n21\t\n22\t    /**\n23\t     * 根据条件分页查询已分配用户角色列表\n24\t     * \n25\t     * @param user 用户信息\n26\t     * @return 用户信息集合信息\n27\t     */\n28\t    public List<SysUser> selectAllocatedList(SysUser user);\n29\t\n30\t    /**\n31\t     * 根据条件分页查询未分配用户角色列表\n32\t     * \n33\t     * @param user 用户信息\n34\t     * @return 用户信息集合信息\n35\t     */\n36\t    public List<SysUser> selectUnallocatedList(SysUser user);\n37\t\n38\t    /**\n39\t     * 通过用户名查询用户\n40\t     * \n41\t     * @param userName 用户名\n42\t     * @return 用户对象信息\n43\t     */\n44\t    public SysUser selectUserByUserName(String userName);\n45\t\n46\t    /**\n47\t     * 通过用户ID查询用户\n48\t     * \n49\t     * @param userId 用户ID\n50\t     * @return 用户对象信息\n51\t     */\n52\t    public SysUser selectUserById(Long userId);\n53\t\n54\t    /**\n55\t     * 根据用户ID查询用户所属角色组\n56\t     * \n57\t     * @param userName 用户名\n58\t     * @return 结果\n59\t     */\n60\t    public String selectUserRoleGroup(String userName);\n61\t\n62\t    /**\n63\t     * 根据用户ID查询用户所属岗位组\n64\t     * \n65\t     * @param userName 用户名\n66\t     * @return 结果\n67\t     */\n68\t    public String selectUserPostGroup(String userName);\n69\t\n70\t    /**\n71\t     * 校验用户名称是否唯一\n72\t     * \n73\t     * @param user 用户信息\n74\t     * @return 结果\n75\t     */\n76\t    public boolean checkUserNameUnique(SysUser user);\n77\t\n78\t    /**\n79\t     * 校验手机号码是否唯一\n80\t     *\n81\t     * @param user 用户信息\n82\t     * @return 结果\n83\t     */\n84\t    public boolean checkPhoneUnique(SysUser user);\n85\t\n86\t    /**\n87\t     * 校验email是否唯一\n88\t     *\n89\t     * @param user 用户信息\n90\t     * @return 结果\n91\t     */\n92\t    public boolean checkEmailUnique(SysUser user);\n93\t\n94\t    /**\n95\t     * 校验用户是否允许操作\n```\n\n**`ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictTypeController.java`** — list(method), SysDictTypeController(class), GET /system/dict/type/list(route), optionselect(method), getInfo(method), edit(method), +5 more\n\n```java\n1\tpackage com.ruoyi.web.controller.system;\n2\t\n3\timport java.util.List;\n4\timport jakarta.servlet.http.HttpServletResponse;\n5\timport org.springframework.beans.factory.annotation.Autowired;\n6\timport org.springframework.security.access.prepost.PreAuthorize;\n7\timport org.springframework.validation.annotation.Validated;\n8\timport org.springframework.web.bind.annotation.DeleteMapping;\n9\timport org.springframework.web.bind.annotation.GetMapping;\n10\timport org.springframework.web.bind.annotation.PathVariable;\n11\timport org.springframework.web.bind.annotation.PostMapping;\n12\timport org.springframework.web.bind.annotation.PutMapping;\n13\timport org.springframework.web.bind.annotation.RequestBody;\n14\timport org.springframework.web.bind.annotation.RequestMapping;\n15\timport org.springframework.web.bind.annotation.RestController;\n16\timport com.ruoyi.common.annotation.Log;\n17\timport com.ruoyi.common.core.controller.BaseController;\n18\timport com.ruoyi.common.core.domain.AjaxResult;\n19\timport com.ruoyi.common.core.domain.entity.SysDictType;\n20\timport com.ruoyi.common.core.page.TableDataInfo;\n21\timport com.ruoyi.common.enums.BusinessType;\n22\timport com.ruoyi.common.utils.poi.ExcelUtil;\n23\timport com.ruoyi.system.service.ISysDictTypeService;\n24\t\n25\t/**\n26\t * 数据字典信息\n27\t * \n28\t * @author ruoyi\n29\t */\n30\t@RestController\n31\t@RequestMapping(\"/system/dict/type\")\n32\tpublic class SysDictTypeController extends BaseController\n33\t{\n34\t    @Autowired\n35\t    private ISysDictTypeService dictTypeService;\n36\t\n37\t    @PreAuthorize(\"@ss.hasPermi('system:dict:list')\")\n38\t    @GetMapping(\"/list\")\n39\t    public TableDataInfo list(SysDictType dictType)\n40\t    {\n41\t        startPage();\n42\t        List<SysDictType> list = dictTypeService.selectDictTypeList(dictType);\n43\t        return getDataTable(list);\n44\t    }\n45\t\n46\t    @Log(title = \"字典类型\", businessType = BusinessType.EXPORT)\n47\t    @PreAuthorize(\"@ss.hasPermi('system:dict:export')\")\n48\t    @PostMapping(\"/export\")\n49\t    public void export(HttpServletResponse response, SysDictType dictType)\n50\t    {\n51\t        List<SysDictType> list = dictTypeService.selectDictTypeList(dictType);\n52\t        ExcelUtil<SysDictType> util = new ExcelUtil<SysDictType>(SysDictType.class);\n53\t        util.exportExcel(response, list, \"字典类型\");\n54\t    }\n55\t\n56\t    /**\n57\t     * 查询字典类型详细\n58\t     */\n59\t    @PreAuthorize(\"@ss.hasPermi('system:dict:query')\")\n60\t    @GetMapping(value = \"/{dictId}\")\n61\t    public AjaxResult getInfo(@PathVariable Long dictId)\n62\t    {\n63\t        return success(dictTypeService.selectDictTypeById(dictId));\n64\t    }\n65\t\n66\t    /**\n67\t     * 新增字典类型\n68\t     */\n69\t    @PreAuthorize(\"@ss.hasPermi('system:dict:add')\")\n70\t    @Log(title = \"字典类型\", businessType = BusinessType.INSERT)\n71\t    @PostMapping\n72\t    public AjaxResult add(@Validated @RequestBody SysDictType dict)\n73\t    {\n74\t        if (!dictTypeService.checkDictTypeUnique(dict))\n75\t        {\n76\t            return error(\"新增字典'\" + dict.getDictName() + \"'失败，字典类型已存在\");\n77\t        }\n78\t        dict.setCreateBy(getUsername());\n79\t        return toAjax(dictTypeService.insertDictType(dict));\n80\t    }\n81\t\n82\t    /**\n83\t     * 修改字典类型\n84\t     */\n85\t    @PreAuthorize(\"@ss.hasPermi('system:dict:edit')\")\n86\t    @Log(title = \"字典类型\", businessType = BusinessType.UPDATE)\n87\t    @PutMapping\n88\t    public AjaxResult edit(@Validated @RequestBody SysDictType dict)\n89\t    {\n90\t        if (!dictTypeService.checkDictTypeUnique(dict))\n91\t        {\n92\t            return error(\"修改字典'\" + dict.getDictName() + \"'失败，字典类型已存在\");\n93\t        }\n94\t        dict.setUpdateBy(getUsername());\n95\t        return toAjax(dictTypeService.updateDictType(dict));\n96\t    }\n97\t\n98\t    /**\n99\t     * 删除字典类型\n100\t     */\n101\t    @PreAuthorize(\"@ss.hasPermi('system:dict:remove')\")\n102\t    @Log(title = \"字典类型\", businessType = BusinessType.DELETE)\n103\t    @DeleteMapping(\"/{dictIds}\")\n104\t    public AjaxResult remove(@PathVariable Long[] dictIds)\n105\t    {\n106\t        dictTypeService.deleteDictTypeByIds(dictIds);\n107\t        return success();\n108\t    }\n109\t\n110\t    /**\n111\t     * 刷新字典缓存\n112\t     */\n113\t    @PreAuthorize(\"@ss.hasPermi('system:dict:remove')\")\n114\t    @Log(title = \"字典类型\", businessType = BusinessType.CLEAN)\n115\t    @DeleteMapping(\"/refreshCache\")\n116\t    public AjaxResult refreshCache()\n117\t    {\n118\t        dictTypeService.resetDictCache();\n119\t        return success();\n120\t    }\n121\t\n122\t    /**\n123\t     * 获取字典选择框列表\n124\t     */\n125\t    @GetMapping(\"/optionselect\")\n126\t    public AjaxResult optionselect()\n127\t    {\n128\t        List<SysDictType> dictTypes = dictTypeService.selectDictTypeAll();\n129\t        return success(dictTypes);\n130\t    }\n131\t}\n```\n\n**Not shown above — explore these names for their source**\n\n- ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysDictDataController.java: list:43, SysDictDataController:33, GET /system/dict/data/list:44, dictType:75, export:52, remove:113, +4 more\n- ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysLogininforController.java: list:38, SysLogininforController:28, GET /monitor/logininfor/list:39, unlock:74, clean:65, remove:57, +2 more\n- ruoyi-admin/src/main/java/com/ruoyi/web/controller/monitor/SysOperlogController.java: list:34, SysOperlogController:27, GET /monitor/operlog/list:35, remove:53, clean:61, export:43, +1 more\n- ruoyi-common/src/main/java/com/ruoyi/common/core/controller/BaseController.java: startPage:53, getDataTable:82, BaseController:29\n- ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java: list:59, export:68\n- ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysUser.java: SysUser:23\n- ruoyi-common/src/main/java/com/ruoyi/common/annotation/DataScope.java: DataScope:14\n- ruoyi-system/src/main/java/com/ruoyi/system/domain/SysLogininfor.java: SysLogininfor:14\n- ruoyi-common/src/main/java/com/ruoyi/common/core/page/TableDataInfo.java: TableDataInfo:11\n- ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleController.java: unallocatedList:199, list:56, allocatedList:187\n- ... and 12 more files\n\n> Some file sections were trimmed for size. Elided symbols are named inside gap markers as `name (file:line)` and preferred in the file header — run another `codegraph_explore` (or `codegraph_node`) with those exact names for their source.\n",
+    "stderr": ""
+  },
+  {
+    "label": "public-impact",
+    "command": [
+      "/REDACTED/codegraph-trial/cli/node_modules/.bin/codegraph",
+      "impact",
+      "selectUserList",
+      "--depth",
+      "5",
+      "--path",
+      "/REDACTED/codegraph-trial/ruoyi",
+      "--json"
+    ],
+    "seconds": 0.247717,
+    "exit": 0,
+    "stdout": "{\n  \"symbol\": \"selectUserList\",\n  \"depth\": 5,\n  \"targets\": [\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java\",\n      \"startLine\": 21,\n      \"id\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n      \"qualifiedName\": \"com.ruoyi.system.mapper::SysUserMapper::selectUserList\",\n      \"language\": \"java\"\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n      \"startLine\": 20,\n      \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n      \"qualifiedName\": \"com.ruoyi.system.service::ISysUserService::selectUserList\",\n      \"language\": \"java\"\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n      \"startLine\": 75,\n      \"id\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n      \"qualifiedName\": \"com.ruoyi.system.service.impl::SysUserServiceImpl::selectUserList\",\n      \"language\": \"java\"\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml\",\n      \"startLine\": 60,\n      \"id\": \"method:aaa32a787498e21e387f24d1ca1d12f3\",\n      \"qualifiedName\": \"com.ruoyi.system.mapper.SysUserMapper::selectUserList\",\n      \"language\": \"xml\"\n    }\n  ],\n  \"ambiguous\": true,\n  \"aggregation\": \"union\",\n  \"filteredOut\": false,\n  \"definitions\": [\n    {\n      \"definition\": {\n        \"name\": \"selectUserList\",\n        \"kind\": \"method\",\n        \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java\",\n        \"startLine\": 21,\n        \"id\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n        \"qualifiedName\": \"com.ruoyi.system.mapper::SysUserMapper::selectUserList\",\n        \"language\": \"java\"\n      },\n      \"roots\": [\n        \"method:f9275d2e702393d91ea8b2a27914a225\"\n      ],\n      \"nodeCount\": 7,\n      \"edgeCount\": 6,\n      \"affected\": [\n        {\n          \"id\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java\",\n          \"startLine\": 21\n        },\n        {\n          \"id\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n          \"startLine\": 75\n        },\n        {\n          \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n          \"startLine\": 20\n        },\n        {\n          \"id\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"name\": \"list\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 59\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"name\": \"GET /system/user/list\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 60\n        },\n        {\n          \"id\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"name\": \"export\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 68\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"name\": \"POST /system/user/export\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 70\n        }\n      ],\n      \"edges\": [\n        {\n          \"source\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"target\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userMapper.selectUserList\"\n          },\n          \"line\": 79,\n          \"column\": 15,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"target\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"synthesizedBy\": \"interface-impl\",\n            \"via\": \"selectUserList\",\n            \"registeredAt\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:75\"\n          },\n          \"line\": 20,\n          \"provenance\": \"heuristic\"\n        },\n        {\n          \"source\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 64,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"target\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"list\"\n          },\n          \"line\": 60,\n          \"column\": 0,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 73,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"target\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"export\"\n          },\n          \"line\": 70,\n          \"column\": 0,\n          \"provenance\": null\n        }\n      ]\n    },\n    {\n      \"definition\": {\n        \"name\": \"selectUserList\",\n        \"kind\": \"method\",\n        \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n        \"startLine\": 20,\n        \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n        \"qualifiedName\": \"com.ruoyi.system.service::ISysUserService::selectUserList\",\n        \"language\": \"java\"\n      },\n      \"roots\": [\n        \"method:fe4af4370d9d2ceacb22415eaad5c426\"\n      ],\n      \"nodeCount\": 5,\n      \"edgeCount\": 4,\n      \"affected\": [\n        {\n          \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n          \"startLine\": 20\n        },\n        {\n          \"id\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"name\": \"list\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 59\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"name\": \"GET /system/user/list\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 60\n        },\n        {\n          \"id\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"name\": \"export\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 68\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"name\": \"POST /system/user/export\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 70\n        }\n      ],\n      \"edges\": [\n        {\n          \"source\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 64,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"target\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"list\"\n          },\n          \"line\": 60,\n          \"column\": 0,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 73,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"target\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"export\"\n          },\n          \"line\": 70,\n          \"column\": 0,\n          \"provenance\": null\n        }\n      ]\n    },\n    {\n      \"definition\": {\n        \"name\": \"selectUserList\",\n        \"kind\": \"method\",\n        \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n        \"startLine\": 75,\n        \"id\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n        \"qualifiedName\": \"com.ruoyi.system.service.impl::SysUserServiceImpl::selectUserList\",\n        \"language\": \"java\"\n      },\n      \"roots\": [\n        \"method:767fb289493243a1ab8a46d2552bdc69\"\n      ],\n      \"nodeCount\": 6,\n      \"edgeCount\": 5,\n      \"affected\": [\n        {\n          \"id\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n          \"startLine\": 75\n        },\n        {\n          \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n          \"startLine\": 20\n        },\n        {\n          \"id\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"name\": \"list\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 59\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"name\": \"GET /system/user/list\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 60\n        },\n        {\n          \"id\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"name\": \"export\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 68\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"name\": \"POST /system/user/export\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 70\n        }\n      ],\n      \"edges\": [\n        {\n          \"source\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"target\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"synthesizedBy\": \"interface-impl\",\n            \"via\": \"selectUserList\",\n            \"registeredAt\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:75\"\n          },\n          \"line\": 20,\n          \"provenance\": \"heuristic\"\n        },\n        {\n          \"source\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 64,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"target\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"list\"\n          },\n          \"line\": 60,\n          \"column\": 0,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 73,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"target\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"export\"\n          },\n          \"line\": 70,\n          \"column\": 0,\n          \"provenance\": null\n        }\n      ]\n    },\n    {\n      \"definition\": {\n        \"name\": \"selectUserList\",\n        \"kind\": \"method\",\n        \"filePath\": \"ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml\",\n        \"startLine\": 60,\n        \"id\": \"method:aaa32a787498e21e387f24d1ca1d12f3\",\n        \"qualifiedName\": \"com.ruoyi.system.mapper.SysUserMapper::selectUserList\",\n        \"language\": \"xml\"\n      },\n      \"roots\": [\n        \"method:aaa32a787498e21e387f24d1ca1d12f3\"\n      ],\n      \"nodeCount\": 8,\n      \"edgeCount\": 7,\n      \"affected\": [\n        {\n          \"id\": \"method:aaa32a787498e21e387f24d1ca1d12f3\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml\",\n          \"startLine\": 60\n        },\n        {\n          \"id\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java\",\n          \"startLine\": 21\n        },\n        {\n          \"id\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n          \"startLine\": 75\n        },\n        {\n          \"id\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"name\": \"selectUserList\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n          \"startLine\": 20\n        },\n        {\n          \"id\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"name\": \"list\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 59\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"name\": \"GET /system/user/list\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 60\n        },\n        {\n          \"id\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"name\": \"export\",\n          \"kind\": \"method\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 68\n        },\n        {\n          \"id\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"name\": \"POST /system/user/export\",\n          \"kind\": \"route\",\n          \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n          \"startLine\": 70\n        }\n      ],\n      \"edges\": [\n        {\n          \"source\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n          \"target\": \"method:aaa32a787498e21e387f24d1ca1d12f3\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"synthesizedBy\": \"mybatis-java-xml\",\n            \"via\": \"SysUserMapper.selectUserList\",\n            \"registeredAt\": \"ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml:60\"\n          },\n          \"line\": 21,\n          \"provenance\": \"heuristic\"\n        },\n        {\n          \"source\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"target\": \"method:f9275d2e702393d91ea8b2a27914a225\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userMapper.selectUserList\"\n          },\n          \"line\": 79,\n          \"column\": 15,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"target\": \"method:767fb289493243a1ab8a46d2552bdc69\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"synthesizedBy\": \"interface-impl\",\n            \"via\": \"selectUserList\",\n            \"registeredAt\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:75\"\n          },\n          \"line\": 20,\n          \"provenance\": \"heuristic\"\n        },\n        {\n          \"source\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 64,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:60:GET:/system/user/list\",\n          \"target\": \"method:13dca2fdb0f8e250ea7c6a05b4afd6bc\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"list\"\n          },\n          \"line\": 60,\n          \"column\": 0,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"target\": \"method:fe4af4370d9d2ceacb22415eaad5c426\",\n          \"kind\": \"calls\",\n          \"metadata\": {\n            \"confidence\": 0.9,\n            \"resolvedBy\": \"instance-method\",\n            \"refName\": \"userService.selectUserList\"\n          },\n          \"line\": 73,\n          \"column\": 29,\n          \"provenance\": null\n        },\n        {\n          \"source\": \"route:ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:70:POST:/system/user/export\",\n          \"target\": \"method:77edac9534b3e0490816396f207a93ac\",\n          \"kind\": \"references\",\n          \"metadata\": {\n            \"confidence\": 0.7,\n            \"resolvedBy\": \"exact-match\",\n            \"refName\": \"export\"\n          },\n          \"line\": 70,\n          \"column\": 0,\n          \"provenance\": null\n        }\n      ]\n    }\n  ],\n  \"nodeCount\": 8,\n  \"edgeCount\": 7,\n  \"affected\": [\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java\",\n      \"startLine\": 21\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java\",\n      \"startLine\": 75\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java\",\n      \"startLine\": 20\n    },\n    {\n      \"name\": \"list\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n      \"startLine\": 59\n    },\n    {\n      \"name\": \"GET /system/user/list\",\n      \"kind\": \"route\",\n      \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n      \"startLine\": 60\n    },\n    {\n      \"name\": \"export\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n      \"startLine\": 68\n    },\n    {\n      \"name\": \"POST /system/user/export\",\n      \"kind\": \"route\",\n      \"filePath\": \"ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java\",\n      \"startLine\": 70\n    },\n    {\n      \"name\": \"selectUserList\",\n      \"kind\": \"method\",\n      \"filePath\": \"ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml\",\n      \"startLine\": 60\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "label": "public-rg",
+    "command": [
+      "rg",
+      "-n",
+      "selectUserList|@DataScope|dataScopeFilter",
+      "ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java",
+      "ruoyi-system/src/main/java/com/ruoyi/system/service",
+      "ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java",
+      "ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java"
+    ],
+    "seconds": 0.007404,
+    "exit": 2,
+    "stdout": "ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java:21:    public List<SysUser> selectUserList(SysUser sysUser);\nruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml:60:    <select id=\"selectUserList\" parameterType=\"SysUser\" resultMap=\"SysUserResult\">\nruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:64:        List<SysUser> list = userService.selectUserList(user);\nruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:73:        List<SysUser> list = userService.selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:76:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:77:    public List<SysUser> selectUserList(SysUser user)\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:79:        return userMapper.selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:89:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:102:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:246:            List<SysUser> users = SpringUtils.getAopProxy(this).selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysRoleServiceImpl.java:54:    @DataScope(deptAlias = \"d\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysDeptServiceImpl.java:45:    @DataScope(deptAlias = \"d\")\nruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java:20:    public List<SysUser> selectUserList(SysUser user);\n",
+    "stderr": "rg: ruoyi-framework/src/main/java/com/ruoyi/framework/aspect/DataScopeAspect.java: No such file or directory (os error 2)\n"
+  },
+  {
+    "label": "public-rg-corrected",
+    "command": [
+      "rg",
+      "-n",
+      "selectUserList|@DataScope|dataScopeFilter",
+      "ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java",
+      "ruoyi-system/src/main/java/com/ruoyi/system/service",
+      "ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java",
+      "ruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml",
+      "ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java"
+    ],
+    "seconds": 0.005867423009476624,
+    "exit": 0,
+    "stdout": "ruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java:53:                dataScopeFilter(joinPoint, currentUser, controllerDataScope.userAlias(), controllerDataScope.deptAlias(), controllerDataScope.userField(), controllerDataScope.deptField(), permission);\nruoyi-framework/src/main/java/com/ruoyi/framework/aspectj/DataScopeAspect.java:67:    public static void dataScopeFilter(JoinPoint joinPoint, SysUser user, String userAlias, String deptAlias, String userField, String deptField, String permission)\nruoyi-system/src/main/resources/mapper/system/SysUserMapper.xml:60:    <select id=\"selectUserList\" parameterType=\"SysUser\" resultMap=\"SysUserResult\">\nruoyi-system/src/main/java/com/ruoyi/system/mapper/SysUserMapper.java:21:    public List<SysUser> selectUserList(SysUser sysUser);\nruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:64:        List<SysUser> list = userService.selectUserList(user);\nruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java:73:        List<SysUser> list = userService.selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/ISysUserService.java:20:    public List<SysUser> selectUserList(SysUser user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysDeptServiceImpl.java:45:    @DataScope(deptAlias = \"d\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:76:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:77:    public List<SysUser> selectUserList(SysUser user)\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:79:        return userMapper.selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:89:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:102:    @DataScope(deptAlias = \"d\", userAlias = \"u\")\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysUserServiceImpl.java:246:            List<SysUser> users = SpringUtils.getAopProxy(this).selectUserList(user);\nruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysRoleServiceImpl.java:54:    @DataScope(deptAlias = \"d\")\n",
+    "stderr": ""
+  }
+]

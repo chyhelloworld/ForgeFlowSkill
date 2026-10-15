@@ -1,0 +1,14 @@
+name: ff-retro
+version: 1
+description: Optional document workflow; no implicit publication or specification promotion.
+artifacts:
+  - id: retro
+    generates: retro.md
+    description: Optional retro artifact
+    template: retro.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: []
+apply:
+  requires: ["retro"]
+  tracks: tasks.md
+  instruction: Work only within approved scope. This is guidance, not execution, approval or publishing.

@@ -1,0 +1,1 @@
+{"version":1,"artifacts":[{"id":"codegraph-evidence","paths":["openspec/changes/CHANGE_NAME/code-evidence.json"],"requires":[],"reviewRequired":true},{"id":"impact-review","paths":["openspec/changes/CHANGE_NAME/impact-review.md"],"requires":["codegraph-evidence"],"reviewRequired":true}]}

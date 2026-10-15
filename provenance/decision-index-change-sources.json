@@ -1,0 +1,13 @@
+{
+  "version": "0.6.0-experimental.2",
+  "base_manifest_sha256": "4410a59d62e7c13de2f96dd223891a41ec41511d7b803443a933bd09786e6319",
+  "matt_commit": "49dd158d1076134a641b33efb035946536778336",
+  "source": {
+    "path": "provenance/matt/engineering/wayfinder/SKILL.md",
+    "sha256": "9be7b478c389605a24517d27752f278933588da97a1b5921b165f455edf4c5b7",
+    "url": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/wayfinder/SKILL.md"
+  },
+  "license": "MIT; provenance/MATT-LICENSE",
+  "adaptation": "Decision index and recovery ideas only; no tracker/push/Notes execution override; 17 skills unchanged",
+  "cli_changed": false
+}

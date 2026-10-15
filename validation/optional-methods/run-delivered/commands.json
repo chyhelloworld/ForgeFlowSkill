@@ -1,0 +1,644 @@
+[
+  {
+    "name": "ff-blog-beats schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-blog-beats",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-blog-beats\",\n  \"path\": \"<fixture>/run-delivered/ff-blog-beats/openspec/schemas/ff-blog-beats\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: research.md, writing-fragments.md, writing-beats.md, draft.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-blog-beats new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-blog-beats",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-blog-beats\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats instructions research",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "research",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"research\",\n  \"schemaName\": \"ff-blog-beats\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"research.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/research.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional research artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 研究笔记\\n\\n问题：\\n版本/日期：\\n决策用途与排除项：\\n预算和停止条件：\\n\\n## 事实\\n- 结论；一手来源URL/锚点；版本；查证日期\\n\\n## 推论\\n- 推论；依据事实；替代解释；置信限制\\n\\n## 待实测\\n- 待验证命题；可复现实验；未运行原因\\n\\n## 停止结论\\n已回答/预算耗尽/受阻/待决定；未解问题：\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [\n    \"writing-fragments\",\n    \"draft\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats instructions writing-fragments",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-fragments",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-fragments\",\n  \"schemaName\": \"ff-blog-beats\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-fragments.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-fragments.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-fragments artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 工作标题\\n\\n作者第一段值得保留的真实素材。\\n\\n---\\n\\n下一条碎片。此处是格式示例，使用时替换，不当作作者经历。\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"research\",\n      \"done\": true,\n      \"path\": \"research.md\",\n      \"description\": \"Optional research artifact\"\n    }\n  ],\n  \"unlocks\": [\n    \"writing-beats\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats instructions writing-beats",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-beats",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-beats\",\n  \"schemaName\": \"ff-blog-beats\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-beats.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-beats.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-beats artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 节拍工作记录（不自动加入文章）\\n\\n只读素材：\\n独立文章：\\n受众/前置概念：\\n当前文章版本：\\n当前已铺垫概念（每轮重建）：\\n候选节拍/依赖/新铺垫/解锁方向：\\n作者本轮选择：\\n仅本轮已选节拍写入：\\n材料缺口：\\n作者完成或暂停决定：\\n发布授权：未请求/未获得\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"writing-fragments\",\n      \"done\": true,\n      \"path\": \"writing-fragments.md\",\n      \"description\": \"Optional writing-fragments artifact\"\n    }\n  ],\n  \"unlocks\": [\n    \"draft\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats instructions draft",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "draft",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"draft\",\n  \"schemaName\": \"ff-blog-beats\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"draft.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/draft.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional draft artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 文章草稿\\n\\n仅写作者本轮同意的内容；此模板不是已完成文章。\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"research\",\n      \"done\": true,\n      \"path\": \"research.md\",\n      \"description\": \"Optional research artifact\"\n    },\n    {\n      \"id\": \"writing-beats\",\n      \"done\": true,\n      \"path\": \"writing-beats.md\",\n      \"description\": \"Optional writing-beats artifact\"\n    }\n  ],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-blog-beats\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-fragments.md\"\n      ]\n    },\n    \"writing-beats\": {\n      \"outputPath\": \"writing-beats.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-beats.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/writing-beats.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-beats/openspec/changes/trial/draft.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"draft\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-beats\",\n      \"draft\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-blog-beats\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-beats\",\n      \"outputPath\": \"writing-beats.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-beats\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-beats docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-beats",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 18\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-blog-shape",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-blog-shape\",\n  \"path\": \"<fixture>/run-delivered/ff-blog-shape/openspec/schemas/ff-blog-shape\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: research.md, writing-fragments.md, writing-shape.md, draft.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-blog-shape new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-blog-shape",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-blog-shape\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape instructions research",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "research",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"research\",\n  \"schemaName\": \"ff-blog-shape\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"research.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/research.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional research artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 研究笔记\\n\\n问题：\\n版本/日期：\\n决策用途与排除项：\\n预算和停止条件：\\n\\n## 事实\\n- 结论；一手来源URL/锚点；版本；查证日期\\n\\n## 推论\\n- 推论；依据事实；替代解释；置信限制\\n\\n## 待实测\\n- 待验证命题；可复现实验；未运行原因\\n\\n## 停止结论\\n已回答/预算耗尽/受阻/待决定；未解问题：\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [\n    \"writing-fragments\",\n    \"draft\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape instructions writing-fragments",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-fragments",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-fragments\",\n  \"schemaName\": \"ff-blog-shape\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-fragments.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-fragments.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-fragments artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 工作标题\\n\\n作者第一段值得保留的真实素材。\\n\\n---\\n\\n下一条碎片。此处是格式示例，使用时替换，不当作作者经历。\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"research\",\n      \"done\": true,\n      \"path\": \"research.md\",\n      \"description\": \"Optional research artifact\"\n    }\n  ],\n  \"unlocks\": [\n    \"writing-shape\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape instructions writing-shape",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-shape",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-shape\",\n  \"schemaName\": \"ff-blog-shape\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-shape.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-shape.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-shape artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 成文工作记录（不自动加入文章）\\n\\n只读素材：\\n独立文章：\\n受众/目的：\\n读者已知：\\n开头候选与作者选择：\\n当前已铺垫概念：\\n下一块的作用/所需概念：\\n材料缺口及补充/删除决定：\\n作者完成或暂停决定：\\n发布授权：未请求/未获得\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"writing-fragments\",\n      \"done\": true,\n      \"path\": \"writing-fragments.md\",\n      \"description\": \"Optional writing-fragments artifact\"\n    }\n  ],\n  \"unlocks\": [\n    \"draft\"\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape instructions draft",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "draft",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"draft\",\n  \"schemaName\": \"ff-blog-shape\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"draft.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/draft.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional draft artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 文章草稿\\n\\n仅写作者本轮同意的内容；此模板不是已完成文章。\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"research\",\n      \"done\": true,\n      \"path\": \"research.md\",\n      \"description\": \"Optional research artifact\"\n    },\n    {\n      \"id\": \"writing-shape\",\n      \"done\": true,\n      \"path\": \"writing-shape.md\",\n      \"description\": \"Optional writing-shape artifact\"\n    }\n  ],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-blog-shape\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-fragments.md\"\n      ]\n    },\n    \"writing-shape\": {\n      \"outputPath\": \"writing-shape.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-shape.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/writing-shape.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-blog-shape/openspec/changes/trial/draft.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"draft\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-shape\",\n      \"draft\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-blog-shape\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-shape\",\n      \"outputPath\": \"writing-shape.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-shape\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-blog-shape docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-blog-shape",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 18\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-research schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-research",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-research",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-research\",\n  \"path\": \"<fixture>/run-delivered/ff-research/openspec/schemas/ff-research\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: research.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-research new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-research",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-research",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-research\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-research\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-research instructions research",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "research",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-research",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"research\",\n  \"schemaName\": \"ff-research\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-research\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-research/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"research.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial/research.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional research artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 研究笔记\\n\\n问题：\\n版本/日期：\\n决策用途与排除项：\\n预算和停止条件：\\n\\n## 事实\\n- 结论；一手来源URL/锚点；版本；查证日期\\n\\n## 推论\\n- 推论；依据事实；替代解释；置信限制\\n\\n## 待实测\\n- 待验证命题；可复现实验；未运行原因\\n\\n## 停止结论\\n已回答/预算耗尽/受阻/待决定；未解问题：\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-research\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-research completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-research",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-research\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-research\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-research/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-research/openspec/changes/trial/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-research/openspec/changes/trial/research.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"research\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-research\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-research\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-research docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-research",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 14\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-research\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-retro schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-retro",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-retro",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-retro\",\n  \"path\": \"<fixture>/run-delivered/ff-retro/openspec/schemas/ff-retro\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: retro.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-retro new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-retro",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-retro",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-retro\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-retro\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-retro instructions retro",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "retro",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-retro",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"retro\",\n  \"schemaName\": \"ff-retro\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-retro\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-retro/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"retro.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial/retro.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional retro artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 复盘候选\\n\\n真实事件与来源：\\n观察到的代价（未知不估造）：\\n已有机制及检查结果：\\n候选（允许空列表）：\\n- 原因假设与替代解释：\\n- 证伪条件：\\n- 最小补丁及授权范围：\\n- 原失败样本/预期/实测：\\n- 正常样本/预期/实测：\\n- 独立复核与版本：\\n- 保留/撤销/暂缓及原因：\\n- 撤销方式：\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-retro\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-retro completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-retro",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-retro\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-retro\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-retro/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"retro\": {\n      \"outputPath\": \"retro.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-retro/openspec/changes/trial/retro.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-retro/openspec/changes/trial/retro.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"retro\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"retro\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-retro\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"retro\",\n      \"outputPath\": \"retro.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-retro\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-retro docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-retro",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 14\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-retro\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-beats schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-writing-beats",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-beats",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-writing-beats\",\n  \"path\": \"<fixture>/run-delivered/ff-writing-beats/openspec/schemas/ff-writing-beats\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: writing-beats.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-writing-beats new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-writing-beats",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-beats",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-writing-beats\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-beats instructions writing-beats",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-beats",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-beats\",\n  \"schemaName\": \"ff-writing-beats\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-beats.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial/writing-beats.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-beats artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 节拍工作记录（不自动加入文章）\\n\\n只读素材：\\n独立文章：\\n受众/前置概念：\\n当前文章版本：\\n当前已铺垫概念（每轮重建）：\\n候选节拍/依赖/新铺垫/解锁方向：\\n作者本轮选择：\\n仅本轮已选节拍写入：\\n材料缺口：\\n作者完成或暂停决定：\\n发布授权：未请求/未获得\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-beats completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-beats",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-writing-beats\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"writing-beats\": {\n      \"outputPath\": \"writing-beats.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial/writing-beats.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-writing-beats/openspec/changes/trial/writing-beats.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"writing-beats\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"writing-beats\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-writing-beats\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"writing-beats\",\n      \"outputPath\": \"writing-beats.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-beats docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-beats",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 16\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-fragments schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-writing-fragments",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-fragments",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-writing-fragments\",\n  \"path\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/schemas/ff-writing-fragments\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: writing-fragments.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-writing-fragments new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-writing-fragments",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-fragments",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-writing-fragments\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-fragments instructions writing-fragments",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-fragments",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-fragments",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-fragments\",\n  \"schemaName\": \"ff-writing-fragments\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-fragments.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial/writing-fragments.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-fragments artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 工作标题\\n\\n作者第一段值得保留的真实素材。\\n\\n---\\n\\n下一条碎片。此处是格式示例，使用时替换，不当作作者经历。\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-fragments completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-fragments",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-writing-fragments\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-writing-fragments/openspec/changes/trial/writing-fragments.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"writing-fragments\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"writing-fragments\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-writing-fragments\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-fragments docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-fragments",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 15\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-fragments\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-shape schema validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "schema",
+      "validate",
+      "ff-writing-shape",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-shape",
+    "exit": 0,
+    "stdout": "{\n  \"name\": \"ff-writing-shape\",\n  \"path\": \"<fixture>/run-delivered/ff-writing-shape/openspec/schemas/ff-writing-shape\",\n  \"valid\": true,\n  \"issues\": [\n    {\n      \"level\": \"warning\",\n      \"path\": \"apply.tracks\",\n      \"message\": \"apply.tracks 'tasks.md' does not exactly match any artifact's generates value (generates: writing-shape.md), so OpenSpec cannot tell which artifact's progress it tracks. Apply still reads that file as written, but list and status count tasks.md instead. Make apply.tracks exactly equal one of those generates values, or confirm that file is maintained outside the artifact graph.\"\n    }\n  ]\n}\n",
+    "stderr": "Note: Schema commands are experimental and may change.\n"
+  },
+  {
+    "name": "ff-writing-shape new",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "new",
+      "change",
+      "trial",
+      "--schema",
+      "ff-writing-shape",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-shape",
+    "exit": 0,
+    "stdout": "{\n  \"change\": {\n    \"id\": \"trial\",\n    \"path\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial\",\n    \"metadataPath\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial/.openspec.yaml\",\n    \"schema\": \"ff-writing-shape\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"source\": \"implicit\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-shape instructions writing-shape",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "instructions",
+      "writing-shape",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"artifactId\": \"writing-shape\",\n  \"schemaName\": \"ff-writing-shape\",\n  \"changeDir\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-shape.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial/writing-shape.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"Optional writing-shape artifact\",\n  \"instruction\": \"Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.\",\n  \"template\": \"# 成文工作记录（不自动加入文章）\\n\\n只读素材：\\n独立文章：\\n受众/目的：\\n读者已知：\\n开头候选与作者选择：\\n当前已铺垫概念：\\n下一块的作用/所需概念：\\n材料缺口及补充/删除决定：\\n作者完成或暂停决定：\\n发布授权：未请求/未获得\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-shape completed artifact status",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "trial",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-shape",
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"trial\",\n  \"schemaName\": \"ff-writing-shape\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"changesDir\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial\",\n  \"artifactPaths\": {\n    \"writing-shape\": {\n      \"outputPath\": \"writing-shape.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial/writing-shape.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-delivered/ff-writing-shape/openspec/changes/trial/writing-shape.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"writing-shape\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"trial\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"writing-shape\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-delivered/ff-writing-shape\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"writing-shape\",\n      \"outputPath\": \"writing-shape.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "ff-writing-shape docs only validation",
+    "args": [
+      "node",
+      "<fixture>/cli/ff-spec.mjs",
+      "validate",
+      "trial",
+      "--strict",
+      "--json"
+    ],
+    "cwd": "<fixture>/run-delivered/ff-writing-shape",
+    "exit": 0,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"trial\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 17\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered/ff-writing-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

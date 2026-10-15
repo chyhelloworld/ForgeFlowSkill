@@ -1,0 +1,22 @@
+{
+  "ff-research/schema.yaml": "81de3b6d06e6eed46f7e29a58ab6cab8f109555a6b5dc236c70a6d96a884be9b",
+  "ff-retro/schema.yaml": "c7889bb25e61eb3c435e7710e6d742d079e66a38e165623594ad100dd8f69793",
+  "ff-blog-beats/schema.yaml": "a45b055cb702555d0d53a805cd88e5af7e1ecbe4fbf833f2a924211621529414",
+  "ff-writing-fragments/schema.yaml": "c0d202994b3d5bc8243a98514ffbaa044402469b5efbbd033f885dca06c34947",
+  "ff-blog-shape/schema.yaml": "8cccb4b280a599629b2762b4dcb2883b39d79aa5aedc7076f3fe66aee506283f",
+  "ff-writing-shape/schema.yaml": "34c3d646665af978aab42190415544b6a5c1f0dff246df1ea4e099cf883ea4be",
+  "ff-writing-beats/schema.yaml": "ef116087a7094e4362a6e6eca7415ef248d6e2c8f22de26660f0f844b6034d93",
+  "ff-research/templates/research.md": "061fe1e0b44a22a4e8b5686a8846c2e04154faea9b7f449a544a71dccea5fb7b",
+  "ff-retro/templates/retro.md": "02ede99703a7ad7673efaad6d3497f009668d28b88a2ed54e416056353355cea",
+  "ff-blog-beats/templates/writing-beats.md": "839aa61be4c246e173b7a82dae466c05d18769bdae7a84593e0b1422d900b2d1",
+  "ff-blog-beats/templates/writing-fragments.md": "92467c666f9039c24c3f2d24000127ea6f94f15ac123a76aeb4547213c616d30",
+  "ff-blog-beats/templates/research.md": "061fe1e0b44a22a4e8b5686a8846c2e04154faea9b7f449a544a71dccea5fb7b",
+  "ff-blog-beats/templates/draft.md": "ac98d1b55b7a6b345487ee59838403aa37ee6fe8f30ef447e4af393a32eefbad",
+  "ff-writing-fragments/templates/writing-fragments.md": "92467c666f9039c24c3f2d24000127ea6f94f15ac123a76aeb4547213c616d30",
+  "ff-blog-shape/templates/writing-fragments.md": "92467c666f9039c24c3f2d24000127ea6f94f15ac123a76aeb4547213c616d30",
+  "ff-blog-shape/templates/research.md": "061fe1e0b44a22a4e8b5686a8846c2e04154faea9b7f449a544a71dccea5fb7b",
+  "ff-blog-shape/templates/writing-shape.md": "2c2c93b35aec31ced4ae37fa22951a043c416655405b2d8a16be640c69ee3d25",
+  "ff-blog-shape/templates/draft.md": "ac98d1b55b7a6b345487ee59838403aa37ee6fe8f30ef447e4af393a32eefbad",
+  "ff-writing-shape/templates/writing-shape.md": "2c2c93b35aec31ced4ae37fa22951a043c416655405b2d8a16be640c69ee3d25",
+  "ff-writing-beats/templates/writing-beats.md": "839aa61be4c246e173b7a82dae466c05d18769bdae7a84593e0b1422d900b2d1"
+}

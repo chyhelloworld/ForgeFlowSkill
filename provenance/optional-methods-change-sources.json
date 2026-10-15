@@ -1,0 +1,39 @@
+{
+  "version": "0.6.0-experimental.1",
+  "base_manifest_sha256": "cd9ffad67f86b3ac48f5052c30c23748a919c5b73b277b69946120766c2af0f0",
+  "matt_commit": "49dd158d1076134a641b33efb035946536778336",
+  "license_verified_url": "https://raw.githubusercontent.com/mattpocock/skills/49dd158d1076134a641b33efb035946536778336/LICENSE",
+  "verified_date": "2026-10-15",
+  "adaptations": [
+    {
+      "skill": "ff-research",
+      "source": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/research/SKILL.md",
+      "classification": "optional-method-adaptation",
+      "source_stage": "engineering"
+    },
+    {
+      "skill": "ff-retro",
+      "source": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/retro/SKILL.md",
+      "classification": "optional-method-adaptation",
+      "source_stage": "engineering"
+    },
+    {
+      "skill": "ff-writing-fragments",
+      "source": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-fragments/SKILL.md",
+      "classification": "optional-method-adaptation",
+      "source_stage": "in-progress"
+    },
+    {
+      "skill": "ff-writing-shape",
+      "source": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-shape/SKILL.md",
+      "classification": "optional-method-adaptation",
+      "source_stage": "in-progress"
+    },
+    {
+      "skill": "ff-writing-beats",
+      "source": "https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/in-progress/writing-beats/SKILL.md",
+      "classification": "optional-method-adaptation",
+      "source_stage": "in-progress"
+    }
+  ]
+}

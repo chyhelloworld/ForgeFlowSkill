@@ -2,9 +2,9 @@
 name: ff-deliver
 description: 汇总 ForgeFlow 当前版本有效证据、偏差与用户验收入口，按仓库流程交 PR 或交接；不承担实现或独立审核，不自动合并部署。
 metadata:
-  version: "0.5.0-rc3"
+  version: "0.6.0-experimental.3"
 ---
-# ff-deliver 0.5.0-rc3
+# ff-deliver 0.6.0-experimental.3
 
 消费有效规格/计划、实际交付版本、实现证据与 plan / goal-mainflow / code 的独立审核结论。缺证据或审核失效交相应职责补齐，不在本技能里自写自审。参考 [交接与接受](references/handoff.md)。
 

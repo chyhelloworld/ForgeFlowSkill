@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "writing-beats",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/writing-beats.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    }
+  ]
+}

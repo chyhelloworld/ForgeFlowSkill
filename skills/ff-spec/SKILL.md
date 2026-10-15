@@ -2,9 +2,9 @@
 name: ff-spec
 description: 把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格；用于缺失或过期规格，不拆工作票、不决定未经确认的需求。
 metadata:
-  version: "0.5.0-rc3"
+  version: "0.6.0-experimental.3"
 ---
-# ff-spec 0.5.0-rc3
+# ff-spec 0.6.0-experimental.3
 
 读取用户原话及最新确认、现有规格和可核实项目行为。保留一个需求锚点，引用而不另造竞争事实库。事实可查先查；确认不足的取舍交 ff-grill 或简短问用户，不让 AI 推断冒充确认。
 

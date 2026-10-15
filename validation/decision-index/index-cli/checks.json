@@ -1,0 +1,644 @@
+[
+  {
+    "name": "create",
+    "passed": true,
+    "detail": {
+      "change": {
+        "id": "fixture",
+        "path": "<test-root>/index-cli/project/openspec/changes/fixture",
+        "metadataPath": "<test-root>/index-cli/project/openspec/changes/fixture/.openspec.yaml",
+        "schema": "index-test"
+      },
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "implicit"
+      }
+    }
+  },
+  {
+    "name": "valid baseline",
+    "passed": true,
+    "detail": {
+      "items": [
+        {
+          "id": "fixture",
+          "type": "change",
+          "valid": true,
+          "issues": [
+            {
+              "level": "INFO",
+              "path": "file",
+              "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+            }
+          ],
+          "durationMs": 24
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "unregistered index not tracked",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": true,
+        "policyHash": "fd604b59939e385d74dac372be3769e4aaca243f5e7e57292d5ec6b511055a58",
+        "schemaHash": "0085bd20be0a837f3df63fa3a642ee95ff1892842d6643803aa4d3aae40808e3",
+        "artifacts": [
+          {
+            "id": "decision-a",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/decision-a.md",
+                "sha256": "ac8ac99127bf375a70844e9695ac8634cc39de2526f6a6a025b75ad4e74ca6e7"
+              }
+            ],
+            "fingerprint": "1480cc1907b79d06a185adda422d044c65f1ae9124f965596aafdf47653718c9"
+          },
+          {
+            "id": "delivery-a",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/delivery-a.md",
+                "sha256": "2be381632666e797b5cd2250357fd3b57a7ba3de5323b6047ac5cca01b5b8f02"
+              }
+            ],
+            "fingerprint": "69be3e8a98aee9f2c25171b1bd717400b222d8f0980d484021073b6c7e0d7dee"
+          },
+          {
+            "id": "decision-b",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/decision-b.md",
+                "sha256": "50670b6f4c8ab6022380ca5dc6f1f5d30a20df37d5218cdffda7f991fbe1ea34"
+              }
+            ],
+            "fingerprint": "1882fad9d94b84a770aa46a408a1bbf0cf271ce9346568f1c8078f183cd79183"
+          },
+          {
+            "id": "delivery-b",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/delivery-b.md",
+                "sha256": "853c76bad7400d0ee3d64c5ce9e92afda9c2137073f63210f2149d1c31a20b54"
+              }
+            ],
+            "fingerprint": "654c5cc038e72b1311f0f4d759cb5707e30607f47ef261cf9191998cd9a8862f"
+          }
+        ],
+        "reasons": []
+      },
+      "changeName": "fixture",
+      "schemaName": "index-test",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<test-root>/index-cli/project",
+        "changesDir": "<test-root>/index-cli/project/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<test-root>/index-cli/project/openspec/changes/fixture",
+      "artifactPaths": {
+        "decision-a": {
+          "outputPath": "decision-a.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/decision-a.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/decision-a.md"
+          ]
+        },
+        "delivery-a": {
+          "outputPath": "delivery-a.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/delivery-a.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/delivery-a.md"
+          ]
+        },
+        "decision-b": {
+          "outputPath": "decision-b.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/decision-b.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/decision-b.md"
+          ]
+        },
+        "delivery-b": {
+          "outputPath": "delivery-b.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/delivery-b.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/delivery-b.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "delivery-a",
+        "delivery-b"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"fixture\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "decision-a",
+          "delivery-a",
+          "decision-b",
+          "delivery-b"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<test-root>/index-cli/project"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "decision-a",
+          "outputPath": "decision-a.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "delivery-a",
+          "outputPath": "delivery-a.md",
+          "status": "done",
+          "requires": [
+            "decision-a"
+          ]
+        },
+        {
+          "id": "decision-b",
+          "outputPath": "decision-b.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "delivery-b",
+          "outputPath": "delivery-b.md",
+          "status": "done",
+          "requires": [
+            "decision-b"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "map semantics not parsed (boundary)",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": true,
+        "policyHash": "fd604b59939e385d74dac372be3769e4aaca243f5e7e57292d5ec6b511055a58",
+        "schemaHash": "0085bd20be0a837f3df63fa3a642ee95ff1892842d6643803aa4d3aae40808e3",
+        "artifacts": [
+          {
+            "id": "decision-a",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/decision-a.md",
+                "sha256": "ac8ac99127bf375a70844e9695ac8634cc39de2526f6a6a025b75ad4e74ca6e7"
+              }
+            ],
+            "fingerprint": "1480cc1907b79d06a185adda422d044c65f1ae9124f965596aafdf47653718c9"
+          },
+          {
+            "id": "delivery-a",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/delivery-a.md",
+                "sha256": "2be381632666e797b5cd2250357fd3b57a7ba3de5323b6047ac5cca01b5b8f02"
+              }
+            ],
+            "fingerprint": "69be3e8a98aee9f2c25171b1bd717400b222d8f0980d484021073b6c7e0d7dee"
+          },
+          {
+            "id": "decision-b",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/decision-b.md",
+                "sha256": "50670b6f4c8ab6022380ca5dc6f1f5d30a20df37d5218cdffda7f991fbe1ea34"
+              }
+            ],
+            "fingerprint": "1882fad9d94b84a770aa46a408a1bbf0cf271ce9346568f1c8078f183cd79183"
+          },
+          {
+            "id": "delivery-b",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/fixture/delivery-b.md",
+                "sha256": "853c76bad7400d0ee3d64c5ce9e92afda9c2137073f63210f2149d1c31a20b54"
+              }
+            ],
+            "fingerprint": "654c5cc038e72b1311f0f4d759cb5707e30607f47ef261cf9191998cd9a8862f"
+          }
+        ],
+        "reasons": []
+      },
+      "changeName": "fixture",
+      "schemaName": "index-test",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<test-root>/index-cli/project",
+        "changesDir": "<test-root>/index-cli/project/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<test-root>/index-cli/project/openspec/changes/fixture",
+      "artifactPaths": {
+        "decision-a": {
+          "outputPath": "decision-a.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/decision-a.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/decision-a.md"
+          ]
+        },
+        "delivery-a": {
+          "outputPath": "delivery-a.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/delivery-a.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/delivery-a.md"
+          ]
+        },
+        "decision-b": {
+          "outputPath": "decision-b.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/decision-b.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/decision-b.md"
+          ]
+        },
+        "delivery-b": {
+          "outputPath": "delivery-b.md",
+          "resolvedOutputPath": "<test-root>/index-cli/project/openspec/changes/fixture/delivery-b.md",
+          "existingOutputPaths": [
+            "<test-root>/index-cli/project/openspec/changes/fixture/delivery-b.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "delivery-a",
+        "delivery-b"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"fixture\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "decision-a",
+          "delivery-a",
+          "decision-b",
+          "delivery-b"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<test-root>/index-cli/project"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "decision-a",
+          "outputPath": "decision-a.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "delivery-a",
+          "outputPath": "delivery-a.md",
+          "status": "done",
+          "requires": [
+            "decision-a"
+          ]
+        },
+        {
+          "id": "decision-b",
+          "outputPath": "decision-b.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "delivery-b",
+          "outputPath": "delivery-b.md",
+          "status": "done",
+          "requires": [
+            "decision-b"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "only related decision and delivery stale",
+    "passed": true,
+    "detail": {
+      "decision-a": "stale",
+      "delivery-a": "stale",
+      "decision-b": "valid",
+      "delivery-b": "valid"
+    }
+  },
+  {
+    "name": "stale archive blocked",
+    "passed": true,
+    "detail": {
+      "archive": null,
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "nearest"
+      },
+      "status": [
+        {
+          "severity": "error",
+          "code": "archive_error",
+          "message": "FF validity gate failed: decision-a: Artifact fingerprint changed or is missing; delivery-a: Dependency decision-a is stale; delivery-a: Dependency input fingerprints do not match"
+        }
+      ]
+    }
+  },
+  {
+    "name": "unanswered not valid review",
+    "passed": true,
+    "detail": {
+      "items": [
+        {
+          "id": "fixture",
+          "type": "change",
+          "valid": false,
+          "issues": [
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "decision-a: Review is required"
+            },
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "delivery-a: Dependency decision-a is needs-review"
+            },
+            {
+              "level": "INFO",
+              "path": "file",
+              "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+            }
+          ],
+          "durationMs": 26
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 0,
+          "failed": 1
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 0,
+            "failed": 1
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "<test-root>/index-cli/unanswered",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "rejected not valid review",
+    "passed": true,
+    "detail": {
+      "items": [
+        {
+          "id": "fixture",
+          "type": "change",
+          "valid": false,
+          "issues": [
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "decision-a: Review does not match the current artifact and inputs"
+            },
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "delivery-a: Dependency decision-a is needs-review"
+            },
+            {
+              "level": "INFO",
+              "path": "file",
+              "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+            }
+          ],
+          "durationMs": 25
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 0,
+          "failed": 1
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 0,
+            "failed": 1
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "<test-root>/index-cli/rejected",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "canceled not valid review",
+    "passed": true,
+    "detail": {
+      "items": [
+        {
+          "id": "fixture",
+          "type": "change",
+          "valid": false,
+          "issues": [
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "decision-a: Review does not match the current artifact and inputs"
+            },
+            {
+              "level": "ERROR",
+              "path": "ff-artifacts.json",
+              "message": "delivery-a: Dependency decision-a is needs-review"
+            },
+            {
+              "level": "INFO",
+              "path": "file",
+              "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+            }
+          ],
+          "durationMs": 25
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 0,
+          "failed": 1
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 0,
+            "failed": 1
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "<test-root>/index-cli/canceled",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "CLI does not authenticate choice or parse prose (boundary)",
+    "passed": true,
+    "detail": {
+      "items": [
+        {
+          "id": "fixture",
+          "type": "change",
+          "valid": true,
+          "issues": [
+            {
+              "level": "INFO",
+              "path": "file",
+              "message": "skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted"
+            }
+          ],
+          "durationMs": 29
+        }
+      ],
+      "summary": {
+        "totals": {
+          "items": 1,
+          "passed": 1,
+          "failed": 0
+        },
+        "byType": {
+          "change": {
+            "items": 1,
+            "passed": 1,
+            "failed": 0
+          }
+        }
+      },
+      "version": "1.0",
+      "root": {
+        "path": "<test-root>/index-cli/project",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "explicit canceled closure",
+    "passed": true,
+    "detail": {
+      "archive": {
+        "change": "fixture",
+        "archivedAs": "2026-10-15-fixture",
+        "path": "<test-root>/index-cli/close-canceled/openspec/changes/archive/2026-10-15-fixture",
+        "specsUpdated": false,
+        "disposition": "canceled"
+      },
+      "root": {
+        "path": "<test-root>/index-cli/close-canceled",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "canceled does not create canonical specs",
+    "passed": false,
+    "detail": null
+  },
+  {
+    "name": "explicit rejected closure",
+    "passed": true,
+    "detail": {
+      "archive": {
+        "change": "fixture",
+        "archivedAs": "2026-10-15-fixture",
+        "path": "<test-root>/index-cli/close-rejected/openspec/changes/archive/2026-10-15-fixture",
+        "specsUpdated": false,
+        "disposition": "rejected"
+      },
+      "root": {
+        "path": "<test-root>/index-cli/close-rejected",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "rejected does not create canonical specs",
+    "passed": false,
+    "detail": null
+  }
+]

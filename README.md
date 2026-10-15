@@ -1,6 +1,8 @@
 # ForgeFlow Skill
 
-ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc3**，2026-10-15 候选版。
+ForgeFlow（FF）技能包，版本 **0.6.0-experimental.3**，十二技能基线加五个可选方法，2026-10-15 隔离实验版。
+
+先读 [可选方法中文说明](docs/FF-可选方法中文使用说明.md) 与 [本轮变更](CHANGE-MAP-0.6.0-experimental.md)。本轮未发布；以下0.5 CLI与历史验证说明保留为基线。
 
 将目标澄清、规格、任务计划、实现、独立审核和交付分开，支持新项目及已有项目接手。按缺口选择最短路径，不要求每次运行全部十二个技能。
 
@@ -12,7 +14,7 @@ ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc3**，2026-10
 - [新项目流程图](docs/diagrams/new-project-workflow.png) · [已有项目流程图](docs/diagrams/existing-project-workflow.png)
 - [可编辑 draw.io 与 SVG 图源](docs/diagrams/)
 
-## 十二个技能
+## 十二个基线技能
 
 | 技能 | 职责 |
 | --- | --- |
@@ -67,3 +69,21 @@ MANIFEST.json 覆盖交付源文件，排除 .git、可重建的 OpenSpec .build
 ## OpenSpec 接入验证与 rc3 计划
 
 [实现与验证报告](docs/OpenSpec-FF接入报告.md) · [rc3 并存计划与验收](planning/openspec-ff-0.5.0-rc3.md) · [可复现 CLI 源码构建](tools/openspec/README.md) · [rc2 独立审查（历史）](validation/openspec-integration/independent-review.md)
+
+## 五个新增可选方法
+
+- [ff-research](skills/ff-research/SKILL.md)
+- [ff-retro](skills/ff-retro/SKILL.md)
+- [ff-writing-fragments](skills/ff-writing-fragments/SKILL.md)
+- [ff-writing-shape](skills/ff-writing-shape/SKILL.md)
+- [ff-writing-beats](skills/ff-writing-beats/SKILL.md)
+
+这些入口不构成必经步骤。shape和beats二选一；retro允许零候选。可单独安装选中方法，完整候选共17项。
+
+## 实验2：可选决策索引
+
+保留17个技能。Grill、Research、Handoff、Intake 可按需引用单一决策权威记录，恢复原始目标和未决依赖；简单任务跳过。索引不授予执行、不增加状态数据库；[中文说明](docs/FF-决策索引中文说明.md)。CLI 不变。
+
+## 实验3：可关闭的 CodeGraph 适配器
+
+仅显式启用时辅助静态代码定位，不新增技能或必经门禁。详见 [使用说明](docs/FF-CodeGraph可选适配器.md) 与 [真实试验报告](docs/CodeGraph试验报告.md)。沿用实验2决策索引；旧报告仅代表对应历史版本。

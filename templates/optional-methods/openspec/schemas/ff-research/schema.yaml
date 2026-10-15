@@ -1,0 +1,14 @@
+name: ff-research
+version: 1
+description: Optional document workflow; no implicit publication or specification promotion.
+artifacts:
+  - id: research
+    generates: research.md
+    description: Optional research artifact
+    template: research.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: []
+apply:
+  requires: ["research"]
+  tracks: tasks.md
+  instruction: Work only within approved scope. This is guidance, not execution, approval or publishing.

@@ -119,7 +119,7 @@ hint:
 hint: 	git branch -m <name>
 hint:
 hint: Disable this message with "git config set advice.defaultBranchName false"
-Cloning into 'test-fixture/openspec-store-remote-WbKfzu/home/openspec/team-context'...
+Cloning into 'test-fixture/openspec-store-remote-WbKfzu/REDACTED/upstream-test-home/team-context'...
 done.
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: will change to "main" in Git 3.0. To configure the initial branch name

@@ -1,0 +1,9 @@
+{
+  "commands": 14,
+  "checks": 14,
+  "passed": 12,
+  "failed": [
+    "canceled does not create canonical specs",
+    "rejected does not create canonical specs"
+  ]
+}

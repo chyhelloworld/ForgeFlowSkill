@@ -1391,7 +1391,7 @@ hint:
 hint: 	git branch -m <name>
 hint:
 hint: Disable this message with "git config set advice.defaultBranchName false"
-Cloning into 'test-fixture/openspec-store-remote-6dkOW0/home/openspec/team-context'...
+Cloning into 'test-fixture/openspec-store-remote-6dkOW0/REDACTED/upstream-test-home/team-context'...
 done.
  ❯ test/core/store/registry.test.ts (13 tests | 1 failed) 84ms
      × commits prepared setup against the latest registry state 10ms

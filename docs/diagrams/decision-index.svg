@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1160" viewBox="0 0 1400 1160" role="img" aria-label="跨会话决策索引：先核来源，再判断下一步"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="1160" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
+<text x="50" y="56" class="t">跨会话决策索引：先核来源，再判断下一步</text>
+<text x="50" y="92" class="s">可选轻索引；简单任务跳过；权威记录只有一份</text>
+<rect x="360" y="140" width="680" height="100" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="182.0" text-anchor="middle" class="n">复杂取舍 / 跨会话恢复？</text>
+<text x="700.0" y="212.0" text-anchor="middle" class="n">简单任务跳过；保存沿用记录授权</text>
+<rect x="360" y="300" width="680" height="100" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="342.0" text-anchor="middle" class="n">原始目标 → 权威决定 → 证据</text>
+<text x="700.0" y="372.0" text-anchor="middle" class="n">map 仅定位；Notes 不能授予执行权限</text>
+<rect x="360" y="460" width="680" height="100" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="502.0" text-anchor="middle" class="n">Intake 只读核对实际版本与依赖</text>
+<text x="700.0" y="532.0" text-anchor="middle" class="n">Handoff 旧快照不能直接续跑</text>
+<rect x="60" y="650" width="580" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="350.0" y="687.0" text-anchor="middle" class="n">用户未决定 / 缺源 / blocker 未满足</text>
+<text x="350.0" y="717.0" text-anchor="middle" class="n">blocked；closed / canceled / rejected</text>
+<text x="350.0" y="747.0" text-anchor="middle" class="n">unknown / stale 均不能解锁</text>
+<rect x="760" y="650" width="580" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1050.0" y="687.0" text-anchor="middle" class="n">确认变化 → Spec 更新权威规格</text>
+<text x="1050.0" y="717.0" text-anchor="middle" class="n">既有 fingerprint 链判相关 stale</text>
+<text x="1050.0" y="747.0" text-anchor="middle" class="n">未登记依赖：报告缺口并人工阻塞</text>
+<rect x="360" y="870" width="680" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="902.0" text-anchor="middle" class="n">有效证据 + 现有门槛 + 真实授权</text>
+<text x="700.0" y="932.0" text-anchor="middle" class="n">按缺口恢复职责；不默认 issue / push</text>
+<text x="700.0" y="962.0" text-anchor="middle" class="n">无 tracker：只读调查或串行处理</text>
+<polyline points="700,240 700,300" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,400 700,460" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="360,510 350,510 350,650" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1040,510 1050,510 1050,650" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="350,770 350,820 550,820 550,870" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="80" y="820" class="e">补齐并复核后</text>
+<polyline points="1050,770 1050,820 850,820 850,870" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="1060" y="820" class="e">更新与复审后</text>
+<text x="50" y="1065" class="s">不是第18个技能；不增加状态数据库；不把取消或关闭伪装成成功。</text>
+<text x="50" y="1095" class="s">只读接手不写地图；未选原型不代选；模拟通过不代表用户接受。</text>
+</svg>

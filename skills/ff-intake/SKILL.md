@@ -2,9 +2,9 @@
 name: ff-intake
 description: 只读核对 ForgeFlow 新任务或存量项目的真实状态、规格与工作票有效性，选择当前需要的职责；不写规格、不拆票、不实现。
 metadata:
-  version: "0.5.0-rc3"
+  version: "0.6.0-experimental.3"
 ---
-# ff-intake 0.5.0-rc3
+# ff-intake 0.6.0-experimental.3
 
 先读现有项目约定、用户最新目标/确认来源、授权边界、规格与计划，再查实际工作区/代码/未跟踪文件、相关运行证据和任务状态。没有源码或工具访问就标 unknown，不把口述完成当实际完成。
 
@@ -24,3 +24,7 @@ metadata:
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 跨会话决策恢复（按需）
+
+跨会话或复杂取舍容易丢失原始目标时，按 [决策索引契约](references/decision-index.md) 使用同一权威记录的轻索引。简单任务跳过；不新增技能、状态库或授权。Intake 只读，不创建或维护索引。

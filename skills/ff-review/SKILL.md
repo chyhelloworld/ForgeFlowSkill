@@ -2,9 +2,9 @@
 name: ff-review
 description: 独立审核 ForgeFlow 计划、目标与主流程、代码规范，分别给出可复核结论；用于实现前计划审核和变化后的质量核查，只读不修代码。
 metadata:
-  version: "0.5.0-rc3"
+  version: "0.6.0-experimental.3"
 ---
-# ff-review 0.5.0-rc3
+# ff-review 0.6.0-experimental.3
 
 选择 review_kind=plan | goal-mainflow | code。这是职责标签，不是承诺存在 CLI 参数。三类结论相互独立；小改可一位真正独立审核者覆盖适用项，不强制三人或三份长文档。
 

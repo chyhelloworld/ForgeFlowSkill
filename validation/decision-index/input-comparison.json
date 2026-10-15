@@ -1,0 +1,153 @@
+{
+  "tools/openspec/ff-spec.mjs": {
+    "baseline": "12039e1450e0f07d9ceafb5047aafea58209c56c788bba42e67202b58ba24548",
+    "experiment2": "12039e1450e0f07d9ceafb5047aafea58209c56c788bba42e67202b58ba24548",
+    "equal": true
+  },
+  "tools/openspec/ff-build.mjs": {
+    "baseline": "e271991d3991faddcd64b83f3008b8efad2060c682955b68ca138115735bcb5e",
+    "experiment2": "e271991d3991faddcd64b83f3008b8efad2060c682955b68ca138115735bcb5e",
+    "equal": true
+  },
+  "tools/openspec/ff-snapshot.mjs": {
+    "baseline": "25a66bbfb24c052aa5fc6e662f91f8f28988ba5f123ab6dfe6da4b4feb0de5c4",
+    "experiment2": "25a66bbfb24c052aa5fc6e662f91f8f28988ba5f123ab6dfe6da4b4feb0de5c4",
+    "equal": true
+  },
+  "tools/openspec/forgeflow.patch": {
+    "baseline": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+    "experiment2": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+    "equal": true
+  },
+  "tools/openspec/upstream.json": {
+    "baseline": "991ab48cbe8e2308df43bc4c784dd31463a418b8b150246901adf1e7d7c3750f",
+    "experiment2": "991ab48cbe8e2308df43bc4c784dd31463a418b8b150246901adf1e7d7c3750f",
+    "equal": true
+  },
+  "tools/openspec/upstream-v1.14.2.tar.gz": {
+    "baseline": "7b7fb6b208d18b1d87f717a3541455afb7ac360552ff3f65278e84fc618375ff",
+    "experiment2": "7b7fb6b208d18b1d87f717a3541455afb7ac360552ff3f65278e84fc618375ff",
+    "equal": true
+  },
+  "templates/optional-methods/writing-beats.md": {
+    "equal": true
+  },
+  "templates/optional-methods/writing-fragments.md": {
+    "equal": true
+  },
+  "templates/optional-methods/research.md": {
+    "equal": true
+  },
+  "templates/optional-methods/writing-shape.md": {
+    "equal": true
+  },
+  "templates/optional-methods/retro.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/change-metadata.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-research.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-retro.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-writing-shape.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-writing-fragments.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-writing-beats.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-blog-shape.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/policies/ff-blog-beats.json": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-research/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-retro/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-beats/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-fragments/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-shape/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-shape/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-beats/schema.yaml": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-research/templates/research.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-retro/templates/retro.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-beats/templates/writing-beats.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-beats/templates/writing-fragments.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-beats/templates/research.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-beats/templates/draft.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-fragments/templates/writing-fragments.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-shape/templates/writing-fragments.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-shape/templates/research.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-shape/templates/writing-shape.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-blog-shape/templates/draft.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-shape/templates/writing-shape.md": {
+    "equal": true
+  },
+  "templates/optional-methods/openspec/schemas/ff-writing-beats/templates/writing-beats.md": {
+    "equal": true
+  },
+  "skills": {
+    "baseline": 17,
+    "experiment2": 17
+  },
+  "reference-copies": {
+    "ff-intake": {
+      "reference": "b86fd253e1e404b9347acc19d5f4a55153282e637706f4a243064db32f461d5f",
+      "template": "26a0c91b3f3b0d286051de4aa2c37e411f9caf5b5dca673db6540d063a7102b5"
+    },
+    "ff-grill": {
+      "reference": "b86fd253e1e404b9347acc19d5f4a55153282e637706f4a243064db32f461d5f",
+      "template": "26a0c91b3f3b0d286051de4aa2c37e411f9caf5b5dca673db6540d063a7102b5"
+    },
+    "ff-research": {
+      "reference": "b86fd253e1e404b9347acc19d5f4a55153282e637706f4a243064db32f461d5f",
+      "template": "26a0c91b3f3b0d286051de4aa2c37e411f9caf5b5dca673db6540d063a7102b5"
+    },
+    "ff-handoff": {
+      "reference": "b86fd253e1e404b9347acc19d5f4a55153282e637706f4a243064db32f461d5f",
+      "template": "26a0c91b3f3b0d286051de4aa2c37e411f9caf5b5dca673db6540d063a7102b5"
+    }
+  }
+}

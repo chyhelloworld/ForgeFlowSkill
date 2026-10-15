@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "writing-shape",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/writing-shape.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    }
+  ]
+}

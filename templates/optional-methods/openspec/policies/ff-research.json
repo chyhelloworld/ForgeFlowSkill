@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "research",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/research.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    }
+  ]
+}

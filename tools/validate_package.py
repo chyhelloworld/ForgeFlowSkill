@@ -28,7 +28,7 @@ def validate(root):
         data=yaml.safe_load(match.group(1))
         need(data.get('name')==folder.name,f'{folder.name}: name mismatch')
         need(bool(data.get('description')),f'{folder.name}: empty description')
-        need(data.get('metadata',{}).get('version')=='0.5.0-rc3',f'{folder.name}: expected version 0.5.0-rc3')
+        need(data.get('metadata',{}).get('version')=='0.6.0-experimental.3',f'{folder.name}: expected version 0.6.0-experimental.3')
         need((folder/'NOTICE.md').is_file(),f'{folder.name}: missing NOTICE')
         need((folder/('LICENSE-IMPECCABLE' if folder.name=='ff-design' else 'LICENSE-MATT')).is_file(),f'{folder.name}: missing license')
         ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
@@ -41,11 +41,11 @@ def validate(root):
                 target=(file.parent/link.split('#')[0]).resolve()
                 need(target.is_relative_to(folder.resolve()),f'{file}: external local dependency {link}')
                 need(target.is_file(),f'{file}: broken link {link}')
-    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff'},'expected the twelve selected skills')
+    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats'},'expected twelve baseline plus five optional skills')
     cases=json.loads((root/'evaluations/scenarios.json').read_text())['cases']
     ids=[c['id'] for c in cases]
     need(len(ids)==len(set(ids)), 'duplicate evaluation case IDs')
-    need(set(['E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17','E18']).issubset(ids), 'missing required workflow or method scenarios')
+    need(set(['E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17','E18','E21','E22','E23','E24','E25']).issubset(ids), 'missing required workflow or method scenarios')
     installed={p.name for p in skills.iterdir() if p.is_dir()}
     for case in cases:
         need(bool(case.get('prompt')) and len(case.get('criteria', []))==3 and bool(case.get('critical_failures')), f"invalid scenario: {case.get('id')}")
@@ -58,7 +58,7 @@ def validate(root):
     manifest=root/'MANIFEST.json'
     if manifest.exists():
         manifest_data=json.loads(manifest.read_text())
-        need(manifest_data.get('version')=='0.5.0-rc3','manifest version mismatch')
+        need(manifest_data.get('version')=='0.6.0-experimental.3','manifest version mismatch')
         listed=manifest_data['files']
         actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p!=manifest and is_deliverable(p, root)}
         need(actual==set(listed),'manifest file set mismatch')

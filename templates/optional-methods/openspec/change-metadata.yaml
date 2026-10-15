@@ -1,0 +1,3 @@
+# Replace schema with ONE selected schema. Copy into the selected change as .openspec.yaml.
+schema: ff-research
+skip_specs: true
