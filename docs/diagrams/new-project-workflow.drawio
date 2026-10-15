@@ -1,23 +1,23 @@
 <mxfile host="app.diagrams.net">
   <diagram id="new-project-workflow" name="新项目 从目标到规格 票据 实施与交付">
-    <mxGraphModel dx="1400" dy="2040" grid="1" gridSize="10" page="1" pageWidth="1400" pageHeight="2040">
+    <mxGraphModel dx="1400" dy="2240" grid="1" gridSize="10" page="1" pageWidth="1400" pageHeight="2240">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="title" value="新项目 从目标到规格 票据 实施与交付" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=30;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="50" y="20" width="1300" height="40" />
         </mxCell>
-        <mxCell id="subtitle" value="九个独立责任接口，按需复用；箭头表示交接语义，不承诺宿主自动调度。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
+        <mxCell id="subtitle" value="九项主流程职责 + 三个可选方法；不是十二个必经阶段，也不承诺宿主自动调度。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="50" y="65" width="1300" height="40" />
         </mxCell>
-        <mxCell id="note0" value="轻量小修：允许内联规格和票据，但保留验收、授权、验证与相应独立审核。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="50" y="1920" width="1300" height="40" />
+        <mxCell id="note0" value="Diagnose 定位 → Implement 修复 → Review；TDD 逐条 red → green；大重构回 Plan/Review。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="2120" width="1300" height="40" />
         </mxCell>
-        <mxCell id="note1" value="获准变更只使受影响规格、票据、测试、审核和用户接受失效；未受影响证据可复用。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="50" y="1950" width="1300" height="40" />
+        <mxCell id="note1" value="轻量小修可内联规格与票据；不取消验收、授权、验证和与风险相称的独立审核。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="2150" width="1300" height="40" />
         </mxCell>
-        <mxCell id="note2" value="交付不等于自动合并、部署或发布；没有人工反馈时保留“待接受”。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
-          <mxGeometry as="geometry" x="50" y="1980" width="1300" height="40" />
+        <mxCell id="note2" value="Handoff 可在任何阶段发生；Deliver 是成果交付，不自动合并、部署或发布。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="2180" width="1300" height="40" />
         </mxCell>
         <mxCell id="a" value="明确目标、范围与授权&#10;新项目通常从 ff-grill 开始" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="140" width="660" height="90" />
@@ -54,6 +54,18 @@
         </mxCell>
         <mxCell id="l" value="ff-deliver 汇总与交付&#10;采用 PR 流程且获准时准备/提交 PR；否则文件交接&#10;PR 是审查载体，不替代规格" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1750" width="660" height="110" />
+        </mxCell>
+        <mxCell id="diag" value="ff-diagnose · 故障支线&#10;先复现、证据与定位&#10;修复回 Implement" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1210" width="290" height="120" />
+        </mxCell>
+        <mxCell id="tdd" value="ff-tdd · 实施内部&#10;一次一个业务行为&#10;red → green；重构先审" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="1070" y="1210" width="290" height="120" />
+        </mxCell>
+        <mxCell id="handoff" value="ff-handoff · 任意阶段暂停/换会话&#10;出站检查点：实际状态、证据、下一步&#10;不代表本轮已经最终交付" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="40" y="1930" width="550" height="110" />
+        </mxCell>
+        <mxCell id="receiver" value="接收方 ff-intake · 只读核验&#10;核对实际版本、脏状态与旧操作结果&#10;再按缺口恢复相应责任" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="810" y="1930" width="550" height="110" />
         </mxCell>
         <mxCell id="e0" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a" target="b">
           <mxGeometry as="geometry" relative="1">
@@ -178,6 +190,58 @@
         </mxCell>
         <mxCell id="label12" value="满足当前交付门槛" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="710" y="1697" width="360" height="30" />
+        </mxCell>
+        <mxCell id="e13" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.0;exitY=0.2727272727272727;exitDx=0;exitDy=0;entryX=1.0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="i" target="diag">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="370" y="1240" />
+            <mxPoint as="targetPoint" x="330" y="1240" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e14" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=1.0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.0;entryY=0.8181818181818182;entryDx=0;entryDy=0;" edge="1" parent="1" source="diag" target="i">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="330" y="1300" />
+            <mxPoint as="targetPoint" x="370" y="1300" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e15" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=1.0;exitY=0.2727272727272727;exitDx=0;exitDy=0;entryX=0.0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="i" target="tdd">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1030" y="1240" />
+            <mxPoint as="targetPoint" x="1070" y="1240" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.0;exitY=0.75;exitDx=0;exitDy=0;entryX=1.0;entryY=0.8181818181818182;entryDx=0;entryDy=0;" edge="1" parent="1" source="tdd" target="i">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1070" y="1300" />
+            <mxPoint as="targetPoint" x="1030" y="1300" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="1" source="i" target="handoff">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="370" y="1265" />
+            <mxPoint as="targetPoint" x="315" y="1930" />
+            <Array as="points">
+              <mxPoint x="350" y="1265" />
+              <mxPoint x="350" y="1885" />
+              <mxPoint x="315" y="1885" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label17" value="暂停时（非必经）" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="50" y="1875" width="360" height="30" />
+        </mxCell>
+        <mxCell id="e18" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=1.0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="handoff" target="receiver">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="590" y="1985" />
+            <mxPoint as="targetPoint" x="810" y="1985" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="label18" value="接手前核验" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="620" y="1947" width="360" height="30" />
         </mxCell>
       </root>
     </mxGraphModel>

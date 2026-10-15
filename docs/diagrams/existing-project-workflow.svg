@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 1400 1880" role="img" aria-label="已有项目 只读盘点后选择最短有效路径"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="1880" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2090" viewBox="0 0 1400 2090" role="img" aria-label="已有项目 只读盘点后选择最短有效路径"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="2090" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
 <text x="50" y="56" class="t">已有项目 只读盘点后选择最短有效路径</text>
-<text x="50" y="92" class="s">先接手，再决定补什么；旧文件存在不代表有效，旧绿灯不代表当前版本通过。</text>
+<text x="50" y="92" class="s">九项主流程职责按需复用；Diagnose / TDD / Handoff 是支线或方法，不绕过就绪与授权。</text>
 <rect x="370" y="140" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="172.0" text-anchor="middle" class="n">ff-intake 只读接手或恢复</text>
 <text x="700.0" y="202.0" text-anchor="middle" class="n">目标/规格/票据/代码/测试/脏工作区</text>
@@ -50,6 +50,22 @@
 <text x="700.0" y="1612.0" text-anchor="middle" class="n">ff-deliver 当前版本交接（PR 可选）</text>
 <text x="700.0" y="1642.0" text-anchor="middle" class="n">提供证据、短验收步骤、偏差和未验证项</text>
 <text x="700.0" y="1672.0" text-anchor="middle" class="n">人工接受单列；采用 PR 流程且获准才提交</text>
+<rect x="40" y="1230" width="290" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="185.0" y="1262.0" text-anchor="middle" class="n">ff-diagnose · 原因不明</text>
+<text x="185.0" y="1292.0" text-anchor="middle" class="n">复现与证据 → 根因</text>
+<text x="185.0" y="1322.0" text-anchor="middle" class="n">修复交回 Implement</text>
+<rect x="1070" y="1230" width="290" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1215.0" y="1262.0" text-anchor="middle" class="n">ff-tdd · Implement 内</text>
+<text x="1215.0" y="1292.0" text-anchor="middle" class="n">一个行为 red → green</text>
+<text x="1215.0" y="1322.0" text-anchor="middle" class="n">重构先审，获准再做</text>
+<rect x="40" y="1780" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="315.0" y="1812.0" text-anchor="middle" class="n">ff-handoff · 暂停/换模型/会话</text>
+<text x="315.0" y="1842.0" text-anchor="middle" class="n">出站检查点：状态、证据、下一步</text>
+<text x="315.0" y="1872.0" text-anchor="middle" class="n">与成果 Deliver 分开</text>
+<rect x="810" y="1780" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1085.0" y="1812.0" text-anchor="middle" class="n">接收方 ff-intake</text>
+<text x="1085.0" y="1842.0" text-anchor="middle" class="n">先只读核验实际状态与旧操作结果</text>
+<text x="1085.0" y="1872.0" text-anchor="middle" class="n">然后重新选择最短有效路径</text>
 <polyline points="700,250 700,330" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,440 700,490 195,490 195,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="195,680 195,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
@@ -59,17 +75,25 @@
 <polyline points="865,680 865,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,440 700,490 1200,490 1200,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="1200,680 1200,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
-<polyline points="370,1080 210,1080 210,1455 370,1455" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
-<text x="45" y="1190" class="e">实现有效：补审核</text>
-<polyline points="1030,1080 1190,1080 1190,1635 1030,1635" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
-<text x="1045" y="1000" class="e">证据及审核有效：直接交接</text>
 <polyline points="700,940 700,1020" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1140 700,1220" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="1180" class="e">已就绪且获准</text>
 <polyline points="700,1330 700,1400" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1510 700,1580" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="1555" class="e">证据与交付门槛满足</text>
-<text x="50" y="1785" class="s">恢复检查点：版本/脏状态、已完成与部分产物、运行中操作、阻塞、下一步与权限边界。</text>
-<text x="50" y="1815" class="s">变更影响分析：仅使受影响规格、票据、测试、审核与用户接受失效；重新验证后继续。</text>
-<text x="50" y="1845" class="s">ready 不等于授权；PR 不替代规格，不自动合并、部署或发布。</text>
+<polyline points="370,1080 350,1080 350,1455 370,1455" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="45" y="1130" class="e">实现有效：补审核</text>
+<polyline points="1030,1080 1380,1080 1380,1635 1030,1635" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="1040" y="1050" class="e">证据及审核有效：交付</text>
+<polyline points="370,1250 330,1250" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="330,1310 370,1310" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1030,1250 1070,1250" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1070,1310 1030,1310" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="370,1280 340,1280 340,1730 315,1730 315,1780" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="45" y="1740" class="e">暂停时（非必经）</text>
+<polyline points="590,1835 810,1835" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="620" y="1820" class="e">接手前核验</text>
+<text x="50" y="1995" class="s">原因不明的故障可用 Diagnose；已知低风险小修可内联，不强造固定数量的假设。</text>
+<text x="50" y="2025" class="s">有效规格、票据、独立审核及授权仍需核对；TDD 不替代真实主流程与独立审核。</text>
+<text x="50" y="2055" class="s">Handoff 出站 → Intake 入站核验；交付不等于自动合并、部署或发布。</text>
 </svg>

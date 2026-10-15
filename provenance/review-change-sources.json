@@ -1,5 +1,5 @@
 {
-  "user_source": "User requirement recorded on 2026-10-13T01:59:54Z (private conversation reference omitted)",
+  "user_source": "[private message identifier removed], 2026-10-13T01:59:54Z, relayed by parent",
   "scope": "Three separately evidenced review categories, including MECE and CRAP risk.",
   "verified_on": "2026-10-13",
   "primary_sources": [
@@ -15,8 +15,8 @@
     }
   ],
   "boundaries": "No product metrics claimed; official-source formula separated from user-specified thresholds.",
-  "additional_user_source": "User requirement recorded on 2026-10-13T02:02:53Z (private conversation reference omitted)",
+  "additional_user_source": "[private message identifier removed], 2026-10-13T02:02:53Z, relayed by parent",
   "additional_scope": "Prefer independent subagent reviews; preserve read-only scope and disclose independence gaps.",
-  "threshold_user_source": "User requirement recorded on 2026-10-13T02:07:45Z (private conversation reference omitted)",
+  "threshold_user_source": "[private message identifier removed], 2026-10-13T02:07:45Z, relayed by parent",
   "threshold_scope": "Per-method CRAP at most 50; around 10 or lower optimization goal. User-defined, not official universal threshold."
 }

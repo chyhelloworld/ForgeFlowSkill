@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-handoff"
+  short_description: "ForgeFlow 执行交接：项目内短检查点、真实状态与接收核对"
+  default_prompt: "使用 $ff-handoff 处理当前获准范围，复用有效产物并报告真实证据与限制。"

@@ -1,61 +1,56 @@
-# ForgeFlow 0.4.0-rc1 独立复核
+# ForgeFlow 0.4.1-rc1 独立复核
 
-日期：2026-10-15 UTC。审查者独立于包作者与手册作者；未修改其文件，只编写本报告。
+日期：2026-10-15 UTC。复核者独立于技能包、指南和模拟响应作者；只读检查作者产物，未修改技能包或指南。本文件是复核交付物。
 
-## 结论
+## 当前结论
 
-当前候选的职责划分、输入/输出与退出条件、规格/任务有效性分支、实施前独立计划审核、条件性 PR、轻量小修、权限边界、变更/恢复证据有效性，以及真实 CRAP 口径的文本契约复核通过。初审发现的 4 项已修复并复核。当前没有未关闭的阻断性发现。
+技能包静态内容与指南复核通过；发现项均已由作者修正并复核，当前检查范围内无未解决阻塞。此结论只覆盖下列检查，不代表原生安装、真实项目运行、全部场景执行或用户接受。
 
-这是静态契约与文档/图片审查结论，不是宿主安装、自动路由、真实工程执行、完整模型回归或用户接受通过。
+## 范围、来源和版本
 
-## 基线与范围
+- 基线：`../../ff-workflow-0.4.0-20261015/ff-workflow-skills-0.4.0-rc1/`。实际阅读九个 SKILL.md、Implement/Intake/Deliver 相关参考、路由，比较全部旧文件差异。
+- 候选：`../ff-workflow-skills-0.4.1-rc1/`。独立阅读三个新技能全部方法正文及参考、元数据、许可说明、旧技能增量、路由、来源映射、场景模板和验证器。
+- Matt 实际源：`../../matt-skills-manual-20261015/sources/skills/engineering/diagnosing-bugs/SKILL.md`、`engineering/tdd/{SKILL.md,tests.md,mocking.md}`、`productivity/handoff/SKILL.md`。五份源与候选 provenance 快照逐字节一致。
+- 冻结 MANIFEST SHA256：`fd43bb136086d2a65a17c6c36396438fa7494ecb80205caa413c6c14ba04a03e`。
 
-真实读取 0.3.2 的全部五个 SKILL，以及 Plan slicing、Deliver evidence/continuity/review-handoff/CRAP、Design visual-direction/design-craft。读取当前九个 SKILL、ROUTING、MIGRATION、INSTALL、Intake 状态契约、Review 规则、Deliver handoff；比较保留技能的基线差异及迁移的证据指引。阅读完整中文手册，实际查看两幅初版与修正版 PNG，并检查 SVG/draw.io 文本和连接结构。
+## 实际执行的检查
 
-保留原则核对：
-- Grill 继续保留用户原话、单一锚点、推荐前自审、按风险澄清、Mode 0/1/2 与记录权限。
-- Design/Prove 的真实可见方向、真人选择、动态连续性、真实输入与独立 critique 原则保留；仅改为新的实现/审核责任入口。
-- Plan 仍负责纵向切片与依赖，Review 独立给 plan 结论；不是把计划审核延迟到实现后。
-- Intake 只读对账，Spec 写行为与验收，Plan 写切片，Implement 实现和采证，Review 只读审核，Deliver 消费结论并交接。工程状态仍复用唯一载体。
-- 已有规格/票据 valid、stale、missing、unknown 分开；未知先核实。已实现部分可复用，已有有效计划审核不强制重跑。
-- 小修允许内联规格/单条任务与短审核，不强制九技能全程；只有影响方向的未知才进入 Design/Prove。
-- 仅规格或原型授权不能实施；ready 不等于授权。PR 取决于真实仓库流程与创建/更新授权，非开工前置，也不授权自动合并或部署。
-- 变化/恢复核对真实版本、未跟踪内容和旧命令状态；只使受影响证据与接受失效，不猜进程状态、不重复未知副作用、不丢弃他人修改。
-- CRAP 保留 CC²×(1−c)³+CC，同版本逐方法真实复杂度和覆盖率、覆盖口径、>50 阻断、约10优化目标；缺数据 NOT_MEASURED，不拿全仓平均或估计冒充测量。
+1. 独立运行包内 `tools/validate_package.py`，真实退出码 0：12 skills、29 local links、14 source hashes、129 manifest files、18 scenario templates；errors 为空。只证明静态结构与哈希。
+2. 基线全部 12 份技能 references 文件仍字节一致；旧九技能的实质变动为补充方法衔接，独立 Review、CRAP ≤50/目标约10、NOT_MEASURED、真实用户接受、平台证据与权限边界未被删去。
+3. Diagnose 明确真实用户症状与真实调用链，区别无关失败；最小实用复现、可证伪单变量、预算与间歇次数、可比性能基线、无复现 UNKNOWN、缺正确 seam 不冒充覆盖、探针清理与修后原场景回归均有实质步骤。未强制固定假设数或无限压力，不扩生产仪表权限。
+4. TDD 以已确认范围和公开行为为单位，独立预期、真实 red/green、无测试发现/依赖失败不算 red，拒绝全部测试先行与内部 mock 假证明。Matt 原文将重构留到 review；候选保留 Review 只读建议与范围门控，再由已获准 Implement 实施，不强制每轮重构，也不让审核者改代码。
+5. Handoff 为项目本地已授权短检查点，区别 Deliver，引用同一权威计划；包含 dirty/untracked、部分产物、任务最后可观察状态及权限。Mode 0 当前对话，无秘密/完整会话复制，无自动代理/任务；接收方 Intake 必须核实真实状态，跨环境可读性不能假定。
+6. 独立查看新项目/已有项目两张 PNG 的实际像素及 draw.io/SVG 生成边与文字。新方法为分支，不是十二阶段串行链；Spec/Plan/独立审核/readiness/授权门槛保留。TDD 图示重构表述修正后再次实际查看。HTML 浏览器布局/交互未由本复核执行；作者报告 Chromium socket 权限阻塞，不能将 PNG 观察当作 HTML 桌面/手机浏览器通过。
+7. 检查作者静态变异报告：有效基线与8个错误包检测均有明确结果。未由本复核重新执行这8次变异，不能称其为本复核独立重放，更不能用它证明模型行为。
 
-## 发现与修复复核
+## 发现及修复追踪
 
-1. R1：Design 仍引用旧 Deliver 的实现/三类审核责任。已改为 Implement/Review；直接重读并与基线 diff 确认。
-2. R2：旧项目图最初强制经过 Implement，与已完工作复用原则不符。已增加实现有效→补审核、证据及审核有效→直接交接分支；实际查看修正版 PNG。
-3. R3：图中 PR 条件最初只写仓库授权，未明确无 PR 流程的路径。两图现明确采用 PR 流程且获准才提交，及 PR 可选/文件交接；手册正文同步。
-4. R4：初版 draw.io 连接线没有 source/target，节点移动不会关联连接线。现全部边绑定现有节点，保留 entry/exit 与 waypoints。结构检查通过；未在实际 draw.io 编辑器中拖动操作，不能称原生编辑交互验证。
+- 指南原有 red→green→refactor 和泛化“按需重构”易成为必经循环或扩大范围。已由作者修复：red→green→受影响回归；重构先 Review 只读建议/范围门控，较大变化回 Plan/必要时 Spec。正文、示例及两图已复核。
+- 指南暂停/Handoff 原先默认保存，缺少就近 Mode 0 边界。作者最终明确 Mode 0 仅当前回复，模式1/2且对应记录授权才可落盘，通用工程写入授权不能覆盖 Mode 0；四处正文/示例与 HTML 已独立复核。
+- 路由“无需全部所需技能”歧义、三份新 YAML 简介截断已修复；独立确认最终包对应内容。
+- Diagnose 无关配置/导入/fixture 失败不算目标 red 的明确列举已补充，避免 standalone 使用时依赖隐含推论。
 
-## 直接执行的静态验证
+## 三个模拟响应的独立检查
 
-- 候选命令：python tools/validate_package.py <候选包根目录>。退出 0：9 skills、26 local_links、11 source_hashes、108 manifest_files、11 scenarios，无错误。
-- 基线同命令：退出 0：5 skills、28 local_links、11 source_hashes、68 manifest_files，无错误；基线清单保持一致。
-- 本审核首次无根路径参数的调用返回 list index out of range；这是审核命令用法错误，按 INSTALL 的显式路径重跑后通过，不把错误运行当成功。
-- 中文手册两条 PNG 链接均存在。两图 SVG 文本多重集与 draw.io 全部节点/标题/分支标签/页脚文本一致；new 图 13 条边、existing 图 15 条边均关联存在的节点。HTML 内嵌 SVG 与独立 SVG 内容完全一致。
-- 直接查看最终两幅 PNG：中文字可读，无明显截断或遮挡，分支条件、计划审核先于实施、条件性 PR 与不自动发布均可见。HTML 浏览器布局/筛选交互未由本审核执行；作者报告浏览器启动受阻，不能由嵌入一致性推出浏览器通过。
+检查 `method-behavior-smoke.md` 的完整输入与实际响应，报告 SHA256 `870cfd8f57a02f14b8a1bd788ef0068e01f6ec774da0b1075236fb81e8e1f8e2`；报告记录的全部9份加载文件哈希均与冻结包相同。
 
-## 两条模拟响应的独立复核
+- A：无访问的间歇导出重复。响应明确 NOT_REPRODUCED/UNKNOWN，无伪根因/修复/执行；候选仅作假说，索取最小症状和脱敏材料，并要求真实调用链及间歇频率。边界检查通过。
+- B：新增待办完成与刷新保持。响应拒绝先写全部函数测试，以两个可观察行为顺序 red/green；持久化不能由内存状态或 mock 保存代替；尚无项目则 NOT_RUN，先补真实前置。边界检查通过。
+- C：Mode 0、脏工作区、未知运行中导入、另一电脑接手。响应仅对话检查点，不假称传输/保存/进程结束，不重启导入或自动开代理；Intake 先核对真实文件/状态/权限，未提交改动不等于远程仓库已同步。边界检查通过。
 
-读取 intake-behavior-smoke.md 的完整输入、实际 next response 和 action plan 后判断：
-- A（新确认首页目标，旧规格/票过期）：响应先修受影响 Spec，再 Plan、独立 plan 审核、获准实现；保护无关结果，未把旧列表实现当新目标已满足。未访问仓库或伪造执行。针对本例通过。
-- B（声称规格/任务/审核有效，搜索空结果小修）：先只读核对用户陈述与版本，核实且授权覆盖后直接 Implement，复用有效计划审核；保留正常搜索回归和后续独立审核。未要求重跑九阶段，未声称真实测试已跑。针对本例通过。
-- 两例共享同一执行上下文和指令集；不是两个独立重复实验，也不是包内11案全部重放。仅支持这两次模拟回答的判断，不证明真实宿主可靠性、原生加载、真实目标工程状态或产品接受。
-- 记录的 8 个加载文件 SHA-256 已逐一重新计算并与当前候选对照，全部一致。
+以上为一个响应作者在同一上下文生成的三个合成案例，本复核是另一代理对这些响应的独立检查。不是三次隔离盲测，不是18项场景全量运行，不是统计可靠性证明，也没有真实产品命令、测试、上传或宿主集成。没有以关键词命中替代上面的语义检查；没有把新增入口误称为首次拥有全部这些能力，0.4.0 已有相关原则与部分机制。
 
-## 版本绑定
+## 未证范围
 
-候选 MANIFEST.json SHA-256：4f0bf383172a924b91482970300c366f43b5a00d4c9b77e46543ef2927f77598
+native-host-integration / Windows-PowerShell 实机 / 产品端到端 / 真实用户接受：NOT_RUN。HTML 浏览器桌面与手机交互：BLOCKED（作者报告，非本复核复现）。不授权安装、合并、部署、付费或扩大访问。
 
-- validation/intake-behavior-smoke.md：c2d948919db316d419b4c242bd20cbca4830119a99d94882da2ed3ab68c51401
-- guide/diagrams/existing-project-workflow.drawio：1b0b232e9edf9c358d4c59be7243507cd55a7f0e09c415d76259b5f5171a7ba9
-- guide/diagrams/existing-project-workflow.png：1c974b38ef19add856af913142a31ebd05e9843cbc59514a95baa4bafbc916b3
-- guide/diagrams/existing-project-workflow.svg：80928edd9da0ba7d7fd5ff519e6a4f76f04d41f012ba62ca98863046228f2429
-- guide/diagrams/new-project-workflow.drawio：578f1bb98b8e8382977774390f174ac96799a650b52949f08c8b5a42e92f240a
-- guide/diagrams/new-project-workflow.png：c42319396e69022b2dbfcb099a33472dbd44ad8d61587cf7163dfe13602d128a
-- guide/diagrams/new-project-workflow.svg：8d520275407c50235c981a4442888bfb792ec5ffca14a55a44d3cf80b98205a4
-- guide/FF-中文使用手册.md：802a7e22f1185db43ebce58b46ffa158f3188f6b2f7b50ce9e7266e4cef5a66f
-- guide/FF-离线图文手册.html：250af0d727fbaa2de38876a99fda3863673c47ef2aa8e94768dbebfcf3aa0cd6
+## 最终交付哈希与指南静态复验
+
+独立只读断言确认两份 SVG 精确嵌入 HTML、SVG 文字在 draw.io 中完整保存、HTML 内部锚点有效；这仍不是浏览器布局或交互测试。最终文件哈希：
+
+- `guide/FF-中文使用手册.md`: `4bd98c2fde4c41d944f079df621cd8f8fa8277f0a857e89092f454be5858d4b1`
+- `guide/FF-离线图文手册.html`: `0684b6bab633d58b80cac5d626fac16e06faa911b88554dfb525e6fb63337bec`
+- `guide/guide-qa.json`: `4178254d2e3ff7bd49de4beb9d819767239e70355ddb7156003b670a637d6b12`
+- `guide/diagrams/new-project-workflow.png`: `385e4c8c35937a1f473d6e70713c0cdcea5fbfb330421d3093bdb7950d5c59f0`
+- `guide/diagrams/existing-project-workflow.png`: `ab1f57d0219852a0bd4f72dfb7d4fa3ed6c1381e8e798ed8b6be92fdba4f8879`
+- `ff-workflow-skills-0.4.1-rc1/MANIFEST.json`: `fd43bb136086d2a65a17c6c36396438fa7494ecb80205caa413c6c14ba04a03e`

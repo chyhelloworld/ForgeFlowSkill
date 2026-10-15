@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-diagnose"
+  short_description: "ForgeFlow 故障诊断：复现真实症状，建立短反馈、因果证据与回归依据"
+  default_prompt: "使用 $ff-diagnose 处理当前获准范围，复用有效产物并报告真实证据与限制。"

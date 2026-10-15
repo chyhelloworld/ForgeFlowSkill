@@ -1,0 +1,28 @@
+{
+  "existing-project-workflow": {
+    "svg_text_count": 61,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 21,
+    "visual_png_inspected": true
+  },
+  "new-project-workflow": {
+    "svg_text_count": 58,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 19,
+    "visual_png_inspected": true
+  },
+  "html": {
+    "embedded_diagrams": 2,
+    "svg_exact_matches": true,
+    "external_asset_dependencies": 0,
+    "browser_layout_test": "BLOCKED: Chromium launch failed: socket() Operation not permitted; desktop/mobile browser interaction NOT_RUN",
+    "static_responsive_css_present": true
+  },
+  "guide": {
+    "skill_table_entries": 12,
+    "internal_navigation_targets": 22,
+    "local_image_links_valid": 2,
+    "host_command_registration": "NOT_TESTED"
+  },
+  "rendering": "PNG deterministic Pillow rendering from SVG elements; both PNGs visually inspected. No host integration tested."
+}

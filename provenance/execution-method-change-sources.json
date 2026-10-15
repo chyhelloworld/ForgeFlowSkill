@@ -1,0 +1,26 @@
+{
+  "version": "0.4.1-rc1",
+  "baseline": "0.4.0-rc1",
+  "matt_commit": "49dd158d1076134a641b33efb035946536778336",
+  "methods": {
+    "ff-diagnose": [
+      "engineering/diagnosing-bugs/SKILL.md"
+    ],
+    "ff-tdd": [
+      "engineering/tdd/SKILL.md",
+      "engineering/tdd/tests.md",
+      "engineering/tdd/mocking.md"
+    ],
+    "ff-handoff": [
+      "productivity/handoff/SKILL.md"
+    ]
+  },
+  "adaptations": [
+    "Selective methods, not compulsory phases",
+    "Existing goal and authorization take priority",
+    "Project-local authorized handoff, no global temporary output",
+    "No arbitrary hypothesis count or exhaustive tests",
+    "Review-stage refactoring is read-only recommendation before scoped implementation"
+  ],
+  "native_host_integration": "NOT_RUN"
+}

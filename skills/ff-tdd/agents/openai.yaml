@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-tdd"
+  short_description: "ForgeFlow 测试驱动：独立期望、真实接口和单行为红绿循环"
+  default_prompt: "使用 $ff-tdd 处理当前获准范围，复用有效产物并报告真实证据与限制。"

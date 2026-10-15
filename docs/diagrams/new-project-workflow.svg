@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2040" viewBox="0 0 1400 2040" role="img" aria-label="新项目 从目标到规格 票据 实施与交付"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="2040" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="2240" viewBox="0 0 1400 2240" role="img" aria-label="新项目 从目标到规格 票据 实施与交付"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="2240" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
 <text x="50" y="56" class="t">新项目 从目标到规格 票据 实施与交付</text>
-<text x="50" y="92" class="s">九个独立责任接口，按需复用；箭头表示交接语义，不承诺宿主自动调度。</text>
+<text x="50" y="92" class="s">九项主流程职责 + 三个可选方法；不是十二个必经阶段，也不承诺宿主自动调度。</text>
 <rect x="370" y="140" width="660" height="90" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="177.0" text-anchor="middle" class="n">明确目标、范围与授权</text>
 <text x="700.0" y="207.0" text-anchor="middle" class="n">新项目通常从 ff-grill 开始</text>
@@ -45,6 +45,22 @@
 <text x="700.0" y="1782.0" text-anchor="middle" class="n">ff-deliver 汇总与交付</text>
 <text x="700.0" y="1812.0" text-anchor="middle" class="n">采用 PR 流程且获准时准备/提交 PR；否则文件交接</text>
 <text x="700.0" y="1842.0" text-anchor="middle" class="n">PR 是审查载体，不替代规格</text>
+<rect x="40" y="1210" width="290" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="185.0" y="1247.0" text-anchor="middle" class="n">ff-diagnose · 故障支线</text>
+<text x="185.0" y="1277.0" text-anchor="middle" class="n">先复现、证据与定位</text>
+<text x="185.0" y="1307.0" text-anchor="middle" class="n">修复回 Implement</text>
+<rect x="1070" y="1210" width="290" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1215.0" y="1247.0" text-anchor="middle" class="n">ff-tdd · 实施内部</text>
+<text x="1215.0" y="1277.0" text-anchor="middle" class="n">一次一个业务行为</text>
+<text x="1215.0" y="1307.0" text-anchor="middle" class="n">red → green；重构先审</text>
+<rect x="40" y="1930" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="315.0" y="1962.0" text-anchor="middle" class="n">ff-handoff · 任意阶段暂停/换会话</text>
+<text x="315.0" y="1992.0" text-anchor="middle" class="n">出站检查点：实际状态、证据、下一步</text>
+<text x="315.0" y="2022.0" text-anchor="middle" class="n">不代表本轮已经最终交付</text>
+<rect x="810" y="1930" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1085.0" y="1962.0" text-anchor="middle" class="n">接收方 ff-intake · 只读核验</text>
+<text x="1085.0" y="1992.0" text-anchor="middle" class="n">核对实际版本、脏状态与旧操作结果</text>
+<text x="1085.0" y="2022.0" text-anchor="middle" class="n">再按缺口恢复相应责任</text>
 <polyline points="700,230 700,290" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,390 700,470" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,580 700,650" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
@@ -65,7 +81,15 @@
 <polyline points="700,1500 700,1570" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1680 700,1750" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="1720" class="e">满足当前交付门槛</text>
-<text x="50" y="1945" class="s">轻量小修：允许内联规格和票据，但保留验收、授权、验证与相应独立审核。</text>
-<text x="50" y="1975" class="s">获准变更只使受影响规格、票据、测试、审核和用户接受失效；未受影响证据可复用。</text>
-<text x="50" y="2005" class="s">交付不等于自动合并、部署或发布；没有人工反馈时保留“待接受”。</text>
+<polyline points="370,1240 330,1240" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="330,1300 370,1300" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1030,1240 1070,1240" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1070,1300 1030,1300" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="370,1265 350,1265 350,1885 315,1885 315,1930" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="50" y="1898" class="e">暂停时（非必经）</text>
+<polyline points="590,1985 810,1985" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="620" y="1970" class="e">接手前核验</text>
+<text x="50" y="2145" class="s">Diagnose 定位 → Implement 修复 → Review；TDD 逐条 red → green；大重构回 Plan/Review。</text>
+<text x="50" y="2175" class="s">轻量小修可内联规格与票据；不取消验收、授权、验证和与风险相称的独立审核。</text>
+<text x="50" y="2205" class="s">Handoff 可在任何阶段发生；Deliver 是成果交付，不自动合并、部署或发布。</text>
 </svg>
