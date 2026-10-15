@@ -1,0 +1,46 @@
+{
+  "source": "tools/spec_lifecycle.py",
+  "sha256": "7af1cfec29ebc8afb2af201147e3e69afbf59fcd951f611c266c6111b827e2a1",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "scope": "Only three changed legacy write guards; prior read-only validator functions excluded.",
+  "method": "AST verifies each exact measured function is one raise statement, cyclomatic complexity 1. CPython trace observed executed lines divided by dis.findlinestarts executable lines excluding definition. CRAP=CC^2*(1-coverage)^3+CC.",
+  "tests_passed": true,
+  "functions": [
+    {
+      "function": "transition",
+      "cc": 1,
+      "executable_lines": [
+        159
+      ],
+      "hit_lines": [
+        159
+      ],
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "atomic_write",
+      "cc": 1,
+      "executable_lines": [
+        163
+      ],
+      "hit_lines": [
+        163
+      ],
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "mutate",
+      "cc": 1,
+      "executable_lines": [
+        167
+      ],
+      "hit_lines": [
+        167
+      ],
+      "coverage": 1.0,
+      "crap": 1.0
+    }
+  ]
+}

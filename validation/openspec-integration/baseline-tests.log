@@ -1,0 +1,441 @@
+
+ RUN  v4.1.11 test-run/baseline
+
+ ❯ test/core/store/registry.test.ts (13 tests | 1 failed) 122ms
+     × commits prepared setup against the latest registry state 13ms
+ ❯ test/cli-e2e/store-lifecycle.test.ts (8 tests | 7 failed) 964ms
+     × machine A: setup produces a committed, clonable repo 175ms
+     × machine A: doctor and list see a healthy store with git facts 162ms
+     × machine A: works a change through archive from the project repo 218ms
+     × machine B: a clone registers without ceremony and reads promoted specs 3ms
+     × machine B: completes its own change through archive in the clone 228ms
+     × end state is just normal OpenSpec files in both checkouts 3ms
+     × setup fails before creating anything when Git identity is missing 164ms
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+ ❯ test/commands/store-git.test.ts (6 tests | 3 failed) 1278ms
+     × defaults to Git without prompting in interactive setup 85ms
+     × commits the full store shape when initializing Git on an existing root 181ms
+     × keeps pre-staged user files out of the setup commit 196ms
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Cloning into 'test-fixture/openspec-store-remote-WbKfzu/home/openspec/team-context'...
+done.
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+ ❯ test/commands/store-remote.test.ts (19 tests | 7 failed) 4945ms
+       × records --remote in store.yaml inside the initial commit 175ms
+       × refuses --remote when store.yaml already exists, naming the hand-edit 172ms
+       × produces byte-identical store.yaml without --remote 168ms
+       × prints the canonical remote in the sharing guidance 165ms
+       × keeps setup reruns as no-ops that preserve the observed remote 172ms
+       × reports already_registered when a later origin merely backfills the record 152ms
+       × shows no Remote noise for stores without remotes 323ms
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 18 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: setup produces a committed, clonable repo
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:204:29
+    202|     );
+    203|
+    204|     expect(result.exitCode).toBe(0);
+       |                             ^
+    205|     const payload = JSON.parse(result.stdout);
+    206|     expect(payload.git).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: doctor and list see a healthy store with git facts
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:241:44
+    239|     const list = await runCLI(['store', 'list', '--json'], { env: mach…
+    240|     expect(list.exitCode).toBe(0);
+    241|     expect(JSON.parse(list.stdout).stores).toHaveLength(1);
+       |                                            ^
+    242|
+    243|     const doctor = await runCLI(['store', 'doctor', STORE_ID, '--json'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: works a change through archive from the project repo
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:273:30
+    271|       { env: machineA, cwd: projectDir }
+    272|     );
+    273|     expect(created.exitCode).toBe(0);
+       |                              ^
+    274|     const createdPayload = JSON.parse(created.stdout);
+    275|     expect(createdPayload.root).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: a clone registers without ceremony and reads promoted specs
+Error: spawn git ENOENT
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: completes its own change through archive in the clone
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:405:30
+    403|       { env: machineB, cwd: base }
+    404|     );
+    405|     expect(created.exitCode).toBe(0);
+       |                              ^
+    406|     expect(created.stderr).toContain(`Using OpenSpec root: ${STORE_ID}…
+    407|     expect(created.stdout).toContain(`--store ${STORE_ID}`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > end state is just normal OpenSpec files in both checkouts
+Error: ENOENT: no such file or directory, scandir 'test-fixture/openspec-store-lifecycle-13SMat/machine-a/team-context'
+ ❯ walk test/cli-e2e/store-lifecycle.test.ts:89:21
+     87|
+     88|   async function walk(current: string): Promise<void> {
+     89|     const entries = await fs.readdir(current, { withFileTypes: true });
+       |                     ^
+     90|     for (const entry of entries) {
+     91|       const absolute = path.join(current, entry.name);
+ ❯ listRelativeEntries test/cli-e2e/store-lifecycle.test.ts:103:3
+ ❯ test/cli-e2e/store-lifecycle.test.ts:466:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/18]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > setup fails before creating anything when Git identity is missing
+AssertionError: expected 'store_setup_inside_git_repo' to be 'store_git_identity_missing' // Object.is equality
+
+Expected: "store_git_identity_missing"
+Received: "store_setup_inside_git_repo"
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:506:36
+    504|     expect(result.exitCode).toBe(1);
+    505|     const payload = JSON.parse(result.stdout);
+    506|     expect(payload.status[0].code).toBe('store_git_identity_missing');
+       |                                    ^
+    507|     expect(payload.status[0].fix).toContain('git config --global user.…
+    508|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/18]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > defaults to Git without prompting in interactive setup
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ test/commands/store-git.test.ts:130:21
+    128|
+    129|     // No Git prompt: Git is the default, and the summary reflects it.
+    130|     expect(confirm).toHaveBeenCalledTimes(1);
+       |                     ^
+    131|     expect(confirm).toHaveBeenNthCalledWith(1, {
+    132|       message: 'Create this store?',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/18]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > commits the full store shape when initializing Git on an existing root
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-git.test.ts:160:29
+    158|     );
+    159|
+    160|     expect(result.exitCode).toBe(0);
+       |                             ^
+    161|     const payload = parseJson(result);
+    162|     expect(payload.git).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/18]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > keeps pre-staged user files out of the setup commit
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-git.test.ts:311:29
+    309|     );
+    310|
+    311|     expect(result.exitCode).toBe(0);
+       |                             ^
+    312|     expect(parseJson(result).git.committed).toBe(true);
+    313|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > records --remote in store.yaml inside the initial commit
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:91:31
+     89|         { cwd: tempDir, env }
+     90|       );
+     91|       expect(result.exitCode).toBe(0);
+       |                               ^
+     92|
+     93|       const committed = git(storeRoot, 'show', 'HEAD:.openspec-store/s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > refuses --remote when store.yaml already exists, naming the hand-edit
+Error: ENOENT: no such file or directory, open 'test-fixture/openspec-store-remote-nuvzYL/retrofit-context/.openspec-store/store.yaml'
+ ❯ test/commands/store-remote.test.ts:118:25
+    116|         env,
+    117|       });
+    118|       const before = fs.readFileSync(path.join(storeRoot, '.openspec-s…
+       |                         ^
+    119|
+    120|       const result = await runCLI(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > produces byte-identical store.yaml without --remote
+Error: ENOENT: no such file or directory, open 'test-fixture/openspec-store-remote-U7stUe/plain-context/.openspec-store/store.yaml'
+ ❯ test/commands/store-remote.test.ts:140:12
+    138|       });
+    139|       expect(
+    140|         fs.readFileSync(path.join(storeRoot, '.openspec-store', 'store…
+       |            ^
+    141|       ).toBe('version: 1\nid: plain-context\n');
+    142|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > prints the canonical remote in the sharing guidance
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:166:31
+    164|         { cwd: tempDir, env }
+    165|       );
+    166|       expect(result.exitCode).toBe(0);
+       |                               ^
+    167|       expect(result.stdout).toContain(`Share it: teammates clone ${TES…
+    168|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > keeps setup reruns as no-ops that preserve the observed remote
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:283:30
+    281|         { cwd: tempDir, env }
+    282|       );
+    283|       expect(first.exitCode).toBe(0);
+       |                              ^
+    284|       expect(await registryRemote('rerun-context')).toBe(TEST_NET_URL);
+    285|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > reports already_registered when a later origin merely backfills the record
+Error: spawnSync git ENOENT
+ ❯ git test/commands/store-remote.test.ts:42:12
+     40|
+     41|   function git(cwd: string, ...args: string[]): string {
+     42|     return execFileSync('git', args, { cwd, env: { ...process.env, ...…
+       |            ^
+     43|   }
+     44|
+ ❯ test/commands/store-remote.test.ts:306:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/18]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > doctor and resolution > shows no Remote noise for stores without remotes
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:476:30
+    474|       });
+    475|       const human = await runCLI(['store', 'doctor', 'quiet-context'],…
+    476|       expect(human.exitCode).toBe(0);
+       |                              ^
+    477|       expect(human.stdout).not.toContain('Remote:');
+    478|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/18]⎯
+
+ FAIL  test/core/store/registry.test.ts > store registry facade > commits prepared setup against the latest registry state
+StoreError: Store setup path is inside another Git repository: /tmp
+ ❯ assertSetupPathIsNotNestedInGitRepo src/core/store/operations.ts:324:9
+    322|   if (!containingGitRoot) return;
+    323|
+    324|   throw new StoreError(
+       |         ^
+    325|     `Store setup path is inside another Git repository: ${containingGi…
+    326|     'store_setup_inside_git_repo',
+ ❯ prepareSetupPlan src/core/store/operations.ts:486:3
+ ❯ prepareStoreSetup src/core/store/operations.ts:563:16
+ ❯ test/core/store/registry.test.ts:207:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/18]⎯
+
+
+ Test Files  4 failed (4)
+      Tests  18 failed | 28 passed (46)
+   Start at  13:47:52
+   Duration  5.52s (transform 791ms, setup 0ms, import 1.14s, tests 7.31s, environment 0ms)
+

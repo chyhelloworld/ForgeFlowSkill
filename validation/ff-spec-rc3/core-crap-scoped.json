@@ -1,0 +1,2066 @@
+{
+  "generatedAt": "2026-10-15T07:26:11.978Z",
+  "coverageDir": "external-evidence/coverage-scoped",
+  "buildRoot": "tools/openspec/.build",
+  "helperRoot": "tools/openspec",
+  "method": {
+    "complexity": "Actual installed ESLint classic complexity rule, threshold zero, on compiled JavaScript AST; function node ranges retained. No estimated branch count.",
+    "coverage": "Exact V8 function start/end matching. Union observed executions across processes; most-specific V8 range wins. Split at every observed range boundary; conservative coverage is min(executed segment fraction, executed byte fraction). Missing observations are NOT_MEASURED.",
+    "formula": "CRAP = CC^2 * (1 - coverage)^3 + CC; hard limit 50, target 10.",
+    "limitations": "V8 range-segment coverage is not Istanbul statement/branch coverage. Unobserved branch boundaries cannot be inferred. Built-source hashes are recorded at measurement time; V8 JSON does not contain a source hash, so caller must ensure unchanged build during collection. Nested callbacks are measured separately. NOT_MEASURED is not a pass."
+  },
+  "coverageFiles": [
+    {
+      "file": "external-evidence/coverage-10-1792048832477-0.json",
+      "sha256": "6d8d3f44d06cb3ba3ca1a5ac7bbe06a43814de12c307882e7b29f9fe5e663257"
+    },
+    {
+      "file": "external-evidence/coverage-100-1792049125383-0.json",
+      "sha256": "1303231ce26f71a9f5a6d00dc38d078707a67fe28e0bbb36c5980a6f6feb7584"
+    },
+    {
+      "file": "external-evidence/coverage-1000-1792048870130-0.json",
+      "sha256": "23dee1103dd56b473ff03ef36eb4fb93481c73ebb3d0257226b0b59987fbdc2d"
+    },
+    {
+      "file": "external-evidence/coverage-103-1792048974978-0.json",
+      "sha256": "bc503892567d5c4a48bfcc4d81acc839b62b1ea1e00b36f7a0d2361ef60ff32c"
+    },
+    {
+      "file": "external-evidence/coverage-108-1792048846477-0.json",
+      "sha256": "177b310252306119f04821acb8d1ba03694cba53c59dae39ec2e44058c5d1517"
+    },
+    {
+      "file": "external-evidence/coverage-112-1792049125641-0.json",
+      "sha256": "c4b954f01587649afeb1b1e7b9362a5a000a1e9c90773794f0bf497d5d4ac8d6"
+    },
+    {
+      "file": "external-evidence/coverage-115-1792048975066-0.json",
+      "sha256": "08f2baa0c1430633249ada5687f333228598eddc73ef0ab481d873454666894e"
+    },
+    {
+      "file": "external-evidence/coverage-120-1792048846815-0.json",
+      "sha256": "b25ee036514f145b37492759b823b338be8d859a67099188311d110306b5334d"
+    },
+    {
+      "file": "external-evidence/coverage-124-1792049125797-0.json",
+      "sha256": "95c019e743066a82ddf0be5ec6d332521c68988682ceaf786dd1732d631e9925"
+    },
+    {
+      "file": "external-evidence/coverage-127-1792048975152-0.json",
+      "sha256": "60337693f0cb1ebb0fd28430fc87d3a75a663ac821cc78334442b74acaa4fce6"
+    },
+    {
+      "file": "external-evidence/coverage-13-1792048871302-0.json",
+      "sha256": "e646147eed76b526758c568ef0dff71ddbcdb744bfc2eaecb43884f11157bc85"
+    },
+    {
+      "file": "external-evidence/coverage-132-1792048847131-0.json",
+      "sha256": "d5fa0d1a1b85ae6769516cb126eeba4a0e3c29676c28080fa7216c81192c072e"
+    },
+    {
+      "file": "external-evidence/coverage-132-1792049126062-0.json",
+      "sha256": "42d597616567dded052fd9344c03583e75d1b5fe5225a5968288816d69d98364"
+    },
+    {
+      "file": "external-evidence/coverage-140-1792048975404-0.json",
+      "sha256": "fe96e56064701ca5a9190ec8cc1ffcc3a56a99109f5c185b2519be904dfc5120"
+    },
+    {
+      "file": "external-evidence/coverage-140-1792049126178-0.json",
+      "sha256": "30873ceb0310d9a0163269187c2592112c7c54f552536200ff6d542170806b32"
+    },
+    {
+      "file": "external-evidence/coverage-144-1792048847464-0.json",
+      "sha256": "657fba6ec559b94dca05d2a36f300e10dbc56d3c0c9eff8827a3c430f4460a72"
+    },
+    {
+      "file": "external-evidence/coverage-148-1792048975625-0.json",
+      "sha256": "072b2435aa8c51d8b5ab5d929d727e5541de97093be9a328c9c93cb283563e59"
+    },
+    {
+      "file": "external-evidence/coverage-148-1792049126339-0.json",
+      "sha256": "779bb5956ffccf0862855d098e7b206fc0c5b0b42826e8b02383160590c38b45"
+    },
+    {
+      "file": "external-evidence/coverage-15-1792049123448-0.json",
+      "sha256": "50beb2ecac228aa1ad842183b83ae93f4c05a4340c06ceeb2cc74a05e9ba103e"
+    },
+    {
+      "file": "external-evidence/coverage-156-1792048847759-0.json",
+      "sha256": "e59ba19f2b717ebb68e0a856a7c0dad8b96d671de5615a2345bbc09f0177203e"
+    },
+    {
+      "file": "external-evidence/coverage-156-1792048975844-0.json",
+      "sha256": "7c131b1561558990050d899e89df724c00eb9fbf88792ea46260c710bad68cb8"
+    },
+    {
+      "file": "external-evidence/coverage-156-1792049126684-0.json",
+      "sha256": "2c788badef30fc16d9c9d4abd4fa1d4d7ffe1595bb29bd1a8cdb7362027b6cf8"
+    },
+    {
+      "file": "external-evidence/coverage-16-1792048843741-0.json",
+      "sha256": "1571edde9459fe7db07a84c5d78016e7f885d1a2a45318201bda48137fccf217"
+    },
+    {
+      "file": "external-evidence/coverage-164-1792048976053-0.json",
+      "sha256": "23c18bf069166f29a4cf56cbfb4df726b37d87c22749a0ff0c9ec909ec826242"
+    },
+    {
+      "file": "external-evidence/coverage-168-1792048848085-0.json",
+      "sha256": "bef3d7216910d9cb973d18362a832451059ddf0792799bdf557b325efb9bdaca"
+    },
+    {
+      "file": "external-evidence/coverage-168-1792049126991-0.json",
+      "sha256": "2241f8265dc21a2ca59284612b5fdd11d85df280f585d2bf20e30d30518cc2a4"
+    },
+    {
+      "file": "external-evidence/coverage-172-1792048976259-0.json",
+      "sha256": "593eae2f515ccbe028ff66d3149e2bf268cd9a44fe8f2837c7d64af840a129c3"
+    },
+    {
+      "file": "external-evidence/coverage-180-1792048848372-0.json",
+      "sha256": "f227edf6ee25e1a9f8726ead4a29d06c7b9b778063d64817eda52abcbcd85f10"
+    },
+    {
+      "file": "external-evidence/coverage-180-1792048976462-0.json",
+      "sha256": "cc40da9611082421308559a090a056f66a35e67ec4a1045af3218690212dd1be"
+    },
+    {
+      "file": "external-evidence/coverage-180-1792049127331-0.json",
+      "sha256": "544f922698dfbe8d30e04fb6782072035d0950fdbdfdfd636e67b8709778e81e"
+    },
+    {
+      "file": "external-evidence/coverage-188-1792048976670-0.json",
+      "sha256": "568e6cf94f072450ed3a567cac1e149df81c5dbc9932e785543f1c91a70a1a95"
+    },
+    {
+      "file": "external-evidence/coverage-19-1792048973240-0.json",
+      "sha256": "320659bada727fc27dec9f1a3771698d045af0499646a282bae942a5d351e3e2"
+    },
+    {
+      "file": "external-evidence/coverage-192-1792048848697-0.json",
+      "sha256": "9bc4c5916d961903944bb61b9a11632b052e3971ab529d3c68d8b8eb0f6daa04"
+    },
+    {
+      "file": "external-evidence/coverage-192-1792049127609-0.json",
+      "sha256": "5726b29d24aac4396f07b292eccc3ca9bb01a5e7e040d6f065d30f129ef3b927"
+    },
+    {
+      "file": "external-evidence/coverage-196-1792048976889-0.json",
+      "sha256": "b1307048ba1f7334e96693dc82bbd68e3bd8b1b06a69f60324eaebef8f52c3e8"
+    },
+    {
+      "file": "external-evidence/coverage-204-1792048849024-0.json",
+      "sha256": "038b1c76bd1059d3ce27f29fe5724e11df5052ca3c2557dd345219110b5da102"
+    },
+    {
+      "file": "external-evidence/coverage-204-1792048977088-0.json",
+      "sha256": "7e4422fa92c10220519081904ecb3374d60d75ee6693423d896850d1b4049a9f"
+    },
+    {
+      "file": "external-evidence/coverage-21-1792048871370-0.json",
+      "sha256": "af32112604520725275acb1a5419f6caa37f2a8ccf9195577d7dc301472a73b3"
+    },
+    {
+      "file": "external-evidence/coverage-212-1792048977292-0.json",
+      "sha256": "b317a3b8f0658be4761dd629325fb86370ca6c3b09d0ad6dc72616a70b68d10f"
+    },
+    {
+      "file": "external-evidence/coverage-216-1792048849357-0.json",
+      "sha256": "25228c6731fa33827fdb9ee97d667c23005fb5900503db2b40f6cfbb1bffbebd"
+    },
+    {
+      "file": "external-evidence/coverage-220-1792048977497-0.json",
+      "sha256": "2a3dbdcbed06bb17ba281025d5960aa26ac35a56d538edc875cbcb1165b2d09d"
+    },
+    {
+      "file": "external-evidence/coverage-228-1792048849657-0.json",
+      "sha256": "2e2f5ebe253faecf9ba09fc344674c4890d7501bc276585beb9acc57b8b31202"
+    },
+    {
+      "file": "external-evidence/coverage-228-1792048977701-0.json",
+      "sha256": "4f313f2153cbee09d84094d0b121f3dd59a1d14ef51bc0e811b245ac43a38536"
+    },
+    {
+      "file": "external-evidence/coverage-236-1792048977893-0.json",
+      "sha256": "705d9ae1502d06efb5be813d76d9abad998a8827beddecf4aed5e8fcb4f831d2"
+    },
+    {
+      "file": "external-evidence/coverage-24-1792048844045-0.json",
+      "sha256": "9cb23722f38b6960b8453c4e3041282ab49fd2845cf0129031acfd0b002ae12d"
+    },
+    {
+      "file": "external-evidence/coverage-240-1792048849998-0.json",
+      "sha256": "7515af38ae0c17db9dd387e49124036ddb970434744bb305b2d3078da61129b4"
+    },
+    {
+      "file": "external-evidence/coverage-244-1792048978231-0.json",
+      "sha256": "dd80a74bfcc3f2bafab89f3dcccf94e4753e97aec84c35911d0e6425720b9b7a"
+    },
+    {
+      "file": "external-evidence/coverage-252-1792048850306-0.json",
+      "sha256": "8bcebe3549eeb014166a487b21e963b89033eacad14c9fa021ebcb3f2ac11236"
+    },
+    {
+      "file": "external-evidence/coverage-256-1792048978546-0.json",
+      "sha256": "3673b1edce7a0266d50fd0bb6a41343ec1ea999d5b5d490205015381319a59d4"
+    },
+    {
+      "file": "external-evidence/coverage-264-1792048850642-0.json",
+      "sha256": "2665c2b8cff812b042ba5b712c46a74a2e1a787e1d57fc227cb96c8aaccf0f99"
+    },
+    {
+      "file": "external-evidence/coverage-268-1792048978877-0.json",
+      "sha256": "b247150c216dd9b70a437307c95eb5086724d3a9d55e64dd47f4663fb65b841c"
+    },
+    {
+      "file": "external-evidence/coverage-272-1792049128823-0.json",
+      "sha256": "b8a17e0e619ed86dcd3cc1db0ab8a31bb72bab95f4d9df8d835c5c11d6b68e05"
+    },
+    {
+      "file": "external-evidence/coverage-276-1792048850946-0.json",
+      "sha256": "49a93ada5cc028238d7deda369e8abb5787b40c5d4cbe2f61e00f9a85815607c"
+    },
+    {
+      "file": "external-evidence/coverage-284-1792049129072-0.json",
+      "sha256": "3e65648d3a4bd5a33efcab5491342bd3dceba01e8cf6dc19e13fa6ce1a1fbc46"
+    },
+    {
+      "file": "external-evidence/coverage-288-1792048851278-0.json",
+      "sha256": "7dc598db6ea3f804b80e08692d55312a008ad018e11d61555ed6c0456fd781f9"
+    },
+    {
+      "file": "external-evidence/coverage-29-1792048871768-0.json",
+      "sha256": "5a2865c8f304ebcd1aa0cd57362df746d6d052f9dd1317f1d84a313b861dc94f"
+    },
+    {
+      "file": "external-evidence/coverage-300-1792048851569-0.json",
+      "sha256": "6e5519846b87fa4040707b0964fe8641790213a0add7c20b71159136d3ed75a9"
+    },
+    {
+      "file": "external-evidence/coverage-31-1792048973525-0.json",
+      "sha256": "b01ad9655ee6d46267e0fe08573296ff222415a51f30130cff720199b9217f9f"
+    },
+    {
+      "file": "external-evidence/coverage-312-1792048851892-0.json",
+      "sha256": "3487dd81a81021d98db4f100c1c931e972049f37fe194cf1706afd1ea2eff88e"
+    },
+    {
+      "file": "external-evidence/coverage-324-1792048852195-0.json",
+      "sha256": "830b26522d88724705c57582916dca1160425bbc51fadd46b3ea40b5caf4361c"
+    },
+    {
+      "file": "external-evidence/coverage-336-1792048852553-0.json",
+      "sha256": "0ac9aed8e777a85ca274a552ffb766f0af6d1f0a3407b256475b3d9c56caf492"
+    },
+    {
+      "file": "external-evidence/coverage-348-1792048852855-0.json",
+      "sha256": "db1f338dad00fb8d90b35c42533461b999dd9019c60f3bdc4c3b9423867c4a69"
+    },
+    {
+      "file": "external-evidence/coverage-36-1792048844358-0.json",
+      "sha256": "79f6704aa3256217b9e9cf5f558147bea05b84520e2c938e55ce7c6b048dc902"
+    },
+    {
+      "file": "external-evidence/coverage-360-1792048853156-0.json",
+      "sha256": "42d2564b108e3ad95bef68ac0aad7c29d112467ab6effa23795d73cf31dd2b53"
+    },
+    {
+      "file": "external-evidence/coverage-372-1792048853454-0.json",
+      "sha256": "354f3dd402cd0e2fe9fe78bde243381eaf130df378e245cdefeb08bad32c3fc7"
+    },
+    {
+      "file": "external-evidence/coverage-384-1792048853774-0.json",
+      "sha256": "2a3e362fb344cb261c156cac9b39d3b844da4131e8b6fd2f121c6824b3c01a24"
+    },
+    {
+      "file": "external-evidence/coverage-396-1792048854103-0.json",
+      "sha256": "154d0d00984f05b6bd15d87b5ed3f73823273cba3c47f44a86a580226d0cd7b5"
+    },
+    {
+      "file": "external-evidence/coverage-408-1792048854416-0.json",
+      "sha256": "c9e2e830b0005a7dc81487264ababc44a7609caf99093d033524b493af7f0a8f"
+    },
+    {
+      "file": "external-evidence/coverage-41-1792048871741-0.json",
+      "sha256": "938cfa785e670b0193b182412e493e67a444171b27995cbc031177faeebd5569"
+    },
+    {
+      "file": "external-evidence/coverage-420-1792048854712-0.json",
+      "sha256": "739f7c68ee83d36abe0fdfa342bc0ec250aeff13a3c5f1572febb5b29ee72a78"
+    },
+    {
+      "file": "external-evidence/coverage-43-1792048973780-0.json",
+      "sha256": "fb6d5fe8a4c2d89f9fe0dc438a8e507d45d5ccdcb9e83b423eaff327aaf67416"
+    },
+    {
+      "file": "external-evidence/coverage-432-1792048854999-0.json",
+      "sha256": "6a4666e2fcc3c9fb6aa759bb2e35c1e1170350ad3600e500babc14af6890b538"
+    },
+    {
+      "file": "external-evidence/coverage-44-1792049123945-0.json",
+      "sha256": "ced82c336fdb5ce7aefe718cc7e513228447776f0364ae8716d42824647fda37"
+    },
+    {
+      "file": "external-evidence/coverage-444-1792048855287-0.json",
+      "sha256": "b94c28017bc80b46be9566d07ee5f1b42f2a0ddaf22608b1e78d1eabdf7ca02d"
+    },
+    {
+      "file": "external-evidence/coverage-456-1792048855578-0.json",
+      "sha256": "ff19f4eb0103714c8c8a70e1cc48fc27c0e0ccdd35ff161eca79105c5e69c0cc"
+    },
+    {
+      "file": "external-evidence/coverage-468-1792048855905-0.json",
+      "sha256": "c5484423a056d8c919495358a3092112748db6fb867e38bbc6fe806048fb7756"
+    },
+    {
+      "file": "external-evidence/coverage-48-1792048844715-0.json",
+      "sha256": "fad759c638ce007957c392d1d7d613f256f968cf3cef410e4c27540236104841"
+    },
+    {
+      "file": "external-evidence/coverage-480-1792048856230-0.json",
+      "sha256": "ab9e893e43a9da8b614653cb175ce78b6e77d9a36ca1a97e62ba79e2fe0092e4"
+    },
+    {
+      "file": "external-evidence/coverage-492-1792048856532-0.json",
+      "sha256": "9a66152f10274ef05a6a27fcfc1bffd5f5713c35a5b0fdf2bc18b7f14573082b"
+    },
+    {
+      "file": "external-evidence/coverage-5-1792048871384-0.json",
+      "sha256": "e4afac45a7b955806e65ea68096d836e9b9f63e3774b1baa9dd4e4206077749f"
+    },
+    {
+      "file": "external-evidence/coverage-504-1792048856853-0.json",
+      "sha256": "d0f832b817b8d713307c8cfb15d5d781452eea7c3de4b055803782f9ad0d1358"
+    },
+    {
+      "file": "external-evidence/coverage-516-1792048857139-0.json",
+      "sha256": "59edb4cefca7665f9662865f58c636e61259efcaafad4f70ba14712135a23d84"
+    },
+    {
+      "file": "external-evidence/coverage-528-1792048857457-0.json",
+      "sha256": "487cb798a37ff69e2a0d48b30ccffb8f57d0550e3cd3cccb4cea8609387b9261"
+    },
+    {
+      "file": "external-evidence/coverage-540-1792048857776-0.json",
+      "sha256": "3e113f034f024f1fa5b70389e464b894f6e441a5460b4ba8d1f5b53ccd01ef12"
+    },
+    {
+      "file": "external-evidence/coverage-55-1792048974045-0.json",
+      "sha256": "8d3f9195fad53868e91ba3082275c285bd30a88172452af39f388d1d1281f4b5"
+    },
+    {
+      "file": "external-evidence/coverage-552-1792048858134-0.json",
+      "sha256": "f475312edbffeebdb82563746f7862a3324a5f2245e2cd822410f368a88fa76b"
+    },
+    {
+      "file": "external-evidence/coverage-564-1792048858489-0.json",
+      "sha256": "719a02b779c827923e9f526b0e42a7fb861cd13ded295fd7e511ec66534adb3d"
+    },
+    {
+      "file": "external-evidence/coverage-576-1792048858829-0.json",
+      "sha256": "3fd31da681ca3dee01538a5af2f5f142350a76da5c23e4ed15a476a5b7a9192c"
+    },
+    {
+      "file": "external-evidence/coverage-588-1792048859235-0.json",
+      "sha256": "07572ab498c67faebdcd9c640612d35424b4c0abc6ffb272189d78ec49644076"
+    },
+    {
+      "file": "external-evidence/coverage-60-1792048845069-0.json",
+      "sha256": "c1a1c586acf236ed440e12bf8db520aa9b2181c3ecafa2392b7fced0da0d06bb"
+    },
+    {
+      "file": "external-evidence/coverage-600-1792048859559-0.json",
+      "sha256": "4d90132f0879710ed2700a624f0915259ac6bbf6f4344f7dff07c9efb3bdcd8a"
+    },
+    {
+      "file": "external-evidence/coverage-612-1792048859902-0.json",
+      "sha256": "055a603d34379729cab253c3aa500b82c096a2374a704dacc709bb597a3c1534"
+    },
+    {
+      "file": "external-evidence/coverage-624-1792048860206-0.json",
+      "sha256": "78865d6ad6f8043561a30277696e5802508f5a4e097c674dff959ed0456548b7"
+    },
+    {
+      "file": "external-evidence/coverage-636-1792048860498-0.json",
+      "sha256": "c27cad398adda89c15e60c120091f0c98f8d9894f2e846f73312cdb949245761"
+    },
+    {
+      "file": "external-evidence/coverage-64-1792049124565-0.json",
+      "sha256": "7fad1c5ec9fa5b2f63569d862fda5be89574b9a7963f47a79b0a5c7ea150395e"
+    },
+    {
+      "file": "external-evidence/coverage-648-1792048860818-0.json",
+      "sha256": "a6a86001f687acebbb8cfc16c5ba289fffdea9b2999a1d6e585a211202acf607"
+    },
+    {
+      "file": "external-evidence/coverage-660-1792048861136-0.json",
+      "sha256": "de7d274a8a4a6f88a27e4e73baf2aeb27ce05801a32e585a71533a96bdcda7a7"
+    },
+    {
+      "file": "external-evidence/coverage-67-1792048974302-0.json",
+      "sha256": "abafe80e9b963190d5fc68a28e3ee25db9a2078e4120ef2f262df5ff09d12fc6"
+    },
+    {
+      "file": "external-evidence/coverage-672-1792048861437-0.json",
+      "sha256": "050f895c091fa42c707cc378cb0b3061e4f08e66bde28031a4f10988e13c4ace"
+    },
+    {
+      "file": "external-evidence/coverage-684-1792048861746-0.json",
+      "sha256": "372aae72ba509ea3233f6be7eaf02254478a7c3f36c199385f1cb8d89b972cd9"
+    },
+    {
+      "file": "external-evidence/coverage-696-1792048862043-0.json",
+      "sha256": "d5d5c01aac89d759cb5d8d4fe922782b6c3210efaa4a039aadfc51c0b97ae71c"
+    },
+    {
+      "file": "external-evidence/coverage-7-1792048972963-0.json",
+      "sha256": "dbd00aadd77be051b8c2e44c70897f740d86a5bccad2089096638cc9c9ecbe5b"
+    },
+    {
+      "file": "external-evidence/coverage-708-1792048862338-0.json",
+      "sha256": "ef785d7537bdb292b3bde175fa7918eecf680256fd25801e4d23f9a907d93585"
+    },
+    {
+      "file": "external-evidence/coverage-72-1792048845396-0.json",
+      "sha256": "f51197b74e39de2c36f845df3a2d67e3b8661e604c02dd5aaffd8cbfc37cb65c"
+    },
+    {
+      "file": "external-evidence/coverage-720-1792048862622-0.json",
+      "sha256": "b78af9ec5fe6f11d77407476704a1dfcc73a214ad10af6ff5a1115e15c3a52a1"
+    },
+    {
+      "file": "external-evidence/coverage-732-1792048862898-0.json",
+      "sha256": "933beb424b999c433485d8ad59b1543a0468cfbb876d4e18a984d80f2fe15de6"
+    },
+    {
+      "file": "external-evidence/coverage-744-1792048863176-0.json",
+      "sha256": "70bdf12a1f9557a74bb211934f9d0287526ec577e59045b80c14d3362d94fea7"
+    },
+    {
+      "file": "external-evidence/coverage-756-1792048863486-0.json",
+      "sha256": "9dde0431a6e82212dcd5e7ec9fe10017dbf68cce3b555538cbedaea1aa21a8d3"
+    },
+    {
+      "file": "external-evidence/coverage-76-1792049124831-0.json",
+      "sha256": "5e593b243d1493c99adafded44bea4cc4f17eb66563ac85011d8459de14930a5"
+    },
+    {
+      "file": "external-evidence/coverage-768-1792048863810-0.json",
+      "sha256": "f006679ed10add5f7612e9d4834445adfd6c70363e1c1c6f73dc785d7b4fdc6b"
+    },
+    {
+      "file": "external-evidence/coverage-780-1792048864131-0.json",
+      "sha256": "e4695b51e320eba6b267ac52c458732893ff292b62bc296e46475760604e1df7"
+    },
+    {
+      "file": "external-evidence/coverage-79-1792048974597-0.json",
+      "sha256": "455d02c448693fe8659e94ffb42cbde085c183f2b54625fd6292a80a28bd21c8"
+    },
+    {
+      "file": "external-evidence/coverage-792-1792048864439-0.json",
+      "sha256": "d0e456a6605f2d52677622823e1779a7bf9849d641b34bf26566fb2deb4b2004"
+    },
+    {
+      "file": "external-evidence/coverage-8-1792048890049-0.json",
+      "sha256": "e73a1e330864b046d06391cd3b9024346be56324e7c1b755df0d3e567ad881cf"
+    },
+    {
+      "file": "external-evidence/coverage-804-1792048864773-0.json",
+      "sha256": "af0b2b6f0e85895bd29ed4af982aef070d061c0838e52fc5a15f9806338a058a"
+    },
+    {
+      "file": "external-evidence/coverage-816-1792048865107-0.json",
+      "sha256": "66f19a6ad29a67fe59f6ddbf248f4845f10ed76dfd29472f8f42ae0681870e4a"
+    },
+    {
+      "file": "external-evidence/coverage-828-1792048865462-0.json",
+      "sha256": "351662b0d375c0be6659934e617874684bed74759408b8fbdb3beae962d0e204"
+    },
+    {
+      "file": "external-evidence/coverage-84-1792048845785-0.json",
+      "sha256": "50f175d4741853b15033f0e41fba2004c9d02512ee519f78a147098c2a6eb6b9"
+    },
+    {
+      "file": "external-evidence/coverage-848-1792048865840-0.json",
+      "sha256": "d9e6b84d863a7d8c330221fadb28b24803454c4736dd4a0990bf51022c8741f9"
+    },
+    {
+      "file": "external-evidence/coverage-860-1792048866139-0.json",
+      "sha256": "2ce3e685c5f43db534cf463724a3191de4346304c63a3dc11cf6617638222360"
+    },
+    {
+      "file": "external-evidence/coverage-872-1792048866480-0.json",
+      "sha256": "e06cec77b88b148d4503e39d667b9219847e325ca6943a8eaa1d758c6eff3c92"
+    },
+    {
+      "file": "external-evidence/coverage-88-1792049125114-0.json",
+      "sha256": "12ca4097167bac20927c3de6f167ae3c7b87b3a620a1dcd8c6ade05459debb78"
+    },
+    {
+      "file": "external-evidence/coverage-884-1792048866866-0.json",
+      "sha256": "415e78dbb61991ae4f445329bf0decae9494dfd49652fd6b8c80fb8ccb70b5d7"
+    },
+    {
+      "file": "external-evidence/coverage-896-1792048867231-0.json",
+      "sha256": "907fa3e1924afc22adfd658204b784818ff54dba7fadc4b96aa35c54990b3241"
+    },
+    {
+      "file": "external-evidence/coverage-908-1792048867598-0.json",
+      "sha256": "a6cc291372dcc8c10c6b0b47d05a016604f4abcde2f81c3fc9493d9d5e0eb349"
+    },
+    {
+      "file": "external-evidence/coverage-91-1792048974876-0.json",
+      "sha256": "54933fe8835883e449c473e1f26cc34f46a0e16c62cc01886da6877baefc668e"
+    },
+    {
+      "file": "external-evidence/coverage-924-1792048868004-0.json",
+      "sha256": "c47153361bf149c13af8bfc6e0fc540d1915b60f7d5384b67aa2d7bb0d4e7f29"
+    },
+    {
+      "file": "external-evidence/coverage-936-1792048868349-0.json",
+      "sha256": "868e2249622bed606b712d24eabd2c5de1ff328f51e28288d9c4fb0152e18e75"
+    },
+    {
+      "file": "external-evidence/coverage-948-1792048868725-0.json",
+      "sha256": "fa636e4b11cdd84f810c8956ba4dcfce58228ebfefed5eaad9fece1a319c073a"
+    },
+    {
+      "file": "external-evidence/coverage-96-1792048846142-0.json",
+      "sha256": "25fc2c5cc91418961ea7dc99bb8dce7731f8adfaf60264cfacd097478ac76c34"
+    },
+    {
+      "file": "external-evidence/coverage-960-1792048869078-0.json",
+      "sha256": "c3a616756104c90642550cbf1e9ad3c60d61f27b3583808d82468962a530f4ef"
+    },
+    {
+      "file": "external-evidence/coverage-972-1792048869422-0.json",
+      "sha256": "e4aae6bce803c4b86d09582bd489193abf3a58a3781fe47f0d4f0968af08b6a2"
+    },
+    {
+      "file": "external-evidence/coverage-984-1792048869758-0.json",
+      "sha256": "5d70cb2bb438213e35e51a9daa454b1a7f5ed453a2e7713f6564d777fca6c82a"
+    }
+  ],
+  "files": [
+    {
+      "file": "tools/openspec/.build/dist/core/ff-validity.js",
+      "relativePath": "dist/core/ff-validity.js",
+      "sha256": "310e323ec09b23b6a9c5a14793b851fc9969102879a4bb293a848e3ce2a8ceff",
+      "scope": "all functions",
+      "typescript": {
+        "file": "src/core/ff-validity.ts",
+        "sha256": "904d9d710910120a14f5a939515c047475ad6fd633f58afcc9ff945f216fecad"
+      },
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "scriptSamples": 110,
+      "functions": [
+        {
+          "name": "sha256",
+          "start": 337,
+          "end": 396,
+          "line": 7,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 59,
+          "totalBytes": 59,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "errorText",
+          "start": 416,
+          "end": 481,
+          "line": 8,
+          "complexity": 2,
+          "byteCoverage": 0.7692307692307693,
+          "blockCoverage": 0.5,
+          "coverage": 0.5,
+          "coveredBytes": 50,
+          "totalBytes": 65,
+          "coveredBlocks": 1,
+          "blocks": 2,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 2.5,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "object",
+          "start": 483,
+          "end": 658,
+          "line": 9,
+          "complexity": 4,
+          "byteCoverage": 0.7371428571428571,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.6666666666666666,
+          "coveredBytes": 129,
+          "totalBytes": 175,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 4.592592592592593,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "keys",
+          "start": 659,
+          "end": 840,
+          "line": 14,
+          "complexity": 3,
+          "byteCoverage": 0.7237569060773481,
+          "blockCoverage": 0.75,
+          "coverage": 0.7237569060773481,
+          "coveredBytes": 131,
+          "totalBytes": 181,
+          "coveredBlocks": 3,
+          "blocks": 4,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3.189721608414263,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "strings",
+          "start": 841,
+          "end": 1394,
+          "line": 19,
+          "complexity": 10,
+          "byteCoverage": 0.6329113924050633,
+          "blockCoverage": 0.7272727272727273,
+          "coverage": 0.6329113924050633,
+          "coveredBytes": 350,
+          "totalBytes": 553,
+          "coveredBlocks": 8,
+          "blocks": 11,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 14.946667505004672,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET",
+          "status": "MEASURED"
+        },
+        {
+          "name": "relativeName",
+          "start": 1395,
+          "end": 1742,
+          "line": 32,
+          "complexity": 7,
+          "byteCoverage": 0.723342939481268,
+          "blockCoverage": 0.6,
+          "coverage": 0.6,
+          "coveredBytes": 251,
+          "totalBytes": 347,
+          "coveredBlocks": 3,
+          "blocks": 5,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 10.136000000000001,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@35:30>",
+          "start": 1635,
+          "end": 1681,
+          "line": 35,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 46,
+          "totalBytes": 46,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 81,
+          "preciseBlockCoverage": true,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "rejectSymlinkComponents",
+          "start": 1743,
+          "end": 2221,
+          "line": 38,
+          "complexity": 5,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 478,
+          "totalBytes": 478,
+          "coveredBlocks": 10,
+          "blocks": 10,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "rejectScopedSymlinks",
+          "start": 2222,
+          "end": 2688,
+          "line": 53,
+          "complexity": 6,
+          "byteCoverage": 0.8433476394849786,
+          "blockCoverage": 0.9166666666666666,
+          "coverage": 0.8433476394849786,
+          "coveredBytes": 393,
+          "totalBytes": 466,
+          "coveredBlocks": 11,
+          "blocks": 12,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 6.138392747382729,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "contained",
+          "start": 2689,
+          "end": 2856,
+          "line": 64,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 167,
+          "totalBytes": 167,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "safePath",
+          "start": 2857,
+          "end": 3968,
+          "line": 68,
+          "complexity": 10,
+          "byteCoverage": 0.7686768676867687,
+          "blockCoverage": 0.7777777777777778,
+          "coverage": 0.7686768676867687,
+          "coveredBytes": 854,
+          "totalBytes": 1111,
+          "coveredBlocks": 14,
+          "blocks": 18,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 11.237819138308156,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@83:73>",
+          "start": 3752,
+          "end": 3804,
+          "line": 83,
+          "complexity": 2,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 52,
+          "totalBytes": 52,
+          "coveredBlocks": 4,
+          "blocks": 4,
+          "samples": 81,
+          "preciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "readPolicy",
+          "start": 3969,
+          "end": 4995,
+          "line": 88,
+          "complexity": 4,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 1026,
+          "totalBytes": 1026,
+          "coveredBlocks": 8,
+          "blocks": 8,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@93:43>",
+          "start": 4343,
+          "end": 4941,
+          "line": 93,
+          "complexity": 4,
+          "byteCoverage": 0.8010033444816054,
+          "blockCoverage": 0.6,
+          "coverage": 0.6,
+          "coveredBytes": 479,
+          "totalBytes": 598,
+          "coveredBlocks": 3,
+          "blocks": 5,
+          "samples": 81,
+          "preciseBlockCoverage": false,
+          "crap": 5.024,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validateGraph",
+          "start": 4996,
+          "end": 5764,
+          "line": 105,
+          "complexity": 3,
+          "byteCoverage": 0.9283854166666666,
+          "blockCoverage": 0.8,
+          "coverage": 0.8,
+          "coveredBytes": 713,
+          "totalBytes": 768,
+          "coveredBlocks": 4,
+          "blocks": 5,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3.072,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "visit",
+          "start": 5307,
+          "end": 5712,
+          "line": 114,
+          "complexity": 4,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 405,
+          "totalBytes": 405,
+          "coveredBlocks": 8,
+          "blocks": 8,
+          "samples": 77,
+          "preciseBlockCoverage": true,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@127:22>",
+          "start": 5734,
+          "end": 5760,
+          "line": 127,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 26,
+          "totalBytes": 26,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 77,
+          "preciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "fileDigest",
+          "start": 5765,
+          "end": 6077,
+          "line": 129,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 312,
+          "totalBytes": 312,
+          "coveredBlocks": 6,
+          "blocks": 6,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "scopeMatches",
+          "start": 6078,
+          "end": 6850,
+          "line": 136,
+          "complexity": 7,
+          "byteCoverage": 0.8873056994818653,
+          "blockCoverage": 0.8333333333333334,
+          "coverage": 0.8333333333333334,
+          "coveredBytes": 685,
+          "totalBytes": 772,
+          "coveredBlocks": 10,
+          "blocks": 12,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 7.226851851851852,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "registerFile",
+          "start": 6851,
+          "end": 7198,
+          "line": 152,
+          "complexity": 3,
+          "byteCoverage": 0.8069164265129684,
+          "blockCoverage": 0.875,
+          "coverage": 0.8069164265129684,
+          "coveredBytes": 280,
+          "totalBytes": 347,
+          "coveredBlocks": 7,
+          "blocks": 8,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3.0647856011797256,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "scopes",
+          "start": 7199,
+          "end": 7852,
+          "line": 160,
+          "complexity": 5,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 653,
+          "totalBytes": 653,
+          "coveredBlocks": 10,
+          "blocks": 10,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "matchesInputs",
+          "start": 7853,
+          "end": 8184,
+          "line": 179,
+          "complexity": 5,
+          "byteCoverage": 0.9607250755287009,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.6666666666666666,
+          "coveredBytes": 318,
+          "totalBytes": 331,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5.9259259259259265,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@183:103>",
+          "start": 8114,
+          "end": 8180,
+          "line": 183,
+          "complexity": 2,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 66,
+          "totalBytes": 66,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 59,
+          "preciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "reviewBindingMatches",
+          "start": 8185,
+          "end": 8452,
+          "line": 185,
+          "complexity": 5,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 267,
+          "totalBytes": 267,
+          "coveredBlocks": 9,
+          "blocks": 9,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "nonemptyString",
+          "start": 8453,
+          "end": 8548,
+          "line": 189,
+          "complexity": 2,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 95,
+          "totalBytes": 95,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validateEvidence",
+          "start": 8549,
+          "end": 9234,
+          "line": 190,
+          "complexity": 7,
+          "byteCoverage": 0.8262773722627738,
+          "blockCoverage": 0.7777777777777778,
+          "coverage": 0.7777777777777778,
+          "coveredBytes": 566,
+          "totalBytes": 685,
+          "coveredBlocks": 7,
+          "blocks": 9,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 7.537722908093278,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validateReview",
+          "start": 9235,
+          "end": 10064,
+          "line": 204,
+          "complexity": 6,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 829,
+          "totalBytes": 829,
+          "coveredBlocks": 11,
+          "blocks": 11,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 6,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "currentArtifact",
+          "start": 10065,
+          "end": 10507,
+          "line": 221,
+          "complexity": 3,
+          "byteCoverage": 0.8823529411764706,
+          "blockCoverage": 0.8,
+          "coverage": 0.8,
+          "coveredBytes": 390,
+          "totalBytes": 442,
+          "coveredBlocks": 4,
+          "blocks": 5,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3.072,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@226:34>",
+          "start": 10305,
+          "end": 10338,
+          "line": 226,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 33,
+          "totalBytes": 33,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 66,
+          "preciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "dependencyInputs",
+          "start": 10508,
+          "end": 10878,
+          "line": 234,
+          "complexity": 4,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 370,
+          "totalBytes": 370,
+          "coveredBlocks": 7,
+          "blocks": 7,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "recordFreshness",
+          "start": 10879,
+          "end": 11292,
+          "line": 244,
+          "complexity": 4,
+          "byteCoverage": 0.8789346246973365,
+          "blockCoverage": 0.8571428571428571,
+          "coverage": 0.8571428571428571,
+          "coveredBytes": 363,
+          "totalBytes": 413,
+          "coveredBlocks": 6,
+          "blocks": 7,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 4.0466472303206995,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "evaluateArtifact",
+          "start": 11293,
+          "end": 12488,
+          "line": 254,
+          "complexity": 8,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 1195,
+          "totalBytes": 1195,
+          "coveredBlocks": 16,
+          "blocks": 16,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 8,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "pathPresent",
+          "start": 12489,
+          "end": 12735,
+          "line": 281,
+          "complexity": 2,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 246,
+          "totalBytes": 246,
+          "coveredBlocks": 3,
+          "blocks": 3,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "loadManifest",
+          "start": 12736,
+          "end": 13407,
+          "line": 291,
+          "complexity": 5,
+          "byteCoverage": 0.8509687034277198,
+          "blockCoverage": 0.7777777777777778,
+          "coverage": 0.7777777777777778,
+          "coveredBytes": 571,
+          "totalBytes": 671,
+          "coveredBlocks": 7,
+          "blocks": 9,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5.274348422496571,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@300:28>",
+          "start": 13293,
+          "end": 13319,
+          "line": 300,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 26,
+          "totalBytes": 26,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 67,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "evaluateFF",
+          "start": 13530,
+          "end": 16042,
+          "line": 305,
+          "complexity": 5,
+          "byteCoverage": 0.9769108280254777,
+          "blockCoverage": 0.9,
+          "coverage": 0.9,
+          "coveredBytes": 2454,
+          "totalBytes": 2512,
+          "coveredBlocks": 9,
+          "blocks": 10,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 5.025,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@329:43>",
+          "start": 15164,
+          "end": 15193,
+          "line": 329,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 29,
+          "totalBytes": 29,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "evaluate",
+          "start": 15205,
+          "end": 15568,
+          "line": 330,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 363,
+          "totalBytes": 363,
+          "coveredBlocks": 5,
+          "blocks": 5,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@337:26>",
+          "start": 15594,
+          "end": 15623,
+          "line": 337,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 29,
+          "totalBytes": 29,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@338:41>",
+          "start": 15666,
+          "end": 15698,
+          "line": 338,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 32,
+          "totalBytes": 32,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@339:47>",
+          "start": 15747,
+          "end": 15785,
+          "line": 339,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 38,
+          "totalBytes": 38,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@340:51>",
+          "start": 15838,
+          "end": 15909,
+          "line": 340,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 71,
+          "totalBytes": 71,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 86,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@340:84>",
+          "start": 15871,
+          "end": 15908,
+          "line": 340,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 37,
+          "totalBytes": 37,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 66,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "requireFF",
+          "start": 16143,
+          "end": 16378,
+          "line": 348,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 235,
+          "totalBytes": 235,
+          "coveredBlocks": 6,
+          "blocks": 6,
+          "samples": 110,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-close.js",
+      "relativePath": "dist/core/ff-close.js",
+      "sha256": "54efe9baad8678896aecf8f30dbb860130bd303c44d5b7ab0ad63e5f0b4e249e",
+      "scope": "all functions",
+      "typescript": {
+        "file": "src/core/ff-close.ts",
+        "sha256": "b5f69771b907024eddec409bca98ba39ae9cdd9249728c92c09c701a79ab94f0"
+      },
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "scriptSamples": 61,
+      "functions": [
+        {
+          "name": "within",
+          "start": 316,
+          "end": 500,
+          "line": 7,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 184,
+          "totalBytes": 184,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "present",
+          "start": 501,
+          "end": 707,
+          "line": 11,
+          "complexity": 3,
+          "byteCoverage": 0.8689320388349514,
+          "blockCoverage": 0.8,
+          "coverage": 0.8,
+          "coveredBytes": 179,
+          "totalBytes": 206,
+          "coveredBlocks": 4,
+          "blocks": 5,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3.072,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validateDecision",
+          "start": 708,
+          "end": 1433,
+          "line": 22,
+          "complexity": 8,
+          "byteCoverage": 0.8744827586206897,
+          "blockCoverage": 0.8571428571428571,
+          "coverage": 0.8571428571428571,
+          "coveredBytes": 634,
+          "totalBytes": 725,
+          "coveredBlocks": 12,
+          "blocks": 14,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 8.1865889212828,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "rejectSymlinkComponents",
+          "start": 1434,
+          "end": 1929,
+          "line": 36,
+          "complexity": 5,
+          "byteCoverage": 0.7575757575757576,
+          "blockCoverage": 0.8,
+          "coverage": 0.7575757575757576,
+          "coveredBytes": 375,
+          "totalBytes": 495,
+          "coveredBlocks": 8,
+          "blocks": 10,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 5.3561788685755625,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "rejectNestedSymlinks",
+          "start": 1930,
+          "end": 2314,
+          "line": 48,
+          "complexity": 4,
+          "byteCoverage": 0.8333333333333334,
+          "blockCoverage": 0.8571428571428571,
+          "coverage": 0.8333333333333334,
+          "coveredBytes": 320,
+          "totalBytes": 384,
+          "coveredBlocks": 6,
+          "blocks": 7,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 4.074074074074074,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "requireDirectory",
+          "start": 2315,
+          "end": 2484,
+          "line": 57,
+          "complexity": 2,
+          "byteCoverage": 0.6153846153846154,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.6153846153846154,
+          "coveredBytes": 104,
+          "totalBytes": 169,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 2.2275830678197543,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validatePaths",
+          "start": 2485,
+          "end": 4081,
+          "line": 61,
+          "complexity": 10,
+          "byteCoverage": 0.9335839598997494,
+          "blockCoverage": 0.875,
+          "coverage": 0.875,
+          "coveredBytes": 1490,
+          "totalBytes": 1596,
+          "coveredBlocks": 14,
+          "blocks": 16,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 10.1953125,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET",
+          "status": "MEASURED"
+        },
+        {
+          "name": "validateAdoption",
+          "start": 4082,
+          "end": 4645,
+          "line": 88,
+          "complexity": 3,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 563,
+          "totalBytes": 563,
+          "coveredBlocks": 6,
+          "blocks": 6,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "createReceipt",
+          "start": 4646,
+          "end": 5557,
+          "line": 98,
+          "complexity": 3,
+          "byteCoverage": 0.8057080131723381,
+          "blockCoverage": 0.8571428571428571,
+          "coverage": 0.8057080131723381,
+          "coveredBytes": 734,
+          "totalBytes": 911,
+          "coveredBlocks": 6,
+          "blocks": 7,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3.0660096116352213,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@114:36>",
+          "start": 5240,
+          "end": 5255,
+          "line": 114,
+          "complexity": 1,
+          "byteCoverage": 0,
+          "blockCoverage": 0,
+          "coverage": 0,
+          "coveredBytes": 0,
+          "totalBytes": 15,
+          "coveredBlocks": 0,
+          "blocks": 1,
+          "samples": 7,
+          "preciseBlockCoverage": false,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "removeOwnedFile",
+          "start": 5558,
+          "end": 5873,
+          "line": 123,
+          "complexity": 4,
+          "byteCoverage": 0.7396825396825397,
+          "blockCoverage": 0.6,
+          "coverage": 0.6,
+          "coveredBytes": 233,
+          "totalBytes": 315,
+          "coveredBlocks": 3,
+          "blocks": 5,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 5.024,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "acquireClaim",
+          "start": 5874,
+          "end": 6542,
+          "line": 131,
+          "complexity": 3,
+          "byteCoverage": 0.48353293413173654,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.48353293413173654,
+          "coveredBytes": 323,
+          "totalBytes": 668,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 4.239853599615285,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@141:36>",
+          "start": 6246,
+          "end": 6261,
+          "line": 141,
+          "complexity": 1,
+          "byteCoverage": 0,
+          "blockCoverage": 0,
+          "coverage": 0,
+          "coveredBytes": 0,
+          "totalBytes": 15,
+          "coveredBlocks": 0,
+          "blocks": 1,
+          "samples": 7,
+          "preciseBlockCoverage": false,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "releaseClaim",
+          "start": 6543,
+          "end": 6668,
+          "line": 149,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 125,
+          "totalBytes": 125,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "recheckUnderClaim",
+          "start": 6669,
+          "end": 7116,
+          "line": 153,
+          "complexity": 3,
+          "byteCoverage": 0.6487695749440716,
+          "blockCoverage": 0.6,
+          "coverage": 0.6,
+          "coveredBytes": 290,
+          "totalBytes": 447,
+          "coveredBlocks": 3,
+          "blocks": 5,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3.576,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "makeArchive",
+          "start": 7117,
+          "end": 7380,
+          "line": 162,
+          "complexity": 3,
+          "byteCoverage": 0.9543726235741445,
+          "blockCoverage": 0.8333333333333334,
+          "coverage": 0.8333333333333334,
+          "coveredBytes": 251,
+          "totalBytes": 263,
+          "coveredBlocks": 5,
+          "blocks": 6,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 3.0416666666666665,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "rollback",
+          "start": 7381,
+          "end": 7908,
+          "line": 174,
+          "complexity": 4,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 527,
+          "totalBytes": 527,
+          "coveredBlocks": 3,
+          "blocks": 3,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "cleanup",
+          "start": 7491,
+          "end": 7644,
+          "line": 176,
+          "complexity": 2,
+          "byteCoverage": 0.5620915032679739,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.5620915032679739,
+          "coveredBytes": 86,
+          "totalBytes": 153,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 3,
+          "preciseBlockCoverage": true,
+          "crap": 2.335900079769331,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@185:23>",
+          "start": 7685,
+          "end": 7730,
+          "line": 185,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 45,
+          "totalBytes": 45,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 3,
+          "preciseBlockCoverage": false,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@187:23>",
+          "start": 7770,
+          "end": 7808,
+          "line": 187,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 38,
+          "totalBytes": 38,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 3,
+          "preciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@189:23>",
+          "start": 7857,
+          "end": 7883,
+          "line": 189,
+          "complexity": 1,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 26,
+          "totalBytes": 26,
+          "coveredBlocks": 1,
+          "blocks": 1,
+          "samples": 3,
+          "preciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "closeFFChange",
+          "start": 8015,
+          "end": 9704,
+          "line": 193,
+          "complexity": 6,
+          "byteCoverage": 0.8288928359976317,
+          "blockCoverage": 0.8333333333333334,
+          "coverage": 0.8288928359976317,
+          "coveredBytes": 1400,
+          "totalBytes": 1689,
+          "coveredBlocks": 15,
+          "blocks": 18,
+          "samples": 61,
+          "preciseBlockCoverage": false,
+          "crap": 6.180346235053166,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/archive.js",
+      "relativePath": "dist/core/archive.js",
+      "sha256": "8342a2ae253b2ea8eae809a13fe80748c7463078b5d1ba78cd99c5646d4c929b",
+      "scope": "beforeFFMutation",
+      "typescript": {
+        "file": "src/core/archive.ts",
+        "sha256": "83ebbb0ea6edb920acd418735d45cd82232683edd8d88cdc5fc0275e7e51e869"
+      },
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "scriptSamples": 58,
+      "functions": [
+        {
+          "name": "beforeFFMutation",
+          "start": 51575,
+          "end": 51734,
+          "line": 1123,
+          "complexity": 2,
+          "byteCoverage": 1,
+          "blockCoverage": 1,
+          "coverage": 1,
+          "coveredBytes": 159,
+          "totalBytes": 159,
+          "coveredBlocks": 3,
+          "blocks": 3,
+          "samples": 58,
+          "preciseBlockCoverage": false,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/ff-snapshot.mjs",
+      "relativePath": "ff-snapshot.mjs",
+      "sha256": "25a66bbfb24c052aa5fc6e662f91f8f28988ba5f123ab6dfe6da4b4feb0de5c4",
+      "scope": "all functions",
+      "status": "MODULE_EXECUTED_NO_FUNCTIONS",
+      "scriptSamples": 1,
+      "functions": []
+    },
+    {
+      "file": "tools/openspec/build.mjs",
+      "relativePath": "build.mjs",
+      "sha256": "0e0abbb81c77e2cae7cd3237f6bc2a92d0e98fd470051d8143bd937021e126b8",
+      "scope": "all functions",
+      "status": "MEASURED_WITH_LIMITATIONS",
+      "scriptSamples": 1,
+      "functions": [
+        {
+          "name": "run",
+          "start": 635,
+          "end": 929,
+          "line": 14,
+          "complexity": 5,
+          "byteCoverage": 0.7448979591836735,
+          "blockCoverage": 0.6,
+          "coverage": 0.6,
+          "coveredBytes": 219,
+          "totalBytes": 294,
+          "coveredBlocks": 3,
+          "blocks": 5,
+          "samples": 1,
+          "preciseBlockCoverage": true,
+          "crap": 6.6000000000000005,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "verify",
+          "start": 930,
+          "end": 1137,
+          "line": 19,
+          "complexity": 2,
+          "byteCoverage": 0.7729468599033816,
+          "blockCoverage": 0.6666666666666666,
+          "coverage": 0.6666666666666666,
+          "coveredBytes": 160,
+          "totalBytes": 207,
+          "coveredBlocks": 2,
+          "blocks": 3,
+          "samples": 1,
+          "preciseBlockCoverage": true,
+          "crap": 2.1481481481481484,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        },
+        {
+          "name": "npm",
+          "start": 1138,
+          "end": 1700,
+          "line": 23,
+          "complexity": 5,
+          "byteCoverage": 0.37544483985765126,
+          "blockCoverage": 0.5714285714285714,
+          "coverage": 0.37544483985765126,
+          "coveredBytes": 211,
+          "totalBytes": 562,
+          "coveredBlocks": 4,
+          "blocks": 7,
+          "samples": 1,
+          "preciseBlockCoverage": true,
+          "crap": 11.09049248083686,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET",
+          "status": "MEASURED"
+        },
+        {
+          "name": "main",
+          "start": 1701,
+          "end": 3553,
+          "line": 34,
+          "complexity": 7,
+          "byteCoverage": 0.8947084233261339,
+          "blockCoverage": 0.6363636363636364,
+          "coverage": 0.6363636363636364,
+          "coveredBytes": 1657,
+          "totalBytes": 1852,
+          "coveredBlocks": 7,
+          "blocks": 11,
+          "samples": 1,
+          "preciseBlockCoverage": true,
+          "crap": 9.356123215627349,
+          "hardGate": "PASS",
+          "target": "PASS",
+          "status": "MEASURED"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "measuredFunctions": 71,
+    "unmeasuredFunctions": 0,
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "name": "strings",
+        "complexity": 10,
+        "coverage": 0.6329113924050633,
+        "crap": 14.946667505004672
+      },
+      {
+        "name": "relativeName",
+        "complexity": 7,
+        "coverage": 0.6,
+        "crap": 10.136000000000001
+      },
+      {
+        "name": "safePath",
+        "complexity": 10,
+        "coverage": 0.7686768676867687,
+        "crap": 11.237819138308156
+      },
+      {
+        "name": "validatePaths",
+        "complexity": 10,
+        "coverage": 0.875,
+        "crap": 10.1953125
+      },
+      {
+        "name": "npm",
+        "complexity": 5,
+        "coverage": 0.37544483985765126,
+        "crap": 11.09049248083686
+      }
+    ]
+  }
+}

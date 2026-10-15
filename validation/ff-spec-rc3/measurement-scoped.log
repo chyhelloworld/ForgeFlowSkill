@@ -1,0 +1,183 @@
+{
+  "summary": {
+    "measuredFunctions": 13,
+    "unmeasuredFunctions": 0,
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "name": "verifyBuild",
+        "line": 20,
+        "complexity": 11,
+        "coverage": 1,
+        "crap": 11
+      },
+      {
+        "name": "npm",
+        "line": 23,
+        "complexity": 5,
+        "coverage": 0.37544483985765126,
+        "crap": 11.09049248083686
+      }
+    ],
+    "maximumCrap": 11.09049248083686
+  },
+  "files": [
+    {
+      "file": "tools/openspec/ff-build.mjs",
+      "scriptSamples": 116,
+      "rejectedModuleLengths": 0,
+      "functions": [
+        {
+          "name": "runtimeHashes",
+          "line": 7,
+          "cc": 2,
+          "cov": 1,
+          "crap": 2,
+          "status": "MEASURED"
+        },
+        {
+          "name": "walk",
+          "line": 9,
+          "cc": 4,
+          "cov": 1,
+          "crap": 4,
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@18:46>",
+          "line": 18,
+          "cc": 1,
+          "cov": 1,
+          "crap": 1,
+          "status": "MEASURED"
+        },
+        {
+          "name": "verifyBuild",
+          "line": 20,
+          "cc": 11,
+          "cov": 1,
+          "crap": 11,
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/ff-spec.mjs",
+      "module": {
+        "status": "OBSERVED_MODULE_NO_FUNCTION_CRAP",
+        "byteCoverage": 1,
+        "blockCoverage": 1,
+        "coverage": 1,
+        "coveredBytes": 404,
+        "totalBytes": 404,
+        "coveredBlocks": 4,
+        "blocks": 4,
+        "samples": 113,
+        "preciseBlockCoverage": true
+      },
+      "scriptSamples": 113,
+      "rejectedModuleLengths": 0,
+      "functions": []
+    },
+    {
+      "file": "tools/openspec/build.mjs",
+      "scriptSamples": 1,
+      "rejectedModuleLengths": 0,
+      "functions": [
+        {
+          "name": "run",
+          "line": 14,
+          "cc": 5,
+          "cov": 0.6,
+          "crap": 6.6000000000000005,
+          "status": "MEASURED"
+        },
+        {
+          "name": "verify",
+          "line": 19,
+          "cc": 2,
+          "cov": 0.6666666666666666,
+          "crap": 2.1481481481481484,
+          "status": "MEASURED"
+        },
+        {
+          "name": "npm",
+          "line": 23,
+          "cc": 5,
+          "cov": 0.37544483985765126,
+          "crap": 11.09049248083686,
+          "status": "MEASURED"
+        },
+        {
+          "name": "main",
+          "line": 34,
+          "cc": 7,
+          "cov": 0.6363636363636364,
+          "crap": 9.356123215627349,
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/init.js",
+      "scriptSamples": 8,
+      "rejectedModuleLengths": 0,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 84,
+          "cc": 7,
+          "cov": 1,
+          "crap": 7,
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/update.js",
+      "scriptSamples": 1,
+      "rejectedModuleLengths": 0,
+      "functions": [
+        {
+          "name": "execute",
+          "line": 66,
+          "cc": 1,
+          "cov": 1,
+          "crap": 1,
+          "status": "MEASURED"
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/cli/index.js",
+      "scriptSamples": 112,
+      "rejectedModuleLengths": 0,
+      "functions": [
+        {
+          "name": "getCommandPath",
+          "line": 53,
+          "cc": 6,
+          "cov": 1,
+          "crap": 6,
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@154:27>",
+          "line": 154,
+          "cc": 6,
+          "cov": 0.9166666666666666,
+          "crap": 6.020833333333333,
+          "status": "MEASURED"
+        },
+        {
+          "name": "<anonymous@156:53>",
+          "line": 156,
+          "cc": 2,
+          "cov": 1,
+          "crap": 2,
+          "status": "MEASURED"
+        }
+      ]
+    }
+  ]
+}

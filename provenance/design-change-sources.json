@@ -3,11 +3,11 @@
   "baseline_archive_sha256": "8abbe067a61bbe9ee19ba0bf7532203b6f00cd463f4366b9fdd56c90270a9b59",
   "basis": [
     {
-      "source": "User feedback relayed by parent task, 2026-10-12",
+      "source": "User-provided project feedback, 2026-10-12",
       "scope": "UI appearance dissatisfaction; request to add design to FF. No new style selection or product rewrite authorization."
     },
     {
-      "source": "User-reported Windows startup issue relayed by parent task, 2026-10-12",
+      "source": "User-reported Windows startup issue, 2026-10-12",
       "scope": "ASTRO_TELEMETRY_DISABLED shell syntax incompatibility; motivates real entrypoint and target-platform checks, not proof of a fix."
     }
   ],

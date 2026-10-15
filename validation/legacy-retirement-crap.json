@@ -1,0 +1,99 @@
+{
+  "source": "tools/spec_lifecycle.py",
+  "sha256": "7af1cfec29ebc8afb2af201147e3e69afbf59fcd951f611c266c6111b827e2a1",
+  "python": "3.12.14",
+  "test_source": "tools/test_spec_lifecycle.py",
+  "tests_run": 4,
+  "tests_passed": true,
+  "scope": "Four modified production entrypoints for legacy write retirement. Unchanged legacy validators and historical implementation excluded, not a whole-repository claim.",
+  "method": "Actual stdlib trace line events / CPython dis.findlinestarts executable lines excluding top function definition. AST CC = 1 + if/for/while/conditional expression/except/assert + extra boolean operands + comprehension generators/filters + try else. CRAP=CC^2*(1-coverage)^3+CC. Not radon, branch or basis-path coverage; no historical measurements reused.",
+  "functions": [
+    {
+      "function": "transition",
+      "cc": 1,
+      "executable_lines": [
+        159
+      ],
+      "hit_lines": [
+        159
+      ],
+      "line_coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "atomic_write",
+      "cc": 1,
+      "executable_lines": [
+        163
+      ],
+      "hit_lines": [
+        163
+      ],
+      "line_coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "mutate",
+      "cc": 1,
+      "executable_lines": [
+        167
+      ],
+      "hit_lines": [
+        167
+      ],
+      "line_coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "main",
+      "cc": 8,
+      "executable_lines": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "hit_lines": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180,
+        181,
+        182,
+        184,
+        185,
+        187,
+        188,
+        189,
+        190,
+        191
+      ],
+      "line_coverage": 0.95,
+      "crap": 8.008
+    }
+  ],
+  "maximum_crap": 8.008,
+  "threshold_50_passed": true
+}

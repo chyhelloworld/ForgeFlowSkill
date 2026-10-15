@@ -1,0 +1,80 @@
+{
+  "privateMetadataRemovedFromSourceDescriptions": true,
+  "requirementsAndPublicSourcesPreserved": true,
+  "files": [
+    {
+      "file": "provenance/continuity-change-sources.json",
+      "originalSha256": "ff50fbe695fba95f18bfa25e39b212eae2ed9b8666340636764d95bdfda08426",
+      "publishedSha256": "d406dd4654407e1dc170880777913ceda4ed9830551f3ab341b31397a09b0b21"
+    },
+    {
+      "file": "provenance/review-change-sources.json",
+      "originalSha256": "3cc2dc0e74a1fe7ee696e69e76ea8e9d597a6bad4efae53ca564ff6aaa62ed8d",
+      "publishedSha256": "1bcf839c61d5bdfc3aa4e3d9bfe1fdc6b94f1a09606d006d859af2ce8113b7b1"
+    },
+    {
+      "file": "provenance/design-change-sources.json",
+      "originalSha256": "d948cd6c06fcdbe98fd50fcf932a781a98859eb1c992b6182ef657afde85ea5d",
+      "publishedSha256": "ac4a1dbbae55452d4046f4a6d75dea30c89be8a729b0fee6228a059be4ff620c"
+    }
+  ],
+  "scan": {
+    "textFiles": 584,
+    "officialArchiveTextMembers": 1286,
+    "privateMatches": [],
+    "reviewedPublicUpstreamMatches": [
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/changes/archive/2026-05-14-workspace-change-planning/tasks.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/initiatives/context-store-and-initiatives/work-items/02-stabilize-workspace-as-local-view/evidence.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/initiatives/context-store-and-initiatives/work-items/02-stabilize-workspace-as-local-view/plan.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/delete-legacy-command-groups/deletion-ledger.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/delete-legacy-command-groups/plan.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/delete-legacy-command-groups/spec.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/personal-worksets/plan.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/personal-worksets/research.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/personal-worksets/spec.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/store-rename-and-guidance/plan.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::openspec/work/simplify-context-and-workspace-model/slices/store-rename-and-guidance/spec.md",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      },
+      {
+        "file": "tools/openspec/upstream-v1.14.2.tar.gz::test/utils/file-system.test.ts",
+        "classification": "Reviewed public upstream relative source references or synthetic cross-platform test paths; not a host execution path."
+      }
+    ],
+    "finalListedFiles": 589,
+    "finalTextFiles": 585,
+    "finalPrivateIdentifierAndHostPathMatches": 0
+  },
+  "historicalManifests": "Original historical digests preserved; separate current redacted-file hashes supplied."
+}

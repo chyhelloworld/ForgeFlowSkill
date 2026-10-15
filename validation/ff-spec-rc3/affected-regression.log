@@ -1,0 +1,9 @@
+
+ RUN  v4.1.11 repo:/tools/openspec/.build
+
+
+ Test Files  4 passed (4)
+      Tests  318 passed (318)
+   Start at  16:21:03
+   Duration  4.16s (transform 2.17s, setup 0ms, import 3.39s, tests 3.37s, environment 0ms)
+

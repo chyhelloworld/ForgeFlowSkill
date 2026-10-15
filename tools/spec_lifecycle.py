@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
-"""Structural specification lifecycle guard; never authenticates acceptance or tests behavior."""
+"""DEPRECATED: read-only audit of legacy spec-state; OpenSpec specs are authoritative. Writes disabled."""
 import argparse
-import copy
 import json
-import os
 from pathlib import Path
 import re
-import tempfile
 
 
 class Invalid(ValueError):
@@ -159,60 +156,15 @@ def check_acceptance(change, change_id, reference):
 
 
 def transition(state, action, change_id, reference):
-    require(change_id in state["active"], "active change not found")
-    result = copy.deepcopy(state)
-    change = result["active"][change_id]
-    check_change(change, result["current"])
-    require(nonempty(reference), "explicit reference/reason is required")
-    if action == "apply":
-        require(change["status"] == "verified", "only verified changes may be accepted/applied")
-        check_acceptance(change, change_id, reference)
-        for item in change["delta"]:
-            key = item["requirement_id"]
-            if item["new"] is None:
-                result["current"]["requirements"].pop(key)
-            else:
-                result["current"]["requirements"][key] = item["new"]
-        result["current"]["version"] += 1
-        change.update(status="accepted", acceptance_ref=reference, applied_version=result["current"]["version"])
-    elif action == "archive":
-        require(change["status"] in ("accepted", "canceled", "rejected"), "cannot archive an unresolved change")
-        if change["status"] == "accepted":
-            check_acceptance(change, change_id, change["acceptance_ref"])
-        change["archive_reason"] = reference
-        result["archived"][change_id] = result["active"].pop(change_id)
-    else:
-        raise Invalid("unknown mutation")
-    return result
+    raise Invalid("Legacy writes retired in 0.5.0-rc2; migrate explicitly to OpenSpec. Read-only validate remains available.")
 
 
 def atomic_write(path, state):
-    name = None
-    try:
-        with tempfile.NamedTemporaryFile(mode="w", encoding="utf-8", dir=path.parent, prefix=".spec-", delete=False) as stream:
-            name = stream.name
-            json.dump(state, stream, ensure_ascii=False, indent=2)
-            stream.write("\n")
-            stream.flush()
-            os.fsync(stream.fileno())
-        os.replace(name, path)
-    finally:
-        if name and os.path.exists(name):
-            os.unlink(name)
+    raise Invalid("Legacy writes retired in 0.5.0-rc2; migrate explicitly to OpenSpec. Read-only validate remains available.")
 
 
 def mutate(project, action, change_id, reference):
-    path = state_path(project)
-    lock = path.parent / ".spec.lock"
-    descriptor = os.open(lock, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
-    try:
-        os.close(descriptor)
-        state = load(state_path(project))
-        result = transition(state, action, change_id, reference)
-        atomic_write(path, result)
-        return result
-    finally:
-        lock.unlink()
+    raise Invalid("Legacy writes retired in 0.5.0-rc2; migrate explicitly to OpenSpec. Read-only validate remains available.")
 
 
 def main(argv=None):
@@ -235,7 +187,7 @@ def main(argv=None):
     except (Invalid, OSError, ValueError, TypeError) as exc:
         errors = [str(exc)]
     print(json.dumps({"passed": not errors, "action": args.action, "errors": errors,
-                      "limits": "Structural guard only; references are not authenticated approval or behavioral proof."}, ensure_ascii=False))
+                      "deprecated": True, "limits": "Legacy audit only, not OpenSpec readiness; no authenticated approval or behavioral proof."}, ensure_ascii=False))
     return 1 if errors else 0
 
 

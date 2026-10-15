@@ -1,0 +1,197 @@
+{
+  "valid": false,
+  "policyHash": "a3c832a4930dc56c29163a6c45ae5277775fb36cfbc5f8de3cd048b076e08ffb",
+  "schemaHash": "dcea0d5593b87ee1a7e53421807a23605cb5856c4e1328188d6a094116f12e34",
+  "artifacts": [
+    {
+      "id": "proposal",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/proposal.md",
+          "sha256": "e64ff9f4cb662f8923c00945e654a4650e32f408cb4bff1090fdc5e7bffe885d"
+        }
+      ],
+      "fingerprint": "bb7b53af4e6568f5aa908ccc922dfd3ec70da8b64c78f7ed77c4582cfef6d7d0"
+    },
+    {
+      "id": "spec",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "openspec/changes/ff-independent/specs/blog/spec.md",
+          "sha256": "90f8bf93977e924d43e3488c61da85269a44a687bd1d8b810c4e180145481332"
+        },
+        {
+          "path": "openspec/specs/blog/spec.md",
+          "sha256": "1291b40d0f245a2ca45f6fe8d6ce5aab54aef68559c543fd0a0bda1f54fbbc31"
+        }
+      ],
+      "fingerprint": "bc9291f1ba3442946a83f0d6990bfdb62378c3c9e39c2e41729566b1d4677761"
+    },
+    {
+      "id": "design",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/design.md",
+          "sha256": "58e9c1c92899f7c7026c89c5570cb35def8147f139b0030df38b234c73f74caa"
+        }
+      ],
+      "fingerprint": "7f10d03cad0f71760ca40e345360b825a92a7206eb09d7f465600194f2c54bf9"
+    },
+    {
+      "id": "plan",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/plan.md",
+          "sha256": "3bb46fe204d774ed6f1674815ca90fe2dd718da7f3b42ad00c37eb14a028476c"
+        }
+      ],
+      "fingerprint": "348bcb0a9b0261742ac2cba7a945ff271c85915e5be2d20a9f74cbef8c2d0014"
+    },
+    {
+      "id": "tasks",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/tasks.md",
+          "sha256": "4bd10bb9e6bcb15bedc8044f30e3625fef3b98ba454bdd8a52a4e0697faee76e"
+        }
+      ],
+      "fingerprint": "727145b021255eff6005960a8ab1bd0d182f2e94e15c7f1587838340edd26583"
+    },
+    {
+      "id": "review",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/review.md",
+          "sha256": "f32302d8b62a4ab95d1a74ed866986ced0d88bb4f132360eaa7d7d38a3138236"
+        }
+      ],
+      "fingerprint": "001022cdd0b0407599bff3804b5d5595abcecf5256236cfbca2efbb9efb51264"
+    },
+    {
+      "id": "handoff",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/handoff.md",
+          "sha256": "d2133f679b12c2c02a984c170b28638e782bd0a30c977e6b2c815412414aaef5"
+        }
+      ],
+      "fingerprint": "33cd35317064bf455873683fc42810d5e3c05881ca072c6c40bf170f09558093"
+    },
+    {
+      "id": "drawio",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/diagram.drawio",
+          "sha256": "4885f04d91d1bc6c79c5eeb7ca9c1bea2de335df3f5914209499ff0bf9004083"
+        }
+      ],
+      "fingerprint": "836459d83bb20007a218c4b7d840f754149518285d61650d0f9d69e09d5df3cd"
+    },
+    {
+      "id": "svg",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/diagram.svg",
+          "sha256": "cef5c8b791fda6d01bc723204bf163f234a4d37b460f3e3394bcb9003b0e4dbb"
+        }
+      ],
+      "fingerprint": "980f1b45b06b0499b52f9edaf96f4b0ce769008d68bd568a55317d63eec6ead8"
+    },
+    {
+      "id": "png",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/diagram.png",
+          "sha256": "f9ac5374d66534f7cd2f593af7c42a2196f97f52cc5d56224bd503a2f6c33903"
+        }
+      ],
+      "fingerprint": "9f71359b3675efc491752165128dd43b1800ce3c35a107bbe6887f0aeec95824"
+    },
+    {
+      "id": "html",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/prototype.html",
+          "sha256": "284cbb9b7e093e9794d8896338451457ed0169a3f667a57233f70704deeeb4b9"
+        }
+      ],
+      "fingerprint": "894edc74e8db417ce347a6bf79d3fad41be0594605f47d43e690a6ed581e3dfc"
+    },
+    {
+      "id": "json",
+      "state": "missing",
+      "reasons": [
+        "Artifact record is missing"
+      ],
+      "files": [
+        {
+          "path": "current 文档/data/a.json",
+          "sha256": "57677246dfe96f3a931483dc1bb5fdb420ca6301e4bf2ab4b504dfb2d1f66e91"
+        },
+        {
+          "path": "current 文档/data/b.json",
+          "sha256": "5f96cf88ea46ee8635ca64c4ebd473856ee16dc6e7b4a46ea67857ee31b2eab0"
+        }
+      ],
+      "fingerprint": "bb76b0c6d249b83a7a8206326d5be61693ad7ee6e146e1ebcbf5f86f82277dbf"
+    }
+  ],
+  "reasons": [
+    "proposal: Artifact record is missing",
+    "spec: Artifact record is missing",
+    "design: Artifact record is missing",
+    "plan: Artifact record is missing",
+    "tasks: Artifact record is missing",
+    "review: Artifact record is missing",
+    "handoff: Artifact record is missing",
+    "drawio: Artifact record is missing",
+    "svg: Artifact record is missing",
+    "png: Artifact record is missing",
+    "html: Artifact record is missing",
+    "json: Artifact record is missing"
+  ]
+}

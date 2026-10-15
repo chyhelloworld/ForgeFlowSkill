@@ -1,0 +1,138 @@
+{
+  "format": 1,
+  "rawPreservedOutsidePublishedTree": true,
+  "files": [
+    {
+      "file": "evidence/static-negative-tests.json",
+      "rawSha256": "f61fd21d57d8fb5b94af83a1a0d3b97563c9be1d7ab804770d2dc094ed967ca0",
+      "publishedSha256": "3e7094fc140f69510fc8555da30dafadc5327adf4305f69a5b29a8d750a8e444",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "examples/lifecycle-blog-trial/acceptance-boundary-probe.json",
+      "rawSha256": "6d44a31a74f7295a9474760e871329657c0f376070fc011d757606ebb7a6a949",
+      "publishedSha256": "6db31dcd12442dec34af67274a544fea4a4bf6d50a6cc7322298d5be8a646385",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "examples/lifecycle-blog-trial/execution-first-attempt.jsonl",
+      "rawSha256": "97c960ed2a9882924dc1e54be8383b2ae8c31a22565ce8490a276d3e3afa4cd7",
+      "publishedSha256": "f9ad0de229fc3574eea9616f9bd6f0315e0b910787b5fcc59d804e7ae5117205",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "examples/lifecycle-blog-trial/execution-second-attempt.jsonl",
+      "rawSha256": "9bac1075d1218e4ecdd499dd40820d604f66c220c0ece2c76865c140cdec001e",
+      "publishedSha256": "c4aa7818ee9501b8c6984f749ae77c4f813be9b48213e93069096db1d942775d",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "examples/lifecycle-blog-trial/execution.jsonl",
+      "rawSha256": "f6ce0fca59280906eedce23966e97d228a52301ed561af5144d78e696d3d4954",
+      "publishedSha256": "d4c5465038e87723cc7668f52bbbed0a613deb1891432f3b8449446c9aa34898",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "examples/lifecycle-blog-trial/final-run/execution.jsonl",
+      "rawSha256": "7f4195de4ca0566911e97369acc120251fd72752d96bad4f42024b36c8f6e0d3",
+      "publishedSha256": "bd97bd3d680817356dd8dda30f6070b2cc63bccd40a1498149ee64ccbd392291",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/RC3-FINAL-REPORT.md",
+      "rawSha256": "467bd5f223668a010bbcee69e79a94b682fc63b2ae1158926064f4e0c192f20a",
+      "publishedSha256": "61c5d258fff19ca1c6b2a75909fcf000fe2a16de79ab302eee85e4c8b670411a",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/REPRODUCE.md",
+      "rawSha256": "779108aec8422af555bd3e0395963672a51ec8fa68e0ea16c83ed373420ed5a3",
+      "publishedSha256": "c0f3ef38d415bbbd59d2ec2ecb9344f9f9a170238c243e6eb906e0e0c76085b8",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/RETEST-README.md",
+      "rawSha256": "625cf5c5ada8d79d0f0104fe6bc67c2eaf697115ead457b19004a1e4d6e8b468",
+      "publishedSha256": "a2a82173c622bdeb9401843c51459a4a2fb3c66badacb612e4a2b6757bf1f6cb",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/affected-regression.log",
+      "rawSha256": "a7824267f5396cf0b3a1571378be77a8aedec280b09dda8ab86109ebe01dfe61",
+      "publishedSha256": "8a1aed2139749c1350e204d058581dab7d5498e012eab9ff1e33a7999a525c20",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/checks.json",
+      "rawSha256": "3992e02420c34880294bd0f90e13cd49806e04dea69404d3a88d8b5dc583ec21",
+      "publishedSha256": "038159906d98d162abed9717bfb5f2e9c826f0485fbc0b94746f9100986f62bd",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/commands.json",
+      "rawSha256": "f8fc2e7e8a9e366cb026b9d2c90817c8249b0e28a60d1c010d81529f20eebeae",
+      "publishedSha256": "6dedaec9a64f7f9f9aa2677a5a0e5ceb300b2b06c16075cd64a1c7d107658ff2",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/e2e-summary.json",
+      "rawSha256": "a3389e6c8257df88f21a9caa384b5db550f3fefa1e73268f4d0949a4a6380061",
+      "publishedSha256": "15c684957c9f10df120fb046be4233a1a405e72566d4121d6f4cfe012275e1af",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/pre-adaptation-diagnostic-assertions.log",
+      "rawSha256": "c3c8ce9578122150ef20ae5dc8a70a9811ec948d019ef918c4fbebe5aa26920e",
+      "publishedSha256": "101faf0248e95460c82bf234df1ba2e5d7309cc1fb670b75bea104d1c4b16b61",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/rc3-results.json",
+      "rawSha256": "36fe24de8c1e0a41e15ea09322c1d0e5f20149492f8bd4d65a4e81ef3c2e4fef",
+      "publishedSha256": "61f195d946c89583be231a82b0b3af4a2c37cba9ee7185137bca6a9250016ea1",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/rc3-store-results.json",
+      "rawSha256": "f10ff06d44ba97f7ddfcf4326dddcfc3d25958fb11e6fd81cde5255c7202eaed",
+      "publishedSha256": "ecc1991ada091e74e0e62b46b5cb1fcac99b9cc51fc442919c0848fdfbd1cbc1",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/rebuild.log",
+      "rawSha256": "be79ce60ccfd19c32dac539348d542a31c54d8156f3c53aae1c4d18fe4e9e5eb",
+      "publishedSha256": "bde44e5c11a2f0c8e8252049cd82c6bb3ac8c2965df422d7bbc67e6091eb2e1f",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/reviewer-closure-probes.json",
+      "rawSha256": "7451cd3999feb580526b8cc88bc064d7ca3f99958c7dc2293c2504f357418910",
+      "publishedSha256": "82c8f30d8b1b46279f79d20706a399e326473b54afe4c4030d240263b5598388",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/reviewer-probes.json",
+      "rawSha256": "5d5bf677f0c955bf971a64dd3c75cad6515a7337e27c4e0e8242878ff07c14a2",
+      "publishedSha256": "1f622618325b0d984cb093b564f3accdbe72afb916831c63cec11849bbdd0ea8",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/ff-spec-rc3/static-mutations.json",
+      "rawSha256": "f2a7cae7db0e77c1747fa1de9f460d87a5807b40949706e57715fda1bb0cfb45",
+      "publishedSha256": "0e195a39bce24af28924313fa495871b5bd7cc9f2da9cc0b9052d59d1c91158a",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    },
+    {
+      "file": "validation/openspec-integration/final-static-negative.json",
+      "rawSha256": "3c1becd820a85da4d130d8d196a5a0c8b2f306959928e5258611faa263531022",
+      "publishedSha256": "e236579e6729fbe5a8b1fc492598b2f88b3cdfd6ca945a81d01c0576f73ddb75",
+      "transformation": "Host-specific path strings only; numeric/boolean results and conclusions unchanged."
+    }
+  ],
+  "jsonOrJsonlStructureAndNonStringValuesVerified": 15,
+  "finalHostPathScan": {
+    "listedFilesScanned": 589,
+    "textFilesScanned": 585,
+    "hostPathMatches": 0
+  }
+}

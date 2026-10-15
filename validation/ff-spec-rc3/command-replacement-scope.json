@@ -1,0 +1,286 @@
+[
+  {
+    "file": "schemas/spec-driven/schema.yaml",
+    "final_launcher_mentions": 11
+  },
+  {
+    "file": "schemas/spec-driven/templates/proposal.md",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/cli/commands/spec.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/cli/commands/store.ts",
+    "final_launcher_mentions": 7
+  },
+  {
+    "file": "src/cli/commands/workset.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/cli/index.ts",
+    "final_launcher_mentions": 14
+  },
+  {
+    "file": "src/commands/change.ts",
+    "final_launcher_mentions": 6
+  },
+  {
+    "file": "src/commands/completion.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/commands/config.ts",
+    "final_launcher_mentions": 10
+  },
+  {
+    "file": "src/commands/context.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/commands/doctor.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/commands/schema.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/commands/show.ts",
+    "final_launcher_mentions": 7
+  },
+  {
+    "file": "src/commands/store.ts",
+    "final_launcher_mentions": 8
+  },
+  {
+    "file": "src/commands/validate.ts",
+    "final_launcher_mentions": 9
+  },
+  {
+    "file": "src/commands/workflow/instructions.ts",
+    "final_launcher_mentions": 13
+  },
+  {
+    "file": "src/commands/workflow/new-change.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/commands/workflow/shared.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/commands/workflow/status.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/commands/workset-input.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/commands/workset.ts",
+    "final_launcher_mentions": 11
+  },
+  {
+    "file": "src/core/archive.ts",
+    "final_launcher_mentions": 9
+  },
+  {
+    "file": "src/core/artifact-graph/schema.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/change-status-policy.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/completion-tip.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/core/completions/templates/bash-templates.ts",
+    "final_launcher_mentions": 5
+  },
+  {
+    "file": "src/core/completions/templates/fish-templates.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/core/completions/templates/powershell-templates.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/core/completions/templates/zsh-templates.ts",
+    "final_launcher_mentions": 8
+  },
+  {
+    "file": "src/core/github-copilot/cloud-agent.ts",
+    "final_launcher_mentions": 45
+  },
+  {
+    "file": "src/core/global-config.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/init.ts",
+    "final_launcher_mentions": 8
+  },
+  {
+    "file": "src/core/migration.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/core/onboarding-commands.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/core/project-config.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/core/references.ts",
+    "final_launcher_mentions": 7
+  },
+  {
+    "file": "src/core/relationship-health.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/core/root-selection.ts",
+    "final_launcher_mentions": 12
+  },
+  {
+    "file": "src/core/shared/tool-detection.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/specs-apply.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/core/store/operations.ts",
+    "final_launcher_mentions": 12
+  },
+  {
+    "file": "src/core/store/registry.ts",
+    "final_launcher_mentions": 5
+  },
+  {
+    "file": "src/core/templates/optional-workflow.ts",
+    "final_launcher_mentions": 1
+  },
+  {
+    "file": "src/core/templates/workflows/apply-change.ts",
+    "final_launcher_mentions": 6
+  },
+  {
+    "file": "src/core/templates/workflows/archive-change.ts",
+    "final_launcher_mentions": 19
+  },
+  {
+    "file": "src/core/templates/workflows/bulk-archive-change.ts",
+    "final_launcher_mentions": 16
+  },
+  {
+    "file": "src/core/templates/workflows/continue-change.ts",
+    "final_launcher_mentions": 10
+  },
+  {
+    "file": "src/core/templates/workflows/explore.ts",
+    "final_launcher_mentions": 31
+  },
+  {
+    "file": "src/core/templates/workflows/feedback.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/templates/workflows/ff-change.ts",
+    "final_launcher_mentions": 15
+  },
+  {
+    "file": "src/core/templates/workflows/new-change.ts",
+    "final_launcher_mentions": 9
+  },
+  {
+    "file": "src/core/templates/workflows/onboard.ts",
+    "final_launcher_mentions": 12
+  },
+  {
+    "file": "src/core/templates/workflows/project-root.ts",
+    "final_launcher_mentions": 7
+  },
+  {
+    "file": "src/core/templates/workflows/propose.ts",
+    "final_launcher_mentions": 33
+  },
+  {
+    "file": "src/core/templates/workflows/store-selection.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/templates/workflows/sync-specs.ts",
+    "final_launcher_mentions": 20
+  },
+  {
+    "file": "src/core/templates/workflows/update-change.ts",
+    "final_launcher_mentions": 19
+  },
+  {
+    "file": "src/core/templates/workflows/verify-change.ts",
+    "final_launcher_mentions": 6
+  },
+  {
+    "file": "src/core/update.ts",
+    "final_launcher_mentions": 12
+  },
+  {
+    "file": "src/core/validation/constants.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/core/validation/task-checkboxes.ts",
+    "final_launcher_mentions": 6
+  },
+  {
+    "file": "src/core/version-check.ts",
+    "final_launcher_mentions": 6
+  },
+  {
+    "file": "src/core/view.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/core/worksets.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/telemetry/index.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/utils/change-metadata.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/utils/interactive.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/utils/item-discovery.ts",
+    "final_launcher_mentions": 2
+  },
+  {
+    "file": "src/utils/nested-change.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "src/utils/task-progress.ts",
+    "final_launcher_mentions": 3
+  },
+  {
+    "file": "test/core/archive.test.ts",
+    "final_launcher_mentions": 14
+  }
+]

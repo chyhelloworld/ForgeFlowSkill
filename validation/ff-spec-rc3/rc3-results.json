@@ -1,0 +1,340 @@
+{
+  "out": "temporary:ff-rc3-independent-b_hza45w",
+  "repo": "repo:",
+  "officialRoot": "official:",
+  "patchSha256": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+  "coverage": "temporary:ff-rc3-pinned-coverage",
+  "results": [
+    {
+      "name": "official PATH",
+      "args": [
+        "openspec",
+        "--version"
+      ],
+      "code": 0,
+      "stdout": "1.14.2\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "FF explicit under official PATH",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "--version"
+      ],
+      "code": 0,
+      "stdout": "1.14.2-ff.0.5.0-rc3\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "npm exec picks official",
+      "args": [
+        "npm",
+        "exec",
+        "--offline",
+        "--",
+        "openspec",
+        "--version"
+      ],
+      "code": 0,
+      "stdout": "1.14.2\n",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\n",
+      "passCode": true
+    },
+    {
+      "name": "FF explicit under local official bin",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "--version"
+      ],
+      "code": 0,
+      "stdout": "1.14.2-ff.0.5.0-rc3\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "official init creates skills",
+      "args": [
+        "node",
+        "official:/bin/openspec.js",
+        "init",
+        "--tools",
+        "agents",
+        "--no-animation"
+      ],
+      "code": 0,
+      "stdout": "- Creating OpenSpec structure...\n▌ OpenSpec structure created\n\nOpenSpec Setup Complete\n\nCreated: Other / Universal (shared .agents skills)\n6 skills in .agents/\nCommands skipped for: agents (no adapter)\nConfig: openspec/config.yaml (schema: spec-driven)\n\nGetting started:\n  Start your first change: /openspec-propose \"your idea\"\n\nNote: 6 more workflows are available (new, continue, ff, bulk-archive, verify, onboard).\nAdd them with `openspec config profile`.\n\nLearn more: https://github.com/Fission-AI/OpenSpec\nFeedback:   https://github.com/Fission-AI/OpenSpec/issues\n\n",
+      "stderr": "- Setting up Other / Universal (shared .agents skills)...\n✔ Setup complete for Other / Universal (shared .agents skills)\n",
+      "passCode": true
+    },
+    {
+      "name": "FF init none preserves official assets",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "init",
+        "--tools",
+        "none"
+      ],
+      "code": 0,
+      "stdout": "FF planning structure initialized. No official tool files were generated, migrated or refreshed.\n",
+      "stderr": "",
+      "passCode": true,
+      "allExistingUnchanged": true
+    },
+    {
+      "name": "rejected init",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "init"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF init requires --tools none; force, profile and Copilot generation options are disabled. Install the reviewed ForgeFlow skills separately.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected init --tools agents",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "init",
+        "--tools",
+        "agents"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF init requires --tools none; force, profile and Copilot generation options are disabled. Install the reviewed ForgeFlow skills separately.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected init --tools none --force",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "init",
+        "--tools",
+        "none",
+        "--force"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF init requires --tools none; force, profile and Copilot generation options are disabled. Install the reviewed ForgeFlow skills separately.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected init --tools none --profile core",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "init",
+        "--tools",
+        "none",
+        "--profile",
+        "core"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF init requires --tools none; force, profile and Copilot generation options are disabled. Install the reviewed ForgeFlow skills separately.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected update --force",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "update",
+        "--force"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF tool generation, update and shell completion are disabled until independently namespaced. Use the reviewed ForgeFlow skills and project-local ff-spec launcher.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected experimental --tool agents",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "experimental",
+        "--tool",
+        "agents"
+      ],
+      "code": 1,
+      "stdout": "Note: \"node tools/openspec/ff-spec.mjs experimental\" is deprecated. Use \"node tools/openspec/ff-spec.mjs init\" instead.\n",
+      "stderr": "✖ Error: FF init requires --tools none; force, profile and Copilot generation options are disabled. Install the reviewed ForgeFlow skills separately.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected completion bash",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "completion",
+        "bash"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "error: unknown command 'bash'\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "rejected version --check",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "version",
+        "--check"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "✖ Error: FF registry updates are disabled; rebuild the pinned ForgeFlow source instead.\n",
+      "passCode": true,
+      "projectUnchanged": true
+    },
+    {
+      "name": "invalid FF status",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "status",
+        "--change",
+        "demo",
+        "--json"
+      ],
+      "code": 0,
+      "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"fe022c6dfc0efd768fca7ea7d840e48421d07500d52ae84929c819c06e5bbc0c\",\n    \"schemaHash\": \"1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a\",\n    \"artifacts\": [\n      {\n        \"id\": \"design\",\n        \"state\": \"missing\",\n        \"reasons\": [\n          \"ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n        ]\n      }\n    ],\n    \"reasons\": [\n      \"design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n    ]\n  },\n  \"changeName\": \"demo\",\n  \"schemaName\": \"spec-driven\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"temporary:ff-rc3-independent-b_hza45w/ff\",\n    \"changesDir\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo\",\n  \"artifactPaths\": {\n    \"proposal\": {\n      \"outputPath\": \"proposal.md\",\n      \"resolvedOutputPath\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/proposal.md\",\n      \"existingOutputPaths\": []\n    },\n    \"specs\": {\n      \"outputPath\": \"specs/**/*.md\",\n      \"resolvedOutputPath\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/specs/**/*.md\",\n      \"existingOutputPaths\": []\n    },\n    \"design\": {\n      \"outputPath\": \"design.md\",\n      \"resolvedOutputPath\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/design.md\",\n      \"existingOutputPaths\": []\n    },\n    \"tasks\": {\n      \"outputPath\": \"tasks.md\",\n      \"resolvedOutputPath\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/tasks.md\",\n      \"existingOutputPaths\": [\n        \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/tasks.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"tasks\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"proposal\",\n      \"specs\",\n      \"design\",\n      \"tasks\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"temporary:ff-rc3-independent-b_hza45w/ff\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"proposal\",\n      \"outputPath\": \"proposal.md\",\n      \"status\": \"ready\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"specs\",\n      \"outputPath\": \"specs/**/*.md\",\n      \"status\": \"blocked\",\n      \"requires\": [\n        \"proposal\"\n      ],\n      \"missingDeps\": [\n        \"proposal\"\n      ]\n    },\n    {\n      \"id\": \"design\",\n      \"outputPath\": \"design.md\",\n      \"status\": \"blocked\",\n      \"requires\": [\n        \"proposal\"\n      ],\n      \"missingDeps\": [\n        \"proposal\"\n      ]\n    },\n    {\n      \"id\": \"tasks\",\n      \"outputPath\": \"tasks.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"specs\",\n        \"design\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/ff\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "invalid FF apply",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "instructions",
+        "apply",
+        "--change",
+        "demo",
+        "--json"
+      ],
+      "code": 0,
+      "stdout": "{\n  \"changeName\": \"demo\",\n  \"changeDir\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo\",\n  \"schemaName\": \"spec-driven\",\n  \"contextFiles\": {\n    \"tasks\": [\n      \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/tasks.md\"\n    ]\n  },\n  \"progress\": {\n    \"total\": 1,\n    \"complete\": 1,\n    \"remaining\": 0\n  },\n  \"tasks\": [\n    {\n      \"id\": \"1\",\n      \"description\": \"1.1 complete\",\n      \"done\": true,\n      \"sourcePath\": \"temporary:ff-rc3-independent-b_hza45w/ff/openspec/changes/demo/tasks.md\",\n      \"line\": 1\n    }\n  ],\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"fe022c6dfc0efd768fca7ea7d840e48421d07500d52ae84929c819c06e5bbc0c\",\n    \"schemaHash\": \"1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a\",\n    \"artifacts\": [\n      {\n        \"id\": \"design\",\n        \"state\": \"missing\",\n        \"reasons\": [\n          \"ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n        ]\n      }\n    ],\n    \"reasons\": [\n      \"design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n    ]\n  },\n  \"taskTrackingConfigured\": true,\n  \"state\": \"blocked\",\n  \"missingPrerequisites\": [\n    \"proposal\",\n    \"specs\",\n    \"design\"\n  ],\n  \"instruction\": \"ForgeFlow gate blocked: design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\",\n  \"root\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/ff\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "invalid FF validate",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "validate",
+        "demo",
+        "--type",
+        "change",
+        "--strict",
+        "--json"
+      ],
+      "code": 1,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"demo\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"file\",\n          \"message\": \"Change must have at least one delta. No deltas found. Ensure your change has a specs/ directory with capability folders (e.g. specs/http-server/spec.md) containing .md files that use delta headers (## ADDED/MODIFIED/REMOVED/RENAMED Requirements) and that each requirement includes at least one \\\"#### Scenario:\\\" block. If this change intentionally modifies no specs (pure refactor, tooling, docs), set \\\"skip_specs: true\\\" in the change's .openspec.yaml instead. Tip: run \\\"node tools/openspec/ff-spec.mjs change show <change-id> --json --deltas-only\\\" to inspect parsed deltas.\"\n        }\n      ],\n      \"durationMs\": 35\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/ff\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "invalid FF archive",
+      "args": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "archive",
+        "demo",
+        "--yes",
+        "--no-validate",
+        "--skip-specs",
+        "--json"
+      ],
+      "code": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/ff\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: design: ENOENT: no such file or directory, lstat 'temporary:ff-rc3-independent-b_hza45w/ff/missing-design.md'\"\n    }\n  ]\n}\n",
+      "stderr": "",
+      "passCode": true,
+      "activePreserved": true
+    },
+    {
+      "name": "known boundary official ignores FF gate",
+      "args": [
+        "node",
+        "official:/bin/openspec.js",
+        "archive",
+        "demo",
+        "--yes",
+        "--no-validate",
+        "--skip-specs",
+        "--json"
+      ],
+      "code": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"demo\",\n    \"archivedAs\": \"2026-10-15-demo\",\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/official/openspec/changes/archive/2026-10-15-demo\",\n    \"specsUpdated\": false\n  },\n  \"root\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/official\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": "",
+      "passCode": true,
+      "archived": true
+    },
+    {
+      "name": "config and data paths isolated",
+      "args": [
+        "node",
+        "--input-type=module",
+        "-e",
+        "import * as f from 'repo:/tools/openspec/.build/dist/core/global-config.js';import * as o from 'official:/dist/core/global-config.js';console.log(JSON.stringify({ff:[f.getGlobalConfigDir(),f.getGlobalDataDir()],official:[o.getGlobalConfigDir(),o.getGlobalDataDir()]}))"
+      ],
+      "code": 0,
+      "stdout": "{\"ff\":[\"temporary:ff-rc3-independent-b_hza45w/config/ff-spec\",\"temporary:ff-rc3-independent-b_hza45w/data/ff-spec\"],\"official\":[\"temporary:ff-rc3-independent-b_hza45w/config/openspec\",\"temporary:ff-rc3-independent-b_hza45w/data/openspec\"]}\n",
+      "stderr": "",
+      "passCode": true
+    },
+    {
+      "name": "missing build refusal",
+      "args": [
+        "node",
+        "temporary:ff-rc3-independent-b_hza45w/launcher/ff-spec.mjs",
+        "--version"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "FF build unavailable or invalid (ENOENT: no such file or directory, open 'temporary:ff-rc3-independent-b_hza45w/launcher/.build/FF-BUILD.json'). Run node tools/openspec/build.mjs --clean. No official CLI fallback is permitted.\n",
+      "passCode": true
+    },
+    {
+      "name": "official package identity refusal",
+      "args": [
+        "node",
+        "temporary:ff-rc3-independent-b_hza45w/launcher/ff-spec.mjs",
+        "--version"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "FF build unavailable or invalid (package identity mismatch). Run node tools/openspec/build.mjs --clean. No official CLI fallback is permitted.\n",
+      "passCode": true
+    },
+    {
+      "name": "modified runtime refusal",
+      "args": [
+        "node",
+        "temporary:ff-rc3-independent-b_hza45w/launcher/ff-spec.mjs",
+        "--version"
+      ],
+      "code": 1,
+      "stdout": "",
+      "stderr": "FF build unavailable or invalid (runtime hashes mismatch). Run node tools/openspec/build.mjs --clean. No official CLI fallback is permitted.\n",
+      "passCode": true
+    }
+  ]
+}

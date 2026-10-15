@@ -1,0 +1,18 @@
+[
+  {
+    "file": "upstream-v1.14.2.tar.gz",
+    "sha256_match": true
+  },
+  {
+    "file": "forgeflow.patch",
+    "sha256_match": true
+  },
+  {
+    "file": "bootstrap/package.json",
+    "sha256_match": true
+  },
+  {
+    "file": "bootstrap/package-lock.json",
+    "sha256_match": true
+  }
+]

@@ -2,9 +2,9 @@
 name: ff-grill
 description: 澄清 ForgeFlow 用户意图、目标和重要方案取舍；用于需求澄清、grill、方案压力测试或目标变更。保留推荐前自审及按用户选择的记录模式，不用于普通问答或已有明确计划的日常执行。
 metadata:
-  version: "0.5.0-rc1"
+  version: "0.5.0-rc3"
 ---
-# FF-Grill 0.5.0-rc1
+# FF-Grill 0.5.0-rc3
 
 从用户原话与现有证据提炼 Intent → Motivation → Goal → Problem → Decision → Evidence。保留用户意图，不用推测的“真正问题”替代它。
 
@@ -37,3 +37,7 @@ metadata:
 视觉/交互方向待选时可用已安装的 ff-design；实际交互或技术/架构存在影响方向的未知时，可用已安装的 ff-prove 做有界验证；已确认行为需成规格时可用 ff-spec；规格有效需拆票时可用 ff-plan；执行获准且计划有效时可用 ff-implement。它们不是前置依赖，不要求每次全部调用。交接只传当前目标及来源、获准范围、关键事实/未决项、下一步，不复制整份讨论。
 
 本候选保留 v1.3 的核心语义并渐进拆分；[来源与许可](NOTICE.md)。不自带安装、T3集成、执行权限或行为测试通过保证。
+
+## OpenSpec 与 FF 有效性
+
+遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。

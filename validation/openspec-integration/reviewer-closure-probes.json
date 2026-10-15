@@ -1,0 +1,237 @@
+{
+  "cli": "tools/openspec/.build/bin/openspec.js",
+  "source_sha256": "b5f69771b907024eddec409bca98ba39ae9cdd9249728c92c09c701a79ab94f0",
+  "checks": [
+    {
+      "name": "canceled-preserves-failed-evidence-and-no-promotion",
+      "passed": true
+    },
+    {
+      "name": "rejected-preserves-failed-evidence-and-no-promotion",
+      "passed": true
+    },
+    {
+      "name": "ordinary-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "no-ref-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "ambiguous-flags-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "existing-receipt-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "shared-archive-lock-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "destination-conflict-refuses-without-byte-mutation",
+      "passed": true
+    },
+    {
+      "name": "fault-EXDEV-rolls-back-owned-receipt-and-archive-only",
+      "passed": true
+    },
+    {
+      "name": "fault-EIO-rolls-back-owned-receipt-and-archive-only",
+      "passed": true
+    },
+    {
+      "name": "fault-ENOSPC-rolls-back-owned-receipt-and-archive-only",
+      "passed": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "canceled",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"check\",\n    \"archivedAs\": \"2026-10-15-check\",\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/canceled/openspec/changes/archive/2026-10-15-check\",\n    \"specsUpdated\": false,\n    \"disposition\": \"canceled\"\n  },\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/canceled\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "rejected",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "rejected",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--json"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"check\",\n    \"archivedAs\": \"2026-10-15-check\",\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/rejected/openspec/changes/archive/2026-10-15-check\",\n    \"specsUpdated\": false,\n    \"disposition\": \"rejected\"\n  },\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/rejected\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ordinary",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--yes",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/ordinary\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: Invalid FF configuration: Expected property name or '}' in JSON at position 1 (line 1 column 2)\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "no-ref",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/no-ref\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF closure requires a nonempty decisionRef\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "ambiguous-flags",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "rejected",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--skip-specs",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/ambiguous-flags\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF terminal closure cannot be combined with --skip-specs or --no-validate\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "existing-receipt",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/existing-receipt\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF closure refuses an existing ff-disposition.json\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "shared-archive-lock",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/shared-archive-lock\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF closure archive is already claimed: test-fixture/ff-terminal-review-_mh4trqp/shared-archive-lock/openspec/changes/archive/.openspec-archive.lock\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "destination-conflict",
+      "command": [
+        "node",
+        "tools/openspec/.build/bin/openspec.js",
+        "archive",
+        "check",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic terminal decision",
+        "--ff-decision-ref",
+        "fixture:reviewer-decision",
+        "--json"
+      ],
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"test-fixture/ff-terminal-review-_mh4trqp/destination-conflict\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF closure archive destination already exists: test-fixture/ff-terminal-review-_mh4trqp/destination-conflict/openspec/changes/archive/2026-10-15-check\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "fault-EXDEV",
+      "command": [
+        "node",
+        "validation/openspec-integration/reviewer-close-faults.mjs",
+        "tools/openspec/.build/dist/core/ff-close.js",
+        "test-fixture/ff-terminal-review-_mh4trqp/fault-EXDEV",
+        "EXDEV"
+      ],
+      "exit": 0,
+      "stdout": "{\"expectedFailure\":true,\"message\":\"FF closure requires a same-filesystem atomic rename; cross-device moves are refused\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "fault-EIO",
+      "command": [
+        "node",
+        "validation/openspec-integration/reviewer-close-faults.mjs",
+        "tools/openspec/.build/dist/core/ff-close.js",
+        "test-fixture/ff-terminal-review-_mh4trqp/fault-EIO",
+        "EIO"
+      ],
+      "exit": 0,
+      "stdout": "{\"expectedFailure\":true,\"message\":\"Error: Injected rename EIO\"}\n",
+      "stderr": ""
+    },
+    {
+      "name": "fault-ENOSPC",
+      "command": [
+        "node",
+        "validation/openspec-integration/reviewer-close-faults.mjs",
+        "tools/openspec/.build/dist/core/ff-close.js",
+        "test-fixture/ff-terminal-review-_mh4trqp/fault-ENOSPC",
+        "ENOSPC"
+      ],
+      "exit": 0,
+      "stdout": "{\"expectedFailure\":true,\"message\":\"Error: Injected receipt ENOSPC\"}\n",
+      "stderr": ""
+    }
+  ]
+}

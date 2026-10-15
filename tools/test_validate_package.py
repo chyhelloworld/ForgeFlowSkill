@@ -7,18 +7,18 @@ import shutil
 import tempfile
 import sys
 sys.dont_write_bytecode = True
-from validate_package import validate
+from validate_package import validate, is_deliverable
 
 def manifest(root):
     p=root/'MANIFEST.json'
     data=json.loads(p.read_text())
-    data['files']={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(root.rglob('*')) if f.is_file() and f!=p}
+    data['files']={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(root.rglob('*')) if f.is_file() and f!=p and is_deliverable(f, root)}
     p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 def mutate(root,kind):
     if kind=='missing_method': shutil.rmtree(root/'skills/ff-handoff')
     elif kind=='wrong_version':
-        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.5.0-rc1','0.4.0-rc1'))
+        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.5.0-rc3','0.4.0-rc1'))
     elif kind=='broken_reference':
         p=root/'skills/ff-diagnose/SKILL.md';p.write_text(p.read_text()+'\n[bad](references/missing.md)\n')
     elif kind=='missing_license': (root/'skills/ff-handoff/LICENSE-MATT').unlink()
@@ -38,7 +38,7 @@ if __name__=='__main__':
     results=[{'case':'valid_package','passed':baseline['passed'],'errors':baseline['errors']}]
     for kind in ['missing_method','wrong_version','broken_reference','missing_license','missing_replay','changed_source','unknown_scenario_skill','hash_tamper']:
         with tempfile.TemporaryDirectory(prefix='ff-static-negative-') as d:
-            clone=Path(d)/'package';shutil.copytree(root,clone);mutate(clone,kind)
+            clone=Path(d)/'package';shutil.copytree(root,clone,ignore=shutil.ignore_patterns(".git", ".build", ".bootstrap", "__pycache__", ".pnpm-data", ".pnpm-cache", ".pnpm-store"));mutate(clone,kind)
             outcome=validate(clone)
             results.append({'case':kind,'passed':not outcome['passed'],'detected':outcome['errors']})
     ok=all(x['passed'] for x in results)

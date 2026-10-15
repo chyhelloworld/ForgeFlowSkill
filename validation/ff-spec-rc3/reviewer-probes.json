@@ -1,0 +1,721 @@
+{
+  "module_sha256": "310e323ec09b23b6a9c5a14793b851fc9969102879a4bb293a848e3ce2a8ceff",
+  "checks": [
+    {
+      "name": "valid-three-level-graph",
+      "passed": true,
+      "result": {
+        "valid": true,
+        "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [
+          {
+            "id": "a",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "docs/a.md",
+                "sha256": "ec6e61af131c76be11221ab638428d8cc27242ba71b05139cf845b04c8de9f9a"
+              }
+            ],
+            "fingerprint": "361691935bca79f4427b15c67b275ec08d346affa9655ac2754b0f5b32a61e9e"
+          },
+          {
+            "id": "b",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "docs/b.md",
+                "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+              }
+            ],
+            "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+          },
+          {
+            "id": "c",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "docs/c.md",
+                "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+              }
+            ],
+            "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+          }
+        ],
+        "reasons": []
+      },
+      "exit": 0
+    },
+    {
+      "name": "transitive-stale-with-unchanged-consumers",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [
+          {
+            "id": "a",
+            "state": "stale",
+            "reasons": [
+              "Artifact fingerprint changed or is missing"
+            ],
+            "files": [
+              {
+                "path": "docs/a.md",
+                "sha256": "ed45c8bb4c8f8edb5d53bf823ac2159153bcd1c98235e6644faba8c94b63b129"
+              }
+            ],
+            "fingerprint": "5a39b1a3f781a3a00c3a68be4e91bb495646fadcba1a45ec910c7e33be4dfc5a"
+          },
+          {
+            "id": "b",
+            "state": "stale",
+            "reasons": [
+              "Dependency a is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "docs/b.md",
+                "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+              }
+            ],
+            "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+          },
+          {
+            "id": "c",
+            "state": "stale",
+            "reasons": [
+              "Dependency b is stale"
+            ],
+            "files": [
+              {
+                "path": "docs/c.md",
+                "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+              }
+            ],
+            "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+          }
+        ],
+        "reasons": [
+          "a: Artifact fingerprint changed or is missing",
+          "b: Dependency a is stale",
+          "b: Dependency input fingerprints do not match",
+          "c: Dependency b is stale"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "overlapping-canonical-paths",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "f235180a5aa673c54678a80b6907b221c356273738359f44832ee76bd8114961",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [],
+        "reasons": [
+          "Invalid FF configuration: Duplicate FF path scope: docs/a.md"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "one-declared-glob-has-no-output",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "c72ab077505817f410c4b94ae1f1dad47b0aa802c6ec7be0f7b8fd3c82c2d533",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [],
+        "reasons": [
+          "Invalid FF configuration: FF glob matches no files: images/*.png"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "symlink-outside-project",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [],
+        "reasons": [
+          "Invalid FF configuration: Symlinks are forbidden in FF paths: temporary:ff-independent-review-9oemnbe5/escape/docs/a.md"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "orphan-manifest-fails-closed",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "",
+        "schemaHash": "",
+        "artifacts": [],
+        "reasons": [
+          "FF manifest exists but openspec/ff-policy.json is missing or inaccessible"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "malformed-policy-fails-closed",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "be302461cda285db3ed2d45fb767b23e08ca8808b35a638009937df22b332d73",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [],
+        "reasons": [
+          "Invalid FF configuration: Expected property name or '}' in JSON at position 1 (line 1 column 2)"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "directory-cannot-be-artifact",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [
+          {
+            "id": "a",
+            "state": "missing",
+            "reasons": [
+              "Missing, empty, or nonregular file: docs/a.md"
+            ]
+          },
+          {
+            "id": "b",
+            "state": "stale",
+            "reasons": [
+              "Dependency a is missing",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "docs/b.md",
+                "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+              }
+            ],
+            "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+          },
+          {
+            "id": "c",
+            "state": "stale",
+            "reasons": [
+              "Dependency b is stale"
+            ],
+            "files": [
+              {
+                "path": "docs/c.md",
+                "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+              }
+            ],
+            "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+          }
+        ],
+        "reasons": [
+          "a: Missing, empty, or nonregular file: docs/a.md",
+          "b: Dependency a is missing",
+          "b: Dependency input fingerprints do not match",
+          "c: Dependency b is stale"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "empty-artifact-fails-closed",
+      "passed": true,
+      "result": {
+        "valid": false,
+        "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+        "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+        "artifacts": [
+          {
+            "id": "a",
+            "state": "missing",
+            "reasons": [
+              "Missing, empty, or nonregular file: docs/a.md"
+            ]
+          },
+          {
+            "id": "b",
+            "state": "stale",
+            "reasons": [
+              "Dependency a is missing",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "docs/b.md",
+                "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+              }
+            ],
+            "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+          },
+          {
+            "id": "c",
+            "state": "stale",
+            "reasons": [
+              "Dependency b is stale"
+            ],
+            "files": [
+              {
+                "path": "docs/c.md",
+                "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+              }
+            ],
+            "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+          }
+        ],
+        "reasons": [
+          "a: Missing, empty, or nonregular file: docs/a.md",
+          "b: Dependency a is missing",
+          "b: Dependency input fingerprints do not match",
+          "c: Dependency b is stale"
+        ]
+      },
+      "exit": 0
+    },
+    {
+      "name": "absent-policy-and-manifest-opt-out",
+      "passed": true,
+      "result": null
+    },
+    {
+      "name": "default-schema",
+      "passed": true,
+      "result": {
+        "ffValidity": {
+          "valid": true,
+          "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+          "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+          "artifacts": [
+            {
+              "id": "a",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/a.md",
+                  "sha256": "ec6e61af131c76be11221ab638428d8cc27242ba71b05139cf845b04c8de9f9a"
+                }
+              ],
+              "fingerprint": "361691935bca79f4427b15c67b275ec08d346affa9655ac2754b0f5b32a61e9e"
+            },
+            {
+              "id": "b",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/b.md",
+                  "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+                }
+              ],
+              "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+            },
+            {
+              "id": "c",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/c.md",
+                  "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+                }
+              ],
+              "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+            }
+          ],
+          "reasons": []
+        },
+        "changeName": "check",
+        "schemaName": "spec-driven",
+        "planningHome": {
+          "kind": "repo",
+          "root": "temporary:ff-independent-review-9oemnbe5/override",
+          "changesDir": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes",
+          "defaultSchema": "spec-driven"
+        },
+        "changeRoot": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check",
+        "artifactPaths": {
+          "proposal": {
+            "outputPath": "proposal.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/proposal.md",
+            "existingOutputPaths": []
+          },
+          "specs": {
+            "outputPath": "specs/**/*.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/specs/**/*.md",
+            "existingOutputPaths": []
+          },
+          "design": {
+            "outputPath": "design.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/design.md",
+            "existingOutputPaths": []
+          },
+          "tasks": {
+            "outputPath": "tasks.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/tasks.md",
+            "existingOutputPaths": []
+          }
+        },
+        "isPlanningComplete": false,
+        "isComplete": false,
+        "applyRequires": [
+          "tasks"
+        ],
+        "nextSteps": [
+          "Run node tools/openspec/ff-spec.mjs instructions proposal --change \"check\" --json before writing that artifact."
+        ],
+        "actionContext": {
+          "mode": "repo-local",
+          "sourceOfTruth": "repo",
+          "planningArtifacts": [
+            "proposal",
+            "specs",
+            "design",
+            "tasks"
+          ],
+          "linkedContext": [],
+          "allowedEditRoots": [
+            "temporary:ff-independent-review-9oemnbe5/override"
+          ],
+          "requiresAffectedAreaSelection": false,
+          "constraints": [
+            "Repo-local change artifacts and implementation edits are scoped to this project."
+          ]
+        },
+        "artifacts": [
+          {
+            "id": "proposal",
+            "outputPath": "proposal.md",
+            "status": "ready",
+            "requires": []
+          },
+          {
+            "id": "specs",
+            "outputPath": "specs/**/*.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "design",
+            "outputPath": "design.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "tasks",
+            "outputPath": "tasks.md",
+            "status": "blocked",
+            "requires": [
+              "specs",
+              "design"
+            ],
+            "missingDeps": [
+              "specs",
+              "design"
+            ]
+          }
+        ],
+        "root": {
+          "path": "temporary:ff-independent-review-9oemnbe5/override",
+          "source": "nearest"
+        }
+      },
+      "command": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "status",
+        "--change",
+        "check",
+        "--json"
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "schema-override",
+      "passed": true,
+      "result": {
+        "ffValidity": {
+          "valid": false,
+          "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+          "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+          "artifacts": [
+            {
+              "id": "a",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/a.md",
+                  "sha256": "ec6e61af131c76be11221ab638428d8cc27242ba71b05139cf845b04c8de9f9a"
+                }
+              ],
+              "fingerprint": "361691935bca79f4427b15c67b275ec08d346affa9655ac2754b0f5b32a61e9e"
+            },
+            {
+              "id": "b",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/b.md",
+                  "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+                }
+              ],
+              "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+            },
+            {
+              "id": "c",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/c.md",
+                  "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+                }
+              ],
+              "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+            }
+          ],
+          "reasons": [
+            "ForgeFlow forbids schema overrides that differ from the recorded effective schema"
+          ]
+        },
+        "changeName": "check",
+        "schemaName": "reviewer-alt",
+        "planningHome": {
+          "kind": "repo",
+          "root": "temporary:ff-independent-review-9oemnbe5/override",
+          "changesDir": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes",
+          "defaultSchema": "spec-driven"
+        },
+        "changeRoot": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check",
+        "artifactPaths": {
+          "proposal": {
+            "outputPath": "proposal.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/proposal.md",
+            "existingOutputPaths": []
+          },
+          "specs": {
+            "outputPath": "specs/**/*.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/specs/**/*.md",
+            "existingOutputPaths": []
+          },
+          "design": {
+            "outputPath": "design.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/design.md",
+            "existingOutputPaths": []
+          },
+          "tasks": {
+            "outputPath": "tasks.md",
+            "resolvedOutputPath": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check/tasks.md",
+            "existingOutputPaths": []
+          }
+        },
+        "isPlanningComplete": false,
+        "isComplete": false,
+        "applyRequires": [
+          "tasks"
+        ],
+        "nextSteps": [
+          "Resolve ForgeFlow validity: ForgeFlow forbids schema overrides that differ from the recorded effective schema"
+        ],
+        "actionContext": {
+          "mode": "repo-local",
+          "sourceOfTruth": "repo",
+          "planningArtifacts": [
+            "proposal",
+            "specs",
+            "design",
+            "tasks"
+          ],
+          "linkedContext": [],
+          "allowedEditRoots": [
+            "temporary:ff-independent-review-9oemnbe5/override"
+          ],
+          "requiresAffectedAreaSelection": false,
+          "constraints": [
+            "Repo-local change artifacts and implementation edits are scoped to this project."
+          ]
+        },
+        "artifacts": [
+          {
+            "id": "proposal",
+            "outputPath": "proposal.md",
+            "status": "ready",
+            "requires": []
+          },
+          {
+            "id": "specs",
+            "outputPath": "specs/**/*.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "design",
+            "outputPath": "design.md",
+            "status": "blocked",
+            "requires": [
+              "proposal"
+            ],
+            "missingDeps": [
+              "proposal"
+            ]
+          },
+          {
+            "id": "tasks",
+            "outputPath": "tasks.md",
+            "status": "blocked",
+            "requires": [
+              "specs",
+              "design"
+            ],
+            "missingDeps": [
+              "specs",
+              "design"
+            ]
+          }
+        ],
+        "root": {
+          "path": "temporary:ff-independent-review-9oemnbe5/override",
+          "source": "nearest"
+        }
+      },
+      "command": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "status",
+        "--change",
+        "check",
+        "--schema",
+        "reviewer-alt",
+        "--json"
+      ],
+      "exit": 0,
+      "stderr": ""
+    },
+    {
+      "name": "apply-schema-override",
+      "passed": true,
+      "result": {
+        "changeName": "check",
+        "changeDir": "temporary:ff-independent-review-9oemnbe5/override/openspec/changes/check",
+        "schemaName": "reviewer-alt",
+        "contextFiles": {},
+        "progress": {
+          "total": 0,
+          "complete": 0,
+          "remaining": 0
+        },
+        "tasks": [],
+        "ffValidity": {
+          "valid": false,
+          "policyHash": "686c73381e43fe84e34fe2afa4d2ccaa564fd78cc875e6bb4ce7ad4791f0af70",
+          "schemaHash": "1a9b4fb2aab0f4d1759972f7471e9ef8c343ecf3ca3ceaa3402affa40bd1d98a",
+          "artifacts": [
+            {
+              "id": "a",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/a.md",
+                  "sha256": "ec6e61af131c76be11221ab638428d8cc27242ba71b05139cf845b04c8de9f9a"
+                }
+              ],
+              "fingerprint": "361691935bca79f4427b15c67b275ec08d346affa9655ac2754b0f5b32a61e9e"
+            },
+            {
+              "id": "b",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/b.md",
+                  "sha256": "299ee1e6e74468df6b193faae72ad4c551e88bafe4959292f36a399a833e2aad"
+                }
+              ],
+              "fingerprint": "0dbe2060c982fc17213b32e424a3c8127a1f3a893e670ce0f5ba96917d67702e"
+            },
+            {
+              "id": "c",
+              "state": "valid",
+              "reasons": [],
+              "files": [
+                {
+                  "path": "docs/c.md",
+                  "sha256": "392ef10ef7692b8e661835a192e9e00d039a17c4ab6aafed98c5ffaafbb2ad14"
+                }
+              ],
+              "fingerprint": "e0eca97212cb18ee8daa00c1ef603aa0237fe37c15c1f8f979a30c6bc64d11e6"
+            }
+          ],
+          "reasons": [
+            "ForgeFlow forbids schema overrides that differ from the recorded effective schema"
+          ]
+        },
+        "taskTrackingConfigured": true,
+        "state": "blocked",
+        "missingArtifacts": [
+          "tasks"
+        ],
+        "missingPrerequisites": [
+          "proposal",
+          "specs",
+          "design",
+          "tasks"
+        ],
+        "instruction": "ForgeFlow gate blocked: ForgeFlow forbids schema overrides that differ from the recorded effective schema",
+        "root": {
+          "path": "temporary:ff-independent-review-9oemnbe5/override",
+          "source": "nearest"
+        }
+      },
+      "command": [
+        "node",
+        "repo:/tools/openspec/ff-spec.mjs",
+        "instructions",
+        "apply",
+        "--change",
+        "check",
+        "--schema",
+        "reviewer-alt",
+        "--json"
+      ],
+      "exit": 0,
+      "stderr": ""
+    }
+  ]
+}

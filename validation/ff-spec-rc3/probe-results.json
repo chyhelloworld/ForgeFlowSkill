@@ -1,0 +1,128 @@
+{
+  "helper": {
+    "checks": [
+      {
+        "name": "valid runtime",
+        "status": "PASS"
+      },
+      {
+        "name": "package name \"wrong\"",
+        "status": "PASS"
+      },
+      {
+        "name": "package version \"wrong\"",
+        "status": "PASS"
+      },
+      {
+        "name": "package bin undefined",
+        "status": "PASS"
+      },
+      {
+        "name": "package bin {\"ff-spec\":\"wrong\"}",
+        "status": "PASS"
+      },
+      {
+        "name": "package bin {\"ff-spec\":\"./bin/ff-spec.js\",\"openspec\":\"./bin/openspec.js\"}",
+        "status": "PASS"
+      },
+      {
+        "name": "marker stale commit",
+        "status": "PASS"
+      },
+      {
+        "name": "marker stale archiveSha256",
+        "status": "PASS"
+      },
+      {
+        "name": "marker stale patchSha256",
+        "status": "PASS"
+      },
+      {
+        "name": "marker stale adapter",
+        "status": "PASS"
+      },
+      {
+        "name": "runtime byte tamper",
+        "status": "PASS"
+      },
+      {
+        "name": "missing marker",
+        "status": "PASS"
+      },
+      {
+        "name": "malformed marker",
+        "status": "PASS"
+      },
+      {
+        "name": "symlink runtime entry rejected",
+        "status": "PASS"
+      },
+      {
+        "name": "launcher successful import",
+        "status": "PASS"
+      },
+      {
+        "name": "launcher invalid build catch",
+        "status": "PASS"
+      }
+    ],
+    "sourceCopies": [
+      {
+        "source": "repo:tools/openspec/ff-build.mjs",
+        "copy": "test-fixture/helper/ff-build.mjs",
+        "sha256": "e271991d3991faddcd64b83f3008b8efad2060c682955b68ca138115735bcb5e"
+      },
+      {
+        "source": "repo:tools/openspec/ff-spec.mjs",
+        "copy": "test-fixture/helper/ff-spec.mjs",
+        "sha256": "12039e1450e0f07d9ceafb5047aafea58209c56c788bba42e67202b58ba24548"
+      }
+    ]
+  },
+  "commands": {
+    "checks": [
+      {
+        "name": "direct UpdateCommand.execute blocks",
+        "status": "PASS"
+      },
+      {
+        "name": "InitCommand prohibited options {}",
+        "status": "PASS"
+      },
+      {
+        "name": "InitCommand prohibited options {\"tools\":\"all\"}",
+        "status": "PASS"
+      },
+      {
+        "name": "InitCommand prohibited options {\"tools\":\"none\",\"force\":true}",
+        "status": "PASS"
+      },
+      {
+        "name": "InitCommand prohibited options {\"tools\":\"none\",\"profile\":\"core\"}",
+        "status": "PASS"
+      },
+      {
+        "name": "InitCommand prohibited options {\"tools\":\"none\",\"copilotCloud\":false}",
+        "status": "PASS"
+      },
+      {
+        "name": "direct safe InitCommand.execute creates fixture structure",
+        "status": "PASS"
+      },
+      {
+        "name": "direct safe InitCommand rejects external pointer",
+        "status": "PASS"
+      },
+      {
+        "name": "getCommandPath roots empty name and nested command",
+        "status": "PASS"
+      },
+      {
+        "name": "CLI preAction --no-color branch",
+        "status": "PASS"
+      }
+    ]
+  },
+  "checks": 26,
+  "status": "PASS"
+}

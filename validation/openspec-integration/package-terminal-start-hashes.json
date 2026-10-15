@@ -1,0 +1,8 @@
+{
+  "src/core/ff-validity.ts": "904d9d710910120a14f5a939515c047475ad6fd633f58afcc9ff945f216fecad",
+  "dist/core/ff-validity.js": "310e323ec09b23b6a9c5a14793b851fc9969102879a4bb293a848e3ce2a8ceff",
+  "src/core/archive.ts": "0740a649e7231a8d1a08573f77a232d487d3a05fc1ef37a4dee50b3a3a68cbf0",
+  "dist/core/archive.js": "05a094321388d555518cf4444f41ae012b124dfe63227e19a984a90bfd5ae085",
+  "src/core/ff-close.ts": "b5f69771b907024eddec409bca98ba39ae9cdd9249728c92c09c701a79ab94f0",
+  "dist/core/ff-close.js": "54efe9baad8678896aecf8f30dbb860130bd303c44d5b7ab0ad63e5f0b4e249e"
+}

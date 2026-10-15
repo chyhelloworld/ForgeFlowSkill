@@ -1,74 +1,66 @@
 # ForgeFlow 十二技能工作流中文使用手册
 
-版本：0.5.0-rc1 候选版 · 2026-10-15
+版本：0.5.0-rc3 候选版 · 2026-10-15
 
 这份手册说明如何用九个主流程职责与三个可选执行方法，把新想法或已有半成品推进成可验证、可审查、可交接的项目切片。核心路线是目标澄清 → 规格 → 实施票据 → 独立计划审核 → 实现 → 独立主流程与代码审核 → 验收与交付。已有项目先只读接手，再按缺口选择最短路径，不要求十二个技能全部运行，更不是十二个必经阶段。
 
-本版本是技能说明与配套工作流的候选包，不宣称已在任何宿主完成安装、自动路由、工具调用或真实项目端到端集成测试。文中“用 ff-…”是自然语言调用示例；能否使用斜杠命令、如何载入技能，由宿主能力和安装方式决定；技能文件名不保证已注册同名斜杠命令。
+本版本是技能说明与 OpenSpec FF 适配的候选包。云端验证以本次测试报告为准；不宣称已在用户宿主或 Windows 原生完成安装、发现和调用。文中“用 ff-…”是自然语言调用示例；能否使用斜杠命令、如何载入技能，由宿主能力和安装方式决定；技能文件名不保证已注册同名斜杠命令。
 
 
-本版增加规格生命周期，技能仍为 12 个。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
+本版在既有规格生命周期上增加与官方 CLI 的入口隔离，技能仍为 12 个。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
 
 ## 先看当前承诺 再看本轮变更
 
 ![规格生命周期](diagrams/spec-lifecycle.png)
 
-当前有效规格、活跃变更与归档历史各负其责，只有当前有效规格代表已生效承诺。活跃变更是本轮拟增加、修改或移除的差异，不能默默覆盖基线；归档用于追溯，不作为另一份现行规格。
+随包流程图保留 rc2 生命周期基线，仍用于说明规格与交接语义；rc3 的实际命令入口和并存限制以本页“命令与安装”为准，图中版本不代表 rc3 验证结果。
 
-- 当前有效规格：保留稳定的需求 ID、可观察行为与验收标准，以及生效的版本和来源。
-- 活跃变更：明确基于哪版规格、改哪些需求、为什么改、用户确认依据、任务以及验证证据。任务和证据都追踪到需求 ID。
-- 归档历史：保存已完成或已取消变更的原因、结果和追溯关系；取消的变更也可以归档，但绝不合入当前有效规格。
+本版接入固定 OpenSpec 1.14.2 的原生 FF 门禁。现行规格唯一位置为 openspec/specs；openspec/changes/<change> 保存活动差异、设计、任务和回执；归档和 Git 历史用于追溯。旧 .forgeflow/spec-state.json 只作历史审计，写入口已退役，不得再维护第二套 current。
 
-### 新项目先建立确认过的基线
+### 新项目先明确承诺 再建立变更
 
-先由 Grill / Spec 确认目标、范围和验收，给需求稳定 ID，再建立当前有效规格。不要把尚未确认的想法当成基线。初始基线说明已认可的产品承诺，不声称已有实现或测试。随后把实施任务及证据挂到对应需求；新增或改变承诺时使用活跃变更。
+Grill / Spec 先确认目标、范围和可观察验收，建立明确的初始规格或首个受控变更；没有既有承诺时不要从代码反推已批准基线。给需求与工程产物稳定 ID，用 policy 显式映射路径和依赖。不要按文件名猜角色。Design/Prove 按未知选择，Plan 与实现引用同一规范。
 
-### 已有项目先读三处 再决定下一步
+### 已有项目先只读核对 再显式迁移
 
-Intake 只读核对当前有效规格、活跃变更和必要的归档记录，同时核对代码、任务、版本与脏状态。没有受控基线时先报告缺口；有权限的 Spec 阶段才整理并确认基线，不在只读接手时自动迁移。旧提案中的内容不因文件存在就成为当前承诺。
+Intake 读取现行 specs、活动 change、FF policy/回执和必要历史，并核对 Git 工作区。运行 status/validate 查看 FF 有效性；文件存在不等于 ready。旧项目需逐项分类 current、active、accepted history、canceled/rejected 与冲突未知，复核真实确认后再迁移。不得自动导入旧 pass、人工接受或整数版本为新哈希回执。
 
-### 验证 接受 合入与归档分别记录
+### 内容变动怎样使依赖失效
 
-verified 表示所要求的验证证据已具备；accepted 表示有明确的人工接受依据（本工具写入该状态时同时完成规格合入）；archived 表示变更已进入历史记录。verified ≠ accepted ≠ archived。技术绿灯、PR 创建、交付说明和暂停检查点都不能自动补上人工接受。
+每个产物用稳定 artifact ID、显式路径、版本及排序内容哈希标识，inputs 保存依赖指纹。上游规格或证据变动后，下游任务/审核即使文件未变也可能 stale。review 绑定 targetId、targetVersion、targetFingerprint、依赖 inputs，以及 reviewer、toolVersion、evidence 路径/哈希。不能重写回执让过期证据看似通过。Git 保留旧内容、拒绝与替代记录。
 
-被接受的变更只有通过基线一致性、需求冲突、任务和证据等门槛后，才能把差异合入当前有效规格，再归档。基线已变化或同一需求存在冲突时阻塞合入，先回到 Spec 分析影响并重新确认受影响内容；不能静默覆盖、直接把旧证据算成新证据。取消路径记录取消原因与依据后归档，保留基线不变。目录移动本身不能证明这些门槛已经满足。
+哈希只能说明内容绑定，不能认证评审者或证据真伪，更不是用户接受。三类独立审核和真实主流程测试仍要实际执行；CRAP ≤50、目标约10，未测记 NOT_MEASURED。
 
-示例提示词：请用 ff-spec 以当前有效规格为基线，为多人预约建立一个活跃变更。给出新增、修改、移除的需求 ID、影响分析、验收与确认状态；不要直接改成已生效规格。计划、实施与验证均引用这些需求和变更版本。
+### apply 是指导 archive 正常路径同步规格
 
-示例提示词：请用 ff-deliver 分别列出本轮技术验证、人工接受、规格合入及归档状态。检查基线是否过期、是否存在需求冲突；缺少接受依据就保持待接受。若取消，记录原因并走不合入的归档路径。
+status、instructions apply、validate、archive 共用 FF evaluator。instructions apply 给实施指导与 readiness，不提升规范或表示接受。正常 archive 会同步 delta 到 openspec/specs 并移动 change 到历史；调用者必须先核实真实接受、授权、证据与冲突，再检查操作后的 Git diff。正常 archive 的 --yes / --no-validate / --skip-specs 不能绕过 FF gate；skip-specs 不代表已同步。
 
-### 暂停时交接真实的生命周期状态
+取消/拒绝不伪造 pass。原生关闭命令为 `node tools/openspec/ff-spec.mjs archive NAME --ff-disposition canceled --ff-reason TEXT --ff-decision-ref REF --json`；拒绝用 rejected。只有已有真实决议与权限才能调用。它保留失败、过期、未完成产物和原始回执，新增 ff-disposition.json 记录决议，不同步 specs，不要求先通过正常完成门禁，也不把材料标为通过。
 
-Handoff 除已有的代码与命令状态外，还交接当前有效规格的版本、活跃变更 ID 与状态、未完成任务、证据版本、人工接受依据、合入或归档是否实际发生、冲突和下一步。只写已经发生的事实。Intake 恢复时逐项核对真实文件和状态，不把“计划归档”写成“已经归档”，也不重复执行结果不明的操作。Mode 0 仍只在当前回复交接。
+关闭路径必须显式选 disposition 并填写原因与决议引用；--yes/--no-validate/--skip-specs 不会触发关闭。工具不认证该引用；已有归档目标或决议记录拒绝覆盖，符号链接与跨文件系统关闭拒绝。正常 archive 仍保持原有效性门禁。规格同步、人工接受、Git 主分支合并和发布是四个独立事实。
 
-小修仍按风险缩放：可用简短内联规格与任务；若触及受控规格，则保留稳定需求 ID、变更依据和必要追踪，不因改动小而跳过接受或冲突门槛。没有新增技能，也不要求安装 OpenSpec CLI。
+### 暂停时交接真实状态
 
+Handoff 记录当前 specs 与 Git 版本、活动 change、策略、产物/依赖指纹、审核与证据、旧操作实际结果、冲突和下一步。接收方 Intake 先核对，不复用失效回执，不盲目重复 archive。Mode 0 只在回复交接，工程持久化须有相应授权。
 
-### 0.5.0 的实际文件与工具
+### 命令与安装
 
-包内工具为 `tools/spec_lifecycle.py`，仅使用 Python 标准库，不依赖 OpenSpec CLI。按实际获准任务选择是否采用持久化生命周期；简单小修允许保留等价的内联记录，不强制新建 JSON。采用此工具时，项目的 `.forgeflow/spec-state.json` 是唯一权威规格状态源，也是此工具唯一写入的规格状态文件，`schema_version` 为 1；在一个文件内原子更新以下三部分。既有规格文件可作为说明或来源，但应明确映射到此基线，不能同时维护两份相互冲突的现行承诺。
+完整构建与 CLI 说明见仓库 INSTALL.md 和 tools/openspec/README.md；迁移步骤见 MIGRATION.md，完整契约见 SPEC-LIFECYCLE.md。项目本地固定源构建，不替换全局 CLI。Windows PowerShell 指南是未实测说明，不是 Windows 安装成功证明。
 
-| 部分 | 主要字段 | 阅读目的 |
-| --- | --- | --- |
-| `current` | `version` 与 `requirements`；需求由稳定 ID 映射到含 `text` 的对象 | 当前有效承诺 |
-| `active` | 以变更 ID 索引，含 `baseline_version`、`version`、`status`、`delta`、`tasks`、`evidence`、`acceptance` 与 `history` | 本轮变更与尚待归档的终态 |
-| `archived` | 已接受、取消或拒绝的变更快照与 `archive_reason` | 按需追溯 |
+从目标项目根目录运行 launcher，以下示例假定工具位于该项目的 tools/openspec/ 目录。FF checkout 在嵌套目录或其他位置时，将 launcher 改成真实相对/绝对路径，工作目录仍是目标项目，不要为寻找工具切换到另一个项目或回退到全局官方 CLI。
 
-`delta` 每项含 `requirement_id`、显式 `old` / `new`、`why` 和 `confirmation_ref`；新增的 old 为 null，移除的 new 为 null。任务和证据用 `requirement_ids` 关联受影响需求，用 `change_version` 绑定本轮版本。修改差异时递增变更 version，并重新检查、更新任务及证据，不能只改版本号伪造有效性。证据还须有实际 `ref` 与 `result`。此最小工具的证据结果只接受小写 pass / fail；完整的 PASS / FAIL / NOT_RUN / BLOCKED / N/A 报告仍保留在验证记录中，未运行或受阻不能伪装为 pass。
+- `node tools/openspec/ff-spec.mjs --help`
+- `node tools/openspec/ff-spec.mjs status --change CHANGE --json`
+- `node tools/openspec/ff-spec.mjs instructions apply --change CHANGE --json`
+- `node tools/openspec/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
 
-工具支持以下真实命令。从技能包根目录运行；PROJECT 替换为项目目录，CHG-ID 替换为真实变更 ID，引用和原因替换为已核实内容。这些是用法示例，不表示已经在你的项目执行：
+rc3 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据使用 ff-spec 命名空间；项目仍保留 openspec/ 目录。初始化仅接受显式 `node tools/openspec/ff-spec.mjs init --tools none`，不会刷新项目已有的官方工具集成；FF update 命令拒绝执行。十二个 FF 技能按 INSTALL.md 单独安装维护，不全局安装、不覆盖官方命令。
 
-- `python3 tools/spec_lifecycle.py validate PROJECT`：只读检查结构、引用覆盖和版本一致性。
-- `python3 tools/spec_lifecycle.py apply PROJECT CHG-ID --acceptance-ref RECEIPT_REF`：RECEIPT_REF 必须与当前变更中已核实的 acceptance.ref 一致，不能随便填一个非空引用。仅在变更为 verified、基线仍有效、old 值匹配、覆盖检查满足且接受回执与当前变更/基线/证据版本匹配时执行；调用者先核实真实人工接受和权限。工具将接受依据、accepted 状态、applied_version 与当前规格更新一起写入。accepted 在本工具中意味着已接受并已合入规格，不能预先手填此状态来冒充合入。
-- `python3 tools/spec_lifecycle.py archive PROJECT CHG-ID --reason REAL_REASON`：仅允许 accepted / canceled / rejected 终态；移动到 archived 并保存原因，不改变 current。archived 是存放位置，不是 status 的枚举值。
+官方 CLI 有文件系统权限时仍能修改兼容的 openspec/ 树，而且不会执行 FF gate。命令、配置与工具文件的并存隔离不是安全边界；FF 工作流统一使用 launcher，并核对实际 Git diff。
 
-首次建立 `.forgeflow/spec-state.json`、新增变更、维护任务或记录验证结果，是授权范围内的正常文档/开发工作；当前没有 init、propose、verify 或 cancel 命令，不要编造调用方式。先参考包内规格状态契约与示例，确认初始基线，保存后用 validate 检查。取消或拒绝需真实依据，维护相应状态后再执行 archive；不能把已合入变更改成 canceled 来撤销生效规格，需要新建反向变更。
+采用 FF 时显式提供 openspec/ff-policy.json 及当前 change 的 ff-artifacts.json。snapshot 只给哈希，不自动生成通过的审核。rc2 既有 CLI 断言、回归与 CRAP 结果保留为历史基线，不能自动说明 rc3 已通过；实际结果按版本查看接入报告与 rc3 验收计划。
 
-人工接受回执保存在当前变更的 `acceptance` 中，含 `ref`、`change_id`、`change_version`、`baseline_version` 和 `evidence_version`。其中 change_id 必须等于操作的变更 ID，baseline_version 等于当前基线；change_version 与 evidence_version 都必须等于当前变更的 version（正整数），同一修订号绑定差异、任务和证据。缺失回执、错配引用或过期版本均不得合入。用户对旧版本的接受不能自动迁移到修订后的变更；确认依据应能核对到当前范围、版本和证据。
-
-失效证据和旧接受回执保存在可选的 `history` 数组，每项含 `version`、`reason`、`evidence`、`acceptance`，用于追溯；不能留在当前有效 evidence / acceptance 中冒充现行依据。保留失败或过期历史，不等于它们仍能支持当前 verified 或 apply。工具不会语义核验 history 中的陈旧记录；不得把历史项提升为当前证明。
-
-工具输出 JSON 的 passed 只表示该结构检查或状态写入完成。接受回执的版本匹配也不是身份认证。它不运行测试、不认证接受引用、不判断任务是否真正完成，也不证明独立审核、业务目标或宿主集成通过。真实证据与人工门槛仍由对应技能和执行者负责。并发写入受锁保护；遇到锁或结果不明先核对实际状态，不直接删锁重跑。
+旧 python tools/spec_lifecycle.py validate PROJECT 仅审计旧 JSON；apply/archive 及库写入口拒绝。历史演示不作为新项目操作教程，旧测试 PASS 不作为新 fork 通过证据。
 
 ## 先选对入口
 
@@ -116,7 +108,7 @@ Handoff 除已有的代码与命令状态外，还交接当前有效规格的版
 
 使用 ff-spec 记录用户行为、真实主流程、状态变化、边界和错误路径，以及可观察的验收标准。规格回答“做什么、为什么、怎样算满足”。记录需求标识，方便追踪到票据、测试、审核证据。
 
-示例提示词：请用 ff-spec 把已确认的预约目标形成规格。覆盖创建预约、冲突处理、取消、权限边界和失败提示，并给出可操作的验收标准。复用现有项目文档路径。
+示例提示词：请用 ff-spec 把已确认的预约目标形成规格。覆盖创建预约、冲突处理、取消、权限边界和失败提示，并给出可操作的验收标准。现行规格统一至 openspec/specs，其他产物复用现有路径并显式登记。
 
 有重要视觉未知时使用 ff-design；有技术或真实环境未知时使用 ff-prove。它们的结论要反馈到规格；必要时回到 ff-grill 重新决定取舍。它们是有条件的支线，不是每个项目必须经过的仪式。
 
@@ -233,7 +225,7 @@ Mode 0 仅在当前回复给出检查点，不保存持久化记录；一般开�
 
 ## 产物如何放置和追踪
 
-优先复用项目已有的文档、规格、任务、测试和审核位置，不强制所有仓库改用同一组文件名。建议保留从目标 → 规格条目 → 票据 → 实现版本 → 测试 → 独立审核 → 人工接受 → PR/交接的可追踪关系。
+现行规格统一在 openspec/specs；非规格产物复用项目已有文档、任务、测试和审核位置，用 policy 显式登记，不强制复制到第二套文档。建议保留从目标 → 规格条目 → 票据 → 实现版本 → 测试 → 独立审核 → 人工接受 → PR/交接的可追踪关系。
 
 - Intake：只读报告放在当前回复或宿主已有的只读报告出口；不因接手擅自落盘改项目。
 - 目标与规格：区分已确认、待确认和假设，保存本次范围与非目标。

@@ -1,4 +1,4 @@
-# ForgeFlow 0.4.1：薄路由
+# ForgeFlow 0.5.0-rc3：薄路由
 
 此文件供宿主既有指令引用，不是额外技能或强制流水线。先复用有效产物，只调用当前缺口需要的职责。
 
@@ -16,3 +16,9 @@
 - 暂停/换会话/换执行者 → ff-handoff 交出短项目内检查点；接收 → ff-intake 核对真实状态 → 当前所需职责。用户交付仍 ff-deliver。
 
 九个主职责保持选择性使用，三个方法不是附加必经阶段；无故障不做 Diagnose、无适用测试不做 TDD、无交接需求不做 Handoff。
+
+## OpenSpec 原生接入
+
+FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命令>`；工具位于其他 checkout/嵌套目录时使用实际相对/绝对路径，不回退到全局官方 CLI。包名 `@forgeflow/ff-spec`、可执行名 `ff-spec`，用户配置/数据命名空间 `ff-spec`。仅允许显式 `init --tools none`，不刷新官方工具集成，FF `update` 拒绝；十二个技能单独安装。官方 CLI 有文件系统权限时仍能改兼容的 `openspec/` 树而不执行 FF gate，这不是安全边界。
+
+启用 FF 的项目只读 openspec/specs 作为现行规格。Intake 先查活动 change 与 status 的 ffValidity，按缺失/过期原因路由；不要仅凭文件存在跳到 Implement。Review 绑定目标和依赖指纹；通过 gate 仍需真实授权与接受。instructions apply 不是规格合入；archive 正常路径同步 specs。取消/拒绝按真实决议走显式 --ff-disposition + 原因 + 决议引用的原生关闭路径，保留未完成/失败记录且不合入 specs；不能改成 pass。旧 spec-state 只供历史审计，不再写入。

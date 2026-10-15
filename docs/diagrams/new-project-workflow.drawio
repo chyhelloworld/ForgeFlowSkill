@@ -25,7 +25,7 @@
         <mxCell id="b" value="ff-grill 澄清用户与成功条件&#10;已有明确确认可复用，不重复盘问" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="290" width="660" height="100" />
         </mxCell>
-        <mxCell id="c" value="ff-spec 确认基线与稳定需求 ID&#10;当前有效规格 + 活跃变更；验收可追踪" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="c" value="ff-spec 确认基线与稳定需求 ID&#10;openspec/specs + changes；验收可追踪" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="470" width="660" height="110" />
         </mxCell>
         <mxCell id="d" value="ff-design 可选&#10;视觉/交互方向需要选择&#10;候选 → 选择 → 回写规格" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -37,22 +37,22 @@
         <mxCell id="f" value="规格与关键未知已就绪？&#10;缺项回到对应责任补齐&#10;无相关未知可跳过两侧环节" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="470" y="650" width="460" height="110" />
         </mxCell>
-        <mxCell id="g" value="ff-plan 把确认变更拆成可执行票据&#10;任务 → 需求 ID → 验收与版本证据" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="g" value="ff-plan 把确认变更拆成可执行票据&#10;artifact ID → 依赖指纹 → 验收与证据" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="850" width="660" height="110" />
         </mxCell>
         <mxCell id="h" value="ff-review · plan&#10;独立审查计划覆盖与可执行性&#10;问题回到 Plan 或 Spec，复审后继续" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1030" width="660" height="110" />
         </mxCell>
-        <mxCell id="i" value="ff-implement 实施已获准切片&#10;核对 readiness 与权限 → 实现 → 测试&#10;每片保存当前版本的证据和检查点" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="i" value="ff-implement 实施已获准切片&#10;status / apply 判定 + 授权 → 实现 → 测试&#10;每片保存当前版本的证据和检查点" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1210" width="660" height="110" />
         </mxCell>
         <mxCell id="j" value="ff-review · goal-mainflow + code&#10;独立检查目标/真实主流程及代码风险&#10;缺陷返回 Implement；需求偏移返回 Spec" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1390" width="660" height="110" />
         </mxCell>
-        <mxCell id="k" value="验证与人工接受分别记录&#10;verified ≠ accepted ≠ archived&#10;基线过期或需求冲突：阻塞规格合入" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="k" value="验证与人工接受分别记录&#10;verified ≠ accepted ≠ archived&#10;依赖或审核过期：FF gate 阻塞 archive" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1570" width="660" height="110" />
         </mxCell>
-        <mxCell id="l" value="ff-deliver 交付并记录规格状态&#10;满足门槛：规格合入 → 归档；取消：不合入归档&#10;PR 可选；不自动合并主分支或发布" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="l" value="ff-deliver 交付并记录规格状态&#10;archive 正常路径同步 specs；取消不伪造 pass&#10;PR 可选；不自动合并主分支或发布" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1750" width="660" height="110" />
         </mxCell>
         <mxCell id="diag" value="ff-diagnose · 故障支线&#10;先复现、证据与定位&#10;修复回 Implement" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">

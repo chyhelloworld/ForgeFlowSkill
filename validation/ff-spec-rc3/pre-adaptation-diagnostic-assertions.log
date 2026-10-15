@@ -1,0 +1,210 @@
+
+ RUN  v4.1.11 repo:/tools/openspec/.build
+
+ ❯ test/core/archive.test.ts (275 tests | 8 failed) 2905ms
+       × names the flag when the spec-update confirmation cannot be answered 25ms
+       × names the flag when the incomplete-task confirmation cannot be answered 4ms
+       × carries the flags the caller already passed into the suggested rerun 6ms
+       × cannot let a change directory forge its own Fix line 4ms
+       × quotes a change name that would not paste back as one argument 4ms
+       × names the flag when the skip-validation confirmation cannot be answered 2ms
+       × asks for a change name instead of reporting a silent cancellation 2ms
+       × carries the caller's flags into the change-name request too 2ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > names the flag when the spec-update confirmation cannot be answered
+AssertionError: expected ArchiveBlockedError: Updating 1 spec(s) r… { diagnostic: { …(4) } } to match object { …(2) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+      "code": "archive_confirmation_required",
+-     "fix": "openspec archive non-interactive-specs --yes",
++     "fix": "node tools/openspec/ff-spec.mjs archive non-interactive-specs --yes",
+    },
+-   "message": "Updating 1 spec(s) requires confirmation, and no answer could be read from stdin.",
+  }
+
+ ❯ test/core/archive.test.ts:8613:54
+    8611|       const changeDir = await createChangeWithDeltaSpec(changeName);
+    8612|
+    8613|       await expect(archiveCommand.execute(changeName)).rejects.toMatch…
+       |                                                      ^
+    8614|         message: 'Updating 1 spec(s) requires confirmation, and no ans…
+    8615|         diagnostic: {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > names the flag when the incomplete-task confirmation cannot be answered
+AssertionError: expected ArchiveBlockedError: 1 incomplete task(s)… { diagnostic: { …(4) } } to match object { …(2) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+      "code": "archive_tasks_incomplete",
+-     "fix": "Complete the tasks or rerun with openspec archive non-interactive-tasks --yes",
++     "fix": "Complete the tasks or rerun with node tools/openspec/ff-spec.mjs archive non-interactive-tasks --yes",
+    },
+-   "message": "1 incomplete task(s) found for change 'non-interactive-tasks', and no answer could be read from stdin.",
+  }
+
+ ❯ test/core/archive.test.ts:8638:54
+    8636|       await fs.writeFile(path.join(changeDir, 'tasks.md'), '- [ ] Task…
+    8637|
+    8638|       await expect(archiveCommand.execute(changeName)).rejects.toMatch…
+       |                                                      ^
+    8639|         message: `1 incomplete task(s) found for change '${changeName}…
+    8640|         diagnostic: {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > carries the flags the caller already passed into the suggested rerun
+AssertionError: expected ArchiveBlockedError: 1 incomplete task(s)… { diagnostic: { …(4) } } to match object { Object (diagnostic) }
+(4 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+-     "fix": "Complete the tasks or rerun with openspec archive non-interactive-flags --skip-specs --yes",
++     "fix": "Complete the tasks or rerun with node tools/openspec/ff-spec.mjs archive non-interactive-flags --skip-specs --yes",
+    },
+  }
+
+ ❯ test/core/archive.test.ts:8663:7
+    8661|       await expect(
+    8662|         archiveCommand.execute(changeName, { skipSpecs: true })
+    8663|       ).rejects.toMatchObject({
+       |       ^
+    8664|         diagnostic: {
+    8665|           fix: `Complete the tasks or rerun with openspec archive ${ch…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > cannot let a change directory forge its own Fix line
+AssertionError: expected 'Complete the tasks or rerun with node…' to be 'Complete the tasks or rerun with open…' // Object.is equality
+
+Expected: "Complete the tasks or rerun with openspec archive <change-name> --yes"
+Received: "Complete the tasks or rerun with node tools/openspec/ff-spec.mjs archive <change-name> --yes"
+
+ ❯ test/core/archive.test.ts:8717:36
+    8715|       );
+    8716|       // The real fix still refuses to guess a command for an unquotab…
+    8717|       expect(error.diagnostic.fix).toBe(
+       |                                    ^
+    8718|         'Complete the tasks or rerun with openspec archive <change-nam…
+    8719|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > quotes a change name that would not paste back as one argument
+AssertionError: expected 'Complete the tasks or rerun with node…' to be 'Complete the tasks or rerun with open…' // Object.is equality
+
+Expected: "Complete the tasks or rerun with openspec archive "my change" --yes"
+Received: "Complete the tasks or rerun with node tools/openspec/ff-spec.mjs archive "my change" --yes"
+
+ ❯ test/core/archive.test.ts:8739:41
+    8737|       // Double quotes are the one form bash, zsh, PowerShell and cmd.…
+    8738|       // read the same way.
+    8739|       expect(await fixFor('my change')).toBe(
+       |                                         ^
+    8740|         'Complete the tasks or rerun with openspec archive "my change"…
+    8741|       );
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > names the flag when the skip-validation confirmation cannot be answered
+AssertionError: expected ArchiveBlockedError: Skipping validation … { diagnostic: { …(4) } } to match object { …(2) }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+      "code": "archive_confirmation_required",
+-     "fix": "openspec archive non-interactive-no-validate --no-validate --yes",
++     "fix": "node tools/openspec/ff-spec.mjs archive non-interactive-no-validate --no-validate --yes",
+    },
+-   "message": "Skipping validation requires confirmation, and no answer could be read from stdin.",
+  }
+
+ ❯ test/core/archive.test.ts:8799:7
+    8797|       await expect(
+    8798|         archiveCommand.execute(changeName, { noValidate: true })
+    8799|       ).rejects.toMatchObject({
+       |       ^
+    8800|         message: 'Skipping validation requires confirmation, and no an…
+    8801|         diagnostic: {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > asks for a change name instead of reporting a silent cancellation
+AssertionError: expected ArchiveBlockedError: A change name is req… { diagnostic: { …(4) } } to match object { diagnostic: { …(2) } }
+(3 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+      "code": "archive_change_name_required",
+-     "fix": "openspec archive <change-name> --yes",
++     "fix": "node tools/openspec/ff-spec.mjs archive <change-name> --yes",
+    },
+  }
+
+ ❯ test/core/archive.test.ts:8818:68
+    8816|       });
+    8817|
+    8818|       await expect(archiveCommand.execute(undefined, { yes: true })).r…
+       |                                                                    ^
+    8819|         diagnostic: {
+    8820|           code: 'archive_change_name_required',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+ FAIL  test/core/archive.test.ts > ArchiveCommand > non-interactive prompts (#1479) > carries the caller's flags into the change-name request too
+AssertionError: expected ArchiveBlockedError: A change name is req… { diagnostic: { …(4) } } to match object { Object (diagnostic) }
+(4 matching properties omitted from actual)
+
+- Expected
++ Received
+
+- {
++ ArchiveBlockedError {
+    "diagnostic": {
+-     "fix": "openspec archive <change-name> --skip-specs --yes",
++     "fix": "node tools/openspec/ff-spec.mjs archive <change-name> --skip-specs --yes",
+    },
+  }
+
+ ❯ test/core/archive.test.ts:8857:7
+    8855|       await expect(
+    8856|         archiveCommand.execute(undefined, { skipSpecs: true })
+    8857|       ).rejects.toMatchObject({
+       |       ^
+    8858|         diagnostic: { fix: 'openspec archive <change-name> --skip-spec…
+    8859|       });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/8]⎯
+
+
+ Test Files  1 failed | 3 passed (4)
+      Tests  8 failed | 310 passed (318)
+   Start at  16:18:03
+   Duration  3.97s (transform 2.47s, setup 0ms, import 3.37s, tests 3.18s, environment 0ms)
+

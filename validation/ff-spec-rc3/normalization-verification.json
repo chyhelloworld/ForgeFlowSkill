@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "rawFilesVerified": 133,
+  "scriptsVerified": 581,
+  "functionRecordsVerified": 6808,
+  "sourceHashesVerified": 10,
+  "rawHashes": true,
+  "preNormalizationSubsetHashes": true,
+  "normalizedSubsetHashes": true,
+  "unchangedFunctionRangesCountsAndFlags": true,
+  "rawAndNormalizedMetricsEqual": true
+}

@@ -1,0 +1,49 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+added 1 package in 734ms
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +239
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 239, reused 238, downloaded 0, added 239, done
+
+dependencies:
++ @inquirer/core 12.0.4
++ @inquirer/prompts 8.5.2
++ chalk 5.6.2
++ commander 14.0.3
++ cross-spawn 7.0.6
++ diff 9.0.0
++ fast-glob 3.3.3
++ ora 9.4.1
++ yaml 2.9.1
++ zod 4.6.5
+
+devDependencies:
++ @changesets/changelog-github 1.0.1
++ @changesets/cli 3.0.3
++ @types/node 20.19.43
++ @vitest/ui 4.1.11
++ eslint 10.12.0
++ smol-toml 1.9.0
++ typescript 6.0.3
++ typescript-eslint 8.71.0
++ vitest 4.1.11
+
+Done in 812ms using pnpm v10.34.5
+
+   ╭──────────────────────────────────────────╮
+   │                                          │
+   │   Update available! 10.34.5 → 12.11.2.   │
+   │   Changelog: https://pnpm.io/v/12.11.2   │
+   │     To update, run: pnpm add -g pnpm     │
+   │                                          │
+   ╰──────────────────────────────────────────╯
+
+🔨 Building OpenSpec...
+
+Compiling TypeScript...
+Version 6.0.3
+
+✅ Build completed successfully!
+Built project-local CLI: tools/openspec/.build/bin/openspec.js

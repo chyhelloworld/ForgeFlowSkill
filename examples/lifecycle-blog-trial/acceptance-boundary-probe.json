@@ -1,6 +1,6 @@
 {
   "command": [
-    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+    "runtime:python",
     "./tools/spec_lifecycle.py",
     "apply",
     "<TEMP>/ff-acceptance-probe-md0x21yp",

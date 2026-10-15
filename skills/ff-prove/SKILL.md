@@ -2,9 +2,9 @@
 name: ff-prove
 description: 用有界原型、实验或源码核查回答会改变方案的实际交互、技术或架构未知。用于尚需验证方向的 ForgeFlow 工作；明确的小改动直接实现，不默认做多变体、重构或全套原型。
 metadata:
-  version: "0.5.0-rc1"
+  version: "0.5.0-rc3"
 ---
-# FF-Prove 0.5.0-rc1
+# FF-Prove 0.5.0-rc3
 
 只解决当前方向中值得验证的未知，不为已清楚的任务增设门禁。引用同一需求锚点中的原话、已确认目标/约束/成功标准和独立列出的假设，不用自己的改写替代用户意图。验证主要业务旅程中会改变方向的问题，不为资料或纯视觉机械添加负例/测试。
 
@@ -20,3 +20,7 @@ metadata:
 原型明确标为一次性，放获准隔离位置，不默认上生产或增加持久状态。需要保留原型/结论时沿用任务文件与记录授权；ff-grill Mode 0 不自动保存讨论轨迹。若未安装 ff-grill/ff-implement，本技能仍可独立工作，不要求装其他工具。
 
 [来源与许可](NOTICE.md)。这是候选指引，不替代执行环境、项目约定或权限检查。
+
+## OpenSpec 与 FF 有效性
+
+遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。

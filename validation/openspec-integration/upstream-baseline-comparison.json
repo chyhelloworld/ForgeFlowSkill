@@ -1,0 +1,62 @@
+{
+  "upstreamCommit": "f80d860fc510ba4f51180c8ddde35b91b32de657",
+  "patchedFullSuite": {
+    "filesPassed": 213,
+    "filesFailed": 5,
+    "testsPassed": 6448,
+    "testsFailed": 19,
+    "log": "upstream-tests.log"
+  },
+  "pristineAffectedSuites": {
+    "testsPassed": 70,
+    "testsFailed": 19,
+    "logs": [
+      "baseline-tests.log",
+      "baseline-store-test.log"
+    ]
+  },
+  "sameFailures": true,
+  "patchedFailures": [
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: setup produces a committed, clonable repo",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: doctor and list see a healthy store with git facts",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: works a change through archive from the project repo",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: a clone registers without ceremony and reads promoted specs",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: completes its own change through archive in the clone",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > end state is just normal OpenSpec files in both checkouts",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > setup fails before creating anything when Git identity is missing",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > defaults to Git without prompting in interactive setup",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > commits the full store shape when initializing Git on an existing root",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > keeps pre-staged user files out of the setup commit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > records --remote in store.yaml inside the initial commit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > refuses --remote when store.yaml already exists, naming the hand-edit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > produces byte-identical store.yaml without --remote",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > prints the canonical remote in the sharing guidance",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > keeps setup reruns as no-ops that preserve the observed remote",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > reports already_registered when a later origin merely backfills the record",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > doctor and resolution > shows no Remote noise for stores without remotes",
+    " FAIL  test/commands/store.test.ts > store command > reports repeated setup and register as no-op success",
+    " FAIL  test/core/store/registry.test.ts > store registry facade > commits prepared setup against the latest registry state"
+  ],
+  "pristineFailures": [
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: setup produces a committed, clonable repo",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: doctor and list see a healthy store with git facts",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: works a change through archive from the project repo",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: a clone registers without ceremony and reads promoted specs",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: completes its own change through archive in the clone",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > end state is just normal OpenSpec files in both checkouts",
+    " FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > setup fails before creating anything when Git identity is missing",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > defaults to Git without prompting in interactive setup",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > commits the full store shape when initializing Git on an existing root",
+    " FAIL  test/commands/store-git.test.ts > store git lifecycle > keeps pre-staged user files out of the setup commit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > records --remote in store.yaml inside the initial commit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > refuses --remote when store.yaml already exists, naming the hand-edit",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > produces byte-identical store.yaml without --remote",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > prints the canonical remote in the sharing guidance",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > keeps setup reruns as no-ops that preserve the observed remote",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > reports already_registered when a later origin merely backfills the record",
+    " FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > doctor and resolution > shows no Remote noise for stores without remotes",
+    " FAIL  test/core/store/registry.test.ts > store registry facade > commits prepared setup against the latest registry state",
+    " FAIL  test/commands/store.test.ts > store command > reports repeated setup and register as no-op success"
+  ],
+  "conclusion": "All 19 failures reproduce in unchanged upstream in the same environment; not an all-tests-pass result. Git/store fixture failures include spawn git ENOENT and store_setup_inside_git_repo; do not attribute exact root cause beyond reproduced baseline."
+}

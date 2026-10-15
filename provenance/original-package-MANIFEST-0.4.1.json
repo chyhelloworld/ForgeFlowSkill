@@ -131,5 +131,11 @@
     "skills/ff-tdd/references/test-loop.md": "36abd2b9f0bb820bb83cfbae323637c3bfd869db453dfa3ee39d8cf5a0e020fd",
     "tools/test_validate_package.py": "2053a50d9d3e9cce9a5362daf41985644922c6852704c5a26098f31a11a01c9f",
     "tools/validate_package.py": "05455363118d59d4270367b19cb89684d6941bf639e504592b9b6939c6434286"
+  },
+  "historicalDigestNotice": "Original file digests below describe the historical package. Current privacy-redacted source descriptions have the separately recorded hashes; requirement facts and third-party source evidence are unchanged.",
+  "publishedRedactedFileHashes": {
+    "provenance/continuity-change-sources.json": "d406dd4654407e1dc170880777913ceda4ed9830551f3ab341b31397a09b0b21",
+    "provenance/review-change-sources.json": "1bcf839c61d5bdfc3aa4e3d9bfe1fdc6b94f1a09606d006d859af2ce8113b7b1",
+    "provenance/design-change-sources.json": "ac4a1dbbae55452d4046f4a6d75dea30c89be8a729b0fee6228a059be4ff620c"
   }
 }

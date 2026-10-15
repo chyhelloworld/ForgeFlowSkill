@@ -1,0 +1,2317 @@
+
+ RUN  v4.1.11 tools/openspec/.build
+
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Setting up GitHub Copilot...
+✔ Setup complete for Claude Code
+✔ Setup complete for GitHub Copilot
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating DeepSeek Harness...
+✔ Updated DeepSeek Harness
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up DeepSeek Harness...
+✔ Setup complete for DeepSeek Harness
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating DeepSeek Harness...
+✔ Updated DeepSeek Harness
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up DeepSeek Harness...
+✔ Setup complete for DeepSeek Harness
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Updating DeepSeek Harness...
+✔ Updated DeepSeek Harness
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Creating OpenSpec structure...
+- Updating MiniMax Code...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Updated MiniMax Code
+✔ Setup complete for Claude Code
+- Updating MiniMax Code...
+✖ Failed to update MiniMax Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating MiniMax Code...
+✖ Failed to update MiniMax Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✖ Failed to update Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✖ Failed to update Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✖ Failed for Claude Code
+- Updating Hermes Agent...
+✔ Updated Hermes Agent
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✖ Failed for GitHub Copilot
+- Setting up Hermes Agent...
+✔ Setup complete for Hermes Agent
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✖ Failed for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up MiniMax Code...
+✖ Failed for MiniMax Code
+- Updating Kimi Code...
+✔ Updated Kimi Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Kimi Code...
+✔ Updated Kimi Code
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Devin Desktop (formerly Windsurf)...
+✔ Setup complete for Devin Desktop (formerly Windsurf)
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up ZCode...
+- Updating Codex...
+✔ Setup complete for ZCode
+✔ Updated Codex
+- Creating OpenSpec structure...
+- Setting up Codex...
+▌ OpenSpec structure created
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for Codex
+✔ Setup complete for SourceCraft Code Assistant
+- Creating OpenSpec structure...
+- Updating Codex...
+▌ OpenSpec structure created
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for SourceCraft Code Assistant
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for SourceCraft Code Assistant
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Other / Universal (shared .agents skills)...
+- Setting up Codex...
+✔ Setup complete for Other / Universal (shared .agents skills)
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Updating Codex...
+- Setting up Amp...
+✔ Updated Codex
+✔ Setup complete for Amp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GSD...
+- Setting up Codex...
+✔ Setup complete for GSD
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up MiniMax Code...
+✔ Setup complete for MiniMax Code
+- Setting up Amp...
+✔ Setup complete for Amp
+- Updating Amp...
+✔ Updated Amp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up MiniMax Code...
+✔ Setup complete for MiniMax Code
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Antigravity...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+✔ Updated Antigravity
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Command Code...
+✔ Setup complete for Command Code
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Creating OpenSpec structure...
+- Setting up Codex...
+▌ OpenSpec structure created
+- Setting up Command Code...
+✔ Setup complete for Codex
+✔ Setup complete for Command Code
+- Updating Antigravity...
+✔ Updated Antigravity
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up CodeArts...
+✔ Setup complete for CodeArts
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Rovo Dev CLI...
+- Setting up Codex...
+✔ Setup complete for Rovo Dev CLI
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up DeepSeek Harness...
+✔ Setup complete for DeepSeek Harness
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up DeepSeek Harness...
+✔ Setup complete for DeepSeek Harness
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Hermes Agent...
+✔ Setup complete for Hermes Agent
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Creating OpenSpec structure...
+- Setting up Other / Universal (shared .agents skills)...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Setting up Codex...
+ℹ Skipped Codex: .agents/skills is already managed by another tool (Other / Universal (shared .agents skills)).
+- Updating Other / Universal (shared .agents skills)...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Trae...
+✔ Setup complete for Trae
+✔ Updated Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Zed Agent...
+✔ Setup complete for Zed Agent
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+- Updating Other / Universal (shared .agents skills)...
+✔ Updated Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Antigravity...
+- Setting up Codex...
+✔ Setup complete for Antigravity
+- Setting up Codex...
+✔ Setup complete for Codex
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+- Updating Codex...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+✔ Updated Codex
+- Setting up Zed Agent...
+✔ Setup complete for Zed Agent
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Codex...
+✔ Setup complete for Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Updated Claude Code
+✔ Setup complete for Cursor
+- Updating Other / Universal (shared .agents skills)...
+✔ Updated Other / Universal (shared .agents skills)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Qwen Code...
+✔ Setup complete for Qwen Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Qwen Code...
+✔ Updated Qwen Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Factory Droid...
+✔ Setup complete for Factory Droid
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up Kilo Code...
+✔ Setup complete for Kilo Code
+- Setting up Pi...
+✔ Setup complete for Pi
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Amazon Q Developer...
+✔ Setup complete for Amazon Q Developer
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Amazon Q Developer...
+✔ Setup complete for Amazon Q Developer
+- Setting up Amp...
+✔ Setup complete for Amp
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up AtomCode...
+- Updating Amazon Q Developer...
+✔ Setup complete for AtomCode
+- Setting up Auggie (Augment CLI)...
+✔ Updated Amazon Q Developer
+✔ Setup complete for Auggie (Augment CLI)
+- Setting up IBM Bob...
+✔ Setup complete for IBM Bob
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cline...
+✔ Setup complete for Cline
+- Setting up Command Code...
+✔ Setup complete for Command Code
+- Setting up CodeArts...
+✔ Setup complete for CodeArts
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up DeepSeek Harness...
+✔ Setup complete for DeepSeek Harness
+- Setting up Devin Desktop (formerly Windsurf)...
+✔ Setup complete for Devin Desktop (formerly Windsurf)
+- Setting up ForgeCode...
+✔ Setup complete for ForgeCode
+- Setting up CodeBuddy Code (CLI)...
+✔ Setup complete for CodeBuddy Code (CLI)
+- Setting up Code Studio...
+- Updating Claude Code...
+✔ Setup complete for Code Studio
+- Setting up Continue...
+✔ Updated Claude Code
+✔ Setup complete for Continue
+- Setting up CoStrict...
+✔ Setup complete for CoStrict
+- Setting up Crush...
+✔ Setup complete for Crush
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+- Setting up Factory Droid...
+✔ Setup complete for Factory Droid
+- Setting up Gemini CLI...
+✔ Setup complete for Gemini CLI
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up GigaCode...
+✔ Setup complete for GigaCode
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Setting up GSD...
+✔ Setup complete for GSD
+- Setting up Hermes Agent...
+✔ Setup complete for Hermes Agent
+- Setting up iFlow...
+✔ Setup complete for iFlow
+- Setting up Junie...
+- Updating ZCode...
+✔ Setup complete for Junie
+- Setting up Kilo Code...
+✔ Setup complete for Kilo Code
+- Setting up Kimi Code...
+✔ Updated ZCode
+✔ Setup complete for Kimi Code
+- Setting up Kiro...
+✔ Setup complete for Kiro
+- Setting up Lingma...
+✔ Setup complete for Lingma
+- Setting up MiniMax Code...
+✔ Setup complete for MiniMax Code
+- Setting up Mistral Vibe...
+✔ Setup complete for Mistral Vibe
+- Setting up Oh My Pi...
+✔ Setup complete for Oh My Pi
+- Setting up OpenCode...
+✔ Setup complete for OpenCode
+- Setting up Pi...
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+✔ Setup complete for Pi
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for SourceCraft Code Assistant
+- Setting up Qoder...
+✔ Setup complete for Qoder
+- Setting up Qwen Code...
+✔ Setup complete for Qwen Code
+- Setting up Rovo Dev CLI...
+✔ Setup complete for Rovo Dev CLI
+- Setting up Zoo Code...
+✔ Setup complete for Zoo Code
+- Setting up Trae...
+✔ Setup complete for Trae
+- Setting up Veai...
+✔ Setup complete for Veai
+- Setting up Warp...
+✔ Setup complete for Warp
+- Setting up Zed Agent...
+✔ Setup complete for Zed Agent
+- Setting up ZCode...
+- Updating Kilo Code...
+✔ Setup complete for ZCode
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+✔ Updated Kilo Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Updating SourceCraft Code Assistant...
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+✔ Updated SourceCraft Code Assistant
+- Updating SourceCraft Code Assistant...
+✔ Updated SourceCraft Code Assistant
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+- Setting up Cursor...
+✔ Updated Claude Code
+- Updating Cursor...
+✔ Setup complete for Cursor
+✔ Updated Cursor
+- Creating OpenSpec structure...
+- Updating Qwen Code...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Updated Qwen Code
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+- Updating GigaCode...
+✔ Setup complete for Claude Code
+✔ Updated GigaCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Command Code...
+✔ Updated Command Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Setting up EasyCode...
+✔ Setup complete for Claude Code
+✔ Setup complete for EasyCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Updating EasyCode...
+✔ Setup complete for Claude Code
+✔ Updated EasyCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Setting up EasyCode...
+✔ Setup complete for Claude Code
+✔ Setup complete for EasyCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Updating EasyCode...
+✔ Updated EasyCode
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Updating OpenCode...
+✔ Updated OpenCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up AtomCode...
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Setup complete for AtomCode
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Gemini CLI...
+✔ Setup complete for Gemini CLI
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+- Updating Devin Desktop (formerly Windsurf)...
+▌ OpenSpec structure created
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+✔ Updated Devin Desktop (formerly Windsurf)
+- Updating Devin Desktop (formerly Windsurf)...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Devin Desktop (formerly Windsurf)...
+✔ Setup complete for Devin Desktop (formerly Windsurf)
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Devin Desktop (formerly Windsurf)...
+✔ Setup complete for Devin Desktop (formerly Windsurf)
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Devin Desktop (formerly Windsurf)...
+✔ Setup complete for Devin Desktop (formerly Windsurf)
+- Updating Devin Desktop (formerly Windsurf)...
+✔ Updated Devin Desktop (formerly Windsurf)
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Continue...
+✔ Setup complete for Continue
+- Setting up Codex...
+✖ Failed to set up Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cline...
+✔ Setup complete for Cline
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Codex...
+✖ Failed to set up Codex
+- Updating Cursor...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Updated Cursor
+✖ Failed for GitHub Copilot
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Codex...
+✖ Failed to set up Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Codex...
+✖ Failed to set up Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Codex...
+✖ Failed to update Codex
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✖ Failed to update Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Creating OpenSpec structure...
+- Updating Claude Code...
+▌ OpenSpec structure created
+✖ Failed to update Claude Code
+- Updating Cursor...
+- Setting up OpenCode...
+✔ Setup complete for OpenCode
+✔ Updated Cursor
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kilo Code...
+- Updating Claude Code...
+✔ Setup complete for Kilo Code
+✔ Updated Claude Code
+- Updating Cursor...
+✖ Failed to update Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Updating Claude Code...
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Zed Agent...
+- Updating Claude Code...
+✔ Setup complete for Zed Agent
+- Setting up Other / Universal (shared .agents skills)...
+✔ Setup complete for Other / Universal (shared .agents skills)
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up GitHub Copilot...
+- Updating Cursor...
+✔ Updated Cursor
+✔ Setup complete for GitHub Copilot
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Veai...
+✔ Setup complete for Veai
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+- Setting up GitHub Copilot...
+✔ Setup complete for Claude Code
+✔ Setup complete for GitHub Copilot
+- Updating GitHub Copilot...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+✔ Updated GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Setting up Mistral Vibe...
+✔ Setup complete for Mistral Vibe
+- Updating GitHub Copilot...
+✔ Updated GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up GitHub Copilot...
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating GitHub Copilot...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+✔ Updated GitHub Copilot
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up GitHub Copilot...
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Amazon Q Developer...
+✔ Setup complete for GitHub Copilot
+✔ Setup complete for Amazon Q Developer
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Codex...
+- Updating GitHub Copilot...
+✔ Setup complete for Codex
+- Setting up Mistral Vibe...
+✔ Setup complete for Mistral Vibe
+✔ Updated GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Setting up Claude Code...
+- Setting up GitHub Copilot...
+✔ Setup complete for Claude Code
+✔ Setup complete for GitHub Copilot
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Qwen Code...
+✔ Setup complete for Qwen Code
+- Creating OpenSpec structure...
+- Updating Claude Code...
+▌ OpenSpec structure created
+- Setting up Codex...
+✔ Setup complete for Codex
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Updating Claude Code...
+stdout | test/core/update.test.ts > UpdateCommand > smart update detection > should embed generatedBy in updated skill files
+Migrated: custom profile with 1 workflows
+New in this version: /openspec-propose. Try 'openspec config profile core' for the streamlined experience.
+
+stdout | test/core/update.test.ts > UpdateCommand > smart update detection > should embed generatedBy in updated skill files
+Updating 1 tool(s): claude (unknown → 1.14.2-ff.0.5.0-rc2)
+
+
+stdout | test/core/update.test.ts > UpdateCommand > smart update detection > should embed generatedBy in updated skill files
+
+✓ Updated: Claude Code (v1.14.2-ff.0.5.0-rc2)
+
+stdout | test/core/update.test.ts > UpdateCommand > smart update detection > should embed generatedBy in updated skill files
+Note: 6 more workflows are available (new, continue, ff, bulk-archive, verify, onboard).
+Add them with `openspec config profile`.
+Tools: Claude Code
+
+
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Updated Claude Code
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up OpenCode...
+✔ Setup complete for OpenCode
+- Updating Claude Code...
+✔ Updated Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Cursor...
+✔ Updated Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Updating Claude Code...
+✔ Updated Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Setting up Codex...
+✔ Setup complete for Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Cursor...
+✔ Updated Cursor
+- Updating Codex...
+✔ Updated Codex
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Cursor...
+✔ Updated Cursor
+- Setting up Antigravity...
+✔ Setup complete for Antigravity
+- Setting up Codex...
+✔ Setup complete for Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Antigravity...
+✔ Updated Antigravity
+- Updating Codex...
+✔ Updated Codex
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Cursor...
+✔ Updated Cursor
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Cleaning up legacy files...
+✔ Legacy files cleaned up
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+- Updating EasyCode...
+✔ Updated EasyCode
+- Updating EasyCode...
+✔ Updated EasyCode
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Updating AtomCode...
+✔ Updated AtomCode
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Updating AtomCode...
+✔ Updated AtomCode
+- Setting up AtomCode...
+✔ Setup complete for AtomCode
+- Updating AtomCode...
+✔ Updated AtomCode
+- Updating AtomCode...
+✔ Updated AtomCode
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Kimi Code...
+✔ Setup complete for Kimi Code
+- Updating Kimi Code...
+✔ Updated Kimi Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for SourceCraft Code Assistant
+- Updating SourceCraft Code Assistant...
+✔ Updated SourceCraft Code Assistant
+- Setting up SourceCraft Code Assistant...
+✔ Setup complete for SourceCraft Code Assistant
+- Updating SourceCraft Code Assistant...
+✔ Updated SourceCraft Code Assistant
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Codex...
+✔ Updated Codex
+- Updating Codex...
+✔ Updated Codex
+- Updating Codex...
+✔ Updated Codex
+- Updating Grok Build...
+✔ Updated Grok Build
+- Updating Grok Build...
+✔ Updated Grok Build
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Updating Grok Build...
+✔ Updated Grok Build
+- Setting up Grok Build...
+✔ Setup complete for Grok Build
+- Updating Grok Build...
+✔ Updated Grok Build
+- Updating Codex...
+✔ Updated Codex
+- Updating Codex...
+✔ Updated Codex
+- Updating Other / Universal (shared .agents skills)...
+✔ Updated Other / Universal (shared .agents skills)
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+ ❯ test/core/update.test.ts (170 tests | 1 failed) 13286ms
+       × should embed generatedBy in updated skill files 63ms
+ ❯ test/commands/store.test.ts (43 tests | 1 failed) 8660ms
+     × reports repeated setup and register as no-op success 564ms
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Gemini CLI...
+✔ Setup complete for Gemini CLI
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up EasyCode...
+✔ Setup complete for EasyCode
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cursor...
+✔ Setup complete for Cursor
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Cline...
+✔ Setup complete for Cline
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+ ❯ test/cli-e2e/basic.test.ts (48 tests | 3 failed) 13297ms
+       × reports local version and source install details outside an OpenSpec project 96ms
+       × prints one schema-versioned JSON document without checking the network 96ms
+       × renders the disabled check for people 93ms
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+ ❯ test/cli-e2e/store-lifecycle.test.ts (8 tests | 7 failed) 962ms
+     × machine A: setup produces a committed, clonable repo 181ms
+     × machine A: doctor and list see a healthy store with git facts 165ms
+     × machine A: works a change through archive from the project repo 219ms
+     × machine B: a clone registers without ceremony and reads promoted specs 6ms
+     × machine B: completes its own change through archive in the clone 205ms
+     × end state is just normal OpenSpec files in both checkouts 1ms
+     × setup fails before creating anything when Git identity is missing 167ms
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+ ❯ test/core/store/registry.test.ts (13 tests | 1 failed) 111ms
+     × commits prepared setup against the latest registry state 13ms
+Cloning into 'test-fixture/openspec-store-remote-p3bBs7/home/openspec/team-context'...
+done.
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+ ❯ test/commands/store-remote.test.ts (19 tests | 7 failed) 5623ms
+       × records --remote in store.yaml inside the initial commit 187ms
+       × refuses --remote when store.yaml already exists, naming the hand-edit 220ms
+       × produces byte-identical store.yaml without --remote 184ms
+       × prints the canonical remote in the sharing guidance 177ms
+       × keeps setup reruns as no-ops that preserve the observed remote 212ms
+       × reports already_registered when a later origin merely backfills the record 201ms
+       × shows no Remote noise for stores without remotes 333ms
+ ❯ test/commands/store-git.test.ts (6 tests | 3 failed) 1231ms
+     × defaults to Git without prompting in interactive setup 27ms
+     × commits the full store shape when initializing Git on an existing root 175ms
+     × keeps pre-staged user files out of the setup commit 190ms
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: will change to "main" in Git 3.0. To configure the initial branch name
+hint: to use in all of your new repositories, which will suppress this warning,
+hint: call:
+hint:
+hint: 	git config --global init.defaultBranch <name>
+hint:
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint:
+hint: 	git branch -m <name>
+hint:
+hint: Disable this message with "git config set advice.defaultBranchName false"
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Specification 'invalid' has issues
+✗ [ERROR] file: Spec must have a Purpose section. Missing required sections. Expected headers: "## Purpose" and "## Requirements". Example:
+## Purpose
+[brief purpose]
+
+## Requirements
+### Requirement: Clear requirement statement
+Users SHALL ...
+
+#### Scenario: Descriptive name
+- **WHEN** ...
+- **THEN** ...
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Error: Spec 'nonexistent' not found at openspec/specs/nonexistent/spec.md
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+- Installing zsh completion script...
+- Installing zsh completion script...
+- Installing zsh completion script...
+- Installing zsh completion script...
+- Uninstalling zsh completion script...
+- Uninstalling zsh completion script...
+- Installing zsh completion script...
+- Uninstalling zsh completion script...
+Nothing to show. Try one of:
+  openspec show <item>
+  openspec change show
+  openspec spec show
+Or run in an interactive terminal.
+Ambiguous item 'foo' matches both a change and a spec.
+Pass --type change|spec, or use: openspec change show / openspec spec show
+✖ Error: Change "scaffolded" has no proposal.md yet. Run "openspec status --change scaffolded" to see which artifact comes next.
+✖ Error: "mobile" is not a change: it is a folder wrapping openspec/changes/mobile/refresh-token/. A change must be a directory directly under openspec/changes/, so those nested directories are invisible to OpenSpec while the folder around them is reported as a change. Nested paths are supported under openspec/specs/ only. Rename each nested change to a flat name (for example "mobile-refresh-token").
+Warning: The "openspec change ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec list", "openspec validate --changes").
+No change specified. Available IDs: demo, scaffolded
+Hint: use "openspec change list" to view available changes.
+Unknown item 'unknown-item'. Did you mean: demo, auth?
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Updating Warp...
+✔ Updated Warp
+- Creating OpenSpec structure...
+▌ OpenSpec structure created
+- Setting up Warp...
+✔ Setup complete for Warp
+- Updating Warp...
+✔ Updated Warp
+- Setting up Warp...
+✔ Setup complete for Warp
+(node:13799) OpenSpecExternalSpecWrite: Capability 'widgets' links outside the project; writing to test-fixture/openspec-spec-link-escape-rP04jf/outside
+(Use `node --trace-warnings ...` to show where the warning was created)
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Updating Claude Code...
+✔ Updated Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+- Setting up Claude Code...
+✔ Setup complete for Claude Code
+Warning: The "openspec change ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec list", "openspec validate --changes").
+No change specified. Available IDs: demo
+Hint: use "openspec change list" to view available changes.
+Warning: The "openspec change ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec list", "openspec validate --changes").
+No change specified. Available IDs: demo
+Hint: use "openspec change list" to view available changes.
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Error: Missing required argument <spec-id>
+Warning: The "openspec spec ..." commands are deprecated. Prefer verb-first commands (e.g., "openspec show", "openspec validate --specs").
+Error: Missing required argument <spec-id>
+
+⎯⎯⎯⎯⎯⎯ Failed Tests 23 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/cli-e2e/basic.test.ts > openspec CLI e2e basics > version command > reports local version and source install details outside an OpenSpec project
+AssertionError: expected 'OpenSpec 1.14.2-ff.0.5.0-rc2\n' to be 'OpenSpec 1.14.2-ff.0.5.0-rc2 (source)…' // Object.is equality
+
+- Expected
++ Received
+
+- OpenSpec 1.14.2-ff.0.5.0-rc2 (source)
++ OpenSpec 1.14.2-ff.0.5.0-rc2
+
+
+ ❯ test/cli-e2e/basic.test.ts:116:29
+    114|
+    115|       expect(result.exitCode).toBe(0);
+    116|       expect(result.stdout).toBe(`OpenSpec ${pkg.version} (source)\n`);
+       |                             ^
+    117|       expect(result.stderr).toBe('');
+    118|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/23]⎯
+
+ FAIL  test/cli-e2e/basic.test.ts > openspec CLI e2e basics > version command > prints one schema-versioned JSON document without checking the network
+AssertionError: expected { schemaVersion: 1, …(2) } to deeply equal { schemaVersion: 1, …(2) }
+
+- Expected
++ Received
+
+  {
+    "install": {
+      "location": "tools/openspec/.build",
+      "packageManager": null,
+-     "scope": "source",
++     "scope": null,
+    },
+    "schemaVersion": 1,
+    "version": "1.14.2-ff.0.5.0-rc2",
+  }
+
+ ❯ test/cli-e2e/basic.test.ts:126:22
+    124|       expect(result.stdout).not.toMatch(/\u001b\[/);
+    125|       const output = JSON.parse(result.stdout);
+    126|       expect(output).toEqual({
+       |                      ^
+    127|         schemaVersion: 1,
+    128|         version: expect.any(String),
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/23]⎯
+
+ FAIL  test/cli-e2e/basic.test.ts > openspec CLI e2e basics > version command > renders the disabled check for people
+AssertionError: expected 'OpenSpec 1.14.2-ff.0.5.0-rc2\nUpdate …' to match /^OpenSpec \S+ \(source\)\nUpdate chec…/
+
+- Expected:
+/^OpenSpec \S+ \(source\)\nUpdate check disabled\.\n$/
+
++ Received:
+"OpenSpec 1.14.2-ff.0.5.0-rc2
+Update check disabled.
+"
+
+ ❯ test/cli-e2e/basic.test.ts:161:29
+    159|
+    160|       expect(result.exitCode).toBe(0);
+    161|       expect(result.stdout).toMatch(/^OpenSpec \S+ \(source\)\nUpdate …
+       |                             ^
+    162|       expect(result.stderr).toBe('');
+    163|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: setup produces a committed, clonable repo
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:204:29
+    202|     );
+    203|
+    204|     expect(result.exitCode).toBe(0);
+       |                             ^
+    205|     const payload = JSON.parse(result.stdout);
+    206|     expect(payload.git).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: doctor and list see a healthy store with git facts
+AssertionError: expected [] to have a length of 1 but got +0
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:241:44
+    239|     const list = await runCLI(['store', 'list', '--json'], { env: mach…
+    240|     expect(list.exitCode).toBe(0);
+    241|     expect(JSON.parse(list.stdout).stores).toHaveLength(1);
+       |                                            ^
+    242|
+    243|     const doctor = await runCLI(['store', 'doctor', STORE_ID, '--json'…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine A: works a change through archive from the project repo
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:273:30
+    271|       { env: machineA, cwd: projectDir }
+    272|     );
+    273|     expect(created.exitCode).toBe(0);
+       |                              ^
+    274|     const createdPayload = JSON.parse(created.stdout);
+    275|     expect(createdPayload.root).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: a clone registers without ceremony and reads promoted specs
+Error: spawn git ENOENT
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > machine B: completes its own change through archive in the clone
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:405:30
+    403|       { env: machineB, cwd: base }
+    404|     );
+    405|     expect(created.exitCode).toBe(0);
+       |                              ^
+    406|     expect(created.stderr).toContain(`Using OpenSpec root: ${STORE_ID}…
+    407|     expect(created.stdout).toContain(`--store ${STORE_ID}`);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[8/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > end state is just normal OpenSpec files in both checkouts
+Error: ENOENT: no such file or directory, scandir 'test-fixture/openspec-store-lifecycle-W7nbAL/machine-a/team-context'
+ ❯ walk test/cli-e2e/store-lifecycle.test.ts:89:21
+     87|
+     88|   async function walk(current: string): Promise<void> {
+     89|     const entries = await fs.readdir(current, { withFileTypes: true });
+       |                     ^
+     90|     for (const entry of entries) {
+     91|       const absolute = path.join(current, entry.name);
+ ❯ listRelativeEntries test/cli-e2e/store-lifecycle.test.ts:103:3
+ ❯ test/cli-e2e/store-lifecycle.test.ts:466:23
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[9/23]⎯
+
+ FAIL  test/cli-e2e/store-lifecycle.test.ts > standalone store lifecycle journey > setup fails before creating anything when Git identity is missing
+AssertionError: expected 'store_setup_inside_git_repo' to be 'store_git_identity_missing' // Object.is equality
+
+Expected: "store_git_identity_missing"
+Received: "store_setup_inside_git_repo"
+
+ ❯ test/cli-e2e/store-lifecycle.test.ts:506:36
+    504|     expect(result.exitCode).toBe(1);
+    505|     const payload = JSON.parse(result.stdout);
+    506|     expect(payload.status[0].code).toBe('store_git_identity_missing');
+       |                                    ^
+    507|     expect(payload.status[0].fix).toContain('git config --global user.…
+    508|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[10/23]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > defaults to Git without prompting in interactive setup
+AssertionError: expected "vi.fn()" to be called 1 times, but got 0 times
+ ❯ test/commands/store-git.test.ts:130:21
+    128|
+    129|     // No Git prompt: Git is the default, and the summary reflects it.
+    130|     expect(confirm).toHaveBeenCalledTimes(1);
+       |                     ^
+    131|     expect(confirm).toHaveBeenNthCalledWith(1, {
+    132|       message: 'Create this store?',
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[11/23]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > commits the full store shape when initializing Git on an existing root
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-git.test.ts:160:29
+    158|     );
+    159|
+    160|     expect(result.exitCode).toBe(0);
+       |                             ^
+    161|     const payload = parseJson(result);
+    162|     expect(payload.git).toEqual({
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[12/23]⎯
+
+ FAIL  test/commands/store-git.test.ts > store git lifecycle > keeps pre-staged user files out of the setup commit
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-git.test.ts:311:29
+    309|     );
+    310|
+    311|     expect(result.exitCode).toBe(0);
+       |                             ^
+    312|     expect(parseJson(result).git.committed).toBe(true);
+    313|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[13/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > records --remote in store.yaml inside the initial commit
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:91:31
+     89|         { cwd: tempDir, env }
+     90|       );
+     91|       expect(result.exitCode).toBe(0);
+       |                               ^
+     92|
+     93|       const committed = git(storeRoot, 'show', 'HEAD:.openspec-store/s…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[14/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > refuses --remote when store.yaml already exists, naming the hand-edit
+Error: ENOENT: no such file or directory, open 'test-fixture/openspec-store-remote-TIJIEm/retrofit-context/.openspec-store/store.yaml'
+ ❯ test/commands/store-remote.test.ts:118:25
+    116|         env,
+    117|       });
+    118|       const before = fs.readFileSync(path.join(storeRoot, '.openspec-s…
+       |                         ^
+    119|
+    120|       const result = await runCLI(
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[15/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > produces byte-identical store.yaml without --remote
+Error: ENOENT: no such file or directory, open 'test-fixture/openspec-store-remote-dFhXDS/plain-context/.openspec-store/store.yaml'
+ ❯ test/commands/store-remote.test.ts:140:12
+    138|       });
+    139|       expect(
+    140|         fs.readFileSync(path.join(storeRoot, '.openspec-store', 'store…
+       |            ^
+    141|       ).toBe('version: 1\nid: plain-context\n');
+    142|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[16/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > setup > prints the canonical remote in the sharing guidance
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:166:31
+    164|         { cwd: tempDir, env }
+    165|       );
+    166|       expect(result.exitCode).toBe(0);
+       |                               ^
+    167|       expect(result.stdout).toContain(`Share it: teammates clone ${TES…
+    168|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[17/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > keeps setup reruns as no-ops that preserve the observed remote
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:283:30
+    281|         { cwd: tempDir, env }
+    282|       );
+    283|       expect(first.exitCode).toBe(0);
+       |                              ^
+    284|       expect(await registryRemote('rerun-context')).toBe(TEST_NET_URL);
+    285|
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[18/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > rerun and refresh reporting > reports already_registered when a later origin merely backfills the record
+Error: spawnSync git ENOENT
+ ❯ git test/commands/store-remote.test.ts:42:12
+     40|
+     41|   function git(cwd: string, ...args: string[]): string {
+     42|     return execFileSync('git', args, { cwd, env: { ...process.env, ...…
+       |            ^
+     43|   }
+     44|
+ ❯ test/commands/store-remote.test.ts:306:7
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[19/23]⎯
+
+ FAIL  test/commands/store-remote.test.ts > store canonical remote (3.3) > doctor and resolution > shows no Remote noise for stores without remotes
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store-remote.test.ts:476:30
+    474|       });
+    475|       const human = await runCLI(['store', 'doctor', 'quiet-context'],…
+    476|       expect(human.exitCode).toBe(0);
+       |                              ^
+    477|       expect(human.stdout).not.toContain('Remote:');
+    478|     });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[20/23]⎯
+
+ FAIL  test/commands/store.test.ts > store command > reports repeated setup and register as no-op success
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store.test.ts:700:40
+    698|       { cwd: tempDir, env }
+    699|     );
+    700|     expect(defaultFlagsRerun.exitCode).toBe(0);
+       |                                        ^
+    701|     const defaultFlagsPayload = parseJson(defaultFlagsRerun);
+    702|     expect(defaultFlagsPayload.created_files).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[21/23]⎯
+
+ FAIL  test/core/update.test.ts > UpdateCommand > smart update detection > should embed generatedBy in updated skill files
+AssertionError: expected '---\nname: openspec-explore\ndescript…' to match /generatedBy:\s*["']\d+\.\d+\.\d+["']/
+
+- Expected:
+/generatedBy:\s*["']\d+\.\d+\.\d+["']/
+
++ Received:
+"---
+name: openspec-explore
+description: Enter OpenSpec explore mode - a thinking partner for exploring ideas, investigating problems, and clarifying requirements in a project that uses OpenSpec. Use when the user wants to think through something before or during an OpenSpec change. Also use when the user says \"openspec explore\" or \"opsx explore\".
+allowed-tools: Bash(openspec:*)
+license: MIT
+compatibility: Requires openspec CLI.
+metadata:
+  author: openspec
+  version: \"1.0\"
+  generatedBy: \"1.14.2-ff.0.5.0-rc2\"
+---
+
+Enter explore mode. Think deeply. Visualize freely. Follow the conversation wherever it goes.
+
+**IMPORTANT: Explore mode is for thinking, not implementing.** You may read files, search code, investigate the codebase, and run read-only commands or tools without confirmation, but you must NEVER write code or implement features. If the user asks you to implement something, do not start it here: say that explore mode does not implement, and point them at `/opsx:propose`, which turns the discussion into a change. The work happens from that change, never from explore mode. You MAY create or update OpenSpec change artifacts (proposals, designs, specs) within a confirmed scope—that's capturing thinking, not implementing. Answering design or clarifying questions is never consent to write. Before the first write-capable action, name the artifacts or files you would change and what you would do, ask a direct yes/no question, and wait for the user's confirmation in a separate message. Confirmation covers only the scope you described; ask again before expanding it. An explicit request from the user to capture the exploration as a new change is itself that confirmation, covering the change and the change artifacts the request names; scaffold it first as described below.
+
+**This is a stance, not a workflow.** There are no fixed steps, no required sequence, no mandatory outputs. You're a thinking partner helping the user explore.
+
+**Store selection:** If the user names a store (a store is a standalone OpenSpec repo registered on this machine) or the work lives in one, run `openspec store list --json` to discover registered store ids, then pass `--store <id>` on the commands that read or write specs and changes (`new change`, `status`, `instructions`, `list`, `show`, `validate`, `archive`, `doctor`, `context`, `schemas`, `view`). Once selected, treat `--store <id>` as sticky for the rest of the workflow. Every unscoped example of those commands below is shorthand: before running it, append the flag. For example, run `openspec status --change \"<name>\" --json --store \"<id>\"`, not the unscoped form shown below. Other commands do not take the flag. Hints printed by commands already carry the flag; keep it on follow-ups. Without a store, commands act on the nearest local `openspec/` root.
+
+**Project check:** These steps expect a project that already uses OpenSpec. Before the first step that writes anything (`new change`, `archive`, `sync specs`, or authoring an artifact file), confirm the project has a root: run `openspec list --json` (with `--store <id>` when a store is selected, since the store is then the root) and read `root`. A root object means the project is set up. `\"root\": null` means it is not - there is no `openspec/` directory here, and a write such as `openspec new change` would create one as a side effect. The command also exits non-zero, which is that answer rather than a broken CLI, so read the JSON instead of retrying or working around it.
+
+One `\"root\": null` is not about setup: when a `status` error message starts with `Declared in` or `Invalid store declaration in` and names this project's `openspec/config.yaml` (or `config.yml`), the project does use OpenSpec through a store it declares, which this machine cannot resolve (the store is not registered, or the `store:` line is malformed). Do not treat it as uninitialized and skip the branches below: stop before writing and show the user that error's `message` and `fix`.
+
+Otherwise, with no root, what happens next depends on how this workflow was reached:
+
+- **Auto-selected**: you chose this workflow yourself, without the user naming OpenSpec, naming this skill, or running its slash command. Stop using OpenSpec and answer the request normally, as you would with no OpenSpec installed. Do not ask them to set anything up and do not mention OpenSpec setup.
+- **Explicit OpenSpec request**: the user named OpenSpec, named this skill, or ran its slash command. Stop before writing and ask how to proceed: set this project up (`openspec init`), target a store they already have (`--store <id>`), or continue without OpenSpec for this request. Wait for their answer.
+
+In both branches, never create the root as a side effect: do not run `openspec init` until the user asks for it, do not hand-create `openspec/` files, and do not let a command create it.
+
+---
+
+## The Stance
+
+- **Curious, not prescriptive** - Ask questions that emerge naturally, don't follow a script
+- **Open threads, not interrogations** - Surface multiple interesting directions and let the user follow what resonates. Don't funnel them through a single path of questions.
+- **Visual** - Use ASCII diagrams liberally when they'd help clarify thinking
+- **Adaptive** - Follow interesting threads, pivot when new information emerges
+- **Patient** - Don't rush to conclusions, let the shape of the problem emerge
+- **Grounded** - Explore the actual codebase when relevant, don't just theorize
+
+---
+
+## Planning a Change
+
+When the user is planning a change, guide them toward shared understanding with focused discovery questions. For open-ended discussion, follow the conversation without imposing an interview or a required output.
+
+Before asking a factual question, follow the context discovery below and inspect relevant OpenSpec artifacts, source, tests, docs, and configuration. Do not ask the user to repeat facts you can verify. Summarize relevant findings without reproducing private context or rules. If evidence is missing, conflicting, or inaccessible, state that limitation and ask only for the clarification needed to proceed.
+
+- **Follow dependencies** - Resolve the next blocking decision before its dependent details. For example, clarify the user's outcome and scope before choosing an API or data model. Revisit downstream assumptions when an earlier answer changes. Skip branches that do not matter to this goal.
+- **Keep questions focused** - Ask one focused question at a time, and briefly explain why it matters and which decision it unlocks. Batch questions only if the user asks for a batch; keep them small and group related decisions.
+- **Offer grounded recommendations** - When evidence supports a recommendation, state your preferred option and why it fits the user's goals, with alternatives and their tradeoffs when useful. Do not invent intent, priorities, or external constraints: ask the user when only they can answer. Avoid a fixed question format.
+- **Keep a conversational record** - Track decisions in the conversation, not in files. Separate confirmed decisions from proposed defaults and unresolved questions. Silence is not acceptance. Accepting an answer or a batch of recommendations is not permission to write. Keep file-write confirmation separate from discovery questions and follow the guardrails below.
+
+Stop asking when the user has enough clarity. Let them pause, pivot, or defer a decision; do not exhaust every branch or force a proposal.
+
+For example, after inspecting the relevant code:
+
+```text
+The CLI already uses SQLite and has no remote service. Is sharing state
+across devices in scope? That determines whether local storage is enough.
+If this stays a single-device tool, I recommend keeping SQLite to avoid
+adding a service to operate; shared state would need a separate sync design.
+```
+
+---
+
+## What You Might Do
+
+Depending on what the user brings, you might:
+
+**Explore the problem space**
+- Ask clarifying questions that emerge from what they said
+- Challenge assumptions
+- Reframe the problem
+- Find analogies
+
+**Investigate the codebase**
+- Map existing architecture relevant to the discussion
+- Find integration points
+- Identify patterns already in use
+- Surface hidden complexity
+
+**Compare options**
+- Brainstorm multiple approaches
+- Build comparison tables
+- Sketch tradeoffs
+- Recommend a path (if asked)
+
+**Visualize**
+```
++------------------------------------------+
+|     Use ASCII diagrams liberally         |
++------------------------------------------+
+|                                          |
+|   [State A] -------> [State B]           |
+|       |                                  |
+|       v                                  |
+|   [State C]                              |
+|                                          |
+|   System diagrams, state machines,       |
+|   data flows, architecture sketches,     |
+|   dependency graphs, comparison tables   |
+|                                          |
++------------------------------------------+
+```
+
+**Draw with plain ASCII only** — borders `+` `-` `|`, arrows `-->` `<--` `^` `v`, markers `*` `x`.
+Unicode diagram glyphs can render at different widths across terminals, fonts, and locales, so padded boxes and aligned tables can drift. Keep every diagram character ASCII.
+
+**Surface risks and unknowns**
+- Identify what could go wrong
+- Find gaps in understanding
+- Suggest spikes or investigations
+
+---
+
+## OpenSpec Awareness
+
+You have full context of the OpenSpec system. Use it naturally, don't force it.
+
+### Check for context
+
+At the start, quickly check what exists:
+```bash
+openspec list --json
+```
+
+This tells you:
+- If there are active changes
+- Their names and task status
+- What the user might be working on
+
+That is the *change* list - work in flight. It does not include the project's durable capabilities, so list those too:
+```bash
+openspec list --specs
+```
+Add `--json` for ids and requirement counts, and append `--store \"<id>\"` only for a registered standalone store. This is the inventory of what the project already claims to do, and `openspec list` on its own never shows it. To look at one, run `openspec show \"<spec-id>\" --type spec --json --no-scenarios` (same `--store` rule) - it returns that capability's purpose and requirement texts without pulling the whole spec file into context, and `--type spec` stops a change of the same name from making it ambiguous.
+
+The filtered read is only an overview. Before deciding what is already covered or what should change, read each relevant spec in full, including scenarios, with `openspec show \"<spec-id>\" --type spec` (same `--store` rule).
+
+Then read the project's own context from the resolved root - `<root.path>/openspec/config.yaml` (or `config.yml`). Use the `root.path` returned above, and skip this if neither file exists:
+- `context`: project background - tech stack, conventions, constraints
+- `rules`: keyed by artifact id - the entries for an artifact apply only when you write that artifact
+
+Ground your thinking in these. They are constraints for you to follow, not content to reproduce: do NOT copy them into the conversation or into any artifact you create.
+
+### When no change exists
+
+Think freely. When insights crystallize, you might offer:
+
+- \"This feels solid enough to start a change. Want me to create a proposal?\"
+- Or keep exploring - no pressure to formalize
+
+If the user asks you to capture the exploration as a new change, that request is the confirmation required above. It covers scaffolding that change and creating the change artifacts the request names, and nothing else. This holds only when the request is theirs: a yes to an offer you made confirms only the scope your offer itself named, so name the change and the artifacts in the offer. Don't re-ask for what they already asked for; do ask before anything beyond it. Transition seamlessly into the requested capture:
+
+1. Run `openspec new change \"<name>\"` (with `--store <id>` when applicable) before creating any artifacts. Never create a new change directory under `openspec/changes/` by hand; the CLI scaffold creates required metadata such as `.openspec.yaml`. Keep the selected `--store <id>` on every applicable follow-up `status` and `instructions` command.
+2. Run `openspec status --change \"<name>\" --json` (append the confirmed `--store \"<id>\"` only for a registered standalone store), then process the requested artifacts in dependency order. For each requested artifact that is `ready`, run `openspec instructions \"<artifact-id>\" --change \"<name>\" --json` (append the confirmed `--store \"<id>\"` only for a registered standalone store). Before creating a requested artifact, evaluate any condition in its own `instruction` against the explored change; record a deliberate skip instead when the condition does not apply. If a requested artifact is blocked by a direct prerequisite the user did not request, run `openspec instructions \"<prerequisite-id>\" --change \"<name>\" --json` (append the confirmed `--store \"<id>\"` only for a registered standalone store) for that prerequisite whether it is `ready` or `blocked`. If its own `instruction` states a condition, evaluate that condition against the explored change and record a deliberate skip only when the condition does not apply. If the condition applies, or the prerequisite is not conditional, treat it as a normal prerequisite and ask before expanding the capture. Do not create an unrequested prerequisite unless the user approves.
+3. Follow the returned `template` and `instruction` fields. Read completed dependency files listed in `dependencies`, and apply `context` and `rules` as constraints without copying them into the artifact. If the instruction delegates creation to a specific skill or command, invoke it; otherwise write the artifact to `resolvedOutputPath`, using the instruction to choose a concrete path when it is a glob. Verify that the selected concrete output exists.
+4. After creating each artifact, re-run `openspec status --change \"<name>\" --json` (append the confirmed `--store \"<id>\"` only for a registered standalone store) and continue until every requested artifact is `done`, `skipped`, or was deliberately skipped because its own `instruction` stated a condition that did not apply. Tell the user about a deliberate conditional skip, remember it, and do not reconsider it. Dependencies are enablers, not gates: if a requested artifact is still `blocked` only because you deliberately skipped a conditional prerequisite, run `openspec instructions \"<artifact-id>\" --change \"<name>\" --json` (append the confirmed `--store \"<id>\"` only for a registered standalone store) despite the blocked status, then create it using step 3 only when those recorded conditional skips are its sole missing dependencies. If a requested artifact is blocked by a prerequisite the user did not ask to capture and cannot be conditionally skipped, explain that dependency and ask before expanding the capture.
+
+Capture the artifact(s) the user requested without asking them to invoke another workflow command. If they asked only to start a change, stop after scaffolding and show its status. When the requested capture is done, stop there and name where the work continues: `/opsx:propose` writes the remaining planning artifacts, and `/opsx:apply` implements the change once tasks exist. Capturing artifacts never starts implementing them.
+
+### When a change exists
+
+If the user mentions a change or you detect one is relevant:
+
+1. **Resolve and read existing artifacts for context**
+   - Run `openspec status --change \"<name>\" --json`.
+   - Use `changeRoot`, `artifactPaths`, and `actionContext` from the status JSON.
+   - Read existing files from `artifactPaths.<artifact>.existingOutputPaths`.
+
+2. **Reference them naturally in conversation**
+   - \"Your design mentions using Redis, but we just realized SQLite fits better...\"
+   - \"The proposal scopes this to premium users, but we're now thinking everyone...\"
+
+3. **Offer to capture when decisions are made**
+
+   `<capability-path>` is the spec directory relative to `specs/` (for example, `user-auth` or `identity/user-auth`). Preserve an existing capability's full path and follow the project's established organization for new capabilities.
+
+   The files below are the default spec-driven schema's. With another schema, capture each insight in whichever artifact from `artifactPaths` fits it, and name that artifact in your offer; never create an artifact the schema does not define.
+
+    | Insight Type               | Where to Capture                    |
+    |----------------------------|-------------------------------------|
+    | New requirement discovered | `specs/<capability-path>/spec.md` |
+    | Requirement changed        | `specs/<capability-path>/spec.md` |
+    | Design decision made       | `design.md`                       |
+    | Scope changed              | `proposal.md`                     |
+    | New work identified        | `tasks.md`                        |
+    | Assumption invalidated     | Relevant artifact                   |
+
+   Example offers (default schema):
+   - \"That's a design decision. Capture it in design.md?\"
+   - \"This is a new requirement. Add it to specs?\"
+   - \"This changes scope. Update the proposal?\"
+
+4. **The user decides** - Offer and move on. Don't pressure. Don't auto-capture.
+
+---
+
+## What You Don't Have To Do
+
+- Follow a script
+- Ask the same questions every time
+- Produce a specific artifact
+- Reach a conclusion
+- Stay on topic if a tangent is valuable
+- Be brief (this is thinking time)
+
+---
+
+## Handling Different Entry Points
+
+**User brings a vague idea:**
+```
+User: I'm thinking about adding real-time collaboration
+
+You: Real-time collab is a big space. Let me think about this...
+
+      COLLABORATION SPECTRUM
+      ============================================
+
+      Awareness          Coordination         Sync
+          |                   |                 |
+          v                   v                 v
+      +--------+         +--------+        +--------+
+      |Presence|         |Cursors |        |  CRDT  |
+      |  \"3    |         | Multi  |        |Conflict|
+      |online\" |         | select |        |  free  |
+      +--------+         +--------+        +--------+
+          |                   |                 |
+       trivial            moderate           complex
+
+      Where's your head at?
+```
+
+**User brings a specific problem:**
+```
+User: The auth system is a mess
+
+You: [reads codebase]
+
+     +---------------------------------------------+
+     |              CURRENT AUTH FLOW              |
+     +---------------------------------------------+
+                        |
+          +-------------+-------------+
+          v             v             v
+     +---------+  +---------+  +---------+
+     | Google  |  |  GitHub |  |  Email  |
+     |  OAuth  |  |  OAuth  |  |  Magic  |
+     +----+----+  +----+----+  +----+----+
+          |             |             |
+          +-------------+-------------+
+                        v
+                  +-----------+
+                  |  Session  |
+                  +-----+-----+
+                        |
+                        v
+                  +-----------+
+                  |   Perms   |
+                  +-----------+
+
+     I see three tangles. Which one's burning?
+```
+
+**User is stuck mid-implementation:**
+```
+User: /opsx:explore add-auth-system
+      The OAuth integration is more complex than expected
+
+You: [reads change artifacts]
+
+     You're on task 4: \"Implement OAuth flow\"
+
+     Let me trace what's involved...
+
+     [draws diagram, explores options, suggests paths]
+
+     Want to update the design to reflect this?
+     Or add a spike task to investigate?
+```
+
+**User wants to compare options:**
+```
+User: Should we use Postgres or SQLite?
+
+You: Generic answer is boring. What's the context?
+
+User: A CLI tool that tracks local dev environments
+
+You: That changes everything.
+
+     +-------------------------------------------------+
+     |          CLI TOOL DATA STORAGE                  |
+     +-------------------------------------------------+
+
+     Key constraints:
+     - No daemon running
+     - Must work offline
+     - Single user
+
+                  SQLite          Postgres
+     Deployment   embedded        needs server
+     Offline      yes             no
+     Single file  yes             no
+
+     SQLite. Not even close.
+
+     Unless... is there a sync component?
+```
+
+---
+
+## Ending Discovery
+
+There's no required ending. Discovery might:
+
+- **Flow into a proposal**: \"Ready to start? Run `/opsx:propose` and this becomes a change.\"
+- **Result in artifact updates**: \"Updated the design with these decisions\"
+- **Just provide clarity**: User has what they need, moves on
+- **Continue later**: \"We can pick this up anytime\"
+
+When it feels like things are crystallizing, you might summarize:
+
+```
+## What We Figured Out
+
+**The problem**: [crystallized understanding]
+
+**The approach**: [if one emerged]
+
+**Open questions**: [if any remain]
+
+**Next steps** (if ready):
+- Turn this into a change: `/opsx:propose`
+- Keep exploring: just keep talking
+```
+
+But this summary is optional. Sometimes the thinking IS the value.
+
+---
+
+## Guardrails
+
+- **Don't implement** - Never write code or implement features. Workflow configuration counts too: creating or editing schemas, templates, or `openspec/config.yaml` is a change, not thinking. Creating or updating OpenSpec change artifacts within the confirmed scope is fine, writing anything else is not. When the user is ready to build, name the handoff rather than starting: `/opsx:propose` turns the discussion into a change, and the work happens there.
+- **Don't fake understanding** - If something is unclear, dig deeper
+- **Don't rush** - Discovery is thinking time, not task time
+- **Don't force structure** - Let patterns emerge naturally
+- **Don't auto-capture** - Offer to save insights, don't just do it. Read-only commands and tools need no confirmation. Before the first write-capable action—including `openspec new change` or another command that writes files—name the artifacts or files and proposed changes, ask a direct yes/no question, and wait for explicit confirmation in a separate user message. That confirmation covers only the described scope; ask again before expanding it. Answers to design or clarifying questions are never consent to write. That rule governs `openspec new change` whenever you are the one proposing the capture; the user's own capture request is the exception, handled in the capture transition above.
+- **Don't manually scaffold changes** - Never create a new change directory under `openspec/changes/` by hand. Always use `openspec new change \"<name>\"` (with `--store <id>` when applicable) so required metadata such as `.openspec.yaml` is created before writing artifacts.
+- **Do visualize** - A good diagram is worth many paragraphs
+- **Do explore the codebase** - Ground discussions in reality
+- **Do question assumptions** - Including the user's and your own
+"
+
+ ❯ test/core/update.test.ts:2577:30
+    2575|
+    2576|       // Should contain generatedBy field
+    2577|       expect(updatedContent).toMatch(/generatedBy:\s*["']\d+\.\d+\.\d+…
+       |                              ^
+    2578|     });
+    2579|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[22/23]⎯
+
+ FAIL  test/core/store/registry.test.ts > store registry facade > commits prepared setup against the latest registry state
+StoreError: Store setup path is inside another Git repository: /tmp
+ ❯ assertSetupPathIsNotNestedInGitRepo src/core/store/operations.ts:324:9
+    322|   if (!containingGitRoot) return;
+    323|
+    324|   throw new StoreError(
+       |         ^
+    325|     `Store setup path is inside another Git repository: ${containingGi…
+    326|     'store_setup_inside_git_repo',
+ ❯ prepareSetupPlan src/core/store/operations.ts:486:3
+ ❯ prepareStoreSetup src/core/store/operations.ts:563:16
+ ❯ test/core/store/registry.test.ts:207:24
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[23/23]⎯
+
+
+ Test Files  7 failed | 211 passed (218)
+      Tests  23 failed | 6444 passed (6467)
+   Start at  13:50:27
+   Duration  84.70s (transform 6.66s, setup 0ms, import 21.33s, tests 285.58s, environment 19ms)
+

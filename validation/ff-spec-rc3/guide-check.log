@@ -1,0 +1,35 @@
+{
+  "version": "0.5.0-rc3",
+  "spec-lifecycle": {
+    "svg_text_count": 33,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 8,
+    "visual_png_inspected": "Historical rc2 inspection; not repeated in rc3"
+  },
+  "existing-project-workflow": {
+    "svg_text_count": 61,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 21,
+    "visual_png_inspected": "Historical rc2 inspection; not repeated in rc3"
+  },
+  "new-project-workflow": {
+    "svg_text_count": 58,
+    "drawio_preserves_all_text": true,
+    "attached_edges": 19,
+    "visual_png_inspected": "Historical rc2 inspection; not repeated in rc3"
+  },
+  "html": {
+    "embedded_diagrams": 3,
+    "svg_exact_matches": true,
+    "external_asset_dependencies": 0,
+    "browser_layout_test": "NOT_RUN for rc3: desktop/mobile HTML browser interaction not repeated",
+    "static_responsive_css_present": true
+  },
+  "guide": {
+    "skill_table_entries": 12,
+    "internal_navigation_targets": 29,
+    "local_image_links_valid": 3,
+    "host_command_registration": "NOT_TESTED"
+  },
+  "rendering": "PNG deterministic Pillow rendering from SVG elements; all three PNGs retain their historical rc2 visual inspection, not repeated in rc3. No host integration tested."
+}

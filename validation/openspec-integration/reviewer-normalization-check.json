@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "scope": "Published evidence metadata normalization only; runtime source unchanged.",
+  "coverage_files_checked": 109,
+  "retained_scripts_checked": 224,
+  "raw_and_pre_normalization_hashes_verified": true,
+  "normalized_url_mapping": "repo:<repository-relative-source> verified against each original source URL",
+  "executable_coverage_comparison": "All retained script fields except URL, including scriptId/functions/ranges/counts/isBlockCoverage, match original raw evidence.",
+  "exact_normalized_byte_equality_claimed": false,
+  "metrics_recalculated": true,
+  "function_metrics_identical_before_after_and_rerun": true,
+  "metric_summary": {
+    "measuredFunctions": 71,
+    "unmeasuredFunctions": 0,
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "name": "strings",
+        "complexity": 10,
+        "coverage": 0.6329113924050633,
+        "crap": 14.946667505004672
+      },
+      {
+        "name": "relativeName",
+        "complexity": 7,
+        "coverage": 0.6,
+        "crap": 10.136000000000001
+      },
+      {
+        "name": "safePath",
+        "complexity": 10,
+        "coverage": 0.7686768676867687,
+        "crap": 11.237819138308156
+      },
+      {
+        "name": "validatePaths",
+        "complexity": 10,
+        "coverage": 0.875,
+        "crap": 10.1953125
+      },
+      {
+        "name": "npm",
+        "complexity": 5,
+        "coverage": 0.37544483985765126,
+        "crap": 11.09049248083686
+      }
+    ]
+  },
+  "mapped_sources": [
+    {
+      "path": "tools/openspec/.build/dist/core/ff-validity.js",
+      "sha256": "310e323ec09b23b6a9c5a14793b851fc9969102879a4bb293a848e3ce2a8ceff"
+    },
+    {
+      "path": "tools/openspec/.build/dist/core/ff-close.js",
+      "sha256": "54efe9baad8678896aecf8f30dbb860130bd303c44d5b7ab0ad63e5f0b4e249e"
+    },
+    {
+      "path": "tools/openspec/.build/dist/core/archive.js",
+      "sha256": "05a094321388d555518cf4444f41ae012b124dfe63227e19a984a90bfd5ae085"
+    },
+    {
+      "path": "tools/openspec/ff-snapshot.mjs",
+      "sha256": "ad6d908ddb06cfb1ece0b67148b8b649ae6a6ae4b0976df2a0dc78f16b632874"
+    },
+    {
+      "path": "tools/openspec/build.mjs",
+      "sha256": "b179d885127f7484420716872d15d9649e0632f91a116f0e90bcd696f631d1d7"
+    }
+  ],
+  "runtime_patch_sha256": "86c2a2bc2418140b8ebd4c16e7b6bd556f56d38100105c0e2e4a74dee6f7a797",
+  "runtime_pin_unchanged": true,
+  "failures": [],
+  "limits": "This checks metadata transformation and metric reproducibility, not new runtime behavior. Raw originals remain outside the published repository. Prior Linux/platform and coverage-method limitations still apply."
+}

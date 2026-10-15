@@ -1,0 +1,111 @@
+{
+  "coexistence": {
+    "measuredFunctions": 13,
+    "unmeasuredFunctions": 0,
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "name": "verifyBuild",
+        "line": 20,
+        "complexity": 11,
+        "coverage": 1,
+        "crap": 11
+      },
+      {
+        "name": "npm",
+        "line": 23,
+        "complexity": 5,
+        "coverage": 0.37544483985765126,
+        "crap": 11.09049248083686
+      }
+    ],
+    "maximumCrap": 11.09049248083686
+  },
+  "legacyCore": {
+    "measuredFunctions": 71,
+    "unmeasuredFunctions": 0,
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "name": "strings",
+        "complexity": 10,
+        "coverage": 0.6329113924050633,
+        "crap": 14.946667505004672
+      },
+      {
+        "name": "relativeName",
+        "complexity": 7,
+        "coverage": 0.6,
+        "crap": 10.136000000000001
+      },
+      {
+        "name": "safePath",
+        "complexity": 10,
+        "coverage": 0.7686768676867687,
+        "crap": 11.237819138308156
+      },
+      {
+        "name": "validatePaths",
+        "complexity": 10,
+        "coverage": 0.875,
+        "crap": 10.1953125
+      },
+      {
+        "name": "npm",
+        "complexity": 5,
+        "coverage": 0.37544483985765126,
+        "crap": 11.09049248083686
+      }
+    ]
+  },
+  "deduplicatedFunctions": 80,
+  "duplicatedBuildFunctions": 4,
+  "unmeasuredFunctions": 0,
+  "hardFailures": [],
+  "maximumCrap": 14.946667505004672,
+  "aboveTarget": [
+    {
+      "file": "tools/openspec/ff-build.mjs",
+      "name": "verifyBuild",
+      "complexity": 11,
+      "coverage": 1,
+      "crap": 11
+    },
+    {
+      "file": "tools/openspec/build.mjs",
+      "name": "npm",
+      "complexity": 5,
+      "coverage": 0.37544483985765126,
+      "crap": 11.09049248083686
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-validity.js",
+      "name": "strings",
+      "complexity": 10,
+      "coverage": 0.6329113924050633,
+      "crap": 14.946667505004672
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-validity.js",
+      "name": "relativeName",
+      "complexity": 7,
+      "coverage": 0.6,
+      "crap": 10.136000000000001
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-validity.js",
+      "name": "safePath",
+      "complexity": 10,
+      "coverage": 0.7686768676867687,
+      "crap": 11.237819138308156
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-close.js",
+      "name": "validatePaths",
+      "complexity": 10,
+      "coverage": 0.875,
+      "crap": 10.1953125
+    }
+  ],
+  "scopeNote": "80 is deduplicated across coexistence and legacy core; 4 build functions are shared. ff-spec and ff-snapshot have module-level code but no functions and are not invented as function CRAP entries."
+}

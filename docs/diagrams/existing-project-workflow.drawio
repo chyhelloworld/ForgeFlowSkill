@@ -19,7 +19,7 @@
         <mxCell id="note2" value="Handoff 出站 → Intake 入站核验；交付不等于自动合并、部署或发布。" style="text;html=0;align=left;whiteSpace=wrap;strokeColor=none;fillColor=none;fontFamily=Noto Sans CJK SC;fontSize=19;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="50" y="2030" width="1300" height="40" />
         </mxCell>
-        <mxCell id="a" value="ff-intake 只读接手或恢复&#10;当前有效规格 / 活跃变更 / 必要归档&#10;核对代码、任务、证据、脏状态与旧操作" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="a" value="ff-intake 只读接手或恢复&#10;openspec/specs / changes / Git 历史&#10;核对代码、任务、证据、脏状态与旧操作" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="140" width="660" height="110" />
         </mxCell>
         <mxCell id="b" value="判断材料有效性与下一责任&#10;valid / stale / missing / unknown&#10;保护现有修改；不在 Intake 中写文件" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -49,7 +49,7 @@
         <mxCell id="j" value="ff-review · goal-mainflow + code&#10;独立验证真实主流程与代码风险&#10;失败修复复验；需求变化回到 Spec/Plan" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1400" width="660" height="110" />
         </mxCell>
-        <mxCell id="k" value="ff-deliver 当前版本交接（PR 可选）&#10;验证 / 接受 / 规格合入 / 归档分别记录&#10;过期冲突阻塞；取消归档不合入规格" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="k" value="ff-deliver 当前版本交接（PR 可选）&#10;验证 / 接受 / 规格合入 / 归档分别记录&#10;正常归档须有效；显式取消不合入规格" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1580" width="660" height="110" />
         </mxCell>
         <mxCell id="diag" value="ff-diagnose · 原因不明&#10;复现与证据 → 根因&#10;修复交回 Implement" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">

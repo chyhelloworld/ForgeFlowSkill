@@ -2,9 +2,9 @@
 name: ff-plan
 description: 将 ForgeFlow 最新确认的需求或规格拆成可独立演示和验收的纵向切片，明确需求映射、真实依赖、顺序与变化后的重排。用于拆计划、拆票或重排实施；小修可给内联短计划，不创建通用待办流水线。
 metadata:
-  version: "0.5.0-rc1"
+  version: "0.5.0-rc3"
 ---
-# FF-Plan 0.5.0-rc1
+# FF-Plan 0.5.0-rc3
 
 把“已确认要做什么”变成可以交付的实施切片；计划本身不授予执行、向外部平台发布工作票或发布产品的权限。
 
@@ -19,6 +19,6 @@ metadata:
 
 ff-grill 可用于缺失的重要目标选择，ff-design 用于重要视觉方向待选，ff-prove 只用于会改变拆分的真实交互/技术未知，ff-implement 执行获准计划；它们都不是本技能运行前置依赖。[来源与许可](NOTICE.md)。
 
-## 规格生命周期
+## OpenSpec 与 FF 有效性
 
-遵循 [规格生命周期契约](references/spec-lifecycle.md)：读取唯一当前基线版本与稳定需求 ID；用活动变更记录旧→新、原因、真实确认引用及受影响任务/证据版本。proposed / implementing / verified / accepted 分开，归档不是接受。只有真实接受的已验证变更可显式提升基线；取消/拒绝归档不合并。旧基线或旧证据冲突必须先协调并重新验证。小修保持最小记录，Mode 0 不存完整讨论，工程状态须有独立授权。工具只做结构检查，不能认证接受或替代真实主流程测试与 CRAP 门禁。
+遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。

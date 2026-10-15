@@ -1,36 +1,36 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1400" viewBox="0 0 1400 1400" role="img" aria-label="规格生命周期 从当前承诺到变更闭环"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="1400" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
 <text x="50" y="56" class="t">规格生命周期 从当前承诺到变更闭环</text>
-<text x="50" y="92" class="s">0.5.0-rc1 · 三类资料各负其责；verified ≠ accepted ≠ archived。</text>
+<text x="50" y="92" class="s">0.5.0-rc2 · OpenSpec 原生 FF gate；内容绑定不等于真实性或授权。</text>
 <rect x="370" y="140" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="187.0" text-anchor="middle" class="n">当前有效规格 · 唯一现行承诺</text>
-<text x="700.0" y="217.0" text-anchor="middle" class="n">已确认基线 + 稳定需求 ID + 验收标准</text>
+<text x="700.0" y="217.0" text-anchor="middle" class="n">openspec/specs + 稳定需求 ID + 验收标准</text>
 <rect x="370" y="330" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="377.0" text-anchor="middle" class="n">活跃变更 · 尚未生效的差异</text>
-<text x="700.0" y="407.0" text-anchor="middle" class="n">基线版本、需求增改删、确认依据、任务</text>
+<text x="700.0" y="407.0" text-anchor="middle" class="n">changes + delta + artifact ID / 依赖指纹</text>
 <rect x="370" y="520" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="552.0" text-anchor="middle" class="n">实施与验证 · verified</text>
-<text x="700.0" y="582.0" text-anchor="middle" class="n">任务与证据绑定需求 ID 和当前版本</text>
+<text x="700.0" y="552.0" text-anchor="middle" class="n">instructions apply → 实施与验证</text>
+<text x="700.0" y="582.0" text-anchor="middle" class="n">任务与证据绑定路径哈希与依赖指纹</text>
 <text x="700.0" y="612.0" text-anchor="middle" class="n">验证通过不自动等于人工接受</text>
 <rect x="370" y="710" width="660" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="742.0" text-anchor="middle" class="n">取得当前版本的真实接受回执</text>
-<text x="700.0" y="772.0" text-anchor="middle" class="n">回执绑定变更 / 基线 / 证据版本</text>
-<text x="700.0" y="802.0" text-anchor="middle" class="n">缺失或过期：不允许 apply</text>
+<text x="700.0" y="742.0" text-anchor="middle" class="n">独立 review + 当前版本真实接受</text>
+<text x="700.0" y="772.0" text-anchor="middle" class="n">review 绑定目标版本 / 内容 / 依赖</text>
+<text x="700.0" y="802.0" text-anchor="middle" class="n">缺失或过期：不允许正常 archive</text>
 <rect x="370" y="900" width="660" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="932.0" text-anchor="middle" class="n">规格合入前的检查</text>
-<text x="700.0" y="962.0" text-anchor="middle" class="n">基线仍有效？需求无冲突？任务和证据充分？</text>
+<text x="700.0" y="932.0" text-anchor="middle" class="n">validate / 正常 archive 共用 FF gate</text>
+<text x="700.0" y="962.0" text-anchor="middle" class="n">策略、文件、依赖和 review 仍有效？</text>
 <text x="700.0" y="992.0" text-anchor="middle" class="n">过期或冲突：阻塞并返回 Spec</text>
 <rect x="370" y="1090" width="660" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1122.0" text-anchor="middle" class="n">apply：更新当前规格并标记 accepted</text>
-<text x="700.0" y="1152.0" text-anchor="middle" class="n">archive：移入历史；取消归档不执行 apply</text>
+<text x="700.0" y="1122.0" text-anchor="middle" class="n">archive 正常路径：同步 specs + 移入历史</text>
+<text x="700.0" y="1152.0" text-anchor="middle" class="n">apply 仅实施指导；通过不等于用户接受</text>
 <text x="700.0" y="1182.0" text-anchor="middle" class="n">此合入不等于 Git 主分支合并或发布</text>
 <rect x="45" y="710" width="280" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="185.0" y="742.0" text-anchor="middle" class="n">取消变更</text>
-<text x="185.0" y="772.0" text-anchor="middle" class="n">记录取消依据与原因</text>
+<text x="185.0" y="742.0" text-anchor="middle" class="n">明确取消或拒绝</text>
+<text x="185.0" y="772.0" text-anchor="middle" class="n">真实决议引用 + 原因</text>
 <text x="185.0" y="802.0" text-anchor="middle" class="n">不合入当前有效规格</text>
 <rect x="45" y="1090" width="280" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="185.0" y="1122.0" text-anchor="middle" class="n">取消归档</text>
-<text x="185.0" y="1152.0" text-anchor="middle" class="n">保留取消结果</text>
-<text x="185.0" y="1182.0" text-anchor="middle" class="n">当前有效规格不变</text>
+<text x="185.0" y="1122.0" text-anchor="middle" class="n">原生 disposition 关闭</text>
+<text x="185.0" y="1152.0" text-anchor="middle" class="n">保留失败 / 未完成记录</text>
+<text x="185.0" y="1182.0" text-anchor="middle" class="n">不改规格，不补造 pass</text>
 <polyline points="700,250 700,330" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="295" class="e">新变更引用基线</text>
 <polyline points="700,440 700,520" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
@@ -47,5 +47,5 @@
 <text x="1050" y="880" class="e">过期 / 冲突：回到 Spec</text>
 <text x="50" y="1305" class="s">当前规格看现在；活跃变更看本轮；归档历史只在追溯时按需读取。</text>
 <text x="50" y="1335" class="s">Handoff 记录真实版本与状态；Intake 只读核对实际结果，再选择下一责任。</text>
-<text x="50" y="1365" class="s">取消可发生在未合入的活跃变更阶段；不能用取消归档回滚已生效规格。</text>
+<text x="50" y="1365" class="s">显式 canceled/rejected 关闭保留原产物；不能用取消归档回滚已生效规格。</text>
 </svg>

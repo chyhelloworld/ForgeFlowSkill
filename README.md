@@ -1,6 +1,6 @@
 # ForgeFlow Skill
 
-ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc1**，2026-10-15 候选版。
+ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc3**，2026-10-15 候选版。
 
 将目标澄清、规格、任务计划、实现、独立审核和交付分开，支持新项目及已有项目接手。按缺口选择最短路径，不要求每次运行全部十二个技能。
 
@@ -32,40 +32,38 @@ ForgeFlow（FF）十二接口工作流技能包，版本 **0.5.0-rc1**，2026-10
 
 十二个按需接口，新增机器可校验的规格生命周期，不是十二个强制串行阶段。
 
+## OpenSpec 原生接入与官方 CLI 并存
+
+本候选版在固定 OpenSpec 1.14.2 源码上维护 FF 补丁，包名 `@forgeflow/ff-spec`、可执行名 `ff-spec`，用户配置与数据使用独立 `ff-spec` 命名空间。启用项目使用 openspec/specs 作为唯一现行规格；changes 保存本轮差异、任务及回执，Git 保留完整历史。稳定 artifact ID、显式路径、排序内容哈希、依赖指纹与版本绑定的独立审核，参与 status / instructions apply / validate / archive 的统一判定。
+
+- [规格与门禁契约](SPEC-LIFECYCLE.md)：apply 是实施指导；archive 正常路径同步规格再归档，不能套用旧 Python 命令语义。
+- [构建、固定来源与实现说明](tools/openspec/README.md)：项目本地构建，不依赖全局 CLI 替换。
+- [显式迁移](MIGRATION.md)：复核旧 current/active/取消/历史，不自动导入接受或补签 pass。
+- 原生取消/拒绝关闭：显式 --ff-disposition 与原因/决议引用，保留失败和未完成历史，不同步 specs、不制造通过；正常 archive 门禁不变。
+- [旧 Python 只读审计](tools/spec_lifecycle.py)：validate 保留；apply/archive 及库级写入口已退役。旧 JSON 不再作为第二套权威源。
+
+FF 项目统一从目标项目根运行 `node tools/openspec/ff-spec.mjs <子命令>`，不使用全局安装。此示例假定工具在目标项目的 `tools/openspec/` 下；若 FF checkout 放在其他位置，使用 launcher 的真实相对路径或绝对路径，工作目录仍保持目标项目。初始化只允许显式 `node tools/openspec/ff-spec.mjs init --tools none`，不会刷新已有官方工具集成；FF `update` 拒绝执行。十二个技能单独按 INSTALL.md 管理。
+
+官方 CLI 与 FF 入口可以并存，但官方 CLI 有文件系统权限时仍可修改兼容的 `openspec/` 树且不执行 FF gate。入口和命名空间隔离防止无意冲突，不是安全边界。
+
+FF gate 检查绑定与一致性，不认证评审者、证据真实性或人工接受。三类独立审核、主流程测试、CRAP ≤50/目标约10、TDD/Diagnose/Handoff 与授权边界保持不变。十二个技能按需选择，不增加强制流水线。
+
 ## 安装与校验
 
-1. 先阅读 INSTALL.md 和 MIGRATION.md，确定目标宿主支持的技能目录并备份同名技能。
-2. 在获准的目标目录安装 skills/ 下的十二个 ff-* 文件夹，保留各自 references、agents 和许可。provenance/ 是溯源资料，不作为技能安装。
-3. 路由接入需要对应宿主指令的编辑授权。不要假设任意宿主支持斜杠命令或自动发现。
-4. 静态检查需要 Python 3.9+ 与 PyYAML。在仓库根目录运行：
+先读 INSTALL.md，按指定宿主和目录的授权安装十二个技能，保留 references、agents 和许可证。项目本地 CLI 需要 Node.js，完整构建步骤见 tools/openspec/README.md。未启用 FF policy 的项目保留上游规格读写语义，仍受 rc3 入口的初始化/工具更新隔离约束；损坏 policy 不得降级成未启用。
 
-```sh
-python tools/validate_package.py .
-```
+包静态检查：`python tools/validate_package.py .`（Python 3.9+、PyYAML）。该命令核对结构/清单，不证明产品行为或宿主安装。
 
-当前是尚未安装、尚未完成宿主原生发现与调用验证的候选包。安装、发布、部署和权限扩大都不是本仓库提供的自动动作。
+## 验证范围
 
-## 0.5.0 的主要变化
+[测试过程与结果](测试过程与结果.md) 区分本次适配与旧版历史。旧版 22 项生命周期测试、旧真实博客试验和旧 CRAP 结果只证明当时的 Python 实现，不代表当前 OpenSpec fork。rc2 接入结果是历史基线，不能自动证明 rc3 并存通过。当前 OpenSpec 构建、回归、独立复核与实际 CLI 流程必须看对应版本证据；未运行不能写 PASS。Windows 原生和用户宿主安装/发现/调用尚未验证，不作生产就绪或发布结论。
 
-- [规格生命周期契约](SPEC-LIFECYCLE.md)：current baseline、独立 change、版本绑定的验收回执及证据、显式 promote、archive 保留历史而不合并基线。
-- [JSON Schema](templates/spec-state.schema.json) 与 [生命周期 CLI](tools/spec_lifecycle.py)：版本类型、过期证据、过期接受记录及基线冲突防护；失败写入保证原文件不变。
-- [生命周期流程图](docs/diagrams/spec-lifecycle.png) 与两个完整场景流程图；十二个技能、中文指南和迁移说明同步更新。
+## 来源与可恢复性
 
-[中文测试过程与结果](测试过程与结果.md)
+原 0.5.0-rc1 工具、测试及契约保存在 provenance/legacy-0.5.0-rc1；原 Matt 与 Impeccable 来源、许可证和哈希保持不变。OpenSpec 固定源码、补丁、MIT 许可及来源记录在 tools/openspec。工作分支保留全部原有 Git 历史，不 squash 或覆盖历史接受记录。
 
-## 验证范围与证据
+MANIFEST.json 覆盖交付源文件，排除 .git、可重建的 OpenSpec .build/.bootstrap 及运行缓存。原冻结清单在 provenance 中仅供溯源。公开测试使用合成数据；测试回执不是用户真实批准。当前只在获准工作分支维护候选，未推送、合并主分支或部署。
 
-- 冻结技能包：12 个技能、36 个本地链接、14 个来源哈希、143 个清单文件；20 个场景模板不是 20 次已运行行为测试。
-- 作者 22 项单元测试和独立复核者 22 项守卫测试分别通过；两套有覆盖重叠，不计为 44 个独立覆盖场景。
-- [真实云端博客 CLI 试验](examples/lifecycle-blog-trial/REPORT.md)：最终日志 17 次命令执行全部符合预期（11 次成功、6 次预期拒绝，其中 11 次调用生命周期工具）。产品单元测试从基线 1 项到搜索阶段 2 项；新上下文接手者实际完成持久化 CLI 主流程。
-- 首轮试验暴露旧验收回执可复用的问题，现已改为绑定 change 版本及基线版本。原失败日志与边界探针保留为历史；以 final-run/ 为最终通过证据。
-- 新工具 17 个函数的自定义 stdlib AST 圈复杂度与 trace 行覆盖 CRAP 最高 12，阈值 50。不是 radon、基路径覆盖或全仓质量结论。
-- [独立复核](validation/independent-review.md) · [最终新上下文接手记录](examples/lifecycle-blog-trial/final-run/blog-project/HANDOFF_RECEIVER_REPORT.md)
-- 验收记录为模拟测试输入，没有真实人类验收。工具不验证证据内容真实性或批准者身份。未完成 Windows 原生、宿主安装/发现/调用、浏览器布局 QA；没有部署或生产就绪结论。
-- 旧 evidence/、历史 method/intake 报告和 independent-review-0.4.1.md 为旧版证据，不代表当前版本验证。
+## OpenSpec 接入验证与 rc3 计划
 
-## 仓库整理与来源
-
-skills/ 与冻结 0.5.0 包保持逐字节一致。保留旧版来源、许可与无关资料。指南映射至 docs/；真实试验在 examples/lifecycle-blog-trial/。复现实验与复核脚本的工具路径已适配仓库布局。公开证据只脱敏本地工作区、临时目录和私有执行标识，保留失败、模拟批准与测试局限。原始报告内的工件哈希描述脱敏前执行工件；当前公开文件哈希以根清单为准。未收录 .git、Python 缓存；测试数据均为合成。
-
-根 MANIFEST.json 覆盖所有仓库交付文件（清单自身与 .git 除外）。校验器仅额外忽略 .git。冻结包原清单保存在 provenance/original-package-MANIFEST.json，旧版清单为 provenance/original-package-MANIFEST-0.4.1.json；它们仅用于来源追踪。来源与许可证见 provenance/ 及技能内 NOTICE/LICENSE；静态检查不构成法律审查。
+[实现与验证报告](docs/OpenSpec-FF接入报告.md) · [rc3 并存计划与验收](planning/openspec-ff-0.5.0-rc3.md) · [可复现 CLI 源码构建](tools/openspec/README.md) · [rc2 独立审查（历史）](validation/openspec-integration/independent-review.md)

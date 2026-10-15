@@ -1,0 +1,59 @@
+[
+  {
+    "name": "official create registered store",
+    "args": [
+      "node",
+      "official:/bin/openspec.js",
+      "store",
+      "setup",
+      "official-only",
+      "--path",
+      "temporary:ff-rc3-independent-b_hza45w/official-store",
+      "--no-init-git",
+      "--json"
+    ],
+    "code": 0,
+    "stdout": "{\n  \"store\": {\n    \"id\": \"official-only\",\n    \"root\": \"temporary:ff-rc3-independent-b_hza45w/official-store\",\n    \"metadata_path\": \"temporary:ff-rc3-independent-b_hza45w/official-store/.openspec-store/store.yaml\"\n  },\n  \"registry\": {\n    \"path\": \"temporary:ff-rc3-independent-b_hza45w/data/openspec/stores/registry.yaml\",\n    \"registered\": true,\n    \"already_registered\": false\n  },\n  \"git\": {\n    \"is_repository\": false,\n    \"initialized\": false,\n    \"committed\": false\n  },\n  \"created_files\": [\n    \"openspec/\",\n    \"openspec/specs/\",\n    \"openspec/changes/\",\n    \"openspec/changes/archive/\",\n    \"openspec/config.yaml\",\n    \"openspec/specs/.gitkeep\",\n    \"openspec/changes/archive/.gitkeep\",\n    \".openspec-store/store.yaml\"\n  ],\n  \"status\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "official sees its store",
+    "args": [
+      "node",
+      "official:/bin/openspec.js",
+      "store",
+      "list",
+      "--json"
+    ],
+    "code": 0,
+    "stdout": "{\n  \"stores\": [\n    {\n      \"id\": \"official-only\",\n      \"root\": \"temporary:ff-rc3-independent-b_hza45w/official-store\"\n    }\n  ],\n  \"status\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "FF does not inherit official store",
+    "args": [
+      "node",
+      "repo:/tools/openspec/ff-spec.mjs",
+      "store",
+      "list",
+      "--json"
+    ],
+    "code": 0,
+    "stdout": "{\n  \"stores\": [],\n  \"status\": []\n}\n",
+    "stderr": ""
+  },
+  {
+    "name": "FF explicit unknown official store fails",
+    "args": [
+      "node",
+      "repo:/tools/openspec/ff-spec.mjs",
+      "list",
+      "--store",
+      "official-only",
+      "--json"
+    ],
+    "code": 1,
+    "stdout": "{\n  \"changes\": [],\n  \"root\": null,\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"no_registered_stores\",\n      \"message\": \"Unknown store 'official-only'. No stores are registered.\",\n      \"target\": \"store.id\",\n      \"fix\": \"Run node tools/openspec/ff-spec.mjs store setup official-only or node tools/openspec/ff-spec.mjs store register <path> first.\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  }
+]

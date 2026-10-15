@@ -145,5 +145,11 @@
     "tools/test_spec_lifecycle.py": "b136fe679ae246fd2ca852eda0906169a407b104ee58d501c981485198166cd0",
     "tools/test_validate_package.py": "26a2fcedbc24e32ea4256fe87d1e8001cf94d75bc994ac16e5bada4352d7dd69",
     "tools/validate_package.py": "d37719690dcb4f6d1c395fd2e2f17821e06f51ef25d454ea5e86c69e4f75cfef"
+  },
+  "historicalDigestNotice": "Original file digests below describe the historical package. Current privacy-redacted source descriptions have the separately recorded hashes; requirement facts and third-party source evidence are unchanged.",
+  "publishedRedactedFileHashes": {
+    "provenance/continuity-change-sources.json": "d406dd4654407e1dc170880777913ceda4ed9830551f3ab341b31397a09b0b21",
+    "provenance/review-change-sources.json": "1bcf839c61d5bdfc3aa4e3d9bfe1fdc6b94f1a09606d006d859af2ce8113b7b1",
+    "provenance/design-change-sources.json": "ac4a1dbbae55452d4046f4a6d75dea30c89be8a729b0fee6228a059be4ff620c"
   }
 }

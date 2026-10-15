@@ -1,0 +1,33 @@
+
+ RUN  v4.1.11 test-run/baseline
+
+ ❯ test/commands/store.test.ts (43 tests | 1 failed) 7506ms
+     × reports repeated setup and register as no-op success 475ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  test/commands/store.test.ts > store command > reports repeated setup and register as no-op success
+AssertionError: expected 1 to be +0 // Object.is equality
+
+- Expected
++ Received
+
+- 0
++ 1
+
+ ❯ test/commands/store.test.ts:700:40
+    698|       { cwd: tempDir, env }
+    699|     );
+    700|     expect(defaultFlagsRerun.exitCode).toBe(0);
+       |                                        ^
+    701|     const defaultFlagsPayload = parseJson(defaultFlagsRerun);
+    702|     expect(defaultFlagsPayload.created_files).toEqual([]);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 42 passed (43)
+   Start at  13:48:40
+   Duration  7.98s (transform 238ms, setup 0ms, import 314ms, tests 7.51s, environment 0ms)
+

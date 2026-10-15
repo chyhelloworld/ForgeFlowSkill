@@ -110,5 +110,11 @@
     "skills/ff-spec/SKILL.md": "7b32e421ceec79d7a094940d245e5729c0871f4797062ddffb70851f9035f8a3",
     "skills/ff-spec/agents/openai.yaml": "5b6ac59af172117b1a038298cc7fa4ffbedac96f2b0f2313567c538ad4654751",
     "tools/validate_package.py": "d0f65b2762033c03e9673d4f27454faf3acf2ff1b40cd057222b0f06c9209ea6"
+  },
+  "historicalDigestNotice": "Original file digests below describe the historical package. Current privacy-redacted source descriptions have the separately recorded hashes; requirement facts and third-party source evidence are unchanged.",
+  "publishedRedactedFileHashes": {
+    "provenance/continuity-change-sources.json": "d406dd4654407e1dc170880777913ceda4ed9830551f3ab341b31397a09b0b21",
+    "provenance/review-change-sources.json": "1bcf839c61d5bdfc3aa4e3d9bfe1fdc6b94f1a09606d006d859af2ce8113b7b1",
+    "provenance/design-change-sources.json": "ac4a1dbbae55452d4046f4a6d75dea30c89be8a729b0fee6228a059be4ff620c"
   }
 }
