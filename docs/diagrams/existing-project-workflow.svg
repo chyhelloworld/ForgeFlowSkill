@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="1880" viewBox="0 0 1400 1880" role="img" aria-label="已有项目 只读盘点后选择最短有效路径"><defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10Z" fill="#587386"/></marker></defs><rect width="1400" height="1880" fill="#f5f8fb"/><style>text{font-family:"Noto Sans CJK SC","Microsoft YaHei",sans-serif;fill:#172d40}.t{font-size:30px;font-weight:700}.s{font-size:19px;fill:#52687b}.n{font-size:20px}.e{font-size:17px;fill:#52687b}</style>
+<text x="50" y="56" class="t">已有项目 只读盘点后选择最短有效路径</text>
+<text x="50" y="92" class="s">先接手，再决定补什么；旧文件存在不代表有效，旧绿灯不代表当前版本通过。</text>
+<rect x="370" y="140" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="172.0" text-anchor="middle" class="n">ff-intake 只读接手或恢复</text>
+<text x="700.0" y="202.0" text-anchor="middle" class="n">目标/规格/票据/代码/测试/脏工作区</text>
+<text x="700.0" y="232.0" text-anchor="middle" class="n">检查分支、未跟踪文件、运行中任务与环境</text>
+<rect x="370" y="330" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="362.0" text-anchor="middle" class="n">判断材料有效性与下一责任</text>
+<text x="700.0" y="392.0" text-anchor="middle" class="n">valid / stale / missing / unknown</text>
+<text x="700.0" y="422.0" text-anchor="middle" class="n">保护现有修改；不在 Intake 中写文件</text>
+<rect x="45" y="550" width="300" height="130" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="195.0" y="577.0" text-anchor="middle" class="n">目标缺失或不清楚</text>
+<text x="195.0" y="607.0" text-anchor="middle" class="n">ff-grill</text>
+<text x="195.0" y="637.0" text-anchor="middle" class="n">只补关键目标与取舍</text>
+<text x="195.0" y="667.0" text-anchor="middle" class="n">然后核对规格</text>
+<rect x="380" y="550" width="300" height="130" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="530.0" y="577.0" text-anchor="middle" class="n">目标清楚，规格缺失/过期</text>
+<text x="530.0" y="607.0" text-anchor="middle" class="n">ff-spec</text>
+<text x="530.0" y="637.0" text-anchor="middle" class="n">补主流程、边界、验收</text>
+<text x="530.0" y="667.0" text-anchor="middle" class="n">需要时 Design / Prove</text>
+<rect x="715" y="550" width="300" height="130" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="865.0" y="577.0" text-anchor="middle" class="n">规格有效，票据缺失/过期</text>
+<text x="865.0" y="607.0" text-anchor="middle" class="n">ff-plan</text>
+<text x="865.0" y="637.0" text-anchor="middle" class="n">重排受影响切片与验证</text>
+<text x="865.0" y="667.0" text-anchor="middle" class="n">再做独立计划审核</text>
+<rect x="1050" y="550" width="300" height="130" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="1200.0" y="577.0" text-anchor="middle" class="n">规格和票据均有效</text>
+<text x="1200.0" y="607.0" text-anchor="middle" class="n">复用现有产物</text>
+<text x="1200.0" y="637.0" text-anchor="middle" class="n">核对审核与证据有效性</text>
+<text x="1200.0" y="667.0" text-anchor="middle" class="n">不必全流程重跑</text>
+<rect x="370" y="830" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="862.0" text-anchor="middle" class="n">汇合前补齐依赖的缺口</text>
+<text x="700.0" y="892.0" text-anchor="middle" class="n">Grill → Spec → Plan，仅运行所需部分</text>
+<text x="700.0" y="922.0" text-anchor="middle" class="n">Design / Prove 的结论反馈到规格与计划</text>
+<rect x="370" y="1020" width="660" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="1042.0" text-anchor="middle" class="n">实施就绪与授权核对</text>
+<text x="700.0" y="1072.0" text-anchor="middle" class="n">独立 plan 审核有效？目标/票据/测试明确？</text>
+<text x="700.0" y="1102.0" text-anchor="middle" class="n">环境可用？风险与权限明确？</text>
+<text x="700.0" y="1132.0" text-anchor="middle" class="n">未就绪回到对应责任；未知不冒充通过</text>
+<rect x="370" y="1220" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="1252.0" text-anchor="middle" class="n">ff-implement 继续最小获准切片</text>
+<text x="700.0" y="1282.0" text-anchor="middle" class="n">保留他人修改，核对旧操作后再续跑</text>
+<text x="700.0" y="1312.0" text-anchor="middle" class="n">实现/测试与证据绑定当前版本</text>
+<rect x="370" y="1400" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="1432.0" text-anchor="middle" class="n">ff-review · goal-mainflow + code</text>
+<text x="700.0" y="1462.0" text-anchor="middle" class="n">独立验证真实主流程与代码风险</text>
+<text x="700.0" y="1492.0" text-anchor="middle" class="n">失败修复复验；需求变化回到 Spec/Plan</text>
+<rect x="370" y="1580" width="660" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
+<text x="700.0" y="1612.0" text-anchor="middle" class="n">ff-deliver 当前版本交接（PR 可选）</text>
+<text x="700.0" y="1642.0" text-anchor="middle" class="n">提供证据、短验收步骤、偏差和未验证项</text>
+<text x="700.0" y="1672.0" text-anchor="middle" class="n">人工接受单列；采用 PR 流程且获准才提交</text>
+<polyline points="700,250 700,330" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,440 700,490 195,490 195,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="195,680 195,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,440 700,490 530,490 530,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="530,680 530,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,440 700,490 865,490 865,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="865,680 865,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,440 700,490 1200,490 1200,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="1200,680 1200,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="370,1080 210,1080 210,1455 370,1455" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="45" y="1190" class="e">实现有效：补审核</text>
+<polyline points="1030,1080 1190,1080 1190,1635 1030,1635" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="1045" y="1000" class="e">证据及审核有效：直接交接</text>
+<polyline points="700,940 700,1020" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,1140 700,1220" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="710" y="1180" class="e">已就绪且获准</text>
+<polyline points="700,1330 700,1400" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<polyline points="700,1510 700,1580" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
+<text x="710" y="1555" class="e">证据与交付门槛满足</text>
+<text x="50" y="1785" class="s">恢复检查点：版本/脏状态、已完成与部分产物、运行中操作、阻塞、下一步与权限边界。</text>
+<text x="50" y="1815" class="s">变更影响分析：仅使受影响规格、票据、测试、审核与用户接受失效；重新验证后继续。</text>
+<text x="50" y="1845" class="s">ready 不等于授权；PR 不替代规格，不自动合并、部署或发布。</text>
+</svg>

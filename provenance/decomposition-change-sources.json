@@ -1,0 +1,22 @@
+{
+  "version": "0.4.0-rc1",
+  "baseline_manifest_sha256": "5d4b5a032c727c986b6c6ee151acb076c8213784881d3972bb2b620bc15a90a4",
+  "basis": "User-authorized responsibility decomposition; no new upstream fetch or claim of upstream authorship",
+  "preserved": [
+    "all existing provenance snapshots and licenses",
+    "ff-design/prove substantive guidance (routing/version updated)",
+    "ff-grill clarify/records references byte-for-byte"
+  ],
+  "moved": {
+    "ff-deliver evidence/continuity": "ff-implement",
+    "ff-deliver reviews/crap": "ff-review",
+    "ff-deliver handoff": "ff-deliver"
+  },
+  "new": [
+    "ff-intake",
+    "ff-spec",
+    "ROUTING.md",
+    "MIGRATION.md",
+    "E07-E11"
+  ]
+}

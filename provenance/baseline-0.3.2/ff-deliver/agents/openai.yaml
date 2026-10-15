@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF-Deliver"
+  short_description: "Deliver scoped changes with evidence and handoff"
+  default_prompt: "Use $ff-deliver to implement and verify this approved slice, then hand it off."

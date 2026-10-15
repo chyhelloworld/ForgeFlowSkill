@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+"""Read-only package checks. Requires PyYAML; no behavior or quality verdict."""
+import hashlib
+import json
+from pathlib import Path
+import re
+import sys
+import yaml
+
+def validate(root):
+    errors=[]; checked={'skills':0,'local_links':0,'source_hashes':0,'manifest_files':0}
+    def need(ok,msg):
+        if not ok: errors.append(msg)
+    skills=root/'skills'
+    for folder in sorted(skills.iterdir()):
+        if not folder.is_dir(): continue
+        checked['skills']+=1
+        source=(folder/'SKILL.md').read_text()
+        match=re.match(r'^---\n(.*?)\n---\n',source,re.S)
+        need(bool(match),f'{folder.name}: frontmatter absent')
+        if not match: continue
+        data=yaml.safe_load(match.group(1))
+        need(data.get('name')==folder.name,f'{folder.name}: name mismatch')
+        need(bool(data.get('description')),f'{folder.name}: empty description')
+        need(bool(data.get('metadata',{}).get('version')),f'{folder.name}: no version')
+        ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
+        need(25<=len(ui['short_description'])<=64,f'{folder.name}: UI description length')
+        need('$'+folder.name in ui['default_prompt'],f'{folder.name}: UI prompt invocation')
+        for file in folder.rglob('*.md'):
+            for link in re.findall(r'\[[^\]]+\]\(([^)]+)\)',file.read_text()):
+                if '://' in link or link.startswith('#'): continue
+                checked['local_links']+=1
+                target=(file.parent/link.split('#')[0]).resolve()
+                need(target.is_relative_to(folder.resolve()),f'{file}: external local dependency {link}')
+                need(target.is_file(),f'{file}: broken link {link}')
+    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver'},'expected the nine selected skills')
+    cases=json.loads((root/'evaluations/scenarios.json').read_text())['cases']
+    ids=[c['id'] for c in cases]
+    need(len(ids)==len(set(ids)), 'duplicate evaluation case IDs')
+    need(set(['E07','E08','E09','E10','E11']).issubset(ids), 'missing decomposition scenarios')
+    installed={p.name for p in skills.iterdir() if p.is_dir()}
+    for case in cases:
+        need(bool(case.get('prompt')) and len(case.get('criteria', []))==3 and bool(case.get('critical_failures')), f"invalid scenario: {case.get('id')}")
+        need(set(case.get('skills', [])).issubset(installed), f"unknown scenario skill: {case.get('id')}")
+    checked['scenarios']=len(cases)
+    sources=json.loads((root/'provenance/sources.json').read_text())
+    for entry in sources['sources']+[sources['ff_baseline']]:
+        p=root/entry['path'];checked['source_hashes']+=1
+        need(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],f'source changed: {p}')
+    manifest=root/'MANIFEST.json'
+    if manifest.exists():
+        listed=json.loads(manifest.read_text())['files']
+        actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p!=manifest and '.git' not in p.relative_to(root).parts}
+        need(actual==set(listed),'manifest file set mismatch')
+        for rel, expected in listed.items():
+            p=root/rel;checked['manifest_files']+=1
+            need(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==expected,f'manifest mismatch: {rel}')
+    else: errors.append('MANIFEST.json missing')
+    return {'kind':'static-package-validation','checks':checked,'errors':errors,'passed':not errors,'limits':'Not a behavioral test, installer, license clearance or T3 integration test.'}
+
+if __name__=='__main__':
+    try: result=validate(Path(sys.argv[1]).resolve())
+    except Exception as exc: result={'kind':'static-package-validation','passed':False,'errors':[str(exc)]}
+    print(json.dumps(result,ensure_ascii=False,indent=2))
+    sys.exit(0 if result['passed'] else 1)

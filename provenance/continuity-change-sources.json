@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-13",
+  "user_feedback_source": "User requirement recorded on 2026-10-13T01:20:48Z (private conversation reference omitted)",
+  "scope": "Reports overall lack of design continuity; this package changes workflow guidance only.",
+  "artifact_sources": [
+    {
+      "source": "blog-design-iteration-20261012/game-scroll-directions/storyboards.md",
+      "sha256": "7734f70f6dae8fa59721c598c88f9142d8986470127780d938b903e9aad52da2",
+      "use": "Existing two-screen prototype commitment and decorative-role assumption"
+    },
+    {
+      "source": "blog-design-iteration-20261012/pixel-scroll-prototype-v1-source/design-qa.md",
+      "sha256": "b451c3b73edc1545e2d12740339afad7dd58c5297a37bf7877413e784505c23f",
+      "use": "Segment-level evidence and continuity classified as polish"
+    },
+    {
+      "source": "blog-design-iteration-20261012/pixel-scroll-prototype/design-qa.md",
+      "sha256": "14c285fb888e26ed109b14c9155c0725446d08013f42f43d468a174e5d053672",
+      "use": "v3 local wheel checks and end-scene limitation"
+    },
+    {
+      "source": "blog-design-iteration-20261012/pixel-scroll-prototype/climber.js",
+      "sha256": "83cfa5302111d05c75248e814cd11cb079bc4174aa732617558a59a4b9a39f8b",
+      "use": "Character bounds stop in scene index 2"
+    },
+    {
+      "source": "ff-design-travel-retest-20261012/audit/FINAL-INDEPENDENT-AUDIT.md",
+      "sha256": "5848efe198331226b579e794d31380d347513c9a01b5be2a89b1105499395217",
+      "use": "Independent findings differ from optimistic self-review"
+    },
+    {
+      "source": "blog-design-iteration-20261012/reviews/continuity-retrospective-20261013.md",
+      "sha256": "e1bceea6b3a72220ee919a9cb4e583bfd83145e30cab8fe3c0821d67028690a5",
+      "use": "Implementer corroboration; distinguishes execution responsibility from skill gap."
+    }
+  ],
+  "evidence_limit": "Source and existing report review, not a fresh browser or user acceptance test."
+}

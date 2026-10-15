@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-deliver"
+  short_description: "ForgeFlow 专责技能：汇总 ForgeFlow 当前版本有效证据、偏差与用户验收入口，按仓库"
+  default_prompt: "使用 $ff-deliver 完成当前获准职责，复用有效产物并报告真实证据与限制。"

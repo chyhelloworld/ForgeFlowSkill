@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF-Plan"
+  short_description: "Plan verifiable slices and real dependencies"
+  default_prompt: "Use $ff-plan to split the confirmed scope into verifiable delivery slices."

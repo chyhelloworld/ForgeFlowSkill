@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF-Design"
+  short_description: "Choose visible design directions with real users"
+  default_prompt: "Use $ff-design to show distinct key-page directions and agree on an implementable visual target."

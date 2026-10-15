@@ -1,0 +1,49 @@
+{
+  "repository": "https://github.com/pbakaus/impeccable",
+  "commit": "2f98774f86bc05563876643db37e6c37c322850f",
+  "commit_date": "2026-10-13T16:01:05Z",
+  "read_date": "2026-10-14",
+  "license": "Apache-2.0",
+  "upstream_notice": "NOTICE.md retained verbatim in skills/ff-design/NOTICE-IMPECCABLE.md",
+  "files": [
+    "skill/SKILL.src.md",
+    "skill/reference/shape.md",
+    "skill/reference/new-work.md",
+    "skill/reference/animate.md",
+    "skill/reference/critique.md",
+    "skill/reference/craft-floor.md",
+    "skill/reference/operate.md"
+  ],
+  "excluded": [
+    "engine",
+    "hooks",
+    "live",
+    "upstream scripts",
+    "tool-output authorization",
+    "default escalation",
+    "mandatory two-round stop-as-pass"
+  ],
+  "modified_files": [
+    "skills/ff-design/SKILL.md",
+    "skills/ff-design/references/design-craft.md"
+  ],
+  "baseline_sha256": "3bb90ae4bb7b285c9943c2f293f790a89f90ececf0b8dddf8bec679d8a797257",
+  "adaptation_map": {
+    "skill/SKILL.src.md": "visitor modes; brief wins; no runtime or authorization copied",
+    "skill/reference/shape.md": "reuse confirmed goal; smallest useful brief",
+    "skill/reference/new-work.md": "whole visual concept; inherited visual authority; no scripts",
+    "skill/reference/animate.md": "purpose, continuity, reduced motion, budget; FF adds explicit scroll/touch evidence",
+    "skill/reference/critique.md": "isolated design and technical assessments; FF keeps three existing review axes",
+    "skill/reference/craft-floor.md": "selective craft checks; no absolute aesthetic bans",
+    "skill/reference/operate.md": "mode-specific readability and operation"
+  },
+  "source_hashes": {
+    "provenance/impeccable/skill/SKILL.src.md": "487a139090d114a7f28145cc828ef66fc4cd23a236f74d341ac9e59e8f64c20a",
+    "provenance/impeccable/skill/reference/shape.md": "55eac4bc942ebfae179781c693931db007f060dd70603aaf3158081adbd99e0a",
+    "provenance/impeccable/skill/reference/new-work.md": "12c3ba39a8ca020aa71a7b338b0fc826241d8a22ec21a25ff564c478a75f390c",
+    "provenance/impeccable/skill/reference/animate.md": "1cc485bb1cc493473d2725eb7dde450901f6d50855bb8d8066635a456407c10d",
+    "provenance/impeccable/skill/reference/critique.md": "fe73fc208891c0ed72ace86fa582dbdb652a8ddcbbdc5f9127ec5971994451ed",
+    "provenance/impeccable/skill/reference/craft-floor.md": "240c82d759cd25226379224d9df4a8c3449440de7fc8cbd2c19ee26662141ddf",
+    "provenance/impeccable/skill/reference/operate.md": "7a1a7ea56a0a5d029adf189fd88dd1403caed42ef7cef54e71cafed218729455"
+  }
+}

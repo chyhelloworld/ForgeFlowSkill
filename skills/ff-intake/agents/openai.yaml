@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-intake"
+  short_description: "ForgeFlow 专责技能：只读核对 ForgeFlow 新任务或存量项目的真实状态、规格与工作票"
+  default_prompt: "使用 $ff-intake 完成当前获准职责，复用有效产物并报告真实证据与限制。"

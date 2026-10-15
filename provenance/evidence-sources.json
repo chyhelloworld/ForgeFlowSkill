@@ -1,0 +1,27 @@
+[
+  {
+    "local_source": "ForgeFlow/matt-all-skills-eval-20261012/ff-adoption-proposal.md",
+    "sha256": "43b4d33b5323a19a12c57238d1a8b6584c3b289c65d4e130a26813753536e63d",
+    "scope": "Prior evidence, not a result of this candidate"
+  },
+  {
+    "local_source": "ForgeFlow/matt-all-skills-eval-20261012/FINAL-ALL-SKILLS-REPORT.md",
+    "sha256": "4a4db763b02d6cb9f6fe0476e0b7d7db0829f97dda3aa6065caeb9535e22785c",
+    "scope": "Prior evidence, not a result of this candidate"
+  },
+  {
+    "local_source": "ForgeFlow/blog-workflow-eval-20261012/audit/FINAL-INDEPENDENT-AUDIT.md",
+    "sha256": "847c0baf593a8926ad660f2ecbd17360c314fdf434dec0954ef2e8dbc6f6e462",
+    "scope": "Prior evidence, not a result of this candidate"
+  },
+  {
+    "local_source": "grill-eval-20261012/followup/WORKFLOW-SKILL-PROPOSAL.md",
+    "sha256": "467fa1caea81e500916e38dd68bb4c92ff32d878152996997ddac5ec6ab6f2ad",
+    "scope": "Prior evidence, not a result of this candidate"
+  },
+  {
+    "local_source": "ForgeFlow/matt-all-skills-eval-20261012/batch-04/results.json",
+    "sha256": "6366ef55761ce46d07ab7be85846b0b412d912c9c1401af96795e77af4497c6a",
+    "scope": "Prior bounded implement-spec evidence, not this candidate behavior"
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "kind": "simulated-context-behavior",
+  "package_sha256": null,
+  "host": null,
+  "model": null,
+  "timestamp": null,
+  "independence": null,
+  "cases": [],
+  "native_host_integration": "NOT_RUN",
+  "case_result_shape": {
+    "id": "E01",
+    "response_artifact": null,
+    "criterion_scores": [
+      null,
+      null,
+      null
+    ],
+    "evidence_quotes": [],
+    "critical_failure_observed": null,
+    "verdict": "NOT_RUN"
+  }
+}

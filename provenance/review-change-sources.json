@@ -1,0 +1,22 @@
+{
+  "user_source": "User requirement recorded on 2026-10-13T01:59:54Z (private conversation reference omitted)",
+  "scope": "Three separately evidenced review categories, including MECE and CRAP risk.",
+  "verified_on": "2026-10-13",
+  "primary_sources": [
+    {
+      "url": "https://www.artima.com/weblogs/viewpost.jsp?thread=215899",
+      "author": "Alberto Savoia",
+      "date": "2007-10-02",
+      "use": "Original formula, automated method coverage, basis-path definition and limitations; paraphrased, not full-text copied."
+    },
+    {
+      "url": "https://github.com/unclebob/crap4java/blob/main/spec.md",
+      "use": "Maintainer tool specification: fractional coverage, instruction-counter convention, missing data N/A; mutable main observed on verified_on."
+    }
+  ],
+  "boundaries": "No product metrics claimed; official-source formula separated from user-specified thresholds.",
+  "additional_user_source": "User requirement recorded on 2026-10-13T02:02:53Z (private conversation reference omitted)",
+  "additional_scope": "Prefer independent subagent reviews; preserve read-only scope and disclose independence gaps.",
+  "threshold_user_source": "User requirement recorded on 2026-10-13T02:07:45Z (private conversation reference omitted)",
+  "threshold_scope": "Per-method CRAP at most 50; around 10 or lower optimization goal. User-defined, not official universal threshold."
+}

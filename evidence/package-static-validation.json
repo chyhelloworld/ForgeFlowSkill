@@ -1,0 +1,75 @@
+{
+  "kind": "static-validator-and-isolated-negative-checks",
+  "candidate_manifest_sha256": "4f0bf383172a924b91482970300c366f43b5a00d4c9b77e46543ef2927f77598",
+  "candidate": {
+    "command": [
+      "python",
+      "tools/validate_package.py",
+      "."
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 9,\n    \"local_links\": 26,\n    \"source_hashes\": 11,\n    \"manifest_files\": 108,\n    \"scenarios\": 11\n  },\n  \"errors\": [],\n  \"passed\": true,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+    "stderr": ""
+  },
+  "baseline_unchanged_validation": {
+    "command": [
+      "python",
+      "tools/validate_package.py",
+      "<baseline-package>"
+    ],
+    "exit_code": 0,
+    "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 5,\n    \"local_links\": 28,\n    \"source_hashes\": 11,\n    \"manifest_files\": 68\n  },\n  \"errors\": [],\n  \"passed\": true,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+    "stderr": ""
+  },
+  "negative_checks": [
+    {
+      "command": [
+        "python",
+        "tools/validate_package.py",
+        "<negative-fixture-package>"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 9,\n    \"local_links\": 27,\n    \"source_hashes\": 11,\n    \"manifest_files\": 108,\n    \"scenarios\": 11\n  },\n  \"errors\": [\n    \"<negative-fixture-package>/skills/ff-intake/SKILL.md: broken link references/missing.md\",\n    \"manifest mismatch: skills/ff-intake/SKILL.md\"\n  ],\n  \"passed\": false,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+      "stderr": "",
+      "case": "broken-link",
+      "expected": "nonzero with relevant diagnostic"
+    },
+    {
+      "command": [
+        "python",
+        "tools/validate_package.py",
+        "<negative-fixture-package>"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 9,\n    \"local_links\": 26,\n    \"source_hashes\": 11,\n    \"manifest_files\": 108,\n    \"scenarios\": 11\n  },\n  \"errors\": [\n    \"manifest mismatch: provenance/MATT-LICENSE\"\n  ],\n  \"passed\": false,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+      "stderr": "",
+      "case": "bad-source-hash",
+      "expected": "nonzero with relevant diagnostic"
+    },
+    {
+      "command": [
+        "python",
+        "tools/validate_package.py",
+        "<negative-fixture-package>"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 8,\n    \"local_links\": 26,\n    \"source_hashes\": 11,\n    \"manifest_files\": 108,\n    \"scenarios\": 11\n  },\n  \"errors\": [\n    \"expected the nine selected skills\",\n    \"unknown scenario skill: E07\",\n    \"unknown scenario skill: E08\",\n    \"unknown scenario skill: E10\",\n    \"unknown scenario skill: E11\",\n    \"manifest file set mismatch\",\n    \"manifest mismatch: skills/ff-spec/LICENSE-MATT\",\n    \"manifest mismatch: skills/ff-spec/NOTICE.md\",\n    \"manifest mismatch: skills/ff-spec/SKILL.md\",\n    \"manifest mismatch: skills/ff-spec/agents/openai.yaml\"\n  ],\n  \"passed\": false,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+      "stderr": "",
+      "case": "missing-skill",
+      "expected": "nonzero with relevant diagnostic"
+    },
+    {
+      "command": [
+        "python",
+        "tools/validate_package.py",
+        "<negative-fixture-package>"
+      ],
+      "exit_code": 1,
+      "stdout": "{\n  \"kind\": \"static-package-validation\",\n  \"checks\": {\n    \"skills\": 9,\n    \"local_links\": 26,\n    \"source_hashes\": 11,\n    \"manifest_files\": 108,\n    \"scenarios\": 0\n  },\n  \"errors\": [\n    \"missing decomposition scenarios\",\n    \"manifest mismatch: evaluations/scenarios.json\"\n  ],\n  \"passed\": false,\n  \"limits\": \"Not a behavioral test, installer, license clearance or T3 integration test.\"\n}\n",
+      "stderr": "",
+      "case": "missing-scenario",
+      "expected": "nonzero with relevant diagnostic"
+    }
+  ],
+  "limits": "Static package correctness only. Synthetic fixture mutations test validator detection, not workflow behavior, product tests, human acceptance or native installation."
+}

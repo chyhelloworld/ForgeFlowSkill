@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-review"
+  short_description: "ForgeFlow 专责技能：独立审核 ForgeFlow 计划、目标与主流程、代码规范，分别给出可"
+  default_prompt: "使用 $ff-review 完成当前获准职责，复用有效产物并报告真实证据与限制。"

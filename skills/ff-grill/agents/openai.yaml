@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF-Grill"
+  short_description: "Clarify goals and pressure-test important decisions"
+  default_prompt: "Use $ff-grill to clarify the current goal and review this proposal."

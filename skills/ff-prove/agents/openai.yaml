@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF-Prove"
+  short_description: "Test real interaction and technical unknowns"
+  default_prompt: "Use $ff-prove to test the main interaction or technical unknown within the approved scope."

@@ -1,0 +1,22 @@
+{
+  "version": "0.3.2-rc1",
+  "date": "2026-10-15",
+  "basis": "User-confirmed six workflow gaps; original FF adaptations, no new third-party source",
+  "baseline": "0.3.1-rc1",
+  "changed_skills": [
+    "ff-plan",
+    "ff-deliver"
+  ],
+  "unchanged_skills": [
+    "ff-grill",
+    "ff-design",
+    "ff-prove"
+  ],
+  "limits": [
+    "No installation",
+    "No T3 integration test",
+    "No deployment",
+    "No remote push",
+    "No persistent runtime guarantee"
+  ]
+}

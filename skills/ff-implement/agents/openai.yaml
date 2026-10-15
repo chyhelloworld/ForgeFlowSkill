@@ -1,0 +1,4 @@
+interface:
+  display_name: "ff-implement"
+  short_description: "ForgeFlow 专责技能：执行已获准且计划有效的 ForgeFlow 纵向切片，修复与验证主要业"
+  default_prompt: "使用 $ff-implement 完成当前获准职责，复用有效产物并报告真实证据与限制。"
