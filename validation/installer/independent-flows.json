@@ -1,0 +1,37 @@
+{
+  "scope": "Linux temporary projects; genuine installer CLI and filesystem; no real host or Windows validation",
+  "checks": [
+    {
+      "name": "skills-only initial install plus original unrelated file preservation",
+      "status": "PASS"
+    },
+    {
+      "name": "host migration and rollback preserve user extras",
+      "status": "PASS"
+    },
+    {
+      "name": "reinstall historical release works",
+      "status": "PASS"
+    },
+    {
+      "name": "missing owned file prevents overwrite and rollback",
+      "status": "PASS"
+    },
+    {
+      "name": "full without build leaves previous state unchanged",
+      "status": "PASS"
+    },
+    {
+      "name": "symlink cache blocked before external mutation",
+      "status": "PASS"
+    },
+    {
+      "name": "source checksum tamper refused",
+      "status": "PASS"
+    },
+    {
+      "name": "no pending recover is safe",
+      "status": "PASS"
+    }
+  ]
+}

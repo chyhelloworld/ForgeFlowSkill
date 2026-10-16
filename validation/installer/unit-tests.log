@@ -1,0 +1,21 @@
+✔ cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (461.3602ms)
+✔ Claude install and same-version reentry leave exact state unchanged (136.3455ms)
+✔ unmanaged conflict blocks without overwriting (49.508288ms)
+✔ user edit prevents same-version reinstall and rollback (127.735434ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (330.945504ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (256.774017ms)
+✔ state commit failure restores previous state and bytes (235.644223ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (135.277772ms)
+✔ tampered source, runtime, and unsafe state are blocked (194.334266ms)
+✔ project move remains bound locally and official openspec never invoked (221.880912ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (246.914113ms)
+✔ path and local-home isolation checks (79.385665ms)
+✔ rollback refuses a modified inactive runtime release (173.770172ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2831.406681

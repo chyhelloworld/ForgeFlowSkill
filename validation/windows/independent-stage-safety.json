@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "platform": "Linux filesystem with explicit Windows cleanup branch parameter, not native Windows",
+  "checks": [
+    "fresh generated bootstrap removed; sibling source and external target retained",
+    "preexisting bootstrap refuses cleanup capability and preserves bytes",
+    "Linux path retains bootstrap",
+    "bootstrap root link refused; outside target retained",
+    "bootstrap regular file refused and retained",
+    "replaced stage inode refused; replacement user data retained",
+    "ancestor link replacement refused; outside user data retained",
+    "missing generated bootstrap is safe no-op"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "pass": 20,
+  "results": [
+    "valid regular files accepted",
+    "unsafe ../escape rejected",
+    "unsafe /tmp/escape rejected",
+    "unsafe a/../../escape rejected",
+    "unsafe a\\b rejected",
+    "unsafe a:b rejected",
+    "unsafe a//b rejected",
+    "unsafe a/./b rejected",
+    "type 1 rejected",
+    "type 2 rejected",
+    "type 3 rejected",
+    "type 4 rejected",
+    "type 5 rejected",
+    "type 6 rejected",
+    "type x rejected",
+    "type g rejected",
+    "duplicate rejected",
+    "manifest byte tamper rejected",
+    "unlisted extra rejected",
+    "missing listed file rejected"
+  ]
+}

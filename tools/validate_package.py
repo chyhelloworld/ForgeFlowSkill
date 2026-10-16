@@ -28,7 +28,7 @@ def validate(root):
         data=yaml.safe_load(match.group(1))
         need(data.get('name')==folder.name,f'{folder.name}: name mismatch')
         need(bool(data.get('description')),f'{folder.name}: empty description')
-        need(data.get('metadata',{}).get('version')=='0.6.0-experimental.3',f'{folder.name}: expected version 0.6.0-experimental.3')
+        need(data.get('metadata',{}).get('version')=='0.6.0-experimental.7',f'{folder.name}: expected version 0.6.0-experimental.7')
         need((folder/'NOTICE.md').is_file(),f'{folder.name}: missing NOTICE')
         need((folder/('LICENSE-IMPECCABLE' if folder.name=='ff-design' else 'LICENSE-MATT')).is_file(),f'{folder.name}: missing license')
         ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
@@ -58,9 +58,9 @@ def validate(root):
     manifest=root/'MANIFEST.json'
     if manifest.exists():
         manifest_data=json.loads(manifest.read_text())
-        need(manifest_data.get('version')=='0.6.0-experimental.3','manifest version mismatch')
+        need(manifest_data.get('version')=='0.6.0-experimental.7','manifest version mismatch')
         listed=manifest_data['files']
-        actual={str(p.relative_to(root)) for p in root.rglob('*') if p.is_file() and p!=manifest and is_deliverable(p, root)}
+        actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file() and p!=manifest and p.name not in {'forgeflow-payload.tgz','forgeflow-payload.sha256'} and is_deliverable(p, root)}
         need(actual==set(listed),'manifest file set mismatch')
         for rel, expected in listed.items():
             p=root/rel;checked['manifest_files']+=1

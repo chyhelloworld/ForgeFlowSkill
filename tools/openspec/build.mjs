@@ -2,7 +2,7 @@
 /** Rebuild the pinned upstream TypeScript plus the reviewed FF source patch. */
 import { runtimeHashes } from './ff-build.mjs';
 import { createHash } from 'node:crypto';
-import { readFileSync, mkdirSync, cpSync, existsSync, rmSync, writeFileSync } from 'node:fs';
+import { readFileSync, readdirSync, lstatSync, unlinkSync, rmdirSync, mkdirSync, cpSync, existsSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -48,12 +48,30 @@ function main() {
   if (!existsSync(path.join(build, 'src/core/ff-validity.ts'))) throw new Error('FF source patch was not applied');
   npm(['ci', '--prefix', bootstrap, '--ignore-scripts', '--cache', path.join(bootstrap, 'cache')]);
   const pnpm = path.join(bootstrap, 'node_modules/pnpm/bin/pnpm.cjs');
-  run(process.execPath, [pnpm, 'install', '--frozen-lockfile', '--ignore-scripts', '--store-dir', path.join(bootstrap, 'store')], build, {
+  run(process.execPath, [pnpm, 'install', '--frozen-lockfile', '--ignore-scripts',
+    ...(process.platform === 'win32' ? ['--node-linker=hoisted'] : []),
+    '--store-dir', path.join(bootstrap, 'store')], build, {
     XDG_DATA_HOME: path.join(bootstrap, 'data'), XDG_CACHE_HOME: path.join(bootstrap, 'cache'),
   });
   run(process.execPath, ['build.js'], build);
   writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, runtimeHashes: runtimeHashes(build), node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
   console.log(`Built project-local CLI: ${path.join(home, 'ff-spec.mjs')}`);
 }
-if (process.argv.includes('--clean')) rmSync(build, { recursive: true, force: true });
-try { main(); } catch (error) { console.error(error.message); process.exitCode = 1; }
+// --clean owns only the fixed sibling .build; existing .bootstrap data is retained.
+function cleanBuild() {
+  function removeGenerated(file) {
+    const entry = lstatSync(file, { throwIfNoEntry: false });
+    if (!entry) return;
+    if (entry.isSymbolicLink() || entry.isFile()) unlinkSync(file);
+    else if (entry.isDirectory()) {
+      for (const name of readdirSync(file)) removeGenerated(path.join(file, name));
+      rmdirSync(file);
+    } else throw new Error('Unexpected .build entry');
+  }
+  removeGenerated(build);
+  if (lstatSync(build, { throwIfNoEntry: false })) throw new Error('.build cleanup incomplete');
+}
+try {
+  if (process.argv.includes('--clean')) cleanBuild();
+  main();
+} catch (error) { console.error(error.message); process.exitCode = 1; }

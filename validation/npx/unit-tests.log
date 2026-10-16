@@ -1,0 +1,25 @@
+✔ cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (593.628153ms)
+✔ Claude install and same-version reentry leave exact state unchanged (253.527726ms)
+✔ unmanaged conflict blocks without overwriting (44.486505ms)
+✔ user edit prevents same-version reinstall and rollback (125.866527ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (382.59465ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (517.719488ms)
+✔ state commit failure restores previous state and bytes (260.27604ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (225.780663ms)
+✔ tampered source, runtime, and unsafe state are blocked (238.620298ms)
+✔ project move remains bound locally and official openspec never invoked (266.149153ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (278.244506ms)
+✔ path and local-home isolation checks (103.023929ms)
+✔ rollback refuses a modified inactive runtime release (320.768081ms)
+✔ strict decoder accepts complete manifest payload (183.225904ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (8.4826ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (2.450832ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (1.405302ms)
+ℹ tests 17
+ℹ suites 0
+ℹ pass 17
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3783.469347

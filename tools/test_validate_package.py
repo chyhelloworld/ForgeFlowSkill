@@ -12,7 +12,7 @@ from validate_package import validate, is_deliverable
 def manifest(root):
     p=root/'MANIFEST.json'
     data=json.loads(p.read_text())
-    data['files']={str(f.relative_to(root)):hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(root.rglob('*')) if f.is_file() and f!=p and is_deliverable(f, root)}
+    data['files']={f.relative_to(root).as_posix():hashlib.sha256(f.read_bytes()).hexdigest() for f in sorted(root.rglob('*')) if f.is_file() and f!=p and f.name not in {'forgeflow-payload.tgz','forgeflow-payload.sha256'} and is_deliverable(f, root)}
     p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 def mutate(root,kind):
@@ -21,7 +21,7 @@ def mutate(root,kind):
         p=root/'evaluations/scenarios.json';d=json.loads(p.read_text());d['cases']=[c for c in d['cases'] if c['id']!='E25'];p.write_text(json.dumps(d))
     elif kind=='missing_method': shutil.rmtree(root/'skills/ff-handoff')
     elif kind=='wrong_version':
-        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.6.0-experimental.3','0.4.0-rc1'))
+        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.6.0-experimental.7','0.4.0-rc1'))
     elif kind=='broken_reference':
         p=root/'skills/ff-diagnose/SKILL.md';p.write_text(p.read_text()+'\n[bad](references/missing.md)\n')
     elif kind=='missing_license': (root/'skills/ff-handoff/LICENSE-MATT').unlink()
