@@ -1,0 +1,250 @@
+{
+  "date": "2026-10-15",
+  "command_records": [
+    {
+      "json_pointer": "/1",
+      "record": {
+        "name": "research instructions",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "instructions",
+          "research",
+          "--change",
+          "research",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/research",
+        "exit": 0,
+        "stdout": "{\n  \"changeName\": \"research\",\n  \"artifactId\": \"research\",\n  \"schemaName\": \"single\",\n  \"changeDir\": \"<fixture>/run-expanded/research/openspec/changes/research\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/research\",\n    \"changesDir\": \"<fixture>/run-expanded/research/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"research.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-expanded/research/openspec/changes/research/research.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"research document\",\n  \"instruction\": \"Produce research from labeled evidence, never publish.\",\n  \"template\": \"# research\\nSynthetic fixture, no user approval.\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/research\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/4",
+      "record": {
+        "name": "retro instructions",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "instructions",
+          "retro",
+          "--change",
+          "retro",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/retro",
+        "exit": 0,
+        "stdout": "{\n  \"changeName\": \"retro\",\n  \"artifactId\": \"retro\",\n  \"schemaName\": \"single\",\n  \"changeDir\": \"<fixture>/run-expanded/retro/openspec/changes/retro\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/retro\",\n    \"changesDir\": \"<fixture>/run-expanded/retro/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"retro.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-expanded/retro/openspec/changes/retro/retro.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"retro document\",\n  \"instruction\": \"Produce retro from labeled evidence, never publish.\",\n  \"template\": \"# retro\\nSynthetic fixture, no user approval.\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/retro\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/7",
+      "record": {
+        "name": "writing-fragments instructions",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "instructions",
+          "writing-fragments",
+          "--change",
+          "writing-fragments",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/writing-fragments",
+        "exit": 0,
+        "stdout": "{\n  \"changeName\": \"writing-fragments\",\n  \"artifactId\": \"writing-fragments\",\n  \"schemaName\": \"single\",\n  \"changeDir\": \"<fixture>/run-expanded/writing-fragments/openspec/changes/writing-fragments\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/writing-fragments\",\n    \"changesDir\": \"<fixture>/run-expanded/writing-fragments/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-fragments.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-expanded/writing-fragments/openspec/changes/writing-fragments/writing-fragments.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"writing-fragments document\",\n  \"instruction\": \"Produce writing-fragments from labeled evidence, never publish.\",\n  \"template\": \"# writing-fragments\\nSynthetic fixture, no user approval.\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/writing-fragments\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/10",
+      "record": {
+        "name": "writing-shape instructions",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "instructions",
+          "writing-shape",
+          "--change",
+          "writing-shape",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/writing-shape",
+        "exit": 0,
+        "stdout": "{\n  \"changeName\": \"writing-shape\",\n  \"artifactId\": \"writing-shape\",\n  \"schemaName\": \"single\",\n  \"changeDir\": \"<fixture>/run-expanded/writing-shape/openspec/changes/writing-shape\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/writing-shape\",\n    \"changesDir\": \"<fixture>/run-expanded/writing-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-shape.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-expanded/writing-shape/openspec/changes/writing-shape/writing-shape.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"writing-shape document\",\n  \"instruction\": \"Produce writing-shape from labeled evidence, never publish.\",\n  \"template\": \"# writing-shape\\nSynthetic fixture, no user approval.\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/writing-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/13",
+      "record": {
+        "name": "writing-beats instructions",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "instructions",
+          "writing-beats",
+          "--change",
+          "writing-beats",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/writing-beats",
+        "exit": 0,
+        "stdout": "{\n  \"changeName\": \"writing-beats\",\n  \"artifactId\": \"writing-beats\",\n  \"schemaName\": \"single\",\n  \"changeDir\": \"<fixture>/run-expanded/writing-beats/openspec/changes/writing-beats\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/writing-beats\",\n    \"changesDir\": \"<fixture>/run-expanded/writing-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"writing-beats.md\",\n  \"resolvedOutputPath\": \"<fixture>/run-expanded/writing-beats/openspec/changes/writing-beats/writing-beats.md\",\n  \"existingOutputPaths\": [],\n  \"description\": \"writing-beats document\",\n  \"instruction\": \"Produce writing-beats from labeled evidence, never publish.\",\n  \"template\": \"# writing-beats\\nSynthetic fixture, no user approval.\\n\",\n  \"dependencies\": [],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/writing-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/17",
+      "record": {
+        "name": "writing-shape valid status",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "status",
+          "--change",
+          "blog",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-shape",
+        "exit": 0,
+        "stdout": "{\n  \"ffValidity\": {\n    \"valid\": true,\n    \"policyHash\": \"6fec011f9b16fd18be660aa9c289a86c9e3f8688a802cdcd913f61c327001599\",\n    \"schemaHash\": \"aaebf008cc29f76eb22aebd0484150e188fda1d6237413a8ccda42038583ff0d\",\n    \"artifacts\": [\n      {\n        \"id\": \"research\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/research.md\",\n            \"sha256\": \"894c47468f26249e8d064526237240ad38eaff3a2bc4dd4aaf142708087b6abd\"\n          }\n        ],\n        \"fingerprint\": \"f85a4dfb5761b7d48179f2977bce9bfb3eeb0e9bd7da3ee86d10c753da7f5969\"\n      },\n      {\n        \"id\": \"writing-fragments\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-fragments.md\",\n            \"sha256\": \"8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155\"\n          }\n        ],\n        \"fingerprint\": \"d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7\"\n      },\n      {\n        \"id\": \"writing-shape\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-shape.md\",\n            \"sha256\": \"baa3f007f0a6c1e1eb63db5d4e13d2e2b61f77cbb514e9fc9a9034752272ffd1\"\n          }\n        ],\n        \"fingerprint\": \"0d13bc54fb85a8c0f3a2c685e45e232738e3f1b946fca802634f66e080b55e26\"\n      },\n      {\n        \"id\": \"draft\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/draft.md\",\n            \"sha256\": \"f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a\"\n          }\n        ],\n        \"fingerprint\": \"c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20\"\n      },\n      {\n        \"id\": \"retro\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/retro.md\",\n            \"sha256\": \"24e9fc133726bd1f79563856bc8dd9d346414e6691c9b291bfaafa56792d85d1\"\n          }\n        ],\n        \"fingerprint\": \"7572ff19af7c902bf7e7ef3fd642ce2c344d7ab2f5f3b862a54bcba3f31b7e41\"\n      }\n    ],\n    \"reasons\": []\n  },\n  \"changeName\": \"blog\",\n  \"schemaName\": \"blog\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/blog-shape\",\n    \"changesDir\": \"<fixture>/run-expanded/blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-fragments.md\"\n      ]\n    },\n    \"writing-shape\": {\n      \"outputPath\": \"writing-shape.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-shape.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-shape.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/draft.md\"\n      ]\n    },\n    \"retro\": {\n      \"outputPath\": \"retro.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/retro.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/retro.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"retro\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"blog\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-shape\",\n      \"draft\",\n      \"retro\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-expanded/blog-shape\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-shape\",\n      \"outputPath\": \"writing-shape.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-shape\"\n      ]\n    },\n    {\n      \"id\": \"retro\",\n      \"outputPath\": \"retro.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"draft\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/18",
+      "record": {
+        "name": "writing-shape valid strict validate",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "validate",
+          "blog",
+          "--strict",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-shape",
+        "exit": 0,
+        "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 25\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/19",
+      "record": {
+        "name": "writing-shape source change status",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "status",
+          "--change",
+          "blog",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-shape",
+        "exit": 0,
+        "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"6fec011f9b16fd18be660aa9c289a86c9e3f8688a802cdcd913f61c327001599\",\n    \"schemaHash\": \"aaebf008cc29f76eb22aebd0484150e188fda1d6237413a8ccda42038583ff0d\",\n    \"artifacts\": [\n      {\n        \"id\": \"research\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Artifact fingerprint changed or is missing\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/research.md\",\n            \"sha256\": \"17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b\"\n          }\n        ],\n        \"fingerprint\": \"6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1\"\n      },\n      {\n        \"id\": \"writing-fragments\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency research is stale\",\n          \"Dependency input fingerprints do not match\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-fragments.md\",\n            \"sha256\": \"8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155\"\n          }\n        ],\n        \"fingerprint\": \"d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7\"\n      },\n      {\n        \"id\": \"writing-shape\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency writing-fragments is stale\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-shape.md\",\n            \"sha256\": \"baa3f007f0a6c1e1eb63db5d4e13d2e2b61f77cbb514e9fc9a9034752272ffd1\"\n          }\n        ],\n        \"fingerprint\": \"0d13bc54fb85a8c0f3a2c685e45e232738e3f1b946fca802634f66e080b55e26\"\n      },\n      {\n        \"id\": \"draft\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency research is stale\",\n          \"Dependency writing-shape is stale\",\n          \"Dependency input fingerprints do not match\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/draft.md\",\n            \"sha256\": \"f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a\"\n          }\n        ],\n        \"fingerprint\": \"c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20\"\n      },\n      {\n        \"id\": \"retro\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency draft is stale\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/retro.md\",\n            \"sha256\": \"24e9fc133726bd1f79563856bc8dd9d346414e6691c9b291bfaafa56792d85d1\"\n          }\n        ],\n        \"fingerprint\": \"7572ff19af7c902bf7e7ef3fd642ce2c344d7ab2f5f3b862a54bcba3f31b7e41\"\n      }\n    ],\n    \"reasons\": [\n      \"research: Artifact fingerprint changed or is missing\",\n      \"writing-fragments: Dependency research is stale\",\n      \"writing-fragments: Dependency input fingerprints do not match\",\n      \"writing-shape: Dependency writing-fragments is stale\",\n      \"draft: Dependency research is stale\",\n      \"draft: Dependency writing-shape is stale\",\n      \"draft: Dependency input fingerprints do not match\",\n      \"retro: Dependency draft is stale\"\n    ]\n  },\n  \"changeName\": \"blog\",\n  \"schemaName\": \"blog\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/blog-shape\",\n    \"changesDir\": \"<fixture>/run-expanded/blog-shape/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-fragments.md\"\n      ]\n    },\n    \"writing-shape\": {\n      \"outputPath\": \"writing-shape.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-shape.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/writing-shape.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/draft.md\"\n      ]\n    },\n    \"retro\": {\n      \"outputPath\": \"retro.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/retro.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-shape/openspec/changes/blog/retro.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"retro\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-shape: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-shape is stale; draft: Dependency input fingerprints do not match; retro: Dependency draft is stale\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-shape\",\n      \"draft\",\n      \"retro\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-expanded/blog-shape\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-shape\",\n      \"outputPath\": \"writing-shape.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-shape\"\n      ]\n    },\n    {\n      \"id\": \"retro\",\n      \"outputPath\": \"retro.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"draft\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/29",
+      "record": {
+        "name": "writing-beats valid status",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "status",
+          "--change",
+          "blog",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-beats",
+        "exit": 0,
+        "stdout": "{\n  \"ffValidity\": {\n    \"valid\": true,\n    \"policyHash\": \"0e9c666cbc425adf9409b3d77dc1d6ee4e296238dbcd1734ae5276c6da3a1b15\",\n    \"schemaHash\": \"3261f6bf78cb755e80fab232d10d959a5e1b907fbaf2caea33d10f81d488d478\",\n    \"artifacts\": [\n      {\n        \"id\": \"research\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/research.md\",\n            \"sha256\": \"894c47468f26249e8d064526237240ad38eaff3a2bc4dd4aaf142708087b6abd\"\n          }\n        ],\n        \"fingerprint\": \"f85a4dfb5761b7d48179f2977bce9bfb3eeb0e9bd7da3ee86d10c753da7f5969\"\n      },\n      {\n        \"id\": \"writing-fragments\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-fragments.md\",\n            \"sha256\": \"8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155\"\n          }\n        ],\n        \"fingerprint\": \"d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7\"\n      },\n      {\n        \"id\": \"writing-beats\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-beats.md\",\n            \"sha256\": \"99c534126cdb95d6622244a44788dc9f3dd348b0ec83abd10941db27eb587403\"\n          }\n        ],\n        \"fingerprint\": \"b5a2e903a750d3ddec8f3b7cce13d8a99feea05e148ede1de1fe0cd735df6dec\"\n      },\n      {\n        \"id\": \"draft\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/draft.md\",\n            \"sha256\": \"f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a\"\n          }\n        ],\n        \"fingerprint\": \"c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20\"\n      },\n      {\n        \"id\": \"retro\",\n        \"state\": \"valid\",\n        \"reasons\": [],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/retro.md\",\n            \"sha256\": \"24e9fc133726bd1f79563856bc8dd9d346414e6691c9b291bfaafa56792d85d1\"\n          }\n        ],\n        \"fingerprint\": \"7572ff19af7c902bf7e7ef3fd642ce2c344d7ab2f5f3b862a54bcba3f31b7e41\"\n      }\n    ],\n    \"reasons\": []\n  },\n  \"changeName\": \"blog\",\n  \"schemaName\": \"blog\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/blog-beats\",\n    \"changesDir\": \"<fixture>/run-expanded/blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-fragments.md\"\n      ]\n    },\n    \"writing-beats\": {\n      \"outputPath\": \"writing-beats.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-beats.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-beats.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/draft.md\"\n      ]\n    },\n    \"retro\": {\n      \"outputPath\": \"retro.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/retro.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/retro.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": true,\n  \"isComplete\": true,\n  \"applyRequires\": [\n    \"retro\"\n  ],\n  \"nextSteps\": [\n    \"All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \\\"blog\\\" --json to inspect implementation progress.\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-beats\",\n      \"draft\",\n      \"retro\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-expanded/blog-beats\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-beats\",\n      \"outputPath\": \"writing-beats.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-beats\"\n      ]\n    },\n    {\n      \"id\": \"retro\",\n      \"outputPath\": \"retro.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"draft\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/30",
+      "record": {
+        "name": "writing-beats valid strict validate",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "validate",
+          "blog",
+          "--strict",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-beats",
+        "exit": 0,
+        "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 25\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    },
+    {
+      "json_pointer": "/31",
+      "record": {
+        "name": "writing-beats source change status",
+        "command": [
+          "node",
+          "<fixture>/cli/ff-spec.mjs",
+          "status",
+          "--change",
+          "blog",
+          "--json"
+        ],
+        "cwd": "<fixture>/run-expanded/blog-beats",
+        "exit": 0,
+        "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"0e9c666cbc425adf9409b3d77dc1d6ee4e296238dbcd1734ae5276c6da3a1b15\",\n    \"schemaHash\": \"3261f6bf78cb755e80fab232d10d959a5e1b907fbaf2caea33d10f81d488d478\",\n    \"artifacts\": [\n      {\n        \"id\": \"research\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Artifact fingerprint changed or is missing\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/research.md\",\n            \"sha256\": \"17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b\"\n          }\n        ],\n        \"fingerprint\": \"6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1\"\n      },\n      {\n        \"id\": \"writing-fragments\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency research is stale\",\n          \"Dependency input fingerprints do not match\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-fragments.md\",\n            \"sha256\": \"8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155\"\n          }\n        ],\n        \"fingerprint\": \"d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7\"\n      },\n      {\n        \"id\": \"writing-beats\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency writing-fragments is stale\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/writing-beats.md\",\n            \"sha256\": \"99c534126cdb95d6622244a44788dc9f3dd348b0ec83abd10941db27eb587403\"\n          }\n        ],\n        \"fingerprint\": \"b5a2e903a750d3ddec8f3b7cce13d8a99feea05e148ede1de1fe0cd735df6dec\"\n      },\n      {\n        \"id\": \"draft\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency research is stale\",\n          \"Dependency writing-beats is stale\",\n          \"Dependency input fingerprints do not match\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/draft.md\",\n            \"sha256\": \"f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a\"\n          }\n        ],\n        \"fingerprint\": \"c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20\"\n      },\n      {\n        \"id\": \"retro\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency draft is stale\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/blog/retro.md\",\n            \"sha256\": \"24e9fc133726bd1f79563856bc8dd9d346414e6691c9b291bfaafa56792d85d1\"\n          }\n        ],\n        \"fingerprint\": \"7572ff19af7c902bf7e7ef3fd642ce2c344d7ab2f5f3b862a54bcba3f31b7e41\"\n      }\n    ],\n    \"reasons\": [\n      \"research: Artifact fingerprint changed or is missing\",\n      \"writing-fragments: Dependency research is stale\",\n      \"writing-fragments: Dependency input fingerprints do not match\",\n      \"writing-beats: Dependency writing-fragments is stale\",\n      \"draft: Dependency research is stale\",\n      \"draft: Dependency writing-beats is stale\",\n      \"draft: Dependency input fingerprints do not match\",\n      \"retro: Dependency draft is stale\"\n    ]\n  },\n  \"changeName\": \"blog\",\n  \"schemaName\": \"blog\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"<fixture>/run-expanded/blog-beats\",\n    \"changesDir\": \"<fixture>/run-expanded/blog-beats/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog\",\n  \"artifactPaths\": {\n    \"research\": {\n      \"outputPath\": \"research.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/research.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/research.md\"\n      ]\n    },\n    \"writing-fragments\": {\n      \"outputPath\": \"writing-fragments.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-fragments.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-fragments.md\"\n      ]\n    },\n    \"writing-beats\": {\n      \"outputPath\": \"writing-beats.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-beats.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/writing-beats.md\"\n      ]\n    },\n    \"draft\": {\n      \"outputPath\": \"draft.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/draft.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/draft.md\"\n      ]\n    },\n    \"retro\": {\n      \"outputPath\": \"retro.md\",\n      \"resolvedOutputPath\": \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/retro.md\",\n      \"existingOutputPaths\": [\n        \"<fixture>/run-expanded/blog-beats/openspec/changes/blog/retro.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"retro\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-beats: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-beats is stale; draft: Dependency input fingerprints do not match; retro: Dependency draft is stale\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"research\",\n      \"writing-fragments\",\n      \"writing-beats\",\n      \"draft\",\n      \"retro\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"<fixture>/run-expanded/blog-beats\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"research\",\n      \"outputPath\": \"research.md\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"writing-fragments\",\n      \"outputPath\": \"writing-fragments.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\"\n      ]\n    },\n    {\n      \"id\": \"writing-beats\",\n      \"outputPath\": \"writing-beats.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"writing-fragments\"\n      ]\n    },\n    {\n      \"id\": \"draft\",\n      \"outputPath\": \"draft.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"research\",\n        \"writing-beats\"\n      ]\n    },\n    {\n      \"id\": \"retro\",\n      \"outputPath\": \"retro.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"draft\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"<fixture>/run-expanded/blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+        "stderr": ""
+      }
+    }
+  ],
+  "checks": [
+    {
+      "json_pointer": "/2",
+      "record": {
+        "name": "research CLI does not author content",
+        "passed": true,
+        "detail": null
+      }
+    },
+    {
+      "json_pointer": "/6",
+      "record": {
+        "name": "retro CLI does not author content",
+        "passed": true,
+        "detail": null
+      }
+    },
+    {
+      "json_pointer": "/10",
+      "record": {
+        "name": "writing-fragments CLI does not author content",
+        "passed": true,
+        "detail": null
+      }
+    },
+    {
+      "json_pointer": "/14",
+      "record": {
+        "name": "writing-shape CLI does not author content",
+        "passed": true,
+        "detail": null
+      }
+    },
+    {
+      "json_pointer": "/18",
+      "record": {
+        "name": "writing-beats CLI does not author content",
+        "passed": true,
+        "detail": null
+      }
+    }
+  ]
+}

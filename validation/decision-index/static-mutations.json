@@ -1,0 +1,86 @@
+{
+  "kind": "static-validator-mutation-tests",
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid_package",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "missing_optional",
+      "passed": true,
+      "detected": [
+        "expected twelve baseline plus five optional skills",
+        "unknown scenario skill: E21"
+      ]
+    },
+    {
+      "case": "missing_optional_scenario",
+      "passed": true,
+      "detected": [
+        "missing required workflow or method scenarios"
+      ]
+    },
+    {
+      "case": "missing_method",
+      "passed": true,
+      "detected": [
+        "expected twelve baseline plus five optional skills",
+        "unknown scenario skill: E17",
+        "unknown scenario skill: E18",
+        "unknown scenario skill: E20"
+      ]
+    },
+    {
+      "case": "wrong_version",
+      "passed": true,
+      "detected": [
+        "ff-tdd: expected version 0.6.0-experimental.2"
+      ]
+    },
+    {
+      "case": "broken_reference",
+      "passed": true,
+      "detected": [
+        "/REDACTED/static-negative-A/package/skills/ff-diagnose/SKILL.md: broken link references/missing.md"
+      ]
+    },
+    {
+      "case": "missing_license",
+      "passed": true,
+      "detected": [
+        "ff-handoff: missing license"
+      ]
+    },
+    {
+      "case": "missing_replay",
+      "passed": true,
+      "detected": [
+        "missing required workflow or method scenarios"
+      ]
+    },
+    {
+      "case": "changed_source",
+      "passed": true,
+      "detected": [
+        "source changed: /REDACTED/static-negative-B/package/provenance/matt/engineering/tdd/tests.md"
+      ]
+    },
+    {
+      "case": "unknown_scenario_skill",
+      "passed": true,
+      "detected": [
+        "unknown scenario skill: E25"
+      ]
+    },
+    {
+      "case": "hash_tamper",
+      "passed": true,
+      "detected": [
+        "manifest mismatch: skills/ff-tdd/NOTICE.md"
+      ]
+    }
+  ],
+  "limits": "Not model behavior, native integration, product testing or user acceptance."
+}

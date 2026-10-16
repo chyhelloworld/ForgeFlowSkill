@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/colbymchenry/codegraph",
+  "tag": "v1.6.2",
+  "commit": "6560052a6f856855d3f71eee838fd66ccfa4285d",
+  "files": {
+    "README.md": "eb84996efef40925f8a1acea1978537d18a3d1560e960e76ef7b081e5c03a071",
+    "TELEMETRY.md": "efe0ac2744f8636f932e78003a51a9b075f4df04cc41a0d3ef02a95735ec6030",
+    "LICENSE": "e6d98f98c666bebe065ac2492a0a19232cc318d4d67bac3ca42ffb77bacc8809"
+  },
+  "install": "npm local prefix exact CLI 1.6.2 with DO_NOT_TRACK=1 and --ignore-scripts; initial package spec was caret, resolved lock exact 1.6.2; recommended repeat install uses --save-exact",
+  "telemetry_network_packet_audit": "not performed"
+}

@@ -1,0 +1,72 @@
+
+added 1 package, and audited 2 packages in 9s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Lockfile is up to date, resolution step is skipped
+Progress: resolved 1, reused 0, downloaded 0, added 0
+Packages: +239
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 239, reused 0, downloaded 0, added 0
+Progress: resolved 239, reused 0, downloaded 1, added 0
+Progress: resolved 239, reused 0, downloaded 24, added 24
+Progress: resolved 239, reused 0, downloaded 25, added 24
+Progress: resolved 239, reused 0, downloaded 48, added 48
+Progress: resolved 239, reused 0, downloaded 49, added 48
+Progress: resolved 239, reused 0, downloaded 72, added 72
+Progress: resolved 239, reused 0, downloaded 73, added 72
+Progress: resolved 239, reused 0, downloaded 96, added 97
+Progress: resolved 239, reused 0, downloaded 97, added 97
+Progress: resolved 239, reused 0, downloaded 120, added 121
+Progress: resolved 239, reused 0, downloaded 121, added 121
+Progress: resolved 239, reused 0, downloaded 144, added 145
+Progress: resolved 239, reused 0, downloaded 145, added 145
+Progress: resolved 239, reused 0, downloaded 165, added 166
+Progress: resolved 239, reused 0, downloaded 168, added 169
+Progress: resolved 239, reused 0, downloaded 169, added 169
+Progress: resolved 239, reused 0, downloaded 179, added 180
+Progress: resolved 239, reused 0, downloaded 192, added 193
+Progress: resolved 239, reused 0, downloaded 193, added 193
+Progress: resolved 239, reused 0, downloaded 216, added 217
+Progress: resolved 239, reused 0, downloaded 217, added 217
+Progress: resolved 239, reused 0, downloaded 238, added 239, done
+
+dependencies:
++ @inquirer/core 12.0.4
++ @inquirer/prompts 8.5.2
++ chalk 5.6.2
++ commander 14.0.3
++ cross-spawn 7.0.6
++ diff 9.0.0
++ fast-glob 3.3.3
++ ora 9.4.1
++ yaml 2.9.1
++ zod 4.6.5
+
+devDependencies:
++ @changesets/changelog-github 1.0.1
++ @changesets/cli 3.0.3
++ @types/node 20.19.43
++ @vitest/ui 4.1.11
++ eslint 10.12.0
++ smol-toml 1.9.0
++ typescript 6.0.3
++ typescript-eslint 8.71.0
++ vitest 4.1.11
+
+Done in 1m 28.1s using pnpm v10.34.5
+🔨 Building OpenSpec...
+
+Compiling TypeScript...
+Version 6.0.3
+
+✅ Build completed successfully!
+Built project-local CLI: <PROJECT>/.forgeflow/install/<STAGING>/tools/openspec/ff-spec.mjs
+{
+  "status": "INSTALLED",
+  "version": "0.6.0-experimental.4",
+  "host": "codex",
+  "mode": "full"
+}

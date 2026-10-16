@@ -1,0 +1,32 @@
+name: ff-blog-beats
+version: 1
+description: Optional document workflow; no implicit publication or specification promotion.
+artifacts:
+  - id: research
+    generates: research.md
+    description: Optional research artifact
+    template: research.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: []
+  - id: writing-fragments
+    generates: writing-fragments.md
+    description: Optional writing-fragments artifact
+    template: writing-fragments.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: ["research"]
+  - id: writing-beats
+    generates: writing-beats.md
+    description: Optional writing-beats artifact
+    template: writing-beats.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: ["writing-fragments"]
+  - id: draft
+    generates: draft.md
+    description: Optional draft artifact
+    template: draft.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: ["research", "writing-beats"]
+apply:
+  requires: ["draft"]
+  tracks: tasks.md
+  instruction: Work only within approved scope. This is guidance, not execution, approval or publishing.

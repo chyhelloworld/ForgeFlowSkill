@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "writing-fragments",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/writing-fragments.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    }
+  ]
+}

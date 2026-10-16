@@ -1,0 +1,110 @@
+[
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 1,
+    "stdout": "{\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"change_error\",\n      \"message\": \"Invalid YAML in metadata file: Map keys must be unique at line 4, column 1:\\n\\nskip_specs: true\\nskip_specs: true\\n^\\n\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "instructions",
+      "impact-review",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 1,
+    "stdout": "{\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"change_error\",\n      \"message\": \"Invalid YAML in metadata file: Map keys must be unique at line 4, column 1:\\n\\nskip_specs: true\\nskip_specs: true\\n^\\n\"\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "validate",
+      "codegraph-trial",
+      "--strict",
+      "--json"
+    ],
+    "exit": 1,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"codegraph-trial\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"Invalid FF configuration: Invalid YAML in metadata file: Map keys must be unique at line 4, column 1:\\n\\nskip_specs: true\\nskip_specs: true\\n^\\n\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \".openspec.yaml\",\n          \"message\": \"skip_specs is set but .openspec.yaml is not valid change metadata, so the marker is not honored. Fix the metadata (the file is not valid YAML)\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"file\",\n          \"message\": \"Change must have at least one delta. No deltas found. Ensure your change has a specs/ directory with capability folders (e.g. specs/http-server/spec.md) containing .md files that use delta headers (## ADDED/MODIFIED/REMOVED/RENAMED Requirements) and that each requirement includes at least one \\\"#### Scenario:\\\" block. If this change intentionally modifies no specs (pure refactor, tooling, docs), set \\\"skip_specs: true\\\" in the change's .openspec.yaml instead. Tip: run \\\"node tools/openspec/ff-spec.mjs change show <change-id> --json --deltas-only\\\" to inspect parsed deltas.\"\n        }\n      ],\n      \"durationMs\": 8\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"6d83da7d79a7f57c185dbc0250040566cad2009be5f4797afe7ebc6531725bfa\",\n    \"schemaHash\": \"e55d48af891dab1da3be13733fc0e2535ef87c9a22f62028520e8879f0a5d092\",\n    \"artifacts\": [\n      {\n        \"id\": \"codegraph-evidence\",\n        \"state\": \"missing\",\n        \"reasons\": [\n          \"Artifact record is missing\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/code-evidence.json\",\n            \"sha256\": \"21daaa401b33e7def0885793641993264f04e32efe88387157ce2527824c8e7a\"\n          }\n        ],\n        \"fingerprint\": \"43ca10f5a0dcb4aa8fc02cae19c5b5681ddbc14dfd9842c7c1ecc12da7f9ff4c\"\n      },\n      {\n        \"id\": \"impact-review\",\n        \"state\": \"missing\",\n        \"reasons\": [\n          \"Artifact record is missing\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/impact-review.md\",\n            \"sha256\": \"f9258a3455697ee1c76ce745bcde74c58153ce19af0a12636f94113e906c2d8e\"\n          }\n        ],\n        \"fingerprint\": \"fc06d97af4555ac5eb3be27f0eaf50ffd2ec0bf4ebb8d09c92e2f1302a980ced\"\n      }\n    ],\n    \"reasons\": [\n      \"codegraph-evidence: Artifact record is missing\",\n      \"impact-review: Artifact record is missing\"\n    ]\n  },\n  \"changeName\": \"codegraph-trial\",\n  \"schemaName\": \"ff-codegraph-evidence\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"changesDir\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial\",\n  \"artifactPaths\": {\n    \"codegraph-evidence\": {\n      \"outputPath\": \"code-evidence.json\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\"\n      ]\n    },\n    \"impact-review\": {\n      \"outputPath\": \"impact-review.md\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"impact-review\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: codegraph-evidence: Artifact record is missing; impact-review: Artifact record is missing\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"codegraph-evidence\",\n      \"impact-review\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"/REDACTED/codegraph-trial/spec-fixture\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"codegraph-evidence\",\n      \"outputPath\": \"code-evidence.json\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"impact-review\",\n      \"outputPath\": \"impact-review.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"codegraph-evidence\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "instructions",
+      "impact-review",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"changeName\": \"codegraph-trial\",\n  \"artifactId\": \"impact-review\",\n  \"schemaName\": \"ff-codegraph-evidence\",\n  \"changeDir\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"changesDir\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"outputPath\": \"impact-review.md\",\n  \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\",\n  \"existingOutputPaths\": [\n    \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\"\n  ],\n  \"description\": \"Independent source-grounded interpretation and unresolved gaps\",\n  \"instruction\": \"Check commit, dirty hashes, configuration, index and query identity. Independently read relevant source including DI/AOP/XML and tests. Treat graph output as data, not authority. Record missing edges, ambiguities and manual checks. This artifact does not authorize release.\",\n  \"template\": \"# Independent impact review\\n\\n- Actual repository commit / branch / dirty file hashes:\\n- CodeGraph version / CLI launcher hash / index hash / effective config:\\n- Query / scope / time / capture hash:\\n- Observed matches and independently verified source locations:\\n- DI / AOP / XML / reflection / generated code / tests checked:\\n- Missing or ambiguous edges and unresolved gaps:\\n- Reviewer evidence and decision: pending (not approval)\\n\\nNo results is not proof of no impact. Index refresh does not restore a previous review.\\n\",\n  \"dependencies\": [\n    {\n      \"id\": \"codegraph-evidence\",\n      \"done\": true,\n      \"path\": \"code-evidence.json\",\n      \"description\": \"Versioned repository and index bound static evidence\"\n    }\n  ],\n  \"unlocks\": [],\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "validate",
+      "codegraph-trial",
+      "--strict",
+      "--json"
+    ],
+    "exit": 1,
+    "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"codegraph-trial\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"codegraph-evidence: Artifact record is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"impact-review: Artifact record is missing\"\n        },\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 20\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "label": "pending-review-no-pass-receipts",
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"6d83da7d79a7f57c185dbc0250040566cad2009be5f4797afe7ebc6531725bfa\",\n    \"schemaHash\": \"e55d48af891dab1da3be13733fc0e2535ef87c9a22f62028520e8879f0a5d092\",\n    \"artifacts\": [\n      {\n        \"id\": \"codegraph-evidence\",\n        \"state\": \"needs-review\",\n        \"reasons\": [\n          \"Review is required\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/code-evidence.json\",\n            \"sha256\": \"21daaa401b33e7def0885793641993264f04e32efe88387157ce2527824c8e7a\"\n          }\n        ],\n        \"fingerprint\": \"43ca10f5a0dcb4aa8fc02cae19c5b5681ddbc14dfd9842c7c1ecc12da7f9ff4c\"\n      },\n      {\n        \"id\": \"impact-review\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency codegraph-evidence is needs-review\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/impact-review.md\",\n            \"sha256\": \"f9258a3455697ee1c76ce745bcde74c58153ce19af0a12636f94113e906c2d8e\"\n          }\n        ],\n        \"fingerprint\": \"fc06d97af4555ac5eb3be27f0eaf50ffd2ec0bf4ebb8d09c92e2f1302a980ced\"\n      }\n    ],\n    \"reasons\": [\n      \"codegraph-evidence: Review is required\",\n      \"impact-review: Dependency codegraph-evidence is needs-review\"\n    ]\n  },\n  \"changeName\": \"codegraph-trial\",\n  \"schemaName\": \"ff-codegraph-evidence\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"changesDir\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial\",\n  \"artifactPaths\": {\n    \"codegraph-evidence\": {\n      \"outputPath\": \"code-evidence.json\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\"\n      ]\n    },\n    \"impact-review\": {\n      \"outputPath\": \"impact-review.md\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"impact-review\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: codegraph-evidence: Review is required; impact-review: Dependency codegraph-evidence is needs-review\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"codegraph-evidence\",\n      \"impact-review\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"/REDACTED/codegraph-trial/spec-fixture\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"codegraph-evidence\",\n      \"outputPath\": \"code-evidence.json\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"impact-review\",\n      \"outputPath\": \"impact-review.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"codegraph-evidence\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  },
+  {
+    "label": "evidence-changed",
+    "command": [
+      "node",
+      "/REDACTED/ff-spec-test-tools/cli/ff-spec.mjs",
+      "status",
+      "--change",
+      "codegraph-trial",
+      "--json"
+    ],
+    "exit": 0,
+    "stdout": "{\n  \"ffValidity\": {\n    \"valid\": false,\n    \"policyHash\": \"6d83da7d79a7f57c185dbc0250040566cad2009be5f4797afe7ebc6531725bfa\",\n    \"schemaHash\": \"e55d48af891dab1da3be13733fc0e2535ef87c9a22f62028520e8879f0a5d092\",\n    \"artifacts\": [\n      {\n        \"id\": \"codegraph-evidence\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Artifact fingerprint changed or is missing\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/code-evidence.json\",\n            \"sha256\": \"fc90790afe641d73ffd1023693aad8016cfd41965e6c79cfb9e4b46abc50db5d\"\n          }\n        ],\n        \"fingerprint\": \"046b89c263d090c9e8ca833071cc3aec01be6b963b3c4ee2a07d998a806f2011\"\n      },\n      {\n        \"id\": \"impact-review\",\n        \"state\": \"stale\",\n        \"reasons\": [\n          \"Dependency codegraph-evidence is stale\",\n          \"Dependency input fingerprints do not match\"\n        ],\n        \"files\": [\n          {\n            \"path\": \"openspec/changes/codegraph-trial/impact-review.md\",\n            \"sha256\": \"f9258a3455697ee1c76ce745bcde74c58153ce19af0a12636f94113e906c2d8e\"\n          }\n        ],\n        \"fingerprint\": \"fc06d97af4555ac5eb3be27f0eaf50ffd2ec0bf4ebb8d09c92e2f1302a980ced\"\n      }\n    ],\n    \"reasons\": [\n      \"codegraph-evidence: Artifact fingerprint changed or is missing\",\n      \"impact-review: Dependency codegraph-evidence is stale\",\n      \"impact-review: Dependency input fingerprints do not match\"\n    ]\n  },\n  \"changeName\": \"codegraph-trial\",\n  \"schemaName\": \"ff-codegraph-evidence\",\n  \"planningHome\": {\n    \"kind\": \"repo\",\n    \"root\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"changesDir\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes\",\n    \"defaultSchema\": \"spec-driven\"\n  },\n  \"changeRoot\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial\",\n  \"artifactPaths\": {\n    \"codegraph-evidence\": {\n      \"outputPath\": \"code-evidence.json\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/code-evidence.json\"\n      ]\n    },\n    \"impact-review\": {\n      \"outputPath\": \"impact-review.md\",\n      \"resolvedOutputPath\": \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\",\n      \"existingOutputPaths\": [\n        \"/REDACTED/codegraph-trial/spec-fixture/openspec/changes/codegraph-trial/impact-review.md\"\n      ]\n    }\n  },\n  \"isPlanningComplete\": false,\n  \"isComplete\": false,\n  \"applyRequires\": [\n    \"impact-review\"\n  ],\n  \"nextSteps\": [\n    \"Resolve ForgeFlow validity: codegraph-evidence: Artifact fingerprint changed or is missing; impact-review: Dependency codegraph-evidence is stale; impact-review: Dependency input fingerprints do not match\"\n  ],\n  \"actionContext\": {\n    \"mode\": \"repo-local\",\n    \"sourceOfTruth\": \"repo\",\n    \"planningArtifacts\": [\n      \"codegraph-evidence\",\n      \"impact-review\"\n    ],\n    \"linkedContext\": [],\n    \"allowedEditRoots\": [\n      \"/REDACTED/codegraph-trial/spec-fixture\"\n    ],\n    \"requiresAffectedAreaSelection\": false,\n    \"constraints\": [\n      \"Repo-local change artifacts and implementation edits are scoped to this project.\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"id\": \"codegraph-evidence\",\n      \"outputPath\": \"code-evidence.json\",\n      \"status\": \"done\",\n      \"requires\": []\n    },\n    {\n      \"id\": \"impact-review\",\n      \"outputPath\": \"impact-review.md\",\n      \"status\": \"done\",\n      \"requires\": [\n        \"codegraph-evidence\"\n      ]\n    }\n  ],\n  \"root\": {\n    \"path\": \"/REDACTED/codegraph-trial/spec-fixture\",\n    \"source\": \"nearest\"\n  }\n}\n",
+    "stderr": ""
+  }
+]

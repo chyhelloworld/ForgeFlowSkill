@@ -1,0 +1,26 @@
+{
+  "version": "windows-test.2",
+  "provenance": "Reported native Windows verification of the earlier local repair; not a rerun of experimental.6.",
+  "fixes": [
+    "Windows pnpm hoisted dependency layout",
+    "Windows copy filter forces per-entry directory copying"
+  ],
+  "checks": {
+    "full_build_and_doctor": "passed in native Windows report",
+    "codex_app_server_skills_list": {
+      "count": 17,
+      "scope": "main target project .agents/skills",
+      "model_business_invocation": false
+    },
+    "claude_authenticated_use": "not tested",
+    "boundary_checks": 5,
+    "regression_checks": 10
+  },
+  "known_revision_required": "Move bootstrap cleanup out of standalone build into freshly owned installer staging before integrating.",
+  "experimental_6_windows_status": "pending exact-candidate native retest",
+  "limitations": [
+    "No claim of real model task execution",
+    "No global installation or credential access",
+    "Separate project destination supported, complete build-cache relocation not supported"
+  ]
+}

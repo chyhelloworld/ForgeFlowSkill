@@ -1,0 +1,14 @@
+name: ff-writing-beats
+version: 1
+description: Optional document workflow; no implicit publication or specification promotion.
+artifacts:
+  - id: writing-beats
+    generates: writing-beats.md
+    description: Optional writing-beats artifact
+    template: writing-beats.md
+    instruction: Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.
+    requires: []
+apply:
+  requires: ["writing-beats"]
+  tracks: tasks.md
+  instruction: Work only within approved scope. This is guidance, not execution, approval or publishing.

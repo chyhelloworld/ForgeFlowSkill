@@ -1,0 +1,54 @@
+{
+  "scope": "new adapter production functions only; tests and upstream excluded",
+  "coverage_metric": "coverage.py function statement/line coverage (not basis path)",
+  "source_sha256": "989c74d09530ae35ffdeffe3fc18ec90b3dadd1be56470f16f0e9ba1467e0b3f",
+  "functions": [
+    {
+      "function": "main",
+      "cc": 21,
+      "line_coverage": 1.0,
+      "crap": 21.0
+    },
+    {
+      "function": "snapshot",
+      "cc": 10,
+      "line_coverage": 1.0,
+      "crap": 10.0
+    },
+    {
+      "function": "validate_index_path",
+      "cc": 5,
+      "line_coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "function": "index_state",
+      "cc": 3,
+      "line_coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "function": "digest",
+      "cc": 1,
+      "line_coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "jsonhash",
+      "cc": 1,
+      "line_coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "function": "command",
+      "cc": 1,
+      "line_coverage": 1.0,
+      "crap": 1.0
+    }
+  ],
+  "tools": {
+    "coverage.py": "7.16.2",
+    "radon": "6.0.1",
+    "python": "3.12.14"
+  }
+}

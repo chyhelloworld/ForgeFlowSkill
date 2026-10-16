@@ -1,0 +1,32 @@
+{
+  "ff-spec.mjs": {
+    "tested": "12039e1450e0f07d9ceafb5047aafea58209c56c788bba42e67202b58ba24548",
+    "delivered": "12039e1450e0f07d9ceafb5047aafea58209c56c788bba42e67202b58ba24548",
+    "equal": true
+  },
+  "ff-build.mjs": {
+    "tested": "e271991d3991faddcd64b83f3008b8efad2060c682955b68ca138115735bcb5e",
+    "delivered": "e271991d3991faddcd64b83f3008b8efad2060c682955b68ca138115735bcb5e",
+    "equal": true
+  },
+  "ff-snapshot.mjs": {
+    "tested": "25a66bbfb24c052aa5fc6e662f91f8f28988ba5f123ab6dfe6da4b4feb0de5c4",
+    "delivered": "25a66bbfb24c052aa5fc6e662f91f8f28988ba5f123ab6dfe6da4b4feb0de5c4",
+    "equal": true
+  },
+  "forgeflow.patch": {
+    "tested": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+    "delivered": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+    "equal": true
+  },
+  "upstream.json": {
+    "tested": "991ab48cbe8e2308df43bc4c784dd31463a418b8b150246901adf1e7d7c3750f",
+    "delivered": "991ab48cbe8e2308df43bc4c784dd31463a418b8b150246901adf1e7d7c3750f",
+    "equal": true
+  },
+  "upstream-v1.14.2.tar.gz": {
+    "tested": "7b7fb6b208d18b1d87f717a3541455afb7ac360552ff3f65278e84fc618375ff",
+    "delivered": "7b7fb6b208d18b1d87f717a3541455afb7ac360552ff3f65278e84fc618375ff",
+    "equal": true
+  }
+}

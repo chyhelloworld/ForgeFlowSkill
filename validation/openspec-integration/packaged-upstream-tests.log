@@ -1417,7 +1417,7 @@ hint:
 hint: Disable this message with "git config set advice.defaultBranchName false"
  ❯ test/core/store/registry.test.ts (13 tests | 1 failed) 111ms
      × commits prepared setup against the latest registry state 13ms
-Cloning into 'test-fixture/openspec-store-remote-p3bBs7/home/openspec/team-context'...
+Cloning into 'test-fixture/openspec-store-remote-p3bBs7/REDACTED/upstream-test-home/team-context'...
 done.
 hint: Using 'master' as the name for the initial branch. This default branch name
 hint: will change to "main" in Git 3.0. To configure the initial branch name

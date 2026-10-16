@@ -1,0 +1,64 @@
+{
+  "scope": "Mechanical trace checks for one instructed simulation, NOT behavioral benchmark or independent review",
+  "checks": [
+    {
+      "name": "Every author input explicitly synthetic, no real approval",
+      "passed": true
+    },
+    {
+      "name": "Frozen source snapshots retain original hashes",
+      "passed": true
+    },
+    {
+      "name": "Fragments model creates once, then appends only",
+      "passed": true
+    },
+    {
+      "name": "Fragment author edit preserved and number absent",
+      "passed": true
+    },
+    {
+      "name": "Fragment stop prevents all subsequent fragment writes",
+      "passed": true
+    },
+    {
+      "name": "Both branches read the same frozen fragments",
+      "passed": true
+    },
+    {
+      "name": "Beats never reads shape output",
+      "passed": true
+    },
+    {
+      "name": "One chosen beat, no next beat written",
+      "passed": true
+    },
+    {
+      "name": "Beats deletion retained and concept set rebuilt",
+      "passed": true
+    },
+    {
+      "name": "Shape has two separately selected writes",
+      "passed": true
+    },
+    {
+      "name": "Shape author edit preserved",
+      "passed": true
+    },
+    {
+      "name": "Every document write immediately follows full current read; hashes/append prefixes match",
+      "passed": true
+    },
+    {
+      "name": "Drafts labeled synthetic and contain no injected false claims",
+      "passed": true
+    },
+    {
+      "name": "Retro candidate precedes falsification and zero rules/patches",
+      "passed": true
+    }
+  ],
+  "passed": 14,
+  "total": 14,
+  "semantic_caveat": "Shape includes ffValidity/done field names without fully defining them for first-time maintainers."
+}

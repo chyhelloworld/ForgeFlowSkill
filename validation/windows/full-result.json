@@ -1,0 +1,20 @@
+{
+  "candidate": "0.6.0-experimental.6",
+  "platform": "Linux Node 24.19.0/npm 11.9.0",
+  "execution": "Actual npm exec --ignore-scripts from npm-packed tgz, full install --build into Chinese/space directory",
+  "status": "INSTALLED",
+  "doctor": "READY",
+  "build_source_manifest_sha256": "3b12fb18f66a146e2caffb5894972243478f5a02026826e21130c49d120e82f0",
+  "runtime_release": "releases/0.6.0-experimental.6-3b12fb18f66a146e-full",
+  "production_hashes": {
+    "tools/openspec/build.mjs": "6af735be107d2f1c85259f35fc6cdfe6b6bb5671bce5b91d608ab6298e8f3bff",
+    "tools/installer/install.mjs": "063e9255894d2ceb108ddbe773e38b2841e885f749c0ed642154b4a20f75637c",
+    "bin/ff-install.mjs": "a8064c23fa7cdf68ef952923ea89c572c179e9d27e860282577fe6fb54c38197",
+    "bin/payload.mjs": "d13a4623e9b126954e60bebfa5311c2f4b26a9fbdddc0835daeb9804146e675a"
+  },
+  "limitations": [
+    "Final documentation and validation-report additions change source manifest/payload; runtime source bytes remain equal to this tested build.",
+    "Native Windows exact-candidate retest pending",
+    "No authenticated model business task or Claude verification"
+  ]
+}

@@ -28,8 +28,8 @@ for line in text.splitlines():
    pass
   out.append(f'<h{lev} id="{id}">{inline(title)}</h{lev}>')
   if lev>1:toc.append(f'<a class="l{lev}" href="#{id}">{html.escape(title)}</a>')
-  if lev==2 and title in ['新项目如何从想法走到交付','旧项目或半成品项目怎么接手','先看当前承诺 再看本轮变更']:
-   fn='spec-lifecycle.svg' if title.startswith('先看') else ('new-project-workflow.svg' if title.startswith('新') else 'existing-project-workflow.svg')
+  if lev==2 and title in ['新项目如何从想法走到交付','旧项目或半成品项目怎么接手','先看当前承诺 再看本轮变更','跨会话决策索引（实验2可选）']:
+   fn='decision-index.svg' if title.startswith('跨会话') else 'spec-lifecycle.svg' if title.startswith('先看') else ('new-project-workflow.svg' if title.startswith('新') else 'existing-project-workflow.svg')
    p=b/'diagrams'/fn
    if p.exists():out.append('<figure>'+p.read_text().replace('<?xml version="1.0" encoding="UTF-8"?>','')+'<figcaption>按需选择的交接路线；不表示宿主自动调度或必须全流程运行。</figcaption></figure>')
  elif line.startswith('!['):continue

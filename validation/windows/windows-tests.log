@@ -1,0 +1,20 @@
+✔ staged bootstrap cleanup is Windows-only and leaves source, siblings, runtime and project data alone (7.569684ms)
+✔ Windows cleanup cannot be prepared over a bootstrap copied from source (0.733237ms)
+✔ cleanup refuses a replacement stage and cannot clean a moved release (0.446486ms)
+✔ cleanup refuses symbolic links at the bootstrap or any stage ancestor (2.209928ms)
+✔ cleanup unlinks nested directory links without traversing external data (0.519353ms)
+✔ stage creation rejects a linked destination ancestor (1.074398ms)
+✔ mocked Windows full install cleans only after successful build and probe, before inventory (21.181537ms)
+✔ mocked Windows install preserves pre-existing source bootstrap and rejects before any build (4.700607ms)
+✔ mocked Windows failed build or CLI probe retains stage diagnostics and no active installation (11.682958ms)
+✔ Windows cleanup does not relax strict absolute or escaping runtime link rejection (15.65864ms)
+✔ runtime inventory still rejects relative escaping links and chained escapes (0.827385ms)
+✔ standalone builder preserves an existing bootstrap and adds hoisted only on Windows (mocked subprocesses) (264.14599ms)
+ℹ tests 12
+ℹ suites 0
+ℹ pass 12
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 444.055694

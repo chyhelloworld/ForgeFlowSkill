@@ -1,0 +1,47 @@
+[
+  {
+    "source": "<package>/skills/ff-research/SKILL.md",
+    "snapshot": "inputs/ff-research.SKILL.md",
+    "sha256": "1a40025eedf34abbe645099385f8676e59a6c9d75be0cb8d8f99515f0c8e048b"
+  },
+  {
+    "source": "<package>/skills/ff-retro/SKILL.md",
+    "snapshot": "inputs/ff-retro.SKILL.md",
+    "sha256": "38d0d3ae421a552ff3934f00de44950c77f09680b3914f3040c42218f9c21f62"
+  },
+  {
+    "source": "<package>/skills/ff-writing-fragments/SKILL.md",
+    "snapshot": "inputs/ff-writing-fragments.SKILL.md",
+    "sha256": "84f4cfb1879bbce9c711e6f3fc1dac600c2398c734f2d29f0245572e5744a004"
+  },
+  {
+    "source": "<package>/skills/ff-writing-shape/SKILL.md",
+    "snapshot": "inputs/ff-writing-shape.SKILL.md",
+    "sha256": "febc5a8da84b66941ef37109418915d734407fb254680b8adc9a4175d174eae1"
+  },
+  {
+    "source": "<package>/skills/ff-writing-beats/SKILL.md",
+    "snapshot": "inputs/ff-writing-beats.SKILL.md",
+    "sha256": "2168274a9923e294e157a5bfd2ef7674c454e55dfe4aae5bdc29dc9ee943fc36"
+  },
+  {
+    "source": "<fixture>/run-expanded/commands.json",
+    "snapshot": "inputs/commands.json",
+    "sha256": "23f058f61567f4fbbb16c90b8b21ca36cdf11dd37ab364376efb08f3f9f2335e"
+  },
+  {
+    "source": "<fixture>/run-expanded/checks.json",
+    "snapshot": "inputs/checks.json",
+    "sha256": "dd6efd9a96aef68d3d855cf623e08fcf02203926b2a47bffa322ffa143433616"
+  },
+  {
+    "source": "<fixture>/test_optional_cli.py",
+    "snapshot": "inputs/test_optional_cli.py",
+    "sha256": "92602221df8dd4b2bb9b914ed55abffb1b310640185e7f20ccd97f3f2d689f2f"
+  },
+  {
+    "source": "<fixture>/cli/upstream.json",
+    "snapshot": "inputs/upstream.json",
+    "sha256": "991ab48cbe8e2308df43bc4c784dd31463a418b8b150246901adf1e7d7c3750f"
+  }
+]

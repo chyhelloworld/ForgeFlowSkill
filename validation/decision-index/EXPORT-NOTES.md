@@ -1,0 +1,1 @@
+Exports replace absolute local paths with named placeholders for privacy; raw and exported hashes are separate. Test script default CLI is made package-relative; set FF_CLI to an available built launcher. Outputs are synthetic tests, not real user confirmation. Historical experiment1 evidence remains historical. No fixture/cache trees exported.

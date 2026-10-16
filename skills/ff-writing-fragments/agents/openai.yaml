@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF writing-fragments"
+  short_description: "按需使用此方法处理当前问题，保留证据、作者决定与既有授权边界"
+  default_prompt: "使用 $ff-writing-fragments 处理本次任务；先确认输入与范围，保持按需，不扩展为全流水线。"

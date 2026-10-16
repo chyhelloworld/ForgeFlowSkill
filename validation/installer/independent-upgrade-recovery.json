@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "checks": [
+    "Genuine SIGKILL after 8 filesystem commits leaves old state and recovery journal",
+    "Explicit recovery restores old skills byte-for-byte",
+    "Retry commits controlled next-version fixture",
+    "Rollback restores old version and retains user file"
+  ],
+  "limits": "Next-version manifest is an explicitly controlled test fixture, not a released upstream version."
+}

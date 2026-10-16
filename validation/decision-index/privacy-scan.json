@@ -1,0 +1,55 @@
+{
+  "scope": "All deliverable files including historical provenance and recursively expanded archives; UTF-8 text pattern scan; binary PNG inspected separately, not OCR-scanned",
+  "files_and_archive_members": 2044,
+  "archives_expanded": 1,
+  "binary_nontext_files": 7,
+  "patterns": [
+    "internal_absolute_path",
+    "private_thread_link",
+    "uuid",
+    "private_file_id",
+    "secret_like",
+    "private_named_id"
+  ],
+  "reviewed_public_examples": [
+    {
+      "file": "tools/openspec/upstream-v1.14.2.tar.gz!docs-lab/reference/configuration/config-json.md",
+      "pattern": "uuid",
+      "line": 93,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    },
+    {
+      "file": "tools/openspec/upstream-v1.14.2.tar.gz!openspec/changes/archive/2026-01-09-add-posthog-analytics/design.md",
+      "pattern": "uuid",
+      "line": 78,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    },
+    {
+      "file": "tools/openspec/upstream-v1.14.2.tar.gz!test/core/global-config.unparseable.test.ts",
+      "pattern": "uuid",
+      "line": 19,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    },
+    {
+      "file": "validation/scan_privacy.py",
+      "pattern": "uuid",
+      "line": 17,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    },
+    {
+      "file": "validation/scan_privacy.py",
+      "pattern": "uuid",
+      "line": 17,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    },
+    {
+      "file": "validation/scan_privacy.py",
+      "pattern": "uuid",
+      "line": 17,
+      "reason": "Reviewed public upstream documentation/test fixture ID or exact allowlist definition, not this user conversation"
+    }
+  ],
+  "findings": [],
+  "passed": true,
+  "limits": "Patterns cannot establish absolute absence of private data or all secrets; historical sanitized hashes are not rewritten as original source bytes."
+}

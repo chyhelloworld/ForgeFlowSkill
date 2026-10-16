@@ -1,0 +1,2181 @@
+[
+  {
+    "name": "research new success",
+    "passed": true,
+    "detail": {
+      "name": "research new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "research",
+        "--schema",
+        "single",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/research",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"research\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research/.openspec.yaml\",\n    \"schema\": \"single\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/research\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "research independent instructions",
+    "passed": true,
+    "detail": {
+      "changeName": "research",
+      "artifactId": "research",
+      "schemaName": "single",
+      "changeDir": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/research",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "outputPath": "research.md",
+      "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research/research.md",
+      "existingOutputPaths": [],
+      "description": "Optional research artifact",
+      "instruction": "Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.",
+      "template": "# 研究笔记\n\n问题：\n版本/日期：\n决策用途与排除项：\n预算和停止条件：\n\n## 事实\n- 结论；一手来源URL/锚点；版本；查证日期\n\n## 推论\n- 推论；依据事实；替代解释；置信限制\n\n## 待实测\n- 待验证命题；可复现实验；未运行原因\n\n## 停止结论\n已回答/预算耗尽/受阻/待决定；未解问题：\n",
+      "dependencies": [],
+      "unlocks": [],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/research",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "research CLI does not author content",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "research status sees document",
+    "passed": true,
+    "detail": {
+      "changeName": "research",
+      "schemaName": "single",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/research",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/research/openspec/changes/research/research.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "research"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"research\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/research"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/research",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "retro new success",
+    "passed": true,
+    "detail": {
+      "name": "retro new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "retro",
+        "--schema",
+        "single",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/retro",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"retro\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro/.openspec.yaml\",\n    \"schema\": \"single\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/retro\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "retro independent instructions",
+    "passed": true,
+    "detail": {
+      "changeName": "retro",
+      "artifactId": "retro",
+      "schemaName": "single",
+      "changeDir": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/retro",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "outputPath": "retro.md",
+      "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro/retro.md",
+      "existingOutputPaths": [],
+      "description": "Optional retro artifact",
+      "instruction": "Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.",
+      "template": "# 复盘候选\n\n真实事件与来源：\n观察到的代价（未知不估造）：\n已有机制及检查结果：\n候选（允许空列表）：\n- 原因假设与替代解释：\n- 证伪条件：\n- 最小补丁及授权范围：\n- 原失败样本/预期/实测：\n- 正常样本/预期/实测：\n- 独立复核与版本：\n- 保留/撤销/暂缓及原因：\n- 撤销方式：\n",
+      "dependencies": [],
+      "unlocks": [],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/retro",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "retro CLI does not author content",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "retro status sees document",
+    "passed": true,
+    "detail": {
+      "changeName": "retro",
+      "schemaName": "single",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/retro",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro",
+      "artifactPaths": {
+        "retro": {
+          "outputPath": "retro.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro/retro.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/retro/openspec/changes/retro/retro.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "retro"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"retro\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "retro"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/retro"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "retro",
+          "outputPath": "retro.md",
+          "status": "done",
+          "requires": []
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/retro",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-fragments new success",
+    "passed": true,
+    "detail": {
+      "name": "writing-fragments new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "writing-fragments",
+        "--schema",
+        "single",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-fragments",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"writing-fragments\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments/.openspec.yaml\",\n    \"schema\": \"single\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-fragments\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-fragments independent instructions",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-fragments",
+      "artifactId": "writing-fragments",
+      "schemaName": "single",
+      "changeDir": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-fragments",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "outputPath": "writing-fragments.md",
+      "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments/writing-fragments.md",
+      "existingOutputPaths": [],
+      "description": "Optional writing-fragments artifact",
+      "instruction": "Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.",
+      "template": "# 工作标题\n\n作者第一段值得保留的真实素材。\n\n---\n\n下一条碎片。此处是格式示例，使用时替换，不当作作者经历。\n",
+      "dependencies": [],
+      "unlocks": [],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-fragments",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-fragments CLI does not author content",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-fragments status sees document",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-fragments",
+      "schemaName": "single",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-fragments",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments",
+      "artifactPaths": {
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/writing-fragments/openspec/changes/writing-fragments/writing-fragments.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "writing-fragments"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"writing-fragments\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "writing-fragments"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/writing-fragments"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": []
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-fragments",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-shape new success",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "writing-shape",
+        "--schema",
+        "single",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"writing-shape\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape/.openspec.yaml\",\n    \"schema\": \"single\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape independent instructions",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-shape",
+      "artifactId": "writing-shape",
+      "schemaName": "single",
+      "changeDir": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-shape",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "outputPath": "writing-shape.md",
+      "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape/writing-shape.md",
+      "existingOutputPaths": [],
+      "description": "Optional writing-shape artifact",
+      "instruction": "Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.",
+      "template": "# 成文工作记录（不自动加入文章）\n\n只读素材：\n独立文章：\n受众/目的：\n读者已知：\n开头候选与作者选择：\n当前已铺垫概念：\n下一块的作用/所需概念：\n材料缺口及补充/删除决定：\n作者完成或暂停决定：\n发布授权：未请求/未获得\n",
+      "dependencies": [],
+      "unlocks": [],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-shape",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-shape CLI does not author content",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape status sees document",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-shape",
+      "schemaName": "single",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-shape",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape",
+      "artifactPaths": {
+        "writing-shape": {
+          "outputPath": "writing-shape.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape/writing-shape.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/writing-shape/openspec/changes/writing-shape/writing-shape.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "writing-shape"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"writing-shape\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "writing-shape"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/writing-shape"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "writing-shape",
+          "outputPath": "writing-shape.md",
+          "status": "done",
+          "requires": []
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-shape",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-beats new success",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "writing-beats",
+        "--schema",
+        "single",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"writing-beats\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats/.openspec.yaml\",\n    \"schema\": \"single\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats independent instructions",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-beats",
+      "artifactId": "writing-beats",
+      "schemaName": "single",
+      "changeDir": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-beats",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "outputPath": "writing-beats.md",
+      "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats/writing-beats.md",
+      "existingOutputPaths": [],
+      "description": "Optional writing-beats artifact",
+      "instruction": "Use the selected FF method and approved scope. Preserve author edits. Never fabricate evidence or auto-pass review.",
+      "template": "# 节拍工作记录（不自动加入文章）\n\n只读素材：\n独立文章：\n受众/前置概念：\n当前文章版本：\n当前已铺垫概念（每轮重建）：\n候选节拍/依赖/新铺垫/解锁方向：\n作者本轮选择：\n仅本轮已选节拍写入：\n材料缺口：\n作者完成或暂停决定：\n发布授权：未请求/未获得\n",
+      "dependencies": [],
+      "unlocks": [],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-beats",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-beats CLI does not author content",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats status sees document",
+    "passed": true,
+    "detail": {
+      "changeName": "writing-beats",
+      "schemaName": "single",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/writing-beats",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats",
+      "artifactPaths": {
+        "writing-beats": {
+          "outputPath": "writing-beats.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats/writing-beats.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/writing-beats/openspec/changes/writing-beats/writing-beats.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "writing-beats"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"writing-beats\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "writing-beats"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/writing-beats"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "writing-beats",
+          "outputPath": "writing-beats.md",
+          "status": "done",
+          "requires": []
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/writing-beats",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "blog new success",
+    "passed": true,
+    "detail": {
+      "name": "blog new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "blog",
+        "--schema",
+        "blog",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/.openspec.yaml\",\n    \"schema\": \"blog\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-shape\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape four artifacts valid",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": true,
+        "policyHash": "3b1ee4c0503283242c7af9799b24a4aecceea932969bfaa4343a10bb3c5964eb",
+        "schemaHash": "fb348a7b71ed2ec157db994266adc8b815ef711f55a062078e5835c8d5f87032",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "894c47468f26249e8d064526237240ad38eaff3a2bc4dd4aaf142708087b6abd"
+              }
+            ],
+            "fingerprint": "f85a4dfb5761b7d48179f2977bce9bfb3eeb0e9bd7da3ee86d10c753da7f5969"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-shape",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-shape.md",
+                "sha256": "baa3f007f0a6c1e1eb63db5d4e13d2e2b61f77cbb514e9fc9a9034752272ffd1"
+              }
+            ],
+            "fingerprint": "0d13bc54fb85a8c0f3a2c685e45e232738e3f1b946fca802634f66e080b55e26"
+          },
+          {
+            "id": "draft",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": []
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-shape": {
+          "outputPath": "writing-shape.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"blog\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-shape",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-shape"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-shape",
+          "outputPath": "writing-shape.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-shape"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-shape alternative absent",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape docs-only validate",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape valid strict validate",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+      "exit": 0,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 23\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-shape\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape documents semantic limit (false text still hash-valid)",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape semantic non-enforcement",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-semantic-limit",
+      "exit": 0,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 24\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-semantic-limit\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape input change invalidates",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": false,
+        "policyHash": "3b1ee4c0503283242c7af9799b24a4aecceea932969bfaa4343a10bb3c5964eb",
+        "schemaHash": "fb348a7b71ed2ec157db994266adc8b815ef711f55a062078e5835c8d5f87032",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "stale",
+            "reasons": [
+              "Artifact fingerprint changed or is missing"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b"
+              }
+            ],
+            "fingerprint": "6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-shape",
+            "state": "stale",
+            "reasons": [
+              "Dependency writing-fragments is stale"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-shape.md",
+                "sha256": "baa3f007f0a6c1e1eb63db5d4e13d2e2b61f77cbb514e9fc9a9034752272ffd1"
+              }
+            ],
+            "fingerprint": "0d13bc54fb85a8c0f3a2c685e45e232738e3f1b946fca802634f66e080b55e26"
+          },
+          {
+            "id": "draft",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency writing-shape is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": [
+          "research: Artifact fingerprint changed or is missing",
+          "writing-fragments: Dependency research is stale",
+          "writing-fragments: Dependency input fingerprints do not match",
+          "writing-shape: Dependency writing-fragments is stale",
+          "draft: Dependency research is stale",
+          "draft: Dependency writing-shape is stale",
+          "draft: Dependency input fingerprints do not match"
+        ]
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-shape": {
+          "outputPath": "writing-shape.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": false,
+      "isComplete": false,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-shape: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-shape is stale; draft: Dependency input fingerprints do not match"
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-shape",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-shape"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-shape",
+          "outputPath": "writing-shape.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-shape"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-shape transitive stale reaches all four",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": false,
+        "policyHash": "3b1ee4c0503283242c7af9799b24a4aecceea932969bfaa4343a10bb3c5964eb",
+        "schemaHash": "fb348a7b71ed2ec157db994266adc8b815ef711f55a062078e5835c8d5f87032",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "stale",
+            "reasons": [
+              "Artifact fingerprint changed or is missing"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b"
+              }
+            ],
+            "fingerprint": "6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-shape",
+            "state": "stale",
+            "reasons": [
+              "Dependency writing-fragments is stale"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-shape.md",
+                "sha256": "baa3f007f0a6c1e1eb63db5d4e13d2e2b61f77cbb514e9fc9a9034752272ffd1"
+              }
+            ],
+            "fingerprint": "0d13bc54fb85a8c0f3a2c685e45e232738e3f1b946fca802634f66e080b55e26"
+          },
+          {
+            "id": "draft",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency writing-shape is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": [
+          "research: Artifact fingerprint changed or is missing",
+          "writing-fragments: Dependency research is stale",
+          "writing-fragments: Dependency input fingerprints do not match",
+          "writing-shape: Dependency writing-fragments is stale",
+          "draft: Dependency research is stale",
+          "draft: Dependency writing-shape is stale",
+          "draft: Dependency input fingerprints do not match"
+        ]
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-shape": {
+          "outputPath": "writing-shape.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/writing-shape.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-shape/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": false,
+      "isComplete": false,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-shape: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-shape is stale; draft: Dependency input fingerprints do not match"
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-shape",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-shape"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-shape",
+          "outputPath": "writing-shape.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-shape"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-shape status is readonly",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape stale cannot bypass",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape stale archive",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--no-validate",
+        "--skip-specs",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-shape",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-shape\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-shape: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-shape is stale; draft: Dependency input fingerprints do not match\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape old review rejected",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape old review version",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-version",
+      "exit": 1,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Review does not match the current artifact and inputs\"\n        },\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 27\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-version\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape missing review blocks archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape review missing",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-review-missing",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-review-missing\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: draft: Review is required\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape reject review blocks archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape review reject",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-review-reject",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-review-reject\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: draft: Review does not match the current artifact and inputs\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape schema change invalidates",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape schema change",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-schema",
+      "exit": 1,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"research: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-fragments: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-fragments: Dependency research is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-shape: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-shape: Dependency writing-fragments is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Dependency research is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Dependency writing-shape is stale\"\n        },\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 25\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-schema\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape skip_specs delta rejected",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape conflicting spec authority",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-authority",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-authority\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_validation_failed\",\n      \"message\": \"Validation failed for change 'blog'.\",\n      \"fix\": \"Run node tools/openspec/ff-spec.mjs validate blog for details, fix the errors, or rerun with --no-validate.\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape normal archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape normal fixture archive",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-baseline",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-baseline/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-baseline\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape attachment never canonical",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape canceled closes",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape canceled",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic test decision only",
+        "--ff-decision-ref",
+        "fixture://independent-cli-test",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-canceled",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-canceled/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false,\n    \"disposition\": \"canceled\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-canceled\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape canceled preserves evidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape canceled no spec promotion",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape rejected closes",
+    "passed": true,
+    "detail": {
+      "name": "writing-shape rejected",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--ff-disposition",
+        "rejected",
+        "--ff-reason",
+        "Synthetic test decision only",
+        "--ff-decision-ref",
+        "fixture://independent-cli-test",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-shape-rejected",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-rejected/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false,\n    \"disposition\": \"rejected\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-shape-rejected\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-shape rejected preserves evidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-shape rejected no spec promotion",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "blog new success",
+    "passed": true,
+    "detail": {
+      "name": "blog new",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "new",
+        "change",
+        "blog",
+        "--schema",
+        "blog",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+      "exit": 0,
+      "stdout": "{\n  \"change\": {\n    \"id\": \"blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog\",\n    \"metadataPath\": \"<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/.openspec.yaml\",\n    \"schema\": \"blog\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-beats\",\n    \"source\": \"implicit\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats four artifacts valid",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": true,
+        "policyHash": "85dd07a10e26c5a6688585cc854a86398fe01e27054e01956e15e9c76f5561d6",
+        "schemaHash": "a9a8a9063c0a46d37ec7b087537c8503a2c33be9e8dc0fc4551fdde9d3428a0a",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "894c47468f26249e8d064526237240ad38eaff3a2bc4dd4aaf142708087b6abd"
+              }
+            ],
+            "fingerprint": "f85a4dfb5761b7d48179f2977bce9bfb3eeb0e9bd7da3ee86d10c753da7f5969"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-beats",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-beats.md",
+                "sha256": "99c534126cdb95d6622244a44788dc9f3dd348b0ec83abd10941db27eb587403"
+              }
+            ],
+            "fingerprint": "b5a2e903a750d3ddec8f3b7cce13d8a99feea05e148ede1de1fe0cd735df6dec"
+          },
+          {
+            "id": "draft",
+            "state": "valid",
+            "reasons": [],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": []
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-beats": {
+          "outputPath": "writing-beats.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": true,
+      "isComplete": true,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "All planning artifacts are complete. Run node tools/openspec/ff-spec.mjs instructions apply --change \"blog\" --json to inspect implementation progress."
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-beats",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-beats"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-beats",
+          "outputPath": "writing-beats.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-beats"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-beats alternative absent",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats docs-only validate",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats valid strict validate",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+      "exit": 0,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 23\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-beats\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats documents semantic limit (false text still hash-valid)",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats semantic non-enforcement",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-semantic-limit",
+      "exit": 0,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": true,\n      \"issues\": [\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 23\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 1,\n      \"failed\": 0\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 1,\n        \"failed\": 0\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-semantic-limit\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats input change invalidates",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": false,
+        "policyHash": "85dd07a10e26c5a6688585cc854a86398fe01e27054e01956e15e9c76f5561d6",
+        "schemaHash": "a9a8a9063c0a46d37ec7b087537c8503a2c33be9e8dc0fc4551fdde9d3428a0a",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "stale",
+            "reasons": [
+              "Artifact fingerprint changed or is missing"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b"
+              }
+            ],
+            "fingerprint": "6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-beats",
+            "state": "stale",
+            "reasons": [
+              "Dependency writing-fragments is stale"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-beats.md",
+                "sha256": "99c534126cdb95d6622244a44788dc9f3dd348b0ec83abd10941db27eb587403"
+              }
+            ],
+            "fingerprint": "b5a2e903a750d3ddec8f3b7cce13d8a99feea05e148ede1de1fe0cd735df6dec"
+          },
+          {
+            "id": "draft",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency writing-beats is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": [
+          "research: Artifact fingerprint changed or is missing",
+          "writing-fragments: Dependency research is stale",
+          "writing-fragments: Dependency input fingerprints do not match",
+          "writing-beats: Dependency writing-fragments is stale",
+          "draft: Dependency research is stale",
+          "draft: Dependency writing-beats is stale",
+          "draft: Dependency input fingerprints do not match"
+        ]
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-beats": {
+          "outputPath": "writing-beats.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": false,
+      "isComplete": false,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-beats: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-beats is stale; draft: Dependency input fingerprints do not match"
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-beats",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-beats"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-beats",
+          "outputPath": "writing-beats.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-beats"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-beats transitive stale reaches all four",
+    "passed": true,
+    "detail": {
+      "ffValidity": {
+        "valid": false,
+        "policyHash": "85dd07a10e26c5a6688585cc854a86398fe01e27054e01956e15e9c76f5561d6",
+        "schemaHash": "a9a8a9063c0a46d37ec7b087537c8503a2c33be9e8dc0fc4551fdde9d3428a0a",
+        "artifacts": [
+          {
+            "id": "research",
+            "state": "stale",
+            "reasons": [
+              "Artifact fingerprint changed or is missing"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/research.md",
+                "sha256": "17ab5988e6d2a8cfc9c5eb6c8fa6994c48b652f12fb4c48d9d39bc3b8dfd395b"
+              }
+            ],
+            "fingerprint": "6d2f7095d413b7b7d36301a55f10170eb7572ce96d3aa8cfc6a1dc3bcc42bec1"
+          },
+          {
+            "id": "writing-fragments",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-fragments.md",
+                "sha256": "8e65cfb9614366b5103f9a546a4a618d565f91ac9c96e53ecda52b575f435155"
+              }
+            ],
+            "fingerprint": "d1d184763bc2b68390930a97d5e6e341eca91e8f5fd01a215bbc8b864e6ce3f7"
+          },
+          {
+            "id": "writing-beats",
+            "state": "stale",
+            "reasons": [
+              "Dependency writing-fragments is stale"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/writing-beats.md",
+                "sha256": "99c534126cdb95d6622244a44788dc9f3dd348b0ec83abd10941db27eb587403"
+              }
+            ],
+            "fingerprint": "b5a2e903a750d3ddec8f3b7cce13d8a99feea05e148ede1de1fe0cd735df6dec"
+          },
+          {
+            "id": "draft",
+            "state": "stale",
+            "reasons": [
+              "Dependency research is stale",
+              "Dependency writing-beats is stale",
+              "Dependency input fingerprints do not match"
+            ],
+            "files": [
+              {
+                "path": "openspec/changes/blog/draft.md",
+                "sha256": "f314ea9746d6e41b607bb679bc6dced5e74f626da3758e7edc687d0f581f2b9a"
+              }
+            ],
+            "fingerprint": "c128987205acd36824ffc890170bbd96f5d0c1b4d35b6f7b4b1273f3a47aba20"
+          }
+        ],
+        "reasons": [
+          "research: Artifact fingerprint changed or is missing",
+          "writing-fragments: Dependency research is stale",
+          "writing-fragments: Dependency input fingerprints do not match",
+          "writing-beats: Dependency writing-fragments is stale",
+          "draft: Dependency research is stale",
+          "draft: Dependency writing-beats is stale",
+          "draft: Dependency input fingerprints do not match"
+        ]
+      },
+      "changeName": "blog",
+      "schemaName": "blog",
+      "planningHome": {
+        "kind": "repo",
+        "root": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "changesDir": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes",
+        "defaultSchema": "spec-driven"
+      },
+      "changeRoot": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog",
+      "artifactPaths": {
+        "research": {
+          "outputPath": "research.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/research.md"
+          ]
+        },
+        "writing-fragments": {
+          "outputPath": "writing-fragments.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-fragments.md"
+          ]
+        },
+        "writing-beats": {
+          "outputPath": "writing-beats.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/writing-beats.md"
+          ]
+        },
+        "draft": {
+          "outputPath": "draft.md",
+          "resolvedOutputPath": "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md",
+          "existingOutputPaths": [
+            "<fixture>/run-delivered-lifecycle-final/blog-beats/openspec/changes/blog/draft.md"
+          ]
+        }
+      },
+      "isPlanningComplete": false,
+      "isComplete": false,
+      "applyRequires": [
+        "draft"
+      ],
+      "nextSteps": [
+        "Resolve ForgeFlow validity: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-beats: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-beats is stale; draft: Dependency input fingerprints do not match"
+      ],
+      "actionContext": {
+        "mode": "repo-local",
+        "sourceOfTruth": "repo",
+        "planningArtifacts": [
+          "research",
+          "writing-fragments",
+          "writing-beats",
+          "draft"
+        ],
+        "linkedContext": [],
+        "allowedEditRoots": [
+          "<fixture>/run-delivered-lifecycle-final/blog-beats"
+        ],
+        "requiresAffectedAreaSelection": false,
+        "constraints": [
+          "Repo-local change artifacts and implementation edits are scoped to this project."
+        ]
+      },
+      "artifacts": [
+        {
+          "id": "research",
+          "outputPath": "research.md",
+          "status": "done",
+          "requires": []
+        },
+        {
+          "id": "writing-fragments",
+          "outputPath": "writing-fragments.md",
+          "status": "done",
+          "requires": [
+            "research"
+          ]
+        },
+        {
+          "id": "writing-beats",
+          "outputPath": "writing-beats.md",
+          "status": "done",
+          "requires": [
+            "writing-fragments"
+          ]
+        },
+        {
+          "id": "draft",
+          "outputPath": "draft.md",
+          "status": "done",
+          "requires": [
+            "research",
+            "writing-beats"
+          ]
+        }
+      ],
+      "root": {
+        "path": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+        "source": "nearest"
+      }
+    }
+  },
+  {
+    "name": "writing-beats status is readonly",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats stale cannot bypass",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats stale archive",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--no-validate",
+        "--skip-specs",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/blog-beats",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/blog-beats\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: research: Artifact fingerprint changed or is missing; writing-fragments: Dependency research is stale; writing-fragments: Dependency input fingerprints do not match; writing-beats: Dependency writing-fragments is stale; draft: Dependency research is stale; draft: Dependency writing-beats is stale; draft: Dependency input fingerprints do not match\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats old review rejected",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats old review version",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-version",
+      "exit": 1,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Review does not match the current artifact and inputs\"\n        },\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 26\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-version\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats missing review blocks archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats review missing",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-review-missing",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-review-missing\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: draft: Review is required\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats reject review blocks archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats review reject",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-review-reject",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-review-reject\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_error\",\n      \"message\": \"FF validity gate failed: draft: Review does not match the current artifact and inputs\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats schema change invalidates",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats schema change",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "validate",
+        "blog",
+        "--strict",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-schema",
+      "exit": 1,
+      "stdout": "{\n  \"items\": [\n    {\n      \"id\": \"blog\",\n      \"type\": \"change\",\n      \"valid\": false,\n      \"issues\": [\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"research: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-fragments: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-fragments: Dependency research is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-beats: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"writing-beats: Dependency writing-fragments is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Policy or schema hash changed or is missing\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Dependency research is stale\"\n        },\n        {\n          \"level\": \"ERROR\",\n          \"path\": \"ff-artifacts.json\",\n          \"message\": \"draft: Dependency writing-beats is stale\"\n        },\n        {\n          \"level\": \"INFO\",\n          \"path\": \"file\",\n          \"message\": \"skip_specs is set in .openspec.yaml: change declares no spec-level behavior changes, zero deltas accepted\"\n        }\n      ],\n      \"durationMs\": 25\n    }\n  ],\n  \"summary\": {\n    \"totals\": {\n      \"items\": 1,\n      \"passed\": 0,\n      \"failed\": 1\n    },\n    \"byType\": {\n      \"change\": {\n        \"items\": 1,\n        \"passed\": 0,\n        \"failed\": 1\n      }\n    }\n  },\n  \"version\": \"1.0\",\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-schema\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats skip_specs delta rejected",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats conflicting spec authority",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-authority",
+      "exit": 1,
+      "stdout": "{\n  \"archive\": null,\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-authority\",\n    \"source\": \"nearest\"\n  },\n  \"status\": [\n    {\n      \"severity\": \"error\",\n      \"code\": \"archive_validation_failed\",\n      \"message\": \"Validation failed for change 'blog'.\",\n      \"fix\": \"Run node tools/openspec/ff-spec.mjs validate blog for details, fix the errors, or rerun with --no-validate.\"\n    }\n  ]\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats normal archive",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats normal fixture archive",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--yes",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-baseline",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-baseline/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-baseline\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats attachment never canonical",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats canceled closes",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats canceled",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--ff-disposition",
+        "canceled",
+        "--ff-reason",
+        "Synthetic test decision only",
+        "--ff-decision-ref",
+        "fixture://independent-cli-test",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-canceled",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-canceled/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false,\n    \"disposition\": \"canceled\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-canceled\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats canceled preserves evidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats canceled no spec promotion",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats rejected closes",
+    "passed": true,
+    "detail": {
+      "name": "writing-beats rejected",
+      "command": [
+        "node",
+        "<fixture>/cli/ff-spec.mjs",
+        "archive",
+        "blog",
+        "--ff-disposition",
+        "rejected",
+        "--ff-reason",
+        "Synthetic test decision only",
+        "--ff-decision-ref",
+        "fixture://independent-cli-test",
+        "--json"
+      ],
+      "cwd": "<fixture>/run-delivered-lifecycle-final/writing-beats-rejected",
+      "exit": 0,
+      "stdout": "{\n  \"archive\": {\n    \"change\": \"blog\",\n    \"archivedAs\": \"2026-10-15-blog\",\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-rejected/openspec/changes/archive/2026-10-15-blog\",\n    \"specsUpdated\": false,\n    \"disposition\": \"rejected\"\n  },\n  \"root\": {\n    \"path\": \"<fixture>/run-delivered-lifecycle-final/writing-beats-rejected\",\n    \"source\": \"nearest\"\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  {
+    "name": "writing-beats rejected preserves evidence",
+    "passed": true,
+    "detail": null
+  },
+  {
+    "name": "writing-beats rejected no spec promotion",
+    "passed": true,
+    "detail": null
+  }
+]

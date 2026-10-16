@@ -1,0 +1,47 @@
+{
+  "status": "PASS",
+  "tgzSha256": "efe66fbb711c6b35553f83255145d47d2afb498e4e7d0beb5d69de4d3dcf91bd",
+  "source": "local tarball, not remote GitHub",
+  "checks": [
+    {
+      "command": "ff-install doctor",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nBLOCKED: skills-only; FF gates unavailable. Reinstall full with --build."
+    },
+    {
+      "command": "ff-install install --host codex --mode full",
+      "exit": 1,
+      "stdout": "",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nBLOCKED: full requires --build; build downloads locked dependencies"
+    },
+    {
+      "command": "ff-install install --host codex --mode skills-only",
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"UNCHANGED\",\n  \"version\": \"0.6.0-experimental.6\",\n  \"mode\": \"skills-only\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "ff-install install --host claude --mode skills-only",
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"INSTALLED_SKILLS_ONLY_GATES_BLOCKED\",\n  \"version\": \"0.6.0-experimental.6\",\n  \"host\": \"claude\",\n  \"mode\": \"skills-only\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "ff-install rollback",
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"ROLLED_BACK\",\n  \"version\": \"0.6.0-experimental.6\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "command": "ff-install recover",
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"NO_PENDING_TRANSACTION\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    }
+  ],
+  "releaseCopyPresent": true,
+  "statePreservedOnFailure": true,
+  "rollbackRestoresOwnedBytes": true,
+  "temporarySourcesCleaned": true
+}

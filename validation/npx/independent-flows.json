@@ -1,0 +1,81 @@
+{
+  "status": "PASS",
+  "source": "local npm tgz, not remote GitHub commit",
+  "checks": [
+    {
+      "operation": [
+        "install",
+        "--host",
+        "codex",
+        "--mode",
+        "skills-only"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"INSTALLED_SKILLS_ONLY_GATES_BLOCKED\",\n  \"version\": \"0.6.0-experimental.4\",\n  \"host\": \"codex\",\n  \"mode\": \"skills-only\"\n}",
+      "stderr": ""
+    },
+    {
+      "operation": [
+        "install",
+        "--host",
+        "codex",
+        "--mode",
+        "skills-only"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"INSTALLED_SKILLS_ONLY_GATES_BLOCKED\",\n  \"version\": \"0.6.0-experimental.5\",\n  \"host\": \"codex\",\n  \"mode\": \"skills-only\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "operation": [
+        "doctor"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nBLOCKED: skills-only; FF gates unavailable. Reinstall full with --build."
+    },
+    {
+      "operation": [
+        "install",
+        "--host",
+        "codex",
+        "--mode",
+        "full"
+      ],
+      "exit": 1,
+      "stdout": "",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm.\nBLOCKED: full requires --build; build downloads locked dependencies"
+    },
+    {
+      "operation": [
+        "install",
+        "--host",
+        "codex",
+        "--mode",
+        "skills-only"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"UNCHANGED\",\n  \"version\": \"0.6.0-experimental.5\",\n  \"mode\": \"skills-only\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "operation": [
+        "rollback"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"ROLLED_BACK\",\n  \"version\": \"0.6.0-experimental.4\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    },
+    {
+      "operation": [
+        "recover"
+      ],
+      "exit": 0,
+      "stdout": "{\n  \"status\": \"NO_PENDING_TRANSACTION\"\n}",
+      "stderr": "npm warn Unknown env config \"http-proxy\". This will stop working in the next major version of npm."
+    }
+  ],
+  "failedFullPreservedState": true,
+  "rollbackRestoresSourceAndOwnedFileBytes": true,
+  "sourceTempsCleaned": true
+}

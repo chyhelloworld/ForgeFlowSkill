@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "artifacts": [
+    {
+      "id": "retro",
+      "paths": [
+        "openspec/changes/CHANGE_NAME/retro.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    }
+  ]
+}

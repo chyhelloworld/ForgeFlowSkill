@@ -1,0 +1,44 @@
+{
+  "checks": [
+    {
+      "name": "Moved project pinned launcher help",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 1.16,
+      "output": "Usage: ff-spec [options] [command]\n\nAI-native system for spec-driven development\n\nOptions:\n  -V, --version                      output the version number\n  --no-color                         Disable color output\n  -h, --help                         display help for command\n\nCommands:\n  version [options]                  Report the installed OpenSpec version and\n                                     update availability\n  init [options] [path]              Initialize OpenSpec in your project\n  update [options] [path]            Update OpenSpec instruction files\n  list [options]                     List items (changes by default). Use\n                                     --specs to list specs.\n  view [options]                     Display an interactive dashboard of specs\n                                     and changes\n  change                             Manage OpenSpec change proposals\n  archive [options] [change-name]    Archive a completed change and update main\n                                     specs\n  spec                               Manage and view OpenSpec specifications\n  config [options]                   View and modify global OpenSpec\n                                     configuration\n  schema                             Manage workflow schemas [experimental]\n  store                              Create and manage stores - standalone\n                                     OpenSpec repos you register on this machine\n  doctor [options]                   Report relationship health for the resolved\n                                     OpenSpec root\n  context [options]                  Print the working context for the resolved\n                                     OpenSpec root\n  workset [options]                  Compose, keep, and open personal working\n                                     views (purely local)\n  validate [options] [item-name]     Validate changes and specs\n  show [options] [item-name]         Show a change or spec\n  feedback [options] <message>       Submit feedback about OpenSpec\n  completion                         Manage shell completions for OpenSpec CLI\n  status [options]                   Display artifact completion status for a\n                                     change\n  instructions [options] [artifact]  Output enriched instructions for artifacts,\n                                     apply, or archive\n  templates [options]                Show resolved template paths for all\n                                     artifacts in a schema\n  schemas [options]                  List available workflow schemas with\n                                     descriptions\n  new                                Create new items\n  help [command]                     display help for command\n"
+    },
+    {
+      "name": "Moved project local doctor",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 1.07,
+      "output": "Usage: ff-spec [options] [command]\n\nAI-native system for spec-driven development\n\nOptions:\n  -V, --version                      output the version number\n  --no-color                         Disable color output\n  -h, --help                         display help for command\n\nCommands:\n  version [options]                  Report the installed OpenSpec version and\n                                     update availability\n  init [options] [path]              Initialize OpenSpec in your project\n  update [options] [path]            Update OpenSpec instruction files\n  list [options]                     List items (changes by default). Use\n                                     --specs to list specs.\n  view [options]                     Display an interactive dashboard of specs\n                                     and changes\n  change                             Manage OpenSpec change proposals\n  archive [options] [change-name]    Archive a completed change and update main\n                                     specs\n  spec                               Manage and view OpenSpec specifications\n  config [options]                   View and modify global OpenSpec\n                                     configuration\n  schema                             Manage workflow schemas [experimental]\n  store                              Create and manage stores - standalone\n                                     OpenSpec repos you register on this machine\n  doctor [options]                   Report relationship health for the resolved\n                                     OpenSpec root\n  context [options]                  Print the working context for the resolved\n                                     OpenSpec root\n  workset [options]                  Compose, keep, and open personal working\n                                     views (purely local)\n  validate [options] [item-name]     Validate changes and specs\n  show [options] [item-name]         Show a change or spec\n  feedback [options] <message>       Submit feedback about OpenSpec\n  completion                         Manage shell completions for OpenSpec CLI\n  status [options]                   Display artifact completion status for a\n                                     change\n  instructions [options] [artifact]  Output enriched instructions for artifacts,\n                                     apply, or archive\n  templates [options]                Show resolved template paths for all\n                                     artifacts in a schema\n  schemas [options]                  List available workflow schemas with\n                                     descriptions\n  new                                Create new items\n  help [command]                     display help for command\n"
+    },
+    {
+      "name": "Installer doctor on moved project",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 1.29,
+      "output": "{\n  \"status\": \"READY\",\n  \"version\": \"0.6.0-experimental.4\",\n  \"host\": \"codex\",\n  \"mode\": \"full\",\n  \"cli\": \".forgeflow/ff-spec.mjs\",\n  \"note\": \"CLI available; this is not spec/policy acceptance or native-host verification\"\n}\n"
+    },
+    {
+      "name": "Official PATH openspec never used",
+      "status": "PASS",
+      "exit": 0,
+      "seconds": 1.07,
+      "output": "1.14.2-ff.0.5.0-rc3\n"
+    },
+    {
+      "name": "Runtime package identity tamper blocked",
+      "status": "PASS",
+      "exit": 1,
+      "seconds": 0.9,
+      "output": "BLOCKED: runtime integrity mismatch\n"
+    }
+  ],
+  "limits": [
+    "Real built FF runtime copied from implementer completed cold build; reviewer independently ran public entrypoints after moving project",
+    "Official CLI coexistence is PATH collision fixture, not real official package installation",
+    "Windows and native Codex/Claude discovery unverified"
+  ]
+}

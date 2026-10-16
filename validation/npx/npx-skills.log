@@ -1,0 +1,7 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+{
+  "status": "INSTALLED_SKILLS_ONLY_GATES_BLOCKED",
+  "version": "0.6.0-experimental.5",
+  "host": "codex",
+  "mode": "skills-only"
+}
