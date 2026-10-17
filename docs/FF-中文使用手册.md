@@ -1,6 +1,6 @@
 # ForgeFlow 十七技能中文使用手册
 
-版本：0.9.1 隔离候选（待用户确认晋级） · 2026-10-17
+版本：0.9.1 工作分支候选（已获准纳入，非主干发布） · 2026-10-17
 
 这份手册说明如何用九个主流程职责与三个可选执行方法，把新想法或已有半成品推进成可验证、可审查、可交接的项目切片。核心路线是目标澄清 → 规格 → 实施票据 → 独立计划审核 → 实现 → 独立主流程与代码审核 → 验收与交付。已有项目先只读接手，再按缺口选择最短路径，不要求十二个技能全部运行，更不是十二个必经阶段。
 
@@ -299,7 +299,7 @@ CHECKPOINT_CURRENT 只表示选定记录相符；done 回执需要绑定动作�
 
 ## 0.9.1 最小候选与用户主动改进
 
-此候选在独立工作树，不覆盖原工作分支或正在使用的技能。Health 证据路径复用同包 Resume，完整 17 技能安装包含依赖；单独复制 Health 不足，缺依赖 INVALID。使用 python -X utf8 .agents/skills/ff-review/scripts/health.py review.json --root .，明确 UTF-8 输入和输出模式。原 symlink 权限夹具只能跳过，真实 junction 与 ADS 另实测；不放宽 Windows 权限。
+此候选已获用户批准纳入并上传 work/061-through-09，原候选提交71d04646088d0c1a206dffb2095ea814f976c765保留。此次批准不涵盖main合并、发布或其他项目现用安装升级；详见 iterations/0.9.1/PROMOTION.md。Health 证据路径复用同包 Resume，完整 17 技能安装包含依赖；单独复制 Health 不足，缺依赖 INVALID。使用 python -X utf8 .agents/skills/ff-review/scripts/health.py review.json --root .，明确 UTF-8 输入和输出模式。原 symlink 权限夹具只能跳过，真实 junction 与 ADS 另实测；不放宽 Windows 权限。
 
 用户要求复盘时使用 ff-retro。项目事件沿用已有流程；明确选择 FF 自身时：真实偏差 → 已有机制/根因 → 零个或一个最小候选 → 冻结旧版和失败/正常控制 → 隔离验证 → 独立三类审核 → 等待用户确认晋级。不得改目标、权限、判据或留出样本来让候选通过。没有自动递归 RSI 引擎或专用 CLI。
 
