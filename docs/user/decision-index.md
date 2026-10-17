@@ -10,7 +10,7 @@
 
 记录仍遵守 Grill Mode 0/1/2。未选择记录模式或目的地，不自动保存；Intake 绝不写索引。没有 tracker 可使用已授权普通文件或当前对话，不可靠的并行依赖降级只读/串行。不默认开 issue、push、服务或新增持久访问。
 
-![跨会话决策恢复流程](diagrams/decision-index.png)
+![跨会话决策恢复流程](../diagrams/decision-index.png)
 
 流程图提供 SVG、PNG 和可编辑 draw.io 三种格式。行为模拟仅评估模型对场景的响应，不代表产品真实运行或用户确认。
 

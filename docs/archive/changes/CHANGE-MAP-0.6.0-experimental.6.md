@@ -16,7 +16,7 @@
 
 ## 已有证据与实验6待验
 
-[Windows 前序试验摘要](validation/windows/windows-test-2-summary.json) 对应本机 `windows-test.2`：hoisted 与逐项复制修复后 full 安装和 doctor 通过；真实 Codex app-server `skills/list` 在主目标项目发现17项 FF 技能。这不是模型业务调用。Claude 未登录，未验证真实调用。
+[Windows 前序试验摘要](../../../validation/windows/windows-test-2-summary.json) 对应本机 `windows-test.2`：hoisted 与逐项复制修复后 full 安装和 doctor 通过；真实 Codex app-server `skills/list` 在主目标项目发现17项 FF 技能。这不是模型业务调用。Claude 未登录，未验证真实调用。
 
 实验6额外改变了 bootstrap 清理归属，以上历史证据不能直接作为最终实验6的 PASS。最终候选仍需 Windows 安装与构建、中文/空格路径、promotion 后 CLI/doctor、项目搬迁、重入与真实宿主发现复验，并绑定实际候选/发布产物。模型业务调用及 Claude 宿主验证尚无通过结论。
 

@@ -1,5 +1,7 @@
 # FF 可选方法：研究、复盘与互动写作
 
+本文保留原实验的方法示例与验证边界；当前能力和安装后命令见[能力与场景](capabilities.md)。下列 `tools/...`、`templates/...` 和 `provenance/...` 均以源码根目录为基准，不以本文所在目录为基准。
+
 版本：0.6.0-experimental.1。基于冻结0.5.0-rc3另开实验，不更改该版本交付。十二技能保持原职责，另增加五个按需入口，共十七个；没有十七步流水线。未全局安装、未发布、未合并主分支，真实用户尚未验收。
 
 ## 如何选
@@ -53,7 +55,7 @@ flowchart TD
 3. 在项目根用项目本地 launcher 执行：node tools/openspec/ff-spec.mjs new change article-demo --schema ff-blog-shape。
 4. 在该change的 .openspec.yaml 中保留实际schema并显式设置 skip_specs: true。不要把文章/研究/复盘放进 specs/ 子目录。change-metadata.yaml 是示例，不要直接覆盖已有元数据。
 5. 对照对应 policies/*.json，将 CHANGE_NAME 替换为实际change名，合并到 openspec/ff-policy.json，保留其他artifact；项目policy ID须唯一，多个活动change应使用稳定且不冲突的ID并同步schema。不要复制任何历史回执。
-6. 用 instructions <artifact-id> --change article-demo 查看当前指导；只按授权与作者本轮选择写目标文件。用 status --change article-demo --json 查看 ffValidity。后续review按 SPEC-LIFECYCLE.md绑定真实当前指纹、schema/policy与证据，独立执行；本包不提供自动签pass工具。
+6. 用 instructions <artifact-id> --change article-demo 查看当前指导；只按授权与作者本轮选择写目标文件。用 status --change article-demo --json 查看 ffValidity。后续review按 docs/maintainers/SPEC-LIFECYCLE.md 绑定真实当前指纹、schema/policy与证据，独立执行；本包不提供自动签pass工具。
 7. 上游内容改变后，不靠重新保存回执蒙混过关：核对依赖，更新实际受影响产物，独立重审。未发生依赖变化的独立产物无需重跑整套方法。
 8. 使用 validate article-demo --strict --json 验证。正常 archive article-demo --yes --json 只在真实必要审核/授权具备时执行；skip_specs: true 保证本非规格示例不把草稿提升为现行规格。归档是生命周期收尾，不是发布。
 9. 取消/拒绝用现有 --ff-disposition canceled 或 rejected，附真实 --ff-reason 和 --ff-decision-ref；保留未完成或失败回执，不改成pass，不同步现行specs。不要套用测试中的合成决议。
@@ -66,4 +68,4 @@ flowchart TD
 
 ## 验证边界
 
-机器测试证明CLI配置与拒绝路径，不证明文章质量、研究准确性、真实独立评审者身份或用户批准。新上下文模型情景测试只说明测试提示下的行为，不替代宿主安装调用与真实用户验收。旧0.5报告保持历史，只能证明当时那一版本；本轮详见 可选方法测试报告.md。
+机器测试证明CLI配置与拒绝路径，不证明文章质量、研究准确性、真实独立评审者身份或用户批准。新上下文模型情景测试只说明测试提示下的行为，不替代宿主安装调用与真实用户验收。旧0.5报告保持历史，只能证明当时那一版本；该轮详见[可选方法测试报告](../archive/reports/可选方法测试报告.md)。

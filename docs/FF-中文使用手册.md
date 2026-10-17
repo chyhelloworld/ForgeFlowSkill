@@ -7,7 +7,7 @@
 本版本是技能说明与 OpenSpec FF 适配的候选包。0.8 已完成 Windows 原生构建、项目安装和 CLI 操作；Codex 上下文发现了 17 项技能，但完整宿主调用受 setup refresh 错误阻塞。0.9 的本机验证、未测项和证据见 iterations/0.9/README.md，不能把历史云端报告当当前验收。文中“用 ff-…”是自然语言调用示例；能否使用斜杠命令、如何载入技能，由宿主能力和安装方式决定；技能文件名不保证已注册同名斜杠命令。
 
 
-包中共有 17 项技能：下文重点介绍的 12 项工作流技能，加 ff-research、ff-retro 与 ff-writing-beats、ff-writing-fragments、ff-writing-shape，按需选择研究、复盘和写作方法。完整清单以 README 和 skills 目录为准。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
+包中共有 17 项技能：下文重点介绍的 12 项工作流技能，加 ff-research、ff-retro 与 ff-writing-beats、ff-writing-fragments、ff-writing-shape，按需选择研究、复盘和写作方法。完整清单见[能力与场景](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/user/capabilities.md)和源码 skills 目录。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
 
 ## 先看当前承诺 再看本轮变更
 
@@ -35,7 +35,7 @@ Intake 读取现行 specs、活动 change、FF policy/回执和必要历史，�
 
 status、instructions apply、validate、archive 共用 FF evaluator。instructions apply 给实施指导与 readiness，不提升规范或表示接受。正常 archive 会同步 delta 到 openspec/specs 并移动 change 到历史；调用者必须先核实真实接受、授权、证据与冲突，再检查操作后的 Git diff。正常 archive 的 --yes / --no-validate / --skip-specs 不能绕过 FF gate；skip-specs 不代表已同步。
 
-取消/拒绝不伪造 pass。原生关闭命令为 `node tools/openspec/ff-spec.mjs archive NAME --ff-disposition canceled --ff-reason TEXT --ff-decision-ref REF --json`；拒绝用 rejected。只有已有真实决议与权限才能调用。它保留失败、过期、未完成产物和原始回执，新增 ff-disposition.json 记录决议，不同步 specs，不要求先通过正常完成门禁，也不把材料标为通过。
+取消/拒绝不伪造 pass。已安装项目的原生关闭命令为 `node .forgeflow/ff-spec.mjs archive NAME --ff-disposition canceled --ff-reason TEXT --ff-decision-ref REF --json`；拒绝用 rejected。只有已有真实决议与权限才能调用。它保留失败、过期、未完成产物和原始回执，新增 ff-disposition.json 记录决议，不同步 specs，不要求先通过正常完成门禁，也不把材料标为通过。
 
 关闭路径必须显式选 disposition 并填写原因与决议引用；--yes/--no-validate/--skip-specs 不会触发关闭。工具不认证该引用；已有归档目标或决议记录拒绝覆盖，符号链接与跨文件系统关闭拒绝。正常 archive 仍保持原有效性门禁。规格同步、人工接受、Git 主分支合并和发布是四个独立事实。
 
@@ -45,16 +45,16 @@ Handoff 记录当前 specs 与 Git 版本、活动 change、策略、产物/依�
 
 ### 命令与安装
 
-完整构建与 CLI 说明见仓库 INSTALL.md 和 tools/openspec/README.md；迁移步骤见 MIGRATION.md，完整契约见 SPEC-LIFECYCLE.md。项目本地固定源构建，不替换全局 CLI。Windows PowerShell 指南是未实测说明，不是 Windows 安装成功证明。
+完整安装和当前验证边界见[安装与首次使用](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/user/install.md)，开发者见[构建维护](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/maintainers/development.md)。迁移步骤见根 MIGRATION.md，完整契约在 docs/maintainers/SPEC-LIFECYCLE.md。项目本地固定源构建，不替换全局 CLI；Windows 安装结论按提交与包哈希区分。离线阅读时可在源码中打开上述路径。
 
-从目标项目根目录运行 launcher，以下示例假定工具位于该项目的 tools/openspec/ 目录。FF checkout 在嵌套目录或其他位置时，将 launcher 改成真实相对/绝对路径，工作目录仍是目标项目，不要为寻找工具切换到另一个项目或回退到全局官方 CLI。
+以下命令从已安装的目标项目根目录运行。需要 full 模式提供 CLI；skills-only 会 BLOCKED。源码维护者的 launcher 则位于 tools/openspec/ff-spec.mjs，可用真实绝对路径调用，但工作目录仍应是目标项目，不回退到全局官方 CLI。
 
-- `node tools/openspec/ff-spec.mjs --help`
-- `node tools/openspec/ff-spec.mjs status --change CHANGE --json`
-- `node tools/openspec/ff-spec.mjs instructions apply --change CHANGE --json`
-- `node tools/openspec/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
+- `node .forgeflow/ff-spec.mjs --help`
+- `node .forgeflow/ff-spec.mjs status --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
 
-rc3 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据使用 ff-spec 命名空间；项目仍保留 openspec/ 目录。初始化仅接受显式 `node tools/openspec/ff-spec.mjs init --tools none`，不会刷新项目已有的官方工具集成；FF update 命令拒绝执行。十二个 FF 技能按 INSTALL.md 单独安装维护，不全局安装、不覆盖官方命令。
+FF CLI 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据使用 ff-spec 命名空间；项目仍保留 openspec/ 目录。初始化仅接受显式 `node .forgeflow/ff-spec.mjs init --tools none`，不会刷新项目已有的官方工具集成；FF update 命令拒绝执行。项目安装器分发 17 项技能到 Codex 的 .agents/skills 或 Claude 的 .claude/skills，不全局安装、不覆盖官方命令。
 
 官方 CLI 有文件系统权限时仍能修改兼容的 openspec/ 树，而且不会执行 FF gate。命令、配置与工具文件的并存隔离不是安全边界；FF 工作流统一使用 launcher，并核对实际 Git diff。
 

@@ -70,9 +70,9 @@ npx --yes --ignore-scripts --cache ./.forgeflow/npm-cache --package=github:chyhe
 
 原实验5在 Windows 发现 pnpm junction 的绝对 staging 目标在 promotion 后失效，以及 Node 24 `fs.cpSync` 在本次中文目录场景遗漏内容。
 
-前序本机 `windows-test.2` 已完成 hoisted 与逐项复制修复，并通过 full 安装、doctor；真实 Codex app-server `skills/list` 在主目标项目发现17项 FF 技能。见 [Windows 前序试验摘要](../validation/windows/windows-test-2-summary.json)。这只证明该试验版的安装、CLI 与宿主发现，不是模型业务调用。Claude 未登录，未验证真实调用。
+前序本机 `windows-test.2` 已完成 hoisted 与逐项复制修复，并通过 full 安装、doctor；真实 Codex app-server `skills/list` 在主目标项目发现17项 FF 技能。见 [Windows 前序试验摘要](../../../validation/windows/windows-test-2-summary.json)。这只证明该试验版的安装、CLI 与宿主发现，不是模型业务调用。Claude 未登录，未验证真实调用。
 
-实验7另外调整了 bootstrap 清理归属，最终候选仍需 Windows 复验，包括中文/空格路径安装、promotion 后 CLI/doctor 与真实宿主发现。历史 [实验5 npx 报告](../validation/npx/REPORT.md) 的 Linux、Node 24/npm 11 测试只能证明对应历史版本，不能替代本候选验收。
+实验7另外调整了 bootstrap 清理归属，最终候选仍需 Windows 复验，包括中文/空格路径安装、promotion 后 CLI/doctor 与真实宿主发现。历史 [实验5 npx 报告](../../../validation/npx/REPORT.md) 的 Linux、Node 24/npm 11 测试只能证明对应历史版本，不能替代本候选验收。
 
 Codex 使用时打开正确的目标项目，再核对技能发现和最小加载；不承诺聊天斜杠命令自动注册，也不为完成测试而修改登录、权限或 MCP。
 
@@ -80,7 +80,7 @@ Codex 使用时打开正确的目标项目，再核对技能发现和最小加�
 
 Git 仓库保留完整源码与源码 MANIFEST；npm pack 只携带最小 bootstrap 和固定 SHA256 的完整 `forgeflow-payload.tgz`。payload 保留 npm 通常过滤的 .gitignore 和 package-lock 等原字节。解码只允许常规文件，拒绝路径穿越、链接/特殊文件、重复条目、截断与尾随数据；写入和执行前严格核对 payload manifest 全成员全 hash。摘要用于完整性而非身份签名，信任仍来自已核对的仓库和 commit。
 
-发布准备脚本 `python tools/installer/pack-release.py` 只供维护者显式执行，绝不由安装调用。MANIFEST 不索引自身和生成的 payload/hash 两个封装文件，从而无自引用；payload 自带完整源 manifest。源码或文档修改后需重新准备、npm pack，并核验实际产物。详见 [实验7变更](../CHANGE-MAP-0.6.0-experimental.7.md)。
+发布准备脚本 `python tools/installer/pack-release.py` 只供维护者显式执行，绝不由安装调用。MANIFEST 不索引自身和生成的 payload/hash 两个封装文件，从而无自引用；payload 自带完整源 manifest。源码或文档修改后需重新准备、npm pack，并核验实际产物。详见 [实验7变更](../changes/CHANGE-MAP-0.6.0-experimental.7.md)。
 
 ### 实验6失败与本轮复验
 
