@@ -2,7 +2,7 @@
 name: ff-retro
 description: 基于已发生的工作事件与实际代价提出可证伪的最小流程改进，先查已有机制再验证失败和正常样本；零候选合法，不自动改权限或扩大任务。
 metadata:
-  version: "0.6.0-experimental.7"
+  version: "0.6.1"
 ---
 
 # FF Retro
