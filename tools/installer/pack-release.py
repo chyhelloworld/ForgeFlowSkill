@@ -16,4 +16,4 @@ with tarfile.open(fileobj=buf, mode='w', format=tarfile.USTAR_FORMAT) as archive
             archive.addfile(info, source)
 payload = gzip.compress(buf.getvalue(), mtime=0)
 (root / 'forgeflow-payload.tgz').write_bytes(payload)
-(root / 'forgeflow-payload.sha256').write_text(hashlib.sha256(payload).hexdigest() + '\n')
+(root / 'forgeflow-payload.sha256').write_bytes((hashlib.sha256(payload).hexdigest() + '\n').encode('ascii'))

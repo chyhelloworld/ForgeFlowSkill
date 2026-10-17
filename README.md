@@ -1,4 +1,4 @@
-> 当前工作分支：0.7.0候选，尚未发布或最终验收。0.6.1遗留GUI/CRAP/真人验收缺口见 iterations/0.6.1/README.md。历史0.6安装与测试说明保留在下方，不能代替本版证据。
+> 当前工作分支：0.8.0候选，尚未发布或最终验收。0.6.1遗留GUI/CRAP/真人验收缺口见 iterations/0.6.1/README.md。历史0.6安装与测试说明保留在下方，不能代替本版证据。
 
 # ForgeFlow Skill
 
@@ -100,3 +100,6 @@ node .forgeflow/ff-spec.mjs --help
 这些结果绑定当时的版本、环境和包哈希。**真实模型业务调用与 Claude 实际宿主调用未验证**；安装、自检、静态检查或技能发现通过，都不等于业务验收或生产就绪。历史报告只证明对应历史版本。
 
 本次 README 调整会同步更新 MANIFEST 与 payload，产生新的包哈希；本轮只验证文档、包一致性及相关安装器回归，不把旧冻结包的 Windows full 端到端结果当作新包已测。
+
+
+0.8 当前工作分支的恢复协议、真实中断实验、Windows 验证与未测项见 [本版证据](iterations/0.8/README.md)。恢复检查器完整格式见 [恢复检查约定](skills/ff-handoff/references/resume.md)。历史安装与实验结论保持原版本身份。

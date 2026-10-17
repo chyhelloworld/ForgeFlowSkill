@@ -1,9 +1,9 @@
 {
-  "version": "0.6.0-experimental.3",
-  "spec-lifecycle": {
-    "svg_text_count": 33,
+  "version": "0.8.0",
+  "decision-index": {
+    "svg_text_count": 21,
     "drawio_preserves_all_text": true,
-    "attached_edges": 8,
+    "attached_edges": 6,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
   "existing-project-workflow": {
@@ -18,10 +18,10 @@
     "attached_edges": 19,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
-  "decision-index": {
-    "svg_text_count": 21,
+  "spec-lifecycle": {
+    "svg_text_count": 33,
     "drawio_preserves_all_text": true,
-    "attached_edges": 6,
+    "attached_edges": 8,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
   "html": {
@@ -33,7 +33,7 @@
   },
   "guide": {
     "skill_table_entries": 12,
-    "internal_navigation_targets": 30,
+    "internal_navigation_targets": 31,
     "local_image_links_valid": 4,
     "host_command_registration": "NOT_TESTED"
   },

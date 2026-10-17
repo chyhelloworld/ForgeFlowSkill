@@ -1,0 +1,15 @@
+{
+  "phase": "stage-one complete; fresh receiver pending",
+  "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\project-final",
+  "receiverEntry": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\RECEIVER.md",
+  "phase1Result": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\PHASE1-FINAL-RESULT.json",
+  "verification": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\PHASE1-FINAL-VERIFICATION.json",
+  "verificationSha256": "5d1b2b756bd83764a993e3e1230d9345fa65259c43efa53a610625c8e8c01e6b",
+  "snapshotManifest": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\snapshots\\after-interruption-final\\manifest.json",
+  "childPid": 18960,
+  "observedExitCode": 1,
+  "exportCommandExitCode": 0,
+  "checkerSha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+  "productionCodeChangedByThisExperiment": false,
+  "receiverOutcome": "not yet observed"
+}

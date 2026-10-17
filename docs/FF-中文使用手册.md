@@ -277,3 +277,12 @@ Mode 0 仅在当前回复给出检查点，不保存持久化记录；一般开�
 来源：Matt Pocock wayfinder，固定提交 [49dd158d1076134a641b33efb035946536778336](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/wayfinder/SKILL.md)，MIT。仅吸收决策链与恢复思路，未安装上游技能或照搬执行默认。
 
 CLI 不解析 map 的未答/取消/拒绝语义，也不认证回执身份。恢复者须核实；strict validate 通过不等于用户已选或已授权。
+
+
+## 0.8 变更与恢复检查
+
+仅明确批准的变更才更新受影响规格、计划、测试及依赖；讨论、澄清与历史提案不成为当前任务。恢复先核对最新目标和现行规范，再检查实际工作区。可选检查器安装在项目 `.agents/skills/ff-handoff/scripts/resume.py`，从目标项目运行 `python .agents/skills/ff-handoff/scripts/resume.py checkpoint.json --root . --current-goal R2`。完整字段与回执绑定算法见源码 `skills/ff-handoff/references/resume.md`，安装后同一 skill 的 references/resume.md。
+
+CHECKPOINT_CURRENT 只表示选定记录相符；done 回执需要绑定动作执行时的依赖指纹。过期目标/依赖全部核查；局部 running/unknown 不抹去独立完成动作。工具不执行动作、不批准操作、不检测进程存活，不保证 exactly-once；早期缺少依赖绑定的 WIP 回执不能补签继承通过。
+
+本版与历史失败及未测项见 iterations/0.8/README.md；实验不能替代真人接受、全平台验收或 CI。

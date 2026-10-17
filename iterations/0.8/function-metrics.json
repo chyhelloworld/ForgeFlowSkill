@@ -1,0 +1,59 @@
+{
+  "kind": "snapshot-bound-function-metrics",
+  "ccTool": "radon 6.0.1",
+  "coverageTool": "coverage.py 7.6.1",
+  "coverageDefinition": "combined covered executable lines plus branches / executable lines plus branches; native function scope",
+  "sourceSnapshot": "/tmp/ff08-snapshot.json",
+  "limits": "Caller must capture snapshot immediately before the same coverage run; this script verifies present source matches that snapshot, not historical execution identity. Top-level Python functions only; no JS/UI metrics; subprocess coverage absent unless explicitly collected.",
+  "functions": [
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "text",
+      "cc": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "file_problem",
+      "cc": 10,
+      "coverage": 0.8095238095238095,
+      "crap": 10.691070078825181
+    },
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "files_gaps",
+      "cc": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "action_result",
+      "cc": 6,
+      "coverage": 1.0,
+      "crap": 6.0
+    },
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "inspect",
+      "cc": 13,
+      "coverage": 0.9411764705882353,
+      "crap": 13.034398534500305
+    },
+    {
+      "file": "skills/ff-handoff/scripts/resume.py",
+      "sha256": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583",
+      "name": "main",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    }
+  ],
+  "allWithin50": true
+}

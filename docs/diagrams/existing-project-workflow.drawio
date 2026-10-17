@@ -61,7 +61,7 @@
         <mxCell id="handoff" value="ff-handoff · 暂停/换模型/会话&#10;出站：规格版本、变更状态、证据、下一步&#10;与成果 Deliver 分开" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="40" y="1780" width="550" height="110" />
         </mxCell>
-        <mxCell id="receiver" value="接收方 ff-intake&#10;先只读核验实际状态与旧操作结果&#10;然后重新选择最短有效路径" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="receiver" value="接收方 ff-intake → 只读核验&#10;核对目标/依赖与完成回执绑定&#10;完成跳过；运行中先观察；重核权限" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="810" y="1780" width="550" height="110" />
         </mxCell>
         <mxCell id="e0" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="1" source="a" target="b">

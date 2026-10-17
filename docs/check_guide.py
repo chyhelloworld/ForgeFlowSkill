@@ -2,7 +2,7 @@ from pathlib import Path
 import xml.etree.ElementTree as E
 import json,re
 p=Path(__file__).parent
-out={'version':'0.6.0-experimental.3'}
+out={'version':json.loads((p.parent/'package.json').read_text())['version']}
 for svg in (p/'diagrams').glob('*.svg'):
  s=E.parse(svg).getroot();d=E.parse(svg.with_suffix('.drawio')).getroot();texts=[e.text for e in s if e.tag.endswith('text')];values=[c.get('value','') for c in d.iter('mxCell')]
  missing=[t for t in texts if not any(t in v.split('\n') or t==v for v in values)];assert not missing,missing
@@ -20,4 +20,4 @@ skills=['intake','grill','spec','design','prove','plan','implement','review','de
 assert all('| ff-'+x+' |' in md for x in skills)
 out['guide']={'skill_table_entries':12,'internal_navigation_targets':len(anchors),'local_image_links_valid':len(local),'host_command_registration':'NOT_TESTED'}
 out['rendering']='PNG deterministic Pillow rendering from SVG elements; historical three diagrams retained; new decision-index PNG separately inspected. No host integration tested.'
-(p/'guide-qa.json').write_text(json.dumps(out,ensure_ascii=False,indent=2));print(json.dumps(out,ensure_ascii=False,indent=2))
+(p/'guide-qa.json').write_bytes(json.dumps(out,ensure_ascii=False,indent=2).encode('utf-8'));print(json.dumps(out,ensure_ascii=False,indent=2))

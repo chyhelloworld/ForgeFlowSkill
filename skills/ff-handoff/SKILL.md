@@ -2,9 +2,9 @@
 name: ff-handoff
 description: 在暂停或换会话时准备最小项目内交出检查点，供接收方经 Intake 核实后续做；不是交付验收或自动启动任务。
 metadata:
-  version: "0.7.0"
+  version: "0.8.0"
 ---
-# ff-handoff 0.7.0
+# ff-handoff 0.8.0
 
 只在暂停、上下文切换、交给另一执行者或用户明确要求时使用；不是每个阶段必做。与 ff-deliver 的用户交付不同，本技能输出可续做的短检查点；接收方入口始终 ff-intake。
 
@@ -21,3 +21,7 @@ metadata:
 ## 跨会话决策恢复（按需）
 
 跨会话或复杂取舍容易丢失原始目标时，按 [决策索引契约](references/decision-index.md) 使用同一权威记录的轻索引。简单任务跳过；不新增技能、状态库或授权。沿用记录模式与保存授权，不自动落盘。
+
+## 变更与恢复边界
+
+按需运行本skill scripts/resume.py读取检查点并比对显式最新目标修订号、真实依赖hash与完成回执；读取[恢复检查约定](references/resume.md)。CHECKPOINT_CURRENT不是最终完成或批准；SKIP_COMPLETED只对当前已证动作有效，INSPECT时先核查，不自动重跑副作用。检查点是权威文档的索引，不复制成第二计划。

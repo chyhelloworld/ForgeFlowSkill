@@ -1,0 +1,289 @@
+鉁?cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (95.0435ms)
+鉁?Claude install and same-version reentry leave exact state unchanged (73.0216ms)
+鉁?unmanaged conflict blocks without overwriting (62.8448ms)
+鉁?user edit prevents same-version reinstall and rollback (65.4802ms)
+鉁?upgrade and rollback preserve unrelated files and restore exact old payload (76.9687ms)
+鉁?same source can switch project hosts with rollback and no orphan blockage (72.095ms)
+鉁?state commit failure restores previous state and bytes (69.6439ms)
+鉁?pending recovery preserves user conflict; source and destination symlinks rejected (64.7294ms)
+鉁?tampered source, runtime, and unsafe state are blocked (1258.7091ms)
+鉁?project move remains bound locally and official openspec never invoked (72.4995ms)
+鉁?CLI arguments, full build consent, uninstalled doctor and lock checks (74.1971ms)
+鉁?path and local-home isolation checks (68.2162ms)
+鉁?rollback refuses a modified inactive runtime release (59.0611ms)
+鉁?Python skill caches are not install payload; installed health helper is executable (1139.3641ms)
+鉁?npx bootstrap removes its Unicode temporary source after success, reentry and installer failure (4547.8112ms)
+鉁?strict decoder accepts complete manifest payload (49.7491ms)
+鉁?strict decoder rejects traversal, absolute paths, links, special files (1.7337ms)
+鉁?strict decoder rejects missing, extra, duplicate and corrupt members (1.1705ms)
+鉁?strict decoder rejects missing terminators and nonzero trailers (0.7591ms)
+鉁?staged bootstrap cleanup is Windows-only and leaves source, siblings, runtime and project data alone (33.7223ms)
+鉁?Windows cleanup cannot be prepared over a bootstrap copied from source (5.5212ms)
+鉁?cleanup refuses a replacement stage and cannot clean a moved release (7.5594ms)
+鉁?cleanup refuses symbolic links at the bootstrap or any stage ancestor (26.7294ms)
+鉁?cleanup unlinks nested directory links without traversing external data (7.4549ms)
+鉁?cleanup reports deletion errors and retains remaining diagnostics (5.3694ms)
+鉁?cleanup rejects a silent no-op instead of reporting success (5.5762ms)
+鉁?stage creation rejects a linked destination ancestor (1.8551ms)
+鉁?mocked Windows full install cleans only after successful build and probe, before inventory (126.1488ms)
+鉁?mocked Windows install preserves pre-existing source bootstrap and rejects before any build (51.2476ms)
+鉁?mocked Windows failed build or CLI probe retains stage diagnostics and no active installation (90.4369ms)
+鉁?Windows cleanup does not relax strict absolute or escaping runtime link rejection (97.2153ms)
+锕?runtime inventory still rejects relative escaping links and chained escapes (1.4123ms) # Relative symlink creation denied; Windows Developer Mode or elevation is required. Junction checks run above.
+鉁?standalone builder preserves an existing bootstrap and adds hoisted only on Windows (mocked subprocesses) (397.9336ms)
+鈩?tests 33
+鈩?suites 0
+鈩?pass 18
+鈩?fail 14
+鈩?cancelled 0
+鈩?skipped 1
+鈩?todo 0
+鈩?duration_ms 4717.0509
+
+鉁?failing tests:
+
+test at tools\installer\tests\install.test.mjs:29:1
+鉁?cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (95.0435ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:30:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17)
+
+test at tools\installer\tests\install.test.mjs:42:1
+鉁?Claude install and same-version reentry leave exact state unchanged (73.0216ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:43:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:48:1
+鉁?unmanaged conflict blocks without overwriting (62.8448ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Unmanaged conflict/. Input:
+  
+  'Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py'
+  
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+        at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+        at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+        at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+        at file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:51:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:51:10)
+        at Test.runInAsyncScope (node:async_hooks:214:14)
+        at Test.run (node:internal/test_runner/test:1106:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:788:18),
+    expected: /Unmanaged conflict/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools\installer\tests\install.test.mjs:54:1
+鉁?user edit prevents same-version reinstall and rollback (65.4802ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:55:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:59:1
+鉁?upgrade and rollback preserve unrelated files and restore exact old payload (76.9687ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:60:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:69:1
+鉁?same source can switch project hosts with rollback and no orphan blockage (72.095ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:70:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:73:1
+鉁?state commit failure restores previous state and bytes (69.6439ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:74:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:82:1
+鉁?pending recovery preserves user conflict; source and destination symlinks rejected (64.7294ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Symlink path/. Input:
+  
+  'Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py'
+  
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:84:10)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+        at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+        at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+        at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+        at file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:84:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:84:10)
+        at Test.runInAsyncScope (node:async_hooks:214:14)
+        at Test.run (node:internal/test_runner/test:1106:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:788:18),
+    expected: /Symlink path/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools\installer\tests\install.test.mjs:89:1
+鉁?tampered source, runtime, and unsafe state are blocked (1258.7091ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:92:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:98:1
+鉁?project move remains bound locally and official openspec never invoked (72.4995ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:99:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:105:1
+鉁?CLI arguments, full build consent, uninstalled doctor and lock checks (74.1971ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /requires --build/. Input:
+  
+  'Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py'
+  
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:110:31)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+        at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+        at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+        at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+        at file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:110:44
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:110:31)
+        at Test.runInAsyncScope (node:async_hooks:214:14)
+        at Test.run (node:internal/test_runner/test:1106:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:788:18),
+    expected: /requires --build/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools\installer\tests\install.test.mjs:116:1
+鉁?path and local-home isolation checks (68.2162ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:121:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:124:1
+鉁?rollback refuses a modified inactive runtime release (59.0611ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at setup (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:125:13)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+
+test at tools\installer\tests\install.test.mjs:131:1
+鉁?Python skill caches are not install payload; installed health helper is executable (1139.3641ms)
+  Error: BLOCKED: Source integrity: skills/ff-handoff/scripts/resume.py
+      at fail (file:///E:/github/ForgeFlowSKill/source/tools/installer/files.mjs:6:39)
+      at verifySource (file:///E:/github/ForgeFlowSKill/source/tools/installer/source.mjs:12:86)
+      at install (file:///E:/github/ForgeFlowSKill/source/tools/installer/install.mjs:103:15)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/source/tools/installer/tests/install.test.mjs:135:24)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)

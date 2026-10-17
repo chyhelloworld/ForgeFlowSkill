@@ -1,0 +1,70 @@
+{
+  "kind": "legacy-0.7-health-out-of-scope-boundary-probes",
+  "source": "skills\\ff-review\\scripts\\health.py",
+  "sha256": "1e6f54831a55c79617ea36d97c21e182b2924fc169af373c1a4e1c794b1cb52d",
+  "limits": "Read-only calls against retained bounded fixture data. This old helper was not changed by the 0.8 resume repair. Symbolic-link privilege test not rerun by this independent agent.",
+  "probes": [
+    {
+      "name": "windows-rooted-dependency-escape",
+      "status": "FAIL",
+      "result": null,
+      "root": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-rooted-dependency-escape\\root",
+      "record": {
+        "path": "\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-rooted-dependency-escape\\outside\\spec.txt",
+        "sha256": "b343b425a1adf535073de39af10e394d04c0e026f7078dba42c9e5a4da44bea0"
+      },
+      "fixtureMetadata": {
+        "outsideFile": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-rooted-dependency-escape\\outside\\spec.txt",
+        "pathIsAbsolute": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-rooted-dependency-escape\\outside\\spec.txt",
+        "outsideProject": true
+      }
+    },
+    {
+      "name": "windows-junction-dependency-escape",
+      "status": "FAIL",
+      "result": null,
+      "root": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\root",
+      "record": {
+        "path": "linked/spec.txt",
+        "sha256": "626b1275f3ee6c44b74b654661b6bd887c467e248a40d89b08291710958d758f"
+      },
+      "fixtureMetadata": {
+        "junctionCreation": {
+          "argv": [
+            "cmd.exe",
+            "/d",
+            "/c",
+            "mklink",
+            "/J",
+            "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\root\\linked",
+            "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\outside"
+          ],
+          "exitCode": 0,
+          "stdout": "Ϊ E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\root\\linked <<===>> E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\outside \\xb4\\xb4\\xbd\\xa8\\xb5\\xc4\\xc1\\xaa\\xbd\\xd3\r\n",
+          "stderr": "",
+          "stdoutHex": "ceaa20453a5c6769746875625c466f726765466c6f77534b696c6c5c736f757263655c697465726174696f6e735c302e385c696e646570656e64656e742d66697874757265732d6265666f72652d6669782d6e61746976652d313739323232333530363935333036313330305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170655c726f6f745c6c696e6b6564203c3c3d3d3d3e3e20453a5c6769746875625c466f726765466c6f77534b696c6c5c736f757263655c697465726174696f6e735c302e385c696e646570656e64656e742d66697874757265732d6265666f72652d6669782d6e61746976652d313739323232333530363935333036313330305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170655c6f75747369646520b4b4bda8b5c4c1aabdd30d0a",
+          "stderrHex": ""
+        },
+        "isSymlink": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-junction-dependency-escape\\outside\\spec.txt",
+        "outsideProject": true
+      }
+    },
+    {
+      "name": "windows-ads-hidden-evidence",
+      "status": "FAIL",
+      "result": null,
+      "root": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-ads-hidden-evidence\\root",
+      "record": {
+        "path": "visible.txt:hidden",
+        "sha256": "bc49393706c4a6df3952891ea57259ad4f572289301d8a29158ece0fea2fcd26"
+      },
+      "fixtureMetadata": {
+        "streamPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300\\windows-ads-hidden-evidence\\root\\visible.txt:hidden",
+        "streamIsFile": true,
+        "visibleFileBytes": "visible content"
+      }
+    }
+  ]
+}
