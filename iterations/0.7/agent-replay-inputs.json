@@ -1,0 +1,53 @@
+{
+  "frozen_at": "2026-10-17T01:11:11.053930+00:00",
+  "files": [
+    {
+      "path": "skill-inputs/ff-deliver/SKILL.md",
+      "sha256": "36b0d2eefadc3ad1756e3162d9610ef4699f7042e1e18d77b27a0f6d08acdfdb"
+    },
+    {
+      "path": "skill-inputs/ff-deliver/references/handoff.md",
+      "sha256": "902c8e0e59a8fa125891a3fe940cb6ae7c367e5a98845028d6148d0655fad95c"
+    },
+    {
+      "path": "skill-inputs/ff-design/SKILL.md",
+      "sha256": "21640a5153ad396a1e7a351adbfa9d3dd98c77974c1c646103846b9fafdb1b8d"
+    },
+    {
+      "path": "skill-inputs/ff-design/references/visual-direction.md",
+      "sha256": "45120846e5ce131c04e41e3e1ee418a2e69871560bbe4b78c44ad01d54dacc07"
+    },
+    {
+      "path": "skill-inputs/ff-grill/SKILL.md",
+      "sha256": "67bda9b2488db23b4a20567e6d9c156fd5eebaff628671e6bbdd78a84b15ad87"
+    },
+    {
+      "path": "skill-inputs/ff-grill/references/clarify.md",
+      "sha256": "450e976ea6114aff22d9f212212918843635c65dcc40eedba970b051d353eb0b"
+    },
+    {
+      "path": "skill-inputs/ff-grill/references/records.md",
+      "sha256": "55b55a1eccab538d8ef4efc452605c83b645ce08e5435ec77dfbbfd64c0ca310"
+    },
+    {
+      "path": "skill-inputs/ff-intake/SKILL.md",
+      "sha256": "ea1688bcd3dfe29078229ac4ae0287981880d351b0dc890add03b2fb1a896f9c"
+    },
+    {
+      "path": "skill-inputs/ff-intake/references/state-contract.md",
+      "sha256": "5d7b0c2807ec9a9567a199909faa5b3970556676d3634d2af19ab9fc8656c878"
+    },
+    {
+      "path": "skill-inputs/ff-review/SKILL.md",
+      "sha256": "495cae0f587d69c8d3178b4a90927c4f780c31158d1beefcad88d8c3b0846035"
+    },
+    {
+      "path": "skill-inputs/ff-review/references/reviews.md",
+      "sha256": "258ad88605b63fac9220225dd733e8c3a50fc33d5ecf5533974b50126aad424f"
+    },
+    {
+      "path": "skill-inputs/ff-spec/SKILL.md",
+      "sha256": "761c6abf695e60449e506b06e8d91d31acd0e9ce0f1cdf0acf788cb95c9654c3"
+    }
+  ]
+}

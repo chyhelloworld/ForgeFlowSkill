@@ -128,3 +128,14 @@ test('rollback refuses a modified inactive runtime release', () => {
   assert.throws(() => rollback(p, active), /Rollback release integrity mismatch/);
   assert.deepEqual(loadState(p), active);
 });
+test('Python skill caches are not install payload; installed health helper is executable', () => {
+  const candidate = fixture();
+  const cache = path.join(candidate, 'skills/ff-review/scripts/__pycache__');
+  fs.mkdirSync(cache, { recursive: true }); fs.writeFileSync(path.join(cache, 'health.cpython-312.pyc'), 'generated-cache');
+  const p = project(); install(p, candidate, options);
+  assert.equal(fs.existsSync(path.join(p, '.agents/skills/ff-review/scripts/__pycache__')), false);
+  const helper = path.join(p, '.agents/skills/ff-review/scripts/health.py');
+  assert.ok(fs.existsSync(helper));
+  const result = spawnSync('python', [helper, '--help'], { encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr);
+});

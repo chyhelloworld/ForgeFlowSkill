@@ -1,6 +1,6 @@
 {
   "name": "@forgeflow/project-installer",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "private": true,
   "type": "module",
   "description": "Pinned project-local ForgeFlow installer; no lifecycle scripts",

@@ -2,7 +2,7 @@
 name: ff-writing-beats
 description: 与作者逐次选择叙事节拍路线，把既有素材写成文章；每次只落一个已选节拍，概念先铺垫，原素材只读。与 writing-shape 是替代路线。
 metadata:
-  version: "0.6.1"
+  version: "0.7.0"
 ---
 
 # FF Writing Beats

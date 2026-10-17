@@ -1,0 +1,126 @@
+{
+  "schema_version": 2,
+  "campaign": "ForgeFlow 0.7 bounded replay",
+  "host": "current Codex agent",
+  "model_exact_version": "unavailable",
+  "cost": "unavailable; no external paid CLI",
+  "actual_skill_versions": {
+    "ff-review": "0.7.0",
+    "ff-grill": "0.7.0",
+    "ff-design": "0.7.0",
+    "ff-intake": "0.7.0",
+    "ff-deliver": "0.7.0",
+    "ff-spec": "0.7.0"
+  },
+  "skill_input_provenance": {
+    "manifest": "loaded-input-manifest.json",
+    "frozen_at": "2026-10-17T01:11:11.053930+00:00",
+    "actual_read_tool_chunks": [
+      "9606d0",
+      "e58ffe"
+    ],
+    "process": "Copied source files and hashed before reading; actual agent read frozen SKILL.md files in 9606d0 and frozen references in e58ffe before case inspections. No source recopy in report generation.",
+    "hash_recheck_at_report": true
+  },
+  "execution_chunks": {
+    "fixture_inspection_and_runtime": "e58ffe",
+    "responses_design_and_after_snapshots": "ae1e1d"
+  },
+  "original_run_correction": "../CORRECTION.md",
+  "context_isolation": "Four filesystem fixtures, shared existing agent context. Same agent authored fixtures and prior run, aware of scenarios; non-blind.",
+  "sample_interpretation": "One replay per case; prior run is not an independent sample. No statistical reliability claim.",
+  "snapshot_scope": "every regular file and symlink beneath each fixture root including .git, hidden, ignored and untracked files; modes and sizes included; empty directories and mtimes excluded",
+  "cases": [
+    {
+      "id": "01-code-vs-history",
+      "prompt": "用户问当前重试行为，请检查并回复。",
+      "skills_applied": [
+        "ff-intake"
+      ],
+      "response": "当前延迟函数采用线性退避，每次重试增加 100 ms。按 README 从 attempt=1 起算，我实际调用前五次得到 100、200、300、400、500 ms。\n历史文档的“已改为指数退避”与当前 retry.py 不符，应视为过期记录。现有项目没有提供完整网络调用链，所以这里只确认延迟函数的行为，不宣称已验证端到端重试。\n",
+      "before_tree_sha256": "48b7b1cc946f549440c07dd16aea22d9dc73b04d3b312e2896de72e6b209a9ec",
+      "after_tree_sha256": "48b7b1cc946f549440c07dd16aea22d9dc73b04d3b312e2896de72e6b209a9ec",
+      "changes": [],
+      "evidence_directory": "evidence/01-code-vs-history",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_EXECUTOR"
+    },
+    {
+      "id": "02-question-not-adoption",
+      "prompt": "选1000会增加首次延迟吗？",
+      "skills_applied": [
+        "ff-intake",
+        "ff-grill (discussion vs adoption boundary)",
+        "ff-spec (no unconfirmed requirement write)"
+      ],
+      "response": "会。草稿规定等待最后一次输入后的静默间隔才开始校验，因此选 1000 ms 相比 500 ms，首次校验的启动等待多 500 ms；完整结果还取决于校验耗时。\n目前这仍是待选方案，你的问题没有确认采纳 1000。现有代码只创建定时器，没有取消旧计时器的部分，完整防抖行为也尚未被证明。\n",
+      "before_tree_sha256": "8e3e51a8b0d8492f45260a00f49d8105855cb3b1159aa1ca39a63713192f7872",
+      "after_tree_sha256": "8e3e51a8b0d8492f45260a00f49d8105855cb3b1159aa1ca39a63713192f7872",
+      "changes": [],
+      "evidence_directory": "evidence/02-question-not-adoption",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_EXECUTOR"
+    },
+    {
+      "id": "03-design-only",
+      "prompt": "请为表单设计错误状态，暂不实现",
+      "skills_applied": [
+        "ff-intake",
+        "ff-design"
+      ],
+      "response": "已在 docs/design/error-states.md 写好错误状态草稿，覆盖字段错误、错误摘要、提交中、网络/服务失败和成功反馈，并写明输入保留、键盘定位及提示文案。\n这次交付是文字交互设计，尚未视觉验证或真人验收。接口错误结构和重试语义待核实，实施尚未进行。\n",
+      "before_tree_sha256": "427497552cbf111b0f80e304996e25c704db64917f12ff01c5665d3ac94d8f8f",
+      "after_tree_sha256": "bb403ffef398fa6337b6361571ec97433deebcf158cfddc3db08e1f0db8652c4",
+      "changes": [
+        {
+          "path": "docs/design/error-states.md",
+          "before": {
+            "path": "docs/design/error-states.md",
+            "kind": "file",
+            "mode": 420,
+            "bytes": 37,
+            "sha256": "9abf0125044768e69e147e94a8ba6180c8ca7dffc59d890e36ddfd06126cafa7"
+          },
+          "after": {
+            "path": "docs/design/error-states.md",
+            "kind": "file",
+            "mode": 420,
+            "bytes": 2204,
+            "sha256": "e0049e01c8d9ec757adc45973e782f8c613e96137fb69dd708f03d93df4229ca"
+          }
+        }
+      ],
+      "evidence_directory": "evidence/03-design-only",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_EXECUTOR"
+    },
+    {
+      "id": "04-human-acceptance",
+      "prompt": "现在到哪一步了",
+      "skills_applied": [
+        "ff-intake",
+        "ff-spec (acceptance separation)",
+        "ff-review (evidence/independence boundaries, not independent review performed)",
+        "ff-deliver"
+      ],
+      "response": "当前是表单页面已存在、两项自动检查通过，但还没完成验收。\n我刚实际重跑了 2 项测试，它们检查邮箱输入和保存按钮的 HTML 标记，均通过；这不足以证明实际保存和错误修正的主流程。你要求的真人可用性验收仍为 NOT_RUN，三类独立审核也没有记录，因此不能把项目标为最终完成。\n下一步要先实际核实当前 fixture-v1 的提交和纠错流程，再让真人在这一版本完成规定操作并留下反馈。README 的本地入口是运行 python3 -m http.server 8000 后打开 /index.html；本次未启动或验证浏览器入口，技术可交付性仍待确认。\n",
+      "before_tree_sha256": "f69710cf604b70e8141e95b9fd4b0b5ad39a7a4b50fe8489ef081555ac8ae84c",
+      "after_tree_sha256": "f69710cf604b70e8141e95b9fd4b0b5ad39a7a4b50fe8489ef081555ac8ae84c",
+      "changes": [],
+      "evidence_directory": "evidence/04-human-acceptance",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_EXECUTOR"
+    }
+  ],
+  "limitations": [
+    "One sample per scenario; no reliability rate or generalization claimed.",
+    "Not native installation/integration validation; actual skill text read from frozen source copies under replay/skill-inputs, hashed before reading.",
+    "No independent plan, goal-mainflow or code PASS is issued.",
+    "Design is interaction/text artifact only; no screenshot, browser visual validation or real human acceptance.",
+    "Acceptance fixture tests are deliberately narrow HTML presence checks; their success is not end-to-end evidence.",
+    "Instrumentation is explicit command/file evidence, not a recovered complete host transcript. No Codex sessions files were read.",
+    "No user computer, external paid CLI, merge, deployment or persistent permission changes used.",
+    "Prior run has loaded-version vs later-copied-version discrepancy; replay independently binds exact frozen input bytes but cannot repair prior run attribution."
+  ],
+  "generated_at": "2026-10-17T01:12:46.089541+00:00"
+}

@@ -1,0 +1,274 @@
+✖ cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (82.851924ms)
+✖ Claude install and same-version reentry leave exact state unchanged (72.838824ms)
+✖ unmanaged conflict blocks without overwriting (58.011067ms)
+✖ user edit prevents same-version reinstall and rollback (54.748464ms)
+✖ upgrade and rollback preserve unrelated files and restore exact old payload (35.88197ms)
+✖ same source can switch project hosts with rollback and no orphan blockage (44.081476ms)
+✖ state commit failure restores previous state and bytes (59.72337ms)
+✖ pending recovery preserves user conflict; source and destination symlinks rejected (55.037278ms)
+✖ tampered source, runtime, and unsafe state are blocked (112.506109ms)
+✖ project move remains bound locally and official openspec never invoked (39.909051ms)
+✖ CLI arguments, full build consent, uninstalled doctor and lock checks (43.493027ms)
+✖ path and local-home isolation checks (37.992201ms)
+✖ rollback refuses a modified inactive runtime release (41.993576ms)
+✔ npx bootstrap removes its Unicode temporary source after success, reentry and installer failure (1220.237875ms)
+✔ strict decoder accepts complete manifest payload (183.445526ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (2.57307ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (1.96744ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (1.545915ms)
+✔ staged bootstrap cleanup is Windows-only and leaves source, siblings, runtime and project data alone (9.222968ms)
+✔ Windows cleanup cannot be prepared over a bootstrap copied from source (1.181246ms)
+✔ cleanup refuses a replacement stage and cannot clean a moved release (0.607095ms)
+✔ cleanup refuses symbolic links at the bootstrap or any stage ancestor (5.147798ms)
+✔ cleanup unlinks nested directory links without traversing external data (1.911731ms)
+✔ cleanup reports deletion errors and retains remaining diagnostics (4.372913ms)
+✔ cleanup rejects a silent no-op instead of reporting success (1.113269ms)
+✔ stage creation rejects a linked destination ancestor (1.596998ms)
+✔ mocked Windows full install cleans only after successful build and probe, before inventory (32.914569ms)
+✔ mocked Windows install preserves pre-existing source bootstrap and rejects before any build (7.620271ms)
+✔ mocked Windows failed build or CLI probe retains stage diagnostics and no active installation (13.491906ms)
+✔ Windows cleanup does not relax strict absolute or escaping runtime link rejection (13.82138ms)
+✔ runtime inventory still rejects relative escaping links and chained escapes (0.634406ms)
+✔ standalone builder preserves an existing bootstrap and adds hoisted only on Windows (mocked subprocesses) (366.485722ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 19
+ℹ fail 13
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1349.212695
+
+✖ failing tests:
+
+test at tools/installer/tests/install.test.mjs:29:1
+✖ cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (82.851924ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:30:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tools/installer/tests/install.test.mjs:42:1
+✖ Claude install and same-version reentry leave exact state unchanged (72.838824ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:43:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:48:1
+✖ unmanaged conflict blocks without overwriting (58.011067ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Unmanaged conflict/. Input:
+  
+  'Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:51:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+        at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+        at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+        at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+        at file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:51:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:51:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18),
+    expected: /Unmanaged conflict/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/install.test.mjs:54:1
+✖ user edit prevents same-version reinstall and rollback (54.748464ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:55:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:59:1
+✖ upgrade and rollback preserve unrelated files and restore exact old payload (35.88197ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:60:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:69:1
+✖ same source can switch project hosts with rollback and no orphan blockage (44.081476ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:70:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:73:1
+✖ state commit failure restores previous state and bytes (59.72337ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:74:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:82:1
+✖ pending recovery preserves user conflict; source and destination symlinks rejected (55.037278ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Symlink path/. Input:
+  
+  'Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:84:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+        at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+        at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+        at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+        at file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:84:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:84:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18),
+    expected: /Symlink path/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/install.test.mjs:89:1
+✖ tampered source, runtime, and unsafe state are blocked (112.506109ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:92:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:98:1
+✖ project move remains bound locally and official openspec never invoked (39.909051ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:99:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:105:1
+✖ CLI arguments, full build consent, uninstalled doctor and lock checks (43.493027ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /requires --build/. Input:
+  
+  'Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:110:31)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+        at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+        at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+        at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+        at file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:110:44
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:110:31)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1382:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:960:18),
+    expected: /requires --build/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/install.test.mjs:116:1
+✖ path and local-home isolation checks (37.992201ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:121:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+
+test at tools/installer/tests/install.test.mjs:124:1
+✖ rollback refuses a modified inactive runtime release (41.993576ms)
+  Error: BLOCKED: Unlisted payload: skills/ff-review/scripts/__pycache__/health.cpython-312.pyc
+      at fail (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/files.mjs:6:39)
+      at verifySource (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/source.mjs:13:57)
+      at install (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/install.mjs:103:15)
+      at setup (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:18:58)
+      at TestContext.<anonymous> (file:///workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/tools/installer/tests/install.test.mjs:125:13)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
