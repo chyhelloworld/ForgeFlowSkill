@@ -1,0 +1,21 @@
+test_cli_does_not_require_fake_screenshot (test_journey.JourneyTests.test_cli_does_not_require_fake_screenshot) ... ok
+test_cli_is_readonly_and_handles_invalid (test_journey.JourneyTests.test_cli_is_readonly_and_handles_invalid) ... ok
+test_codegraph_is_not_a_trace (test_journey.JourneyTests.test_codegraph_is_not_a_trace) ... ok
+test_duplicate_and_discontinuous_expected_steps (test_journey.JourneyTests.test_duplicate_and_discontinuous_expected_steps) ... ok
+test_invalid_inputs_are_conservative (test_journey.JourneyTests.test_invalid_inputs_are_conservative) ... ok
+test_invalid_trace_and_outputs (test_journey.JourneyTests.test_invalid_trace_and_outputs) ... ok
+test_missing_extra_and_reordered_steps (test_journey.JourneyTests.test_missing_extra_and_reordered_steps) ... ok
+test_missing_shipped_helper_is_invalid (test_journey.JourneyTests.test_missing_shipped_helper_is_invalid) ... ok
+test_resnapshot_cannot_reuse_old_trace (test_journey.JourneyTests.test_resnapshot_cannot_reuse_old_trace) ... ok
+test_screenshot_alone_is_not_interaction (test_journey.JourneyTests.test_screenshot_alone_is_not_interaction) ... ok
+test_stale_goal_and_sources (test_journey.JourneyTests.test_stale_goal_and_sources) ... ok
+test_state_and_action_mismatch (test_journey.JourneyTests.test_state_and_action_mismatch) ... ok
+test_trace_identity_failure_and_unknown (test_journey.JourneyTests.test_trace_identity_failure_and_unknown) ... ok
+test_ui_missing_screenshot (test_journey.JourneyTests.test_ui_missing_screenshot) ... ok
+test_unsafe_evidence_reuses_hardened_validator (test_journey.JourneyTests.test_unsafe_evidence_reuses_hardened_validator) ... ok
+test_valid_records_are_observed_not_accepted (test_journey.JourneyTests.test_valid_records_are_observed_not_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.253s
+
+OK

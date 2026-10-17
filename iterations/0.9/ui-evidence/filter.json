@@ -1,0 +1,20 @@
+{
+  "from": "contents",
+  "to": "filtered",
+  "action": "filter",
+  "stepId": "filter",
+  "target": "manual-09",
+  "inputFingerprint": "aa146a5568eac8ee06242e58e5b739188f1eec056efe51c77429336eab85b478",
+  "ok": true,
+  "observed": {
+    "query": "旅程",
+    "visibleDirectoryCount": 1,
+    "targetVisible": true
+  },
+  "observedUtcEpoch": 1792225161.7596807,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html"
+}

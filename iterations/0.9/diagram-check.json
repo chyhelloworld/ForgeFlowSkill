@@ -1,0 +1,10 @@
+{
+  "nodes": 8,
+  "edges": 7,
+  "attached": true,
+  "pngSize": [
+    1140,
+    480
+  ],
+  "limits": "Expected workflow diagram only; manually inspected PNG, not actual UI or acceptance evidence"
+}

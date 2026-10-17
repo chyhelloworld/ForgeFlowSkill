@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "name": "before-duplicate-main-target",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-duplicate-main-target\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-duplicate-main-target",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "scriptSha256": "cff33ad0e972b825ce93c822651448203b391cb0b10181a083056dd4d5484e63",
+      "exitCode": 0,
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-duplicate-trace-ok",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-duplicate-trace-ok\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-duplicate-trace-ok",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "scriptSha256": "cff33ad0e972b825ce93c822651448203b391cb0b10181a083056dd4d5484e63",
+      "exitCode": 0,
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "before-replaced-screenshot-index-only",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-replaced-screenshot-index-only\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\before-replaced-screenshot-index-only",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "scriptSha256": "cff33ad0e972b825ce93c822651448203b391cb0b10181a083056dd4d5484e63",
+      "exitCode": 0,
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "from": "narrow-contents",
+  "to": "narrow-filtered",
+  "action": "filter",
+  "stepId": "narrow-filter",
+  "target": "manual-09",
+  "inputFingerprint": "defb52764c1c9ef88a53a46997ed30b620335e67c6f400818f9a79b76317c19e",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-final/narrow-filter.png",
+      "sha256": "2e07d140cc7c799fa5b33f9a4cb1fe15df5ab46e97deb5664b73cd7eaf711e9f"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "visibleDirectoryCount": 1,
+    "targetVisible": true
+  },
+  "observedUtcEpoch": 1792225604.1639228,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html"
+}

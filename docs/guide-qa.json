@@ -1,5 +1,5 @@
 {
-  "version": "0.8.0",
+  "version": "0.9.0",
   "decision-index": {
     "svg_text_count": 21,
     "drawio_preserves_all_text": true,
@@ -28,12 +28,13 @@
     "embedded_diagrams": 4,
     "svg_exact_matches": true,
     "external_asset_dependencies": 0,
-    "browser_layout_test": "NOT_RUN for rc3: desktop/mobile HTML browser interaction not repeated",
+    "browser_layout_test": "Static checks only; actual 0.9 browser operations are separately recorded in iterations/0.9/ui-evidence-frozen",
     "static_responsive_css_present": true
   },
   "guide": {
-    "skill_table_entries": 12,
-    "internal_navigation_targets": 31,
+    "workflow_skill_table_entries": 12,
+    "package_skill_directories": 17,
+    "internal_navigation_targets": 32,
     "local_image_links_valid": 4,
     "host_command_registration": "NOT_TESTED"
   },

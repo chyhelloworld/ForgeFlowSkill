@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1140" height="480" viewBox="0 0 1140 480"><defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#587386"/></marker></defs><rect width="1140" height="480" fill="#f5f8fb"/>
+<text x="20" y="34" font-family="Microsoft YaHei,sans-serif" font-size="22" fill="#172d40">0.9 既有手册主要旅程</text>
+<rect x="20" y="80" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="120" y="117" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">打开手册</text>
+<text x="120" y="150" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">open</text>
+<rect x="240" y="80" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="340" y="117" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">筛选旅程</text>
+<text x="340" y="150" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">filter</text>
+<rect x="460" y="80" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="560" y="117" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">阅读规则</text>
+<text x="560" y="150" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">navigate</text>
+<rect x="680" y="80" width="200" height="90" rx="12" fill="#fff0d8" stroke="#a9bac8"/>
+<text x="780" y="117" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">空筛选</text>
+<text x="780" y="150" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">empty</text>
+<rect x="900" y="80" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="1000" y="117" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">恢复目录</text>
+<text x="1000" y="150" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">restore</text>
+<rect x="240" y="300" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="340" y="337" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">窄屏打开</text>
+<text x="340" y="370" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">narrow-open</text>
+<rect x="460" y="300" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="560" y="337" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">窄屏筛选</text>
+<text x="560" y="370" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">narrow-filter</text>
+<rect x="680" y="300" width="200" height="90" rx="12" fill="#e1edf5" stroke="#a9bac8"/>
+<text x="780" y="337" text-anchor="middle" font-family="Microsoft YaHei,sans-serif" font-size="20" fill="#172d40">窄屏阅读</text>
+<text x="780" y="370" text-anchor="middle" font-family="monospace" font-size="14" fill="#52687b">narrow-navigate</text>
+<polyline points="220,125 240,125" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="440,125 460,125" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="660,125 680,125" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="880,125 900,125" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="1000,170 1000,250 340,250 340,300" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="440,345 460,345" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<polyline points="660,345 680,345" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="20" y="450" font-family="Microsoft YaHei,sans-serif" font-size="17" fill="#52687b">预期步骤图；实际截图、操作轨迹和差异另列，不能以图代替验收。</text></svg>

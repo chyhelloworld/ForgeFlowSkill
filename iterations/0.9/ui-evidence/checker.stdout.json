@@ -1,0 +1,48 @@
+{
+  "target": "manual-09",
+  "status": "OBSERVED",
+  "gaps": [],
+  "steps": [
+    {
+      "id": "open",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "filter",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "navigate",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "empty",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "restore",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "narrow-open",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "narrow-filter",
+      "status": "OBSERVED",
+      "gaps": []
+    },
+    {
+      "id": "narrow-navigate",
+      "status": "OBSERVED",
+      "gaps": []
+    }
+  ],
+  "limits": "Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor."
+}

@@ -1,0 +1,107 @@
+{
+  "kind": "snapshot-bound-function-metrics",
+  "ccTool": "radon 6.0.1",
+  "coverageTool": "coverage.py 7.6.1",
+  "coverageDefinition": "combined covered executable lines plus branches / executable lines plus branches; native function scope",
+  "sourceSnapshot": "iterations\\0.9\\source-snapshot.json",
+  "limits": "Caller must capture snapshot immediately before the same coverage run; this script verifies present source matches that snapshot, not historical execution identity. Top-level Python functions only; no JS/UI metrics; subprocess coverage absent unless explicitly collected.",
+  "functions": [
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "load_helpers",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "valid_step",
+      "cc": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "unique_object",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "invalid_constant",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "read_json",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "screenshot_gaps",
+      "cc": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "trace_gaps",
+      "cc": 11,
+      "coverage": 1.0,
+      "crap": 11.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "observation_gaps",
+      "cc": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "contract_gaps",
+      "cc": 9,
+      "coverage": 1.0,
+      "crap": 9.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "sequence_gaps",
+      "cc": 11,
+      "coverage": 1.0,
+      "crap": 11.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "inspect",
+      "cc": 9,
+      "coverage": 1.0,
+      "crap": 9.0
+    },
+    {
+      "file": "skills\\ff-design\\scripts\\journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+      "name": "main",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    }
+  ],
+  "allWithin50": true
+}

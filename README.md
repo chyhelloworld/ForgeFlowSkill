@@ -1,12 +1,14 @@
-> 当前工作分支：0.8.0候选，尚未发布或最终验收。0.6.1遗留GUI/CRAP/真人验收缺口见 iterations/0.6.1/README.md。历史0.6安装与测试说明保留在下方，不能代替本版证据。
+> 当前工作分支：0.9.0候选，尚未发布或最终验收。0.6.1遗留GUI/CRAP/真人验收缺口见 iterations/0.6.1/README.md。历史0.6安装与测试说明保留在下方，不能代替本版证据。
 
 # ForgeFlow Skill
 
 ForgeFlow（FF）是一套项目内 AI 协作技能：把想法整理为可验证的规格和小任务，按需完成设计、实现、审核与交付。适合从零开始的新项目，也适合已有代码、半成品或换会话后的接手。
 
-当前版本为 **0.6.0-experimental.7**，包含 **17 项技能**和项目本地 FF CLI。技能按当前缺口选择，已有有效结果直接复用；不要求走完全部流程。Codex 的项目技能发现已有实测，Claude Code 提供安装选项，实际宿主调用尚未验证。
+当前工作分支版本为 **0.9.0 候选**，包含 **17 项技能**和项目本地 FF CLI。技能按当前缺口选择，已有有效结果直接复用；不要求走完全部流程。Windows 本地构建、安装与 CLI 有实际证据；Codex 已发现 17 项技能，完整宿主调用仍受 setup refresh 错误阻塞。Claude Code 的实际宿主调用尚未验证。
 
 ## 快速开始：Windows + Codex
+
+当前候选请从已核对的工作分支源码安装，例如在源码根运行 `node bin/ff-install.mjs install --project E:\projects\my-project --host codex --mode full --build`。下面保留的是历史 0.6 固定提交示例，不能用于验证或获取 0.9；当前提交与实测见 [0.9 记录](iterations/0.9/README.md)。
 
 先准备 **Node.js >=20.19.0、npm、Git、tar**，并能访问 GitHub 和下载构建依赖。以下 PowerShell 示例把项目、外层 npm 缓存和临时目录放在 E 盘；旧项目请将 `$Project` 改为现有项目根目录。
 
@@ -103,3 +105,6 @@ node .forgeflow/ff-spec.mjs --help
 
 
 0.8 当前工作分支的恢复协议、真实中断实验、Windows 验证与未测项见 [本版证据](iterations/0.8/README.md)。恢复检查器完整格式见 [恢复检查约定](skills/ff-handoff/references/resume.md)。历史安装与实验结论保持原版本身份。
+
+
+0.9 的设计先行、完整旅程对照、真实 Chrome 截图/操作证据与未测项见 [本版证据](iterations/0.9/README.md)，完整记录格式见 [旅程约定](skills/ff-design/references/journey.md)。0.8 的冻结和恢复实验保持历史版本身份。

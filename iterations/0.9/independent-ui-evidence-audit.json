@@ -1,0 +1,186 @@
+{
+  "directory": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.9\\ui-evidence",
+  "checks": {
+    "frozenDesignMatchesBytes": true,
+    "designAndSourcesMatchCurrentBytes": true,
+    "beforeMatchesRecord": true,
+    "beforeFingerprintMatches": true,
+    "eightExpectedAndObserved": true,
+    "expectedIdentitiesFromFrozenDesign": true,
+    "eventsMatchInOrder": true,
+    "eventsIncreasing": true,
+    "browserHasNoPageErrors": true
+  },
+  "steps": [
+    {
+      "id": "open",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/open.png",
+          "hashMatches": true,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "filter",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/filter.png",
+          "hashMatches": true,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "navigate",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/navigate.png",
+          "hashMatches": true,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "empty",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/empty.png",
+          "hashMatches": true,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "restore",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/restore.png",
+          "hashMatches": true,
+          "dimensions": [
+            1440,
+            1000
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "narrow-open",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-open.png",
+          "hashMatches": true,
+          "dimensions": [
+            390,
+            844
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "narrow-filter",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-filter.png",
+          "hashMatches": true,
+          "dimensions": [
+            390,
+            844
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "id": "narrow-navigate",
+      "declaredStepsMatch": true,
+      "traceHashMatches": true,
+      "traceBindingsMatch": true,
+      "viewportMatches": true,
+      "traceOk": true,
+      "eventMatchesTrace": true,
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-navigate.png",
+          "hashMatches": true,
+          "dimensions": [
+            390,
+            844
+          ],
+          "viewportMatches": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "status": "PASS",
+  "limits": "Direct selected-record byte/hash/shape checks. Manual screenshot review is recorded separately. No proof of origin, visual preference, assistive technology, physical phone/touch, FF-wide business outcome or human acceptance."
+}

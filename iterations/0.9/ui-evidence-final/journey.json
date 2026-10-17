@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "target": "manual-09",
+  "surface": "ui",
+  "design": [
+    {
+      "path": "iterations/0.9/DESIGN.md",
+      "sha256": "ec7f55b4b28accd14b75076818ccdcf106feed4453d25a0e2a86dfff590f3249"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/FF-离线图文手册.html",
+      "sha256": "63e9d3e7d1a985debbc95cbcfab2b18c40f540fbeeb90a50a5e64aeedcc2d345"
+    },
+    {
+      "path": "iterations/0.9/ui_capture.py",
+      "sha256": "50946d58e8bfef86af19cee0204c68bc08dcc63cde50e54ef280e250ed187c35"
+    },
+    {
+      "path": "skills/ff-design/scripts/journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab"
+    }
+  ],
+  "expected": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open"
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter"
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate"
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty"
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear"
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open"
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter"
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate"
+    }
+  ],
+  "observations": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/open.json",
+        "sha256": "b0125166f3db9258083a9d4e7d1410686d65694298b34368526fd75af4bd39ff"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/open.png",
+          "sha256": "8508469fe07e21a46d4373c7c747e996c7edd59e20301033f79571c745fe0e4a"
+        }
+      ]
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/filter.json",
+        "sha256": "58f452090289750d7fe323de089eec76f8127c898b932ce3fd49b37fc556c43d"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/filter.png",
+          "sha256": "a95180d5573b2052dc3005bbddec380c9d3794e724bfff0cbf4c811b3ddfb295"
+        }
+      ]
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/navigate.json",
+        "sha256": "490328ae837935c2c27ac3403c3137d5836f5ddb9d838359d29eb5781c8be693"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/navigate.png",
+          "sha256": "e820eaa4c45e76528bf8015c6efba7c331257060710b5569ab8b358adef8ac01"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/empty.json",
+        "sha256": "61e31029207104b1c81509564e5b3e266547a3ba11ead69388f4050926b48ad7"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/empty.png",
+          "sha256": "72590a5aa8b9f3faf4c436851ef8a40f4e495d91c0688caa8852de60e4b79f5a"
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/restore.json",
+        "sha256": "0b0401ff31b7d7740a4431509acde503d737c9a0bf655ecca9821a2fc128c581"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/restore.png",
+          "sha256": "54d497713f7e4ec6417badc837f7437cf3366e463c18c05dc7a43fe112bf7913"
+        }
+      ]
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/narrow-open.json",
+        "sha256": "35f02c26037b0bcf78942a43084368d2b92801072f0172f73f05f273cc646236"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/narrow-open.png",
+          "sha256": "be6ae2bb88fd014c53aa37718c6e7e1337b3bcd8f9720fa368738a2761f91eb8"
+        }
+      ]
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/narrow-filter.json",
+        "sha256": "920bb367529c8bdc33596183890024482455b2e5182e51ba9af70414d63efaf7"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/narrow-filter.png",
+          "sha256": "2e07d140cc7c799fa5b33f9a4cb1fe15df5ab46e97deb5664b73cd7eaf711e9f"
+        }
+      ]
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-final/narrow-navigate.json",
+        "sha256": "a75dc79697c1423cedcb75cf530b1b2ac9a6f0035492f99a132f796eb42d8a63"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-final/narrow-navigate.png",
+          "sha256": "ae7eab01bf76e4042e8d5a283da0b5f3e6ca6fe70f56be53a3d8fdb1e090f128"
+        }
+      ]
+    }
+  ]
+}

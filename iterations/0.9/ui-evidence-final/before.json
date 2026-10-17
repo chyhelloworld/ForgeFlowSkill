@@ -1,0 +1,24 @@
+{
+  "capturedUtcEpoch": 1792225599.128329,
+  "design": [
+    {
+      "path": "iterations/0.9/DESIGN.md",
+      "sha256": "ec7f55b4b28accd14b75076818ccdcf106feed4453d25a0e2a86dfff590f3249"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/FF-离线图文手册.html",
+      "sha256": "63e9d3e7d1a985debbc95cbcfab2b18c40f540fbeeb90a50a5e64aeedcc2d345"
+    },
+    {
+      "path": "iterations/0.9/ui_capture.py",
+      "sha256": "50946d58e8bfef86af19cee0204c68bc08dcc63cde50e54ef280e250ed187c35"
+    },
+    {
+      "path": "skills/ff-design/scripts/journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab"
+    }
+  ],
+  "inputFingerprint": "defb52764c1c9ef88a53a46997ed30b620335e67c6f400818f9a79b76317c19e"
+}

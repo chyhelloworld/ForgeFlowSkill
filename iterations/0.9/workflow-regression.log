@@ -1,0 +1,59 @@
+test_cli_readonly (test_health.HealthTests.test_cli_readonly) ... ok
+test_crap_bounds_and_missing (test_health.HealthTests.test_crap_bounds_and_missing) ... ok
+test_escape_and_symlink (test_health.HealthTests.test_escape_and_symlink) ... ERROR
+test_main_instrumented_success_and_invalid (test_health.HealthTests.test_main_instrumented_success_and_invalid) ... ok
+test_missing_human_acceptance (test_health.HealthTests.test_missing_human_acceptance) ... ok
+test_na_requires_reason (test_health.HealthTests.test_na_requires_reason) ... ok
+test_no_average_masks_failure (test_health.HealthTests.test_no_average_masks_failure) ... ok
+test_self_review (test_health.HealthTests.test_self_review) ... ok
+test_stale_evidence (test_health.HealthTests.test_stale_evidence) ... ok
+test_valid_record_has_no_false_alarm (test_health.HealthTests.test_valid_record_has_no_false_alarm) ... ok
+test_cli_does_not_require_fake_screenshot (test_journey.JourneyTests.test_cli_does_not_require_fake_screenshot) ... ok
+test_cli_is_readonly_and_handles_invalid (test_journey.JourneyTests.test_cli_is_readonly_and_handles_invalid) ... ok
+test_codegraph_is_not_a_trace (test_journey.JourneyTests.test_codegraph_is_not_a_trace) ... ok
+test_duplicate_and_discontinuous_expected_steps (test_journey.JourneyTests.test_duplicate_and_discontinuous_expected_steps) ... ok
+test_invalid_inputs_are_conservative (test_journey.JourneyTests.test_invalid_inputs_are_conservative) ... ok
+test_invalid_trace_and_outputs (test_journey.JourneyTests.test_invalid_trace_and_outputs) ... ok
+test_markdown_is_not_a_png (test_journey.JourneyTests.test_markdown_is_not_a_png) ... ok
+test_missing_extra_and_reordered_steps (test_journey.JourneyTests.test_missing_extra_and_reordered_steps) ... ok
+test_missing_shipped_helper_is_invalid (test_journey.JourneyTests.test_missing_shipped_helper_is_invalid) ... ok
+test_resnapshot_cannot_reuse_old_trace (test_journey.JourneyTests.test_resnapshot_cannot_reuse_old_trace) ... ok
+test_screenshot_alone_is_not_interaction (test_journey.JourneyTests.test_screenshot_alone_is_not_interaction) ... ok
+test_screenshot_index_is_bound_to_trace (test_journey.JourneyTests.test_screenshot_index_is_bound_to_trace) ... ok
+test_stale_goal_and_sources (test_journey.JourneyTests.test_stale_goal_and_sources) ... ok
+test_state_and_action_mismatch (test_journey.JourneyTests.test_state_and_action_mismatch) ... ok
+test_strict_json_rejects_nonfinite_and_duplicate_fields (test_journey.JourneyTests.test_strict_json_rejects_nonfinite_and_duplicate_fields) ... ok
+test_trace_identity_failure_and_unknown (test_journey.JourneyTests.test_trace_identity_failure_and_unknown) ... ok
+test_ui_missing_screenshot (test_journey.JourneyTests.test_ui_missing_screenshot) ... ok
+test_unsafe_evidence_reuses_hardened_validator (test_journey.JourneyTests.test_unsafe_evidence_reuses_hardened_validator) ... ok
+test_valid_records_are_observed_not_accepted (test_journey.JourneyTests.test_valid_records_are_observed_not_accepted) ... ok
+test_bad_inputs (test_resume.ResumeTests.test_bad_inputs) ... ok
+test_cli_instrumented_readonly (test_resume.ResumeTests.test_cli_instrumented_readonly) ... ok
+test_completed_skipped_pending_needs_authority (test_resume.ResumeTests.test_completed_skipped_pending_needs_authority) ... ok
+test_dependency_mutation_invalidates_done (test_resume.ResumeTests.test_dependency_mutation_invalidates_done) ... ok
+test_duplicate_id_blocks (test_resume.ResumeTests.test_duplicate_id_blocks) ... ok
+test_latest_goal_invalidates (test_resume.ResumeTests.test_latest_goal_invalidates) ... ok
+test_legacy_receipt_requires_inspection (test_resume.ResumeTests.test_legacy_receipt_requires_inspection) ... ok
+test_missing_receipt_is_not_done (test_resume.ResumeTests.test_missing_receipt_is_not_done) ... ok
+test_receipt_content_and_scope (test_resume.ResumeTests.test_receipt_content_and_scope) ... ok
+test_refreshed_dependency_cannot_reuse_receipt (test_resume.ResumeTests.test_refreshed_dependency_cannot_reuse_receipt) ... ok
+test_running_action_preserves_independent_completion (test_resume.ResumeTests.test_running_action_preserves_independent_completion) ... ok
+test_running_and_unknown_never_restart (test_resume.ResumeTests.test_running_and_unknown_never_restart) ... ok
+test_strict_version_root_and_id (test_resume.ResumeTests.test_strict_version_root_and_id) ... ok
+test_windows_anchors_and_stream_paths_rejected (test_resume.ResumeTests.test_windows_anchors_and_stream_paths_rejected) ... ok
+
+======================================================================
+ERROR: test_escape_and_symlink (test_health.HealthTests.test_escape_and_symlink)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 35, in test_escape_and_symlink
+    (self.root/'link').symlink_to(self.root/'proof'); self.assertIn('symlink',h.evidence_problem(self.root,{'path':'link'}))
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\ProgramData\anaconda3\Lib\pathlib.py", line 1198, in symlink_to
+    os.symlink(target, self, target_is_directory)
+OSError: [WinError 1314] 瀹㈡埛绔病鏈夋墍闇€鐨勭壒鏉冦€? 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpu7gc3b6c\\proof' -> 'C:\\Users\\admin\\AppData\\Local\\Temp\\tmpu7gc3b6c\\link'
+
+----------------------------------------------------------------------
+Ran 43 tests in 1.046s
+
+FAILED (errors=1)

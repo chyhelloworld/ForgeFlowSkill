@@ -1,0 +1,42 @@
+[
+  {
+    "step": "open",
+    "at": 1792225710.7006884,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "filter",
+    "at": 1792225710.7931535,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "navigate",
+    "at": 1792225712.850631,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "empty",
+    "at": 1792225712.9653032,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "restore",
+    "at": 1792225713.3672373,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "narrow-open",
+    "at": 1792225714.1438224,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "narrow-filter",
+    "at": 1792225714.307868,
+    "actualActionCompleted": true
+  },
+  {
+    "step": "narrow-navigate",
+    "at": 1792225716.4629946,
+    "actualActionCompleted": true
+  }
+]

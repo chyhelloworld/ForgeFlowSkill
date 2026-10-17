@@ -1,0 +1,25 @@
+{
+  "from": "rules",
+  "to": "narrow-contents",
+  "action": "resize-open",
+  "stepId": "narrow-open",
+  "target": "manual-09",
+  "inputFingerprint": "55b3ebee75f617a437fda107da0eb31e2ed333e5556472fc09ec77bcc7d60517",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-frozen/narrow-open.png",
+      "sha256": "dde6e967406c06486fdedac9bf658cf9dce5428c9912d8f3684e2b46a68f96e0"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "directoryCount": 32,
+    "horizontalOverflow": false
+  },
+  "observedUtcEpoch": 1792225714.1438224,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html"
+}
