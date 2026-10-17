@@ -3,13 +3,13 @@ import xml.etree.ElementTree as E
 import json,re
 p=Path(__file__).parent
 out={'version':json.loads((p.parent/'package.json').read_text())['version']}
-for svg in (p/'diagrams').glob('*.svg'):
+for svg in sorted((p/'diagrams').glob('*.svg')):
  s=E.parse(svg).getroot();d=E.parse(svg.with_suffix('.drawio')).getroot();texts=[e.text for e in s if e.tag.endswith('text')];values=[c.get('value','') for c in d.iter('mxCell')]
  missing=[t for t in texts if not any(t in v.split('\n') or t==v for v in values)];assert not missing,missing
  cells={c.get('id'):c for c in d.iter('mxCell')};edges=[c for c in cells.values() if c.get('edge')=='1'];assert all(c.get('source') in cells and c.get('target') in cells for c in edges)
  out[svg.stem]={'svg_text_count':len(texts),'drawio_preserves_all_text':True,'attached_edges':len(edges),'visual_png_inspected':'Historical diagrams retained; decision-index separately inspected in experiment2'}
 h=(p/'FF-离线图文手册.html').read_text();assert h.count('<svg ')==4;assert not re.search(r'<script[^>]+src=|<link[^>]+href=',h)
-for f in (p/'diagrams').glob('*.svg'):assert f.read_text() in h
+for f in sorted((p/'diagrams').glob('*.svg')):assert f.read_text() in h
 out['html']={'embedded_diagrams':4,'svg_exact_matches':True,'external_asset_dependencies':0,'browser_layout_test':'Static checks only; actual 0.9 browser operations are separately recorded in iterations/0.9/ui-evidence-frozen','static_responsive_css_present':True}
 ids=set(re.findall(r' id="([^"]+)"',h)); anchors=re.findall(r'href="#([^"]+)"',h)
 assert all(a in ids for a in anchors), 'Broken internal navigation'

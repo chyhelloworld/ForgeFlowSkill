@@ -20,6 +20,31 @@ class HealthTests(unittest.TestCase):
         self.data['reviews']['code']['metrics']={'target':'v1','ccTool':'fixture CC','coverageTool':'fixture coverage','coverageDefinition':'fixture function branches','sources':evidence,'functions':[{'name':'export','cc':2,'coverage':1}]}
     def gaps(self): return h.health(self.root,self.data)['gaps']
     def test_valid_record_has_no_false_alarm(self): self.assertEqual(self.gaps(),[])
+    def test_same_function_name_in_different_files_is_valid(self):
+        self.data['reviews']['code']['metrics']['functions']=[
+            {'file':'first.py','name':'main','cc':2,'coverage':1},
+            {'file':'second.py','name':'main','cc':3,'coverage':1}]
+        self.assertEqual(self.gaps(),[])
+    def test_duplicate_function_identity_is_rejected(self):
+        for file_fields in [{},{'file':'first.py'}]:
+            row={**file_fields,'name':'main','cc':2,'coverage':1}
+            self.data['reviews']['code']['metrics']['functions']=[row,copy.deepcopy(row)]
+            self.assertTrue(any('duplicate' in s for s in self.gaps()))
+    def test_invalid_function_file_is_rejected_without_crashing(self):
+        for file in [None,False,0,[],{},'','   ']:
+            with self.subTest(file=file):
+                self.data['reviews']['code']['metrics']['functions']=[{'file':file,'name':'main','cc':2,'coverage':1}]
+                self.assertTrue(self.gaps())
+    def test_mixed_qualified_and_unqualified_scope_is_rejected(self):
+        self.data['reviews']['code']['metrics']['functions']=[
+            {'file':'first.py','name':'main','cc':2,'coverage':1},
+            {'name':'main','cc':2,'coverage':1}]
+        self.assertTrue(any('mixed' in s for s in self.gaps()))
+    def test_invalid_function_name_is_rejected_without_crashing(self):
+        for name in [None,False,0,[],{},'','   ']:
+            with self.subTest(name=name):
+                self.data['reviews']['code']['metrics']['functions']=[{'file':'first.py','name':name,'cc':2,'coverage':1}]
+                self.assertTrue(self.gaps())
     def test_stale_evidence(self):
         (self.root/'proof').write_text('new'); self.assertTrue(any('stale evidence' in s for s in self.gaps()))
     def test_missing_human_acceptance(self):

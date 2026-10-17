@@ -1,0 +1,34 @@
+{
+  "stage": "before",
+  "stableUnderReversedGlob": false,
+  "runs": [
+    {
+      "reverseGlob": false,
+      "sha256": "9fabaccf5788c57a71d7c29f1a23d22af3f478ac2f02a93bb11baeca9f8ba81b",
+      "keys": [
+        "version",
+        "decision-index",
+        "existing-project-workflow",
+        "new-project-workflow",
+        "spec-lifecycle",
+        "html",
+        "guide",
+        "rendering"
+      ]
+    },
+    {
+      "reverseGlob": true,
+      "sha256": "96ac8f7da7dcfe03b79e94ef1e60f3cc5714d84ebc6035defc51dc17529f497b",
+      "keys": [
+        "version",
+        "spec-lifecycle",
+        "new-project-workflow",
+        "existing-project-workflow",
+        "decision-index",
+        "html",
+        "guide",
+        "rendering"
+      ]
+    }
+  ]
+}

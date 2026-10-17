@@ -17,3 +17,5 @@ humanAcceptanceRequired默认按需要接受处理；仅确实没有人工验收
 每次目标、代码或依赖变化后重新导出索引。不要手工刷新哈希来“消除过期”，先完成受影响审核，再更新对应记录。摘要输出RECORDED/GAPS，不给总分，也不授予实施、合并或部署权限。
 
 来源检查只核对声明文件的存在与摘要，不解析CC/覆盖报告的角色，也不自动证明内联数字与报告一致。审核者必须对照原始报告与目标源码核验数值；提供任意可哈希文件不能当可信计量。Python运行时3.9+是可选helper要求，不改变其余skill的纯文本可用性。
+
+PR #3 metric identity clarification: measurement rows use exact `(file, name)` identifiers, so the same function name in different source files is valid. A legacy single-file report may omit `file` consistently; mixed qualified/unqualified rows, invalid identifiers and duplicate identifiers are NOT_MEASURED. The file label is not a path access or proof that coverage maps to source; independent review must still verify the source snapshot and raw measurement.

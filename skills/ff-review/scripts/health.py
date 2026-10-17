@@ -68,6 +68,14 @@ def metric_gaps(metrics, target):
 def nonempty(value):
     return isinstance(value, str) and bool(value.strip())
 
+def metric_identity(row):
+    if not isinstance(row, dict) or not nonempty(row.get('name')):
+        return None
+    file = row.get('file', '')
+    if 'file' in row and not nonempty(file):
+        return None
+    return file, row['name']
+
 def metric_sources(root, metrics, target):
     if not isinstance(metrics, dict):
         return ['CRAP NOT_MEASURED: missing measurement record']
@@ -78,9 +86,9 @@ def metric_sources(root, metrics, target):
         if not nonempty(metrics.get(key)):
             gaps.append('CRAP NOT_MEASURED: missing ' + key)
     gaps.extend('CRAP source: ' + x for x in evidence_gaps(root, metrics.get('sources')))
-    names = [r.get('name') for r in metrics.get('functions', []) if isinstance(r, dict)]
-    if any(not nonempty(n) for n in names) or len(names) != len(set(str(n) for n in names)):
-        gaps.append('CRAP NOT_MEASURED: missing or duplicate function names')
+    identities = [metric_identity(row) for row in metrics.get('functions', [])]
+    if None in identities or len(identities) != len(set(identities)) or len({bool(file) for file, _ in identities}) > 1:
+        gaps.append('CRAP NOT_MEASURED: missing, duplicate or mixed file-qualified function names')
     return gaps
 
 def review_gaps(root, review, target, kind):
