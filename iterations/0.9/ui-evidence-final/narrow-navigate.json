@@ -1,0 +1,33 @@
+{
+  "from": "narrow-filtered",
+  "to": "narrow-rules",
+  "action": "navigate",
+  "stepId": "narrow-navigate",
+  "target": "manual-09",
+  "inputFingerprint": "defb52764c1c9ef88a53a46997ed30b620335e67c6f400818f9a79b76317c19e",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-final/narrow-navigate.png",
+      "sha256": "ae7eab01bf76e4042e8d5a283da0b5f3e6ca6fe70f56be53a3d8fdb1e090f128"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "targetHeading": "0.9 完整旅程与交互证据",
+    "headingBox": {
+      "x": 20,
+      "y": 128.734375,
+      "width": 350,
+      "height": 59.09375
+    },
+    "settledScrollY": 25965,
+    "horizontalOverflow": false,
+    "pageErrors": []
+  },
+  "observedUtcEpoch": 1792225606.2196357,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html#s33"
+}

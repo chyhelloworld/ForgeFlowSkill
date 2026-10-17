@@ -1,0 +1,32 @@
+[
+  {
+    "oldExecutionPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-after-fix-final-native-1792223636284305700",
+    "newPreservedPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-after-fix-final-native-1792223636284305700",
+    "status": "MOVED",
+    "method": "Move-Item root rename without recursion"
+  },
+  {
+    "oldExecutionPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-after-fix-native-1792223571811389800",
+    "newPreservedPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-after-fix-native-1792223571811389800",
+    "status": "MOVED",
+    "method": "Move-Item root rename without recursion"
+  },
+  {
+    "oldExecutionPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-1792223452955756800",
+    "newPreservedPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-before-fix-1792223452955756800",
+    "status": "MOVED",
+    "method": "Move-Item root rename without recursion"
+  },
+  {
+    "oldExecutionPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-complete-1792223473152586900",
+    "newPreservedPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-before-fix-complete-1792223473152586900",
+    "status": "MOVED",
+    "method": "Move-Item root rename without recursion"
+  },
+  {
+    "oldExecutionPath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.8\\independent-fixtures-before-fix-native-1792223506953061300",
+    "newPreservedPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-before-fix-native-1792223506953061300",
+    "status": "MOVED",
+    "method": "Move-Item root rename without recursion"
+  }
+]

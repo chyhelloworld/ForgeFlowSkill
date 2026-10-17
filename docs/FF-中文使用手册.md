@@ -1,19 +1,19 @@
-# ForgeFlow 十二技能工作流中文使用手册
+# ForgeFlow 十七技能中文使用手册
 
-版本：0.5.0-rc3 候选版 · 2026-10-15
+版本：0.9.1 工作分支候选（已获准纳入，非主干发布） · 2026-10-17
 
 这份手册说明如何用九个主流程职责与三个可选执行方法，把新想法或已有半成品推进成可验证、可审查、可交接的项目切片。核心路线是目标澄清 → 规格 → 实施票据 → 独立计划审核 → 实现 → 独立主流程与代码审核 → 验收与交付。已有项目先只读接手，再按缺口选择最短路径，不要求十二个技能全部运行，更不是十二个必经阶段。
 
-本版本是技能说明与 OpenSpec FF 适配的候选包。云端验证以本次测试报告为准；不宣称已在用户宿主或 Windows 原生完成安装、发现和调用。文中“用 ff-…”是自然语言调用示例；能否使用斜杠命令、如何载入技能，由宿主能力和安装方式决定；技能文件名不保证已注册同名斜杠命令。
+本版本是技能说明与 OpenSpec FF 适配的候选包。0.8 已完成 Windows 原生构建、项目安装和 CLI 操作；Codex 上下文发现了 17 项技能，但完整宿主调用受 setup refresh 错误阻塞。0.9 的本机验证、未测项和证据见 iterations/0.9/README.md，不能把历史云端报告当当前验收。文中“用 ff-…”是自然语言调用示例；能否使用斜杠命令、如何载入技能，由宿主能力和安装方式决定；技能文件名不保证已注册同名斜杠命令。
 
 
-本版在既有规格生命周期上增加与官方 CLI 的入口隔离，技能仍为 12 个。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
+包中共有 17 项技能：下文重点介绍的 12 项工作流技能，加 ff-research、ff-retro 与 ff-writing-beats、ff-writing-fragments、ff-writing-shape，按需选择研究、复盘和写作方法。完整清单见[能力与场景](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/user/capabilities.md)和源码 skills 目录。打开项目时先看当前有效规格、活跃变更及其状态，再按需查历史；不必阅读全部旧提案才能知道产品现在承诺什么。规格合入是更新文档基线，不代表 Git 主分支合并或发布。
 
 ## 先看当前承诺 再看本轮变更
 
 ![规格生命周期](diagrams/spec-lifecycle.png)
 
-随包流程图保留 rc2 生命周期基线，仍用于说明规格与交接语义；rc3 的实际命令入口和并存限制以本页“命令与安装”为准，图中版本不代表 rc3 验证结果。
+随包生命周期图保留历史基线，仍用于说明规格与交接语义；当前命令入口和并存限制以本页“命令与安装”为准，图中历史版本不代表 0.9 验证结果。
 
 本版接入固定 OpenSpec 1.14.2 的原生 FF 门禁。现行规格唯一位置为 openspec/specs；openspec/changes/<change> 保存活动差异、设计、任务和回执；归档和 Git 历史用于追溯。旧 .forgeflow/spec-state.json 只作历史审计，写入口已退役，不得再维护第二套 current。
 
@@ -35,7 +35,7 @@ Intake 读取现行 specs、活动 change、FF policy/回执和必要历史，�
 
 status、instructions apply、validate、archive 共用 FF evaluator。instructions apply 给实施指导与 readiness，不提升规范或表示接受。正常 archive 会同步 delta 到 openspec/specs 并移动 change 到历史；调用者必须先核实真实接受、授权、证据与冲突，再检查操作后的 Git diff。正常 archive 的 --yes / --no-validate / --skip-specs 不能绕过 FF gate；skip-specs 不代表已同步。
 
-取消/拒绝不伪造 pass。原生关闭命令为 `node tools/openspec/ff-spec.mjs archive NAME --ff-disposition canceled --ff-reason TEXT --ff-decision-ref REF --json`；拒绝用 rejected。只有已有真实决议与权限才能调用。它保留失败、过期、未完成产物和原始回执，新增 ff-disposition.json 记录决议，不同步 specs，不要求先通过正常完成门禁，也不把材料标为通过。
+取消/拒绝不伪造 pass。已安装项目的原生关闭命令为 `node .forgeflow/ff-spec.mjs archive NAME --ff-disposition canceled --ff-reason TEXT --ff-decision-ref REF --json`；拒绝用 rejected。只有已有真实决议与权限才能调用。它保留失败、过期、未完成产物和原始回执，新增 ff-disposition.json 记录决议，不同步 specs，不要求先通过正常完成门禁，也不把材料标为通过。
 
 关闭路径必须显式选 disposition 并填写原因与决议引用；--yes/--no-validate/--skip-specs 不会触发关闭。工具不认证该引用；已有归档目标或决议记录拒绝覆盖，符号链接与跨文件系统关闭拒绝。正常 archive 仍保持原有效性门禁。规格同步、人工接受、Git 主分支合并和发布是四个独立事实。
 
@@ -45,16 +45,16 @@ Handoff 记录当前 specs 与 Git 版本、活动 change、策略、产物/依�
 
 ### 命令与安装
 
-完整构建与 CLI 说明见仓库 INSTALL.md 和 tools/openspec/README.md；迁移步骤见 MIGRATION.md，完整契约见 SPEC-LIFECYCLE.md。项目本地固定源构建，不替换全局 CLI。Windows PowerShell 指南是未实测说明，不是 Windows 安装成功证明。
+完整安装和当前验证边界见[安装与首次使用](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/user/install.md)，开发者见[构建维护](https://github.com/chyhelloworld/ForgeFlowSkill/blob/work/061-through-09/docs/maintainers/development.md)。迁移步骤见根 MIGRATION.md，完整契约在 docs/maintainers/SPEC-LIFECYCLE.md。项目本地固定源构建，不替换全局 CLI；Windows 安装结论按提交与包哈希区分。离线阅读时可在源码中打开上述路径。
 
-从目标项目根目录运行 launcher，以下示例假定工具位于该项目的 tools/openspec/ 目录。FF checkout 在嵌套目录或其他位置时，将 launcher 改成真实相对/绝对路径，工作目录仍是目标项目，不要为寻找工具切换到另一个项目或回退到全局官方 CLI。
+以下命令从已安装的目标项目根目录运行。需要 full 模式提供 CLI；skills-only 会 BLOCKED。源码维护者的 launcher 则位于 tools/openspec/ff-spec.mjs，可用真实绝对路径调用，但工作目录仍应是目标项目，不回退到全局官方 CLI。
 
-- `node tools/openspec/ff-spec.mjs --help`
-- `node tools/openspec/ff-spec.mjs status --change CHANGE --json`
-- `node tools/openspec/ff-spec.mjs instructions apply --change CHANGE --json`
-- `node tools/openspec/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
+- `node .forgeflow/ff-spec.mjs --help`
+- `node .forgeflow/ff-spec.mjs status --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
 
-rc3 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据使用 ff-spec 命名空间；项目仍保留 openspec/ 目录。初始化仅接受显式 `node tools/openspec/ff-spec.mjs init --tools none`，不会刷新项目已有的官方工具集成；FF update 命令拒绝执行。十二个 FF 技能按 INSTALL.md 单独安装维护，不全局安装、不覆盖官方命令。
+FF CLI 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据使用 ff-spec 命名空间；项目仍保留 openspec/ 目录。初始化仅接受显式 `node .forgeflow/ff-spec.mjs init --tools none`，不会刷新项目已有的官方工具集成；FF update 命令拒绝执行。项目安装器分发 17 项技能到 Codex 的 .agents/skills 或 Claude 的 .claude/skills，不全局安装、不覆盖官方命令。
 
 官方 CLI 有文件系统权限时仍能修改兼容的 openspec/ 树，而且不会执行 FF gate。命令、配置与工具文件的并存隔离不是安全边界；FF 工作流统一使用 launcher，并核对实际 Git diff。
 
@@ -75,7 +75,7 @@ rc3 包名为 @forgeflow/ff-spec、可执行名为 ff-spec，用户配置/数据
 
 “材料齐全”“实施就绪”和“已获授权”是三件不同的事。没有文件不一定必须新建文件；文件存在也不代表它仍然有效。
 
-## 十二个技能分别做什么
+## 十二个工作流技能分别做什么
 
 | 技能 | 什么时候用 | 主要产物或结果 | 可以跳过或复用的条件 |
 | --- | --- | --- | --- |
@@ -277,3 +277,32 @@ Mode 0 仅在当前回复给出检查点，不保存持久化记录；一般开�
 来源：Matt Pocock wayfinder，固定提交 [49dd158d1076134a641b33efb035946536778336](https://github.com/mattpocock/skills/blob/49dd158d1076134a641b33efb035946536778336/skills/engineering/wayfinder/SKILL.md)，MIT。仅吸收决策链与恢复思路，未安装上游技能或照搬执行默认。
 
 CLI 不解析 map 的未答/取消/拒绝语义，也不认证回执身份。恢复者须核实；strict validate 通过不等于用户已选或已授权。
+
+
+## 0.8 变更与恢复检查
+
+仅明确批准的变更才更新受影响规格、计划、测试及依赖；讨论、澄清与历史提案不成为当前任务。恢复先核对最新目标和现行规范，再检查实际工作区。可选检查器安装在项目 `.agents/skills/ff-handoff/scripts/resume.py`，从目标项目运行 `python .agents/skills/ff-handoff/scripts/resume.py checkpoint.json --root . --current-goal R2`。完整字段与回执绑定算法见源码 `skills/ff-handoff/references/resume.md`，安装后同一 skill 的 references/resume.md。
+
+CHECKPOINT_CURRENT 只表示选定记录相符；done 回执需要绑定动作执行时的依赖指纹。过期目标/依赖全部核查；局部 running/unknown 不抹去独立完成动作。工具不执行动作、不批准操作、不检测进程存活，不保证 exactly-once；早期缺少依赖绑定的 WIP 回执不能补签继承通过。
+
+本版与历史失败及未测项见 iterations/0.8/README.md；实验不能替代真人接受、全平台验收或 CI。
+
+
+## 0.9 完整旅程与交互证据
+
+在实现前，以当前已确认需求写明主要用户从入口到成功结果的完整路径、稳定步骤 ID、进入/离开状态及关键返回/失败路径。保持已有视觉方向，列明目标视口、反馈和影响判断的交互约束；不为没有批准的创意开发新产品。
+
+预期流程与实际观察分栏。UI 使用同版真实截图和实际操作轨迹，CLI 使用实际命令与输出；CodeGraph 不能代替业务正确性。项目内可选运行 python .agents/skills/ff-design/scripts/journey.py journey.json --root . --current-target T1；格式见同一 skill 的 references/journey.md。OBSERVED 只表示所声明记录齐全，不授予权限，也不是设计达标、价值证实或真人接受。
+
+截图只证明可见时刻；当前实现、轨迹与截图哈希必须同版，未知或失败不能记为已验证。窄视口仿真不代表手机/触控/辅助技术实机验收。核心需求/主要流程、MECE 计划和代码规范仍分别审查。
+
+
+## 0.9.1 最小候选与用户主动改进
+
+此候选已获用户批准纳入并上传 work/061-through-09，原候选提交71d04646088d0c1a206dffb2095ea814f976c765保留。此次批准不涵盖main合并、发布或其他项目现用安装升级；详见 iterations/0.9.1/PROMOTION.md。Health 证据路径复用同包 Resume，完整 17 技能安装包含依赖；单独复制 Health 不足，缺依赖 INVALID。使用 python -X utf8 .agents/skills/ff-review/scripts/health.py review.json --root .，明确 UTF-8 输入和输出模式。原 symlink 权限夹具只能跳过，真实 junction 与 ADS 另实测；不放宽 Windows 权限。
+
+用户要求复盘时使用 ff-retro。项目事件沿用已有流程；明确选择 FF 自身时：真实偏差 → 已有机制/根因 → 零个或一个最小候选 → 冻结旧版和失败/正常控制 → 隔离验证 → 独立三类审核 → 等待用户确认晋级。不得改目标、权限、判据或留出样本来让候选通过。没有自动递归 RSI 引擎或专用 CLI。
+
+实际验证有复用价值时，可沿现有模板保留一个测试/设计分镜/诊断方法/组件候选，记录适用条件、反例、来源版本、证据及淘汰条件。下次任务相关时，ff-intake 只读检查项目声明位置与当前证据；缺源 unknown、过期 stale、未晋级仍 candidate。无关时省略，不建资产库或自动执行候选，私有资料不自动上传。
+
+原 0.9 HTML 截图属于旧冻结版本，本候选手册已更新，不能声称截图同版；没有新的视觉验收。Codex setup refresh 最小原生命令仍受阻，CLI 自身退出码不能代替内部命令状态。详见 iterations/0.9.1/README.md 与该轮本机交接回执。

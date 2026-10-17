@@ -1,9 +1,9 @@
 {
-  "version": "0.6.0-experimental.3",
-  "spec-lifecycle": {
-    "svg_text_count": 33,
+  "version": "0.9.1",
+  "decision-index": {
+    "svg_text_count": 21,
     "drawio_preserves_all_text": true,
-    "attached_edges": 8,
+    "attached_edges": 6,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
   "existing-project-workflow": {
@@ -18,22 +18,23 @@
     "attached_edges": 19,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
-  "decision-index": {
-    "svg_text_count": 21,
+  "spec-lifecycle": {
+    "svg_text_count": 33,
     "drawio_preserves_all_text": true,
-    "attached_edges": 6,
+    "attached_edges": 8,
     "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
   },
   "html": {
     "embedded_diagrams": 4,
     "svg_exact_matches": true,
     "external_asset_dependencies": 0,
-    "browser_layout_test": "NOT_RUN for rc3: desktop/mobile HTML browser interaction not repeated",
+    "browser_layout_test": "Static checks only; actual 0.9 browser operations are separately recorded in iterations/0.9/ui-evidence-frozen",
     "static_responsive_css_present": true
   },
   "guide": {
-    "skill_table_entries": 12,
-    "internal_navigation_targets": 30,
+    "workflow_skill_table_entries": 12,
+    "package_skill_directories": 17,
+    "internal_navigation_targets": 33,
     "local_image_links_valid": 4,
     "host_command_registration": "NOT_TESTED"
   },

@@ -1,0 +1,22 @@
+{
+  "name": "real-junction-evidence",
+  "firstAttempt": {
+    "fixtureCreation": "BLOCKED",
+    "reason": "Sandbox denied New-Item junction; exact-path escalation later succeeded"
+  },
+  "command": [
+    "D:\\ProgramData\\anaconda3\\python.exe",
+    "-X",
+    "utf8",
+    "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+    "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\real-junction-evidence\\journey.json",
+    "--root",
+    "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\real-junction-evidence",
+    "--current-target",
+    "INDEPENDENT-09"
+  ],
+  "exitCode": 1,
+  "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe resolved path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe resolved path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+  "stderr": "",
+  "status": "FAIL"
+}

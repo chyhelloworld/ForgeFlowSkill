@@ -58,9 +58,9 @@
 <text x="315.0" y="1992.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>
 <text x="315.0" y="2022.0" text-anchor="middle" class="n">不代表本轮已经最终交付</text>
 <rect x="810" y="1930" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="1085.0" y="1962.0" text-anchor="middle" class="n">接收方 ff-intake · 只读核验</text>
-<text x="1085.0" y="1992.0" text-anchor="middle" class="n">核对实际版本、脏状态与旧操作结果</text>
-<text x="1085.0" y="2022.0" text-anchor="middle" class="n">再按缺口恢复相应责任</text>
+<text x="1085.0" y="1962.0" text-anchor="middle" class="n">接收方 ff-intake → 只读核验</text>
+<text x="1085.0" y="1992.0" text-anchor="middle" class="n">核对目标/依赖与完成回执绑定</text>
+<text x="1085.0" y="2022.0" text-anchor="middle" class="n">完成跳过；运行中先观察；重核权限</text>
 <polyline points="700,230 700,290" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,390 700,470" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,580 700,650" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>

@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "target": "manual-09",
+  "surface": "ui",
+  "design": [
+    {
+      "path": "iterations/0.9/DESIGN.md",
+      "sha256": "ec7f55b4b28accd14b75076818ccdcf106feed4453d25a0e2a86dfff590f3249"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/FF-离线图文手册.html",
+      "sha256": "63e9d3e7d1a985debbc95cbcfab2b18c40f540fbeeb90a50a5e64aeedcc2d345"
+    },
+    {
+      "path": "iterations/0.9/ui_capture.py",
+      "sha256": "a39a6c81d3f57a2f4504515ecdaeb0fb463bf9fa09335da1af2fbb1ec084c08a"
+    },
+    {
+      "path": "skills/ff-design/scripts/journey.py",
+      "sha256": "cff33ad0e972b825ce93c822651448203b391cb0b10181a083056dd4d5484e63"
+    }
+  ],
+  "expected": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open"
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter"
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate"
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty"
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear"
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open"
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter"
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate"
+    }
+  ],
+  "observations": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/open.json",
+        "sha256": "2fad2677acb23e33d4b16058c178e7c7b8bf0fed2504fa3883cd98ff75b177ed"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/open.png",
+          "sha256": "8508469fe07e21a46d4373c7c747e996c7edd59e20301033f79571c745fe0e4a"
+        }
+      ]
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/filter.json",
+        "sha256": "fc660f14a8432bab145c82076ddb0a2f41288dfc7f7909c82be3e4fc7e653aac"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/filter.png",
+          "sha256": "a95180d5573b2052dc3005bbddec380c9d3794e724bfff0cbf4c811b3ddfb295"
+        }
+      ]
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/navigate.json",
+        "sha256": "d7756a2c461caec90142b2fc5c65ba88fccd73730620d0bd38dd5bd57217df20"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/navigate.png",
+          "sha256": "e820eaa4c45e76528bf8015c6efba7c331257060710b5569ab8b358adef8ac01"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/empty.json",
+        "sha256": "63a00ac0e135da199993807fbf4e8aab9a5bdcea571577f0e55e7047ed20c8be"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/empty.png",
+          "sha256": "72590a5aa8b9f3faf4c436851ef8a40f4e495d91c0688caa8852de60e4b79f5a"
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/restore.json",
+        "sha256": "5a6d3ac5ba445d11af8d18df0c6b962690d1a45209c3a02b28b14b9dbac7fa13"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/restore.png",
+          "sha256": "54d497713f7e4ec6417badc837f7437cf3366e463c18c05dc7a43fe112bf7913"
+        }
+      ]
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/narrow-open.json",
+        "sha256": "449823234006620c18c67bd22a72bf8e8e5167d503b8631b5e29325157f2d451"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-open.png",
+          "sha256": "be6ae2bb88fd014c53aa37718c6e7e1337b3bcd8f9720fa368738a2761f91eb8"
+        }
+      ]
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/narrow-filter.json",
+        "sha256": "2b95bacf054051ccbfad032221b21e106004efdcf01d736a1ff1c3fc17d62a36"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-filter.png",
+          "sha256": "2e07d140cc7c799fa5b33f9a4cb1fe15df5ab46e97deb5664b73cd7eaf711e9f"
+        }
+      ]
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence/narrow-navigate.json",
+        "sha256": "0dca6b3239f80eaa1bef13165f4e982cd3552507dd1faf7bb059146054d4057a"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence/narrow-navigate.png",
+          "sha256": "ae7eab01bf76e4042e8d5a283da0b5f3e6ca6fe70f56be53a3d8fdb1e090f128"
+        }
+      ]
+    }
+  ]
+}

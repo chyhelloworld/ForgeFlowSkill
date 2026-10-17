@@ -1,0 +1,138 @@
+{
+  "sourceCommit": "46022d7f9cd7e1ef3a6bb22200540049cc988d75",
+  "reason": "Documentation navigation and archival; original contents recoverable by exact Git source. Link-only changes do not update historical verdicts.",
+  "moves": [
+    {
+      "old": "SPEC-LIFECYCLE.md",
+      "new": "docs/maintainers/SPEC-LIFECYCLE.md",
+      "beforeSha256": "b36f309c0baf13a1efea4d33e0aa0a5f1c8b5c82dd81a6bb0ad3f78f4614970b",
+      "afterSha256": "b36f309c0baf13a1efea4d33e0aa0a5f1c8b5c82dd81a6bb0ad3f78f4614970b",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/SPEC-LIFECYCLE.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.md",
+      "beforeSha256": "ba57eadbe3757cd97d0348ac7652268c98b90aa4ee5573eb5f6ad8056b0963ff",
+      "afterSha256": "ba57eadbe3757cd97d0348ac7652268c98b90aa4ee5573eb5f6ad8056b0963ff",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.2.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.2.md",
+      "beforeSha256": "c880767451e1118474b5309a50a82abb0cfc2e5558c3dfcdd3fe5edc0e1e81ad",
+      "afterSha256": "c880767451e1118474b5309a50a82abb0cfc2e5558c3dfcdd3fe5edc0e1e81ad",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.2.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.3.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.3.md",
+      "beforeSha256": "b0afcdd5fc08532f9437b86972ac15b92ef5c940a7fa613c6065578f87008dfc",
+      "afterSha256": "b0afcdd5fc08532f9437b86972ac15b92ef5c940a7fa613c6065578f87008dfc",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.3.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.4.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.4.md",
+      "beforeSha256": "f1a9be673a7d6d0591c27b74d533fe0bc5985bf64040a066c937899dc1079262",
+      "afterSha256": "f1a9be673a7d6d0591c27b74d533fe0bc5985bf64040a066c937899dc1079262",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.4.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.5.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.5.md",
+      "beforeSha256": "8b6c50fece8e96394816ccc75707f7e2a4227acaee9dd139884d4d5e2de2b1f3",
+      "afterSha256": "8b6c50fece8e96394816ccc75707f7e2a4227acaee9dd139884d4d5e2de2b1f3",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.5.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.6.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.6.md",
+      "beforeSha256": "897253e55f38a284beb3242b35e8fb9ef62a4185bd9754fd4835476084b4c758",
+      "afterSha256": "7a1b4373d60056fa9442420e7241e6885613ecb159f916845ff778640e0db63d",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.6.md"
+    },
+    {
+      "old": "CHANGE-MAP-0.6.0-experimental.7.md",
+      "new": "docs/archive/changes/CHANGE-MAP-0.6.0-experimental.7.md",
+      "beforeSha256": "685bc1ca79c0cbe313044cafc41a933ad9fdf01d0f332aa3c0f3d0cd65180b4d",
+      "afterSha256": "685bc1ca79c0cbe313044cafc41a933ad9fdf01d0f332aa3c0f3d0cd65180b4d",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/CHANGE-MAP-0.6.0-experimental.7.md"
+    },
+    {
+      "old": "测试过程与结果.md",
+      "new": "docs/archive/reports/测试过程与结果.md",
+      "beforeSha256": "970cb1ce5547e2f517c1b2bee88da1524276b6f775db9433535f2bfaba43ca9e",
+      "afterSha256": "4b98a1ad98c80bc50ac81b3c0bd24b07ff53310063ed58622427bdd2c614ee8d",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/测试过程与结果.md"
+    },
+    {
+      "old": "docs/FF-可选方法中文使用说明.md",
+      "new": "docs/user/optional-methods.md",
+      "beforeSha256": "b85b19208e344ce83a3a6a91544f21881883e8df07f67ad0841c2de3d5b0a5f0",
+      "afterSha256": "22c3b1c25831d8e4564e1923dced494159ef669ff9dc4311d90cbc82865cac6b",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/FF-可选方法中文使用说明.md"
+    },
+    {
+      "old": "docs/FF-决策索引中文说明.md",
+      "new": "docs/user/decision-index.md",
+      "beforeSha256": "e97ba59a9f7eb61ffa025b6201ec48a10d0d60f6dca9d87d022f9924efdc80ff",
+      "afterSha256": "19bc252d63e0b2c7e8ce88a2216fe5114a1111fa9d33ce1246f5c07050a53326",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/FF-决策索引中文说明.md"
+    },
+    {
+      "old": "docs/FF-CodeGraph可选适配器.md",
+      "new": "docs/user/codegraph.md",
+      "beforeSha256": "afaa44e9b6036b196abdcd7e4c4de37e7057e317d03403ae1cbeacbcffcbe0db",
+      "afterSha256": "f526293f38159828a57d1c32b520129ee18f8b76bc76eee1a5e54f8e2e0010d2",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/FF-CodeGraph可选适配器.md"
+    },
+    {
+      "old": "docs/npx安装指南.md",
+      "new": "docs/archive/installation/npx安装指南.md",
+      "beforeSha256": "6e3e85db549aa2129b33d4e85a6f5aeffa32dc6aaa44229d85735beabd2d6cc2",
+      "afterSha256": "deb19bb2b4604fb14645fedce498eb4352eca37864c3fb3260ee52052bfd2022",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/npx安装指南.md"
+    },
+    {
+      "old": "docs/项目内安装指南.md",
+      "new": "docs/archive/installation/项目内安装指南.md",
+      "beforeSha256": "52366973b7ed62df6ca631e86e6f49f0199fb5d7881465d20bdddde012130085",
+      "afterSha256": "32e8579ffc54088ab28afcfcd2658c4889fa1c03861b70da2b9c9bcb64873359",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/项目内安装指南.md"
+    },
+    {
+      "old": "docs/CodeGraph试验报告.md",
+      "new": "docs/archive/reports/CodeGraph试验报告.md",
+      "beforeSha256": "90b30f746ccd2de119c481cf26920c07f663ad6b77fd40c70d190bec45609c2c",
+      "afterSha256": "90b30f746ccd2de119c481cf26920c07f663ad6b77fd40c70d190bec45609c2c",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/CodeGraph试验报告.md"
+    },
+    {
+      "old": "docs/可选方法测试报告.md",
+      "new": "docs/archive/reports/可选方法测试报告.md",
+      "beforeSha256": "74b6c0ebfb5ede93197316959c6259496237685d6065239b69d89d99ceff3b2e",
+      "afterSha256": "74b6c0ebfb5ede93197316959c6259496237685d6065239b69d89d99ceff3b2e",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/可选方法测试报告.md"
+    },
+    {
+      "old": "docs/决策索引测试报告.md",
+      "new": "docs/archive/reports/决策索引测试报告.md",
+      "beforeSha256": "ace9bcf7ac9bfb509960c5f398c9128f52b13193ee9e7a8659aeff9d5fd39b40",
+      "afterSha256": "ace9bcf7ac9bfb509960c5f398c9128f52b13193ee9e7a8659aeff9d5fd39b40",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/docs/决策索引测试报告.md"
+    },
+    {
+      "old": "INSTALL.md",
+      "new": "docs/archive/installation/INSTALL.md",
+      "operation": "preserve original and replace root with current short entry",
+      "beforeSha256": "ea3aeed1da125a3d49811c8eadf01ff76381557c8854bfcae60d33cf3702da31",
+      "afterSha256": "4a92c0e9f4b2160b263547d69883c43146e60e5e52368ba0aedf1b6606cfa582",
+      "originalGitUrl": "https://github.com/chyhelloworld/ForgeFlowSkill/blob/46022d7f9cd7e1ef3a6bb22200540049cc988d75/INSTALL.md"
+    }
+  ],
+  "retainedFrozenDependencies": [
+    "MIGRATION.md",
+    "docs/OpenSpec-FF接入报告.md"
+  ],
+  "note": "17 document moves; original INSTALL preserved with rebased links. Archive reports retain historical verdicts; optional-method/codegraph user guides have explicit source-root and current-entry notes."
+}

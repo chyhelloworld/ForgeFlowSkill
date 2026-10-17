@@ -1,0 +1,2529 @@
+{
+  "run": "20261017T082021Z",
+  "scriptSha256": "cff33ad0e972b825ce93c822651448203b391cb0b10181a083056dd4d5484e63",
+  "fixtureRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z",
+  "results": [
+    {
+      "name": "valid-ui",
+      "acceptable": [
+        "OBSERVED"
+      ],
+      "rationale": "A complete selected UI fixture is accepted.",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-ui\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-ui",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-ui",
+      "startedUtcEpoch": 1792225221.971115,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "valid-cli",
+      "acceptable": [
+        "OBSERVED"
+      ],
+      "rationale": "CLI records do not invent screenshots.",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-cli\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-cli",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-cli",
+      "startedUtcEpoch": 1792225222.1405957,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f66ec0c161aba78268e056fcac11e140caf1552b20f4b591dd25f40bb68cad2e",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f66ec0c161aba78268e056fcac11e140caf1552b20f4b591dd25f40bb68cad2e",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-observation",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observation\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observation",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observation",
+      "startedUtcEpoch": 1792225222.3070257,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\",\r\n    \"expected/observed mismatch: id\",\r\n    \"expected/observed mismatch: from\",\r\n    \"expected/observed mismatch: to\",\r\n    \"expected/observed mismatch: action\",\r\n    \"interaction trace mismatch: from\",\r\n    \"interaction trace mismatch: to\",\r\n    \"interaction trace mismatch: action\",\r\n    \"interaction trace mismatch: stepId\",\r\n    \"missing or invalid observed step\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: id\",\r\n        \"expected/observed mismatch: from\",\r\n        \"expected/observed mismatch: to\",\r\n        \"expected/observed mismatch: action\",\r\n        \"interaction trace mismatch: from\",\r\n        \"interaction trace mismatch: to\",\r\n        \"interaction trace mismatch: action\",\r\n        \"interaction trace mismatch: stepId\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"missing or invalid observed step\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "9b49e89f5d9441dc6f8fc2161bc1078d23fa4da9e37f73dcf86f450af218f314",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "9b49e89f5d9441dc6f8fc2161bc1078d23fa4da9e37f73dcf86f450af218f314",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "extra-observation",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\extra-observation\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\extra-observation",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\extra-observation",
+      "startedUtcEpoch": 1792225222.4891534,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d1e54fd066441f699cdf9af87647147bdad7cf31a7c20f33df010042b87f6b38",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d1e54fd066441f699cdf9af87647147bdad7cf31a7c20f33df010042b87f6b38",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "reordered-observations",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\reordered-observations\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\reordered-observations",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\reordered-observations",
+      "startedUtcEpoch": 1792225222.6745234,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\",\r\n    \"expected/observed mismatch: id\",\r\n    \"expected/observed mismatch: from\",\r\n    \"expected/observed mismatch: action\",\r\n    \"interaction trace mismatch: from\",\r\n    \"interaction trace mismatch: action\",\r\n    \"interaction trace mismatch: stepId\",\r\n    \"expected/observed mismatch: id\",\r\n    \"expected/observed mismatch: from\",\r\n    \"expected/observed mismatch: action\",\r\n    \"interaction trace mismatch: from\",\r\n    \"interaction trace mismatch: action\",\r\n    \"interaction trace mismatch: stepId\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: id\",\r\n        \"expected/observed mismatch: from\",\r\n        \"expected/observed mismatch: action\",\r\n        \"interaction trace mismatch: from\",\r\n        \"interaction trace mismatch: action\",\r\n        \"interaction trace mismatch: stepId\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: id\",\r\n        \"expected/observed mismatch: from\",\r\n        \"expected/observed mismatch: action\",\r\n        \"interaction trace mismatch: from\",\r\n        \"interaction trace mismatch: action\",\r\n        \"interaction trace mismatch: stepId\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "5eeb5e4d01d41a88238d9f5ef09a8ff6f7e9ff08efa7c678b84eaaa97ca3682a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "5eeb5e4d01d41a88238d9f5ef09a8ff6f7e9ff08efa7c678b84eaaa97ca3682a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "duplicate-expected",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\duplicate-expected\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\duplicate-expected",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\duplicate-expected",
+      "startedUtcEpoch": 1792225222.8489842,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"duplicate expected step identity\",\r\n    \"observed step inventory/order mismatch\",\r\n    \"expected/observed mismatch: id\",\r\n    \"interaction trace mismatch: stepId\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: id\",\r\n        \"interaction trace mismatch: stepId\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "0684f7d39ff4ade1004ea9aee5f7be4daa661db0ac12825035f7d36888f566f6",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "0684f7d39ff4ade1004ea9aee5f7be4daa661db0ac12825035f7d36888f566f6",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "state-discontinuity",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\state-discontinuity\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\state-discontinuity",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\state-discontinuity",
+      "startedUtcEpoch": 1792225223.0218196,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"expected state discontinuity: choose\",\r\n    \"expected/observed mismatch: from\",\r\n    \"interaction trace mismatch: from\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: from\",\r\n        \"interaction trace mismatch: from\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "89eeaff9259b2e278050e93cd24cea8244dedcceffb68f7ccc624d290a61dc02",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "89eeaff9259b2e278050e93cd24cea8244dedcceffb68f7ccc624d290a61dc02",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "stale-current-target",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-current-target\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-current-target",
+        "--current-target",
+        "NEW-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-current-target",
+      "startedUtcEpoch": 1792225223.2029054,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"NEW-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"missing or stale current target\",\r\n    \"interaction trace mismatch: target\",\r\n    \"interaction trace mismatch: target\",\r\n    \"interaction trace mismatch: target\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: target\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: target\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: target\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "stale-source",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-source\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-source",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-source",
+      "startedUtcEpoch": 1792225223.3784873,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"sources: stale file: app.html\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "stale-design",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-design\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-design",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\stale-design",
+      "startedUtcEpoch": 1792225223.559106,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"design: stale file: design.md\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "journey.json": "54c311eae8b7608f733d1f1d7de4b7d9244b364fa0465fcd692fc223a37462e5",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "rehashed-source-old-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-source-old-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-source-old-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-source-old-trace",
+      "startedUtcEpoch": 1792225223.7487633,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: inputFingerprint\",\r\n    \"interaction trace mismatch: inputFingerprint\",\r\n    \"interaction trace mismatch: inputFingerprint\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "44c02472ae2752cd3b65cb78b9d05cd899e9f5bed9c244e553cb41b7ac0abd60",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "44c02472ae2752cd3b65cb78b9d05cd899e9f5bed9c244e553cb41b7ac0abd60",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "rehashed-design-old-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-design-old-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-design-old-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\rehashed-design-old-trace",
+      "startedUtcEpoch": 1792225223.9288328,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: inputFingerprint\",\r\n    \"interaction trace mismatch: inputFingerprint\",\r\n    \"interaction trace mismatch: inputFingerprint\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "journey.json": "cc00bc663d914fbc7255c2af8d8761974e86038d1c4635627588f51b8519527e",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "d67e2e944994496c8d8ec76eed0cf9f09679448d584b532bebf941852a37f5ed",
+        "journey.json": "cc00bc663d914fbc7255c2af8d8761974e86038d1c4635627588f51b8519527e",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "observation-mismatch-id",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-id\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-id",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-id",
+      "startedUtcEpoch": 1792225224.0973604,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\",\r\n    \"expected/observed mismatch: id\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: id\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "bfe2007e1559b02d53b039afa8f3ea2a2f40528fd2b60f603c1a52e1fb7487ac",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "bfe2007e1559b02d53b039afa8f3ea2a2f40528fd2b60f603c1a52e1fb7487ac",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "observation-mismatch-from",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-from\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-from",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-from",
+      "startedUtcEpoch": 1792225224.311406,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"expected/observed mismatch: from\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: from\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "989d96da6ea3b7b4a1d1dcec2f57c4c40312f0e9079ad5a4ac3f20e60c547e93",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "989d96da6ea3b7b4a1d1dcec2f57c4c40312f0e9079ad5a4ac3f20e60c547e93",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "observation-mismatch-to",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-to\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-to",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-to",
+      "startedUtcEpoch": 1792225224.485057,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"expected/observed mismatch: to\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: to\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "46eae1075162cae173d5d0d65d959cee2717ba51b2951865b25d64db97ea4962",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "46eae1075162cae173d5d0d65d959cee2717ba51b2951865b25d64db97ea4962",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "observation-mismatch-action",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-action\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-action",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\observation-mismatch-action",
+      "startedUtcEpoch": 1792225224.6608315,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"expected/observed mismatch: action\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"expected/observed mismatch: action\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "79cc09cfb37407b7fb389fe606d1638b87e933a1e0e928626b7fa319082a3c35",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "79cc09cfb37407b7fb389fe606d1638b87e933a1e0e928626b7fa319082a3c35",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-target",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-target\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-target",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-target",
+      "startedUtcEpoch": 1792225224.8292458,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: target\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: target\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "1894cdf59cf16349c7b1d242369fda1f9cf67f43e22142adefef486ca692ddaf",
+        "open.json": "ae2fc50add353158af7f68da5c07c057ec76a19f97013326cfffcd8365168d9d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "1894cdf59cf16349c7b1d242369fda1f9cf67f43e22142adefef486ca692ddaf",
+        "open.json": "ae2fc50add353158af7f68da5c07c057ec76a19f97013326cfffcd8365168d9d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-stepId",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-stepId\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-stepId",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-stepId",
+      "startedUtcEpoch": 1792225225.0075505,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: stepId\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: stepId\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "44f0bc56da544b64ebfb3c10e9f5475478e353f73bf7ebb556f3fd418c1d0184",
+        "open.json": "2fa3c1e457a3857e74d6ac7dcddcc7d17065cc1575938adfa1737ebb3263c1bb",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "44f0bc56da544b64ebfb3c10e9f5475478e353f73bf7ebb556f3fd418c1d0184",
+        "open.json": "2fa3c1e457a3857e74d6ac7dcddcc7d17065cc1575938adfa1737ebb3263c1bb",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-from",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-from\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-from",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-from",
+      "startedUtcEpoch": 1792225225.1949787,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: from\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: from\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "578c61968c4e70e56b550e4179fbda25ab35bd9319493dab8578bfb77cda1c5a",
+        "open.json": "6d2b4c0dedd002d93dc591586157b15539fbe91d4290e70ee134de550f8d74d8",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "578c61968c4e70e56b550e4179fbda25ab35bd9319493dab8578bfb77cda1c5a",
+        "open.json": "6d2b4c0dedd002d93dc591586157b15539fbe91d4290e70ee134de550f8d74d8",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-to",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-to\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-to",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-to",
+      "startedUtcEpoch": 1792225225.3881087,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: to\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: to\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "e5aae70ab00747439ee277df3bd0f293734f39029bcaa8f6fc371a1387b8dcc6",
+        "open.json": "2643aec225e46a669bcbf3189235f87784763f46484286134a13b1abd88bd36c",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "e5aae70ab00747439ee277df3bd0f293734f39029bcaa8f6fc371a1387b8dcc6",
+        "open.json": "2643aec225e46a669bcbf3189235f87784763f46484286134a13b1abd88bd36c",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-action",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-action\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-action",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-action",
+      "startedUtcEpoch": 1792225225.5786347,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: action\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: action\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "b80ffbb10a114ed376a0ff37a1f00c270bd688b25dd5bf23e942a82654613250",
+        "open.json": "2dcc3f7a1e385d905f540ff684f7905cba507e56a20f14973374f099be4e0d19",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "b80ffbb10a114ed376a0ff37a1f00c270bd688b25dd5bf23e942a82654613250",
+        "open.json": "2dcc3f7a1e385d905f540ff684f7905cba507e56a20f14973374f099be4e0d19",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-mismatch-inputFingerprint",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-inputFingerprint\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-inputFingerprint",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-mismatch-inputFingerprint",
+      "startedUtcEpoch": 1792225225.7546299,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: inputFingerprint\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: inputFingerprint\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7115dcb16fd726278eb75b2e6979b6ef251221c273a42cde67b82213b3b61ba4",
+        "open.json": "6f6c84c89e940f16f8edb7db88a9bea009eecd9a4893466cd7d47063e3154360",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7115dcb16fd726278eb75b2e6979b6ef251221c273a42cde67b82213b3b61ba4",
+        "open.json": "6f6c84c89e940f16f8edb7db88a9bea009eecd9a4893466cd7d47063e3154360",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "failed-or-unknown-false",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-false\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-false",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-false",
+      "startedUtcEpoch": 1792225225.9339573,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction result failed or unknown\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction result failed or unknown\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "994cfbc32ebcd268186e7ce2391b31c6e5dc9b5f32ce49cdb21e737f1a0e5f63",
+        "open.json": "a8f827ac1393ef4d457869f982f5e543ac13b115163c834f10918bb952c8e6d4",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "994cfbc32ebcd268186e7ce2391b31c6e5dc9b5f32ce49cdb21e737f1a0e5f63",
+        "open.json": "a8f827ac1393ef4d457869f982f5e543ac13b115163c834f10918bb952c8e6d4",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "failed-or-unknown-numeric-one",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-numeric-one\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-numeric-one",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-numeric-one",
+      "startedUtcEpoch": 1792225226.1041214,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction result failed or unknown\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction result failed or unknown\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "a421b050586673d1730ff3dcde4db0fb7bfea9ca8b9b2ba101341ff3c83968ae",
+        "open.json": "be5d3e79823b1e425ae9a87486ade1c92d9b78f228e55621b57f0d917a8a95d5",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "a421b050586673d1730ff3dcde4db0fb7bfea9ca8b9b2ba101341ff3c83968ae",
+        "open.json": "be5d3e79823b1e425ae9a87486ade1c92d9b78f228e55621b57f0d917a8a95d5",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "failed-or-unknown-string-true",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-string-true\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-string-true",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-string-true",
+      "startedUtcEpoch": 1792225226.2809722,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction result failed or unknown\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction result failed or unknown\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "fdce7e56448e0099ca7e2316d940303f8202b1f9972b9b090c65f0bc66a9eaa6",
+        "open.json": "6d2099db02cffcf3b1b7c66ddf3e3f6ed9e913134e46142d17cbe9f05985f7b2",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "fdce7e56448e0099ca7e2316d940303f8202b1f9972b9b090c65f0bc66a9eaa6",
+        "open.json": "6d2099db02cffcf3b1b7c66ddf3e3f6ed9e913134e46142d17cbe9f05985f7b2",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "failed-or-unknown-null",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-null\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-null",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\failed-or-unknown-null",
+      "startedUtcEpoch": 1792225226.4617286,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction result failed or unknown\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction result failed or unknown\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "e02e66c4c2ef64a468194755db9beb36511251622314ae930eba131fa6c766d0",
+        "open.json": "c630c8f8af4a7033c673c69a5e5ac580a28a0157639c353e7dbe896b917a9caa",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "e02e66c4c2ef64a468194755db9beb36511251622314ae930eba131fa6c766d0",
+        "open.json": "c630c8f8af4a7033c673c69a5e5ac580a28a0157639c353e7dbe896b917a9caa",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-observed-empty-dict",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-dict\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-dict",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-dict",
+      "startedUtcEpoch": 1792225226.6488948,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction observation missing\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction observation missing\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7fff595a868fb545fd0bbc6bb38717df7fd4e5d66e1c66be221b128295f2bbd3",
+        "open.json": "c171fb0af1b69d1ce582396da20a7f50bb75b913cb49e6fd8de8b267e42d91f6",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7fff595a868fb545fd0bbc6bb38717df7fd4e5d66e1c66be221b128295f2bbd3",
+        "open.json": "c171fb0af1b69d1ce582396da20a7f50bb75b913cb49e6fd8de8b267e42d91f6",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-observed-empty-list",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-list\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-list",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-empty-list",
+      "startedUtcEpoch": 1792225226.8335242,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction observation missing\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction observation missing\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "717f20d10aa201a76bed5aa1fd93896f03ac97acb3915f4ce278fe5b5bb34daf",
+        "open.json": "0d137adabe26126e30142c81d6f3eec100bac8cc53a52d03643abcf25215b16a",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "717f20d10aa201a76bed5aa1fd93896f03ac97acb3915f4ce278fe5b5bb34daf",
+        "open.json": "0d137adabe26126e30142c81d6f3eec100bac8cc53a52d03643abcf25215b16a",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-observed-null",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-null\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-null",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-observed-null",
+      "startedUtcEpoch": 1792225227.033882,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction observation missing\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction observation missing\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "9b5e0798982de691e74591eaca1e7dfa0e7e5dc3261f1711473d55c8fada0391",
+        "open.json": "590d03c3df20526733c47e528a7de4b1ee6299d9883979e7f1a20b8c6a8dcb97",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "9b5e0798982de691e74591eaca1e7dfa0e7e5dc3261f1711473d55c8fada0391",
+        "open.json": "590d03c3df20526733c47e528a7de4b1ee6299d9883979e7f1a20b8c6a8dcb97",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "codegraph-not-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\codegraph-not-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\codegraph-not-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\codegraph-not-trace",
+      "startedUtcEpoch": 1792225227.2243161,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"interaction trace mismatch: from\",\r\n    \"interaction trace mismatch: to\",\r\n    \"interaction trace mismatch: action\",\r\n    \"interaction trace mismatch: stepId\",\r\n    \"interaction trace mismatch: target\",\r\n    \"interaction trace mismatch: inputFingerprint\",\r\n    \"interaction result failed or unknown\",\r\n    \"interaction observation missing\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"interaction trace mismatch: from\",\r\n        \"interaction trace mismatch: to\",\r\n        \"interaction trace mismatch: action\",\r\n        \"interaction trace mismatch: stepId\",\r\n        \"interaction trace mismatch: target\",\r\n        \"interaction trace mismatch: inputFingerprint\",\r\n        \"interaction result failed or unknown\",\r\n        \"interaction observation missing\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7d982822c8e6e6823cb8d801adcf842a62e999a867cae92748bb80c1902ce78f",
+        "open.json": "2a68a2ea74318d4290ee78c24e3dda4b37cbf569ea825594233a2f517af84ff2",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "7d982822c8e6e6823cb8d801adcf842a62e999a867cae92748bb80c1902ce78f",
+        "open.json": "2a68a2ea74318d4290ee78c24e3dda4b37cbf569ea825594233a2f517af84ff2",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-trace",
+      "startedUtcEpoch": 1792225227.4139636,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"invalid file record\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"invalid file record\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d436f6e1d29326723683b8379c841f7f2a622c5512b5b3eeed182baefc4df2a8",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d436f6e1d29326723683b8379c841f7f2a622c5512b5b3eeed182baefc4df2a8",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-screenshot",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-screenshot\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-screenshot",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-screenshot",
+      "startedUtcEpoch": 1792225227.6014054,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: missing file evidence\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: missing file evidence\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "265b55f8ab4a8549b514c48585ae287a39a6aa908d1e0405b7a53b1349d73c8b",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "265b55f8ab4a8549b514c48585ae287a39a6aa908d1e0405b7a53b1349d73c8b",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "empty-screenshot",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\empty-screenshot\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\empty-screenshot",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\empty-screenshot",
+      "startedUtcEpoch": 1792225227.7794392,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: missing or empty file: screen.png\",\r\n    \"screenshot: missing or empty file: screen.png\",\r\n    \"screenshot: missing or empty file: screen.png\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: missing or empty file: screen.png\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: missing or empty file: screen.png\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: missing or empty file: screen.png\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4bcc1498b958d14502a596c5e13cbd51058e477798ab649a78ff91ee925f9291",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4bcc1498b958d14502a596c5e13cbd51058e477798ab649a78ff91ee925f9291",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "name": "malformed-trace-json",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\malformed-trace-json\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\malformed-trace-json",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\malformed-trace-json",
+      "startedUtcEpoch": 1792225227.964657,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"invalid interaction trace JSON\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"invalid interaction trace JSON\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f1636aa3dbb6632a27eedd844bf2f190c6055e8c9dfe5758d8d099f177245944",
+        "open.json": "f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f1636aa3dbb6632a27eedd844bf2f190c6055e8c9dfe5758d8d099f177245944",
+        "open.json": "f526795c95399cea27c055c842c3d6ab018ed0fa4f66f701c28ab22dec28237b",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "non-utf8-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\non-utf8-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\non-utf8-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\non-utf8-trace",
+      "startedUtcEpoch": 1792225228.1559265,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"invalid interaction trace JSON\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"invalid interaction trace JSON\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "118d21fd599e9b8141e126fa07a0662c321ef1fa6526cae7b8cbdbab69b597c7",
+        "open.json": "ba778c0261008c8f71ae4061ad0162ffcbe63b52c91f89f236738131d1217ec7",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "118d21fd599e9b8141e126fa07a0662c321ef1fa6526cae7b8cbdbab69b597c7",
+        "open.json": "ba778c0261008c8f71ae4061ad0162ffcbe63b52c91f89f236738131d1217ec7",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "trace-array",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-array\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-array",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\trace-array",
+      "startedUtcEpoch": 1792225228.4109843,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"invalid interaction trace object\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"invalid interaction trace object\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "17471b811a3237ebf92f1bbaaf2581fbdb90073e6e418b86cffea52dfb51db2a",
+        "open.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "17471b811a3237ebf92f1bbaaf2581fbdb90073e6e418b86cffea52dfb51db2a",
+        "open.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "root-json-array",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-array\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-array",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-array",
+      "startedUtcEpoch": 1792225228.6699529,
+      "exitCode": 2,
+      "status": "INVALID",
+      "stdout": "{\"status\": \"INVALID\", \"error\": \"journey record must be an object\"}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "root-json-syntax",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-syntax\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-syntax",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\root-json-syntax",
+      "startedUtcEpoch": 1792225228.8660727,
+      "exitCode": 2,
+      "status": "INVALID",
+      "stdout": "{\"status\": \"INVALID\", \"error\": \"Expecting value: line 1 column 12 (char 11)\"}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "dcf58d6c8a2d9f3fff0ffea121b5c562ce793941122f801eb031a3d7d82f7ef7",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "dcf58d6c8a2d9f3fff0ffea121b5c562ce793941122f801eb031a3d7d82f7ef7",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "version-bool",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-bool\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-bool",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-bool",
+      "startedUtcEpoch": 1792225229.0064378,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"unsupported journey version\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "8bb30b47a2c9793d4c8c36f2340a61a0dadc031fa67503aba2c7f930f1fbefa1",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "8bb30b47a2c9793d4c8c36f2340a61a0dadc031fa67503aba2c7f930f1fbefa1",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "version-float",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-float\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-float",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\version-float",
+      "startedUtcEpoch": 1792225229.2004218,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"unsupported journey version\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "31aa1c34953274063db3693c45f5ef82f5b13830623d36283a1e1b7492a07de8",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "31aa1c34953274063db3693c45f5ef82f5b13830623d36283a1e1b7492a07de8",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "surface-unknown",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\surface-unknown\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\surface-unknown",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\surface-unknown",
+      "startedUtcEpoch": 1792225229.3938444,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"unknown observation surface\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "11db931e7a601bf5ed795e469ce9a1a432f37c43161a53d0f6d2bf2beeb83368",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "11db931e7a601bf5ed795e469ce9a1a432f37c43161a53d0f6d2bf2beeb83368",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "missing-expected",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-expected\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-expected",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\missing-expected",
+      "startedUtcEpoch": 1792225229.5665276,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"missing expected inventory\",\r\n    \"observed step inventory/order mismatch\"\r\n  ],\r\n  \"steps\": [],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "828224d340b74ba644013718a035d911cdab85c2fff56ab8215fb7a499e5283a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "828224d340b74ba644013718a035d911cdab85c2fff56ab8215fb7a499e5283a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "invalid-expected",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\invalid-expected\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\invalid-expected",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\invalid-expected",
+      "startedUtcEpoch": 1792225229.7289605,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\",\r\n    \"invalid expected step\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": null,\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"invalid expected step\"\r\n      ]\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "8e63dc1eabbdc311f6f85416322efd07201cde8c320ac2c0dadafef39f037e9a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "8e63dc1eabbdc311f6f85416322efd07201cde8c320ac2c0dadafef39f037e9a",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "noncanonical-identity",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\noncanonical-identity\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\noncanonical-identity",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\noncanonical-identity",
+      "startedUtcEpoch": 1792225229.8943007,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"observed step inventory/order mismatch\",\r\n    \"missing or invalid observed step\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"missing or invalid observed step\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f9b7ca0471160f75890457deec8f5740ebff0a82d9f0b2fbe21b83c2713540ff",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "f9b7ca0471160f75890457deec8f5740ebff0a82d9f0b2fbe21b83c2713540ff",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-traversal",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-traversal\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-traversal",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-traversal",
+      "startedUtcEpoch": 1792225230.0771835,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4923533be63d8913ab52b466a17bde483b67ff3f98c84788e2fd3c681e2600c3",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "4923533be63d8913ab52b466a17bde483b67ff3f98c84788e2fd3c681e2600c3",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-drive-relative",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-drive-relative\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-drive-relative",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-drive-relative",
+      "startedUtcEpoch": 1792225230.2612638,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "0f0c02ab4c452dbc642f916715dda74d47901371247f13787c9ff6b3eab42d36",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "0f0c02ab4c452dbc642f916715dda74d47901371247f13787c9ff6b3eab42d36",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-absolute-drive",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-absolute-drive\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-absolute-drive",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-absolute-drive",
+      "startedUtcEpoch": 1792225230.466161,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "c52f59b53d5357e6eafbb1b5555f48771fb57afbbc33870fdeb983d625358b02",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "c52f59b53d5357e6eafbb1b5555f48771fb57afbbc33870fdeb983d625358b02",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-ads",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-ads\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-ads",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-ads",
+      "startedUtcEpoch": 1792225230.6689098,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "1b4d327df578a9ae4b248ce5374a082dc4c3f391b797d34f58836761f2b7cd19",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "1b4d327df578a9ae4b248ce5374a082dc4c3f391b797d34f58836761f2b7cd19",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-unc",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-unc\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-unc",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-unc",
+      "startedUtcEpoch": 1792225230.8575199,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "a49073b0085fc08e1c1b83c9e1bcdbaca4161aaef7c23dd1b24644c8379bdbb3",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "a49073b0085fc08e1c1b83c9e1bcdbaca4161aaef7c23dd1b24644c8379bdbb3",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-posix-absolute",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-posix-absolute\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-posix-absolute",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-posix-absolute",
+      "startedUtcEpoch": 1792225231.0340838,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "01779c75911153161c7517be3a70d3ce52f28457efe79fb038ff08821d7ca645",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "01779c75911153161c7517be3a70d3ce52f28457efe79fb038ff08821d7ca645",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-normalized-traversal",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-normalized-traversal\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-normalized-traversal",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-normalized-traversal",
+      "startedUtcEpoch": 1792225231.220734,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "db649f2bd0b8bc838a06d4f70f27a24fd9777d36b2b863db69806ee42669c920",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "db649f2bd0b8bc838a06d4f70f27a24fd9777d36b2b863db69806ee42669c920",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "unsafe-path-nul",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-nul\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-nul",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\unsafe-path-nul",
+      "startedUtcEpoch": 1792225231.4077427,
+      "exitCode": 1,
+      "status": "GAPS",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"GAPS\",\r\n  \"gaps\": [\r\n    \"screenshot: unsafe path\"\r\n  ],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"GAPS\",\r\n      \"gaps\": [\r\n        \"screenshot: unsafe path\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d576609f8150075f832846bce7744c501f2d5621055b113b57ec3d04b2deb69d",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "d576609f8150075f832846bce7744c501f2d5621055b113b57ec3d04b2deb69d",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "valid-unicode-spaces",
+      "acceptable": [
+        "OBSERVED"
+      ],
+      "rationale": "",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-unicode-spaces\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-unicode-spaces",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\valid-unicode-spaces",
+      "startedUtcEpoch": 1792225231.620463,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": true,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "18de6f9a86b07bd38d38f80ed2668317009e90bc6df7518fa4910b0b22e5f843",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "521eb2f7f80c66a7361128a37c12a32b94f4a71fa7cdd64d4739e04560c716f2",
+        "open.json": "0e3504e561be073ebd06d6c0374df396246750d6a58ea4e1ce730c50ecf74ce1",
+        "return.json": "0498a11637ae6642fa33d8fe2675c89a497fb591355e7c0d979533b8ae9f068a",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec",
+        "\u4e2d\u6587 project source.html": "9f39af192fc3d3c230a92562f6a0f33bace5e101cdcb4c250847292fbee79711"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "18de6f9a86b07bd38d38f80ed2668317009e90bc6df7518fa4910b0b22e5f843",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "521eb2f7f80c66a7361128a37c12a32b94f4a71fa7cdd64d4739e04560c716f2",
+        "open.json": "0e3504e561be073ebd06d6c0374df396246750d6a58ea4e1ce730c50ecf74ce1",
+        "return.json": "0498a11637ae6642fa33d8fe2675c89a497fb591355e7c0d979533b8ae9f068a",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec",
+        "\u4e2d\u6587 project source.html": "9f39af192fc3d3c230a92562f6a0f33bace5e101cdcb4c250847292fbee79711"
+      }
+    },
+    {
+      "name": "old-screenshot-current-trace",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "Same-version UI evidence should detect old screenshot carried into a new implementation trace.",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\old-screenshot-current-trace\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\old-screenshot-current-trace",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\old-screenshot-current-trace",
+      "startedUtcEpoch": 1792225231.8458583,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": false,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "734879e891d5407a043141f0976e7d77db546eeeaf1935a637646126eab450e8",
+        "choose.json": "222f55d5ea38401d34440728798978e56d2b96256b03f4f9eaa93696af8309d8",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "cd29b8d5096409965bc8be065a27ad6faeb1c9414958f0abf218603a04fe5fd5",
+        "open.json": "83b0385a103b36cdf4a1d79a1f944a8e9de98fdc54cf912921152ef31977627b",
+        "return.json": "4e86c982d790df2dd29dcb2fb66c33ada5926ab2c1ba01dda64f2e87833dcff2",
+        "screen-origin.json": "b4d5d4559c9a274dd99cc1b4445bda14853a4e270716e447d36e05662c45c049",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "734879e891d5407a043141f0976e7d77db546eeeaf1935a637646126eab450e8",
+        "choose.json": "222f55d5ea38401d34440728798978e56d2b96256b03f4f9eaa93696af8309d8",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "cd29b8d5096409965bc8be065a27ad6faeb1c9414958f0abf218603a04fe5fd5",
+        "open.json": "83b0385a103b36cdf4a1d79a1f944a8e9de98fdc54cf912921152ef31977627b",
+        "return.json": "4e86c982d790df2dd29dcb2fb66c33ada5926ab2c1ba01dda64f2e87833dcff2",
+        "screen-origin.json": "b4d5d4559c9a274dd99cc1b4445bda14853a4e270716e447d36e05662c45c049",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "text-file-as-screenshot",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "A screenshot slot contains Markdown bytes, not an image.",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\text-file-as-screenshot\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\text-file-as-screenshot",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\text-file-as-screenshot",
+      "startedUtcEpoch": 1792225232.0305998,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": false,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "584b6986ac030a0a73e20c4b104a832cda099948407b95dc1f9f93753b0f2e63",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "584b6986ac030a0a73e20c4b104a832cda099948407b95dc1f9f93753b0f2e63",
+        "open.json": "67d0db4d83e3ecbdd1a8b79fac1b18a6c5e72d1a8f0be7fa596ee8bf5606b12d",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    },
+    {
+      "name": "nonstandard-json-nan",
+      "acceptable": [
+        "GAPS",
+        "INVALID"
+      ],
+      "rationale": "JSON evidence should reject non-finite numeric tokens.",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\scripts\\journey.py",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\nonstandard-json-nan\\journey.json",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\nonstandard-json-nan",
+        "--current-target",
+        "INDEPENDENT-09"
+      ],
+      "fixture": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent09-fixtures\\20261017T082021Z\\nonstandard-json-nan",
+      "startedUtcEpoch": 1792225232.2195325,
+      "exitCode": 0,
+      "status": "OBSERVED",
+      "stdout": "{\r\n  \"target\": \"INDEPENDENT-09\",\r\n  \"status\": \"OBSERVED\",\r\n  \"gaps\": [],\r\n  \"steps\": [\r\n    {\r\n      \"id\": \"open\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"choose\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"return\",\r\n      \"status\": \"OBSERVED\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only check of declared selected records. Not proof of trace authenticity, visual quality, business correctness, complete coverage, authority or human acceptance. Not an executor.\"\r\n}\r\n",
+      "stderr": "",
+      "pass": false,
+      "fixtureReadOnly": true,
+      "before": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "ac540fde77aa4f0010657f9b34a8eb94b52a9f6df5e8fc1ac1df56ec2d45a390",
+        "open.json": "9392440a3eb7fe170836dded204dddb5a626623fae62d5fb6c78a96e19bd345f",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      },
+      "after": {
+        "app.html": "2f82b709927359bb8d5dbe8a5f0029a9efc461aaf6e6790dacef17572648a8a3",
+        "choose.json": "f5bdc4cda93299e2f1432d3225b4970ec17bf2d111b57f8e9c2793bbbca48bba",
+        "design.md": "7b7db5b89311a0989d53b638a70a6e8551e6a340fa217353294027d572fc54f7",
+        "journey.json": "ac540fde77aa4f0010657f9b34a8eb94b52a9f6df5e8fc1ac1df56ec2d45a390",
+        "open.json": "9392440a3eb7fe170836dded204dddb5a626623fae62d5fb6c78a96e19bd345f",
+        "return.json": "dc7e64b1ad978119c01931462d23a8502498069363641f1017ee100a126d2924",
+        "screen.png": "6b1048f8a6d40bac0b2954c18fefa40c4ea7a96120fc2e54b7317c0e43c2bbec"
+      }
+    }
+  ],
+  "note": "Synthetic probes are not real UI evidence."
+}

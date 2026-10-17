@@ -1,0 +1,41 @@
+✔ cold install: Chinese/space path, 17 skills, binding, honest blocked runtime (329.088478ms)
+✔ Claude install and same-version reentry leave exact state unchanged (347.042168ms)
+✔ unmanaged conflict blocks without overwriting (68.960568ms)
+✔ user edit prevents same-version reinstall and rollback (190.765174ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (387.540008ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (237.99257ms)
+✔ state commit failure restores previous state and bytes (203.065964ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (116.765241ms)
+✔ tampered source, runtime, and unsafe state are blocked (164.842757ms)
+✔ project move remains bound locally and official openspec never invoked (152.369866ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (204.299987ms)
+✔ path and local-home isolation checks (76.568307ms)
+✔ rollback refuses a modified inactive runtime release (203.436515ms)
+✔ Python skill caches are not install payload; installed health helper is executable (160.985379ms)
+✔ npx bootstrap removes its Unicode temporary source after success, reentry and installer failure (1376.74451ms)
+✔ strict decoder accepts complete manifest payload (98.598598ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (2.787778ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (2.292105ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (1.395175ms)
+✔ staged bootstrap cleanup is Windows-only and leaves source, siblings, runtime and project data alone (11.019422ms)
+✔ Windows cleanup cannot be prepared over a bootstrap copied from source (1.203097ms)
+✔ cleanup refuses a replacement stage and cannot clean a moved release (0.973542ms)
+✔ cleanup refuses symbolic links at the bootstrap or any stage ancestor (3.987398ms)
+✔ cleanup unlinks nested directory links without traversing external data (2.347034ms)
+✔ cleanup reports deletion errors and retains remaining diagnostics (1.54742ms)
+✔ cleanup rejects a silent no-op instead of reporting success (0.912639ms)
+✔ stage creation rejects a linked destination ancestor (1.750595ms)
+✔ mocked Windows full install cleans only after successful build and probe, before inventory (37.476364ms)
+✔ mocked Windows install preserves pre-existing source bootstrap and rejects before any build (8.134751ms)
+✔ mocked Windows failed build or CLI probe retains stage diagnostics and no active installation (17.199414ms)
+✔ Windows cleanup does not relax strict absolute or escaping runtime link rejection (21.131597ms)
+✔ runtime inventory still rejects relative escaping links and chained escapes (0.850263ms)
+✔ standalone builder preserves an existing bootstrap and adds hoisted only on Windows (mocked subprocesses) (532.342868ms)
+ℹ tests 33
+ℹ suites 0
+ℹ pass 33
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3011.180951

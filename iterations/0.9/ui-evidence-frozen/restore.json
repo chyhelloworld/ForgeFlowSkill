@@ -1,0 +1,25 @@
+{
+  "from": "empty-filter",
+  "to": "rules",
+  "action": "clear",
+  "stepId": "restore",
+  "target": "manual-09",
+  "inputFingerprint": "55b3ebee75f617a437fda107da0eb31e2ed333e5556472fc09ec77bcc7d60517",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-frozen/restore.png",
+      "sha256": "1c02df6d8614501c17c888ed8f4f2f479e8010ecbef57be15f8e71a3daff5cc4"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "visibleDirectoryCount": 32,
+    "anchorPreserved": true
+  },
+  "observedUtcEpoch": 1792225713.3672373,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html#s33"
+}

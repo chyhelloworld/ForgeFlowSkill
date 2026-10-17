@@ -1,0 +1,10 @@
+{
+  "createdUtc": "2026-10-17T08:14:18.533731+00:00",
+  "baseline": "47eedff1a7c1885ea002a99b97fb1cd0ed157ccd",
+  "design": {
+    "path": "iterations/0.9/DESIGN.md",
+    "sha256": "ec7f55b4b28accd14b75076818ccdcf106feed4453d25a0e2a86dfff590f3249"
+  },
+  "implementationExists": false,
+  "note": "Captured before creating the 0.9 implementation; not human acceptance"
+}

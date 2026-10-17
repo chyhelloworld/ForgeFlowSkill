@@ -63,9 +63,9 @@
 <text x="315.0" y="1842.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>
 <text x="315.0" y="1872.0" text-anchor="middle" class="n">与成果 Deliver 分开</text>
 <rect x="810" y="1780" width="550" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="1085.0" y="1812.0" text-anchor="middle" class="n">接收方 ff-intake</text>
-<text x="1085.0" y="1842.0" text-anchor="middle" class="n">先只读核验实际状态与旧操作结果</text>
-<text x="1085.0" y="1872.0" text-anchor="middle" class="n">然后重新选择最短有效路径</text>
+<text x="1085.0" y="1812.0" text-anchor="middle" class="n">接收方 ff-intake → 只读核验</text>
+<text x="1085.0" y="1842.0" text-anchor="middle" class="n">核对目标/依赖与完成回执绑定</text>
+<text x="1085.0" y="1872.0" text-anchor="middle" class="n">完成跳过；运行中先观察；重核权限</text>
 <polyline points="700,250 700,330" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,440 700,490 195,490 195,550" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="195,680 195,760 700,760 700,830" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>

@@ -1,0 +1,25 @@
+test_cli_readonly (test_health.HealthTests.test_cli_readonly) ... ok
+test_crap_bounds_and_missing (test_health.HealthTests.test_crap_bounds_and_missing) ... ok
+test_duplicate_function_identity_is_rejected (test_health.HealthTests.test_duplicate_function_identity_is_rejected) ... ok
+test_escape (test_health.HealthTests.test_escape) ... ok
+test_invalid_function_file_is_rejected_without_crashing (test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) ... ok
+test_invalid_function_name_is_rejected_without_crashing (test_health.HealthTests.test_invalid_function_name_is_rejected_without_crashing) ... ok
+test_main_instrumented_success_and_invalid (test_health.HealthTests.test_main_instrumented_success_and_invalid) ... ok
+test_missing_human_acceptance (test_health.HealthTests.test_missing_human_acceptance) ... ok
+test_missing_packaged_helper_fails_closed (test_health.HealthTests.test_missing_packaged_helper_fails_closed) ... ok
+test_mixed_qualified_and_unqualified_scope_is_rejected (test_health.HealthTests.test_mixed_qualified_and_unqualified_scope_is_rejected) ... ok
+test_na_requires_reason (test_health.HealthTests.test_na_requires_reason) ... ok
+test_native_junction_is_rejected (test_health.HealthTests.test_native_junction_is_rejected) ... ok
+test_no_average_masks_failure (test_health.HealthTests.test_no_average_masks_failure) ... ok
+test_same_function_name_in_different_files_is_valid (test_health.HealthTests.test_same_function_name_in_different_files_is_valid) ... ok
+test_self_review (test_health.HealthTests.test_self_review) ... ok
+test_stale_evidence (test_health.HealthTests.test_stale_evidence) ... ok
+test_symlink_when_os_allows_creation (test_health.HealthTests.test_symlink_when_os_allows_creation) ... skipped "Real symlink creation unavailable: [WinError 1314] 客户端没有所需的特权。: 'E:\\\\github\\\\ForgeFlowSKill\\\\_handoff\\\\20261017\\\\pr3-fixes\\\\tmp\\\\tmpj0if27we\\\\proof' -> 'E:\\\\github\\\\ForgeFlowSKill\\\\_handoff\\\\20261017\\\\pr3-fixes\\\\tmp\\\\tmpj0if27we\\\\link'"
+test_utf8_evidence_with_legacy_default_file_encoding (test_health.HealthTests.test_utf8_evidence_with_legacy_default_file_encoding) ... ok
+test_valid_record_has_no_false_alarm (test_health.HealthTests.test_valid_record_has_no_false_alarm) ... ok
+test_windows_anchors_and_ads_are_not_evidence (test_health.HealthTests.test_windows_anchors_and_ads_are_not_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 20 tests in 1.159s
+
+OK (skipped=1)

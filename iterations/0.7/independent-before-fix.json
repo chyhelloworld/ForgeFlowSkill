@@ -1,0 +1,1288 @@
+{
+  "source_sha256": "52d7c5826674c54b0b400f887d644c5691fd221a2d78e09d291a49ce5f36bbc6",
+  "results": [
+    {
+      "case": "valid_control",
+      "expected": "RECORDED",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "na_stale_and_unbound",
+      "expected": "GAPS: stale target and missing evidence/independence",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "N/A",
+            "reason": "copy edit",
+            "target": "old"
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "na_malformed_reason",
+      "expected": "INVALID/GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "N/A",
+            "reason": {
+              "anything": true
+            }
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "missing_author",
+      "expected": "GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "missing_next",
+      "expected": "GAPS/INVALID per documented minimum input",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "Resolve gaps with the responsible owner",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "invalid_goal_type",
+      "expected": "GAPS/INVALID",
+      "actual": {
+        "goal": {
+          "fake": true
+        },
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": {
+          "fake": true
+        },
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "metrics_without_provenance",
+      "expected": "NOT_MEASURED: raw reports, tools and source mapping absent",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "metrics_missing_function_name",
+      "expected": "NOT_MEASURED/INVALID",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "metrics_na_truthy_string",
+      "expected": "GAPS/INVALID",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "notApplicable": "false",
+              "reason": "not actually exempt"
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "metrics_invalid_row",
+      "expected": "INVALID without crash",
+      "actual": {
+        "status": "INVALID",
+        "error": "'NoneType' object has no attribute 'get'"
+      },
+      "exit": 2,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                null
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "invalid_reviews_container",
+      "expected": "INVALID without crash",
+      "actual": {
+        "status": "INVALID",
+        "error": "'list' object has no attribute 'get'"
+      },
+      "exit": 2,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": []
+      }
+    },
+    {
+      "case": "explicit_stale_target",
+      "expected": "GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "GAPS",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "GAPS",
+            "gaps": [
+              "stale target"
+            ]
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [
+          "plan: stale target"
+        ],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 1,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "old",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "missing_human_acceptance",
+      "expected": "GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "GAPS",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [
+          "human acceptance missing or stale"
+        ],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 1,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "crap_above_limit",
+      "expected": "GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "GAPS",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "GAPS",
+            "gaps": [
+              "CRAP exceeds 50: export"
+            ]
+          }
+        },
+        "gaps": [
+          "code: CRAP exceeds 50: export"
+        ],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 1,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 51,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "crap_boundary_50",
+      "expected": "RECORDED",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "RECORDED",
+        "stages": {
+          "goal-mainflow": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "plan": {
+            "status": "RECORDED",
+            "gaps": []
+          },
+          "code": {
+            "status": "RECORDED",
+            "gaps": []
+          }
+        },
+        "gaps": [],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 0,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 50,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "stale_evidence",
+      "expected": "GAPS",
+      "actual": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "status": "GAPS",
+        "stages": {
+          "goal-mainflow": {
+            "status": "GAPS",
+            "gaps": [
+              "stale evidence: proof"
+            ]
+          },
+          "plan": {
+            "status": "GAPS",
+            "gaps": [
+              "stale evidence: proof"
+            ]
+          },
+          "code": {
+            "status": "GAPS",
+            "gaps": [
+              "stale evidence: proof"
+            ]
+          }
+        },
+        "gaps": [
+          "goal-mainflow: stale evidence: proof",
+          "plan: stale evidence: proof",
+          "code: stale evidence: proof"
+        ],
+        "next": "review",
+        "limits": "Recorded evidence only; no semantic verdict, identity verification, plan mutation or final acceptance."
+      },
+      "exit": 1,
+      "input": {
+        "goal": "export",
+        "phase": "code",
+        "target": "v1",
+        "next": "review",
+        "humanAcceptanceRequired": false,
+        "reviews": {
+          "goal-mainflow": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "plan": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ]
+          },
+          "code": {
+            "verdict": "PASS",
+            "target": "v1",
+            "author": "author",
+            "reviewer": "reviewer",
+            "independent": true,
+            "evidence": [
+              {
+                "path": "proof",
+                "sha256": "5cdf920bf5d26e0e5c11d4e0b7d248432e349e1bb8d8982a23eb755e655c970b"
+              }
+            ],
+            "metrics": {
+              "target": "v1",
+              "functions": [
+                {
+                  "name": "export",
+                  "cc": 2,
+                  "coverage": 1
+                }
+              ]
+            }
+          }
+        }
+      }
+    }
+  ]
+}

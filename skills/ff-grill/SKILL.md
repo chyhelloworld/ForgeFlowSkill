@@ -2,9 +2,9 @@
 name: ff-grill
 description: 澄清 ForgeFlow 用户意图、目标和重要方案取舍；用于需求澄清、grill、方案压力测试或目标变更。保留推荐前自审及按用户选择的记录模式，不用于普通问答或已有明确计划的日常执行。
 metadata:
-  version: "0.6.0-experimental.7"
+  version: "0.9.1"
 ---
-# FF-Grill 0.6.0-experimental.7
+# FF-Grill 0.9.1
 
 从用户原话与现有证据提炼 Intent → Motivation → Goal → Problem → Decision → Evidence。保留用户意图，不用推测的“真正问题”替代它。
 
@@ -45,3 +45,7 @@ metadata:
 ## 跨会话决策恢复（按需）
 
 跨会话或复杂取舍容易丢失原始目标时，按 [决策索引契约](references/decision-index.md) 使用同一权威记录的轻索引。简单任务跳过；不新增技能、状态库或授权。沿用记录模式与保存授权，不自动落盘。
+
+## 小范围证据补强
+
+需求锚点按需区分：用户必须项、已知目的/预期变化、可观察结果证据、尚未确认的假设。保留原话和来源；目的未知就写unknown，不替用户脑补或取消明确方案。明确小修改直接处理，不凑三方案、分数或风险配额。

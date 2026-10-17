@@ -21,7 +21,7 @@ def mutate(root,kind):
         p=root/'evaluations/scenarios.json';d=json.loads(p.read_text());d['cases']=[c for c in d['cases'] if c['id']!='E25'];p.write_text(json.dumps(d))
     elif kind=='missing_method': shutil.rmtree(root/'skills/ff-handoff')
     elif kind=='wrong_version':
-        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace('0.6.0-experimental.7','0.4.0-rc1'))
+        p=root/'skills/ff-tdd/SKILL.md';p.write_text(p.read_text().replace(json.loads((root/'package.json').read_text())['version'],'0.4.0-rc1'))
     elif kind=='broken_reference':
         p=root/'skills/ff-diagnose/SKILL.md';p.write_text(p.read_text()+'\n[bad](references/missing.md)\n')
     elif kind=='missing_license': (root/'skills/ff-handoff/LICENSE-MATT').unlink()

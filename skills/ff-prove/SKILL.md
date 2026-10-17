@@ -2,9 +2,9 @@
 name: ff-prove
 description: 用有界原型、实验或源码核查回答会改变方案的实际交互、技术或架构未知。用于尚需验证方向的 ForgeFlow 工作；明确的小改动直接实现，不默认做多变体、重构或全套原型。
 metadata:
-  version: "0.6.0-experimental.7"
+  version: "0.9.1"
 ---
-# FF-Prove 0.6.0-experimental.7
+# FF-Prove 0.9.1
 
 只解决当前方向中值得验证的未知，不为已清楚的任务增设门禁。引用同一需求锚点中的原话、已确认目标/约束/成功标准和独立列出的假设，不用自己的改写替代用户意图。验证主要业务旅程中会改变方向的问题，不为资料或纯视觉机械添加负例/测试。
 
@@ -24,3 +24,7 @@ metadata:
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 小范围证据补强
+
+按需验证一个最高风险未知，包括技术可行性或用户任务能否完成。事先限定观察证据与停止条件，选择最轻的已授权实验。模拟用户、自动检查、真人观察分别记录；功能通过不等于价值已验证，不因缺商业样本阻塞无关小修。

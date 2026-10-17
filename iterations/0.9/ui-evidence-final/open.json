@@ -1,0 +1,25 @@
+{
+  "from": "start",
+  "to": "contents",
+  "action": "open",
+  "stepId": "open",
+  "target": "manual-09",
+  "inputFingerprint": "defb52764c1c9ef88a53a46997ed30b620335e67c6f400818f9a79b76317c19e",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-final/open.png",
+      "sha256": "8508469fe07e21a46d4373c7c747e996c7edd59e20301033f79571c745fe0e4a"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "directoryCount": 32,
+    "mainTitle": "ForgeFlow 十二技能工作流中文使用手册"
+  },
+  "observedUtcEpoch": 1792225601.0501015,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html"
+}

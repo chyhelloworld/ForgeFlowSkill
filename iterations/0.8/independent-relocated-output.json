@@ -1,0 +1,2745 @@
+{
+  "label": "relocated-output",
+  "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+  "sourceSha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+  "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "win32",
+  "localeEncoding": "cp936",
+  "utf8Mode": 0,
+  "fixtureDirectory": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600",
+  "receiptFormat": "bound",
+  "probes": [
+    {
+      "name": "happy-valid-checkpoint",
+      "status": "PASS",
+      "expectation": "current",
+      "result": {
+        "status": "CHECKPOINT_CURRENT",
+        "gaps": [],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "SKIP_COMPLETED",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root\\checkpoint.json": "6487734e17433e7a0c9c1100aee4245c905e45f8c9b3022daba70e66523fedd2",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\happy-valid-checkpoint\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 0,
+        "stdout": "{\r\n  \"status\": \"CHECKPOINT_CURRENT\",\r\n  \"gaps\": [],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"SKIP_COMPLETED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"VERIFY_CURRENT_AUTHORITY\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022434845434b504f494e545f43555252454e54222c0d0a20202267617073223a205b5d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022534b49505f434f4d504c45544544222c0d0a2020202020202267617073223a205b5d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a20225645524946595f43555252454e545f415554484f52495459222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "stale-dependency",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "stale file: spec.txt"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-dependency\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": 16,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-dependency\\root\\checkpoint.json": "51c1ae09a38b40e652b58bbe8f25d4be5d6f5fb2583dbacc8fe3a11c88cf983a",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-dependency\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-dependency\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-dependency\\root\\spec.txt": "8df79c1b4fdd627a20551cb4adf3ff73cdbfabb8421fcc69aad800f7a2c7e1a4"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "stale-output",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "stale file: output.txt"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "stale file: output.txt"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-output\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": 16,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-output\\root\\checkpoint.json": "79f68047ceec8549353e2b9725dd3ecad9d9fa3989c9b76f9cab7109c1d622bb",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-output\\root\\output.txt": "a946d6f2fd8589f53331079f55b2fd9b75faf02067f778bbad03e306b0412e7a",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-output\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-output\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "stale-goal",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "stale or missing latest goal revision",
+          "completion identity/goal mismatch"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion identity/goal mismatch"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-goal\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-goal\\root\\checkpoint.json": "c6f6a729f02cfb39a86ee1f82072a87c9c3d91d7c5ca16602f4d0b74f79f6f34",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-goal\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-goal\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\stale-goal\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "wrong-receipt-action-id",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "completion identity/goal mismatch"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion identity/goal mismatch"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-action-id\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "60bdf7bc4a5e5b18904b4a2b78b1c401deb9e4e0783d309afc00973935a26b8b"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-action-id\\root\\checkpoint.json": "ae82b9b28dae32dc0f980ed08b2cff6427143e4d87892319fdf37c2516d6bd15",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-action-id\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-action-id\\root\\receipt.json": "60bdf7bc4a5e5b18904b4a2b78b1c401deb9e4e0783d309afc00973935a26b8b",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-action-id\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "wrong-receipt-goal",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "completion identity/goal mismatch"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion identity/goal mismatch"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-goal\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "7af5bf88281c194eec10830079f90bc1ec53a93c998cca702e9cec0c1de9ab57"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-goal\\root\\checkpoint.json": "7fc3c73a1c5baf4f848148877cf1690e316a606d1ad29f321ed7c1a6527a0a4a",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-goal\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-goal\\root\\receipt.json": "7af5bf88281c194eec10830079f90bc1ec53a93c998cca702e9cec0c1de9ab57",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\wrong-receipt-goal\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "boolean-receipt-exit-code",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "completion lacks successful operation result"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion lacks successful operation result"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-receipt-exit-code\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "7749444cc623455111b0b6d8262373551529be7be3bfb95e278a68bdd20135a7"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-receipt-exit-code\\root\\checkpoint.json": "fd616e760ee8a112c3afc2ecccfff23297f282b3d942295c2f85aac7797ac039",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-receipt-exit-code\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-receipt-exit-code\\root\\receipt.json": "7749444cc623455111b0b6d8262373551529be7be3bfb95e278a68bdd20135a7",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-receipt-exit-code\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "duplicate-action-id",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "duplicate action identity"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\duplicate-action-id\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "test-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\duplicate-action-id\\root\\checkpoint.json": "69fa28307d06955462953fb54b745b3497a12208f3e0c96462bb963479b1a993",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\duplicate-action-id\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\duplicate-action-id\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\duplicate-action-id\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "action-state-running",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-running\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "running",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-running\\root\\checkpoint.json": "11f845831b56ee40a4e7f037d42f47e1ebff44842036a7d4ffbf0bc316c9911d",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-running\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-running\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-running\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "action-state-unknown",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-unknown\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "unknown",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-unknown\\root\\checkpoint.json": "d1ac21c74b3d1bc28a50cdfe4ff537b425a110223877f673649613c94e48b7ba",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-unknown\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-unknown\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-unknown\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "action-state-invalid",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-invalid\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "invalid",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-invalid\\root\\checkpoint.json": "617fdb51ebf13931ad8683191070c7a65d7ba30587751226727f6ee504ec9204",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-invalid\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-invalid\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-invalid\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "action-state-None",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-None\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": null,
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-None\\root\\checkpoint.json": "35d1f7f3192801ed58dda311703cae1576a4e491e66fc42a635ebaaeb1448053",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-None\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-None\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\action-state-None\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "pending-does-not-inherit-authority",
+      "status": "PASS",
+      "expectation": "current",
+      "result": {
+        "status": "CHECKPOINT_CURRENT",
+        "gaps": [],
+        "actions": [
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\pending-does-not-inherit-authority\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "next-01",
+            "state": "pending",
+            "approved": true,
+            "authorization": "old approval"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\pending-does-not-inherit-authority\\root\\checkpoint.json": "821191b7e2724bbfeda2989ad2713aeb7a7cec501e7d53ff9fee42da97bf28e3",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\pending-does-not-inherit-authority\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\pending-does-not-inherit-authority\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\pending-does-not-inherit-authority\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": {
+        "next-01": "VERIFY_CURRENT_AUTHORITY"
+      }
+    },
+    {
+      "name": "empty-dependencies",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing file evidence",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependencies\\root",
+        "goalRevision": "R2",
+        "dependencies": [],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependencies\\root\\checkpoint.json": "63a371e8fc27e8c230d770ca301299e04a15226054aade2e14e197924351d5b0",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependencies\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependencies\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependencies\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "empty-actions",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing action inventory"
+        ],
+        "actions": [],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-actions\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": []
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-actions\\root\\checkpoint.json": "88819786a75b45c7c5afd395b504c9851d298dd16717673cd2f36b3695ae7279",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-actions\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-actions\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-actions\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "malformed-action",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing action identity"
+        ],
+        "actions": [
+          {
+            "id": null,
+            "recommendation": "INSPECT",
+            "gaps": [
+              "missing action identity"
+            ]
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-action\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          null
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-action\\root\\checkpoint.json": "432e1b255e4974ab3872901feceff5c9c2bf793265580af94fdeee636dea513a",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-action\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-action\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-action\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "boolean-version",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsupported checkpoint version"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": true,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-version\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-version\\root\\checkpoint.json": "0001ecea5620e2afd60335db1f08685e47a35a690c11abc097cf927e533964bb",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-version\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-version\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\boolean-version\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "parent-traversal",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\parent-traversal\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "../outside/spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\parent-traversal\\root\\checkpoint.json": "01f6bb8c6cbeb0355e0109eefa2b754ba1a845e25fd97d19c8de5adca59b9a55",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\parent-traversal\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\parent-traversal\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\parent-traversal\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-rooted-dependency-escape",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\outside\\spec.txt",
+            "sha256": "b343b425a1adf535073de39af10e394d04c0e026f7078dba42c9e5a4da44bea0"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "outsideFile": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\outside\\spec.txt",
+        "pathIsAbsolute": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\outside\\spec.txt",
+        "outsideProject": true
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\root\\checkpoint.json": "2a56340b92fd757d13acf40cac36c0c907a2cab38989e785d1814b19f71ab8db",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape\\outside\\spec.txt": "b343b425a1adf535073de39af10e394d04c0e026f7078dba42c9e5a4da44bea0"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-rooted-receipt-escape",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "unsafe path"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\outside\\receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "outsideFile": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\outside\\receipt.json",
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\outside\\receipt.json"
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\root\\checkpoint.json": "2b528ba0ff7e626c3ed8287f81603dc82be9f05d70be6ba319a02ada4ba960a7",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-receipt-escape\\outside\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-junction-dependency-escape",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe resolved path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "linked/spec.txt",
+            "sha256": "626b1275f3ee6c44b74b654661b6bd887c467e248a40d89b08291710958d758f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "junctionCreation": {
+          "argv": [
+            "cmd.exe",
+            "/d",
+            "/c",
+            "mklink",
+            "/J",
+            "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\linked",
+            "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\outside"
+          ],
+          "exitCode": 0,
+          "stdout": "Ϊ E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\linked <<===>> E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\outside \\xb4\\xb4\\xbd\\xa8\\xb5\\xc4\\xc1\\xaa\\xbd\\xd3\r\n",
+          "stderr": "",
+          "stdoutHex": "ceaa20453a5c6769746875625c466f726765466c6f77534b696c6c5c5f68616e646f66665c32303236313031375c696e646570656e64656e7430382d66697874757265735c696e646570656e64656e742d66697874757265732d72656c6f63617465642d6f75747075742d313739323232333839373033363533303630305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170655c726f6f745c6c696e6b6564203c3c3d3d3d3e3e20453a5c6769746875625c466f726765466c6f77534b696c6c5c5f68616e646f66665c32303236313031375c696e646570656e64656e7430382d66697874757265735c696e646570656e64656e742d66697874757265732d72656c6f63617465642d6f75747075742d313739323232333839373033363533303630305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170655c6f75747369646520b4b4bda8b5c4c1aabdd30d0a",
+          "stderrHex": ""
+        },
+        "isSymlink": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\outside\\spec.txt",
+        "outsideProject": true
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\checkpoint.json": "f734531a74bc531c713b98e3152af6e947e4613c51294b4e3b45eec7e97f573d",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape\\outside\\spec.txt": "626b1275f3ee6c44b74b654661b6bd887c467e248a40d89b08291710958d758f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-ads-hidden-evidence",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "visible.txt:hidden",
+            "sha256": "bc49393706c4a6df3952891ea57259ad4f572289301d8a29158ece0fea2fcd26"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "streamPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\visible.txt:hidden",
+        "streamIsFile": true,
+        "visibleFileBytes": "visible content"
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\checkpoint.json": "03bfc283267adaefd25fd63fb58f560924c11acdfd6b4b4e79d47c64a6cc8565",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\visible.txt": "3e7ae9a11edeb3f8e06f29f8c7bb3deb93d09ef91eee9e114183027823cb0efc",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence\\root\\visible.txt:hidden": "bc49393706c4a6df3952891ea57259ad4f572289301d8a29158ece0fea2fcd26"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "utf8-chinese-checkpoint-cli",
+      "status": "PASS",
+      "expectation": "current",
+      "result": {
+        "status": "CHECKPOINT_CURRENT",
+        "gaps": [],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "SKIP_COMPLETED",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ],
+        "note": "中文项目的恢复检查点"
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root\\checkpoint.json": "7784fe4d7d97bc00df31d4eb48183ddbc90ac2487f9126e19fa7c5722bbafff7",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-checkpoint-cli\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 0,
+        "stdout": "{\r\n  \"status\": \"CHECKPOINT_CURRENT\",\r\n  \"gaps\": [],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"SKIP_COMPLETED\",\r\n      \"gaps\": []\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"VERIFY_CURRENT_AUTHORITY\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022434845434b504f494e545f43555252454e54222c0d0a20202267617073223a205b5d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022534b49505f434f4d504c45544544222c0d0a2020202020202267617073223a205b5d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a20225645524946595f43555252454e545f415554484f52495459222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "utf8-chinese-receipt",
+      "status": "PASS",
+      "expectation": "current",
+      "result": {
+        "status": "CHECKPOINT_CURRENT",
+        "gaps": [],
+        "actions": [
+          {
+            "id": "测试-01",
+            "recommendation": "SKIP_COMPLETED",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-receipt\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "测试-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "127c0361aa5a165755d861798d286fa98127a282164857f116621880ce6c61c2"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-receipt\\root\\checkpoint.json": "31490803bf48f2087fcc50970e04360f58cc8fc7c79c32aee293d0c164d114e8",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-receipt\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-receipt\\root\\receipt.json": "127c0361aa5a165755d861798d286fa98127a282164857f116621880ce6c61c2",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\utf8-chinese-receipt\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "refreshed-dependency-index-reuses-old-completion",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\refreshed-dependency-index-reuses-old-completion\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "6bf732fe6f20b28c544a215271d17ea552ae23052fb320c3b9c13d8c35d76e96"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "originalDependencySha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "currentDependencySha256": "6bf732fe6f20b28c544a215271d17ea552ae23052fb320c3b9c13d8c35d76e96",
+        "unchangedReceiptSha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "operationActuallyReran": false
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\refreshed-dependency-index-reuses-old-completion\\root\\checkpoint.json": "0d75d4c0649b38c36096ddce443e92065c078c6a3cfb9cc0014501f7772e4f7b",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\refreshed-dependency-index-reuses-old-completion\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\refreshed-dependency-index-reuses-old-completion\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\refreshed-dependency-index-reuses-old-completion\\root\\spec.txt": "6bf732fe6f20b28c544a215271d17ea552ae23052fb320c3b9c13d8c35d76e96"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "legacy-receipt-without-binding-rejected",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\legacy-receipt-without-binding-rejected\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "d09890206fdf6acf875cb9b984850fc528232c7aa43b67cffc1faf674cca7681"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\legacy-receipt-without-binding-rejected\\root\\checkpoint.json": "935f86d7768d5531c2aca4199a010f6c81861898be001e53008c636a4df471cd",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\legacy-receipt-without-binding-rejected\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\legacy-receipt-without-binding-rejected\\root\\receipt.json": "d09890206fdf6acf875cb9b984850fc528232c7aa43b67cffc1faf674cca7681",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\legacy-receipt-without-binding-rejected\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-rooted-dependency-escape-bound-current-index",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\outside\\spec.txt",
+            "sha256": "b343b425a1adf535073de39af10e394d04c0e026f7078dba42c9e5a4da44bea0"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "0d3e65b1b34ff30a58d95203e4a1ebefe8534e4266919e8d9e04972c578baa65"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "outsideFile": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\outside\\spec.txt",
+        "pathIsAbsolute": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\outside\\spec.txt",
+        "outsideProject": true
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\root\\checkpoint.json": "2cf7418cfc72f07fe4df96f4e815dddcd69c9c24fb7a3f806c3eed3b1214f389",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\root\\receipt.json": "0d3e65b1b34ff30a58d95203e4a1ebefe8534e4266919e8d9e04972c578baa65",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-rooted-dependency-escape-bound-current-index\\outside\\spec.txt": "b343b425a1adf535073de39af10e394d04c0e026f7078dba42c9e5a4da44bea0"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-junction-dependency-escape-bound-current-index",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe resolved path"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "linked/spec.txt",
+            "sha256": "626b1275f3ee6c44b74b654661b6bd887c467e248a40d89b08291710958d758f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "9d0bd7e2fd0e5df513126a6a67499ca603db79a57365ca868eedef11366cddcc"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "junctionCreation": {
+          "argv": [
+            "cmd.exe",
+            "/d",
+            "/c",
+            "mklink",
+            "/J",
+            "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\linked",
+            "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\outside"
+          ],
+          "exitCode": 0,
+          "stdout": "Ϊ E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\linked <<===>> E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\outside \\xb4\\xb4\\xbd\\xa8\\xb5\\xc4\\xc1\\xaa\\xbd\\xd3\r\n",
+          "stderr": "",
+          "stdoutHex": "ceaa20453a5c6769746875625c466f726765466c6f77534b696c6c5c5f68616e646f66665c32303236313031375c696e646570656e64656e7430382d66697874757265735c696e646570656e64656e742d66697874757265732d72656c6f63617465642d6f75747075742d313739323232333839373033363533303630305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170652d626f756e642d63757272656e742d696e6465785c726f6f745c6c696e6b6564203c3c3d3d3d3e3e20453a5c6769746875625c466f726765466c6f77534b696c6c5c5f68616e646f66665c32303236313031375c696e646570656e64656e7430382d66697874757265735c696e646570656e64656e742d66697874757265732d72656c6f63617465642d6f75747075742d313739323232333839373033363533303630305c77696e646f77732d6a756e6374696f6e2d646570656e64656e63792d6573636170652d626f756e642d63757272656e742d696e6465785c6f75747369646520b4b4bda8b5c4c1aabdd30d0a",
+          "stderrHex": ""
+        },
+        "isSymlink": false,
+        "resolvedReadTarget": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\outside\\spec.txt",
+        "outsideProject": true
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\checkpoint.json": "bbf206e93387d85ab2588a67967dd32605ac166ab8f8e739f9dbbc87b50c2336",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\receipt.json": "9d0bd7e2fd0e5df513126a6a67499ca603db79a57365ca868eedef11366cddcc",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-junction-dependency-escape-bound-current-index\\outside\\spec.txt": "626b1275f3ee6c44b74b654661b6bd887c467e248a40d89b08291710958d758f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "windows-ads-hidden-evidence-bound-current-index",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "visible.txt:hidden",
+            "sha256": "bc49393706c4a6df3952891ea57259ad4f572289301d8a29158ece0fea2fcd26"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "ff62567b3c4d52062be6f43de0b5a0d956a293a204870309ab3a68a9259fa5a3"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": {
+        "streamPath": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\visible.txt:hidden",
+        "streamIsFile": true,
+        "visibleFileBytes": "visible content"
+      },
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\checkpoint.json": "443e95046e47061738025446d3f5d83506a24802b70c946dac4682376e47c530",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\receipt.json": "ff62567b3c4d52062be6f43de0b5a0d956a293a204870309ab3a68a9259fa5a3",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\visible.txt": "3e7ae9a11edeb3f8e06f29f8c7bb3deb93d09ef91eee9e114183027823cb0efc",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\windows-ads-hidden-evidence-bound-current-index\\root\\visible.txt:hidden": "bc49393706c4a6df3952891ea57259ad4f572289301d8a29158ece0fea2fcd26"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "independent-completion-preserved-with-running",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "SKIP_COMPLETED",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          },
+          {
+            "id": "upload-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-running\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          },
+          {
+            "id": "upload-01",
+            "state": "running",
+            "jobId": "bounded-fake-job-never-executed"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-running\\root\\checkpoint.json": "c7988e334f20747087c45587a1066e3f9947a0968b5542a79e4461099efd9af3",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-running\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-running\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-running\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": {
+        "test-01": "SKIP_COMPLETED",
+        "next-01": "VERIFY_CURRENT_AUTHORITY",
+        "upload-01": "INSPECT"
+      }
+    },
+    {
+      "name": "independent-completion-preserved-with-unknown",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "running/unknown state requires observation"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "SKIP_COMPLETED",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          },
+          {
+            "id": "upload-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "running/unknown state requires observation"
+            ]
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-unknown\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          },
+          {
+            "id": "upload-01",
+            "state": "unknown",
+            "jobId": "bounded-fake-job-never-executed"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-unknown\\root\\checkpoint.json": "98ed8b6d93dcfaae66ced6b9fbe1dafe55f741e4037cdc9f2ab5d30efd669992",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-unknown\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-unknown\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\independent-completion-preserved-with-unknown\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": {
+        "test-01": "SKIP_COMPLETED",
+        "next-01": "VERIFY_CURRENT_AUTHORITY",
+        "upload-01": "INSPECT"
+      }
+    },
+    {
+      "name": "absolute-path",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\not-read.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root\\checkpoint.json": "5d88a0e24e7aad98ec60223caf278a13a9d015ef40be5132d4238cf39eb1b65e",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\absolute-path\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 1,
+        "stdout": "{\r\n  \"status\": \"INSPECT\",\r\n  \"gaps\": [\r\n    \"unsafe path\",\r\n    \"completion dependency binding missing or stale\"\r\n  ],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": [\r\n        \"completion dependency binding missing or stale\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022494e5350454354222c0d0a20202267617073223a205b0d0a2020202022756e736166652070617468222c0d0a2020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a20205d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b0d0a202020202020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a2020202020205d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "drive-relative-path",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "C:independent-not-read.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root\\checkpoint.json": "e776dd615f76c53a007f1f5d6ab43944f55f08d1bfa0e3b8f3b713e32db54970",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\drive-relative-path\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 1,
+        "stdout": "{\r\n  \"status\": \"INSPECT\",\r\n  \"gaps\": [\r\n    \"unsafe path\",\r\n    \"completion dependency binding missing or stale\"\r\n  ],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": [\r\n        \"completion dependency binding missing or stale\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022494e5350454354222c0d0a20202267617073223a205b0d0a2020202022756e736166652070617468222c0d0a2020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a20205d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b0d0a202020202020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a2020202020205d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "nul-path",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec\u0000.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root\\checkpoint.json": "b2e152e91961242793093df9f3f4cda04dd04748b1fd896d84b3dee8dd88c894",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\nul-path\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 1,
+        "stdout": "{\r\n  \"status\": \"INSPECT\",\r\n  \"gaps\": [\r\n    \"unsafe path\",\r\n    \"completion dependency binding missing or stale\"\r\n  ],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": [\r\n        \"completion dependency binding missing or stale\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022494e5350454354222c0d0a20202267617073223a205b0d0a2020202022756e736166652070617468222c0d0a2020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a20205d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b0d0a202020202020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a2020202020205d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "unc-path",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "unsafe path",
+          "completion dependency binding missing or stale"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "completion dependency binding missing or stale"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "\\\\uncontacted.invalid\\share\\not-read.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root\\checkpoint.json": "9630d5692a09ab6ea492f0bdae2cd37ba6200157e96a970adddfd30e520220a8",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null,
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\unc-path\\root",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 1,
+        "stdout": "{\r\n  \"status\": \"INSPECT\",\r\n  \"gaps\": [\r\n    \"unsafe path\",\r\n    \"completion dependency binding missing or stale\"\r\n  ],\r\n  \"actions\": [\r\n    {\r\n      \"id\": \"test-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": [\r\n        \"completion dependency binding missing or stale\"\r\n      ]\r\n    },\r\n    {\r\n      \"id\": \"next-01\",\r\n      \"recommendation\": \"INSPECT\",\r\n      \"gaps\": []\r\n    }\r\n  ],\r\n  \"limits\": \"Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee.\"\r\n}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b0d0a202022737461747573223a2022494e5350454354222c0d0a20202267617073223a205b0d0a2020202022756e736166652070617468222c0d0a2020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a20205d2c0d0a202022616374696f6e73223a205b0d0a202020207b0d0a202020202020226964223a2022746573742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b0d0a202020202020202022636f6d706c6574696f6e20646570656e64656e63792062696e64696e67206d697373696e67206f72207374616c65220d0a2020202020205d0d0a202020207d2c0d0a202020207b0d0a202020202020226964223a20226e6578742d3031222c0d0a202020202020227265636f6d6d656e646174696f6e223a2022494e5350454354222c0d0a2020202020202267617073223a205b5d0d0a202020207d0d0a20205d2c0d0a2020226c696d697473223a2022526561642d6f6e6c79207265636f6d6d656e646174696f6e732e204e6f7420617070726f76616c2c206c6976656e65737320646574656374696f6e2c20657865637574696f6e206f722065786163746c792d6f6e63652067756172616e7465652e220d0a7d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "empty-dependency-file",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing or empty file: spec.txt"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependency-file\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": 0,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependency-file\\root\\checkpoint.json": "0732637cc33859e9b62f51877d1d2f47ae6d127a1102ce16ad7cc1b3856e44b2",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependency-file\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependency-file\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-dependency-file\\root\\spec.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "empty-output-file",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing or empty file: output.txt"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "missing or empty file: output.txt"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-output-file\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": 0,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-output-file\\root\\checkpoint.json": "9c47a3d32047f5e5f615e1c85bcaa43889652393b9bf1d36b6429aff6d5a4ae9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-output-file\\root\\output.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-output-file\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-output-file\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "empty-receipt-file",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing or empty file: receipt.json"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "missing or empty file: receipt.json"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-receipt-file\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": 0,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-receipt-file\\root\\checkpoint.json": "7c7b5b30ed628f90bb0e4f7dff0cbcfbed17e02ca6bcb66220ec15f72fb4816e",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-receipt-file\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-receipt-file\\root\\receipt.json": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\empty-receipt-file\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "malformed-receipt-array",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "invalid structured completion receipt"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "invalid structured completion receipt"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-receipt-array\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-receipt-array\\root\\checkpoint.json": "7a97d27373312f0b282e2a9909faa710dac5a2d053fe2cd3bbbd6d3c83698ae1",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-receipt-array\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-receipt-array\\root\\receipt.json": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\malformed-receipt-array\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "missing-receipt-outputs",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "missing file evidence"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": [
+              "missing file evidence"
+            ]
+          },
+          {
+            "id": "next-01",
+            "recommendation": "VERIFY_CURRENT_AUTHORITY",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "projectRoot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-receipt-outputs\\root",
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "38a009eb71a6e1242e8e4899ca456020430c9c469cf041b1ab9df04a70809d31"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-receipt-outputs\\root\\checkpoint.json": "6899a744df2b0449485109fda8e820aaae20bb32122e8d41d478837d87a1454d",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-receipt-outputs\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-receipt-outputs\\root\\receipt.json": "38a009eb71a6e1242e8e4899ca456020430c9c469cf041b1ab9df04a70809d31",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-receipt-outputs\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "missing-project-root",
+      "status": "PASS",
+      "expectation": "reject current / require inspection",
+      "result": {
+        "status": "INSPECT",
+        "gaps": [
+          "project root mismatch; verify relocation before recapturing"
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          },
+          {
+            "id": "next-01",
+            "recommendation": "INSPECT",
+            "gaps": []
+          }
+        ],
+        "limits": "Read-only recommendations. Not approval, liveness detection, execution or exactly-once guarantee."
+      },
+      "input": {
+        "version": 1,
+        "goalRevision": "R2",
+        "dependencies": [
+          {
+            "path": "spec.txt",
+            "sha256": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+          }
+        ],
+        "actions": [
+          {
+            "id": "test-01",
+            "state": "done",
+            "receipt": [
+              {
+                "path": "receipt.json",
+                "sha256": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9"
+              }
+            ]
+          },
+          {
+            "id": "next-01",
+            "state": "pending"
+          }
+        ]
+      },
+      "metadata": null,
+      "readonlyKnownFiles": true,
+      "knownFileHashesBefore": {
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-project-root\\root\\checkpoint.json": "9c61e6ef6a59624e693b0a3fa6376a93bcffb1d7434bd5c2d5ac6b94d9d2a007",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-project-root\\root\\output.txt": "10385427c0b600f1b5035217936635427ff9d3cadbd80003971badb5f005ae01",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-project-root\\root\\receipt.json": "6e05101a606e3db9cae1400d88df4ebae52d9811415101905e9cbcf4178952d9",
+        "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\missing-project-root\\root\\spec.txt": "2a5d8696ba339f9903a6c273d64ece6334d60b8349612c9605a55a739037b56f"
+      },
+      "expectedRecommendations": null
+    },
+    {
+      "name": "top-level-array",
+      "status": "PASS",
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-array\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-array",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 2,
+        "stdout": "{\"status\": \"INVALID\", \"error\": \"checkpoint must be an object\"}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b22737461747573223a2022494e56414c4944222c20226572726f72223a2022636865636b706f696e74206d75737420626520616e206f626a656374227d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "top-level-null",
+      "status": "PASS",
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-null\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-null",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 2,
+        "stdout": "{\"status\": \"INVALID\", \"error\": \"checkpoint must be an object\"}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b22737461747573223a2022494e56414c4944222c20226572726f72223a2022636865636b706f696e74206d75737420626520616e206f626a656374227d0d0a",
+        "stderrHex": ""
+      }
+    },
+    {
+      "name": "top-level-string",
+      "status": "PASS",
+      "rawCli": {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-B",
+          "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-string\\checkpoint.json",
+          "--root",
+          "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\independent08-fixtures\\independent-fixtures-relocated-output-1792223897036530600\\top-level-string",
+          "--current-goal",
+          "R2"
+        ],
+        "exitCode": 2,
+        "stdout": "{\"status\": \"INVALID\", \"error\": \"checkpoint must be an object\"}\r\n",
+        "stderr": "",
+        "stdoutHex": "7b22737461747573223a2022494e56414c4944222c20226572726f72223a2022636865636b706f696e74206d75737420626520616e206f626a656374227d0d0a",
+        "stderrHex": ""
+      }
+    }
+  ],
+  "summary": {
+    "PASS": 44,
+    "FAIL": 0,
+    "ERROR": 0,
+    "BLOCKED": 0
+  }
+}

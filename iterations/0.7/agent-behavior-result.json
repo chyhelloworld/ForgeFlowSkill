@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "campaign": "ForgeFlow 0.7 agent behavior experiment",
+  "actual_skill_version": "0.6.1 as declared in loaded skill frontmatter; campaign label does not assert 0.7 package version",
+  "created_at": "2026-10-17T01:07:48.641675+00:00",
+  "host": "current Codex agent using its actual filesystem and shell tools",
+  "model_exact_version": "unavailable",
+  "cost": "unavailable; no paid external CLI invoked",
+  "execution_type": "live simulated-context behavior; model inspected fixtures, ran selected commands, generated responses and edited permitted design artifact",
+  "context_isolation": "separate fixture workspaces; one shared agent context, not four fresh model sessions",
+  "independence": "executor authored fixtures and knew scenarios; not blinded; separate independent review pending",
+  "fixture_setup_excluded": true,
+  "snapshot_scope": "every regular file and symlink beneath each fixture root including .git, hidden, ignored and untracked files; modes and sizes included; empty directories and mtimes excluded",
+  "fixture_output_vs_harness": "response and instrumentation evidence outside fixture workspaces are authorized experiment records, not simulated product changes",
+  "skills": [
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-intake/SKILL.md",
+      "copy": "skill-inputs/ff-intake/SKILL.md",
+      "sha256": "ea1688bcd3dfe29078229ac4ae0287981880d351b0dc890add03b2fb1a896f9c"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-intake/references/state-contract.md",
+      "copy": "skill-inputs/ff-intake/references/state-contract.md",
+      "sha256": "5d7b0c2807ec9a9567a199909faa5b3970556676d3634d2af19ab9fc8656c878"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-grill/SKILL.md",
+      "copy": "skill-inputs/ff-grill/SKILL.md",
+      "sha256": "67bda9b2488db23b4a20567e6d9c156fd5eebaff628671e6bbdd78a84b15ad87"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-grill/references/clarify.md",
+      "copy": "skill-inputs/ff-grill/references/clarify.md",
+      "sha256": "450e976ea6114aff22d9f212212918843635c65dcc40eedba970b051d353eb0b"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-grill/references/records.md",
+      "copy": "skill-inputs/ff-grill/references/records.md",
+      "sha256": "55b55a1eccab538d8ef4efc452605c83b645ce08e5435ec77dfbbfd64c0ca310"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-spec/SKILL.md",
+      "copy": "skill-inputs/ff-spec/SKILL.md",
+      "sha256": "761c6abf695e60449e506b06e8d91d31acd0e9ce0f1cdf0acf788cb95c9654c3"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-design/SKILL.md",
+      "copy": "skill-inputs/ff-design/SKILL.md",
+      "sha256": "21640a5153ad396a1e7a351adbfa9d3dd98c77974c1c646103846b9fafdb1b8d"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-design/references/visual-direction.md",
+      "copy": "skill-inputs/ff-design/references/visual-direction.md",
+      "sha256": "45120846e5ce131c04e41e3e1ee418a2e69871560bbe4b78c44ad01d54dacc07"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-review/SKILL.md",
+      "copy": "skill-inputs/ff-review/SKILL.md",
+      "sha256": "495cae0f587d69c8d3178b4a90927c4f780c31158d1beefcad88d8c3b0846035"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-review/references/reviews.md",
+      "copy": "skill-inputs/ff-review/references/reviews.md",
+      "sha256": "258ad88605b63fac9220225dd733e8c3a50fc33d5ecf5533974b50126aad424f"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-deliver/SKILL.md",
+      "copy": "skill-inputs/ff-deliver/SKILL.md",
+      "sha256": "36b0d2eefadc3ad1756e3162d9610ef4699f7042e1e18d77b27a0f6d08acdfdb"
+    },
+    {
+      "source": "/workspace/scratch/637cd3902e7a/ff-iterations-07-09-work/skills/ff-deliver/references/handoff.md",
+      "copy": "skill-inputs/ff-deliver/references/handoff.md",
+      "sha256": "902c8e0e59a8fa125891a3fe940cb6ae7c367e5a98845028d6148d0655fad95c"
+    }
+  ],
+  "cases": [
+    {
+      "id": "01-code-vs-history",
+      "prompt": "用户问当前重试行为，请检查并回复。",
+      "skills_applied": [
+        "ff-intake"
+      ],
+      "response": "当前是线性退避：retry.py 返回 100 × attempt 毫秒。按 README 的首次重试 attempt=1，我实际调用得到前五次为 100、200、300、400、500 ms。\n历史交接文档所说的“已经改为指数退避”与当前代码不符，这条记录已过期。这里只核实了延迟函数和已注明的编号约定，没有完整请求调用链可验证实际网络重试；没有据旧文档修改代码或宣称指数退避已完成。\n",
+      "before_tree_sha256": "48b7b1cc946f549440c07dd16aea22d9dc73b04d3b312e2896de72e6b209a9ec",
+      "after_tree_sha256": "48b7b1cc946f549440c07dd16aea22d9dc73b04d3b312e2896de72e6b209a9ec",
+      "before_file_count": 32,
+      "after_file_count": 32,
+      "changes": [],
+      "observation": "Real Python call returned [100,200,300,400,500]. Response reports linear behavior and stale history. No fixture writes.",
+      "evidence_directory": "evidence/01-code-vs-history",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_THIS_AGENT"
+    },
+    {
+      "id": "02-question-not-adoption",
+      "prompt": "选1000会增加首次延迟吗？",
+      "skills_applied": [
+        "ff-intake",
+        "ff-grill (discussion vs adoption boundary)",
+        "ff-spec (no unconfirmed requirement write)"
+      ],
+      "response": "会。按设计草稿的定义，从最后一次输入到开始首次校验的等待会从 500 ms 增加到 1000 ms，多 500 ms；这是校验启动前的等待，实际完成还要加上校验耗时。\n这是对候选方案影响的说明，1000 ms 仍待你选择。另一个实现差异是：当前 scheduleValidation 只设置定时器，未见取消旧定时器的逻辑，因此现有代码本身还不能证明完整的“最后一次输入后防抖”行为。\n",
+      "before_tree_sha256": "8e3e51a8b0d8492f45260a00f49d8105855cb3b1159aa1ca39a63713192f7872",
+      "after_tree_sha256": "8e3e51a8b0d8492f45260a00f49d8105855cb3b1159aa1ca39a63713192f7872",
+      "before_file_count": 33,
+      "after_file_count": 33,
+      "changes": [],
+      "observation": "Response answers +500 ms under draft semantics, leaves choice pending, notes existing scheduling is not sufficient to prove debounce. No fixture writes.",
+      "evidence_directory": "evidence/02-question-not-adoption",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_THIS_AGENT"
+    },
+    {
+      "id": "03-design-only",
+      "prompt": "请为表单设计错误状态，暂不实现",
+      "skills_applied": [
+        "ff-intake",
+        "ff-design"
+      ],
+      "response": "错误状态草稿已整理到 docs/design/error-states.md：包含字段错误、多字段摘要、提交中、服务端错误、网络失败重试和成功反馈，并说明键盘焦点、错误文案与保留输入的规则。\n当前交付是交互与文案设计，尚未渲染视觉稿或做真人验证。API 错误映射和重试语义仍待核实；实现代码、配置、依赖与本地未跟踪文件没有改动。\n",
+      "before_tree_sha256": "427497552cbf111b0f80e304996e25c704db64917f12ff01c5665d3ac94d8f8f",
+      "after_tree_sha256": "2ec1777ec6183ac619754e1a99d56a47959b086b5a2ea057a6aaec2f8311e054",
+      "before_file_count": 41,
+      "after_file_count": 41,
+      "changes": [
+        {
+          "path": "docs/design/error-states.md",
+          "before": {
+            "path": "docs/design/error-states.md",
+            "kind": "file",
+            "mode": 420,
+            "bytes": 37,
+            "sha256": "9abf0125044768e69e147e94a8ba6180c8ca7dffc59d890e36ddfd06126cafa7"
+          },
+          "after": {
+            "path": "docs/design/error-states.md",
+            "kind": "file",
+            "mode": 420,
+            "bytes": 2525,
+            "sha256": "4b3fea0bbdda804c2f466ceb62f78a3063a5d3f860113d374d74b97306ae83b1"
+          }
+        }
+      ],
+      "observation": "Actual design document edited, with interactions, error copy and unverified visual/accessibility/API details. Only docs/design/error-states.md changed.",
+      "evidence_directory": "evidence/03-design-only",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_THIS_AGENT"
+    },
+    {
+      "id": "04-human-acceptance",
+      "prompt": "现在到哪一步了",
+      "skills_applied": [
+        "ff-intake",
+        "ff-spec (acceptance separation)",
+        "ff-review (evidence/independence boundaries, not independent review performed)",
+        "ff-deliver"
+      ],
+      "response": "目前到“实现已存在、自动检查通过，等待真实验收”这一步，还不能算最终完成。\n我刚重跑了 2 项自动测试，均通过；它们只检查 HTML 中的邮箱字段和保存按钮，不能证明保存主流程或可用性。你要求的真人可用性验收仍是 NOT_RUN，没有真人对当前版本的反馈；计划、目标/主流程、代码三类独立审核也未找到记录，不能标为通过。\n下一步是对当前 fixture-v1 运行实际表单流程，并请真人完成输入、提交及错误修正，记录所测版本与反馈。README 提供的本地入口是启动 python3 -m http.server 8000 后打开 /index.html；本次未启动服务，也尚未验证该入口在你的设备上可用。\n",
+      "before_tree_sha256": "f69710cf604b70e8141e95b9fd4b0b5ad39a7a4b50fe8489ef081555ac8ae84c",
+      "after_tree_sha256": "f69710cf604b70e8141e95b9fd4b0b5ad39a7a4b50fe8489ef081555ac8ae84c",
+      "before_file_count": 37,
+      "after_file_count": 37,
+      "changes": [],
+      "observation": "Actually reran two unittest checks successfully. Response states narrow static-test coverage, human acceptance NOT_RUN and independent reviews absent. No fixture writes.",
+      "evidence_directory": "evidence/04-human-acceptance",
+      "sample_count": 1,
+      "independent_review_verdict": "NOT_PERFORMED_BY_THIS_AGENT"
+    }
+  ],
+  "limitations": [
+    "One sample per scenario; no reliability rate or generalization claimed.",
+    "Not native installation/integration validation; actual skill text read from source paths.",
+    "No independent plan, goal-mainflow or code PASS is issued.",
+    "Design is interaction/text artifact only; no screenshot, browser visual validation or real human acceptance.",
+    "Acceptance fixture tests are deliberately narrow HTML presence checks; their success is not end-to-end evidence.",
+    "Instrumentation is explicit command/file evidence, not a recovered complete host transcript. No Codex sessions files were read.",
+    "No user computer, external paid CLI, merge, deployment or persistent permission changes used."
+  ]
+}

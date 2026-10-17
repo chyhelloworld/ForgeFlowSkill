@@ -1,0 +1,8 @@
+* text=auto eol=lf
+*.tgz -text
+*.gz -text
+*.png -text
+# Preserve raw evidence bytes; hashes must survive checkout on every platform.
+iterations/** -text
+validation/** -text
+evidence/** -text

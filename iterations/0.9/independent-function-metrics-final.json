@@ -1,0 +1,263 @@
+{
+  "status": "PASS",
+  "sourceSha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab",
+  "sourceUnchanged": true,
+  "actualTestsRun": 19,
+  "testSuccessful": true,
+  "coverageVersion": "7.6.1",
+  "radonVersion": "6.0.1",
+  "rawCoveragePath": "E:\\github\\ForgeFlowSKill\\source\\iterations\\0.9\\independent-coverage-final.json",
+  "coverageDefinition": "Per-function combined executable lines and branch destinations, same as explicitly stated project convention; not basis-path coverage.",
+  "functions": [
+    {
+      "name": "load_helpers",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0,
+      "summary": {
+        "covered_lines": 9,
+        "num_statements": 9,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "valid_step",
+      "cc": 5,
+      "coverage": 1.0,
+      "crap": 5.0,
+      "summary": {
+        "covered_lines": 3,
+        "num_statements": 3,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 4,
+        "num_partial_branches": 0,
+        "covered_branches": 4,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "unique_object",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0,
+      "summary": {
+        "covered_lines": 6,
+        "num_statements": 6,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 4,
+        "num_partial_branches": 0,
+        "covered_branches": 4,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "invalid_constant",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0,
+      "summary": {
+        "covered_lines": 1,
+        "num_statements": 1,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "read_json",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0,
+      "summary": {
+        "covered_lines": 1,
+        "num_statements": 1,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "screenshot_gaps",
+      "cc": 7,
+      "coverage": 1.0,
+      "crap": 7.0,
+      "summary": {
+        "covered_lines": 10,
+        "num_statements": 10,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 8,
+        "num_partial_branches": 0,
+        "covered_branches": 8,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "trace_gaps",
+      "cc": 11,
+      "coverage": 1.0,
+      "crap": 11.0,
+      "summary": {
+        "covered_lines": 19,
+        "num_statements": 19,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 14,
+        "num_partial_branches": 0,
+        "covered_branches": 14,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "observation_gaps",
+      "cc": 8,
+      "coverage": 1.0,
+      "crap": 8.0,
+      "summary": {
+        "covered_lines": 10,
+        "num_statements": 10,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 10,
+        "num_partial_branches": 0,
+        "covered_branches": 10,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "contract_gaps",
+      "cc": 9,
+      "coverage": 1.0,
+      "crap": 9.0,
+      "summary": {
+        "covered_lines": 12,
+        "num_statements": 12,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 12,
+        "num_partial_branches": 0,
+        "covered_branches": 12,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "sequence_gaps",
+      "cc": 11,
+      "coverage": 1.0,
+      "crap": 11.0,
+      "summary": {
+        "covered_lines": 11,
+        "num_statements": 11,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 12,
+        "num_partial_branches": 0,
+        "covered_branches": 12,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "inspect",
+      "cc": 9,
+      "coverage": 1.0,
+      "crap": 9.0,
+      "summary": {
+        "covered_lines": 19,
+        "num_statements": 19,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 6,
+        "num_partial_branches": 0,
+        "covered_branches": 6,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    },
+    {
+      "name": "main",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0,
+      "summary": {
+        "covered_lines": 12,
+        "num_statements": 12,
+        "percent_covered": 100.0,
+        "percent_covered_display": "100",
+        "missing_lines": 0,
+        "excluded_lines": 0,
+        "num_branches": 0,
+        "num_partial_branches": 0,
+        "covered_branches": 0,
+        "missing_branches": 0
+      },
+      "missingLines": [],
+      "missingBranches": []
+    }
+  ],
+  "allWithin50": true,
+  "maxCrap": 11.0,
+  "productionMetricsMatchIndependentRun": true,
+  "notMeasured": [
+    "UI capture script",
+    "tests",
+    "independent probe/audit/measurement scripts",
+    "unchanged inherited helper and other package code"
+  ],
+  "limits": "Only the changed production journey.py functions were measured. Independent black-box subprocess probes are recorded separately and not inferred as covered here."
+}

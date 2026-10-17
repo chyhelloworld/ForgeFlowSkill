@@ -23,7 +23,7 @@ def build(name,title,subtitle,nodes,edges,notes,H):
   for x,y in points[1:-1]:E.SubElement(arr,'mxPoint',x=str(x),y=str(y))
   if label:cell(f'label{k}',label,lx,ly-23,360,30,'text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;')
  for j,line in enumerate(notes):svg.append(f'<text x="50" y="{H-95+j*30}" class="s">{escape(line)}</text>')
- svg.append('</svg>');(p/(name+'.svg')).write_text('\n'.join(svg));E.indent(mx);(p/(name+'.drawio')).write_text(E.tostring(mx,encoding='unicode'))
+ svg.append('</svg>');(p/(name+'.svg')).write_bytes('\n'.join(svg).encode('utf-8'));E.indent(mx);(p/(name+'.drawio')).write_bytes(E.tostring(mx,encoding='utf-8'))
 def edge(a,b,pts,label='',x=0,y=0):return(a,b,label,pts,x,y)
 N={
 'a':(370,140,660,90,['明确目标、范围与授权','新项目通常从 ff-grill 开始'],'main'),
@@ -42,7 +42,7 @@ Eds=[edge('a','b',[(700,230),(700,290)]),edge('b','c',[(700,390),(700,470)]),edg
 N['diag']=(40,1210,290,120,['ff-diagnose · 故障支线','先复现、证据与定位','修复回 Implement'],'choice')
 N['tdd']=(1070,1210,290,120,['ff-tdd · 实施内部','一次一个业务行为','red → green；重构先审'],'choice')
 N['handoff']=(40,1930,550,110,['ff-handoff · 任意阶段暂停/换会话','出站：规格版本、变更状态、证据、下一步','不代表本轮已经最终交付'],'choice')
-N['receiver']=(810,1930,550,110,['接收方 ff-intake · 只读核验','核对实际版本、脏状态与旧操作结果','再按缺口恢复相应责任'],'plain')
+N['receiver']=(810,1930,550,110,['接收方 ff-intake → 只读核验','核对目标/依赖与完成回执绑定','完成跳过；运行中先观察；重核权限'],'plain')
 Eds.extend([edge('i','diag',[(370,1240),(330,1240)]),edge('diag','i',[(330,1300),(370,1300)]),edge('i','tdd',[(1030,1240),(1070,1240)]),edge('tdd','i',[(1070,1300),(1030,1300)]),edge('i','handoff',[(370,1265),(350,1265),(350,1885),(315,1885),(315,1930)],'暂停时（非必经）',50,1898),edge('handoff','receiver',[(590,1985),(810,1985)],'接手前核验',620,1970)])
 build('new-project-workflow','新项目 从目标到规格 票据 实施与交付','九项主流程职责 + 三个可选方法；不是十二个必经阶段，也不承诺宿主自动调度。',N,Eds,['Diagnose 定位 → Implement 修复 → Review；TDD 逐条 red → green；大重构回 Plan/Review。','轻量小修可内联规格与票据；不取消验收、授权、验证和与风险相称的独立审核。','Handoff 可在任何阶段发生；Deliver 是成果交付，不自动合并、部署或发布。'],2240)
 
@@ -65,7 +65,7 @@ Eds.extend([edge('h','j',[(370,1080),(210,1080),(210,1455),(370,1455)],'实现�
 N['diag']=(40,1230,290,110,['ff-diagnose · 原因不明','复现与证据 → 根因','修复交回 Implement'],'choice')
 N['tdd']=(1070,1230,290,110,['ff-tdd · Implement 内','一个行为 red → green','重构先审，获准再做'],'choice')
 N['handoff']=(40,1780,550,110,['ff-handoff · 暂停/换模型/会话','出站：规格版本、变更状态、证据、下一步','与成果 Deliver 分开'],'choice')
-N['receiver']=(810,1780,550,110,['接收方 ff-intake','先只读核验实际状态与旧操作结果','然后重新选择最短有效路径'],'plain')
+N['receiver']=(810,1780,550,110,['接收方 ff-intake → 只读核验','核对目标/依赖与完成回执绑定','完成跳过；运行中先观察；重核权限'],'plain')
 # Route old shortcuts away from method boxes.
 Eds=[e for e in Eds if not (e[0]=='h' and e[1] in ['j','k'])]
 Eds.extend([edge('h','j',[(370,1080),(350,1080),(350,1455),(370,1455)],'实现有效：补审核',45,1130),edge('h','k',[(1030,1080),(1380,1080),(1380,1635),(1030,1635)],'证据及审核有效：交付',1040,1050),edge('i','diag',[(370,1250),(330,1250)]),edge('diag','i',[(330,1310),(370,1310)]),edge('i','tdd',[(1030,1250),(1070,1250)]),edge('tdd','i',[(1070,1310),(1030,1310)]),edge('i','handoff',[(370,1280),(340,1280),(340,1730),(315,1730),(315,1780)],'暂停时（非必经）',45,1740),edge('handoff','receiver',[(590,1835),(810,1835)],'接手前核验',620,1820)])

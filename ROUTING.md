@@ -19,18 +19,20 @@
 
 ## OpenSpec 原生接入
 
+本节保留源码接入的工具路径约定。通过当前项目安装器使用时，目标项目入口为 `node .forgeflow/ff-spec.mjs`；full / skills-only 的区别见[安装说明](docs/user/install.md)。源码工具路径不等于安装后目录。
+
 FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命令>`；工具位于其他 checkout/嵌套目录时使用实际相对/绝对路径，不回退到全局官方 CLI。包名 `@forgeflow/ff-spec`、可执行名 `ff-spec`，用户配置/数据命名空间 `ff-spec`。仅允许显式 `init --tools none`，不刷新官方工具集成，FF `update` 拒绝；十二个技能单独安装。官方 CLI 有文件系统权限时仍能改兼容的 `openspec/` 树而不执行 FF gate，这不是安全边界。
 
 启用 FF 的项目只读 openspec/specs 作为现行规格。Intake 先查活动 change 与 status 的 ffValidity，按缺失/过期原因路由；不要仅凭文件存在跳到 Implement。Review 绑定目标和依赖指纹；通过 gate 仍需真实授权与接受。instructions apply 不是规格合入；archive 正常路径同步 specs。取消/拒绝按真实决议走显式 --ff-disposition + 原因 + 决议引用的原生关闭路径，保留未完成/失败记录且不合入 specs；不能改成 pass。旧 spec-state 只供历史审计，不再写入。
 
 ## 五项新增可选方法
 
-具体事实疑问→ff-research；真实事件代价复盘→ff-retro（零候选有效）；素材采访→ff-writing-fragments；已有素材成文→ff-writing-shape或ff-writing-beats，作者选一路，不强制串行。任一入口均可独立使用，不触发全流程或自动健康检查。详见 docs/FF-可选方法中文使用说明.md。
+具体事实疑问→ff-research；真实事件代价复盘→ff-retro（零候选有效）；素材采访→ff-writing-fragments；已有素材成文→ff-writing-shape或ff-writing-beats，作者选一路，不强制串行。任一入口均可独立使用，不触发全流程或自动健康检查。详见 docs/user/optional-methods.md。
 
 ## 实验2：可选决策索引
 
-保留17个技能。Grill、Research、Handoff、Intake 可按需引用单一决策权威记录，恢复原始目标和未决依赖；简单任务跳过。索引不授予执行、不增加状态数据库；[中文说明](docs/FF-决策索引中文说明.md)。CLI 不变。
+保留17个技能。Grill、Research、Handoff、Intake 可按需引用单一决策权威记录，恢复原始目标和未决依赖；简单任务跳过。索引不授予执行、不增加状态数据库；[中文说明](docs/user/decision-index.md)。CLI 不变。
 
 ## 实验3：可关闭的 CodeGraph 适配器
 
-仅显式启用时辅助静态代码定位，不新增技能或必经门禁。详见 [使用说明](docs/FF-CodeGraph可选适配器.md) 与 [真实试验报告](docs/CodeGraph试验报告.md)。沿用实验2决策索引；旧报告仅代表对应历史版本。
+仅显式启用时辅助静态代码定位，不新增技能或必经门禁。详见 [使用说明](docs/user/codegraph.md) 与 [真实试验报告](docs/archive/reports/CodeGraph试验报告.md)。沿用实验2决策索引；旧报告仅代表对应历史版本。

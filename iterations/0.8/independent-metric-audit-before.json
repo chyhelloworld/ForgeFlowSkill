@@ -1,0 +1,24 @@
+{
+  "originalResumeSha256": "aeb13c29d04eea9206f25318dc67fb3d91a6f7247f04333e8474b0402423fbd4",
+  "originalResumeFunctions": [
+    "text",
+    "file_problem",
+    "files_gaps",
+    "completion_gaps",
+    "action_result",
+    "inspect",
+    "main"
+  ],
+  "suppliedMetricSnapshot": {
+    "skills/ff-handoff/scripts/resume.py": "4d35cda9a539f1f89c1a9d15a1daf6494c17e174e345601cec40d1ca7aa39583"
+  },
+  "suppliedMetricsFunctionNames": [
+    "text",
+    "file_problem",
+    "files_gaps",
+    "action_result",
+    "inspect",
+    "main"
+  ],
+  "verdict": "STALE: supplied measurements do not describe the original WIP file; original completion_gaps is absent."
+}

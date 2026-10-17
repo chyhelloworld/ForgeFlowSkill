@@ -1,0 +1,55 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="0.9文档旅程">
+    <mxGraphModel page="1" pageWidth="1140" pageHeight="480">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="open" value="打开手册&#10;open" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="20" y="80" width="200" height="90" />
+        </mxCell>
+        <mxCell id="filter" value="筛选旅程&#10;filter" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="240" y="80" width="200" height="90" />
+        </mxCell>
+        <mxCell id="navigate" value="阅读规则&#10;navigate" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="460" y="80" width="200" height="90" />
+        </mxCell>
+        <mxCell id="empty" value="空筛选&#10;empty" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="680" y="80" width="200" height="90" />
+        </mxCell>
+        <mxCell id="restore" value="恢复目录&#10;restore" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="900" y="80" width="200" height="90" />
+        </mxCell>
+        <mxCell id="narrow-open" value="窄屏打开&#10;narrow-open" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="240" y="300" width="200" height="90" />
+        </mxCell>
+        <mxCell id="narrow-filter" value="窄屏筛选&#10;narrow-filter" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="460" y="300" width="200" height="90" />
+        </mxCell>
+        <mxCell id="narrow-navigate" value="窄屏阅读&#10;narrow-navigate" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="680" y="300" width="200" height="90" />
+        </mxCell>
+        <mxCell id="edge-0" edge="1" parent="1" source="open" target="filter" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-1" edge="1" parent="1" source="filter" target="navigate" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-2" edge="1" parent="1" source="navigate" target="empty" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-3" edge="1" parent="1" source="empty" target="restore" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-4" edge="1" parent="1" source="restore" target="narrow-open" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-5" edge="1" parent="1" source="narrow-open" target="narrow-filter" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+        <mxCell id="edge-6" edge="1" parent="1" source="narrow-filter" target="narrow-navigate" style="edgeStyle=orthogonalEdgeStyle;endArrow=block;strokeColor=#587386;">
+          <mxGeometry as="geometry" relative="1" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

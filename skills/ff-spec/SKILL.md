@@ -2,9 +2,9 @@
 name: ff-spec
 description: 把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格；用于缺失或过期规格，不拆工作票、不决定未经确认的需求。
 metadata:
-  version: "0.6.0-experimental.7"
+  version: "0.9.1"
 ---
-# ff-spec 0.6.0-experimental.7
+# ff-spec 0.9.1
 
 读取用户原话及最新确认、现有规格和可核实项目行为。保留一个需求锚点，引用而不另造竞争事实库。事实可查先查；确认不足的取舍交 ff-grill 或简短问用户，不让 AI 推断冒充确认。
 
@@ -19,3 +19,11 @@ metadata:
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 小范围证据补强
+
+规格应区分交付必须项与预期价值：功能验收可证行为正确，不能自动证明节省时间或业务收益。价值假设仅在本任务需要时记录观察对象、窗口和证据来源；缺基线/阈值保留unknown。讨论、澄清问题不构成批准，不把模拟反馈记为真实接受。
+
+## 变更与恢复边界
+
+用户讨论一个想法或追问不创建任务、不改变现行规格。用户明确加入后，先记录原确认来源与影响分析：哪些现行规格条款、计划任务、测试/验收及依赖受影响；只更新受影响部分，旧结论保留为历史或明确废弃，不能用旧版本审核继承通过。当前规格仅在既有OpenSpec现行目录，活动change表达拟变更，历史归档不当现行指令。

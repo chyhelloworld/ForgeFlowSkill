@@ -1,0 +1,99 @@
+{
+  "kind": "snapshot-bound-function-metrics",
+  "ccTool": "radon 6.0.1",
+  "coverageTool": "coverage.py 7.6.1",
+  "coverageDefinition": "combined covered executable lines plus branches / executable lines plus branches; native function scope",
+  "sourceSnapshot": "..\\_handoff\\20261017\\windows08\\source-snapshot.json",
+  "limits": "Caller must capture snapshot immediately before the same coverage run; this script verifies present source matches that snapshot, not historical execution identity. Top-level Python functions only; no JS/UI metrics; subprocess coverage absent unless explicitly collected.",
+  "functions": [
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "text",
+      "cc": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "path_problem",
+      "cc": 10,
+      "coverage": 0.7142857142857143,
+      "crap": 12.332361516034986
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "file_problem",
+      "cc": 7,
+      "coverage": 0.8823529411764706,
+      "crap": 7.079788316710768
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "files_gaps",
+      "cc": 5,
+      "coverage": 1.0,
+      "crap": 5.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "dependency_fingerprint",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "receipt_gaps",
+      "cc": 8,
+      "coverage": 1.0,
+      "crap": 8.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "completion_gaps",
+      "cc": 4,
+      "coverage": 1.0,
+      "crap": 4.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "action_result",
+      "cc": 7,
+      "coverage": 1.0,
+      "crap": 7.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "checkpoint_gaps",
+      "cc": 7,
+      "coverage": 0.8947368421052632,
+      "crap": 7.057151188219857
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "inspect",
+      "cc": 10,
+      "coverage": 1.0,
+      "crap": 10.0
+    },
+    {
+      "file": "skills\\ff-handoff\\scripts\\resume.py",
+      "sha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+      "name": "main",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    }
+  ],
+  "allWithin50": true
+}

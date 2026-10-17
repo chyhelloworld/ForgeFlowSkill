@@ -1,0 +1,15 @@
+test_bad_inputs (test_resume.ResumeTests.test_bad_inputs) ... ok
+test_cli_instrumented_readonly (test_resume.ResumeTests.test_cli_instrumented_readonly) ... ok
+test_completed_skipped_pending_needs_authority (test_resume.ResumeTests.test_completed_skipped_pending_needs_authority) ... ok
+test_dependency_mutation_invalidates_done (test_resume.ResumeTests.test_dependency_mutation_invalidates_done) ... ok
+test_duplicate_id_blocks (test_resume.ResumeTests.test_duplicate_id_blocks) ... ok
+test_latest_goal_invalidates (test_resume.ResumeTests.test_latest_goal_invalidates) ... ok
+test_missing_receipt_is_not_done (test_resume.ResumeTests.test_missing_receipt_is_not_done) ... ok
+test_receipt_content_and_scope (test_resume.ResumeTests.test_receipt_content_and_scope) ... ok
+test_running_and_unknown_never_restart (test_resume.ResumeTests.test_running_and_unknown_never_restart) ... ok
+test_strict_version_root_and_id (test_resume.ResumeTests.test_strict_version_root_and_id) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.242s
+
+OK

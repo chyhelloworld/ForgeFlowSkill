@@ -1,0 +1,26 @@
+{
+  "from": "rules",
+  "to": "empty-filter",
+  "action": "filter-empty",
+  "stepId": "empty",
+  "target": "manual-09",
+  "inputFingerprint": "55b3ebee75f617a437fda107da0eb31e2ed333e5556472fc09ec77bcc7d60517",
+  "screenshots": [
+    {
+      "path": "iterations/0.9/ui-evidence-frozen/empty.png",
+      "sha256": "32096ee6148adc29659a07c53180e248159cbff2bcb39696f2a0085dfad67781"
+    }
+  ],
+  "ok": true,
+  "observed": {
+    "visibleDirectoryCount": 0,
+    "anchorPreserved": true,
+    "mainUnchanged": true
+  },
+  "observedUtcEpoch": 1792225712.9653032,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html#s33"
+}

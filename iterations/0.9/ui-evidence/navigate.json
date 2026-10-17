@@ -1,0 +1,26 @@
+{
+  "from": "filtered",
+  "to": "rules",
+  "action": "navigate",
+  "stepId": "navigate",
+  "target": "manual-09",
+  "inputFingerprint": "aa146a5568eac8ee06242e58e5b739188f1eec056efe51c77429336eab85b478",
+  "ok": true,
+  "observed": {
+    "targetHeading": "0.9 完整旅程与交互证据",
+    "headingBox": {
+      "x": 344,
+      "y": 566.21875,
+      "width": 1012,
+      "height": 59.09375
+    },
+    "settledScrollY": 16692,
+    "ruleContainsObserved": true
+  },
+  "observedUtcEpoch": 1792225163.8747573,
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "file:///E:/github/ForgeFlowSKill/source/docs/FF-%E7%A6%BB%E7%BA%BF%E5%9B%BE%E6%96%87%E6%89%8B%E5%86%8C.html#s33"
+}

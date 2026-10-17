@@ -2,7 +2,9 @@ from pathlib import Path
 import xml.etree.ElementTree as E
 from PIL import Image,ImageDraw,ImageFont
 from math import atan2,cos,sin
-p=Path(__file__).parent/'diagrams';font='/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc';bold='/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc'
+p=Path(__file__).parent/'diagrams'
+font='C:/Windows/Fonts/msyh.ttc' if Path('C:/Windows/Fonts/msyh.ttc').exists() else '/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc'
+bold='C:/Windows/Fonts/msyhbd.ttc' if Path('C:/Windows/Fonts/msyhbd.ttc').exists() else '/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc'
 for f in p.glob('*.svg'):
  root=E.parse(f).getroot();im=Image.new('RGB',(int(root.get('width')),int(root.get('height'))),'white');d=ImageDraw.Draw(im)
  for e in root:

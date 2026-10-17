@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "target": "manual-09",
+  "surface": "ui",
+  "design": [
+    {
+      "path": "iterations/0.9/DESIGN.md",
+      "sha256": "ec7f55b4b28accd14b75076818ccdcf106feed4453d25a0e2a86dfff590f3249"
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/FF-离线图文手册.html",
+      "sha256": "ba0dcd8863c6cefa7872aaea9af94e1f6ce18e5f89eeb7b8bfc79837b0be7a8c"
+    },
+    {
+      "path": "iterations/0.9/ui_capture.py",
+      "sha256": "50946d58e8bfef86af19cee0204c68bc08dcc63cde50e54ef280e250ed187c35"
+    },
+    {
+      "path": "skills/ff-design/scripts/journey.py",
+      "sha256": "949b2896b007857c32c660d5aebdeeb4b8b31d93c4f2c187dce62642ca3cc0ab"
+    }
+  ],
+  "expected": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open"
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter"
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate"
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty"
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear"
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open"
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter"
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate"
+    }
+  ],
+  "observations": [
+    {
+      "id": "open",
+      "from": "start",
+      "to": "contents",
+      "action": "open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/open.json",
+        "sha256": "ffa58d01d80972f0de12ab873a9b50ec090a029a47642063fe6b6f28aa524b8d"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/open.png",
+          "sha256": "23f201db1e74f2c022b7ec8414ad47726f757b61599e1c8adc09111ec9280306"
+        }
+      ]
+    },
+    {
+      "id": "filter",
+      "from": "contents",
+      "to": "filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/filter.json",
+        "sha256": "e6fb68c9ca3a765ffc797bd50a05841e9ed57d71de198250d4050c7b68ec8ab6"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/filter.png",
+          "sha256": "66d3237ed2226667b66dda8dd0fe7500fb096006cbdfdb5da07de11f82634889"
+        }
+      ]
+    },
+    {
+      "id": "navigate",
+      "from": "filtered",
+      "to": "rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/navigate.json",
+        "sha256": "2dfd96ac5bbc266a36e89e3386ca5469e17d1ca3c4638e6458eaacd42cb374c2"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/navigate.png",
+          "sha256": "78b8fc9291b27816f6985d391d32d089ac1dbd3bc551c1a2c28ad04aaa98235f"
+        }
+      ]
+    },
+    {
+      "id": "empty",
+      "from": "rules",
+      "to": "empty-filter",
+      "action": "filter-empty",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/empty.json",
+        "sha256": "184ca480263e84c095b91e8a98ea6c7bbd8cdb54e93bb0b4074d3ddbeb93f7a9"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/empty.png",
+          "sha256": "32096ee6148adc29659a07c53180e248159cbff2bcb39696f2a0085dfad67781"
+        }
+      ]
+    },
+    {
+      "id": "restore",
+      "from": "empty-filter",
+      "to": "rules",
+      "action": "clear",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/restore.json",
+        "sha256": "ee2cc08de05c95e88be0f4ea655d5f76f511538fa8c94d5a042333cad6f279c7"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/restore.png",
+          "sha256": "1c02df6d8614501c17c888ed8f4f2f479e8010ecbef57be15f8e71a3daff5cc4"
+        }
+      ]
+    },
+    {
+      "id": "narrow-open",
+      "from": "rules",
+      "to": "narrow-contents",
+      "action": "resize-open",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/narrow-open.json",
+        "sha256": "d7101180f18e5aa16cb43ffda2e93b1cbccbdb09fdce440eac9d35ee8175c44b"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/narrow-open.png",
+          "sha256": "dde6e967406c06486fdedac9bf658cf9dce5428c9912d8f3684e2b46a68f96e0"
+        }
+      ]
+    },
+    {
+      "id": "narrow-filter",
+      "from": "narrow-contents",
+      "to": "narrow-filtered",
+      "action": "filter",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/narrow-filter.json",
+        "sha256": "427ce0e650a3b297c4b29fa1df710fca2e12b22ec8d491f9912703c93dc11d31"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/narrow-filter.png",
+          "sha256": "3dda5b004262cdf4137c550747e6fdc6175dcd0109340c3836347470ca57595b"
+        }
+      ]
+    },
+    {
+      "id": "narrow-navigate",
+      "from": "narrow-filtered",
+      "to": "narrow-rules",
+      "action": "navigate",
+      "trace": {
+        "path": "iterations/0.9/ui-evidence-frozen/narrow-navigate.json",
+        "sha256": "b30c1ac2ebf1d9ca96c9bc2e060e451fc24256974b4799bcda9621369f06b236"
+      },
+      "screenshots": [
+        {
+          "path": "iterations/0.9/ui-evidence-frozen/narrow-navigate.png",
+          "sha256": "8787f7b3d0bca7968d4953d6f3d58043b2e9081a547bede4f2f5688694697ad7"
+        }
+      ]
+    }
+  ]
+}

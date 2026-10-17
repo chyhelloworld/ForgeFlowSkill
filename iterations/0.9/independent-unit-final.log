@@ -1,0 +1,24 @@
+test_cli_does_not_require_fake_screenshot (independent_target_tests.JourneyTests.test_cli_does_not_require_fake_screenshot) ... ok
+test_cli_is_readonly_and_handles_invalid (independent_target_tests.JourneyTests.test_cli_is_readonly_and_handles_invalid) ... ok
+test_codegraph_is_not_a_trace (independent_target_tests.JourneyTests.test_codegraph_is_not_a_trace) ... ok
+test_duplicate_and_discontinuous_expected_steps (independent_target_tests.JourneyTests.test_duplicate_and_discontinuous_expected_steps) ... ok
+test_invalid_inputs_are_conservative (independent_target_tests.JourneyTests.test_invalid_inputs_are_conservative) ... ok
+test_invalid_trace_and_outputs (independent_target_tests.JourneyTests.test_invalid_trace_and_outputs) ... ok
+test_markdown_is_not_a_png (independent_target_tests.JourneyTests.test_markdown_is_not_a_png) ... ok
+test_missing_extra_and_reordered_steps (independent_target_tests.JourneyTests.test_missing_extra_and_reordered_steps) ... ok
+test_missing_shipped_helper_is_invalid (independent_target_tests.JourneyTests.test_missing_shipped_helper_is_invalid) ... ok
+test_resnapshot_cannot_reuse_old_trace (independent_target_tests.JourneyTests.test_resnapshot_cannot_reuse_old_trace) ... ok
+test_screenshot_alone_is_not_interaction (independent_target_tests.JourneyTests.test_screenshot_alone_is_not_interaction) ... ok
+test_screenshot_index_is_bound_to_trace (independent_target_tests.JourneyTests.test_screenshot_index_is_bound_to_trace) ... ok
+test_stale_goal_and_sources (independent_target_tests.JourneyTests.test_stale_goal_and_sources) ... ok
+test_state_and_action_mismatch (independent_target_tests.JourneyTests.test_state_and_action_mismatch) ... ok
+test_strict_json_rejects_nonfinite_and_duplicate_fields (independent_target_tests.JourneyTests.test_strict_json_rejects_nonfinite_and_duplicate_fields) ... ok
+test_trace_identity_failure_and_unknown (independent_target_tests.JourneyTests.test_trace_identity_failure_and_unknown) ... ok
+test_ui_missing_screenshot (independent_target_tests.JourneyTests.test_ui_missing_screenshot) ... ok
+test_unsafe_evidence_reuses_hardened_validator (independent_target_tests.JourneyTests.test_unsafe_evidence_reuses_hardened_validator) ... ok
+test_valid_records_are_observed_not_accepted (independent_target_tests.JourneyTests.test_valid_records_are_observed_not_accepted) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 1.744s
+
+OK

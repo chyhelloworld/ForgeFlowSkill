@@ -1,0 +1,92 @@
+test_cli_readonly (tools.workflow.test_health.HealthTests.test_cli_readonly) ... ok
+test_crap_bounds_and_missing (tools.workflow.test_health.HealthTests.test_crap_bounds_and_missing) ... ok
+test_duplicate_function_identity_is_rejected (tools.workflow.test_health.HealthTests.test_duplicate_function_identity_is_rejected) ... ok
+test_escape (tools.workflow.test_health.HealthTests.test_escape) ... ok
+test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) ... 
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=None) ... FAIL
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=False) ... FAIL
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=0) ... FAIL
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=[]) ... FAIL
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file={}) ... FAIL
+  test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file='   ') ... FAIL
+test_main_instrumented_success_and_invalid (tools.workflow.test_health.HealthTests.test_main_instrumented_success_and_invalid) ... ok
+test_missing_human_acceptance (tools.workflow.test_health.HealthTests.test_missing_human_acceptance) ... ok
+test_missing_packaged_helper_fails_closed (tools.workflow.test_health.HealthTests.test_missing_packaged_helper_fails_closed) ... ok
+test_na_requires_reason (tools.workflow.test_health.HealthTests.test_na_requires_reason) ... ok
+test_native_junction_is_rejected (tools.workflow.test_health.HealthTests.test_native_junction_is_rejected) ... ok
+test_no_average_masks_failure (tools.workflow.test_health.HealthTests.test_no_average_masks_failure) ... ok
+test_same_function_name_in_different_files_is_valid (tools.workflow.test_health.HealthTests.test_same_function_name_in_different_files_is_valid) ... FAIL
+test_self_review (tools.workflow.test_health.HealthTests.test_self_review) ... ok
+test_stale_evidence (tools.workflow.test_health.HealthTests.test_stale_evidence) ... ok
+test_symlink_when_os_allows_creation (tools.workflow.test_health.HealthTests.test_symlink_when_os_allows_creation) ... skipped "Real symlink creation unavailable: [WinError 1314] 瀹㈡埛绔病鏈夋墍闇€鐨勭壒鏉冦€? 'E:\\\\github\\\\ForgeFlowSKill\\\\_handoff\\\\20261017\\\\pr3-fixes\\\\tmp\\\\tmpnsf5th4j\\\\proof' -> 'E:\\\\github\\\\ForgeFlowSKill\\\\_handoff\\\\20261017\\\\pr3-fixes\\\\tmp\\\\tmpnsf5th4j\\\\link'"
+test_utf8_evidence_with_legacy_default_file_encoding (tools.workflow.test_health.HealthTests.test_utf8_evidence_with_legacy_default_file_encoding) ... ok
+test_valid_record_has_no_false_alarm (tools.workflow.test_health.HealthTests.test_valid_record_has_no_false_alarm) ... ok
+test_windows_anchors_and_ads_are_not_evidence (tools.workflow.test_health.HealthTests.test_windows_anchors_and_ads_are_not_evidence) ... ok
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=None)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=False)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=0)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file=[])
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_invalid_function_file_is_rejected_without_crashing (tools.workflow.test_health.HealthTests.test_invalid_function_file_is_rejected_without_crashing) (file='   ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 37, in test_invalid_function_file_is_rejected_without_crashing
+    self.assertTrue(self.gaps())
+AssertionError: [] is not true
+
+======================================================================
+FAIL: test_same_function_name_in_different_files_is_valid (tools.workflow.test_health.HealthTests.test_same_function_name_in_different_files_is_valid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "E:\github\ForgeFlowSKill\source\tools\workflow\test_health.py", line 27, in test_same_function_name_in_different_files_is_valid
+    self.assertEqual(self.gaps(),[])
+AssertionError: Lists differ: ['code: CRAP NOT_MEASURED: missing or duplicate function names'] != []
+
+First list contains 1 additional elements.
+First extra element 0:
+'code: CRAP NOT_MEASURED: missing or duplicate function names'
+
+- ['code: CRAP NOT_MEASURED: missing or duplicate function names']
++ []
+
+----------------------------------------------------------------------
+Ran 18 tests in 1.079s
+
+FAILED (failures=7, skipped=1)

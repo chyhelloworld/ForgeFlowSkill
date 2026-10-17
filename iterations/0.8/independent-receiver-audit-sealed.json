@@ -1,0 +1,183 @@
+{
+  "observedUtc": "2026-10-17T08:03:28.438655+00:00",
+  "scope": "Independent read-only audit of the sealed three-row local interruption/recovery experiment; no business action or process operation rerun",
+  "status": "PASS",
+  "checks": {
+    "receiverSealMatchesAnnouncedIdentity": true,
+    "sealedReceiverFileSetCompleteWithinDeclaredExclusions": true,
+    "allSealedReceiverFileBytesAndLengthsMatch": true,
+    "externalReceiverReportCopyMatchesSeal": true,
+    "finalOriginalSnapshotFileSetAndBytesPreserved": true,
+    "finalOriginalSnapshotCopyHashesAgree": true,
+    "legacyOriginalSnapshotFileSetAndBytesPreserved": true,
+    "legacyOriginalSnapshotCopyHashesAgree": true,
+    "legacyProjectAllOriginalFileBytesAndFileSetUnchanged": true,
+    "receiverBeforeManifestMatchesCompleteSnapshot": true,
+    "receiverBeforeEqualsOriginalInterruptionSnapshot": true,
+    "receiverAfterManifestMatchesCompleteSnapshot": true,
+    "liveProjectEqualsSealedAfterSnapshot": true,
+    "onlyTenExpectedNewFiles": true,
+    "onlyCheckpointAndAppendLogChanged": true,
+    "noOriginalFileDeleted": true,
+    "historicalBusinessEventsRemainBytePrefix": true,
+    "checkpointGoalAndRootMatchCurrentAnchor": true,
+    "allFifteenDependenciesCurrentAndUnchanged": true,
+    "originalActionStatesPreservedInBeforeSnapshot": true,
+    "allThreeCurrentActionStatesDone": true,
+    "frozenFilesMatchPreExecutionRecordedBytes": true,
+    "frozenAndCurrentProductionCheckerExactReviewedBytes": true,
+    "allEightFrozenInputsStillExactCurrentSourceBytesAtAuditTime": true,
+    "allOriginalExportBytesUnchanged": true,
+    "exportMtimeUnchangedAcrossAllFourCopies": true,
+    "oneExportExecutionAndNoRecordedReplay": true,
+    "oneInterruptedWorkerAndOneCompletionAndOneReview": true,
+    "realInterruptionOrderedEventsAndObservedExit": true,
+    "interruptionAndPreparationStillOriginalBytes": true,
+    "receiverObservedOriginalProcessesAbsentBeforeCompleting": true,
+    "receiverObservedOriginalProcessesStillAbsentAfterCompleting": true,
+    "actualThreeSkuRecordsEqualInputAndIndex": true,
+    "currentIndexUsesOriginalPreparationAndExport": true,
+    "localReviewChecksAndReferencedOutputsCurrent": true,
+    "onlyThreeAuthorizedLocalOutputsNoPublish": true,
+    "export-01ReceiptAndActualCommandProofBoundAndSuccessful": true,
+    "index-01ReceiptAndActualCommandProofBoundAndSuccessful": true,
+    "review-01ReceiptAndActualCommandProofBoundAndSuccessful": true,
+    "allReceiverRecordedCommandStreamsStillMatch": true,
+    "initialCheckerPreservedExportAndRequiredInspect": true,
+    "finalCheckerExitZeroThreeSkipResults": true,
+    "skuQueryActuallyReadAllCompletedRecords": true,
+    "originalFailureRecordsPreserved": true,
+    "independentAuditChangedNoWatchedEvidenceFileBytes": true
+  },
+  "failedChecks": [],
+  "details": {
+    "fileChanges": {
+      "added": [
+        "evidence/commands/index-01.json",
+        "evidence/commands/index-01.stderr.txt",
+        "evidence/commands/index-01.stdout.txt",
+        "evidence/commands/review-01.json",
+        "evidence/commands/review-01.stderr.txt",
+        "evidence/commands/review-01.stdout.txt",
+        "outputs/index.json",
+        "outputs/review.json",
+        "receipts/index-01.json",
+        "receipts/review-01.json"
+      ],
+      "changed": [
+        "checkpoint.json",
+        "evidence/business-events.jsonl"
+      ],
+      "deleted": []
+    },
+    "frozenSourceComparisonsNow": [
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\scripts\\resume.py",
+        "frozenPath": "frozen/skills/ff-handoff/scripts/resume.py",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\SKILL.md",
+        "frozenPath": "frozen/skills/ff-handoff/SKILL.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\references\\resume.md",
+        "frozenPath": "frozen/skills/ff-handoff/references/resume.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\references\\checkpoint.md",
+        "frozenPath": "frozen/skills/ff-handoff/references/checkpoint.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\references\\decision-index.md",
+        "frozenPath": "frozen/skills/ff-handoff/references/decision-index.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff\\references\\spec-lifecycle.md",
+        "frozenPath": "frozen/skills/ff-handoff/references/spec-lifecycle.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-intake\\SKILL.md",
+        "frozenPath": "frozen/skills/ff-intake/SKILL.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      },
+      {
+        "source": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-intake\\references\\state-contract.md",
+        "frozenPath": "frozen/skills/ff-intake/references/state-contract.md",
+        "exactBytesSameNow": true,
+        "textSameAfterNewlineNormalization": true
+      }
+    ],
+    "exportMtimeNs": {
+      "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\snapshots\\after-interruption-final\\project": 1792223629223683400,
+      "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\receiver\\receiver08\\before": 1792223629223683400,
+      "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\receiver\\receiver08\\after": 1792223629223683400,
+      "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\resume-lab\\project-final": 1792223629223683400
+    },
+    "eventCounts": {
+      "command-dispatched": 3,
+      "export-worker-started": 1,
+      "export-output-written": 1,
+      "command-exit-observed": 3,
+      "completion-receipt-and-checkpoint-written": 3,
+      "index-worker-started": 1,
+      "checkpoint-running-written": 1,
+      "index-preparation-written": 1,
+      "index-ready-to-be-interrupted": 1,
+      "index-completion-worker-started": 1,
+      "index-output-written": 1,
+      "local-review-written": 1
+    },
+    "dispatchCounts": {
+      "export-01": 1,
+      "index-01": 1,
+      "review-01": 1
+    },
+    "businessCommandObservations": {
+      "export-01": {
+        "workerPid": 39544,
+        "exitCode": 0,
+        "startedUtc": "2026-10-17T07:53:49.084395+00:00",
+        "finishedUtc": "2026-10-17T07:53:49.236586+00:00"
+      },
+      "index-01": {
+        "workerPid": 41000,
+        "exitCode": 0,
+        "startedUtc": "2026-10-17T07:57:54.715910+00:00",
+        "finishedUtc": "2026-10-17T07:57:54.854245+00:00"
+      },
+      "review-01": {
+        "workerPid": 22872,
+        "exitCode": 0,
+        "startedUtc": "2026-10-17T07:57:59.736900+00:00",
+        "finishedUtc": "2026-10-17T07:57:59.874099+00:00"
+      }
+    }
+  },
+  "sealSha256": "93365362587166063bfff5c0d09013bbea63ae97c3839ea7a98c4c8bc791d152",
+  "checkerSha256": "76644c50f79c4d7a4f6f26a4789724a755070ce24c245afbae723c74b87fe8eb",
+  "counts": {
+    "independentChecks": 45,
+    "beforeFiles": 37,
+    "afterFiles": 47,
+    "sealedReceiverFiles": 141
+  },
+  "limitations": [
+    "Recorded events and hashes are consistency evidence, not human acceptance or authenticity/exactly-once proof.",
+    "Historical supervisor exit observation and receiver point-in-time process absence are separate evidence.",
+    "Frozen references are the actual execution inputs. Exact current source byte comparisons are recorded separately; any later source change requires fresh identity checks.",
+    "Final installer validation and same-version CRAP remain outside this audit."
+  ]
+}
