@@ -2,9 +2,9 @@
 name: ff-handoff
 description: 在暂停或换会话时准备最小项目内交出检查点，供接收方经 Intake 核实后续做；不是交付验收或自动启动任务。
 metadata:
-  version: "0.9.0"
+  version: "0.9.1"
 ---
-# ff-handoff 0.9.0
+# ff-handoff 0.9.1
 
 只在暂停、上下文切换、交给另一执行者或用户明确要求时使用；不是每个阶段必做。与 ff-deliver 的用户交付不同，本技能输出可续做的短检查点；接收方入口始终 ff-intake。
 

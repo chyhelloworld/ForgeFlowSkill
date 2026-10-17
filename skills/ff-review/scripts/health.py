@@ -2,8 +2,10 @@
 """Read-only evidence health, not semantic review or proof of human identity."""
 import argparse
 import hashlib
+import importlib.util
 import json
 import math
+import sys
 from pathlib import Path
 
 STAGES = ('goal-mainflow', 'plan', 'code')
@@ -11,18 +13,28 @@ STAGES = ('goal-mainflow', 'plan', 'code')
 def sha(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
+def load_helpers():
+    path = Path(__file__).resolve().parents[2] / 'ff-handoff/scripts/resume.py'
+    spec = importlib.util.spec_from_file_location('ff_health_paths', path)
+    module = importlib.util.module_from_spec(spec)
+    previous = sys.dont_write_bytecode
+    sys.dont_write_bytecode = True
+    try:
+        spec.loader.exec_module(module)
+    finally:
+        sys.dont_write_bytecode = previous
+    return module
+
 def evidence_problem(root, item):
     if not isinstance(item, dict):
         return 'invalid evidence record'
     name = item.get('path', '')
     if not isinstance(name, str) or not name:
         return 'missing evidence path'
-    rel = Path(name)
-    if rel.is_absolute() or '..' in rel.parts:
-        return 'unsafe evidence path: ' + name
-    target = root / rel
-    if any(p.is_symlink() for p in [target, *target.parents] if p != root.parent):
-        return 'symlink evidence: ' + name
+    problem = load_helpers().path_problem(root, Path(name))
+    if problem:
+        return 'unsafe evidence path: ' + name + ' (' + problem + ')'
+    target = root / name
     if not target.is_file():
         return 'missing evidence: ' + name
     if not target.stat().st_size:
@@ -113,10 +125,10 @@ def main():
     parser.add_argument('--root', type=Path, default=Path.cwd())
     args = parser.parse_args()
     try:
-        result = health(args.root.resolve(), json.loads(args.record.read_text()))
+        result = health(args.root.resolve(), json.loads(args.record.read_text(encoding='utf-8')))
         print(json.dumps(result, ensure_ascii=False, indent=2))
         return 1 if result['gaps'] else 0
-    except (OSError, ValueError, TypeError, AttributeError) as error:
+    except (OSError, ValueError, TypeError, AttributeError, ImportError) as error:
         print(json.dumps({'status': 'INVALID', 'error': str(error)}))
         return 2
 

@@ -1,0 +1,91 @@
+{
+  "kind": "snapshot-bound-function-metrics",
+  "ccTool": "radon 6.0.1",
+  "coverageTool": "coverage.py 7.6.1",
+  "coverageDefinition": "combined covered executable lines plus branches / executable lines plus branches; native function scope",
+  "sourceSnapshot": "E:\\github\\ForgeFlowSKill\\_handoff\\20261017\\09x\\metrics-native\\health-metrics-source.json",
+  "limits": "Caller must capture snapshot immediately before the same coverage run; this script verifies present source matches that snapshot, not historical execution identity. Top-level Python functions only; no JS/UI metrics; subprocess coverage absent unless explicitly collected.",
+  "functions": [
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "sha",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "load_helpers",
+      "cc": 1,
+      "coverage": 1.0,
+      "crap": 1.0
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "evidence_problem",
+      "cc": 8,
+      "coverage": 0.7142857142857143,
+      "crap": 9.492711370262391
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "evidence_gaps",
+      "cc": 5,
+      "coverage": 0.7142857142857143,
+      "crap": 5.5830903790087465
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "metric_gaps",
+      "cc": 13,
+      "coverage": 0.9285714285714286,
+      "crap": 13.061588921282798
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "nonempty",
+      "cc": 2,
+      "coverage": 1.0,
+      "crap": 2.0
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "metric_sources",
+      "cc": 13,
+      "coverage": 0.7142857142857143,
+      "crap": 16.941690962099123
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "review_gaps",
+      "cc": 12,
+      "coverage": 0.8518518518518519,
+      "crap": 12.46822130772748
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "health",
+      "cc": 10,
+      "coverage": 0.9130434782608695,
+      "crap": 10.065751623243198
+    },
+    {
+      "file": "skills\\ff-review\\scripts\\health.py",
+      "sha256": "90b4cb0b08f58f2a9815189ccf6f2a131bf4563f94a3a504044121b124ce3239",
+      "name": "main",
+      "cc": 3,
+      "coverage": 1.0,
+      "crap": 3.0
+    }
+  ],
+  "allWithin50": true
+}

@@ -1,6 +1,9 @@
 import copy
 import hashlib
 import importlib.util
+import os
+import subprocess
+import sys
 import tempfile
 import unittest
 from pathlib import Path
@@ -30,9 +33,47 @@ class HealthTests(unittest.TestCase):
             self.assertTrue(h.metric_gaps({'target':'v1','functions':[{'cc':cc,'coverage':cov}]},'v1'))
         self.assertTrue(h.metric_gaps(None,'v1'))
         self.assertEqual(h.metric_gaps({'target':'v1','functions':[{'cc':50,'coverage':1}]},'v1'),[])
-    def test_escape_and_symlink(self):
+    def test_escape(self):
         self.assertIn('unsafe',h.evidence_problem(self.root,{'path':'../proof'}))
-        (self.root/'link').symlink_to(self.root/'proof'); self.assertIn('symlink',h.evidence_problem(self.root,{'path':'link'}))
+    def test_symlink_when_os_allows_creation(self):
+        try:
+            (self.root/'link').symlink_to(self.root/'proof')
+        except OSError as error:
+            if getattr(error,'winerror',None)==1314 or error.errno==1:
+                self.skipTest('Real symlink creation unavailable: '+str(error))
+            raise
+        self.assertIn('symlink',h.evidence_problem(self.root,{'path':'link'}))
+    @unittest.skipUnless(os.name=='nt','Windows path interpretation requires native Windows')
+    def test_windows_anchors_and_ads_are_not_evidence(self):
+        for path in ['\\proof','/proof','C:proof','proof:hidden','C:\\proof']:
+            with self.subTest(path=path):
+                self.assertIn('unsafe',h.evidence_problem(self.root,{'path':path}))
+    @unittest.skipUnless(os.name=='nt','Windows junction requires native Windows')
+    def test_native_junction_is_rejected(self):
+        target=self.root/'target';target.mkdir();(target/'proof').write_bytes(b'proof')
+        link=self.root/'linked'
+        result=subprocess.run(['cmd.exe','/d','/c','mklink','/J',str(link),str(target)],capture_output=True)
+        self.assertEqual(result.returncode,0,result.stderr)
+        self.addCleanup(link.rmdir)
+        self.assertIn('reparse',h.evidence_problem(self.root,{'path':'linked/proof','sha256':h.sha(target/'proof')}))
+    def test_missing_packaged_helper_fails_closed(self):
+        import json
+        standalone=self.root/'standalone/scripts/health.py';standalone.parent.mkdir(parents=True)
+        standalone.write_bytes(Path(h.__file__).read_bytes())
+        record=self.root/'record.json';record.write_text(json.dumps(self.data),encoding='utf-8')
+        result=subprocess.run([sys.executable,str(standalone),str(record),'--root',str(self.root)],capture_output=True)
+        self.assertEqual(result.returncode,2,result.stderr)
+        self.assertEqual(json.loads(result.stdout)['status'],'INVALID')
+    def test_utf8_evidence_with_legacy_default_file_encoding(self):
+        import json
+        proof=self.root/'证据.txt';proof.write_bytes(b'real fixture')
+        for review in self.data['reviews'].values():
+            review['evidence']=[{'path':proof.name,'sha256':h.sha(proof)}]
+        self.data['reviews']['code']['metrics']['sources']=[{'path':proof.name,'sha256':h.sha(proof)}]
+        record=self.root/'record.json';record.write_bytes(json.dumps(self.data,ensure_ascii=False).encode('utf-8'))
+        env={**os.environ,'PYTHONUTF8':'0','PYTHONIOENCODING':'utf-8'}
+        result=subprocess.run([sys.executable,h.__file__,str(record),'--root',str(self.root)],capture_output=True,env=env)
+        self.assertEqual(result.returncode,0,result.stderr)
     def test_na_requires_reason(self):
         self.data['reviews']['code']['verdict']='N/A'; self.assertTrue(self.gaps())
         self.data['reviews']['code']['reason']='copy edit only'; self.assertFalse(self.gaps())

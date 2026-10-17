@@ -2,9 +2,9 @@
 name: ff-diagnose
 description: 定位实际故障或性能回归，建立可重复失败信号与有证据的原因；不替代实现、审核或扩大调试权限。
 metadata:
-  version: "0.9.0"
+  version: "0.9.1"
 ---
-# ff-diagnose 0.9.0
+# ff-diagnose 0.9.1
 
 按需调用的诊断方法，不是必经阶段。先读最新目标、用户原始症状、项目 GLOSSARY/ADR（若有）、授权环境与当前版本。未知目标先回 Grill/Spec；不要用附近异常替换用户问题；无关配置、导入或fixture错误不算用户症状的复现。诊断结论和证据引用回现有任务，不另建事实库。
 

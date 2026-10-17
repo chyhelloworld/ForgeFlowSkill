@@ -6,6 +6,8 @@
 
 它读取一个临时导出的证据索引，不建立第二个规格/计划事实库，不修改计划或自动接受。当前规格、用户最新确认和实际实现仍须独立阅读。退出码0仅表示记录齐全且摘要没有检测到缺口；1代表缺口；2代表格式/读取错误。工具无法证明审核人身份、证据真实性或覆盖范围充分，也不会证明最终完成。
 
+输入按 UTF-8 读取。0.9.1 隔离候选复用同包 ff-handoff/scripts/resume.py 的路径检查；缺少该依赖时保守 INVALID，不联网安装。引用必须留在项目内，拒绝绝对/根相对/驱动器路径、`..`、NTFS ADS 与符号链接/junction/reparse。正常安装包含全部17技能；单独复制 health.py 不构成完整工具安装。哈希只绑定本次检查的字节，不证明来源，也不抵御检查后的并发替换。
+
 最小输入含goal、phase、target、next、reviews。reviews分别为goal-mainflow、plan、code，各含verdict(PASS/FAIL/PENDING/N/A)、target、author、reviewer、independent和evidence数组，每条证据为项目相对path与sha256。N/A需reason，也必须绑定相同target、独立审核身份和证据，不能跳过过期核对。文件不能越界或经符号链接，实际内容变化即过期。reviewer需来自真正独立上下文，不能只填不同名字伪造。
 
 code.metrics含target、ccTool、coverageTool、coverageDefinition、sources（原始报告/源文件path与sha256）和functions（name、cc、coverage）。coverage为0到1同版本真实覆盖率；CRAP=CC²×(1-coverage)³+CC，硬上限50、优化目标约10。缺可信采集/映射就不填写，输出NOT_MEASURED，不能估算。纯文案可声明metrics.notApplicable与reason。工具只检查已列范围，审核者仍须检查遗漏、CC定义、函数边界与覆盖映射，拒绝挑选低复杂度函数掩盖风险。
