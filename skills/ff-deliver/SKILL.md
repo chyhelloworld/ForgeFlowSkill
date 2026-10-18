@@ -2,9 +2,9 @@
 name: ff-deliver
 description: 汇总 ForgeFlow 当前版本有效证据、偏差与用户验收入口，按仓库流程交 PR 或交接；不承担实现或独立审核，不自动合并部署。
 metadata:
-  version: "0.9.1"
+  version: "0.9.2-goal.2"
 ---
-# ff-deliver 0.9.1
+# ff-deliver 0.9.2-goal.2
 
 消费有效规格/计划、实际交付版本、实现证据与 plan / goal-mainflow / code 的独立审核结论。缺证据或审核失效交相应职责补齐，不在本技能里自写自审。参考 [交接与接受](references/handoff.md)。
 
@@ -21,6 +21,10 @@ PR 是条件动作：仓库确实采用 PR 流程且用户授权创建/更新时
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## Codex 原生目标（条件启用）
+
+宿主提供本聊天原生目标或用户显式要求结合 `/goal` 时，读取 [目标桥接契约](references/goal-bridge.md)。分别报告实际观测的原生状态/时间（不可读为 unknown）、技术与主流程证据、适用独立审核/计量缺口、FF 真人接受的版本/来源/范围。native complete 不代替约定接受，技术通过不证明原生状态已更新；缺真人接受仍待接受，不代签、不静默改状态，也不把目标达成扩为合并或发布授权。未触发时沿用普通 FF。
 
 ## 小范围证据补强
 

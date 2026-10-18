@@ -2,7 +2,7 @@
 name: ff-retro
 description: 在用户主动要求时复盘项目或 FF 自身的真实工作事件，提出可证伪的最小改进或可复用资产候选；先查已有机制，零候选合法，不递归自授权或自动晋级。
 metadata:
-  version: "0.9.1"
+  version: "0.9.2-goal.2"
 ---
 
 # FF Retro
