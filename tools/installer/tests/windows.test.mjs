@@ -142,7 +142,7 @@ function smallSource() {
   put(path.join(root, 'tools/openspec/upstream.json'), '{}\n');
   put(path.join(root, 'tools/openspec/build.mjs'), '// Mocked subprocess fixture\n');
   put(path.join(root, 'tools/openspec/ff-spec.mjs'), '// Mocked CLI fixture\n');
-  put(path.join(root, 'tools/installer/runtime.mjs'), fs.readFileSync(path.join(source, 'tools/installer/runtime.mjs')));
+  for (const name of ['runtime', 'state', 'files']) put(path.join(root, `tools/installer/${name}.mjs`), fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`)));
   json(path.join(root, 'MANIFEST.json'), { version: '0.0.0-test', files: Object.fromEntries(regularFiles(root).map(name => [name, sha(fs.readFileSync(path.join(root, name)))])) });
   return root;
 }
@@ -211,6 +211,29 @@ test('mocked Windows install preserves pre-existing source bootstrap and rejects
   assert.ok(stage);
   assert.equal(fs.readFileSync(path.join(control, stage, 'tools/openspec/.bootstrap/source-note'), 'utf8'), 'keep');
   assert.equal(loadState(project), null);
+});
+
+test('edits during a mocked full build block commit and preserve active host files and state', () => {
+  for (const changed of ['skill', 'runtime', 'state']) {
+    const project = directory(), input = smallSource();
+    install(project, input, { hosts: ['codex', 'claude'], mode: 'skills-only' });
+    const before = loadState(project), statePath = path.join(project, '.forgeflow/install/state.json');
+    const target = changed === 'skill' ? path.join(project, '.claude/skills/ff-spec/SKILL.md')
+      : changed === 'runtime' ? path.join(project, '.forgeflow/install', before.release, 'tools/openspec/ff-spec.mjs') : statePath;
+    let edited;
+    withWindowsToolchain(home => {
+      if (changed === 'state') json(target, { ...before, version: 'user-modified' });
+      else fs.appendFileSync(target, '\nUser edit during build\n');
+      edited = fs.readFileSync(target);
+      put(path.join(home, '.build/runtime-file'));
+      return { status: 0 };
+    }, () => ({ status: 0 }), () => {
+      assert.throws(() => install(project, input, { hosts: ['codex', 'claude'], mode: 'full', build: true }), /User modification|Release was modified|state changed/);
+    });
+    assert.deepEqual(fs.readFileSync(target), edited);
+    assert.equal(loadState(project).mode, 'skills-only');
+    assert.equal(fs.existsSync(path.join(project, '.forgeflow/install/pending.json')), false);
+  }
 });
 
 test('mocked Windows failed build or CLI probe retains stage diagnostics and no active installation', () => {

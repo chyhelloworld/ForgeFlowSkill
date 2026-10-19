@@ -4,8 +4,9 @@ import { spawnSync } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
 import { safe, fail, read, json } from './files.mjs';
 import { verifySource, skillPayload } from './source.mjs';
-import { inventory, runNode, validateRuntime, environment } from './runtime.mjs';
+import { inventory, runNode, checkRelease, diagnose, environment } from './runtime.mjs';
 import { control, loadState, preflight, checkOwned, commit } from './transaction.mjs';
+import { hostsOf, normalizeHosts, fileHost } from './state.mjs';
 export function dependencies() {
   const [major, minor] = process.versions.node.split('.').map(Number);
   const node = major > 20 || (major === 20 && minor >= 19);
@@ -25,8 +26,8 @@ export function buildDependencies(project) {
 function bindings(source, pin, files) {
   const expected = JSON.stringify({ version: pin.version, hash: pin.hash });
   files['.forgeflow/ff-spec.mjs'] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { launch } from './install/runtime.mjs';\nlaunch(fileURLToPath(new URL('../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
-  files[`${control}/runtime.mjs`] = fs.readFileSync(path.join(source, 'tools/installer/runtime.mjs'));
-  files[`${control}/doctor.mjs`] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { launch } from './runtime.mjs';\nlaunch(fileURLToPath(new URL('../../', import.meta.url)), ${expected}, ['--help']);\n`);
+  for (const name of ['runtime', 'state', 'files']) files[`${control}/${name}.mjs`] = fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`));
+  files[`${control}/doctor.mjs`] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { doctorMain } from './runtime.mjs';\ndoctorMain(fileURLToPath(new URL('../../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
   return files;
 }
 // A cleanup capability belongs only to this newly created stage, never a caller path.
@@ -102,10 +103,16 @@ export function install(project, source, options) {
   if (!dependencies().node) fail('Node >=20.19 required');
   const pin = verifySource(source);
   const before = loadState(project);
-  const files = bindings(source, pin, skillPayload(source, pin, options.host));
+  if (options.host && options.hosts) fail('--host conflicts with --hosts');
+  const selected = normalizeHosts(options.hosts ?? [options.host]);
+  if (options.hosts && selected.length !== 2) fail('--hosts requires codex,claude');
+  if (!['full', 'skills-only'].includes(options.mode)) fail('Invalid install mode');
+  if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
+  if (!options.hosts && before && hostsOf(before).length > 1) fail('Dual-host install requires --hosts codex,claude; use remove-host explicitly to remove one');
+  const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))));
   preflight(project, before, files);
-  if (before?.sourceHash === pin.hash && before.host === options.host && before.mode === options.mode) {
-    if (JSON.stringify(inventory(safe(project, `${control}/${before.release}`))) !== JSON.stringify(before.releaseInventory)) fail('Release was modified');
+  if (before) checkRelease(project, before);
+  if (before?.sourceHash === pin.hash && JSON.stringify(hostsOf(before)) === JSON.stringify(selected) && before.mode === options.mode) {
     return { status: 'UNCHANGED', version: pin.version, mode: options.mode };
   }
   if (options.mode === 'full' && !options.build) fail('full requires --build; build downloads locked dependencies');
@@ -114,17 +121,26 @@ export function install(project, source, options) {
     if (!deps.node || !deps.npm || !deps.git || !deps.tar) fail(`Build dependencies missing: ${JSON.stringify(deps)}`);
   }
   const runtime = release(project, source, pin, options.mode, options.build);
-  const next = { schema: 1, version: pin.version, sourceHash: pin.hash, host: options.host, mode: options.mode, ...runtime };
+  const hostState = options.hosts || before?.schema === 2 ? { schema: 2, hosts: selected } : { schema: 1, host: selected[0] };
+  const next = { ...hostState, version: pin.version, sourceHash: pin.hash, mode: options.mode, ...runtime };
   commit(project, before, next, files);
-  return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, host: options.host, mode: options.mode };
+  return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, ...(next.schema === 1 ? { host: selected[0] } : {}), hosts: selected, mode: options.mode };
 }
-export function doctor(project) {
-  const state = loadState(project);
-  if (!state) fail(`Not installed; build prerequisites: ${JSON.stringify(buildDependencies(project))}`);
-  checkOwned(project, state);
+export function doctor(project, host) {
   if (!dependencies().node) fail('Node >=20.19 required');
-  const entry = validateRuntime(project, { version: state.version, hash: state.sourceHash });
-  const result = runNode(project, entry, ['--help'], true);
-  if (result.status !== 0) fail(`CLI probe failed: ${result.stderr}`);
-  return { status: 'READY', version: state.version, host: state.host, mode: state.mode, cli: '.forgeflow/ff-spec.mjs', note: 'CLI available; this is not spec/policy acceptance or native-host verification' };
+  return diagnose(project, host);
+}
+export function removeHost(project, host) {
+  normalizeHosts([host]);
+  const before = loadState(project);
+  if (!before) fail('Not installed');
+  checkOwned(project, before);
+  checkRelease(project, before);
+  const selected = hostsOf(before);
+  if (!selected.includes(host)) return { status: 'UNCHANGED', hosts: selected };
+  if (selected.length === 1) fail('Cannot remove last host; full uninstall is outside this operation');
+  const files = Object.fromEntries(Object.keys(before.files).filter(name => fileHost(name) !== host).map(name => [name, fs.readFileSync(safe(project, name))]));
+  const next = { ...before, hosts: selected.filter(item => item !== host) };
+  commit(project, before, next, files);
+  return { status: 'HOST_REMOVED', host, hosts: next.hosts, version: next.version, mode: next.mode };
 }

@@ -1,0 +1,74 @@
+{
+  "kind": "sanitized-native-host-observations",
+  "testedCommit": "18e82a53c0f4e40fb23344a5c4440bf298f8a99a",
+  "testedVersion": "0.9.3-dual-host.1",
+  "testedManifestSha256": "0af43034864435c261ac85b06072246bc15507eaeb466dfb41c9c1b8116dae33",
+  "testedPayloadSha256": "a4e6db41fbdf29270f44bb7780ad789b54e7fe33775bd029fc10668316fa4d90",
+  "codex": {
+    "version": "0.163.0-alpha.10.2",
+    "enabledProjectFFSkills": 17,
+    "actualRead": "BLOCKED",
+    "reason": "CreateProcess Rejected: blocked by policy",
+    "rejectedRouteRetried": false,
+    "fallbackIncident": "Submodel attempted remote Desktop Commander after denial; device unavailable, no file data returned. Driver constraint failure, not installer acceptance."
+  },
+  "claude": {
+    "version": "2.1.303",
+    "restrictedInitialSkill": "Unknown skill: ff-intake",
+    "projectOnlyControlSkill": "Launching skill: ff-intake",
+    "controlOutcome": "PASS: bounded native Claude ff-intake control",
+    "userTurns": 1,
+    "skillCalls": 1,
+    "actualReads": [
+      {
+        "path": ".claude/skills/ff-intake/SKILL.md",
+        "success": true,
+        "completeContentMatches": true,
+        "sha256": "6e603b838179e854a8c49d609881f2003234b724a9b726813dae31b971729ae5"
+      },
+      {
+        "path": ".claude/skills/ff-intake/references/state-contract.md",
+        "success": true,
+        "completeContentMatches": true,
+        "sha256": "5d7b0c2807ec9a9567a199909faa5b3970556676d3634d2af19ab9fc8656c878"
+      },
+      {
+        "path": ".claude/skills/ff-intake/references/spec-lifecycle.md",
+        "success": true,
+        "completeContentMatches": true,
+        "sha256": "5e5c7c9ec7efe6ed219111931e961751186faaf99039c91e67c2208a66d3f54e"
+      },
+      {
+        "path": "README.md",
+        "success": true,
+        "completeContentMatches": true,
+        "sha256": "91a204bdab15d6ba2926d6cb3a086d083d27bfac6973e1c8f14b0f1f6c05d884"
+      }
+    ],
+    "nativeResult": {
+      "subtype": "success",
+      "is_error": false,
+      "permission_denials": []
+    },
+    "permissionDecisions": 5,
+    "persistentPermissionUpdates": 0,
+    "processCleanupExitCode": 1,
+    "processCleanupExplanation": "Controller terminated the still-open stdio host after receiving its native success result; this is not the native task result.",
+    "fixtureMetadataFilesUnchanged": 267,
+    "approvedFourFileHashesUnchanged": true,
+    "overageUsed": false
+  },
+  "localEvidence": {
+    "claudeControlVerifiedResultSha256": "4c7064ccef1cbc103d92c9a3f21853f52ab453629126582c90b5214d2b81297f",
+    "claudeControlVisibleEventsSha256": "d0223a79fd904e450cfa138f15afa2a3ae5eb48255c47811b6b101b2fc8f3364",
+    "initialCodexPolicyEvidenceSha256": "efbcf5a5bc9c9ecd6e604b16c6b610ad7bc38c9fbd7d74175b79752d8a447d2a"
+  },
+  "limits": [
+    "Only this ff-intake task, exact version and Windows host configuration passed.",
+    "No real business journey, all 17 skill invocation coverage, all-platform acceptance or human product acceptance.",
+    "No CodeGraph, CI, CRAP or coverage proof inferred from native Skill success.",
+    "Reference contract title version mismatch noted by model is not an established stale-content defect.",
+    "Full model-provider wire payload was not captured; official session scoping and actual tools were audited.",
+    "Codex remains BLOCKED as before."
+  ]
+}

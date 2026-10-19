@@ -2,7 +2,7 @@
 name: ff-research
 description: 按需调查具体问题，基于一手来源逐条引用，区分事实、推论和待实测项；用于技术选型、版本能力核对及读资料，不自动启动完整开发流程。
 metadata:
-  version: "0.9.2-goal.2"
+  version: "0.9.3-dual-host.1"
 ---
 
 # FF Research

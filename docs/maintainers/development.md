@@ -47,3 +47,12 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 ## 维护文档时
 
 用户说明放 docs/user，开发约定放 docs/maintainers，旧实验/说明/非冻结报告放 docs/archive。版本迭代与哈希绑定原始证据保留既有位置，别批量按扩展名搬迁。只保留一个历史目录页和根导航；搬迁修链接并记录来源，不新增重复状态库。原路径映射见 [relocations.json](../archive/relocations.json)，原始字节也可按基线 Git 提交追溯。
+
+
+## 双宿主安装器维护
+
+0.9.3 的显式共存参数、schema 1/2 迁移、删端/回滚边界见 [双宿主计划](../../planning/DUAL-HOST-PLAN.md) 和 [安装说明](../user/install.md)。状态解释收敛到 `tools/installer/state.mjs`，共享运行时安装 `runtime.mjs`、`state.mjs`、`files.mjs` 与生成的 doctor/launcher；不要把两端各写一份独立状态。单端 JSON 输出继续保留 `host`，双端只用 `hosts`。
+
+构建前的预检不能替代提交前预检。独立反例已证明构建期间的用户改动会形成覆盖窗口；提交前重核状态、全体托管文件与当前共享 release，备份/写入阶段再核字节，失败保留诊断。恢复先核对备份旧状态或已提交的 after 状态，不仅凭 transaction 是否相等判断。
+
+默认 installer 回归包括 `tools/installer/tests/*test.mjs`。真实 Windows 分发包验证单独运行 `tools/installer/tests/native-windows.mjs <已核对旧源码> <新的自有_verification目录>`；它明确执行 full 构建并下载锁定依赖，不作为普通单元测试隐式触发。所有目录、缓存和临时文件应位于获准的项目内。并发 doctor 的假 CLI 反例只证明检查逻辑，不算真实 full 或模型调用。
