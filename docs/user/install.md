@@ -1,10 +1,10 @@
 # 安装与首次使用
 
-当前工作分支为 **0.9.1 未发布候选**。已获准纳入工作分支不等于 main 合并、生产发布或升级其他项目安装。
+当前工作分支为 **0.9.2-goal.2 隔离实验候选**（`work/goal-memory-bookshelf`）。只在获准隔离目标安装；不替换现用全局技能，不代表 main 合并、生产发布或升级其他项目。
 
 ## 快速开始：Windows + Codex
 
-工作分支 `work/061-through-09` 已获准纳入 0.9.1，批准范围见[纳入回执](../../iterations/0.9.1/PROMOTION.md)。这不授权升级其他项目的现用安装。先取得并核对选定版本的源码，把下面 `$Source` 改为源码根目录（其中有 `package.json` 和 `bin/ff-install.mjs`）。`$Project` 是你要使用 FF 的目标项目，两者可以不同。已有安装先盘点；[历史布局参考](../archive/installation/项目内安装指南.md)保留当时结构，当前重入/恢复操作以本页为准，不把同版本号的不同包哈希当作相同安装。
+基线 0.9.1 曾获准纳入 `work/061-through-09`，其[纳入回执](../../iterations/0.9.1/PROMOTION.md)不自动批准本 Goal 候选晋级或其他现用安装升级。先取得并核对选定版本的源码，把下面 `$Source` 改为源码根目录（其中有 `package.json` 和 `bin/ff-install.mjs`）。`$Project` 是你要使用 FF 的获准目标项目，两者可以不同。已有安装先盘点；[历史布局参考](../archive/installation/项目内安装指南.md)保留当时结构，当前重入/恢复操作以本页为准，不把同版本号的不同包哈希当作相同安装。
 
 先准备 **Node.js >=20.19.0、npm、Git、tar**；三个可选只读检查器还需 **Python 3.9+**。full 构建需要访问 GitHub 和下载构建依赖。以下 PowerShell 示例把项目、外层 npm 缓存和临时目录放在 E 盘；旧项目请将 `$Project` 改为现有项目根目录。
 
@@ -31,9 +31,11 @@ node .forgeflow/ff-spec.mjs --help
 
 ## 当前验证边界
 
-技能/安装包版本为 **0.9.1**；固定 FF CLI 的 `--version` 为 **1.14.2-ff.0.5.0-rc3**，两者标识不同层次。skills-only 没有可用的 full CLI，不能据此要求版本输出成功。
+技能/安装包版本为 **0.9.2-goal.2**；固定 FF CLI 的 `--version` 为 **1.14.2-ff.0.5.0-rc3**，两者标识不同层次。skills-only 没有可用的 full CLI，不能据此要求版本输出成功。Goal 候选提供技能契约，原生写入与状态同步未实现；使用与实验边界见[Codex Goal](codex-goal.md)。
 
-安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。71d0464 原候选有 full 构建/CLI 的原生记录；46022d7 文档包的两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖本次整理后的新包。Codex setup refresh 与 Claude/全平台/人类验收的缺口仍保留。
+安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。0.9.2-goal.2 已有实际 Windows/Codex 隔离项目 full 构建、安装及 doctor READY；skills-only 的 doctor 为预期 BLOCKED。选定桌面后端的技能加载/调用已有有界观察，包与提交、后续文档包的继承理由见[原生验证与证据继承](../../iterations/0.9.2-goal.2/native-closeout.md)。这些不是全平台或产品真人验收。
+
+历史失败仍保留：71d0464 原候选有 full 构建/CLI 记录；46022d7 文档包两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖其他包；旧 PATH CLI 的 Codex setup refresh 故障不能概括为当前所有桌面后端均失败。Claude、全平台与产品真人验收仍未证明。
 
 仅需技能时用 `--mode skills-only`，不要同时加 `--build`。成功状态是 `INSTALLED_SKILLS_ONLY_GATES_BLOCKED`，不是 full READY；17 项技能可分发，FF CLI 门禁不可用。full 依赖网络下载固定构建依赖，不修改锁文件、TLS 或权限来绕过失败。
 

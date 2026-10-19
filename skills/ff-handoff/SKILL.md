@@ -2,9 +2,9 @@
 name: ff-handoff
 description: 在暂停或换会话时准备最小项目内交出检查点，供接收方经 Intake 核实后续做；不是交付验收或自动启动任务。
 metadata:
-  version: "0.9.1"
+  version: "0.9.2-goal.2"
 ---
-# ff-handoff 0.9.1
+# ff-handoff 0.9.2-goal.2
 
 只在暂停、上下文切换、交给另一执行者或用户明确要求时使用；不是每个阶段必做。与 ff-deliver 的用户交付不同，本技能输出可续做的短检查点；接收方入口始终 ff-intake。
 
@@ -21,6 +21,10 @@ metadata:
 ## 跨会话决策恢复（按需）
 
 跨会话或复杂取舍容易丢失原始目标时，按 [决策索引契约](references/decision-index.md) 使用同一权威记录的轻索引。简单任务跳过；不新增技能、状态库或授权。沿用记录模式与保存授权，不自动落盘。
+
+## Codex 原生目标（条件启用）
+
+宿主提供本聊天原生目标或用户显式要求结合 `/goal` 时，读取 [目标桥接契约](references/goal-bridge.md)。交接只指向同一规格/唯一计划与原回执；原生状态/预算不可见标 unknown，Mode 0 仅当前对话。新上下文先 Intake 核实最新目标、项目与实际依赖，再给 resume 传当前确认的 `--current-goal`，不能照抄旧 checkpoint。目标修订不匹配会先全局 INSPECT，调用者随后核对影响与适用性，只实际复做受影响工作；不改签旧回执，不盲续 running/unknown，不承诺 exactly-once 或自动唤醒。未触发时保持普通 FF。
 
 ## 变更与恢复边界
 
