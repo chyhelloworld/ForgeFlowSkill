@@ -33,7 +33,9 @@ node .forgeflow/ff-spec.mjs --help
 
 技能/安装包版本为 **0.9.2-goal.2**；固定 FF CLI 的 `--version` 为 **1.14.2-ff.0.5.0-rc3**，两者标识不同层次。skills-only 没有可用的 full CLI，不能据此要求版本输出成功。Goal 候选提供技能契约，原生写入与状态同步未实现；使用与实验边界见[Codex Goal](codex-goal.md)。
 
-安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。71d0464 原候选有 full 构建/CLI 的原生记录；46022d7 文档包的两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖本次整理后的新包。Codex setup refresh 与 Claude/全平台/人类验收的缺口仍保留。
+安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。0.9.2-goal.2 已有实际 Windows/Codex 隔离项目 full 构建、安装及 doctor READY；skills-only 的 doctor 为预期 BLOCKED。选定桌面后端的技能加载/调用已有有界观察，包与提交、后续文档包的继承理由见[原生验证与证据继承](../../iterations/0.9.2-goal.2/native-closeout.md)。这些不是全平台或产品真人验收。
+
+历史失败仍保留：71d0464 原候选有 full 构建/CLI 记录；46022d7 文档包两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖其他包；旧 PATH CLI 的 Codex setup refresh 故障不能概括为当前所有桌面后端均失败。Claude、全平台与产品真人验收仍未证明。
 
 仅需技能时用 `--mode skills-only`，不要同时加 `--build`。成功状态是 `INSTALLED_SKILLS_ONLY_GATES_BLOCKED`，不是 full READY；17 项技能可分发，FF CLI 门禁不可用。full 依赖网络下载固定构建依赖，不修改锁文件、TLS 或权限来绕过失败。
 
