@@ -1,6 +1,6 @@
 # 独立复核回执
 
-2026-10-19。四类复核由独立 `gpt-6.1-sol` / `xhigh` 子代理完成；复核只覆盖各自实际证据，不把低 CRAP 或静态结构当业务正确性证明。
+2026-10-19。四类复核由独立 `gpt-6.1-sol` / `xhigh` 子代理完成；复核只覆盖各自实际证据，不把低 CRAP 或静态结构当业务正确性证明。 下表保留安装器开发阶段的原审查范围（当时未调用模型）；后续独立宿主试验见 [原生回执](native-host-validation.md)，不改签为原审查已覆盖。
 
 | 类别 | 发现与处置 | 结论边界 |
 | --- | --- | --- |
@@ -21,3 +21,11 @@
 | `tools/installer/install.mjs` | `352bb0543ab115f7afcd3d87b75653385a04103134b1f7ba6eeb481263b07f88` |
 
 原始审查、反例驱动、失败与修复结果保存在外层工作空间 `_verification/093-dual-host-20261019/{code-review,mainflow-review,metric-tools}/`；完整指标报告的哈希和两份 capture/raw 哈希在 [公开逐函数投影](function-metrics.json)。源代码哈希若变化，不能复用本表结论；文档和冻结包的精确绑定由最终交付回执单独记录。
+
+## 合并前独立复核
+
+2026-10-19 再次完整审阅相对 main 的生产差异、schema 1/2、回滚/恢复、删端与用户编辑保护，未发现新增可复现阻断。新鲜离线 transaction/schema 探针 **16 PASS、0 FAIL**；包含旧 Claude 单端形状迁移、旧/新 journal 提交前后恢复、transaction 损坏和后续编辑、state rename 失败与未托管冲突保护。直接构造 fixture 不作为真实安装或模型调用证据。
+
+独立核心需求/验收复核确认：当前安装器计划区分文件/CLI 就绪和模型调用，没有把两端模型全部成功列为安装器合并门禁。另行逐项核对 Claude 原始 Skill/Read 回执、Codex BLOCKED、原包绑定和指标；未将未知改为通过。原生范围见 [宿主回执](native-host-validation.md)。公开摘要不包含原始宿主会话或用户身份。
+
+详细离线探针和结论保留在外层 `_verification/093-merge-final-20261019/{code-audit,acceptance-audit}/`。文档收尾不改变六个生产模块；新包仍须独立通过清单、字节和受影响安装验证，正常 PR 的保护/CI 条件由 GitHub 再核对。

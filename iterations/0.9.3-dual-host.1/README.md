@@ -1,6 +1,6 @@
 # 0.9.3-dual-host.1：同项目 Codex / Claude 共存安装
 
-基线 main `2a46764224e24645d7d9c60ffb83797856713f2e`，工作分支 `work/dual-host-coexistence`。本轮是安装器候选，未发布、未合并；不修改真实产品或全局技能。17 项技能保持既有职责，Goal 契约只同步包版本。
+基线 main `2a46764224e24645d7d9c60ffb83797856713f2e`，实现分支 `work/dual-host-coexistence`。本轮是未发布的安装器候选，不修改真实产品或全局技能。17 项技能保持既有职责，Goal 契约只同步包版本。用户后续已授权最终检查符合仓库条件后正常推送和 PR 合并；不包含发布、部署或其他项目升级。
 
 ## 行为与边界
 
@@ -12,7 +12,7 @@
 
 固定生产源码（dev-source-5）安装器 **48 项：47 通过、1 权限跳过、0 失败**；涵盖显式双端、旧 schema 1 迁移/回滚、schema 2 删端后重入/重加、共同升级、用户冲突、共享运行时修改保护、真实安装/移除子进程中断及 RECOVERED/COMMITTED、旧 journal 兼容。工作流 **53 项：52 通过、1 权限跳过**；静态校验及 **11 项负向控制**通过。跳过的是 Windows 相对符号链接权限；实际 junction 保护用例在获准的隔离测试权限下通过，没有修改安全设置。
 
-真实 Windows 中文/空格路径驱动经过旧 0.9.2 的精确 `bin/ff-install.mjs` 单端 Codex skills-only 安装，再迁移至新双端 full，验证两端各 17 项技能、包入口与已安装入口的分端 doctor READY、实际 CLI `1.14.2-ff.0.5.0-rc3`、重入字节不变、单端损坏隔离、保护编辑、移除/回滚及 full↔skills-only。中间包 native-4 的 18 条运行已实跑；**最终包不继承该标签**，收尾按同驱动重新验证。精确最终包回执、manifest/payload 与工作分支提交绑定放在外层工作空间 `_verification/093-dual-host-20261019/native-final/result.json` 和 `FINAL-DELIVERY.json`，不向本页写入自引用包哈希。
+真实 Windows 中文/空格路径驱动经过旧 0.9.2 的精确分发入口单端 Codex skills-only 安装，再迁移至新双端 full，验证两端各 17 项技能、包/已安装分端 doctor READY、实际 CLI、重入字节、损坏隔离、编辑保护、移除/回滚及 full↔skills-only。中间包 native-4 不作为交付证明；原安装器交付包 18e82a53 已完成同驱动 18 条复验，回执在外层 `_verification/093-dual-host-20261019/native-final/result.json` 和 `FINAL-DELIVERY.json`。新增宿主报告后的文档收尾包另行打包、核对和验证，精确结果绑定 `_verification/093-merge-final-20261019` 与最终 PR，不能继承旧包实跑标签；本页不写自引用包哈希。
 
 六个本轮新改生产模块 **63/63 函数实际测量**，含 25 个嵌套函数；最高 CRAP **31.4831 ≤ 50**，无 NOT_MEASURED 或硬失败。**12 个函数高于约 10 的优化目标**，并非全部达到目标；源码 `launch` 是观察到未调用的真实 0 覆盖，不能当“已覆盖”。[逐函数报告](function-metrics.json)记录精确范围与同版哈希，[最小复现工具及口径](measurement/README.md)说明 V8 range proxy 的限制；不能将这些数值当作完整分支/业务正确性证明。
 
@@ -30,6 +30,6 @@
 
 ## 诚实的未测项
 
-本轮不调用 Codex/Claude 模型，不把文件发现或 doctor READY 写成两个宿主模型实际调用成功。真实迁移起点是旧 Codex 单端 skills-only；没有单独原生演练旧 Claude 单端或旧 full 起点，相关对称逻辑和模拟用例不能改写成这两项实跑。全平台、并行模型协同、断电级持久性、完整卸载器及真实产品人类验收均未测/不在本轮范围。哈希检查与合作式锁不能提供对任意外部写入者的文件系统 CAS；发现后续用户冲突会保留 pending 并阻止自动覆盖。
+安装器开发阶段未调用模型；后续获准的人工空白项目试验中，Claude 原生 ff-intake 限定流程成功，Codex 发现 17 项但原读取受宿主策略阻塞，未通过原生使用。原失败、实际工具回执与精确包绑定见 [原生宿主验证](native-host-validation.md)。不把文件发现或 doctor READY 写成两端模型实际调用成功。真实迁移起点是旧 Codex 单端 skills-only；没有单独原生演练旧 Claude 单端或旧 full 起点，相关对称逻辑和模拟用例不能改写成这两项实跑。全平台、并行模型协同、断电级持久性、完整卸载器及真实产品人类验收均未测/不在本轮范围。哈希检查与合作式锁不能提供对任意外部写入者的文件系统 CAS；发现后续用户冲突会保留 pending 并阻止自动覆盖。
 
 Hindsight 等后续方法只进入 [现有路线图](../../planning/ROADMAP-061-09.md)，未安装、未上传数据、未持久化凭证。

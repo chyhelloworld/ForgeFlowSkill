@@ -1,6 +1,6 @@
 # 安装与首次使用
 
-当前工作分支为 **0.9.3-dual-host.1 双宿主安装候选**（`work/dual-host-coexistence`），基于已合并的 0.9.2。只在获准目标安装；不替换全局技能，不自动升级其他项目。17 项技能本体不增加新职责，Goal 契约保持原语义。
+本页对应 **0.9.3-dual-host.1 双宿主安装候选**（实现分支 `work/dual-host-coexistence`），基于已合并的 0.9.2。只在获准目标安装；不替换全局技能，不自动升级其他项目。17 项技能本体不增加新职责，Goal 契约保持原语义。
 
 ## 快速开始：Windows + Codex
 
@@ -26,7 +26,7 @@ node .forgeflow/ff-spec.mjs --help
 
 安装内容位于项目的 `.forgeflow/` 与 `.agents/skills/`。full 构建的内层缓存和临时数据仍在项目 `.forgeflow/install/` 下；上述外层设置不保证所有系统工具都不写项目外文件。工具源无需复制进每个项目，也不替换全局 OpenSpec。
 
-只要技能、暂不需要 CLI 门禁：将 `--mode full --build` 改为 `--mode skills-only`。此模式的 doctor 和 CLI 会返回 **BLOCKED**。Claude Code 将宿主参数改为 `--host claude`，技能安装至 `.claude/skills/`，其实际宿主调用未验证。CodeGraph 默认关闭。
+只要技能、暂不需要 CLI 门禁：将 `--mode full --build` 改为 `--mode skills-only`。此模式的 doctor 和 CLI 会返回 **BLOCKED**。Claude Code 将宿主参数改为 `--host claude`，技能安装至 `.claude/skills/`，原生 ff-intake 仅有人工空白项目的[限定成功回执](../../iterations/0.9.3-dual-host.1/native-host-validation.md)，不代表所有技能或实际业务验收。CodeGraph 默认关闭。
 
 
 ## 同一项目同时供 Codex 和 Claude 使用
@@ -42,7 +42,7 @@ node .forgeflow/install/doctor.mjs --host codex
 node .forgeflow/install/doctor.mjs --host claude
 ```
 
-Codex 读取 `.agents/skills/ff-*`，Claude 读取 `.claude/skills/ff-*`；两端绑定同一 `.forgeflow/ff-spec.mjs`、版本、manifest、模式和 release。`doctor --host` 检查指定端托管文件、共同依赖和真实 CLI 探测；省略宿主检查全部。另一端普通文件损坏不会伪装成所选端损坏，但共同文件、路径或状态异常仍会阻止。**READY 证明文件与 CLI 可用，不证明宿主模型已经加载/调用技能，也不证明业务或真人验收。** 本轮不运行模型调用实验。
+Codex 读取 `.agents/skills/ff-*`，Claude 读取 `.claude/skills/ff-*`；两端绑定同一 `.forgeflow/ff-spec.mjs`、版本、manifest、模式和 release。`doctor --host` 检查指定端托管文件、共同依赖和真实 CLI 探测；省略宿主检查全部。另一端普通文件损坏不会伪装成所选端损坏，但共同文件、路径或状态异常仍会阻止。**READY 证明文件与 CLI 可用，不证明宿主模型已经加载/调用技能，也不证明业务或真人验收。** 后续独立模型试验中 Claude 限定 ff-intake 成功、Codex 原读取受策略阻塞；二者不由 doctor 状态推导。
 
 双端升级继续用 `--hosts codex,claude`；单数参数会阻止意外删掉另一端。旧 schema 1 单端安装保留旧参数和单端切换语义；双端迁移使用 schema 2，移除一端后仍是 schema 2。两端不能混用不同版本或 full/skills-only 模式；两种模式之间可显式重装，full 仍需 `--build`。同版本、同 manifest、同宿主集合及同模式重入不改状态字节。
 
@@ -73,7 +73,7 @@ flowchart LR
 
 安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。0.9.2-goal.2 已有实际 Windows/Codex 隔离项目 full 构建、安装及 doctor READY；skills-only 的 doctor 为预期 BLOCKED。选定桌面后端的技能加载/调用已有有界观察，包与提交、后续文档包的继承理由见[原生验证与证据继承](../../iterations/0.9.2-goal.2/native-closeout.md)。这些不是全平台或产品真人验收。
 
-历史失败仍保留：71d0464 原候选有 full 构建/CLI 记录；46022d7 文档包两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖其他包；旧 PATH CLI 的 Codex setup refresh 故障不能概括为当前所有桌面后端均失败。Claude、全平台与产品真人验收仍未证明。
+历史失败仍保留：71d0464 原候选有 full 构建/CLI 记录；46022d7 文档包两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖其他包；旧 PATH CLI 的 Codex setup refresh 故障不能概括为当前所有桌面后端均失败。Claude 当前仅有上述有界原生 ff-intake 结果；两端完整模型工作流、全平台与产品真人验收仍未证明。
 
 仅需技能时用 `--mode skills-only`，不要同时加 `--build`。成功状态是 `INSTALLED_SKILLS_ONLY_GATES_BLOCKED`，不是 full READY；17 项技能可分发，FF CLI 门禁不可用。full 依赖网络下载固定构建依赖，不修改锁文件、TLS 或权限来绕过失败。
 
