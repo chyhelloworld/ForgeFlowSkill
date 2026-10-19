@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
+import { safe, fail } from './files.mjs';
+import { control, loadState, hostsOf, checkOwned, assertIdle } from './state.mjs';
 const hash = data => createHash('sha256').update(data).digest('hex');
 export function inventory(root, relative = '') {
   const result = {};
@@ -42,18 +44,42 @@ export function runNode(project, entry, args, capture = false) {
   if (result.error) throw result.error;
   return result;
 }
+export function checkRelease(project, state, message = 'Release was modified') {
+  if (!/^releases\/[a-zA-Z0-9.+-]+$/.test(state.release)) fail('unsafe release');
+  const root = safe(project, `${control}/${state.release}`);
+  if (JSON.stringify(inventory(root)) !== JSON.stringify(state.releaseInventory)) fail(message);
+  return path.join(root, 'tools/openspec/ff-spec.mjs');
+}
 export function validateRuntime(project, expected) {
-  const state = JSON.parse(fs.readFileSync(path.join(project, '.forgeflow/install/state.json'), 'utf8'));
+  assertIdle(project);
+  const state = loadState(project);
+  if (!state) fail('Not installed');
   if (state.version !== expected.version || state.sourceHash !== expected.hash) throw new Error('BLOCKED: launcher binding mismatch');
   if (state.mode !== 'full') throw new Error('BLOCKED: skills-only; FF gates unavailable. Reinstall full with --build.');
-  if (!/^releases\/[a-zA-Z0-9.+-]+$/.test(state.release)) throw new Error('BLOCKED: unsafe release');
-  for (const part of ['.forgeflow', '.forgeflow/install', '.forgeflow/install/releases']) {
-    if (fs.lstatSync(path.join(project, part)).isSymbolicLink()) throw new Error('BLOCKED: runtime ancestor symlink');
-  }
-  const root = path.join(project, '.forgeflow/install', state.release);
-  if (fs.lstatSync(root).isSymbolicLink()) throw new Error('BLOCKED: release symlink');
-  if (JSON.stringify(inventory(root)) !== JSON.stringify(state.releaseInventory)) throw new Error('BLOCKED: runtime integrity mismatch');
-  return path.join(root, 'tools/openspec/ff-spec.mjs');
+  return checkRelease(project, state, 'runtime integrity mismatch');
+}
+export function diagnose(project, host, expected) {
+  assertIdle(project);
+  const state = loadState(project);
+  if (!state) fail('Not installed');
+  checkOwned(project, state, host);
+  const entry = validateRuntime(project, expected ?? { version: state.version, hash: state.sourceHash });
+  const result = runNode(project, entry, ['--help'], true);
+  if (result.status !== 0) fail(`CLI probe failed: ${result.stderr}`);
+  assertIdle(project);
+  if (JSON.stringify(loadState(project)) !== JSON.stringify(state)) fail('Install state changed during doctor; retry when idle');
+  checkOwned(project, state, host);
+  checkRelease(project, state, 'runtime changed during doctor');
+  return { status: 'READY', version: state.version, ...(state.schema === 1 ? { host: state.host } : {}), hosts: host ? [host] : hostsOf(state), mode: state.mode, cli: '.forgeflow/ff-spec.mjs', note: 'Managed entries and shared CLI available; not actual model invocation, spec/policy acceptance or human acceptance' };
+}
+export function doctorMain(project, expected, args) {
+  try {
+    let host;
+    if (args.length === 2 && args[0] === '--host') host = args[1];
+    else if (args.length && !(args.length === 1 && args[0] === '--help')) fail('Usage: doctor.mjs [--host codex|claude]');
+    if (args.length === 2 && !['codex', 'claude'].includes(host)) fail('Unknown host');
+    console.log(JSON.stringify(diagnose(project, host, expected), null, 2));
+  } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
 export function launch(project, expected, args) {
   try { process.exitCode = runNode(project, validateRuntime(project, expected), args).status ?? 1; }

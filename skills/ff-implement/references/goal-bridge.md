@@ -1,6 +1,6 @@
 # Codex `/goal` 与 FF 薄适配契约
 
-版本：0.9.2-goal.2，隔离实验候选，未发布。本契约源文件为 `docs/maintainers/CODEX-GOAL-BRIDGE.md`；五个接入技能各携带逐字相同的 `references/goal-bridge.md`，安装后可独立读取，不依赖仓库文档路径。维护时一起更新并核对字节；安装、行为评估、原生 Goal 实验与真人接受分别报告。
+版本：0.9.3-dual-host.1，隔离实验候选，未发布。本契约源文件为 `docs/maintainers/CODEX-GOAL-BRIDGE.md`；五个接入技能各携带逐字相同的 `references/goal-bridge.md`，安装后可独立读取，不依赖仓库文档路径。维护时一起更新并核对字节；安装、行为评估、原生 Goal 实验与真人接受分别报告。
 
 ## 何时启用
 

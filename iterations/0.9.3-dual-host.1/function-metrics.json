@@ -1,0 +1,2705 @@
+{
+  "schema": 1,
+  "version": "0.9.3-dual-host.1",
+  "repo": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence",
+  "measuredAt": "2026-10-19T08:03:41.845Z",
+  "tool": {
+    "script": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\metric-tools\\measure-crap.mjs",
+    "scriptSha256": "5b780438314bdd298d38dc070100cd1c43406394da35aba0fcb360e5c2725703",
+    "scopeSha256": "e0141346bf591d4bd2986f8abd49524e0df9910afa31418ab1ee7284cd0611f6",
+    "node": "v24.22.0",
+    "v8": "13.6.233.17-node.57",
+    "executable": "E:\\github\\ForgeFlowSKill\\_cache\\runtimes\\node-v24.22.0-win-x64\\node.exe",
+    "executableSha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c",
+    "eslint": {
+      "version": "10.12.0",
+      "package": "E:\\github\\ForgeFlowSKill\\_d\\store-cwd-185\\node_modules\\eslint\\package.json",
+      "packageSha256": "7178a717ca081a0558e5bd4eedd5b27c19d7a9b7048434ec40ba536aa2d0f501",
+      "rule": "E:\\github\\ForgeFlowSKill\\_d\\store-cwd-185\\node_modules\\eslint\\lib\\rules\\complexity.js",
+      "ruleSha256": "2d0a10b93268e29cfaefd6293153136a3864c423a20f36b89d9c6920aec3d617"
+    },
+    "espree": {
+      "version": "11.2.0",
+      "package": "E:\\github\\ForgeFlowSKill\\_d\\store-cwd-185\\node_modules\\espree\\package.json",
+      "packageSha256": "23ed9eb09d6076011884a14deb09ad608968eaa01f69344b91207c810a1bebd2"
+    }
+  },
+  "method": {
+    "complexity": "Actual ESLint classic complexity rule, max 0; independent explicit-function AST inventory includes nested functions. Implicit class functions retained and fail closed if mapping is unvalidated.",
+    "coverage": "Actual V8 ranges, exact canonical source file URL and exact AST-derived start/end offsets. Union of executions; innermost applicable range count; conservative minimum of UTF-16 code-unit and range-segment coverage. Nested function spans excluded from enclosing coverage and measured independently.",
+    "sameSource": "Controlled run before/after SHA256 manifests, successful command, immutable raw V8 inventory hashes, current-source match. V8 JSON has no embedded source hash; this attestation assumes no transient rewrite-and-restore during the controlled run.",
+    "formula": "CC^2 * (1 - coverage)^3 + CC",
+    "hardLimit": 50,
+    "optimizationTarget": 10,
+    "limitations": [
+      "Coverage is a documented V8 range proxy, not basis-path, Istanbul statement, line, or branch coverage.",
+      "No metric claim for files outside the six named production modules. Related bin/payload/files/build modules and runtime host calls need separate evidence.",
+      "An absent function mapping is NOT_MEASURED; an observed uncalled root with count 0 is measured zero coverage.",
+      "Executed functions without precise block coverage are NOT_MEASURED. Passing CRAP does not establish behavior, concurrency safety, host invocation, or release readiness."
+    ]
+  },
+  "captures": [
+    {
+      "file": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\coverage-dev-5\\coverage-provenance.json",
+      "sha256": "342c6ad3296cf8d8537034919a3d2d31fb148cf5c1b0a963a20043638ed9d227",
+      "collector": {
+        "file": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\metric-tools\\run-with-coverage.mjs",
+        "sha256": "859cdf6305950a05c974ee62307db79ce2650d006e7018d3f880e2f6a8ae57d9",
+        "scopeSha256": "e0141346bf591d4bd2986f8abd49524e0df9910afa31418ab1ee7284cd0611f6",
+        "node": "v24.22.0",
+        "v8": "13.6.233.17-node.57",
+        "executable": "E:\\github\\ForgeFlowSKill\\_cache\\runtimes\\node-v24.22.0-win-x64\\node.exe",
+        "executableSha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c"
+      },
+      "command": {
+        "executable": "E:\\github\\ForgeFlowSKill\\_cache\\runtimes\\node-v24.22.0-win-x64\\node.exe",
+        "args": [
+          "--test",
+          "tools/installer/tests/install.test.mjs",
+          "tools/installer/tests/dual-host.test.mjs",
+          "tools/installer/tests/windows.test.mjs",
+          "tools/installer/tests/payload.test.mjs",
+          "tools/installer/tests/npx-cleanup.test.mjs"
+        ]
+      },
+      "result": {
+        "code": 0,
+        "signal": null
+      },
+      "startedAt": "2026-10-19T08:00:04.358Z",
+      "completedAt": "2026-10-19T08:02:43.511Z",
+      "coverageDir": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\coverage-dev-5\\coverage",
+      "rawFiles": [
+        {
+          "file": "coverage-13992-1792396915018-0.json",
+          "sha256": "f4a86d296e5957ac61885b106bb1a460d8b40ba40b9bd7fa612da917b0ede7da",
+          "byteLength": 232576
+        },
+        {
+          "file": "coverage-15704-1792396806808-0.json",
+          "sha256": "cb295e8ea26a67091ea2351c04d183867686ee9c0cd4ba7d352f961f1b1dc23f",
+          "byteLength": 230147
+        },
+        {
+          "file": "coverage-17780-1792396905194-0.json",
+          "sha256": "d231d444df8f175c989adedc9f650883b6b93adc2346d798dfe2d0bf31f75844",
+          "byteLength": 226463
+        },
+        {
+          "file": "coverage-18800-1792396804821-0.json",
+          "sha256": "8affbd65894ed74daed1afbcc1859e62e04b7cc23333d18a9a51de77162d0853",
+          "byteLength": 361185
+        },
+        {
+          "file": "coverage-22756-1792396858937-0.json",
+          "sha256": "412c907f79a6ea1265ab0dd1ade2f31b48a73e641f036e97c671eea83ed289c3",
+          "byteLength": 395480
+        },
+        {
+          "file": "coverage-27476-1792396809954-0.json",
+          "sha256": "8da052b0798ce745ff9fe667b03e42d8a99db84129ea5a52f179c2e54cde1422",
+          "byteLength": 271555
+        },
+        {
+          "file": "coverage-31248-1792396927197-0.json",
+          "sha256": "a18b62511c36aafdb3456ffbb2cfbac2b8edf16243e860816d2c4fa10b0cdb48",
+          "byteLength": 229555
+        },
+        {
+          "file": "coverage-31712-1792396807278-0.json",
+          "sha256": "89ef69090333ca8c546514d64c704de91673de40b07bb7bf6dfee51eead1a7e0",
+          "byteLength": 235509
+        },
+        {
+          "file": "coverage-32816-1792396963478-0.json",
+          "sha256": "6ca0f787b6d3635e9029eb562c52af409bfedd78b25aaf2e01af07ee71ed9eb1",
+          "byteLength": 401085
+        },
+        {
+          "file": "coverage-35832-1792396937040-0.json",
+          "sha256": "b8b6abec2c473dfdb524d007e7de636d84490a18a64ee7e7135bd20d24c740d6",
+          "byteLength": 229756
+        },
+        {
+          "file": "coverage-36440-1792396807435-0.json",
+          "sha256": "48ff0b7c7f6d7dc89d1a11ff6d57cc1707d568ba7516d494105d8f626c9458b9",
+          "byteLength": 235509
+        },
+        {
+          "file": "coverage-36544-1792396819340-0.json",
+          "sha256": "25404693880e5669b38b918feac102cb29d8e054bba22f0ad634ca032c194f79",
+          "byteLength": 258256
+        },
+        {
+          "file": "coverage-38028-1792396807107-0.json",
+          "sha256": "9b1b3741193b7fd3dae22284882bd2c14f6f3baa60ef02911056ee49f6837f17",
+          "byteLength": 235509
+        },
+        {
+          "file": "coverage-41072-1792396814932-0.json",
+          "sha256": "966bed8d4107cc77fd2a5e27daf0aef5810ba913ed7c3bdd526334c2c6391a9d",
+          "byteLength": 261381
+        },
+        {
+          "file": "coverage-41436-1792396819362-0.json",
+          "sha256": "1a1aca5c87424f3a25f3213a22b1ccd8cc255222e11a4d2744f7684ef6bef027",
+          "byteLength": 300366
+        },
+        {
+          "file": "coverage-4520-1792396843450-0.json",
+          "sha256": "630c0fc3a9f8e34dab0f33d6ab1ce3fc656346911be0170e82739d877532afda",
+          "byteLength": 228056
+        },
+        {
+          "file": "coverage-4520-1792396962904-0.json",
+          "sha256": "9fc79b2a135ce20d4265051a0452545a048fb510fadb9578b50d3d620747d1bc",
+          "byteLength": 232576
+        },
+        {
+          "file": "coverage-50016-1792396957215-0.json",
+          "sha256": "827e5b30ee8ea2d1508127367ce4230b8f017ea1deca5a7284f076d972ec485e",
+          "byteLength": 232523
+        },
+        {
+          "file": "coverage-50152-1792396807458-0.json",
+          "sha256": "77ff23af8162d1bfea5d58891b7c4f6484a38b3b60c2ee36d0b924f1a7ccd131",
+          "byteLength": 395325
+        },
+        {
+          "file": "coverage-7368-1792396806358-0.json",
+          "sha256": "a0f75389f7164218122e1cd04df3eb3275b5337babf4a088164ed43aa25d80b8",
+          "byteLength": 228024
+        },
+        {
+          "file": "coverage-8864-1792396905044-0.json",
+          "sha256": "0566fe580353e2aa5d78d15e5a17bd74bd5b18ba5797b28133a8e49697bcfab1",
+          "byteLength": 232523
+        }
+      ],
+      "problems": []
+    },
+    {
+      "file": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\coverage-probe-5\\coverage-provenance.json",
+      "sha256": "57811f97ab17e17c76d1f7efc826325953370d3ba8ac1954b309df350371a5b1",
+      "collector": {
+        "file": "E:\\github\\ForgeFlowSKill\\_verification\\093-duAL-host-20261019\\metric-tools\\run-with-coverage.mjs",
+        "sha256": "859cdf6305950a05c974ee62307db79ce2650d006e7018d3f880e2f6a8ae57d9",
+        "scopeSha256": "e0141346bf591d4bd2986f8abd49524e0df9910afa31418ab1ee7284cd0611f6",
+        "node": "v24.22.0",
+        "v8": "13.6.233.17-node.57",
+        "executable": "E:\\github\\ForgeFlowSKill\\_cache\\runtimes\\node-v24.22.0-win-x64\\node.exe",
+        "executableSha256": "ba93f9a70bd86fce3ebbb39ec758501458453467aa92a34a0a3602d1e3fc2b9c"
+      },
+      "command": {
+        "executable": "E:\\github\\ForgeFlowSKill\\_cache\\runtimes\\node-v24.22.0-win-x64\\node.exe",
+        "args": [
+          "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\code-review\\doctor-probe-check.mjs",
+          "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence"
+        ]
+      },
+      "result": {
+        "code": 0,
+        "signal": null
+      },
+      "startedAt": "2026-10-19T08:00:56.304Z",
+      "completedAt": "2026-10-19T08:01:10.936Z",
+      "coverageDir": "E:\\github\\ForgeFlowSKill\\_verification\\093-dual-host-20261019\\coverage-probe-5\\coverage",
+      "rawFiles": [
+        {
+          "file": "coverage-14116-1792396867952-0.json",
+          "sha256": "48b91044d4f8a20f2e39179f45e0583e911bcc089f6b52582d8f8a7b4c19f920",
+          "byteLength": 234972
+        },
+        {
+          "file": "coverage-16364-1792396863971-0.json",
+          "sha256": "b48bfe4f4d431d0cb2bd761c789130cd7fdacafc9aa2b4a6ed93e87c8d3d3515",
+          "byteLength": 235261
+        },
+        {
+          "file": "coverage-17008-1792396866860-0.json",
+          "sha256": "171bb0f4eba5e131158f36829cd3cc3dac7fd1f29aef622525e45c4f246ff72a",
+          "byteLength": 151025
+        },
+        {
+          "file": "coverage-20012-1792396870916-0.json",
+          "sha256": "26492272e9c889e8fede1a493ef0500eb71370f5a3b0254fe8534d1dd29c95d8",
+          "byteLength": 255568
+        },
+        {
+          "file": "coverage-20736-1792396861314-0.json",
+          "sha256": "09ff4e58059f1642cc296c323280463ac807b05682526da81cbbc2a34bf2a1ed",
+          "byteLength": 151495
+        },
+        {
+          "file": "coverage-22640-1792396862199-0.json",
+          "sha256": "c51750bc62e182965adc05e3369f3347c9029ebe294f23b9cfc7ef629b66c021",
+          "byteLength": 152433
+        },
+        {
+          "file": "coverage-29248-1792396863535-0.json",
+          "sha256": "01a2a0a9e2742c47cb6a59cbaeb89b6924e53b942fa501bc7acd7ea155994ba9",
+          "byteLength": 150956
+        },
+        {
+          "file": "coverage-29456-1792396865821-0.json",
+          "sha256": "e43d4ede777d8493a62bdf7000a85dbb983262b0026a537acb735ccfcfffc094",
+          "byteLength": 230103
+        },
+        {
+          "file": "coverage-3408-1792396868946-0.json",
+          "sha256": "05e4ceec02f57728028d91a90f18b8f2291443904ec746a4b0e25ad2789a9d63",
+          "byteLength": 151496
+        },
+        {
+          "file": "coverage-3644-1792396858543-0.json",
+          "sha256": "3c27ec92ec7b0263d1d75d60e476fffe7c2e8ecc2a683133d37d56f0449d9adc",
+          "byteLength": 150955
+        },
+        {
+          "file": "coverage-36472-1792396866884-0.json",
+          "sha256": "e155484d608fccf50c30b31b0c8270ae969f90e829fa65c622b7e34b1f330ddb",
+          "byteLength": 235015
+        },
+        {
+          "file": "coverage-36628-1792396857344-0.json",
+          "sha256": "3793f11ef2dad0148966ba2fa3e1480833315d26d8f56e8e9f516e9456f45a9d",
+          "byteLength": 150956
+        },
+        {
+          "file": "coverage-36916-1792396867750-0.json",
+          "sha256": "44f5d4450b5283a5c06d8c4eea701258d03d1c8666a9191158d729cdcefd96dc",
+          "byteLength": 151028
+        },
+        {
+          "file": "coverage-3976-1792396860585-0.json",
+          "sha256": "240a18b978a489d33fed53e760c545f0bb9090f9b9f934dc47171c0d03746f84",
+          "byteLength": 151030
+        },
+        {
+          "file": "coverage-40696-1792396870890-0.json",
+          "sha256": "0ad7f31f81867ca82d42f2d7f8da04000e49be122b8986c575d44435f9bf8898",
+          "byteLength": 235024
+        },
+        {
+          "file": "coverage-41080-1792396865246-0.json",
+          "sha256": "f90795bc444efb1f8d4330c75c677b1da8e9f826aef9b43ebe7bc434ad92f8ea",
+          "byteLength": 235023
+        },
+        {
+          "file": "coverage-48664-1792396864953-0.json",
+          "sha256": "b02870150257f45022231463ddb5a2bf76190a961ece01247d724bb54b2da75a",
+          "byteLength": 150956
+        },
+        {
+          "file": "coverage-49260-1792396870447-0.json",
+          "sha256": "c96449f6159e96533c0c808bd5026865684bff86d8e6aaeb83f4a1b67562cc55",
+          "byteLength": 152434
+        },
+        {
+          "file": "coverage-5328-1792396869308-0.json",
+          "sha256": "e7e63e51caf0dbbb22187b391f73c2c2acdbb7ec2882578a742b7691259f1b3f",
+          "byteLength": 235070
+        },
+        {
+          "file": "coverage-6008-1792396859840-0.json",
+          "sha256": "ee20d7e2da6f20b819dc237abdfeb64ca6f58b7b9c851cf9ba1358e826ad9a41",
+          "byteLength": 151026
+        }
+      ],
+      "problems": []
+    }
+  ],
+  "provenanceProblems": [],
+  "files": [
+    {
+      "file": "installer.mjs",
+      "sha256": "4cdaf8cd56057ac6d70c995a6c3a3367a7f428538561dc76d8f326929675669f",
+      "byteLength": 3602,
+      "utf16Length": 3602,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\installer.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/installer.mjs",
+      "exactSourceScriptSamples": 11,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "parse",
+          "line": 9,
+          "column": 8,
+          "astStart": 433,
+          "astEnd": 2163,
+          "kind": "FunctionDeclaration",
+          "complexity": 29,
+          "spans": [
+            {
+              "start": 433,
+              "end": 2163,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 433,
+            "end": 2163,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9824561403508771,
+          "codeUnitCoverage": 0.9826589595375722,
+          "segmentCoverage": 0.9824561403508771,
+          "coveredCodeUnits": 1700,
+          "totalCodeUnits": 1730,
+          "coveredSegments": 56,
+          "segments": 57,
+          "exactRangeSamples": 11,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 29.004541208361008,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "main",
+          "line": 32,
+          "column": 8,
+          "astStart": 2171,
+          "astEnd": 3359,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 2171,
+              "end": 3359,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2171,
+            "end": 3359,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9,
+          "codeUnitCoverage": 0.9511784511784511,
+          "segmentCoverage": 0.9,
+          "coveredCodeUnits": 1130,
+          "totalCodeUnits": 1188,
+          "coveredSegments": 18,
+          "segments": 20,
+          "exactRangeSamples": 11,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10.1,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/install.mjs",
+      "sha256": "352bb0543ab115f7afcd3d87b75653385a04103134b1f7ba6eeb481263b07f88",
+      "byteLength": 9123,
+      "utf16Length": 9123,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\tools\\installer\\install.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/tools/installer/install.mjs",
+      "exactSourceScriptSamples": 12,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "dependencies",
+          "line": 10,
+          "column": 8,
+          "astStart": 507,
+          "astEnd": 710,
+          "kind": "FunctionDeclaration",
+          "complexity": 3,
+          "spans": [
+            {
+              "start": 507,
+              "end": 710,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 507,
+            "end": 710,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.6666666666666666,
+          "codeUnitCoverage": 0.8423645320197044,
+          "segmentCoverage": 0.6666666666666666,
+          "coveredCodeUnits": 171,
+          "totalCodeUnits": 203,
+          "coveredSegments": 2,
+          "segments": 3,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 3.3333333333333335,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "buildDependencies",
+          "line": 15,
+          "column": 8,
+          "astStart": 718,
+          "astEnd": 1277,
+          "kind": "FunctionDeclaration",
+          "complexity": 6,
+          "spans": [
+            {
+              "start": 718,
+              "end": 1277,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 718,
+            "end": 1277,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 559,
+          "totalCodeUnits": 559,
+          "coveredSegments": 13,
+          "segments": 13,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 6,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "bindings",
+          "line": 26,
+          "column": 1,
+          "astStart": 1278,
+          "astEnd": 2043,
+          "kind": "FunctionDeclaration",
+          "complexity": 2,
+          "spans": [
+            {
+              "start": 1278,
+              "end": 2043,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1278,
+            "end": 2043,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 765,
+          "totalCodeUnits": 765,
+          "coveredSegments": 3,
+          "segments": 3,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "createReleaseStage",
+          "line": 34,
+          "column": 8,
+          "astStart": 2138,
+          "astEnd": 4141,
+          "kind": "FunctionDeclaration",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2138,
+              "end": 4141,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2138,
+            "end": 4141,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 381,
+          "totalCodeUnits": 381,
+          "coveredSegments": 3,
+          "segments": 3,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 5,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "bootstrapPath",
+          "line": 40,
+          "column": 3,
+          "astStart": 2469,
+          "astEnd": 2828,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 2469,
+              "end": 2828,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2469,
+            "end": 2828,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 359,
+          "totalCodeUnits": 359,
+          "coveredSegments": 8,
+          "segments": 8,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "prepareBootstrapCleanup",
+          "line": 46,
+          "column": 3,
+          "astStart": 2831,
+          "astEnd": 4094,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 2831,
+              "end": 4094,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2831,
+            "end": 4094,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 345,
+          "totalCodeUnits": 345,
+          "coveredSegments": 8,
+          "segments": 8,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 3,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@47:38>",
+          "line": 47,
+          "column": 38,
+          "astStart": 2932,
+          "astEnd": 2940,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2932,
+              "end": 2940,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2932,
+            "end": 2940,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 8,
+          "totalCodeUnits": 8,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 1,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "cleanupBootstrap",
+          "line": 50,
+          "column": 12,
+          "astStart": 3179,
+          "astEnd": 4089,
+          "kind": "FunctionExpression",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 3179,
+              "end": 4089,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3179,
+            "end": 4089,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 531,
+          "totalCodeUnits": 531,
+          "coveredSegments": 8,
+          "segments": 8,
+          "exactRangeSamples": 1,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "removeGenerated",
+          "line": 56,
+          "column": 7,
+          "astStart": 3560,
+          "astEnd": 3939,
+          "kind": "FunctionDeclaration",
+          "complexity": 5,
+          "spans": [
+            {
+              "start": 3560,
+              "end": 3939,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3560,
+            "end": 3939,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8654353562005277,
+          "codeUnitCoverage": 0.8654353562005277,
+          "segmentCoverage": 0.8888888888888888,
+          "coveredCodeUnits": 328,
+          "totalCodeUnits": 379,
+          "coveredSegments": 8,
+          "segments": 9,
+          "exactRangeSamples": 1,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 5.060916214472614,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "release",
+          "line": 70,
+          "column": 1,
+          "astStart": 4142,
+          "astEnd": 6113,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 4142,
+              "end": 6113,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 4142,
+            "end": 6113,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8,
+          "codeUnitCoverage": 0.901580826109128,
+          "segmentCoverage": 0.8,
+          "coveredCodeUnits": 1768,
+          "totalCodeUnits": 1961,
+          "coveredSegments": 16,
+          "segments": 20,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10.799999999999999,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@85:50>",
+          "line": 85,
+          "column": 50,
+          "astStart": 5179,
+          "astEnd": 5189,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 5179,
+              "end": 5189,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 5179,
+            "end": 5189,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 10,
+          "totalCodeUnits": 10,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "install",
+          "line": 102,
+          "column": 8,
+          "astStart": 6121,
+          "astEnd": 8175,
+          "kind": "FunctionDeclaration",
+          "complexity": 30,
+          "spans": [
+            {
+              "start": 6121,
+              "end": 8175,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 6121,
+            "end": 8175,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8818858560794045,
+          "codeUnitCoverage": 0.8818858560794045,
+          "segmentCoverage": 0.9,
+          "coveredCodeUnits": 1777,
+          "totalCodeUnits": 2015,
+          "coveredSegments": 54,
+          "segments": 60,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 31.483024170191158,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@112:73>",
+          "line": 112,
+          "column": 73,
+          "astStart": 6944,
+          "astEnd": 6983,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 6944,
+              "end": 6983,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 6944,
+            "end": 6983,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 39,
+          "totalCodeUnits": 39,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "doctor",
+          "line": 129,
+          "column": 8,
+          "astStart": 8183,
+          "astEnd": 8310,
+          "kind": "FunctionDeclaration",
+          "complexity": 2,
+          "spans": [
+            {
+              "start": 8183,
+              "end": 8310,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 8183,
+            "end": 8310,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.6666666666666666,
+          "codeUnitCoverage": 0.7637795275590551,
+          "segmentCoverage": 0.6666666666666666,
+          "coveredCodeUnits": 97,
+          "totalCodeUnits": 127,
+          "coveredSegments": 2,
+          "segments": 3,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 2.1481481481481484,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "removeHost",
+          "line": 133,
+          "column": 8,
+          "astStart": 8318,
+          "astEnd": 9122,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 8318,
+              "end": 9122,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 8318,
+            "end": 9122,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9090909090909091,
+          "codeUnitCoverage": 0.9685714285714285,
+          "segmentCoverage": 0.9090909090909091,
+          "coveredCodeUnits": 678,
+          "totalCodeUnits": 700,
+          "coveredSegments": 10,
+          "segments": 11,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 3,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4.012021036814425,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@142:69>",
+          "line": 142,
+          "column": 69,
+          "astStart": 8809,
+          "astEnd": 8840,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 8809,
+              "end": 8840,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 8809,
+            "end": 8840,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 31,
+          "totalCodeUnits": 31,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@142:106>",
+          "line": 142,
+          "column": 106,
+          "astStart": 8846,
+          "astEnd": 8898,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 8846,
+              "end": 8898,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 8846,
+            "end": 8898,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 52,
+          "totalCodeUnits": 52,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@143:52>",
+          "line": 143,
+          "column": 52,
+          "astStart": 8953,
+          "astEnd": 8974,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 8953,
+              "end": 8974,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 8953,
+            "end": 8974,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 21,
+          "totalCodeUnits": 21,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/runtime.mjs",
+      "sha256": "f14f9290c63423fd2d8278c7b46597324bb92d8cd6e809619917f50f583a8fdb",
+      "byteLength": 5496,
+      "utf16Length": 5496,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\tools\\installer\\runtime.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/tools/installer/runtime.mjs",
+      "exactSourceScriptSamples": 13,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "hash",
+          "line": 7,
+          "column": 14,
+          "astStart": 284,
+          "astEnd": 339,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 284,
+              "end": 339,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 284,
+            "end": 339,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 55,
+          "totalCodeUnits": 55,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "inventory",
+          "line": 8,
+          "column": 8,
+          "astStart": 348,
+          "astEnd": 1362,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 348,
+              "end": 1362,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 348,
+            "end": 1362,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.7161885245901639,
+          "codeUnitCoverage": 0.7161885245901639,
+          "segmentCoverage": 0.8823529411764706,
+          "coveredCodeUnits": 699,
+          "totalCodeUnits": 976,
+          "coveredSegments": 15,
+          "segments": 17,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 12.286071735664274,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@23:57>",
+          "line": 23,
+          "column": 57,
+          "astStart": 1319,
+          "astEnd": 1357,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 1319,
+              "end": 1357,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1319,
+            "end": 1357,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 38,
+          "totalCodeUnits": 38,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "environment",
+          "line": 25,
+          "column": 8,
+          "astStart": 1370,
+          "astEnd": 2606,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 1370,
+              "end": 2606,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1370,
+            "end": 2606,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.875,
+          "codeUnitCoverage": 0.9599317988064792,
+          "segmentCoverage": 0.875,
+          "coveredCodeUnits": 1126,
+          "totalCodeUnits": 1173,
+          "coveredSegments": 7,
+          "segments": 8,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4.03125,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@33:69>",
+          "line": 33,
+          "column": 69,
+          "astStart": 1940,
+          "astEnd": 2003,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 1940,
+              "end": 2003,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1940,
+            "end": 2003,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 63,
+          "totalCodeUnits": 63,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 3,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "runNode",
+          "line": 41,
+          "column": 8,
+          "astStart": 2614,
+          "astEnd": 2912,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 2614,
+              "end": 2912,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2614,
+            "end": 2912,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8571428571428571,
+          "codeUnitCoverage": 0.9362416107382551,
+          "segmentCoverage": 0.8571428571428571,
+          "coveredCodeUnits": 279,
+          "totalCodeUnits": 298,
+          "coveredSegments": 6,
+          "segments": 7,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4.0466472303206995,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "checkRelease",
+          "line": 47,
+          "column": 8,
+          "astStart": 2920,
+          "astEnd": 3291,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 2920,
+              "end": 3291,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2920,
+            "end": 3291,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8333333333333334,
+          "codeUnitCoverage": 0.9380053908355795,
+          "segmentCoverage": 0.8333333333333334,
+          "coveredCodeUnits": 348,
+          "totalCodeUnits": 371,
+          "coveredSegments": 5,
+          "segments": 6,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4.074074074074074,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "validateRuntime",
+          "line": 53,
+          "column": 8,
+          "astStart": 3299,
+          "astEnd": 3768,
+          "kind": "FunctionDeclaration",
+          "complexity": 5,
+          "spans": [
+            {
+              "start": 3299,
+              "end": 3768,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3299,
+            "end": 3768,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9,
+          "codeUnitCoverage": 0.9530916844349681,
+          "segmentCoverage": 0.9,
+          "coveredCodeUnits": 447,
+          "totalCodeUnits": 469,
+          "coveredSegments": 9,
+          "segments": 10,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 5.025,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "diagnose",
+          "line": 61,
+          "column": 8,
+          "astStart": 3776,
+          "astEnd": 4763,
+          "kind": "FunctionDeclaration",
+          "complexity": 7,
+          "spans": [
+            {
+              "start": 3776,
+              "end": 4763,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3776,
+            "end": 4763,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8823529411764706,
+          "codeUnitCoverage": 0.9341438703140831,
+          "segmentCoverage": 0.8823529411764706,
+          "coveredCodeUnits": 922,
+          "totalCodeUnits": 987,
+          "coveredSegments": 15,
+          "segments": 17,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 7.079788316710768,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "doctorMain",
+          "line": 75,
+          "column": 8,
+          "astStart": 4771,
+          "astEnd": 5270,
+          "kind": "FunctionDeclaration",
+          "complexity": 9,
+          "spans": [
+            {
+              "start": 4771,
+              "end": 5270,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 4771,
+            "end": 5270,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 499,
+          "totalCodeUnits": 499,
+          "coveredSegments": 14,
+          "segments": 14,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 9,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "launch",
+          "line": 84,
+          "column": 8,
+          "astStart": 5278,
+          "astEnd": 5495,
+          "kind": "FunctionDeclaration",
+          "complexity": 3,
+          "spans": [
+            {
+              "start": 5278,
+              "end": 5495,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 5278,
+            "end": 5495,
+            "mapping": "AST function range"
+          },
+          "coverage": 0,
+          "codeUnitCoverage": 0,
+          "segmentCoverage": 0,
+          "coveredCodeUnits": 0,
+          "totalCodeUnits": 217,
+          "coveredSegments": 0,
+          "segments": 1,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 12,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/transaction.mjs",
+      "sha256": "b07e7efbe8dfb1ff1b126c72c4ef2ce97fa05083f3352f2130f1b0d055e1248a",
+      "byteLength": 6466,
+      "utf16Length": 6466,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\tools\\installer\\transaction.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/tools/installer/transaction.mjs",
+      "exactSourceScriptSamples": 12,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "preflight",
+          "line": 8,
+          "column": 8,
+          "astStart": 379,
+          "astEnd": 667,
+          "kind": "FunctionDeclaration",
+          "complexity": 5,
+          "spans": [
+            {
+              "start": 379,
+              "end": 667,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 379,
+            "end": 667,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 288,
+          "totalCodeUnits": 288,
+          "coveredSegments": 10,
+          "segments": 10,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 5,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "restore",
+          "line": 15,
+          "column": 1,
+          "astStart": 668,
+          "astEnd": 1459,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 668,
+              "end": 1459,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 668,
+            "end": 1459,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9473684210526315,
+          "codeUnitCoverage": 0.9570164348925411,
+          "segmentCoverage": 0.9473684210526315,
+          "coveredCodeUnits": 757,
+          "totalCodeUnits": 791,
+          "coveredSegments": 18,
+          "segments": 19,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10.014579384749963,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "recover",
+          "line": 30,
+          "column": 8,
+          "astStart": 1467,
+          "astEnd": 3113,
+          "kind": "FunctionDeclaration",
+          "complexity": 16,
+          "spans": [
+            {
+              "start": 1467,
+              "end": 3113,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1467,
+            "end": 3113,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9090909090909091,
+          "codeUnitCoverage": 0.9280622164614387,
+          "segmentCoverage": 0.9090909090909091,
+          "coveredCodeUnits": 1432,
+          "totalCodeUnits": 1543,
+          "coveredSegments": 30,
+          "segments": 33,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 3,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 16.192336589030806,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@44:75>",
+          "line": 44,
+          "column": 75,
+          "astStart": 2343,
+          "astEnd": 2370,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2343,
+              "end": 2370,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2343,
+            "end": 2370,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 27,
+          "totalCodeUnits": 27,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 2,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@44:109>",
+          "line": 44,
+          "column": 109,
+          "astStart": 2377,
+          "astEnd": 2415,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2377,
+              "end": 2415,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2377,
+            "end": 2415,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 38,
+          "totalCodeUnits": 38,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 2,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@45:73>",
+          "line": 45,
+          "column": 73,
+          "astStart": 2491,
+          "astEnd": 2529,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2491,
+              "end": 2529,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2491,
+            "end": 2529,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 38,
+          "totalCodeUnits": 38,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 2,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "journalFor",
+          "line": 57,
+          "column": 1,
+          "astStart": 3114,
+          "astEnd": 4017,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 3114,
+              "end": 4017,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3114,
+            "end": 4017,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8859357696566998,
+          "codeUnitCoverage": 0.8859357696566998,
+          "segmentCoverage": 0.9047619047619048,
+          "coveredCodeUnits": 800,
+          "totalCodeUnits": 903,
+          "coveredSegments": 19,
+          "segments": 21,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10.148404962382322,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "commit",
+          "line": 73,
+          "column": 8,
+          "astStart": 4025,
+          "astEnd": 5504,
+          "kind": "FunctionDeclaration",
+          "complexity": 11,
+          "spans": [
+            {
+              "start": 4025,
+              "end": 5504,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 4025,
+            "end": 5504,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9230769230769231,
+          "codeUnitCoverage": 0.935595567867036,
+          "segmentCoverage": 0.9230769230769231,
+          "coveredCodeUnits": 1351,
+          "totalCodeUnits": 1444,
+          "coveredSegments": 24,
+          "segments": 26,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 11.055075102412381,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@80:61>",
+          "line": 80,
+          "column": 61,
+          "astStart": 4473,
+          "astEnd": 4508,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 4473,
+              "end": 4508,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 4473,
+            "end": 4508,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 35,
+          "totalCodeUnits": 35,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 9,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "rollback",
+          "line": 103,
+          "column": 8,
+          "astStart": 5512,
+          "astEnd": 6465,
+          "kind": "FunctionDeclaration",
+          "complexity": 9,
+          "spans": [
+            {
+              "start": 5512,
+              "end": 6465,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 5512,
+            "end": 6465,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.7647058823529411,
+          "codeUnitCoverage": 0.8604407135362014,
+          "segmentCoverage": 0.7647058823529411,
+          "coveredCodeUnits": 820,
+          "totalCodeUnits": 953,
+          "coveredSegments": 13,
+          "segments": 17,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10.055159780175046,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/source.mjs",
+      "sha256": "7180813b70d6237eaec156e544bc508f43e758e5a2da85abb9081e131d4ee1f2",
+      "byteLength": 2132,
+      "utf16Length": 2044,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\tools\\installer\\source.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/tools/installer/source.mjs",
+      "exactSourceScriptSamples": 12,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "skillFiles",
+          "line": 5,
+          "column": 1,
+          "astStart": 173,
+          "astEnd": 330,
+          "kind": "FunctionDeclaration",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 173,
+              "end": 330,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 173,
+            "end": 330,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 92,
+          "totalCodeUnits": 92,
+          "coveredSegments": 2,
+          "segments": 2,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@6:59>",
+          "line": 6,
+          "column": 59,
+          "astStart": 261,
+          "astEnd": 326,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 2,
+          "spans": [
+            {
+              "start": 261,
+              "end": 326,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 261,
+            "end": 326,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 65,
+          "totalCodeUnits": 65,
+          "coveredSegments": 2,
+          "segments": 2,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "verifySource",
+          "line": 8,
+          "column": 8,
+          "astStart": 338,
+          "astEnd": 1319,
+          "kind": "FunctionDeclaration",
+          "complexity": 9,
+          "spans": [
+            {
+              "start": 338,
+              "end": 1319,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 338,
+            "end": 1319,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8235294117647058,
+          "codeUnitCoverage": 0.8866886688668867,
+          "segmentCoverage": 0.8235294117647058,
+          "coveredCodeUnits": 806,
+          "totalCodeUnits": 909,
+          "coveredSegments": 14,
+          "segments": 17,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 3,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 9.445145532261348,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@15:41>",
+          "line": 15,
+          "column": 41,
+          "astStart": 793,
+          "astEnd": 811,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 793,
+              "end": 811,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 793,
+            "end": 811,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 18,
+          "totalCodeUnits": 18,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@16:72>",
+          "line": 16,
+          "column": 72,
+          "astStart": 885,
+          "astEnd": 911,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 885,
+              "end": 911,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 885,
+            "end": 911,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 26,
+          "totalCodeUnits": 26,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@19:41>",
+          "line": 19,
+          "column": 41,
+          "astStart": 1114,
+          "astEnd": 1142,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 1114,
+              "end": 1142,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1114,
+            "end": 1142,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 28,
+          "totalCodeUnits": 28,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 7,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "skillPayload",
+          "line": 22,
+          "column": 8,
+          "astStart": 1327,
+          "astEnd": 2043,
+          "kind": "FunctionDeclaration",
+          "complexity": 4,
+          "spans": [
+            {
+              "start": 1327,
+              "end": 2043,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1327,
+            "end": 2043,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 716,
+          "totalCodeUnits": 716,
+          "coveredSegments": 7,
+          "segments": 7,
+          "exactRangeSamples": 12,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 4,
+          "hardGate": "PASS",
+          "target": "PASS"
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/state.mjs",
+      "sha256": "8ac2617ff7927ed148cc0de630275ee393b8b789a9ea8af8907df04f420c9e90",
+      "byteLength": 3316,
+      "utf16Length": 3316,
+      "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\dual-host-coexistence\\tools\\installer\\state.mjs",
+      "sourceUrl": "file:///E:/github/ForgeFlowSKill/worktrees/dual-host-coexistence/tools/installer/state.mjs",
+      "exactSourceScriptSamples": 13,
+      "status": "MEASURED",
+      "functions": [
+        {
+          "name": "<anonymous@5:102>",
+          "line": 5,
+          "column": 102,
+          "astStart": 270,
+          "astEnd": 302,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 270,
+              "end": 302,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 270,
+            "end": 302,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 32,
+          "totalCodeUnits": 32,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "hostBase",
+          "line": 6,
+          "column": 8,
+          "astStart": 313,
+          "astEnd": 456,
+          "kind": "FunctionDeclaration",
+          "complexity": 3,
+          "spans": [
+            {
+              "start": 313,
+              "end": 456,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 313,
+            "end": 456,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.8531468531468531,
+          "codeUnitCoverage": 0.8531468531468531,
+          "segmentCoverage": 0.8571428571428571,
+          "coveredCodeUnits": 122,
+          "totalCodeUnits": 143,
+          "coveredSegments": 6,
+          "segments": 7,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 3.028503112125783,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "normalizeHosts",
+          "line": 10,
+          "column": 8,
+          "astStart": 464,
+          "astEnd": 712,
+          "kind": "FunctionDeclaration",
+          "complexity": 5,
+          "spans": [
+            {
+              "start": 464,
+              "end": 712,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 464,
+            "end": 712,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 190,
+          "totalCodeUnits": 190,
+          "coveredSegments": 8,
+          "segments": 8,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 2,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 5,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@11:63>",
+          "line": 11,
+          "column": 63,
+          "astStart": 560,
+          "astEnd": 589,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 560,
+              "end": 589,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 560,
+            "end": 589,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 29,
+          "totalCodeUnits": 29,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@12:23>",
+          "line": 12,
+          "column": 23,
+          "astStart": 679,
+          "astEnd": 708,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 679,
+              "end": 708,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 679,
+            "end": 708,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 29,
+          "totalCodeUnits": 29,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "hostsOf",
+          "line": 14,
+          "column": 8,
+          "astStart": 720,
+          "astEnd": 1081,
+          "kind": "FunctionDeclaration",
+          "complexity": 6,
+          "spans": [
+            {
+              "start": 720,
+              "end": 1081,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 720,
+            "end": 1081,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 361,
+          "totalCodeUnits": 361,
+          "coveredSegments": 11,
+          "segments": 11,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 6,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "fileHost",
+          "line": 21,
+          "column": 8,
+          "astStart": 1089,
+          "astEnd": 1184,
+          "kind": "FunctionDeclaration",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 1089,
+              "end": 1184,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1089,
+            "end": 1184,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 50,
+          "totalCodeUnits": 50,
+          "coveredSegments": 2,
+          "segments": 2,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 1,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@22:21>",
+          "line": 22,
+          "column": 21,
+          "astStart": 1135,
+          "astEnd": 1180,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 1135,
+              "end": 1180,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1135,
+            "end": 1180,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 45,
+          "totalCodeUnits": 45,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "owned",
+          "line": 24,
+          "column": 8,
+          "astStart": 1192,
+          "astEnd": 1361,
+          "kind": "FunctionDeclaration",
+          "complexity": 3,
+          "spans": [
+            {
+              "start": 1192,
+              "end": 1361,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1192,
+            "end": 1361,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 169,
+          "totalCodeUnits": 169,
+          "coveredSegments": 6,
+          "segments": 6,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "validateState",
+          "line": 29,
+          "column": 8,
+          "astStart": 1369,
+          "astEnd": 2503,
+          "kind": "FunctionDeclaration",
+          "complexity": 14,
+          "spans": [
+            {
+              "start": 1369,
+              "end": 2503,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 1369,
+            "end": 2503,
+            "mapping": "AST function range"
+          },
+          "coverage": 0.9333333333333333,
+          "codeUnitCoverage": 0.9414141414141414,
+          "segmentCoverage": 0.9333333333333333,
+          "coveredCodeUnits": 932,
+          "totalCodeUnits": 990,
+          "coveredSegments": 28,
+          "segments": 30,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 2,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 14.058074074074074,
+          "hardGate": "PASS",
+          "target": "ABOVE_TARGET"
+        },
+        {
+          "name": "<anonymous@41:21>",
+          "line": 41,
+          "column": 21,
+          "astStart": 2123,
+          "astEnd": 2149,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 1,
+          "spans": [
+            {
+              "start": 2123,
+              "end": 2149,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2123,
+            "end": 2149,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 26,
+          "totalCodeUnits": 26,
+          "coveredSegments": 1,
+          "segments": 1,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 1,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "<anonymous@43:53>",
+          "line": 43,
+          "column": 53,
+          "astStart": 2276,
+          "astEnd": 2394,
+          "kind": "ArrowFunctionExpression",
+          "complexity": 2,
+          "spans": [
+            {
+              "start": 2276,
+              "end": 2394,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2276,
+            "end": 2394,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 118,
+          "totalCodeUnits": 118,
+          "coveredSegments": 2,
+          "segments": 2,
+          "exactRangeSamples": 10,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "loadState",
+          "line": 48,
+          "column": 8,
+          "astStart": 2511,
+          "astEnd": 2671,
+          "kind": "FunctionDeclaration",
+          "complexity": 2,
+          "spans": [
+            {
+              "start": 2511,
+              "end": 2671,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2511,
+            "end": 2671,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 160,
+          "totalCodeUnits": 160,
+          "coveredSegments": 5,
+          "segments": 5,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 2,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "checkOwned",
+          "line": 52,
+          "column": 8,
+          "astStart": 2679,
+          "astEnd": 3085,
+          "kind": "FunctionDeclaration",
+          "complexity": 10,
+          "spans": [
+            {
+              "start": 2679,
+              "end": 3085,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 2679,
+            "end": 3085,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 406,
+          "totalCodeUnits": 406,
+          "coveredSegments": 20,
+          "segments": 20,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 10,
+          "hardGate": "PASS",
+          "target": "PASS"
+        },
+        {
+          "name": "assertIdle",
+          "line": 59,
+          "column": 8,
+          "astStart": 3093,
+          "astEnd": 3315,
+          "kind": "FunctionDeclaration",
+          "complexity": 3,
+          "spans": [
+            {
+              "start": 3093,
+              "end": 3315,
+              "mapping": "AST function range"
+            }
+          ],
+          "status": "MEASURED",
+          "matchedRange": {
+            "start": 3093,
+            "end": 3315,
+            "mapping": "AST function range"
+          },
+          "coverage": 1,
+          "codeUnitCoverage": 1,
+          "segmentCoverage": 1,
+          "coveredCodeUnits": 222,
+          "totalCodeUnits": 222,
+          "coveredSegments": 6,
+          "segments": 6,
+          "exactRangeSamples": 13,
+          "nestedFunctionSpansExcluded": 0,
+          "allExecutedSamplesHavePreciseBlockCoverage": true,
+          "crap": 3,
+          "hardGate": "PASS",
+          "target": "PASS"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "gate": "PASS",
+    "files": 6,
+    "functions": 63,
+    "measured": 63,
+    "unmeasured": [],
+    "unavailableFiles": [],
+    "hardFailures": [],
+    "aboveTarget": [
+      {
+        "file": "installer.mjs",
+        "name": "parse",
+        "line": 9,
+        "complexity": 29,
+        "coverage": 0.9824561403508771,
+        "crap": 29.004541208361008
+      },
+      {
+        "file": "installer.mjs",
+        "name": "main",
+        "line": 32,
+        "complexity": 10,
+        "coverage": 0.9,
+        "crap": 10.1
+      },
+      {
+        "file": "tools/installer/install.mjs",
+        "name": "release",
+        "line": 70,
+        "complexity": 10,
+        "coverage": 0.8,
+        "crap": 10.799999999999999
+      },
+      {
+        "file": "tools/installer/install.mjs",
+        "name": "install",
+        "line": 102,
+        "complexity": 30,
+        "coverage": 0.8818858560794045,
+        "crap": 31.483024170191158
+      },
+      {
+        "file": "tools/installer/runtime.mjs",
+        "name": "inventory",
+        "line": 8,
+        "complexity": 10,
+        "coverage": 0.7161885245901639,
+        "crap": 12.286071735664274
+      },
+      {
+        "file": "tools/installer/runtime.mjs",
+        "name": "launch",
+        "line": 84,
+        "complexity": 3,
+        "coverage": 0,
+        "crap": 12
+      },
+      {
+        "file": "tools/installer/transaction.mjs",
+        "name": "restore",
+        "line": 15,
+        "complexity": 10,
+        "coverage": 0.9473684210526315,
+        "crap": 10.014579384749963
+      },
+      {
+        "file": "tools/installer/transaction.mjs",
+        "name": "recover",
+        "line": 30,
+        "complexity": 16,
+        "coverage": 0.9090909090909091,
+        "crap": 16.192336589030806
+      },
+      {
+        "file": "tools/installer/transaction.mjs",
+        "name": "journalFor",
+        "line": 57,
+        "complexity": 10,
+        "coverage": 0.8859357696566998,
+        "crap": 10.148404962382322
+      },
+      {
+        "file": "tools/installer/transaction.mjs",
+        "name": "commit",
+        "line": 73,
+        "complexity": 11,
+        "coverage": 0.9230769230769231,
+        "crap": 11.055075102412381
+      },
+      {
+        "file": "tools/installer/transaction.mjs",
+        "name": "rollback",
+        "line": 103,
+        "complexity": 9,
+        "coverage": 0.7647058823529411,
+        "crap": 10.055159780175046
+      },
+      {
+        "file": "tools/installer/state.mjs",
+        "name": "validateState",
+        "line": 29,
+        "complexity": 14,
+        "coverage": 0.9333333333333333,
+        "crap": 14.058074074074074
+      }
+    ],
+    "maximumMeasuredCrap": 31.483024170191158
+  },
+  "projectionOf": {
+    "file": "_verification/093-dual-host-20261019/metrics-dev5.json",
+    "sha256": "6473c514e00366872f497b0d70fbad01399c0c05574858322309e2abaf95666b",
+    "omitted": "Per-function duplicate raw sample references only; complete report and raw files retained in the outer workspace evidence directory."
+  }
+}
