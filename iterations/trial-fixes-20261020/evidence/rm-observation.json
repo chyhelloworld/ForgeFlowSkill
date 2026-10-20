@@ -1,0 +1,6 @@
+{
+  "node": "v24.12.0",
+  "platform": "win32",
+  "remaining": true,
+  "scope": "one small owned directory; not proof for large trees"
+}

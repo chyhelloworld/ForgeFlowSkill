@@ -1,0 +1,40 @@
+{
+  "baselineCommit": "3d664f963d62bf05a0587265a6f6b92116370c7b",
+  "originalHarnessSha256": "5ede818279aa4bc8f39fa38bb5766ae8ff2ed0e946debc0b62910d0ac87170a6",
+  "node": "v24.12.0",
+  "platform": "win32",
+  "build": {
+    "status": 0
+  },
+  "test": {
+    "status": 1
+  },
+  "baselineChecks": 64,
+  "baselineFailed": [
+    "writing-shape five artifacts valid",
+    "writing-shape docs-only validate",
+    "writing-shape documents semantic limit (false text still hash-valid)",
+    "writing-shape transitive stale reaches all five",
+    "writing-shape normal archive",
+    "writing-beats five artifacts valid",
+    "writing-beats docs-only validate",
+    "writing-beats documents semantic limit (false text still hash-valid)",
+    "writing-beats transitive stale reaches all five",
+    "writing-beats normal archive"
+  ],
+  "candidateChecks": 64,
+  "candidateFailed": [
+    "writing-shape five artifacts valid",
+    "writing-shape docs-only validate",
+    "writing-shape documents semantic limit (false text still hash-valid)",
+    "writing-shape transitive stale reaches all five",
+    "writing-shape normal archive",
+    "writing-beats five artifacts valid",
+    "writing-beats docs-only validate",
+    "writing-beats documents semantic limit (false text still hash-valid)",
+    "writing-beats transitive stale reaches all five",
+    "writing-beats normal archive"
+  ],
+  "sameFailures": true,
+  "scope": "same original harness, same Node/Windows environment; no assertions relaxed"
+}

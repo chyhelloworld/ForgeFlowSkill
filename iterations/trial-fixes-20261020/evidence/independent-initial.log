@@ -1,0 +1,41 @@
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "b66fe85545a4213f6f09ed8acca51638f2d277f7c2f725c96a028c073f481c18"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+MALFORMED_MIGRATION=A valid v2 policy and readable artifact scopes are required: Invalid FF receipt: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "b66fe85545a4213f6f09ed8acca51638f2d277f7c2f725c96a028c073f481c18"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+{
+  "status": "RECORDED",
+  "valid": true
+}
+NO_PROGRESS_BEFORE=true
+INCOMPLETE_WITHOUT_PROGRESS=accepted
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "b66fe85545a4213f6f09ed8acca51638f2d277f7c2f725c96a028c073f481c18"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+{
+  "status": "RECORDED",
+  "valid": true
+}
+EXTERNAL_EVIDENCE_REPLACED_VALID=true
+DOCTOR_RACE_ERROR=BLOCKED: runtime changed during gate diagnostics
+FIXTURES=["E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\independent-cUcgUM","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\independent-kcBF6O","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\independent-LNsrvt","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\doctor-OQIDm5"]

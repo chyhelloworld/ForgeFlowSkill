@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "platform": "win32",
+  "node": "v24.12.0",
+  "version": "0.9.4-trial.1",
+  "manifestHash": "2ffb65727d2203db06e081fc1f8c34a30899f34af067a24910c64a765cc3d5b8",
+  "payloadHash": "10b66afa1f5803aea401f8bb33f6065829b7e5a8fcfe93652ab94bf17cdb3bcd",
+  "baselineVersion": "0.9.3-dual-host.1",
+  "baselineHash": "5b44a68bff6ec67bcc2337d4ef489a57c6b1f9da1d2ed2414a2382176dfd9264",
+  "hosts": [
+    "codex",
+    "claude"
+  ],
+  "release": "releases/0.9.4-trial.1-2ffb65727d2203db-full",
+  "mode": "full",
+  "modelInvocations": "NOT_RUN; file/CLI readiness only",
+  "project": "E:\\CodexTasks\\2026-10-20\\task\\_verification\\dual-native-final-2\\中文 shared full project",
+  "cases": [
+    {
+      "label": "actual-baseline-single",
+      "status": 0
+    },
+    {
+      "label": "exact-package-single-to-dual-full",
+      "status": 0
+    },
+    {
+      "label": "package-doctor-codex",
+      "status": 0
+    },
+    {
+      "label": "installed-doctor-codex",
+      "status": 0
+    },
+    {
+      "label": "package-doctor-claude",
+      "status": 0
+    },
+    {
+      "label": "installed-doctor-claude",
+      "status": 0
+    },
+    {
+      "label": "actual-cli-version",
+      "status": 0
+    },
+    {
+      "label": "dual-full-reentry",
+      "status": 0
+    },
+    {
+      "label": "edit-blocks-removal",
+      "status": 1
+    },
+    {
+      "label": "remove-claude-only",
+      "status": 0
+    },
+    {
+      "label": "removed-host-doctor-blocked",
+      "status": 1
+    },
+    {
+      "label": "rollback-removal-restores-both",
+      "status": 0
+    },
+    {
+      "label": "full-to-skills-only",
+      "status": 0
+    },
+    {
+      "label": "skills-only-doctor-codex",
+      "status": 1
+    },
+    {
+      "label": "installed-skills-only-codex",
+      "status": 1
+    },
+    {
+      "label": "skills-only-doctor-claude",
+      "status": 1
+    },
+    {
+      "label": "installed-skills-only-claude",
+      "status": 1
+    },
+    {
+      "label": "skills-only-back-to-full",
+      "status": 0
+    }
+  ]
+}
