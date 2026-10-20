@@ -1,0 +1,8 @@
+{
+  "priorSnapshotHash": "3a30098ae25c67064a93f4e49fd6028f74995e1e2a5ad4e4ebfaa8287df07487",
+  "priorFixSnapshotHash": "fb7d440c141607f16e6e51cf217eed7463aff0df60e801dc9d351f339d864a2a",
+  "reason": "User requested explanation of 69 path revisits and permitted one bounded rule against unchanged same-fragment rereads.",
+  "files": {
+    "skills/ff-review/references/reviews.md": "5c7a7a5089302808982662dc5c3a96dea661dce7786ee58a97d050cd5919b63b"
+  }
+}

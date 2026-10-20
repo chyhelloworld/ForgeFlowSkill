@@ -1,0 +1,9 @@
+{
+  "initialSnapshotHash": "3a30098ae25c67064a93f4e49fd6028f74995e1e2a5ad4e4ebfaa8287df07487",
+  "finding": "F1",
+  "files": {
+    "docs/FF-中文使用手册.md": "2184640677d8130604a34a45fd376be5c2449abe480cb7bee0b9456681cbf4c6",
+    "docs/FF-离线图文手册.html": "bf2d92ebb3ecd1113885d4faf598e2991a01438f99d75768b9a93594d92e170d"
+  },
+  "scope": "Only the two unconditional plan-review entry sentences and their generated HTML were changed; original snapshot remains preserved."
+}

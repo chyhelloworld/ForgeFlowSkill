@@ -1,0 +1,22 @@
+TAP version 13
+# Subtest: cold install: Chinese/space path, 17 skills, binding, honest blocked runtime
+ok 1 - cold install: Chinese/space path, 17 skills, binding, honest blocked runtime
+  ---
+  duration_ms: 10718.9807
+  type: 'test'
+  ...
+# Subtest: Claude install and same-version reentry leave exact state unchanged
+ok 2 - Claude install and same-version reentry leave exact state unchanged
+  ---
+  duration_ms: 13966.3628
+  type: 'test'
+  ...
+1..2
+# tests 2
+# suites 0
+# pass 2
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24866.7865

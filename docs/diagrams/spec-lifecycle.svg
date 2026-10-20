@@ -34,7 +34,7 @@
 <polyline points="700,250 700,330" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="295" class="e">新变更引用基线</text>
 <polyline points="700,440 700,520" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
-<text x="710" y="480" class="e">确认范围并完成计划审核</text>
+<text x="710" y="480" class="e">确认范围并满足适用前置</text>
 <polyline points="700,630 700,710" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <text x="710" y="675" class="e">验证后仍须取得接受依据</text>
 <polyline points="700,820 700,900" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>

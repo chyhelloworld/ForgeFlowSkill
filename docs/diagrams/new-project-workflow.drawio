@@ -40,13 +40,13 @@
         <mxCell id="g" value="ff-plan 把确认变更拆成可执行票据&#10;artifact ID → 依赖指纹 → 验收与证据" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="850" width="660" height="110" />
         </mxCell>
-        <mxCell id="h" value="ff-review · plan&#10;独立审查计划覆盖与可执行性&#10;问题回到 Plan 或 Spec，复审后继续" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h" value="前置风险检查 / ff-review · plan&#10;普通任务自检；关键风险独立审方案&#10;用户要求和既有门禁仍须满足" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1030" width="660" height="110" />
         </mxCell>
         <mxCell id="i" value="ff-implement 实施已获准切片&#10;status / apply 判定 + 授权 → 实现 → 测试&#10;每片保存当前版本的证据和检查点" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1210" width="660" height="110" />
         </mxCell>
-        <mxCell id="j" value="ff-review · goal-mainflow + code&#10;独立检查目标/真实主流程及代码风险&#10;缺陷返回 Implement；需求偏移返回 Spec" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="j" value="阶段末一次综合独立 ff-review&#10;一名读者分别判断目标、计划与代码&#10;修复局部复核；新关键缺陷仍阻断" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1390" width="660" height="110" />
         </mxCell>
         <mxCell id="k" value="验证与人工接受分别记录&#10;verified ≠ accepted ≠ archived&#10;依赖或审核过期：FF gate 阻塞 archive" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -58,7 +58,7 @@
         <mxCell id="diag" value="ff-diagnose · 故障支线&#10;先复现、证据与定位&#10;修复回 Implement" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="40" y="1210" width="290" height="120" />
         </mxCell>
-        <mxCell id="tdd" value="ff-tdd · 实施内部&#10;一次一个业务行为&#10;red → green；重构先审" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="tdd" value="ff-tdd · 实施内部&#10;一次一个业务行为&#10;red → green；局部自检" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="1070" y="1210" width="290" height="120" />
         </mxCell>
         <mxCell id="handoff" value="ff-handoff · 任意阶段暂停/换会话&#10;出站：规格版本、变更状态、证据、下一步&#10;不代表本轮已经最终交付" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -164,7 +164,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="label9" value="复审通过且已获准" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
+        <mxCell id="label9" value="适用前置满足且已获准" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="710" y="1157" width="360" height="30" />
         </mxCell>
         <mxCell id="e10" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="1" source="i" target="j">

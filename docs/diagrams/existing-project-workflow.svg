@@ -23,7 +23,7 @@
 <text x="865.0" y="577.0" text-anchor="middle" class="n">规格有效，票据缺失/过期</text>
 <text x="865.0" y="607.0" text-anchor="middle" class="n">ff-plan</text>
 <text x="865.0" y="637.0" text-anchor="middle" class="n">重排受影响切片与验证</text>
-<text x="865.0" y="667.0" text-anchor="middle" class="n">再做独立计划审核</text>
+<text x="865.0" y="667.0" text-anchor="middle" class="n">关键风险先独立审方案</text>
 <rect x="1050" y="550" width="300" height="130" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="1200.0" y="577.0" text-anchor="middle" class="n">规格和票据均有效</text>
 <text x="1200.0" y="607.0" text-anchor="middle" class="n">复用现有产物</text>
@@ -35,7 +35,7 @@
 <text x="700.0" y="922.0" text-anchor="middle" class="n">Design / Prove 的结论反馈到规格与计划</text>
 <rect x="370" y="1020" width="660" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1042.0" text-anchor="middle" class="n">实施就绪与授权核对</text>
-<text x="700.0" y="1072.0" text-anchor="middle" class="n">独立 plan 审核有效？目标/票据/测试明确？</text>
+<text x="700.0" y="1072.0" text-anchor="middle" class="n">目标/计划/测试明确？适用前置审核有效？</text>
 <text x="700.0" y="1102.0" text-anchor="middle" class="n">环境可用？风险与权限明确？</text>
 <text x="700.0" y="1132.0" text-anchor="middle" class="n">未就绪回到对应责任；未知不冒充通过</text>
 <rect x="370" y="1220" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
@@ -43,9 +43,9 @@
 <text x="700.0" y="1282.0" text-anchor="middle" class="n">保留他人修改，核对旧操作后再续跑</text>
 <text x="700.0" y="1312.0" text-anchor="middle" class="n">实现/测试与证据绑定当前版本</text>
 <rect x="370" y="1400" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1432.0" text-anchor="middle" class="n">ff-review · goal-mainflow + code</text>
-<text x="700.0" y="1462.0" text-anchor="middle" class="n">独立验证真实主流程与代码风险</text>
-<text x="700.0" y="1492.0" text-anchor="middle" class="n">失败修复复验；需求变化回到 Spec/Plan</text>
+<text x="700.0" y="1432.0" text-anchor="middle" class="n">阶段末一次综合独立 ff-review</text>
+<text x="700.0" y="1462.0" text-anchor="middle" class="n">分别判断目标/主流程、计划与代码</text>
+<text x="700.0" y="1492.0" text-anchor="middle" class="n">修复局部复核；关键未知不能通过</text>
 <rect x="370" y="1580" width="660" height="110" rx="14" fill="#e2efe8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1612.0" text-anchor="middle" class="n">ff-deliver 当前版本交接（PR 可选）</text>
 <text x="700.0" y="1642.0" text-anchor="middle" class="n">验证 / 接受 / 规格合入 / 归档分别记录</text>
@@ -57,7 +57,7 @@
 <rect x="1070" y="1230" width="290" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="1215.0" y="1262.0" text-anchor="middle" class="n">ff-tdd · Implement 内</text>
 <text x="1215.0" y="1292.0" text-anchor="middle" class="n">一个行为 red → green</text>
-<text x="1215.0" y="1322.0" text-anchor="middle" class="n">重构先审，获准再做</text>
+<text x="1215.0" y="1322.0" text-anchor="middle" class="n">局部自检；关键先审</text>
 <rect x="40" y="1780" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="315.0" y="1812.0" text-anchor="middle" class="n">ff-handoff · 暂停/换模型/会话</text>
 <text x="315.0" y="1842.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>

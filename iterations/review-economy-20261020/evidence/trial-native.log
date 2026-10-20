@@ -1,0 +1,101 @@
+TAP version 13
+# Trial fixtures retained: E:\\github\\ForgeFlowSKill\\_verification\\review-economy-20261020\\ff-trial-XdUJ3R
+# Subtest: v1 removed IDs retain current fingerprints and fail with migration diagnostic
+ok 1 - v1 removed IDs retain current fingerprints and fail with migration diagnostic
+  ---
+  duration_ms: 37.5369
+  type: 'test'
+  ...
+# Subtest: v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do
+ok 2 - v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do
+  ---
+  duration_ms: 5588.9984
+  type: 'test'
+  ...
+# Subtest: v2 progress ticks preserve plan review; task scope changes fail; archive requires completion
+ok 3 - v2 progress ticks preserve plan review; task scope changes fail; archive requires completion
+  ---
+  duration_ms: 2018.1089
+  type: 'test'
+  ...
+# Subtest: valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes
+ok 4 - valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes
+  ---
+  duration_ms: 2335.7037
+  type: 'test'
+  ...
+# Subtest: native archive requires completed progress and preserves the independent change
+ok 5 - native archive requires completed progress and preserves the independent change
+  ---
+  duration_ms: 4896.3724
+  type: 'test'
+  ...
+# Subtest: snapshot rejects dirty content, rule changes, report replacement and cross-change receipts
+ok 6 - snapshot rejects dirty content, rule changes, report replacement and cross-change receipts
+  ---
+  duration_ms: 4768.9455
+  type: 'test'
+  ...
+# Subtest: gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence
+ok 7 - gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence
+  ---
+  duration_ms: 6230.5712
+  type: 'test'
+  ...
+# Subtest: autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate
+ok 8 - autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate
+  ---
+  duration_ms: 3535.548
+  type: 'test'
+  ...
+# Subtest: doctor LF suggestions protect literal bracket paths without matching unrelated siblings
+ok 9 - doctor LF suggestions protect literal bracket paths without matching unrelated siblings
+  ---
+  duration_ms: 1225.3315
+  type: 'test'
+  ...
+# Subtest: report template is not pass; fail verdict differs from stale binding; migration preserves old bytes
+ok 10 - report template is not pass; fail verdict differs from stale binding; migration preserves old bytes
+  ---
+  duration_ms: 4308.3117
+  type: 'test'
+  ...
+# Subtest: malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence
+ok 11 - malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence
+  ---
+  duration_ms: 2255.4496
+  type: 'test'
+  ...
+# Subtest: external review evidence is frozen by the tool and checked before and after recording
+ok 12 - external review evidence is frozen by the tool and checked before and after recording
+  ---
+  duration_ms: 3122.9615
+  type: 'test'
+  ...
+# Subtest: v2 archive requires stable progress mapping and zero archived checks cannot pass
+ok 13 - v2 archive requires stable progress mapping and zero archived checks cannot pass
+  ---
+  duration_ms: 3077.8895
+  type: 'test'
+  ...
+# Subtest: zero validation is non-success and installed CLI hints use project entry
+ok 14 - zero validation is non-success and installed CLI hints use project entry
+  ---
+  duration_ms: 3107.0049
+  type: 'test'
+  ...
+# Subtest: Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict
+ok 15 - Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict
+  ---
+  duration_ms: 2130.4033
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 49004.7115

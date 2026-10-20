@@ -1,0 +1,60 @@
+{
+  "kind": "one-iteration-review-proxies-not-token-billing",
+  "actualTokenUsage": "unknown",
+  "actualTokenReduction": "not-established",
+  "sameRealTaskOldNewHostComparison": "NOT_RUN",
+  "independentReviewStarts": 2,
+  "scopedRechecks": 2,
+  "reasonForPreImplementationReview": "This iteration changes review criteria and triggers; critical-risk exception applies.",
+  "reviews": [
+    {
+      "kind": "plan",
+      "durationSeconds": 36,
+      "distinctContentFiles": 8,
+      "repeatLocatingReads": 1,
+      "source": "reviewer self-report; plan-review.md"
+    },
+    {
+      "kind": "comprehensive",
+      "durationSeconds": 328,
+      "distinctAccessedPaths": 106,
+      "contentDiffOrSearchAccesses": 175,
+      "repeatAccesses": 69,
+      "findings": 1,
+      "source": "reviewer self-report; independent-review-initial.md"
+    },
+    {
+      "kind": "F1-scoped-recheck",
+      "durationSeconds": 33,
+      "distinctContentFiles": 4,
+      "contentAccesses": 5,
+      "repeatAccesses": 1,
+      "newFindings": 0,
+      "closedFindings": 1,
+      "source": "reviewer self-report; independent-review-final.md"
+    },
+    {
+      "kind": "user-requested-unchanged-fragment-rule",
+      "durationSeconds": 37,
+      "distinctContentFiles": 3,
+      "contentOrLocatingAccesses": 4,
+      "repeatLocatingAccesses": 1,
+      "newFindings": 0,
+      "source": "reviewer self-report; read-reuse-review.md"
+    }
+  ],
+  "interpretation": "Reading definitions differ; do not add them or treat file, character, visit or simulation counts as actual billed tokens. Comprehensive reading still repeated 69 visits; no observed reduction is claimed. Scoped recheck reused prior conclusions and did not repeat the full audit or A-G.",
+  "finiteExercise": {
+    "cases": "A-G in cases.md",
+    "execution": "internal independent-context workflow decisions only; no real host or business operations",
+    "oldHostBaseline": "NOT_RUN"
+  },
+  "limits": "Rules are implemented and tested within the recorded scope. Actual host adherence, total context use and token savings require measurement on an authorized real task. No large evaluation platform or runtime cache was added.",
+  "repeatAccessCountingNotes": {
+    "unit": "For each path, visits after its first content/diff/search-hit access count as repeat accesses. 175 visits minus 106 distinct paths equals 69.",
+    "necessaryDifferentFragments": "Different required fragments, diff versus original, and targeted locating searches can revisit the same file; all count. The 69 count does not distinguish them.",
+    "identicalFragmentRepeats": "NOT_MEASURED: no span-level trace exists in this evidence. Do not label all 69 redundant or invent a necessary/redundant split.",
+    "observedReasons": "Reviewer reported encoding correction and targeted rereads after truncated output; original evidence also includes diff/original/context locating. Frequency by reason is unavailable.",
+    "comparableBaseline": "None: no same-task old/new host comparison; the 328-second comprehensive review and 33-second F1 recheck have different scopes and cannot establish a saving percentage."
+  }
+}

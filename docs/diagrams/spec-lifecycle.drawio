@@ -60,7 +60,7 @@
             <Array as="points" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="label1" value="确认范围并完成计划审核" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
+        <mxCell id="label1" value="确认范围并满足适用前置" style="text;html=0;align=left;strokeColor=none;fillColor=none;fontSize=17;fontFamily=Noto Sans CJK SC;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="710" y="457" width="360" height="30" />
         </mxCell>
         <mxCell id="e2" value="" style="edgeStyle=none;rounded=0;html=0;endArrow=block;strokeColor=#587386;exitX=0.5;exitY=1.0;exitDx=0;exitDy=0;entryX=0.5;entryY=0.0;entryDx=0;entryDy=0;" edge="1" parent="1" source="c" target="d">

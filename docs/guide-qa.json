@@ -1,28 +1,28 @@
 {
-  "version": "0.9.3-dual-host.1",
+  "version": "0.9.5-review.1",
   "decision-index": {
     "svg_text_count": 21,
     "drawio_preserves_all_text": true,
     "attached_edges": 6,
-    "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
+    "visual_png_inspected": "Static text/edge checks only; visual inspection is recorded per iteration"
   },
   "existing-project-workflow": {
     "svg_text_count": 61,
     "drawio_preserves_all_text": true,
     "attached_edges": 21,
-    "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
+    "visual_png_inspected": "Static text/edge checks only; visual inspection is recorded per iteration"
   },
   "new-project-workflow": {
     "svg_text_count": 58,
     "drawio_preserves_all_text": true,
     "attached_edges": 19,
-    "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
+    "visual_png_inspected": "Static text/edge checks only; visual inspection is recorded per iteration"
   },
   "spec-lifecycle": {
     "svg_text_count": 33,
     "drawio_preserves_all_text": true,
     "attached_edges": 8,
-    "visual_png_inspected": "Historical diagrams retained; decision-index separately inspected in experiment2"
+    "visual_png_inspected": "Static text/edge checks only; visual inspection is recorded per iteration"
   },
   "html": {
     "embedded_diagrams": 4,
@@ -38,5 +38,5 @@
     "local_image_links_valid": 4,
     "host_command_registration": "NOT_TESTED"
   },
-  "rendering": "PNG deterministic Pillow rendering from SVG elements; historical three diagrams retained; new decision-index PNG separately inspected. No host integration tested."
+  "rendering": "PNG deterministic Pillow rendering from SVG elements; visual inspection scope is recorded per iteration. No host integration tested."
 }

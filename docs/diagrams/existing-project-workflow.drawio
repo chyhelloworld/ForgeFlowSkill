@@ -31,7 +31,7 @@
         <mxCell id="d" value="目标清楚，规格缺失/过期&#10;ff-spec&#10;补主流程、边界、验收&#10;需要时 Design / Prove" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="380" y="550" width="300" height="130" />
         </mxCell>
-        <mxCell id="e" value="规格有效，票据缺失/过期&#10;ff-plan&#10;重排受影响切片与验证&#10;再做独立计划审核" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="e" value="规格有效，票据缺失/过期&#10;ff-plan&#10;重排受影响切片与验证&#10;关键风险先独立审方案" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="715" y="550" width="300" height="130" />
         </mxCell>
         <mxCell id="f" value="规格和票据均有效&#10;复用现有产物&#10;核对审核与证据有效性&#10;不必全流程重跑" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -40,13 +40,13 @@
         <mxCell id="g" value="汇合前补齐依赖的缺口&#10;Grill → Spec → Plan，仅运行所需部分&#10;Design / Prove 的结论反馈到规格与计划" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="830" width="660" height="110" />
         </mxCell>
-        <mxCell id="h" value="实施就绪与授权核对&#10;独立 plan 审核有效？目标/票据/测试明确？&#10;环境可用？风险与权限明确？&#10;未就绪回到对应责任；未知不冒充通过" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="h" value="实施就绪与授权核对&#10;目标/计划/测试明确？适用前置审核有效？&#10;环境可用？风险与权限明确？&#10;未就绪回到对应责任；未知不冒充通过" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1020" width="660" height="120" />
         </mxCell>
         <mxCell id="i" value="ff-implement 继续最小获准切片&#10;保留他人修改，核对旧操作后再续跑&#10;实现/测试与证据绑定当前版本" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e1edf5;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1220" width="660" height="110" />
         </mxCell>
-        <mxCell id="j" value="ff-review · goal-mainflow + code&#10;独立验证真实主流程与代码风险&#10;失败修复复验；需求变化回到 Spec/Plan" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="j" value="阶段末一次综合独立 ff-review&#10;分别判断目标/主流程、计划与代码&#10;修复局部复核；关键未知不能通过" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="370" y="1400" width="660" height="110" />
         </mxCell>
         <mxCell id="k" value="ff-deliver 当前版本交接（PR 可选）&#10;验证 / 接受 / 规格合入 / 归档分别记录&#10;正常归档须有效；显式取消不合入规格" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#e2efe8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
@@ -55,7 +55,7 @@
         <mxCell id="diag" value="ff-diagnose · 原因不明&#10;复现与证据 → 根因&#10;修复交回 Implement" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="40" y="1230" width="290" height="110" />
         </mxCell>
-        <mxCell id="tdd" value="ff-tdd · Implement 内&#10;一个行为 red → green&#10;重构先审，获准再做" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
+        <mxCell id="tdd" value="ff-tdd · Implement 内&#10;一个行为 red → green&#10;局部自检；关键先审" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">
           <mxGeometry as="geometry" x="1070" y="1230" width="290" height="110" />
         </mxCell>
         <mxCell id="handoff" value="ff-handoff · 暂停/换模型/会话&#10;出站：规格版本、变更状态、证据、下一步&#10;与成果 Deliver 分开" style="rounded=1;whiteSpace=wrap;html=0;fillColor=#fff0d8;strokeColor=#a9bac8;fontFamily=Noto Sans CJK SC;fontSize=20;" vertex="1" parent="1">

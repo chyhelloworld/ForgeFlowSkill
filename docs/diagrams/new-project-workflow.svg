@@ -26,17 +26,17 @@
 <text x="700.0" y="897.0" text-anchor="middle" class="n">ff-plan 把确认变更拆成可执行票据</text>
 <text x="700.0" y="927.0" text-anchor="middle" class="n">artifact ID → 依赖指纹 → 验收与证据</text>
 <rect x="370" y="1030" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1062.0" text-anchor="middle" class="n">ff-review · plan</text>
-<text x="700.0" y="1092.0" text-anchor="middle" class="n">独立审查计划覆盖与可执行性</text>
-<text x="700.0" y="1122.0" text-anchor="middle" class="n">问题回到 Plan 或 Spec，复审后继续</text>
+<text x="700.0" y="1062.0" text-anchor="middle" class="n">前置风险检查 / ff-review · plan</text>
+<text x="700.0" y="1092.0" text-anchor="middle" class="n">普通任务自检；关键风险独立审方案</text>
+<text x="700.0" y="1122.0" text-anchor="middle" class="n">用户要求和既有门禁仍须满足</text>
 <rect x="370" y="1210" width="660" height="110" rx="14" fill="#e1edf5" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1242.0" text-anchor="middle" class="n">ff-implement 实施已获准切片</text>
 <text x="700.0" y="1272.0" text-anchor="middle" class="n">status / apply 判定 + 授权 → 实现 → 测试</text>
 <text x="700.0" y="1302.0" text-anchor="middle" class="n">每片保存当前版本的证据和检查点</text>
 <rect x="370" y="1390" width="660" height="110" rx="14" fill="#ffffff" stroke="#a9bac8" stroke-width="1.5"/>
-<text x="700.0" y="1422.0" text-anchor="middle" class="n">ff-review · goal-mainflow + code</text>
-<text x="700.0" y="1452.0" text-anchor="middle" class="n">独立检查目标/真实主流程及代码风险</text>
-<text x="700.0" y="1482.0" text-anchor="middle" class="n">缺陷返回 Implement；需求偏移返回 Spec</text>
+<text x="700.0" y="1422.0" text-anchor="middle" class="n">阶段末一次综合独立 ff-review</text>
+<text x="700.0" y="1452.0" text-anchor="middle" class="n">一名读者分别判断目标、计划与代码</text>
+<text x="700.0" y="1482.0" text-anchor="middle" class="n">修复局部复核；新关键缺陷仍阻断</text>
 <rect x="370" y="1570" width="660" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="700.0" y="1602.0" text-anchor="middle" class="n">验证与人工接受分别记录</text>
 <text x="700.0" y="1632.0" text-anchor="middle" class="n">verified ≠ accepted ≠ archived</text>
@@ -52,7 +52,7 @@
 <rect x="1070" y="1210" width="290" height="120" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="1215.0" y="1247.0" text-anchor="middle" class="n">ff-tdd · 实施内部</text>
 <text x="1215.0" y="1277.0" text-anchor="middle" class="n">一次一个业务行为</text>
-<text x="1215.0" y="1307.0" text-anchor="middle" class="n">red → green；重构先审</text>
+<text x="1215.0" y="1307.0" text-anchor="middle" class="n">red → green；局部自检</text>
 <rect x="40" y="1930" width="550" height="110" rx="14" fill="#fff0d8" stroke="#a9bac8" stroke-width="1.5"/>
 <text x="315.0" y="1962.0" text-anchor="middle" class="n">ff-handoff · 任意阶段暂停/换会话</text>
 <text x="315.0" y="1992.0" text-anchor="middle" class="n">出站：规格版本、变更状态、证据、下一步</text>
@@ -76,7 +76,7 @@
 <text x="710" y="805" class="e">就绪</text>
 <polyline points="700,960 700,1030" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1140 700,1210" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
-<text x="710" y="1180" class="e">复审通过且已获准</text>
+<text x="710" y="1180" class="e">适用前置满足且已获准</text>
 <polyline points="700,1320 700,1390" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1500 700,1570" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
 <polyline points="700,1680 700,1750" fill="none" stroke="#587386" stroke-width="2" marker-end="url(#a)"/>
