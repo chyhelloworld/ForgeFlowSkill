@@ -5,11 +5,11 @@
   "archive": "upstream-v1.14.2.tar.gz",
   "archiveSha256": "7b7fb6b208d18b1d87f717a3541455afb7ac360552ff3f65278e84fc618375ff",
   "patch": "forgeflow.patch",
-  "patchSha256": "44099ae1ea94b3a521ab3383616e6b0e8ac0a7be20c697323357a46bd21bb1c9",
+  "patchSha256": "55410a1bfd00bb1f49c56738081fc35369e41bbe43f3c8f0bf25bae055419d27",
   "bootstrapSha256": {
     "bootstrap/package.json": "4d7e880baa35da84b16fed714e9e3fde852c23322e97328c71c3f164916f4bdc",
     "bootstrap/package-lock.json": "cc0a7ecab1e346f1a90248fe021d85dee96120d0332f3508d011bd1f8dd56c35"
   },
   "packageManager": "pnpm@10.34.5",
-  "adapter": "0.5.0-rc3"
+  "adapter": "0.9.4-trial.1"
 }

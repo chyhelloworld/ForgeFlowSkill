@@ -1,0 +1,5231 @@
+{
+  "collection": {
+    "startedAt": "2026-10-20T09:07:01.024Z",
+    "finishedAt": "2026-10-20T09:21:49.840Z",
+    "unchanged": true,
+    "preciseModulePaths": [
+      {
+        "name": "installer.mjs",
+        "sha256": "5b444143d3c79bd67ba4941c3f7d8ea9256b751a8e4afcccb861c0c569e783f1",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\installer.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\installer.mjs"
+        ]
+      },
+      {
+        "name": "tools/installer/install.mjs",
+        "sha256": "1abff4afcd86d23996c0d7498d7d970c79e7b54952270178750a07dacbbb978a",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\installer\\install.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\installer\\install.mjs"
+        ]
+      },
+      {
+        "name": "tools/installer/runtime.mjs",
+        "sha256": "b7986caa614ca22e8a7535d2a5bda96a01f13540e031e43b0f2cbbad07ec87b5",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\installer\\runtime.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\installer\\runtime.mjs"
+        ]
+      },
+      {
+        "name": "tools/openspec/build.mjs",
+        "sha256": "287c4f44eeba96c7cb04e276c4dcc896e048e44598db02869138660cf8b6a369",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\build.mjs"
+        ]
+      },
+      {
+        "name": "tools/openspec/ff-build.mjs",
+        "sha256": "f16e91ef316edfa4a11f56bbac386b8f94e201ef56e78615411b352b3a623c1c",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-build.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-build.mjs"
+        ]
+      },
+      {
+        "name": "tools/openspec/ff-receipt.mjs",
+        "sha256": "e8f88eb048109232f53593757f8c148dfe900148152884fb890ec05836ea80d2",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-receipt.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-receipt.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-receipt.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-receipt.mjs"
+        ]
+      },
+      {
+        "name": "tools/openspec/ff-spec.mjs",
+        "sha256": "824318f56988e856015a426cffcbec5a7112570ba2b43437e0555c3d2834cc79",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-spec.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-spec.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-spec.mjs",
+          "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-spec.mjs"
+        ]
+      },
+      {
+        "name": "tools/openspec/.build/dist/core/ff-validity.js",
+        "sha256": "4c34afd489d3a89e121451f3f526a0a7d6206056f6f09e0451ec50e1290bfb1f",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\core\\ff-validity.js"
+        ]
+      },
+      {
+        "name": "tools/openspec/.build/dist/core/archive.js",
+        "sha256": "285026b121524a4f8a3d12246de48c3bf93b8eaa8292b9396006de4290f5de04",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\core\\archive.js"
+        ]
+      },
+      {
+        "name": "tools/openspec/.build/dist/commands/validate.js",
+        "sha256": "d6cbafdaaa3628be443441e78085853d8f7471e722faebb250ea5d94e9242427",
+        "paths": [
+          "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\commands\\validate.js"
+        ]
+      }
+    ],
+    "rawDirectory": "E:\\CodexTasks\\2026-10-20\\task\\coverage-final-2"
+  },
+  "method": "McCabe 1 + if/ternary/loop/catch/case/logical decisions, nested functions counted independently. Coverage is actual V8 innermost-block counts projected to AST executable statement lines, using only exact module URLs frozen before/after this dedicated collection. CRAP=CC^2*(1-coverage)^3+CC. Source-map-independent compiled JS for TS. No branch coverage or semantic-quality claim.",
+  "rawFiles": 294,
+  "files": [
+    {
+      "file": "installer.mjs",
+      "sha256": "5b444143d3c79bd67ba4941c3f7d8ea9256b751a8e4afcccb861c0c569e783f1",
+      "sampleCount": 23,
+      "functions": [
+        {
+          "name": "parse",
+          "line": 9,
+          "cc": 33,
+          "executableLines": 20,
+          "coveredLines": 20,
+          "coverage": 1,
+          "crap": 33,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "main",
+          "line": 33,
+          "cc": 10,
+          "executableLines": 16,
+          "coveredLines": 16,
+          "coverage": 1,
+          "crap": 10,
+          "status": "MEASURED",
+          "uncovered": []
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/install.mjs",
+      "sha256": "1abff4afcd86d23996c0d7498d7d970c79e7b54952270178750a07dacbbb978a",
+      "sampleCount": 27,
+      "functions": [
+        {
+          "name": "dependencies",
+          "line": 11,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "buildDependencies",
+          "line": 16,
+          "cc": 6,
+          "executableLines": 8,
+          "coveredLines": 8,
+          "coverage": 1,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "bindings",
+          "line": 27,
+          "cc": 2,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "createReleaseStage",
+          "line": 35,
+          "cc": 1,
+          "executableLines": 6,
+          "coveredLines": 6,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "bootstrapPath",
+          "line": 41,
+          "cc": 4,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "prepareBootstrapCleanup",
+          "line": 47,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@48>",
+          "line": 48,
+          "cc": 1,
+          "executableLines": 0,
+          "coveredLines": 0,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "cleanupBootstrap",
+          "line": 51,
+          "cc": 4,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "removeGenerated",
+          "line": 57,
+          "cc": 5,
+          "executableLines": 6,
+          "coveredLines": 5,
+          "coverage": 0.8333333333333334,
+          "crap": 5.12,
+          "status": "MEASURED",
+          "uncovered": [
+            63
+          ]
+        },
+        {
+          "name": "release",
+          "line": 71,
+          "cc": 12,
+          "executableLines": 31,
+          "coveredLines": 31,
+          "coverage": 1,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@86>",
+          "line": 86,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@95>",
+          "line": 95,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "install",
+          "line": 111,
+          "cc": 33,
+          "executableLines": 24,
+          "coveredLines": 24,
+          "coverage": 1,
+          "crap": 33,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@122>",
+          "line": 122,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@138>",
+          "line": 138,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@138>",
+          "line": 138,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "doctor",
+          "line": 142,
+          "cc": 2,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "removeHost",
+          "line": 146,
+          "cc": 4,
+          "executableLines": 12,
+          "coveredLines": 12,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@155>",
+          "line": 155,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@155>",
+          "line": 155,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@156>",
+          "line": 156,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        }
+      ]
+    },
+    {
+      "file": "tools/installer/runtime.mjs",
+      "sha256": "b7986caa614ca22e8a7535d2a5bda96a01f13540e031e43b0f2cbbad07ec87b5",
+      "sampleCount": 27,
+      "functions": [
+        {
+          "name": "hash",
+          "line": 7,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "inventory",
+          "line": 8,
+          "cc": 9,
+          "executableLines": 14,
+          "coveredLines": 11,
+          "coverage": 0.7857142857142857,
+          "crap": 9.8,
+          "status": "MEASURED",
+          "uncovered": [
+            19,
+            20,
+            21
+          ]
+        },
+        {
+          "name": "<callback@23>",
+          "line": 23,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "environment",
+          "line": 25,
+          "cc": 4,
+          "executableLines": 8,
+          "coveredLines": 8,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@33>",
+          "line": 33,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "runNode",
+          "line": 41,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "checkRelease",
+          "line": 47,
+          "cc": 3,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "validateRuntime",
+          "line": 53,
+          "cc": 5,
+          "executableLines": 6,
+          "coveredLines": 6,
+          "coverage": 1,
+          "crap": 5,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "diagnose",
+          "line": 61,
+          "cc": 12,
+          "executableLines": 20,
+          "coveredLines": 19,
+          "coverage": 0.95,
+          "crap": 12.02,
+          "status": "MEASURED",
+          "uncovered": [
+            76
+          ]
+        },
+        {
+          "name": "doctorMain",
+          "line": 84,
+          "cc": 9,
+          "executableLines": 7,
+          "coveredLines": 7,
+          "coverage": 1,
+          "crap": 9,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "launch",
+          "line": 93,
+          "cc": 3,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            94,
+            95,
+            96,
+            98
+          ]
+        },
+        {
+          "name": "currentProject",
+          "line": 100,
+          "cc": 5,
+          "executableLines": 8,
+          "coveredLines": 5,
+          "coverage": 0.625,
+          "crap": 6.32,
+          "status": "MEASURED",
+          "uncovered": [
+            106,
+            107,
+            108
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/build.mjs",
+      "sha256": "287c4f44eeba96c7cb04e276c4dcc896e048e44598db02869138660cf8b6a369",
+      "sampleCount": 2,
+      "functions": [
+        {
+          "name": "run",
+          "line": 14,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "verify",
+          "line": 19,
+          "cc": 2,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "npm",
+          "line": 23,
+          "cc": 5,
+          "executableLines": 7,
+          "coveredLines": 6,
+          "coverage": 0.8571428571428571,
+          "crap": 5.07,
+          "status": "MEASURED",
+          "uncovered": [
+            32
+          ]
+        },
+        {
+          "name": "main",
+          "line": 34,
+          "cc": 8,
+          "executableLines": 20,
+          "coveredLines": 20,
+          "coverage": 1,
+          "crap": 8,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "cleanBuild",
+          "line": 63,
+          "cc": 2,
+          "executableLines": 2,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            73,
+            74
+          ]
+        },
+        {
+          "name": "removeGenerated",
+          "line": 64,
+          "cc": 6,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/ff-build.mjs",
+      "sha256": "f16e91ef316edfa4a11f56bbac386b8f94e201ef56e78615411b352b3a623c1c",
+      "sampleCount": 195,
+      "functions": [
+        {
+          "name": "dependencyHashes",
+          "line": 7,
+          "cc": 1,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "walk",
+          "line": 10,
+          "cc": 8,
+          "executableLines": 10,
+          "coveredLines": 5,
+          "coverage": 0.5,
+          "crap": 16,
+          "status": "MEASURED",
+          "uncovered": [
+            16,
+            17,
+            18,
+            19,
+            20
+          ]
+        },
+        {
+          "name": "<callback@24>",
+          "line": 24,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "verifyReusableBuild",
+          "line": 26,
+          "cc": 5,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 5,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "runtimeHashes",
+          "line": 33,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "walk",
+          "line": 35,
+          "cc": 4,
+          "executableLines": 5,
+          "coveredLines": 4,
+          "coverage": 0.8,
+          "crap": 4.13,
+          "status": "MEASURED",
+          "uncovered": [
+            40
+          ]
+        },
+        {
+          "name": "<callback@44>",
+          "line": 44,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "verifyBuild",
+          "line": 46,
+          "cc": 9,
+          "executableLines": 11,
+          "coveredLines": 10,
+          "coverage": 0.9090909090909091,
+          "crap": 9.06,
+          "status": "MEASURED",
+          "uncovered": [
+            59
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/ff-receipt.mjs",
+      "sha256": "e8f88eb048109232f53593757f8c148dfe900148152884fb890ec05836ea80d2",
+      "sampleCount": 166,
+      "functions": [
+        {
+          "name": "sha",
+          "line": 7,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "safe",
+          "line": 8,
+          "cc": 8,
+          "executableLines": 7,
+          "coveredLines": 7,
+          "coverage": 1,
+          "crap": 8,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@9>",
+          "line": 9,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "read",
+          "line": 18,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "keys",
+          "line": 19,
+          "cc": 6,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "create",
+          "line": 23,
+          "cc": 1,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "changePath",
+          "line": 27,
+          "cc": 4,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "capture",
+          "line": 33,
+          "cc": 7,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 7,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@35>",
+          "line": 35,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@36>",
+          "line": 36,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@36>",
+          "line": 36,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@38>",
+          "line": 38,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "snapshot",
+          "line": 40,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "sameSnapshot",
+          "line": 45,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "boundEvidence",
+          "line": 48,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@51>",
+          "line": 51,
+          "cc": 5,
+          "executableLines": 6,
+          "coveredLines": 6,
+          "coverage": 1,
+          "crap": 5,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "recordsFromReport",
+          "line": 60,
+          "cc": 6,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@63>",
+          "line": 63,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@65>",
+          "line": 65,
+          "cc": 8,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 8,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@69>",
+          "line": 69,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "record",
+          "line": 76,
+          "cc": 21,
+          "executableLines": 26,
+          "coveredLines": 26,
+          "coverage": 1,
+          "crap": 21,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@82>",
+          "line": 82,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@82>",
+          "line": 82,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@82>",
+          "line": 82,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@90>",
+          "line": 90,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "diagnose",
+          "line": 106,
+          "cc": 15,
+          "executableLines": 17,
+          "coveredLines": 17,
+          "coverage": 1,
+          "crap": 15,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@112>",
+          "line": 112,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@112>",
+          "line": 112,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@113>",
+          "line": 113,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@114>",
+          "line": 114,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@114>",
+          "line": 114,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@114>",
+          "line": 114,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@128>",
+          "line": 128,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "receiptMain",
+          "line": 131,
+          "cc": 15,
+          "executableLines": 23,
+          "coveredLines": 22,
+          "coverage": 0.9565217391304348,
+          "crap": 15.02,
+          "status": "MEASURED",
+          "uncovered": [
+            153
+          ]
+        },
+        {
+          "name": "<callback@143>",
+          "line": 143,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@145>",
+          "line": 145,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/ff-spec.mjs",
+      "sha256": "824318f56988e856015a426cffcbec5a7112570ba2b43437e0555c3d2834cc79",
+      "sampleCount": 166,
+      "functions": []
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/ff-validity.js",
+      "sha256": "4c34afd489d3a89e121451f3f526a0a7d6206056f6f09e0451ec50e1290bfb1f",
+      "sampleCount": 166,
+      "functions": [
+        {
+          "name": "sha256",
+          "line": 7,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "errorText",
+          "line": 8,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "object",
+          "line": 9,
+          "cc": 4,
+          "executableLines": 3,
+          "coveredLines": 2,
+          "coverage": 0.6666666666666666,
+          "crap": 4.59,
+          "status": "MEASURED",
+          "uncovered": [
+            11
+          ]
+        },
+        {
+          "name": "keys",
+          "line": 14,
+          "cc": 3,
+          "executableLines": 3,
+          "coveredLines": 2,
+          "coverage": 0.6666666666666666,
+          "crap": 3.33,
+          "status": "MEASURED",
+          "uncovered": [
+            17
+          ]
+        },
+        {
+          "name": "strings",
+          "line": 19,
+          "cc": 9,
+          "executableLines": 10,
+          "coveredLines": 7,
+          "coverage": 0.7,
+          "crap": 11.19,
+          "status": "MEASURED",
+          "uncovered": [
+            21,
+            25,
+            27
+          ]
+        },
+        {
+          "name": "relativeName",
+          "line": 32,
+          "cc": 7,
+          "executableLines": 4,
+          "coveredLines": 3,
+          "coverage": 0.75,
+          "crap": 7.77,
+          "status": "MEASURED",
+          "uncovered": [
+            36
+          ]
+        },
+        {
+          "name": "<callback@35>",
+          "line": 35,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "rejectSymlinkComponents",
+          "line": 38,
+          "cc": 5,
+          "executableLines": 9,
+          "coveredLines": 7,
+          "coverage": 0.7777777777777778,
+          "crap": 5.27,
+          "status": "MEASURED",
+          "uncovered": [
+            44,
+            49
+          ]
+        },
+        {
+          "name": "rejectScopedSymlinks",
+          "line": 53,
+          "cc": 6,
+          "executableLines": 8,
+          "coveredLines": 5,
+          "coverage": 0.625,
+          "crap": 7.9,
+          "status": "MEASURED",
+          "uncovered": [
+            55,
+            59,
+            61
+          ]
+        },
+        {
+          "name": "contained",
+          "line": 64,
+          "cc": 3,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 3,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "safePath",
+          "line": 68,
+          "cc": 9,
+          "executableLines": 17,
+          "coveredLines": 13,
+          "coverage": 0.7647058823529411,
+          "crap": 10.06,
+          "status": "MEASURED",
+          "uncovered": [
+            72,
+            80,
+            82,
+            85
+          ]
+        },
+        {
+          "name": "<callback@83>",
+          "line": 83,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "readPolicy",
+          "line": 88,
+          "cc": 5,
+          "executableLines": 8,
+          "coveredLines": 7,
+          "coverage": 0.875,
+          "crap": 5.05,
+          "status": "MEASURED",
+          "uncovered": [
+            92
+          ]
+        },
+        {
+          "name": "<callback@93>",
+          "line": 93,
+          "cc": 14,
+          "executableLines": 21,
+          "coveredLines": 17,
+          "coverage": 0.8095238095238095,
+          "crap": 15.35,
+          "status": "MEASURED",
+          "uncovered": [
+            97,
+            99,
+            105,
+            112
+          ]
+        },
+        {
+          "name": "validateGraph",
+          "line": 122,
+          "cc": 3,
+          "executableLines": 8,
+          "coveredLines": 7,
+          "coverage": 0.875,
+          "crap": 3.02,
+          "status": "MEASURED",
+          "uncovered": [
+            126
+          ]
+        },
+        {
+          "name": "visit",
+          "line": 131,
+          "cc": 4,
+          "executableLines": 11,
+          "coveredLines": 9,
+          "coverage": 0.8181818181818182,
+          "crap": 4.1,
+          "status": "MEASURED",
+          "uncovered": [
+            133,
+            138
+          ]
+        },
+        {
+          "name": "<callback@144>",
+          "line": 144,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "fileDigest",
+          "line": 146,
+          "cc": 3,
+          "executableLines": 5,
+          "coveredLines": 4,
+          "coverage": 0.8,
+          "crap": 3.07,
+          "status": "MEASURED",
+          "uncovered": [
+            150
+          ]
+        },
+        {
+          "name": "scopeMatches",
+          "line": 153,
+          "cc": 6,
+          "executableLines": 13,
+          "coveredLines": 11,
+          "coverage": 0.8461538461538461,
+          "crap": 6.13,
+          "status": "MEASURED",
+          "uncovered": [
+            156,
+            166
+          ]
+        },
+        {
+          "name": "registerFile",
+          "line": 169,
+          "cc": 3,
+          "executableLines": 6,
+          "coveredLines": 5,
+          "coverage": 0.8333333333333334,
+          "crap": 3.04,
+          "status": "MEASURED",
+          "uncovered": [
+            174
+          ]
+        },
+        {
+          "name": "scopes",
+          "line": 177,
+          "cc": 5,
+          "executableLines": 14,
+          "coveredLines": 13,
+          "coverage": 0.9285714285714286,
+          "crap": 5.01,
+          "status": "MEASURED",
+          "uncovered": [
+            185
+          ]
+        },
+        {
+          "name": "matchesInputs",
+          "line": 196,
+          "cc": 5,
+          "executableLines": 4,
+          "coveredLines": 3,
+          "coverage": 0.75,
+          "crap": 5.39,
+          "status": "MEASURED",
+          "uncovered": [
+            198
+          ]
+        },
+        {
+          "name": "<callback@200>",
+          "line": 200,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "reviewBindingMatches",
+          "line": 202,
+          "cc": 4,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "nonemptyString",
+          "line": 206,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "validateEvidence",
+          "line": 207,
+          "cc": 7,
+          "executableLines": 11,
+          "coveredLines": 9,
+          "coverage": 0.8181818181818182,
+          "crap": 7.29,
+          "status": "MEASURED",
+          "uncovered": [
+            209,
+            215
+          ]
+        },
+        {
+          "name": "validateReview",
+          "line": 221,
+          "cc": 8,
+          "executableLines": 17,
+          "coveredLines": 16,
+          "coverage": 0.9411764705882353,
+          "crap": 8.01,
+          "status": "MEASURED",
+          "uncovered": [
+            235
+          ]
+        },
+        {
+          "name": "currentArtifact",
+          "line": 243,
+          "cc": 3,
+          "executableLines": 8,
+          "coveredLines": 6,
+          "coverage": 0.75,
+          "crap": 3.14,
+          "status": "MEASURED",
+          "uncovered": [
+            247,
+            252
+          ]
+        },
+        {
+          "name": "<callback@248>",
+          "line": 248,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "dependencyInputs",
+          "line": 256,
+          "cc": 4,
+          "executableLines": 7,
+          "coveredLines": 7,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "recordFreshness",
+          "line": 266,
+          "cc": 4,
+          "executableLines": 8,
+          "coveredLines": 7,
+          "coverage": 0.875,
+          "crap": 4.03,
+          "status": "MEASURED",
+          "uncovered": [
+            269
+          ]
+        },
+        {
+          "name": "evaluateArtifact",
+          "line": 276,
+          "cc": 10,
+          "executableLines": 29,
+          "coveredLines": 28,
+          "coverage": 0.9655172413793104,
+          "crap": 10,
+          "status": "MEASURED",
+          "uncovered": [
+            279
+          ]
+        },
+        {
+          "name": "<callback@280>",
+          "line": 280,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "pathPresent",
+          "line": 314,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 4,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "loadManifest",
+          "line": 324,
+          "cc": 3,
+          "executableLines": 8,
+          "coveredLines": 7,
+          "coverage": 0.875,
+          "crap": 3.02,
+          "status": "MEASURED",
+          "uncovered": [
+            330
+          ]
+        },
+        {
+          "name": "selectPolicies",
+          "line": 335,
+          "cc": 4,
+          "executableLines": 13,
+          "coveredLines": 11,
+          "coverage": 0.8461538461538461,
+          "crap": 4.06,
+          "status": "MEASURED",
+          "uncovered": [
+            339,
+            354
+          ]
+        },
+        {
+          "name": "include",
+          "line": 343,
+          "cc": 3,
+          "executableLines": 7,
+          "coveredLines": 6,
+          "coverage": 0.8571428571428571,
+          "crap": 3.03,
+          "status": "MEASURED",
+          "uncovered": [
+            348
+          ]
+        },
+        {
+          "name": "<callback@352>",
+          "line": 352,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@352>",
+          "line": 352,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@352>",
+          "line": 352,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "expand",
+          "line": 355,
+          "cc": 2,
+          "executableLines": 5,
+          "coveredLines": 4,
+          "coverage": 0.8,
+          "crap": 2.03,
+          "status": "MEASURED",
+          "uncovered": [
+            358
+          ]
+        },
+        {
+          "name": "<callback@362>",
+          "line": 362,
+          "cc": 2,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "taskProgress",
+          "line": 371,
+          "cc": 14,
+          "executableLines": 21,
+          "coveredLines": 19,
+          "coverage": 0.9047619047619048,
+          "crap": 14.17,
+          "status": "MEASURED",
+          "uncovered": [
+            373,
+            378
+          ]
+        },
+        {
+          "name": "<callback@376>",
+          "line": 376,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "evaluateFF",
+          "line": 396,
+          "cc": 12,
+          "executableLines": 47,
+          "coveredLines": 45,
+          "coverage": 0.9574468085106383,
+          "crap": 12.01,
+          "status": "MEASURED",
+          "uncovered": [
+            401,
+            408
+          ]
+        },
+        {
+          "name": "<callback@426>",
+          "line": 426,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@428>",
+          "line": 428,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@429>",
+          "line": 429,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@429>",
+          "line": 429,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@441>",
+          "line": 441,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@444>",
+          "line": 444,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "evaluate",
+          "line": 445,
+          "cc": 6,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@452>",
+          "line": 452,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@453>",
+          "line": 453,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@454>",
+          "line": 454,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@455>",
+          "line": 455,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@455>",
+          "line": 455,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "requireFF",
+          "line": 463,
+          "cc": 8,
+          "executableLines": 8,
+          "coveredLines": 8,
+          "coverage": 1,
+          "crap": 8,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@467>",
+          "line": 467,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@469>",
+          "line": 469,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/core/archive.js",
+      "sha256": "285026b121524a4f8a3d12246de48c3bf93b8eaa8292b9396006de4290f5de04",
+      "sampleCount": 31,
+      "functions": [
+        {
+          "name": "isMissingPathError",
+          "line": 19,
+          "cc": 4,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 20,
+          "status": "MEASURED",
+          "uncovered": [
+            20
+          ]
+        },
+        {
+          "name": "isRetirableSpec",
+          "line": 44,
+          "cc": 3,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            45,
+            46,
+            47,
+            48,
+            49
+          ]
+        },
+        {
+          "name": "<callback@48>",
+          "line": 48,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            48
+          ]
+        },
+        {
+          "name": "<callback@50>",
+          "line": 50,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            50
+          ]
+        },
+        {
+          "name": "describeUnaccountedContent",
+          "line": 67,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            68,
+            76,
+            77
+          ]
+        },
+        {
+          "name": "<callback@70>",
+          "line": 70,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            71,
+            72,
+            73
+          ]
+        },
+        {
+          "name": "isRetirementCandidate",
+          "line": 79,
+          "cc": 4,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 20,
+          "status": "MEASURED",
+          "uncovered": [
+            80
+          ]
+        },
+        {
+          "name": "decideSpecOutcome",
+          "line": 85,
+          "cc": 5,
+          "executableLines": 8,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            90,
+            91,
+            108,
+            109,
+            110,
+            112,
+            113,
+            116
+          ]
+        },
+        {
+          "name": "listActiveChangeNames",
+          "line": 118,
+          "cc": 3,
+          "executableLines": 6,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            119,
+            120,
+            121,
+            127,
+            128,
+            129
+          ]
+        },
+        {
+          "name": "<callback@122>",
+          "line": 122,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            122
+          ]
+        },
+        {
+          "name": "<callback@123>",
+          "line": 123,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            123
+          ]
+        },
+        {
+          "name": "<callback@141>",
+          "line": 141,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 3,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "quoteChangeName",
+          "line": 173,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            174
+          ]
+        },
+        {
+          "name": "quoteForShell",
+          "line": 185,
+          "cc": 3,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            186,
+            187,
+            188,
+            189,
+            190
+          ]
+        },
+        {
+          "name": "describeChangeName",
+          "line": 201,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            202
+          ]
+        },
+        {
+          "name": "rerunFlags",
+          "line": 210,
+          "cc": 4,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 20,
+          "status": "MEASURED",
+          "uncovered": [
+            211
+          ]
+        },
+        {
+          "name": "rerunCommand",
+          "line": 217,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            218,
+            222,
+            223,
+            225
+          ]
+        },
+        {
+          "name": "confirmOrBlock",
+          "line": 234,
+          "cc": 3,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            235,
+            236,
+            239,
+            240,
+            242
+          ]
+        },
+        {
+          "name": "toArchiveDiagnostic",
+          "line": 245,
+          "cc": 5,
+          "executableLines": 7,
+          "coveredLines": 5,
+          "coverage": 0.7142857142857143,
+          "crap": 5.58,
+          "status": "MEASURED",
+          "uncovered": [
+            250,
+            253
+          ]
+        },
+        {
+          "name": "copySymbolicLink",
+          "line": 269,
+          "cc": 5,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            270,
+            271,
+            272,
+            275
+          ]
+        },
+        {
+          "name": "copyDirContents",
+          "line": 277,
+          "cc": 5,
+          "executableLines": 15,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            278,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            290,
+            291,
+            293,
+            294,
+            297,
+            300
+          ]
+        },
+        {
+          "name": "fingerprintFileContents",
+          "line": 303,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            304,
+            305,
+            306,
+            308
+          ]
+        },
+        {
+          "name": "fingerprintDirectoryContents",
+          "line": 310,
+          "cc": 1,
+          "executableLines": 6,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            311,
+            312,
+            322,
+            323,
+            369,
+            370
+          ]
+        },
+        {
+          "name": "updateHashField",
+          "line": 312,
+          "cc": 2,
+          "executableLines": 8,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320
+          ]
+        },
+        {
+          "name": "visit",
+          "line": 323,
+          "cc": 9,
+          "executableLines": 34,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            324,
+            325,
+            326,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            336,
+            337,
+            339,
+            340,
+            341,
+            342,
+            343,
+            345,
+            346,
+            348,
+            349,
+            350,
+            351,
+            352,
+            354,
+            355,
+            356,
+            359,
+            360,
+            361,
+            364,
+            365,
+            366
+          ]
+        },
+        {
+          "name": "<callback@329>",
+          "line": 329,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            329
+          ]
+        },
+        {
+          "name": "assertCopiedDirectoryUnchanged",
+          "line": 372,
+          "cc": 3,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            373,
+            374,
+            375,
+            377
+          ]
+        },
+        {
+          "name": "isFallbackRenameCode",
+          "line": 394,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            395
+          ]
+        },
+        {
+          "name": "listTreeEntriesDeepestFirst",
+          "line": 403,
+          "cc": 1,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            404,
+            405,
+            420,
+            421
+          ]
+        },
+        {
+          "name": "visit",
+          "line": 405,
+          "cc": 5,
+          "executableLines": 6,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            406,
+            407,
+            408,
+            409,
+            410,
+            416
+          ]
+        },
+        {
+          "name": "makeClaimSuffix",
+          "line": 463,
+          "cc": 3,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            464,
+            465,
+            466,
+            467,
+            468
+          ]
+        },
+        {
+          "name": "<callback@464>",
+          "line": 464,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            464
+          ]
+        },
+        {
+          "name": "<callback@467>",
+          "line": 467,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            467
+          ]
+        },
+        {
+          "name": "readEntryIdentity",
+          "line": 472,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            473
+          ]
+        },
+        {
+          "name": "removeVerifiedTree",
+          "line": 477,
+          "cc": 5,
+          "executableLines": 20,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            478,
+            479,
+            480,
+            481,
+            482,
+            483,
+            485,
+            486,
+            487,
+            488,
+            489,
+            490,
+            491,
+            494,
+            495,
+            497,
+            498,
+            499,
+            502,
+            504
+          ]
+        },
+        {
+          "name": "<callback@494>",
+          "line": 494,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            494
+          ]
+        },
+        {
+          "name": "<callback@498>",
+          "line": 498,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            498
+          ]
+        },
+        {
+          "name": "copyThenRemoveDirectory",
+          "line": 506,
+          "cc": 15,
+          "executableLines": 32,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 240,
+          "status": "MEASURED",
+          "uncovered": [
+            507,
+            508,
+            509,
+            510,
+            511,
+            512,
+            513,
+            514,
+            515,
+            518,
+            519,
+            521,
+            522,
+            523,
+            526,
+            531,
+            532,
+            534,
+            536,
+            537,
+            542,
+            543,
+            544,
+            547,
+            548,
+            549,
+            550,
+            553,
+            558,
+            560,
+            561,
+            568
+          ]
+        },
+        {
+          "name": "<callback@519>",
+          "line": 519,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            519
+          ]
+        },
+        {
+          "name": "<callback@547>",
+          "line": 547,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            547
+          ]
+        },
+        {
+          "name": "moveDirectory",
+          "line": 574,
+          "cc": 8,
+          "executableLines": 16,
+          "coveredLines": 2,
+          "coverage": 0.125,
+          "crap": 50.88,
+          "status": "MEASURED",
+          "uncovered": [
+            579,
+            582,
+            583,
+            585,
+            586,
+            587,
+            588,
+            591,
+            592,
+            593,
+            594,
+            596,
+            600,
+            605
+          ]
+        },
+        {
+          "name": "<callback@600>",
+          "line": 600,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            601
+          ]
+        },
+        {
+          "name": "assertArchiveDestinationAvailable",
+          "line": 609,
+          "cc": 4,
+          "executableLines": 7,
+          "coveredLines": 4,
+          "coverage": 0.5714285714285714,
+          "crap": 5.26,
+          "status": "MEASURED",
+          "uncovered": [
+            612,
+            616,
+            618
+          ]
+        },
+        {
+          "name": "archiveClaimPath",
+          "line": 621,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "isSameArchiveClaimFile",
+          "line": 624,
+          "cc": 4,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 4,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "releaseArchiveClaim",
+          "line": 628,
+          "cc": 7,
+          "executableLines": 12,
+          "coveredLines": 9,
+          "coverage": 0.75,
+          "crap": 7.77,
+          "status": "MEASURED",
+          "uncovered": [
+            632,
+            647,
+            648
+          ]
+        },
+        {
+          "name": "<callback@629>",
+          "line": 629,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            629
+          ]
+        },
+        {
+          "name": "<callback@630>",
+          "line": 630,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            630
+          ]
+        },
+        {
+          "name": "claimArchiveDestination",
+          "line": 651,
+          "cc": 4,
+          "executableLines": 13,
+          "coveredLines": 8,
+          "coverage": 0.6153846153846154,
+          "crap": 4.91,
+          "status": "MEASURED",
+          "uncovered": [
+            665,
+            666,
+            670,
+            671,
+            674
+          ]
+        },
+        {
+          "name": "<callback@665>",
+          "line": 665,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            665
+          ]
+        },
+        {
+          "name": "statIdentity",
+          "line": 677,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            678
+          ]
+        },
+        {
+          "name": "movableStatIdentity",
+          "line": 680,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            681
+          ]
+        },
+        {
+          "name": "fingerprintPath",
+          "line": 683,
+          "cc": 11,
+          "executableLines": 26,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 132,
+          "status": "MEASURED",
+          "uncovered": [
+            684,
+            685,
+            686,
+            687,
+            688,
+            689,
+            690,
+            691,
+            692,
+            693,
+            694,
+            697,
+            699,
+            702,
+            703,
+            705,
+            708,
+            709,
+            710,
+            711,
+            712,
+            714,
+            716,
+            719,
+            720,
+            721
+          ]
+        },
+        {
+          "name": "digest",
+          "line": 686,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            686
+          ]
+        },
+        {
+          "name": "fingerprintMovablePath",
+          "line": 724,
+          "cc": 8,
+          "executableLines": 19,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 72,
+          "status": "MEASURED",
+          "uncovered": [
+            725,
+            726,
+            730,
+            733,
+            734,
+            735,
+            736,
+            737,
+            738,
+            739,
+            742,
+            744,
+            747,
+            748,
+            749,
+            751,
+            754,
+            755,
+            756
+          ]
+        },
+        {
+          "name": "fingerprintPortableContent",
+          "line": 759,
+          "cc": 4,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 20,
+          "status": "MEASURED",
+          "uncovered": [
+            760,
+            761,
+            765,
+            768,
+            773,
+            774,
+            775
+          ]
+        },
+        {
+          "name": "assertRetirementAuthorization",
+          "line": 779,
+          "cc": 5,
+          "executableLines": 6,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            780,
+            781,
+            782,
+            783,
+            784,
+            787
+          ]
+        },
+        {
+          "name": "fingerprintSpecInputs",
+          "line": 790,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            791
+          ]
+        },
+        {
+          "name": "mutationTargetIdentity",
+          "line": 793,
+          "cc": 3,
+          "executableLines": 8,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            794,
+            795,
+            796,
+            799,
+            800,
+            801,
+            802,
+            804
+          ]
+        },
+        {
+          "name": "<callback@801>",
+          "line": 801,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            801
+          ]
+        },
+        {
+          "name": "assertDistinctMutationTargets",
+          "line": 807,
+          "cc": 3,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            808,
+            809,
+            810,
+            811,
+            812,
+            813,
+            816
+          ]
+        },
+        {
+          "name": "deepestExistingAncestor",
+          "line": 824,
+          "cc": 6,
+          "executableLines": 10,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 42,
+          "status": "MEASURED",
+          "uncovered": [
+            825,
+            826,
+            827,
+            828,
+            830,
+            831,
+            832,
+            835,
+            836,
+            838
+          ]
+        },
+        {
+          "name": "captureSpecSnapshots",
+          "line": 841,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            842
+          ]
+        },
+        {
+          "name": "<callback@842>",
+          "line": 842,
+          "cc": 12,
+          "executableLines": 16,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            843,
+            844,
+            845,
+            846,
+            847,
+            848,
+            849,
+            853,
+            854,
+            857,
+            858,
+            861,
+            871,
+            884,
+            885,
+            893
+          ]
+        },
+        {
+          "name": "restoreSpecSnapshots",
+          "line": 897,
+          "cc": 41,
+          "executableLines": 57,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 1722,
+          "status": "MEASURED",
+          "uncovered": [
+            898,
+            899,
+            900,
+            901,
+            902,
+            903,
+            904,
+            905,
+            909,
+            910,
+            912,
+            913,
+            914,
+            916,
+            917,
+            918,
+            924,
+            928,
+            929,
+            930,
+            933,
+            934,
+            938,
+            939,
+            940,
+            943,
+            945,
+            947,
+            949,
+            955,
+            960,
+            961,
+            964,
+            966,
+            968,
+            970,
+            973,
+            974,
+            978,
+            979,
+            981,
+            982,
+            983,
+            984,
+            986,
+            987,
+            990,
+            991,
+            993,
+            995,
+            996,
+            997,
+            998,
+            999,
+            1003,
+            1006,
+            1007
+          ]
+        },
+        {
+          "name": "<callback@1007>",
+          "line": 1007,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            1007
+          ]
+        },
+        {
+          "name": "finalizeRetirementBackups",
+          "line": 1010,
+          "cc": 9,
+          "executableLines": 13,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 90,
+          "status": "MEASURED",
+          "uncovered": [
+            1011,
+            1012,
+            1013,
+            1014,
+            1015,
+            1016,
+            1017,
+            1019,
+            1021,
+            1022,
+            1025,
+            1029,
+            1030
+          ]
+        },
+        {
+          "name": "execute",
+          "line": 1034,
+          "cc": 9,
+          "executableLines": 18,
+          "coveredLines": 11,
+          "coverage": 0.6111111111111112,
+          "crap": 13.76,
+          "status": "MEASURED",
+          "uncovered": [
+            1044,
+            1045,
+            1046,
+            1048,
+            1054,
+            1063,
+            1064
+          ]
+        },
+        {
+          "name": "printJsonFailure",
+          "line": 1066,
+          "cc": 2,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "run",
+          "line": 1079,
+          "cc": 172,
+          "executableLines": 346,
+          "coveredLines": 93,
+          "coverage": 0.26878612716763006,
+          "crap": 11738.19,
+          "status": "MEASURED",
+          "uncovered": [
+            1101,
+            1106,
+            1107,
+            1109,
+            1110,
+            1111,
+            1112,
+            1114,
+            1118,
+            1133,
+            1136,
+            1140,
+            1141,
+            1142,
+            1143,
+            1153,
+            1157,
+            1165,
+            1169,
+            1177,
+            1186,
+            1187,
+            1188,
+            1189,
+            1201,
+            1202,
+            1203,
+            1204,
+            1205,
+            1206,
+            1244,
+            1258,
+            1259,
+            1262,
+            1263,
+            1264,
+            1277,
+            1278,
+            1279,
+            1280,
+            1282,
+            1283,
+            1293,
+            1294,
+            1295,
+            1296,
+            1299,
+            1300,
+            1301,
+            1306,
+            1307,
+            1308,
+            1312,
+            1313,
+            1314,
+            1318,
+            1320,
+            1321,
+            1326,
+            1327,
+            1331,
+            1334,
+            1335,
+            1336,
+            1339,
+            1340,
+            1344,
+            1345,
+            1346,
+            1350,
+            1386,
+            1387,
+            1394,
+            1395,
+            1396,
+            1397,
+            1398,
+            1399,
+            1405,
+            1406,
+            1407,
+            1408,
+            1409,
+            1410,
+            1411,
+            1412,
+            1413,
+            1414,
+            1416,
+            1418,
+            1430,
+            1436,
+            1438,
+            1439,
+            1440,
+            1443,
+            1444,
+            1445,
+            1446,
+            1448,
+            1452,
+            1453,
+            1456,
+            1461,
+            1462,
+            1463,
+            1464,
+            1466,
+            1468,
+            1469,
+            1470,
+            1471,
+            1473,
+            1474,
+            1475,
+            1476,
+            1478,
+            1480,
+            1483,
+            1484,
+            1485,
+            1489,
+            1495,
+            1498,
+            1499,
+            1500,
+            1501,
+            1503,
+            1504,
+            1505,
+            1506,
+            1510,
+            1511,
+            1515,
+            1516,
+            1517,
+            1518,
+            1519,
+            1527,
+            1537,
+            1553,
+            1573,
+            1581,
+            1582,
+            1587,
+            1588,
+            1589,
+            1590,
+            1591,
+            1592,
+            1594,
+            1595,
+            1596,
+            1597,
+            1598,
+            1599,
+            1600,
+            1601,
+            1602,
+            1610,
+            1611,
+            1612,
+            1613,
+            1622,
+            1623,
+            1624,
+            1625,
+            1627,
+            1631,
+            1632,
+            1633,
+            1634,
+            1636,
+            1637,
+            1638,
+            1640,
+            1641,
+            1642,
+            1643,
+            1646,
+            1648,
+            1661,
+            1662,
+            1663,
+            1664,
+            1665,
+            1669,
+            1670,
+            1671,
+            1672,
+            1696,
+            1697,
+            1698,
+            1699,
+            1700,
+            1702,
+            1703,
+            1704,
+            1708,
+            1709,
+            1710,
+            1711,
+            1717,
+            1729,
+            1734,
+            1735,
+            1736,
+            1739,
+            1754,
+            1757,
+            1760,
+            1764,
+            1768,
+            1769,
+            1772,
+            1773,
+            1774,
+            1775,
+            1776,
+            1780,
+            1781,
+            1783,
+            1786,
+            1787,
+            1791,
+            1792,
+            1819,
+            1820,
+            1823,
+            1824,
+            1825,
+            1828,
+            1829,
+            1830,
+            1831,
+            1834,
+            1836,
+            1838,
+            1839,
+            1840,
+            1841,
+            1842,
+            1845,
+            1849,
+            1850,
+            1851,
+            1852,
+            1855,
+            1860,
+            1861,
+            1862,
+            1864,
+            1884
+          ]
+        },
+        {
+          "name": "beforeFFMutation",
+          "line": 1123,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 3,
+          "coverage": 0.75,
+          "crap": 2.06,
+          "status": "MEASURED",
+          "uncovered": [
+            1125
+          ]
+        },
+        {
+          "name": "<callback@1201>",
+          "line": 1201,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1201
+          ]
+        },
+        {
+          "name": "<callback@1221>",
+          "line": 1221,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@1311>",
+          "line": 1311,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1311
+          ]
+        },
+        {
+          "name": "<callback@1343>",
+          "line": 1343,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1343
+          ]
+        },
+        {
+          "name": "<callback@1451>",
+          "line": 1451,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1451
+          ]
+        },
+        {
+          "name": "<callback@1469>",
+          "line": 1469,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1469
+          ]
+        },
+        {
+          "name": "<callback@1614>",
+          "line": 1614,
+          "cc": 3,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            1614
+          ]
+        },
+        {
+          "name": "<callback@1617>",
+          "line": 1617,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1617
+          ]
+        },
+        {
+          "name": "<callback@1622>",
+          "line": 1622,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1622
+          ]
+        },
+        {
+          "name": "<callback@1632>",
+          "line": 1632,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1632
+          ]
+        },
+        {
+          "name": "<callback@1650>",
+          "line": 1650,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            1651,
+            1653,
+            1655,
+            1656
+          ]
+        },
+        {
+          "name": "<callback@1675>",
+          "line": 1675,
+          "cc": 3,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            1676,
+            1677,
+            1679,
+            1680,
+            1682,
+            1684,
+            1685
+          ]
+        },
+        {
+          "name": "<callback@1687>",
+          "line": 1687,
+          "cc": 2,
+          "executableLines": 3,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            1688,
+            1689,
+            1691
+          ]
+        },
+        {
+          "name": "<callback@1734>",
+          "line": 1734,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1734
+          ]
+        },
+        {
+          "name": "verifyArchivedDeltas",
+          "line": 1792,
+          "cc": 7,
+          "executableLines": 12,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 56,
+          "status": "MEASURED",
+          "uncovered": [
+            1793,
+            1794,
+            1800,
+            1801,
+            1804,
+            1805,
+            1806,
+            1808,
+            1810,
+            1811,
+            1812,
+            1814
+          ]
+        },
+        {
+          "name": "<callback@1842>",
+          "line": 1842,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1842
+          ]
+        },
+        {
+          "name": "<callback@1862>",
+          "line": 1862,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1862
+          ]
+        },
+        {
+          "name": "<callback@1903>",
+          "line": 1903,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            1903
+          ]
+        },
+        {
+          "name": "selectChange",
+          "line": 1906,
+          "cc": 8,
+          "executableLines": 23,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 72,
+          "status": "MEASURED",
+          "uncovered": [
+            1907,
+            1908,
+            1909,
+            1910,
+            1911,
+            1918,
+            1919,
+            1922,
+            1923,
+            1924,
+            1925,
+            1926,
+            1927,
+            1928,
+            1930,
+            1931,
+            1938,
+            1940,
+            1941,
+            1945,
+            1954,
+            1955,
+            1958
+          ]
+        },
+        {
+          "name": "<callback@1922>",
+          "line": 1922,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            1922
+          ]
+        },
+        {
+          "name": "<callback@1930>",
+          "line": 1930,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            1930
+          ]
+        },
+        {
+          "name": "<callback@1931>",
+          "line": 1931,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            1931
+          ]
+        },
+        {
+          "name": "<callback@1938>",
+          "line": 1938,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            1938
+          ]
+        }
+      ]
+    },
+    {
+      "file": "tools/openspec/.build/dist/commands/validate.js",
+      "sha256": "d6cbafdaaa3628be443441e78085853d8f7471e722faebb250ea5d94e9242427",
+      "sampleCount": 22,
+      "functions": [
+        {
+          "name": "projectValidationFindings",
+          "line": 16,
+          "cc": 1,
+          "executableLines": 2,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            17,
+            18
+          ]
+        },
+        {
+          "name": "<callback@17>",
+          "line": 17,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            17
+          ]
+        },
+        {
+          "name": "execute",
+          "line": 32,
+          "cc": 27,
+          "executableLines": 33,
+          "coveredLines": 19,
+          "coverage": 0.5757575757575758,
+          "crap": 82.66,
+          "status": "MEASURED",
+          "uncovered": [
+            36,
+            45,
+            46,
+            47,
+            48,
+            51,
+            52,
+            54,
+            55,
+            57,
+            58,
+            68,
+            94,
+            95
+          ]
+        },
+        {
+          "name": "normalizeType",
+          "line": 105,
+          "cc": 4,
+          "executableLines": 6,
+          "coveredLines": 5,
+          "coverage": 0.8333333333333334,
+          "crap": 4.07,
+          "status": "MEASURED",
+          "uncovered": [
+            111
+          ]
+        },
+        {
+          "name": "listChangeIds",
+          "line": 120,
+          "cc": 1,
+          "executableLines": 2,
+          "coveredLines": 2,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "runInteractiveSelector",
+          "line": 124,
+          "cc": 5,
+          "executableLines": 18,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 30,
+          "status": "MEASURED",
+          "uncovered": [
+            125,
+            126,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            151,
+            152
+          ]
+        },
+        {
+          "name": "<callback@144>",
+          "line": 144,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            144
+          ]
+        },
+        {
+          "name": "<callback@145>",
+          "line": 145,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            145
+          ]
+        },
+        {
+          "name": "printNonInteractiveHint",
+          "line": 154,
+          "cc": 1,
+          "executableLines": 6,
+          "coveredLines": 6,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "validateDirectItem",
+          "line": 162,
+          "cc": 12,
+          "executableLines": 24,
+          "coveredLines": 7,
+          "coverage": 0.2916666666666667,
+          "crap": 63.18,
+          "status": "MEASURED",
+          "uncovered": [
+            168,
+            169,
+            172,
+            173,
+            176,
+            178,
+            179,
+            182,
+            183,
+            193,
+            194,
+            196,
+            198,
+            199,
+            202,
+            204,
+            205
+          ]
+        },
+        {
+          "name": "nestedChangeReport",
+          "line": 215,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 3,
+          "coverage": 0.75,
+          "crap": 2.06,
+          "status": "MEASURED",
+          "uncovered": [
+            219
+          ]
+        },
+        {
+          "name": "validateByType",
+          "line": 224,
+          "cc": 9,
+          "executableLines": 27,
+          "coveredLines": 19,
+          "coverage": 0.7037037037037037,
+          "crap": 11.11,
+          "status": "MEASURED",
+          "uncovered": [
+            238,
+            239,
+            242,
+            244,
+            245,
+            253,
+            254,
+            255
+          ]
+        },
+        {
+          "name": "<callback@236>",
+          "line": 236,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 1,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "printReport",
+          "line": 274,
+          "cc": 13,
+          "executableLines": 12,
+          "coveredLines": 4,
+          "coverage": 0.3333333333333333,
+          "crap": 63.07,
+          "status": "MEASURED",
+          "uncovered": [
+            280,
+            281,
+            284,
+            286,
+            287,
+            288,
+            290,
+            291
+          ]
+        },
+        {
+          "name": "printNextSteps",
+          "line": 294,
+          "cc": 8,
+          "executableLines": 22,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 72,
+          "status": "MEASURED",
+          "uncovered": [
+            295,
+            300,
+            301,
+            304,
+            305,
+            306,
+            307,
+            309,
+            310,
+            311,
+            313,
+            314,
+            315,
+            317,
+            318,
+            319,
+            320,
+            323,
+            324,
+            325,
+            327,
+            328
+          ]
+        },
+        {
+          "name": "<callback@300>",
+          "line": 300,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            300
+          ]
+        },
+        {
+          "name": "<callback@301>",
+          "line": 301,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            301
+          ]
+        },
+        {
+          "name": "<callback@304>",
+          "line": 304,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            304
+          ]
+        },
+        {
+          "name": "<callback@328>",
+          "line": 328,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            328
+          ]
+        },
+        {
+          "name": "printFindingsReport",
+          "line": 330,
+          "cc": 6,
+          "executableLines": 15,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 42,
+          "status": "MEASURED",
+          "uncovered": [
+            331,
+            332,
+            333,
+            334,
+            336,
+            337,
+            338,
+            340,
+            341,
+            342,
+            343,
+            346,
+            347,
+            348,
+            349
+          ]
+        },
+        {
+          "name": "printBulkDetails",
+          "line": 351,
+          "cc": 3,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 12,
+          "status": "MEASURED",
+          "uncovered": [
+            352,
+            353,
+            354,
+            355
+          ]
+        },
+        {
+          "name": "<callback@352>",
+          "line": 352,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            352
+          ]
+        },
+        {
+          "name": "runBulkValidation",
+          "line": 358,
+          "cc": 24,
+          "executableLines": 46,
+          "coveredLines": 21,
+          "coverage": 0.45652173913043476,
+          "crap": 116.46,
+          "status": "MEASURED",
+          "uncovered": [
+            370,
+            392,
+            410,
+            417,
+            422,
+            423,
+            424,
+            425,
+            426,
+            427,
+            460,
+            470,
+            472,
+            473,
+            474,
+            477,
+            478,
+            479,
+            481,
+            482,
+            483,
+            484,
+            487,
+            488,
+            490
+          ]
+        },
+        {
+          "name": "<callback@370>",
+          "line": 370,
+          "cc": 2,
+          "executableLines": 8,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            371,
+            372,
+            373,
+            374,
+            375,
+            383,
+            387,
+            388
+          ]
+        },
+        {
+          "name": "<callback@392>",
+          "line": 392,
+          "cc": 1,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            393,
+            394,
+            395,
+            396,
+            397
+          ]
+        },
+        {
+          "name": "<callback@427>",
+          "line": 427,
+          "cc": 1,
+          "executableLines": 2,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            428,
+            458
+          ]
+        },
+        {
+          "name": "next",
+          "line": 428,
+          "cc": 4,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            429,
+            430,
+            431,
+            432,
+            433,
+            434,
+            435
+          ]
+        },
+        {
+          "name": "<callback@436>",
+          "line": 436,
+          "cc": 2,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            437,
+            438,
+            439,
+            441
+          ]
+        },
+        {
+          "name": "<callback@443>",
+          "line": 443,
+          "cc": 4,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            444,
+            445,
+            446,
+            447
+          ]
+        },
+        {
+          "name": "<callback@449>",
+          "line": 449,
+          "cc": 3,
+          "executableLines": 4,
+          "coveredLines": 0,
+          "coverage": null,
+          "crap": null,
+          "status": "NOT_MEASURED",
+          "uncovered": [
+            450,
+            451,
+            452,
+            454
+          ]
+        },
+        {
+          "name": "<callback@461>",
+          "line": 461,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            461
+          ]
+        },
+        {
+          "name": "listArchivedChangeIds",
+          "line": 502,
+          "cc": 3,
+          "executableLines": 6,
+          "coveredLines": 4,
+          "coverage": 0.6666666666666666,
+          "crap": 3.33,
+          "status": "MEASURED",
+          "uncovered": [
+            505,
+            513
+          ]
+        },
+        {
+          "name": "<callback@506>",
+          "line": 506,
+          "cc": 2,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            506
+          ]
+        },
+        {
+          "name": "<callback@507>",
+          "line": 507,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            507
+          ]
+        },
+        {
+          "name": "runArchivedTaskValidation",
+          "line": 526,
+          "cc": 24,
+          "executableLines": 46,
+          "coveredLines": 15,
+          "coverage": 0.32608695652173914,
+          "crap": 200.29,
+          "status": "MEASURED",
+          "uncovered": [
+            543,
+            544,
+            545,
+            549,
+            553,
+            554,
+            560,
+            561,
+            562,
+            570,
+            572,
+            573,
+            574,
+            576,
+            577,
+            585,
+            586,
+            587,
+            595,
+            596,
+            597,
+            598,
+            602,
+            603,
+            604,
+            607,
+            608,
+            609,
+            610,
+            614,
+            615
+          ]
+        },
+        {
+          "name": "summarizeType",
+          "line": 618,
+          "cc": 1,
+          "executableLines": 5,
+          "coveredLines": 5,
+          "coverage": 1,
+          "crap": 1,
+          "status": "MEASURED",
+          "uncovered": []
+        },
+        {
+          "name": "<callback@619>",
+          "line": 619,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            619
+          ]
+        },
+        {
+          "name": "<callback@621>",
+          "line": 621,
+          "cc": 1,
+          "executableLines": 1,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 2,
+          "status": "MEASURED",
+          "uncovered": [
+            621
+          ]
+        },
+        {
+          "name": "normalizeConcurrency",
+          "line": 625,
+          "cc": 4,
+          "executableLines": 6,
+          "coveredLines": 2,
+          "coverage": 0.3333333333333333,
+          "crap": 8.74,
+          "status": "MEASURED",
+          "uncovered": [
+            628,
+            629,
+            630,
+            631
+          ]
+        },
+        {
+          "name": "getPlannedId",
+          "line": 633,
+          "cc": 2,
+          "executableLines": 5,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 6,
+          "status": "MEASURED",
+          "uncovered": [
+            634,
+            635,
+            636,
+            637,
+            638
+          ]
+        },
+        {
+          "name": "getPlannedType",
+          "line": 640,
+          "cc": 4,
+          "executableLines": 7,
+          "coveredLines": 0,
+          "coverage": 0,
+          "crap": 20,
+          "status": "MEASURED",
+          "uncovered": [
+            641,
+            642,
+            643,
+            644,
+            645,
+            646,
+            647
+          ]
+        }
+      ]
+    }
+  ],
+  "ffOwned": {
+    "functions": 145,
+    "measured": 144,
+    "maxCrap": 33,
+    "over50": [],
+    "notMeasured": [
+      {
+        "file": "tools/openspec/build.mjs",
+        "name": "removeGenerated",
+        "line": 64
+      }
+    ]
+  },
+  "inheritedUpstream": {
+    "note": "Full inherited archive/validate functions are measured separately, including pre-existing complexity; not claimed as newly compliant.",
+    "over50": [
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "copyThenRemoveDirectory",
+        "line": 506,
+        "cc": 15,
+        "executableLines": 32,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 240,
+        "status": "MEASURED",
+        "uncovered": [
+          507,
+          508,
+          509,
+          510,
+          511,
+          512,
+          513,
+          514,
+          515,
+          518,
+          519,
+          521,
+          522,
+          523,
+          526,
+          531,
+          532,
+          534,
+          536,
+          537,
+          542,
+          543,
+          544,
+          547,
+          548,
+          549,
+          550,
+          553,
+          558,
+          560,
+          561,
+          568
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "moveDirectory",
+        "line": 574,
+        "cc": 8,
+        "executableLines": 16,
+        "coveredLines": 2,
+        "coverage": 0.125,
+        "crap": 50.88,
+        "status": "MEASURED",
+        "uncovered": [
+          579,
+          582,
+          583,
+          585,
+          586,
+          587,
+          588,
+          591,
+          592,
+          593,
+          594,
+          596,
+          600,
+          605
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "fingerprintPath",
+        "line": 683,
+        "cc": 11,
+        "executableLines": 26,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 132,
+        "status": "MEASURED",
+        "uncovered": [
+          684,
+          685,
+          686,
+          687,
+          688,
+          689,
+          690,
+          691,
+          692,
+          693,
+          694,
+          697,
+          699,
+          702,
+          703,
+          705,
+          708,
+          709,
+          710,
+          711,
+          712,
+          714,
+          716,
+          719,
+          720,
+          721
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "fingerprintMovablePath",
+        "line": 724,
+        "cc": 8,
+        "executableLines": 19,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 72,
+        "status": "MEASURED",
+        "uncovered": [
+          725,
+          726,
+          730,
+          733,
+          734,
+          735,
+          736,
+          737,
+          738,
+          739,
+          742,
+          744,
+          747,
+          748,
+          749,
+          751,
+          754,
+          755,
+          756
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "restoreSpecSnapshots",
+        "line": 897,
+        "cc": 41,
+        "executableLines": 57,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 1722,
+        "status": "MEASURED",
+        "uncovered": [
+          898,
+          899,
+          900,
+          901,
+          902,
+          903,
+          904,
+          905,
+          909,
+          910,
+          912,
+          913,
+          914,
+          916,
+          917,
+          918,
+          924,
+          928,
+          929,
+          930,
+          933,
+          934,
+          938,
+          939,
+          940,
+          943,
+          945,
+          947,
+          949,
+          955,
+          960,
+          961,
+          964,
+          966,
+          968,
+          970,
+          973,
+          974,
+          978,
+          979,
+          981,
+          982,
+          983,
+          984,
+          986,
+          987,
+          990,
+          991,
+          993,
+          995,
+          996,
+          997,
+          998,
+          999,
+          1003,
+          1006,
+          1007
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "finalizeRetirementBackups",
+        "line": 1010,
+        "cc": 9,
+        "executableLines": 13,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 90,
+        "status": "MEASURED",
+        "uncovered": [
+          1011,
+          1012,
+          1013,
+          1014,
+          1015,
+          1016,
+          1017,
+          1019,
+          1021,
+          1022,
+          1025,
+          1029,
+          1030
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "run",
+        "line": 1079,
+        "cc": 172,
+        "executableLines": 346,
+        "coveredLines": 93,
+        "coverage": 0.26878612716763006,
+        "crap": 11738.19,
+        "status": "MEASURED",
+        "uncovered": [
+          1101,
+          1106,
+          1107,
+          1109,
+          1110,
+          1111,
+          1112,
+          1114,
+          1118,
+          1133,
+          1136,
+          1140,
+          1141,
+          1142,
+          1143,
+          1153,
+          1157,
+          1165,
+          1169,
+          1177,
+          1186,
+          1187,
+          1188,
+          1189,
+          1201,
+          1202,
+          1203,
+          1204,
+          1205,
+          1206,
+          1244,
+          1258,
+          1259,
+          1262,
+          1263,
+          1264,
+          1277,
+          1278,
+          1279,
+          1280,
+          1282,
+          1283,
+          1293,
+          1294,
+          1295,
+          1296,
+          1299,
+          1300,
+          1301,
+          1306,
+          1307,
+          1308,
+          1312,
+          1313,
+          1314,
+          1318,
+          1320,
+          1321,
+          1326,
+          1327,
+          1331,
+          1334,
+          1335,
+          1336,
+          1339,
+          1340,
+          1344,
+          1345,
+          1346,
+          1350,
+          1386,
+          1387,
+          1394,
+          1395,
+          1396,
+          1397,
+          1398,
+          1399,
+          1405,
+          1406,
+          1407,
+          1408,
+          1409,
+          1410,
+          1411,
+          1412,
+          1413,
+          1414,
+          1416,
+          1418,
+          1430,
+          1436,
+          1438,
+          1439,
+          1440,
+          1443,
+          1444,
+          1445,
+          1446,
+          1448,
+          1452,
+          1453,
+          1456,
+          1461,
+          1462,
+          1463,
+          1464,
+          1466,
+          1468,
+          1469,
+          1470,
+          1471,
+          1473,
+          1474,
+          1475,
+          1476,
+          1478,
+          1480,
+          1483,
+          1484,
+          1485,
+          1489,
+          1495,
+          1498,
+          1499,
+          1500,
+          1501,
+          1503,
+          1504,
+          1505,
+          1506,
+          1510,
+          1511,
+          1515,
+          1516,
+          1517,
+          1518,
+          1519,
+          1527,
+          1537,
+          1553,
+          1573,
+          1581,
+          1582,
+          1587,
+          1588,
+          1589,
+          1590,
+          1591,
+          1592,
+          1594,
+          1595,
+          1596,
+          1597,
+          1598,
+          1599,
+          1600,
+          1601,
+          1602,
+          1610,
+          1611,
+          1612,
+          1613,
+          1622,
+          1623,
+          1624,
+          1625,
+          1627,
+          1631,
+          1632,
+          1633,
+          1634,
+          1636,
+          1637,
+          1638,
+          1640,
+          1641,
+          1642,
+          1643,
+          1646,
+          1648,
+          1661,
+          1662,
+          1663,
+          1664,
+          1665,
+          1669,
+          1670,
+          1671,
+          1672,
+          1696,
+          1697,
+          1698,
+          1699,
+          1700,
+          1702,
+          1703,
+          1704,
+          1708,
+          1709,
+          1710,
+          1711,
+          1717,
+          1729,
+          1734,
+          1735,
+          1736,
+          1739,
+          1754,
+          1757,
+          1760,
+          1764,
+          1768,
+          1769,
+          1772,
+          1773,
+          1774,
+          1775,
+          1776,
+          1780,
+          1781,
+          1783,
+          1786,
+          1787,
+          1791,
+          1792,
+          1819,
+          1820,
+          1823,
+          1824,
+          1825,
+          1828,
+          1829,
+          1830,
+          1831,
+          1834,
+          1836,
+          1838,
+          1839,
+          1840,
+          1841,
+          1842,
+          1845,
+          1849,
+          1850,
+          1851,
+          1852,
+          1855,
+          1860,
+          1861,
+          1862,
+          1864,
+          1884
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "verifyArchivedDeltas",
+        "line": 1792,
+        "cc": 7,
+        "executableLines": 12,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 56,
+        "status": "MEASURED",
+        "uncovered": [
+          1793,
+          1794,
+          1800,
+          1801,
+          1804,
+          1805,
+          1806,
+          1808,
+          1810,
+          1811,
+          1812,
+          1814
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/core/archive.js",
+        "name": "selectChange",
+        "line": 1906,
+        "cc": 8,
+        "executableLines": 23,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 72,
+        "status": "MEASURED",
+        "uncovered": [
+          1907,
+          1908,
+          1909,
+          1910,
+          1911,
+          1918,
+          1919,
+          1922,
+          1923,
+          1924,
+          1925,
+          1926,
+          1927,
+          1928,
+          1930,
+          1931,
+          1938,
+          1940,
+          1941,
+          1945,
+          1954,
+          1955,
+          1958
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "execute",
+        "line": 32,
+        "cc": 27,
+        "executableLines": 33,
+        "coveredLines": 19,
+        "coverage": 0.5757575757575758,
+        "crap": 82.66,
+        "status": "MEASURED",
+        "uncovered": [
+          36,
+          45,
+          46,
+          47,
+          48,
+          51,
+          52,
+          54,
+          55,
+          57,
+          58,
+          68,
+          94,
+          95
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "validateDirectItem",
+        "line": 162,
+        "cc": 12,
+        "executableLines": 24,
+        "coveredLines": 7,
+        "coverage": 0.2916666666666667,
+        "crap": 63.18,
+        "status": "MEASURED",
+        "uncovered": [
+          168,
+          169,
+          172,
+          173,
+          176,
+          178,
+          179,
+          182,
+          183,
+          193,
+          194,
+          196,
+          198,
+          199,
+          202,
+          204,
+          205
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "printReport",
+        "line": 274,
+        "cc": 13,
+        "executableLines": 12,
+        "coveredLines": 4,
+        "coverage": 0.3333333333333333,
+        "crap": 63.07,
+        "status": "MEASURED",
+        "uncovered": [
+          280,
+          281,
+          284,
+          286,
+          287,
+          288,
+          290,
+          291
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "printNextSteps",
+        "line": 294,
+        "cc": 8,
+        "executableLines": 22,
+        "coveredLines": 0,
+        "coverage": 0,
+        "crap": 72,
+        "status": "MEASURED",
+        "uncovered": [
+          295,
+          300,
+          301,
+          304,
+          305,
+          306,
+          307,
+          309,
+          310,
+          311,
+          313,
+          314,
+          315,
+          317,
+          318,
+          319,
+          320,
+          323,
+          324,
+          325,
+          327,
+          328
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "runBulkValidation",
+        "line": 358,
+        "cc": 24,
+        "executableLines": 46,
+        "coveredLines": 21,
+        "coverage": 0.45652173913043476,
+        "crap": 116.46,
+        "status": "MEASURED",
+        "uncovered": [
+          370,
+          392,
+          410,
+          417,
+          422,
+          423,
+          424,
+          425,
+          426,
+          427,
+          460,
+          470,
+          472,
+          473,
+          474,
+          477,
+          478,
+          479,
+          481,
+          482,
+          483,
+          484,
+          487,
+          488,
+          490
+        ]
+      },
+      {
+        "file": "tools/openspec/.build/dist/commands/validate.js",
+        "name": "runArchivedTaskValidation",
+        "line": 526,
+        "cc": 24,
+        "executableLines": 46,
+        "coveredLines": 15,
+        "coverage": 0.32608695652173914,
+        "crap": 200.29,
+        "status": "MEASURED",
+        "uncovered": [
+          543,
+          544,
+          545,
+          549,
+          553,
+          554,
+          560,
+          561,
+          562,
+          570,
+          572,
+          573,
+          574,
+          576,
+          577,
+          585,
+          586,
+          587,
+          595,
+          596,
+          597,
+          598,
+          602,
+          603,
+          604,
+          607,
+          608,
+          609,
+          610,
+          614,
+          615
+        ]
+      }
+    ]
+  }
+}

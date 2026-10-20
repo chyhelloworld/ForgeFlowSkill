@@ -1,0 +1,24 @@
+Trial fixtures retained: E:\CodexTasks\2026-10-20\task\tmp\ff-trial-xDD4HZ
+✔ v1 removed IDs retain current fingerprints and fail with migration diagnostic (34.4725ms)
+✔ v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do (5151.2312ms)
+✔ v2 progress ticks preserve plan review; task scope changes fail; archive requires completion (1884.7194ms)
+✔ valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes (2246.2548ms)
+✔ native archive requires completed progress and preserves the independent change (4726.3708ms)
+✔ snapshot rejects dirty content, rule changes, report replacement and cross-change receipts (4552.0378ms)
+✔ gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence (6001.3477ms)
+✔ autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate (3403.7004ms)
+✔ doctor LF suggestions protect literal bracket paths without matching unrelated siblings (1307.7661ms)
+✔ report template is not pass; fail verdict differs from stale binding; migration preserves old bytes (4823.9808ms)
+✔ malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence (2126.0235ms)
+✔ external review evidence is frozen by the tool and checked before and after recording (2610.2934ms)
+✔ v2 archive requires stable progress mapping and zero archived checks cannot pass (2766.3573ms)
+✔ zero validation is non-success and installed CLI hints use project entry (2793.5576ms)
+✔ Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict (1821.9482ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 46666.0129

@@ -1,0 +1,15 @@
+Independent reviewer /root/independent_review; 2026-10-20.
+
+Final qualified review: no new blocking defect in the reviewed implementation.
+Verified relative tar -f and -C arguments against builder cwd and successful logs for both shells.
+Verified the legacy Python harness changes touch only two path serializations (.as_posix), not assertions.
+Verified frozen hashes and 294 raw V8 samples: 145 selected FF functions, 144 measured,
+maximum CRAP 33, median 3, 130 at or below 10. removeGenerated remains NOT_MEASURED.
+Inherited archive/validate functions above 50 are separate; no whole-repository compliance claim.
+
+Report-only follow-up found one overstated root cause: -C showed a directory parsing failure,
+not proven remote-host interpretation. Report corrected; production fix and successful builds unchanged.
+FF-010 remaining:true is an environment observation; FF-012/016/017 real-host behavior NOT_RUN.
+Original-main comparison has the same 10 failures; the two portable path input fixes preserve assertions.
+
+This text records the independent review messages, not an identity signature or model-host evaluation.

@@ -95,3 +95,14 @@ node "$Source\installer.mjs" recover --project "$Project"
 
 
 doctor 是只读检查。安装器异常退出后，先确认对应安装进程已结束，再仅移除其**空的** `.forgeflow/install/lock` 目录，运行 recover；不要删除 pending、backup 或整个安装目录。提交前中断返回 `RECOVERED` 并恢复原托管文件；state 已原子提交则核对最终文件与状态后返回 `COMMITTED`。有后续用户改动会保留 pending 并报冲突，须明确处理冲突再恢复；它不提供磁盘断电级原子性保证。
+
+## 试点候选：离线复用与 worktree
+0.9.4-trial.1 为本地候选，未升级现有项目或全局安装。已有同一源 pin 的完整构建时，可显式复用该 `tools/openspec` 目录，避免重新联网：
+
+```powershell
+node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --mode full --reuse-build E:\work\verified-source\tools\openspec
+```
+
+该路径内须有 upstream.json 与已验证 .build（包括依赖）；源 pin、marker 和运行时文件哈希都要匹配。也可选择已有项目 `.forgeflow/install/releases/<release>/tools/openspec`。复用仍复制本地运行时，未实现共享缓存或承诺减少磁盘占用；各项目的状态/配置/证据完全隔离。`--reuse-build` 与 `--build` 互斥，技能专用模式不可用。launcher 以当前项目为目标，遇到未安装的 Git worktree 边界会阻塞并提示在该 worktree 安装，不会写主 checkout。
+
+安装结果含 gitGuidance，精确列运行时、launcher 和每个 FF 技能目录，供用户选择 ignore 或 vendor；不会改 `.gitignore`。不要忽略整个 `.forgeflow`。版本控制 policy、稳定计划/进度、回执、审核证据和精确 LF 属性；安装生成物与业务配置分开处理。doctor 的 runtime READY 只说明程序可运行，gates 的 UNCONFIGURED/NO_CHECKS/INVALID 均不能当作门禁通过。普通回执操作见[生命周期 v2](../maintainers/SPEC-LIFECYCLE.md)。

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /** Rebuild the pinned upstream TypeScript plus the reviewed FF source patch. */
-import { runtimeHashes } from './ff-build.mjs';
+import { runtimeHashes, dependencyHashes } from './ff-build.mjs';
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, lstatSync, unlinkSync, rmdirSync, mkdirSync, cpSync, existsSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
@@ -42,7 +42,9 @@ function main() {
   mkdirSync(bootstrap, { recursive: true });
   cpSync(path.join(home, 'bootstrap/package.json'), path.join(bootstrap, 'package.json'));
   cpSync(path.join(home, 'bootstrap/package-lock.json'), path.join(bootstrap, 'package-lock.json'));
-  run('tar', ['-xzf', path.join(home, pin.archive), '-C', build]);
+  // GNU tar interprets E: as a remote host. The archive is a verified sibling;
+  // keep its name relative to cwd for GNU tar, bsdtar and Git Bash alike.
+  run('tar', ['-xzf', pin.archive, '-C', '.build']);
   run('git', ['apply', '--check', path.join(home, pin.patch)], build, { GIT_CEILING_DIRECTORIES: home });
   run('git', ['apply', path.join(home, pin.patch)], build, { GIT_CEILING_DIRECTORIES: home });
   if (!existsSync(path.join(build, 'src/core/ff-validity.ts'))) throw new Error('FF source patch was not applied');
@@ -54,7 +56,7 @@ function main() {
     XDG_DATA_HOME: path.join(bootstrap, 'data'), XDG_CACHE_HOME: path.join(bootstrap, 'cache'),
   });
   run(process.execPath, ['build.js'], build);
-  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, runtimeHashes: runtimeHashes(build), node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
+  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, runtimeHashes: runtimeHashes(build), dependencyHashes: dependencyHashes(build), platform: process.platform, arch: process.arch, node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
   console.log(`Built project-local CLI: ${path.join(home, 'ff-spec.mjs')}`);
 }
 // --clean owns only the fixed sibling .build; existing .bootstrap data is retained.

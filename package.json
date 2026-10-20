@@ -1,6 +1,6 @@
 {
   "name": "@forgeflow/project-installer",
-  "version": "0.9.3-dual-host.1",
+  "version": "0.9.4-trial.1",
   "private": true,
   "type": "module",
   "description": "Pinned project-local ForgeFlow installer; no lifecycle scripts",
@@ -14,6 +14,7 @@
     "bin/",
     "installer.mjs",
     "tools/installer/*.mjs",
+    "tools/openspec/ff-build.mjs",
     "forgeflow-payload.tgz",
     "forgeflow-payload.sha256"
   ],

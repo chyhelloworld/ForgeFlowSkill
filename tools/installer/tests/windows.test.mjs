@@ -315,7 +315,7 @@ test('standalone builder preserves an existing bootstrap and adds hoisted only o
         commands.push({ command, args, cwd: options.cwd });
         if (command === 'tar') {
           const build = path.join(home, '.build');
-          for (const dir of ['src/core', 'bin', 'dist', 'schemas']) fs.mkdirSync(path.join(build, dir), { recursive: true });
+          for (const dir of ['src/core', 'bin', 'dist', 'schemas', 'node_modules']) fs.mkdirSync(path.join(build, dir), { recursive: true });
           fs.writeFileSync(path.join(build, 'src/core/ff-validity.ts'), '// mock patched source');
           fs.writeFileSync(path.join(build, 'package.json'), '{}');
         }

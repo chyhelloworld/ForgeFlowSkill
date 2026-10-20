@@ -56,3 +56,6 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 构建前的预检不能替代提交前预检。独立反例已证明构建期间的用户改动会形成覆盖窗口；提交前重核状态、全体托管文件与当前共享 release，备份/写入阶段再核字节，失败保留诊断。恢复先核对备份旧状态或已提交的 after 状态，不仅凭 transaction 是否相等判断。
 
 默认 installer 回归包括 `tools/installer/tests/*test.mjs`。真实 Windows 分发包验证单独运行 `tools/installer/tests/native-windows.mjs <已核对旧源码> <新的自有_verification目录>`；它明确执行 full 构建并下载锁定依赖，不作为普通单元测试隐式触发。所有目录、缓存和临时文件应位于获准的项目内。并发 doctor 的假 CLI 反例只证明检查逻辑，不算真实 full 或模型调用。
+
+## 0.9.4 试点候选回归
+本轮计划与17项对照见 planning/TRIAL-FIXES-20261020.md；从目标项目调用源码 launcher 时，测试 fixture 的工作目录必须显式设为该项目。trial.test.mjs 验证 v2 与保留的 v1 边界；原生测试目录通过 FF_TEST_ROOT 指定 E 盘，避免产生 C 盘构建/测试产物。只在干净导出中打包和运行安装器回归，不能将 .build/.bootstrap 或 Git 元数据装入 payload。

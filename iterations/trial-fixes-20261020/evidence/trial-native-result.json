@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "cases": [
+    "offline dual-host full and runtime/configuration separation",
+    "worktree boundary cannot select the main checkout state",
+    "doctor distinguishes policy with zero active checks",
+    "candidate dependency tampering is rejected before execution",
+    "GNU tar absolute-drive failure and relative-archive fix in Chinese path",
+    "Node Unicode rm minimal observation; no production workaround inferred"
+  ],
+  "source": "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2",
+  "version": "0.9.4-trial.1",
+  "modelInvocations": "NOT_RUN"
+}

@@ -1,0 +1,103 @@
+{
+  "startedAt": "2026-10-20T09:07:01.024Z",
+  "coverageDir": "E:\\CodexTasks\\2026-10-20\\task\\coverage-final-2",
+  "targets": [
+    {
+      "name": "installer.mjs",
+      "sha256": "5b444143d3c79bd67ba4941c3f7d8ea9256b751a8e4afcccb861c0c569e783f1",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\installer.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\installer.mjs"
+      ]
+    },
+    {
+      "name": "tools/installer/install.mjs",
+      "sha256": "1abff4afcd86d23996c0d7498d7d970c79e7b54952270178750a07dacbbb978a",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\installer\\install.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\installer\\install.mjs"
+      ]
+    },
+    {
+      "name": "tools/installer/runtime.mjs",
+      "sha256": "b7986caa614ca22e8a7535d2a5bda96a01f13540e031e43b0f2cbbad07ec87b5",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\installer\\runtime.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\installer\\runtime.mjs"
+      ]
+    },
+    {
+      "name": "tools/openspec/build.mjs",
+      "sha256": "287c4f44eeba96c7cb04e276c4dcc896e048e44598db02869138660cf8b6a369",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\build.mjs"
+      ]
+    },
+    {
+      "name": "tools/openspec/ff-build.mjs",
+      "sha256": "f16e91ef316edfa4a11f56bbac386b8f94e201ef56e78615411b352b3a623c1c",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-build.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-build.mjs"
+      ]
+    },
+    {
+      "name": "tools/openspec/ff-receipt.mjs",
+      "sha256": "e8f88eb048109232f53593757f8c148dfe900148152884fb890ec05836ea80d2",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-receipt.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-receipt.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-receipt.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-receipt.mjs"
+      ]
+    },
+    {
+      "name": "tools/openspec/ff-spec.mjs",
+      "sha256": "824318f56988e856015a426cffcbec5a7112570ba2b43437e0555c3d2834cc79",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\ff-spec.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\candidate-final-code-2\\tools\\openspec\\ff-spec.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-final-2\\ff-spec.mjs",
+        "E:\\CodexTasks\\2026-10-20\\task\\build-source-ps-final-2\\ff-spec.mjs"
+      ]
+    },
+    {
+      "name": "tools/openspec/.build/dist/core/ff-validity.js",
+      "sha256": "4c34afd489d3a89e121451f3f526a0a7d6206056f6f09e0451ec50e1290bfb1f",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\core\\ff-validity.js"
+      ]
+    },
+    {
+      "name": "tools/openspec/.build/dist/core/archive.js",
+      "sha256": "285026b121524a4f8a3d12246de48c3bf93b8eaa8292b9396006de4290f5de04",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\core\\archive.js"
+      ]
+    },
+    {
+      "name": "tools/openspec/.build/dist/commands/validate.js",
+      "sha256": "d6cbafdaaa3628be443441e78085853d8f7471e722faebb250ea5d94e9242427",
+      "paths": [
+        "E:\\CodexTasks\\2026-10-20\\task\\forgeflow\\tools\\openspec\\.build\\dist\\commands\\validate.js"
+      ]
+    }
+  ],
+  "completed": true,
+  "finishedAt": "2026-10-20T09:21:49.840Z",
+  "unchanged": true,
+  "extraRuns": [
+    {
+      "label": "optional-cli-portable",
+      "startedAt": "2026-10-20T09:21:10.229Z",
+      "reason": "Historical Python harness emitted Windows backslashes contrary to the existing POSIX policy contract. Only path serialization fixed; assertions unchanged.",
+      "status": 0,
+      "finishedAt": "2026-10-20T09:21:49.827Z"
+    }
+  ]
+}

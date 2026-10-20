@@ -1,0 +1,141 @@
+鉁?FF-006 desired independent B proposal edit must not invalidate A (53.6079ms)
+鉁?FF-007 desired removed old ID keeps current fingerprints (30.2373ms)
+鉁?FF-013 desired progress-only tick preserves plan validity (29.239ms)
+鉁?FF-014 desired fail verdict has a verdict diagnostic (25.7413ms)
+{
+  "items": [],
+  "summary": {
+    "totals": {
+      "items": 0,
+      "passed": 0,
+      "failed": 0
+    },
+    "byType": {
+      "change": {
+        "items": 0,
+        "passed": 0,
+        "failed": 0
+      },
+      "spec": {
+        "items": 0,
+        "passed": 0,
+        "failed": 0
+      }
+    }
+  },
+  "version": "1.0",
+  "root": {
+    "path": "E:\\CodexTasks\\2026-10-20\\task\\tmp\\baseline-repro-2rRbem\\empty qCOxip",
+    "source": "nearest"
+  }
+}
+鉁?FF-011 desired zero validate is non-success (9.264ms)
+鈩?tests 5
+鈩?suites 0
+鈩?pass 0
+鈩?fail 5
+鈩?cancelled 0
+鈩?skipped 0
+鈩?todo 0
+鈩?duration_ms 514.8123
+
+鉁?failing tests:
+
+test at baseline-repro.mjs:10:1
+鉁?FF-006 desired independent B proposal edit must not invalidate A (53.6079ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///E:/CodexTasks/2026-10-20/task/baseline-repro.mjs:10:193)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at baseline-repro.mjs:11:1
+鉁?FF-007 desired removed old ID keeps current fingerprints (30.2373ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(evaluate(p).artifacts[0]?.fingerprint)
+  
+      at TestContext.<anonymous> (file:///E:/CodexTasks/2026-10-20/task/baseline-repro.mjs:11:270)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at baseline-repro.mjs:12:1
+鉁?FF-013 desired progress-only tick preserves plan validity (29.239ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  false !== true
+  
+      at TestContext.<anonymous> (file:///E:/CodexTasks/2026-10-20/task/baseline-repro.mjs:12:150)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at baseline-repro.mjs:13:1
+鉁?FF-014 desired fail verdict has a verdict diagnostic (25.7413ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /verdict is fail/. Input:
+  
+  'plan: Review does not match the current artifact and inputs'
+  
+      at TestContext.<anonymous> (file:///E:/CodexTasks/2026-10-20/task/baseline-repro.mjs:13:269)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'plan: Review does not match the current artifact and inputs',
+    expected: /verdict is fail/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at baseline-repro.mjs:14:1
+鉁?FF-011 desired zero validate is non-success (9.264ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///E:/CodexTasks/2026-10-20/task/baseline-repro.mjs:14:378)
+      at async Test.run (node:internal/test_runner/test:1113:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

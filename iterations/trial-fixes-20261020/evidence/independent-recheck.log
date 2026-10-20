@@ -1,0 +1,45 @@
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "ed004a7c64597e24fa973be143d0620aa0e372b1251bccc7c574716de648b67b"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+{
+  "status": "RECORDED",
+  "valid": true,
+  "history": "openspec/changes/a/ff-artifacts.history-0df420e2-6acf-4f1f-ad80-cc3cd37ace46.json"
+}
+MALFORMED_MIGRATION_AND_HISTORY=PASS
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "b66fe85545a4213f6f09ed8acca51638f2d277f7c2f725c96a028c073f481c18"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+{
+  "status": "RECORDED",
+  "valid": true
+}
+NO_PROGRESS_REJECTED=PASS
+{
+  "status": "SNAPSHOT_CREATED",
+  "file": "snap.json",
+  "snapshotHash": "ed004a7c64597e24fa973be143d0620aa0e372b1251bccc7c574716de648b67b"
+}
+{
+  "status": "DRAFT_CREATED",
+  "file": "report.json"
+}
+{
+  "status": "RECORDED",
+  "valid": true
+}
+EXTERNAL_EVIDENCE_BEFORE_AND_AFTER=PASS
+UNREVIEWED_PROGRESS_REJECTED=PASS
+FIXTURES=["E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\recheck-gn5IeP","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\recheck-sXXIXC","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\recheck-9O3TWt","E:\\CodexTasks\\2026-10-20\\task\\review-tmp\\recheck-2rXpuf"]

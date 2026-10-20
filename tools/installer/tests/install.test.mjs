@@ -16,7 +16,7 @@ const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 
 const project = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const options = { host: 'codex', mode: 'skills-only' };
 const setup = (host = 'codex') => { const p = project(); install(p, source, { ...options, host }); return p; };
-const cli = (p, script) => spawnSync(process.execPath, [path.join(p, script), '--help'], { encoding: 'utf8' });
+const cli = (p, script) => spawnSync(process.execPath, [path.join(p, script), '--help'], { cwd: p, encoding: 'utf8' });
 function fixture(version = '0.6.0-experimental.7') {
   const p = project(); fs.cpSync(source, p, { recursive: true, ...(process.platform === 'win32' ? { filter: () => true } : {}) });
   assert.ok(fs.existsSync(path.join(p, 'tools/openspec/upstream.json')), 'fixture copy must include upstream.json in a Chinese path');
@@ -99,7 +99,7 @@ test('project move remains bound locally and official openspec never invoked', (
   const p = setup(); const moved = `${p} moved`; fs.renameSync(p, moved);
   const bin = path.join(moved, 'bin'); fs.mkdirSync(bin); const marker = path.join(moved, 'official-called');
   fs.writeFileSync(path.join(bin, 'openspec'), `#!/bin/sh\ntouch '${marker}'\n`, { mode: 0o755 });
-  const result = spawnSync(process.execPath, [path.join(moved, '.forgeflow/ff-spec.mjs'), '--help'], { encoding: 'utf8', env: { ...process.env, PATH: `${bin}${path.delimiter}${process.env.PATH}` } });
+  const result = spawnSync(process.execPath, [path.join(moved, '.forgeflow/ff-spec.mjs'), '--help'], { cwd: moved, encoding: 'utf8', env: { ...process.env, PATH: `${bin}${path.delimiter}${process.env.PATH}` } });
   assert.match(result.stderr, /BLOCKED: skills-only/); assert.equal(fs.existsSync(marker), false);
 });
 test('CLI arguments, full build consent, uninstalled doctor and lock checks', () => {

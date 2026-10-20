@@ -1,0 +1,71 @@
+{
+  "configuration": "CONFIGURED",
+  "evidence": "INVALID",
+  "checked": 1,
+  "changes": [
+    {
+      "change": "a",
+      "validity": {
+        "valid": false,
+        "policyHash": "6df79dc4c7f0be2a178b14edfe13cf0643251847f7dc3e14cdc21c2f653b1220",
+        "schemaHash": "3951377cd3cd76ff87fc0e529a401d595c4c9c5a62bec64faef99dd7d474ac40",
+        "artifacts": [
+          {
+            "id": "routes",
+            "state": "missing",
+            "reasons": [
+              "Artifact record is missing"
+            ],
+            "files": [
+              {
+                "path": "src/[id].txt",
+                "sha256": "43ec938c4a8aa86fd097311438cf5beedbc1dfaa209ac09f9243b61017985a22"
+              },
+              {
+                "path": "src/i.txt",
+                "sha256": "63c3cf7091dabd33a6c54abf345b9d4d72a526e8e2a54713c92802c97ae26c31"
+              }
+            ],
+            "fingerprint": "dfccf0749e0f31c68c050ef71d4fc89aceb0b2217a1042070fdccf324f39c35d",
+            "inputs": {}
+          }
+        ],
+        "reasons": [
+          "routes: Artifact record is missing"
+        ],
+        "protocol": 2,
+        "change": "a",
+        "rules": [
+          {
+            "id": "routes",
+            "paths": [
+              "src/*.txt"
+            ],
+            "requires": [],
+            "reviewRequired": false
+          }
+        ]
+      }
+    }
+  ],
+  "lineEndings": {
+    "checked": 2,
+    "unprotected": [
+      {
+        "path": "src/[id].txt",
+        "suggestion": "\"/src/\\\\[id\\\\].txt\" text eol=lf"
+      },
+      {
+        "path": "src/i.txt",
+        "suggestion": "\"/src/i.txt\" text eol=lf"
+      }
+    ],
+    "crlf": [],
+    "note": "Byte hashes remain unchanged; establish exact LF attributes before a new review. Never refresh old receipt hashes to claim acceptance."
+  }
+}
+SUGGESTION="/src/\\[id\\].txt" text eol=lf
+src/[id].txt: eol: lf
+src/i.txt: eol: unspecified
+
+FIXTURE=E:\CodexTasks\2026-10-20\task\review-tmp\attributes-bWqcdP

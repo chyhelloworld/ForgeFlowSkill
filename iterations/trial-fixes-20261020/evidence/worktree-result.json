@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "actualGitWorktree": true,
+  "uninstalledWorktree": "BLOCKED",
+  "installedWorktree": "local state selected through main launcher",
+  "mainStateUnchanged": true,
+  "main": "E:\\CodexTasks\\2026-10-20\\task\\_verification\\worktree-final\\中文 main",
+  "worktree": "E:\\CodexTasks\\2026-10-20\\task\\_verification\\worktree-final\\中文 main\\actual worktree",
+  "modelInvocations": "NOT_RUN"
+}
