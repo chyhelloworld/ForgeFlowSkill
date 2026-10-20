@@ -7,6 +7,7 @@ import { verifySource, skillPayload } from './source.mjs';
 import { inventory, runNode, checkRelease, diagnose, environment } from './runtime.mjs';
 import { control, loadState, preflight, checkOwned, commit } from './transaction.mjs';
 import { hostsOf, normalizeHosts, fileHost } from './state.mjs';
+import { verifyReusableBuild } from '../openspec/ff-build.mjs';
 export function dependencies() {
   const [major, minor] = process.versions.node.split('.').map(Number);
   const node = major > 20 || (major === 20 && minor >= 19);
@@ -67,7 +68,7 @@ export function createReleaseStage(project) {
   }
   return { stage, prepareBootstrapCleanup };
 }
-function release(project, source, pin, mode, build) {
+function release(project, source, pin, mode, build, reuse) {
   const id = `${pin.version}-${pin.hash.slice(0, 16)}-${mode}`;
   const name = `releases/${id}`;
   const target = safe(project, `${control}/${name}`);
@@ -82,13 +83,21 @@ function release(project, source, pin, mode, build) {
   const src = path.join(source, 'tools/openspec');
   fs.cpSync(src, path.join(stage, 'tools/openspec'), { recursive: true, errorOnExist: true,
     // The callback avoids Node 24's Windows Unicode-path native-copy omission.
-    ...(process.platform === 'win32' ? { filter: () => true } : {}),
+    filter: () => true,
   });
   if (mode === 'full') {
-    if (!build) fail('full requires --build; networked dependency build is explicit');
+    if (!build && !reuse) fail('full requires --build or --reuse-build');
     const cleanupBootstrap = prepareBootstrapCleanup();
-    const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), []);
-    if (result.status !== 0) fail('Build failed; staged diagnostic output retained inside project; active install unchanged');
+    if (reuse) {
+      const reusable = path.resolve(reuse);
+      if (JSON.stringify(read(path.join(reusable, 'upstream.json'))) !== JSON.stringify(read(path.join(src, 'upstream.json')))) fail('Reusable build source pin mismatch');
+      const built = verifyReusableBuild(reusable);
+      fs.cpSync(built, path.join(stage, 'tools/openspec/.build'), { recursive: true, filter: () => true, verbatimSymlinks: true });
+      verifyReusableBuild(path.join(stage, 'tools/openspec'));
+    } else {
+      const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), []);
+      if (result.status !== 0) fail('Build failed; staged diagnostic output retained inside project; active install unchanged');
+    }
     const probe = runNode(project, path.join(stage, 'tools/openspec/ff-spec.mjs'), ['--help'], true);
     if (probe.status !== 0) fail(`Built CLI failed verification: ${probe.stderr}`);
     cleanupBootstrap(); // Only a successful full build; before strict runtime inventory.
@@ -107,6 +116,7 @@ export function install(project, source, options) {
   const selected = normalizeHosts(options.hosts ?? [options.host]);
   if (options.hosts && selected.length !== 2) fail('--hosts requires codex,claude');
   if (!['full', 'skills-only'].includes(options.mode)) fail('Invalid install mode');
+  if (options['reuse-build'] && (options.build || options.mode !== 'full')) fail('--reuse-build requires full and conflicts with --build');
   if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
   if (!options.hosts && before && hostsOf(before).length > 1) fail('Dual-host install requires --hosts codex,claude; use remove-host explicitly to remove one');
   const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))));
@@ -115,16 +125,19 @@ export function install(project, source, options) {
   if (before?.sourceHash === pin.hash && JSON.stringify(hostsOf(before)) === JSON.stringify(selected) && before.mode === options.mode) {
     return { status: 'UNCHANGED', version: pin.version, mode: options.mode };
   }
-  if (options.mode === 'full' && !options.build) fail('full requires --build; build downloads locked dependencies');
-  if (options.mode === 'full') {
+  if (options.mode === 'full' && !options.build && !options['reuse-build']) fail('full requires --build or --reuse-build; build downloads locked dependencies');
+  if (options.mode === 'full' && options.build) {
     const deps = buildDependencies(project);
     if (!deps.node || !deps.npm || !deps.git || !deps.tar) fail(`Build dependencies missing: ${JSON.stringify(deps)}`);
   }
-  const runtime = release(project, source, pin, options.mode, options.build);
+  const runtime = release(project, source, pin, options.mode, options.build, options['reuse-build']);
   const hostState = options.hosts || before?.schema === 2 ? { schema: 2, hosts: selected } : { schema: 1, host: selected[0] };
   const next = { ...hostState, version: pin.version, sourceHash: pin.hash, mode: options.mode, ...runtime };
   commit(project, before, next, files);
-  return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, ...(next.schema === 1 ? { host: selected[0] } : {}), hosts: selected, mode: options.mode };
+  return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, ...(next.schema === 1 ? { host: selected[0] } : {}), hosts: selected, mode: options.mode,
+    gitGuidance: { generated: ['/.forgeflow/install/', '/.forgeflow/ff-spec.mjs', ...selected.flatMap(host => pin.names.map(name => `/${host === 'codex' ? '.agents' : '.claude'}/skills/${name}/`))],
+      versionControl: ['openspec/ff-policy.json', 'openspec/changes/<change>/design.md', 'openspec/changes/<change>/tasks.md', 'openspec/changes/<change>/ff-artifacts.json', '.gitattributes'],
+      note: 'Choose whether to ignore generated entries or vendor them. No ignore file was modified. Keep project policy, plans and evidence; never ignore all of .forgeflow.' } };
 }
 export function doctor(project, host) {
   if (!dependencies().node) fail('Node >=20.19 required');

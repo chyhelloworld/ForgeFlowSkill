@@ -52,9 +52,9 @@ for route in ['writing-shape','writing-beats']:
  write(c/'retro.md','# Retro\nZero new rules: the existing rule already requires source verification; the supposed missing-rule hypothesis is falsified.\n')
  write(p/'openspec/specs/existing/spec.md','# Existing canonical specification\nMust remain unchanged by a blog attachment archive.\n')
  canon=tree(p/'openspec/specs');write(p/'evidence/review.md','# Synthetic harness receipt\nOnly checks hashes and version gates. Not user acceptance or semantic review.\n')
- policy={'version':1,'artifacts':[{'id':i,'paths':[str((c/f'{i}.md').relative_to(p))],'requires':deps.get(i,[]),'reviewRequired':True} for i in ids]};js(p/'openspec/ff-policy.json',policy)
+ policy={'version':1,'artifacts':[{'id':i,'paths':[(c/f'{i}.md').relative_to(p).as_posix()],'requires':deps.get(i,[]),'reviewRequired':True} for i in ids]};js(p/'openspec/ff-policy.json',policy)
  def receipt():
-  d=data(run(p,route+' capture binding',['status','--change','blog','--json']))['ffValidity'];fps={i:hashlib.sha256(json.dumps([{'path':str((c/f'{i}.md').relative_to(p)),'sha256':sha(c/f'{i}.md')}],separators=(',',':')).encode()).hexdigest() for i in ids}
+  d=data(run(p,route+' capture binding',['status','--change','blog','--json']))['ffValidity'];fps={i:hashlib.sha256(json.dumps([{'path':(c/f'{i}.md').relative_to(p).as_posix(),'sha256':sha(c/f'{i}.md')}],separators=(',',':')).encode()).hexdigest() for i in ids}
   artifacts={}
   for i in ids:
    inp={x:fps[x] for x in deps.get(i,[])};artifacts[i]={'version':'fixture-v1','fingerprint':fps[i],'inputs':inp,'review':{'verdict':'pass','targetId':i,'targetVersion':'fixture-v1','targetFingerprint':fps[i],'inputs':inp,'reviewer':'SYNTHETIC HARNESS ONLY','toolVersion':'fixture-v1','evidence':[{'path':'evidence/review.md','sha256':sha(p/'evidence/review.md')}]}}

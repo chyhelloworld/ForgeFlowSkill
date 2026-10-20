@@ -12,7 +12,7 @@ export function parse(args) {
   while (args.length) {
     const key = args.shift();
     if (key === '--build' && !options.build) { options.build = true; continue; }
-    if (!['--project', '--host', '--hosts', '--mode'].includes(key) || options[key.slice(2)] || !args.length) fail('Invalid or duplicate argument');
+    if (!['--project', '--host', '--hosts', '--mode', '--reuse-build'].includes(key) || options[key.slice(2)] || !args.length) fail('Invalid or duplicate argument');
     options[key.slice(2)] = args.shift();
   }
   if (!options.project) fail('--project is required');
@@ -23,10 +23,11 @@ export function parse(args) {
     if (options.hosts.length !== 2) fail('--hosts requires codex,claude');
   }
   if (options.command === 'install' && (!(options.host || options.hosts) || !['full', 'skills-only'].includes(options.mode))) fail('Explicit --host or --hosts and --mode full|skills-only required');
-  if (options.command !== 'install' && (options.hosts || options.mode || options.build)) fail('Install flags apply only to install');
+  if (options.command !== 'install' && (options.hosts || options.mode || options.build || options['reuse-build'])) fail('Install flags apply only to install');
   if (['rollback', 'recover'].includes(options.command) && options.host) fail('--host applies only to install, doctor or remove-host');
   if (options.command === 'remove-host' && !options.host) fail('remove-host requires --host codex|claude');
   if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
+  if (options['reuse-build'] && (options.build || options.mode !== 'full')) fail('--reuse-build requires full and conflicts with --build');
   return options;
 }
 export function main(args) {

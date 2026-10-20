@@ -47,3 +47,42 @@ Intake 只读读取现行规格、活动 change、策略及回执，先运行 st
 ## 旧 Python 工具退出
 
 `python tools/spec_lifecycle.py validate PROJECT` 仅审计旧 `.forgeflow/spec-state.json`，不判断当前 OpenSpec 项目 ready。旧 apply/archive、库级 mutation/write 接口全局拒绝写入。旧 schema/example 及历史试验仅供迁移取证，不允许新建双权威状态。迁移必须逐项人工复核；没有自动导入、自动接受或批量补签回执。历史实现与测试在 provenance 中保留，不能计为本适配测试。
+
+## v2 试点修复契约（0.9.4-trial.1 本地候选）
+
+上文 version 1 的字节哈希和全局作用域继续兼容；以下行为仅在用户显式采用 policy version 2 后启用。旧回执不会自动重算或被视为新审核。
+
+```json
+{"version":2,"artifacts":[
+  {"id":"plan","changes":["*"],"paths":["openspec/changes/{change}/design.md"],"requires":[],"reviewRequired":true,
+   "progress":{"plan":"openspec/changes/{change}/design.md","tasks":"openspec/changes/{change}/tasks.md"}}
+]}
+```
+
+changes 默认 `["*"]`（每个活动 change），也可显式列平面 change 名。仅当前 change 适用规则及 requires 依赖闭包参与求值；依赖即使不在 changes 中也必须纳入。`{change}` 展开为当前名，使用 `openspec/changes/*/...` 的旧跨 change 通配路径须显式迁移，不猜测真实共享依赖。共享文件用明确路径及依赖关系登记，变化仍使所有真实消费者过期。v2 policyHash 绑定协议、change、排序后的适用有效规则，schemaHash 与原字节文件哈希继续保留。无适用规则不能通过。同名 ID 在不同 change 的回执不能串用，v2 manifest 必须绑定 change；v1 原始 policyHash 不变。
+
+稳定计划的 `## Task plan` 下以 `- T1: 任务内容；验收：条件` 定义唯一 ID；计划必须在产物路径中。tasks 只含每个已批准 ID 的 `- [ ] T1` 或 `- [x] T1`（可有空行和标题），禁止在这里改范围，不能纳入产物哈希。勾选不影响计划指纹；计划或验收变化必须复核。普通归档还要求所有登记任务完成和适用回执有效，`--yes` 不绕过；apply 允许尚未完成的执行进度。该语法是显式 opt-in，不重写旧 tasks。
+
+从安装项目根运行：
+
+```sh
+node .forgeflow/ff-spec.mjs receipt snapshot my-change reviews/plan-snapshot.json
+node .forgeflow/ff-spec.mjs receipt template reviews/plan-snapshot.json reviews/plan-report.json
+# 审核者独立核对 snapshot 中的实际文件、规则与 inputs，填写报告版本、reviewer、toolVersion、pass/fail、unverified
+node .forgeflow/ff-spec.mjs receipt check my-change reviews/plan-snapshot.json
+node .forgeflow/ff-spec.mjs receipt record my-change reviews/plan-snapshot.json reviews/plan-report.json
+```
+
+snapshot 和 report 放产物 scope 外。快照 create-only；模板默认 not-reviewed，录入拒绝草稿，明确 fail 可录入但 gate 不通过。录入仅使用所审快照的绑定，先重新核对实际内容/规则/schema/输入和证据，再写回执；报告原始字节自动 SHA256。报告中的未验证范围是报告事实，不由工具改成“全验”。审核者只读时在报告记录固定 snapshotHash；可由生产者根据审核者已完成报告录入，不能代填结论。内容绑定不认证身份、不取代授权或语义质量判断，也不声称对恶意并发写者的事务锁。
+
+每次覆盖都会保留原字节 `ff-artifacts.history-<随机ID>.json`。从 v1 或移除旧 ID 后迁移须在新审核完成后显式 `receipt record ... --migrate`；旧记录留存且 gate 保持无效，status 仍给当前指纹和迁移诊断。不能只改 hash 将旧审核洗成有效。保留失败与过期证据。
+
+`receipt diagnose` 分别报告 configuration/evidence/checked；项目 doctor 分别报告 runtime 和 gates，只有配置存在、非零检查且证据有效才给总体 READY。RUNTIME_READY、UNCONFIGURED、NO_CHECKS、NOT_CHECKED 均不表示门禁通过。`validate --all --json` 零项 exit 1；非 FF 项目的普通规格校验仍不代表 FF 门禁启用。
+
+正文仍遵守 OpenSpec 英文大写 MUST/SHALL 关键词格式；中文正文如“系统 MUST 保留旧证据”可用，仅“必须”或仅标题关键词不满足 strict。结构标题保持英文，未新增中文别名。
+
+原字节 hash 不规范化文本或二进制。doctor 按登记的含换行文本检查 git eol 属性，给每个未受保护路径的精确 `.gitattributes` 建议，如 `/src/example.ts text eol=lf`。在登记/新审核前建立 LF 契约并复核 diff；不要修改全局 core.autocrlf、整库重写，或只刷新旧回执。既有 CRLF 内容改变为 LF 是真实字节变化，旧审核应过期。未实测平台必须另记。
+
+v2 普通归档必须登记至少一份稳定计划/进度映射，并完成 schema 解析到的全部任务；不能省略 progress 后用 --yes 越过任务完成。外部测试日志等证据可在生成报告草稿时自动冻结：`receipt template SNAPSHOT REPORT --evidence tests.log review-notes.txt`。工具把文件路径和当时 sha256 放入每项报告，审核者核对后再填写结论；录入前复核这些原始字节并把报告与外部证据一起绑定，之后替换任一文件都会失效。无需手拼证据哈希。未知报告字段直接拒绝，不静默忽略证据声明。未声明的外部文件不在绑定范围，报告必须列明未验证部分。`validate --archived` 空集合也 exit 1。
+
+progress 所属规则必须 reviewRequired:true；不能关闭计划审核后仍归档。LF 建议先转义 Git glob 元字符再引用，含 [id] 的路径也只保护该文件。

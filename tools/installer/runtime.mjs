@@ -70,7 +70,16 @@ export function diagnose(project, host, expected) {
   if (JSON.stringify(loadState(project)) !== JSON.stringify(state)) fail('Install state changed during doctor; retry when idle');
   checkOwned(project, state, host);
   checkRelease(project, state, 'runtime changed during doctor');
-  return { status: 'READY', version: state.version, ...(state.schema === 1 ? { host: state.host } : {}), hosts: host ? [host] : hostsOf(state), mode: state.mode, cli: '.forgeflow/ff-spec.mjs', note: 'Managed entries and shared CLI available; not actual model invocation, spec/policy acceptance or human acceptance' };
+  const gateProbe = runNode(project, entry, ['receipt', 'diagnose'], true);
+  let gates;
+  try { if (gateProbe.status !== 0) throw new Error(gateProbe.stderr); gates = JSON.parse(gateProbe.stdout); }
+  catch { gates = { configuration: 'UNKNOWN', evidence: 'NOT_CHECKED', checked: 0, reason: 'Gate diagnostics unavailable; runtime help is not a gate check' }; }
+  assertIdle(project);
+  if (JSON.stringify(loadState(project)) !== JSON.stringify(state)) fail('Install state changed during gate diagnostics; retry when idle');
+  checkOwned(project, state, host);
+  checkRelease(project, state, 'runtime changed during gate diagnostics');
+  return { status: gates.configuration === 'CONFIGURED' && gates.evidence === 'VALID' ? 'READY' : 'RUNTIME_READY', runtime: 'READY', gates,
+    version: state.version, ...(state.schema === 1 ? { host: state.host } : {}), hosts: host ? [host] : hostsOf(state), mode: state.mode, cli: '.forgeflow/ff-spec.mjs', note: 'Runtime, configuration and evidence are separate. No actual model invocation, semantic review or human acceptance is established.' };
 }
 export function doctorMain(project, expected, args) {
   try {
@@ -82,6 +91,21 @@ export function doctorMain(project, expected, args) {
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
 export function launch(project, expected, args) {
-  try { process.exitCode = runNode(project, validateRuntime(project, expected), args).status ?? 1; }
+  try {
+    project = currentProject(process.cwd());
+    process.exitCode = runNode(project, validateRuntime(project, expected), args).status ?? 1;
+  }
   catch (error) { console.error(error.message); process.exitCode = 1; }
+}
+export function currentProject(start) {
+  let current = path.resolve(start);
+  while (true) {
+    if (fs.existsSync(path.join(current, control, 'state.json'))) return current;
+    // A worktree's .git file is a project boundary too: never climb into its main checkout.
+    if (fs.existsSync(path.join(current, '.git'))) break;
+    const parent = path.dirname(current);
+    if (parent === current) break;
+    current = parent;
+  }
+  fail('Current project/worktree has no local FF install. Install here explicitly; full can use --reuse-build PATH.');
 }

@@ -2,9 +2,9 @@
 name: ff-review
 description: 独立审核 ForgeFlow 计划、目标与主流程、代码规范，分别给出可复核结论；用于实现前计划审核和变化后的质量核查，只读不修代码。
 metadata:
-  version: "0.9.3-dual-host.1"
+  version: "0.9.4-trial.1"
 ---
-# ff-review 0.9.3-dual-host.1
+# ff-review 0.9.4-trial.1
 
 选择 review_kind=plan | goal-mainflow | code。这是职责标签，不是承诺存在 CLI 参数。三类结论相互独立；小改可一位真正独立审核者覆盖适用项，不强制三人或三份长文档。
 
@@ -28,3 +28,7 @@ metadata:
 
 
 有界旅程复核：核心目标/主要流程审查对照完整路径的预期与同版实测，指出缺步骤、状态断裂及只有截图没有真实操作的结论缺口。CodeGraph 仅为结构线索；不得代替业务结果、视觉判断或人类接受。
+
+## 固定审阅版本与失败分流
+v2 审核前生成 `receipt snapshot CHANGE FILE`，审核者核对快照的适用规则、每个文件的实际字节摘要和依赖输入；HEAD 不能代表 dirty workspace。审核报告记录 snapshotHash、逐产物结论和未验证范围，使用 `receipt template` 生成的 not-reviewed 模板可避免手拼字段。结束前运行 `receipt check CHANGE SNAPSHOT`；变更后只能复核受影响范围，不能把旧结论绑定到最新指纹。生产者用 `receipt record` 录入已完成报告，工具不默认声明 pass，证据替换会失效。内容绑定不认证审核者身份。
+FAIL 按原因处理：需求冲突回 Grill/澄清；技术假设未知转 Prove；计划漏项回 Plan；审核意见冲突先裁决。不能机械按次数切换、把不同 change 的失败合并计数或默认全测；失败测试只是已知依赖的下界。

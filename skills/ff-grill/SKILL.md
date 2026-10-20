@@ -2,9 +2,9 @@
 name: ff-grill
 description: 澄清 ForgeFlow 用户意图、目标和重要方案取舍；用于需求澄清、grill、方案压力测试或目标变更。保留推荐前自审及按用户选择的记录模式，不用于普通问答或已有明确计划的日常执行。
 metadata:
-  version: "0.9.3-dual-host.1"
+  version: "0.9.4-trial.1"
 ---
-# FF-Grill 0.9.3-dual-host.1
+# FF-Grill 0.9.4-trial.1
 
 从用户原话与现有证据提炼 Intent → Motivation → Goal → Problem → Decision → Evidence。保留用户意图，不用推测的“真正问题”替代它。
 
@@ -49,3 +49,6 @@ metadata:
 ## 小范围证据补强
 
 需求锚点按需区分：用户必须项、已知目的/预期变化、可观察结果证据、尚未确认的假设。保留原话和来源；目的未知就写unknown，不替用户脑补或取消明确方案。明确小修改直接处理，不凑三方案、分数或风险配额。
+
+## 技术方案路由
+架构方案的目标、约束和取舍先由 Grill 澄清；会影响方案的技术假设未知时转 ff-prove 做最小实验，再由 ff-spec 将确认方案写入技术设计。ff-design 处理界面与视觉方向，不作为全部技术架构的入口。只补真实缺口，不要求三个职责串行。
