@@ -1,0 +1,12 @@
+✔ strict decoder accepts complete manifest payload (74.8685ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (1.8758ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (1.6362ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (0.8454ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 226.1251

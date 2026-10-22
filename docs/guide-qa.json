@@ -1,5 +1,5 @@
 {
-  "version": "0.9.5-review.1",
+  "version": "0.9.6-intent.1",
   "decision-index": {
     "svg_text_count": 21,
     "drawio_preserves_all_text": true,
@@ -34,7 +34,7 @@
   "guide": {
     "workflow_skill_table_entries": 12,
     "package_skill_directories": 17,
-    "internal_navigation_targets": 33,
+    "internal_navigation_targets": 34,
     "local_image_links_valid": 4,
     "host_command_registration": "NOT_TESTED"
   },

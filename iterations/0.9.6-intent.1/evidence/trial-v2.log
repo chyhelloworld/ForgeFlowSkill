@@ -1,0 +1,359 @@
+Trial fixtures retained: E:\github\ForgeFlowSKill\_verification\intent-loop-096\tmp\ff-trial-HPWIzq
+✖ v1 removed IDs retain current fingerprints and fail with migration diagnostic (35.2863ms)
+✖ v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do (676.4478ms)
+✖ v2 progress ticks preserve plan review; task scope changes fail; archive requires completion (560.6681ms)
+✖ valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes (22.68ms)
+✖ native archive requires completed progress and preserves the independent change (666.9239ms)
+✖ snapshot rejects dirty content, rule changes, report replacement and cross-change receipts (660.6205ms)
+✖ gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence (2104.1172ms)
+✖ autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate (838.3361ms)
+✖ doctor LF suggestions protect literal bracket paths without matching unrelated siblings (808.397ms)
+✖ report template is not pass; fail verdict differs from stale binding; migration preserves old bytes (643.3594ms)
+✖ malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence (645.8337ms)
+✖ external review evidence is frozen by the tool and checked before and after recording (584.6689ms)
+✖ v2 archive requires stable progress mapping and zero archived checks cannot pass (669.5186ms)
+✖ zero validation is non-success and installed CLI hints use project entry (1435.5929ms)
+✖ Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict (709.6871ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 0
+ℹ fail 15
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11526.9878
+
+✖ failing tests:
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:40:1
+✖ v1 removed IDs retain current fingerprints and fail with migration diagnostic (35.2863ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(r.artifacts[0]?.fingerprint)
+  
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:42:60)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.start (node:internal/test_runner/test:1003:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:358:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:44:1
+✖ v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do (676.4478ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:45:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:358:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:54:1
+✖ v2 progress ticks preserve plan review; task scope changes fail; archive requires completion (560.6681ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:56:3)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:63:1
+✖ valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes (22.68ms)
+  TypeError: Cannot read properties of undefined (reading 'fingerprint')
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:65:169)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:73:1
+✖ native archive requires completed progress and preserves the independent change (666.9239ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:75:3)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:78:1
+✖ snapshot rejects dirty content, rule changes, report replacement and cross-change receipts (660.6205ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:79:42)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:85:1
+✖ gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence (2104.1172ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:88:3)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:91:1
+✖ autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate (838.3361ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:95:71)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:102:1
+✖ doctor LF suggestions protect literal bracket paths without matching unrelated siblings (808.397ms)
+  TypeError: Cannot read properties of undefined (reading 'suggestion')
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:105:153)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7)
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:108:1
+✖ report template is not pass; fail verdict differs from stale binding; migration preserves old bytes (643.3594ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:109:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:116:1
+✖ malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence (645.8337ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:117:22)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:122:1
+✖ external review evidence is frozen by the tool and checked before and after recording (584.6689ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:123:60)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:129:1
+✖ v2 archive requires stable progress mapping and zero archived checks cannot pass (669.5186ms)
+  AssertionError [ERR_ASSERTION]: A valid v2 policy and readable artifact scopes are required: Invalid FF configuration: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at reviewed (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:35:3)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:130:21)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:134:1
+✖ zero validation is non-success and installed CLI hints use project entry (1435.5929ms)
+  AssertionError [ERR_ASSERTION]: - Creating change 'example' with schema 'spec-driven'...
+  × Error: Schema 'spec-driven' not found. Available schemas: spec-driven
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:137:14)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at ..\_verification\review-economy-20261020\cli\trial.test.mjs:142:1
+✖ Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict (709.6871ms)
+  AssertionError [ERR_ASSERTION]: {
+    "status": [
+      {
+        "severity": "error",
+        "code": "validate_error",
+        "message": "EPERM: operation not permitted, realpath 'E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096\\tmp\\ff-trial-HPWIzq\\中文 project SfPoUV\\openspec\\specs\\zh'"
+      }
+    ]
+  }
+  
+  
+  1 !== 0
+  
+      at cli (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:31:10)
+      at TestContext.<anonymous> (file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/trial.test.mjs:145:68)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1106:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:788:18)
+      at Test.postRun (node:internal/test_runner/test:1235:19)
+      at Test.run (node:internal/test_runner/test:1163:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:788:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 1,
+    expected: 0,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

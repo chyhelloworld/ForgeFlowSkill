@@ -2,9 +2,9 @@
 name: ff-tdd
 description: 对获准切片按单个可观察行为执行真实 red→green，使用独立期望与真实接口；不强制全量测试或直接重构。
 metadata:
-  version: "0.9.5-review.1"
+  version: "0.9.6-intent.1"
 ---
-# ff-tdd 0.9.5-review.1
+# ff-tdd 0.9.6-intent.1
 
 这是 ff-implement 内按需选用的方法，不是每项任务强制阶段。测试聚焦主要业务流程、复杂逻辑及本次变化风险，纯文案等不适用时说明即可。先复用有效规格/计划、适用审核与用户已确认的测试边界；已有授权覆盖时不逐测试重新审批。普通行为的自检并入阶段末综合独立审查；关键风险及项目/用户要求的前置审核仍须满足。边界不明确或超出范围才提出最小决定，未确认行为交 ff-spec。
 
@@ -17,3 +17,7 @@ metadata:
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 任务级收尾（独立使用也适用）
+
+整个任务/切片完成、失败或中断时，按[使用反馈](references/use-feedback.md)复用已有事实附一次五维定性评价及问题指针；不是每条消息、每个写作块或每次测试循环都评价。已有记录复用，不强行调用其他技能，不自动保存或上传讨论日志。

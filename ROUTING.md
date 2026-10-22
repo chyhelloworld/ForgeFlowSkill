@@ -42,3 +42,7 @@ FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命
 ## 技术方案、接手与审核失败
 技术取舍 → ff-grill；关键技术假设未知 → 必要时 ff-prove；确认后技术设计 → ff-spec。ff-design 聚焦界面和视觉。ff-intake / ff-handoff 可单独执行受影响功能基线审查，仅在接手、核心替换或影响不明时需要；不扩成普通小改的全库盘点。
 FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失败次数切换，不默认全量回归；不同 change 不合并计数。
+
+## 0.9.6 需求闭环增量
+
+持续项目按[需求闭环契约](docs/maintainers/INTENT-LOOP.md)在同一载体提炼需求，以稳定 ID 关联子需求、模块、任务与验收。Intake 旧项目先观察并提供可跳过的未知对齐；Grill 分清探索和转向决定；Spec/Plan/Design/Prove/Implement 复用同一场景。Review 保持阶段末一次综合审查和局部复核。Deliver/Handoff 复用事实附[任务级使用评价](docs/maintainers/USE-FEEDBACK.md)，失败/中断也收集，深入 Retro 按需。不新增技能、运行时门禁或每消息仪式。

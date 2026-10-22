@@ -1,0 +1,24 @@
+{
+  "kind": "isolated-skills-only-distribution",
+  "results": [
+    {
+      "host": "codex",
+      "project": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096\\tmp\\smoke-codex-WptO2i",
+      "version": "0.9.6-intent.1",
+      "skills": 17,
+      "references": 70,
+      "cli": "expected BLOCKED: skills-only",
+      "status": "PASS"
+    },
+    {
+      "host": "claude",
+      "project": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096\\tmp\\smoke-claude-X2Wznu",
+      "version": "0.9.6-intent.1",
+      "skills": 17,
+      "references": 70,
+      "cli": "expected BLOCKED: skills-only",
+      "status": "PASS"
+    }
+  ],
+  "limits": "No live installation upgrade, host model loading, full-runtime readiness or business acceptance."
+}

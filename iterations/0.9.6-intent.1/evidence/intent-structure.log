@@ -1,0 +1,8 @@
+test_example_relations_resolve_without_copying_state (__main__.IntentDistributionTests.test_example_relations_resolve_without_copying_state) ... ok
+test_feedback_is_available_at_completion_interruption_and_retro (__main__.IntentDistributionTests.test_feedback_is_available_at_completion_interruption_and_retro) ... ok
+test_independently_installed_contracts_are_identical (__main__.IntentDistributionTests.test_independently_installed_contracts_are_identical) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.013s
+
+OK

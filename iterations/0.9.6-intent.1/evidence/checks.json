@@ -1,0 +1,298 @@
+[
+  {
+    "label": "intent-structure",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "tools/workflow/test_intent_contract.py"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:21.478530+00:00",
+    "seconds": 0.205811,
+    "exit_code": 0,
+    "log": "intent-structure.log"
+  },
+  {
+    "label": "skill-ff-deliver",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-deliver"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:21.685777+00:00",
+    "seconds": 0.222431,
+    "exit_code": 0,
+    "log": "skill-ff-deliver.log"
+  },
+  {
+    "label": "skill-ff-design",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:21.909553+00:00",
+    "seconds": 0.161945,
+    "exit_code": 0,
+    "log": "skill-ff-design.log"
+  },
+  {
+    "label": "skill-ff-diagnose",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-diagnose"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.073250+00:00",
+    "seconds": 0.232971,
+    "exit_code": 0,
+    "log": "skill-ff-diagnose.log"
+  },
+  {
+    "label": "skill-ff-grill",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.307485+00:00",
+    "seconds": 0.179232,
+    "exit_code": 0,
+    "log": "skill-ff-grill.log"
+  },
+  {
+    "label": "skill-ff-handoff",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-handoff"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.488090+00:00",
+    "seconds": 0.159957,
+    "exit_code": 0,
+    "log": "skill-ff-handoff.log"
+  },
+  {
+    "label": "skill-ff-implement",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-implement"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.649184+00:00",
+    "seconds": 0.164419,
+    "exit_code": 0,
+    "log": "skill-ff-implement.log"
+  },
+  {
+    "label": "skill-ff-intake",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-intake"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.815835+00:00",
+    "seconds": 0.146175,
+    "exit_code": 0,
+    "log": "skill-ff-intake.log"
+  },
+  {
+    "label": "skill-ff-plan",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-plan"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:22.963515+00:00",
+    "seconds": 0.184385,
+    "exit_code": 0,
+    "log": "skill-ff-plan.log"
+  },
+  {
+    "label": "skill-ff-prove",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-prove"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.148897+00:00",
+    "seconds": 0.151064,
+    "exit_code": 0,
+    "log": "skill-ff-prove.log"
+  },
+  {
+    "label": "skill-ff-research",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-research"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.302141+00:00",
+    "seconds": 0.146912,
+    "exit_code": 0,
+    "log": "skill-ff-research.log"
+  },
+  {
+    "label": "skill-ff-retro",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-retro"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.450053+00:00",
+    "seconds": 0.143694,
+    "exit_code": 0,
+    "log": "skill-ff-retro.log"
+  },
+  {
+    "label": "skill-ff-review",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-review"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.594745+00:00",
+    "seconds": 0.147714,
+    "exit_code": 0,
+    "log": "skill-ff-review.log"
+  },
+  {
+    "label": "skill-ff-spec",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-spec"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.743467+00:00",
+    "seconds": 0.149589,
+    "exit_code": 0,
+    "log": "skill-ff-spec.log"
+  },
+  {
+    "label": "skill-ff-tdd",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-tdd"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:23.894053+00:00",
+    "seconds": 0.151542,
+    "exit_code": 0,
+    "log": "skill-ff-tdd.log"
+  },
+  {
+    "label": "skill-ff-writing-beats",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-writing-beats"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:24.046593+00:00",
+    "seconds": 0.149588,
+    "exit_code": 0,
+    "log": "skill-ff-writing-beats.log"
+  },
+  {
+    "label": "skill-ff-writing-fragments",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-writing-fragments"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:24.197684+00:00",
+    "seconds": 0.138135,
+    "exit_code": 0,
+    "log": "skill-ff-writing-fragments.log"
+  },
+  {
+    "label": "skill-ff-writing-shape",
+    "command": [
+      "D:\\ProgramData\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\admin\\.codex\\skills\\.system\\skill-creator\\scripts\\quick_validate.py",
+      "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-writing-shape"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:24.336858+00:00",
+    "seconds": 0.157332,
+    "exit_code": 0,
+    "log": "skill-ff-writing-shape.log"
+  },
+  {
+    "label": "runtime-verify",
+    "command": [
+      "node",
+      "--input-type=module",
+      "-e",
+      "import {verifyReusableBuild} from 'file:///E:/github/ForgeFlowSKill/_verification/review-economy-20261020/cli/ff-build.mjs'; console.log(verifyReusableBuild());"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:24.500965+00:00",
+    "seconds": 1.73216,
+    "exit_code": 0,
+    "log": "runtime-verify.log"
+  },
+  {
+    "label": "trial-v2",
+    "command": [
+      "node",
+      "--test",
+      "E:\\github\\ForgeFlowSKill\\_verification\\review-economy-20261020\\cli\\trial.test.mjs"
+    ],
+    "cwd": "E:\\github\\ForgeFlowSKill\\source",
+    "started": "2026-10-22T04:20:26.236690+00:00",
+    "seconds": 11.63753,
+    "exit_code": 1,
+    "log": "trial-v2.log"
+  }
+]

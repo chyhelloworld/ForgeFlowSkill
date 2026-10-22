@@ -1,0 +1,51 @@
+{
+  "version": "0.9.6-intent.1",
+  "export": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096\\candidate-pre",
+  "files": 1147,
+  "rawFilteredGitBytesEqual": true,
+  "payloadEntries": 1145,
+  "payloadSha256": "85961a9a456bbfcd6a8207236af12081ca607787a5b1f56a29d5a4971c40ab8c",
+  "checks": [
+    {
+      "check": "candidate-pre-pack",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "tools/installer/pack-release.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "candidate-pre-static",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "tools/validate_package.py",
+        "."
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "package-mutations",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "tools/test_validate_package.py",
+        "."
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "payload-decoder",
+      "command": [
+        "node",
+        "--test",
+        "tools/installer/tests/payload.test.mjs"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

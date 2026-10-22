@@ -1,0 +1,31 @@
+{
+  "version": "0.9.6-intent.1",
+  "export": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096\\candidate-reviewed",
+  "files": 1154,
+  "rawFilteredGitBytesEqual": true,
+  "payloadEntries": 1152,
+  "payloadSha256": "bedd9f24c025ed0bb0e5257338e0374064f68ee366f37e3d1cb08806ef1f8c3b",
+  "checks": [
+    {
+      "check": "candidate-reviewed-pack",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "tools/installer/pack-release.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "check": "candidate-reviewed-static",
+      "command": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "tools/validate_package.py",
+        "."
+      ],
+      "exit_code": 0
+    }
+  ]
+}

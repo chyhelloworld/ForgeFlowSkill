@@ -2,9 +2,9 @@
 name: ff-implement
 description: 执行已获准且计划有效的 ForgeFlow 纵向切片，修复与验证主要业务流程；不代替独立审核或宣布用户接受。
 metadata:
-  version: "0.9.5-review.1"
+  version: "0.9.6-intent.1"
 ---
-# ff-implement 0.9.5-review.1
+# ff-implement 0.9.6-intent.1
 
 读取最新确认目标、有效规格与唯一计划、适用审核结论、真实工作区和项目命令。有效资料直接复用，不重复 Grill/Design/Prove；缺规格/过期任务分别交 ff-spec / ff-plan。普通任务自检与相关确定性检查，阶段末一次独立综合审查；不逐任务启动审核。核心替换、主要用户路径、数据迁移、安全边界、验收口径变化须先独立审方案，风险不按行数/文件数判断。用户额外要求和既有 policy 门禁仍优先；要求前置计划回执而未满足时先交 ff-review，不能关闭门禁或自签独立 pass。技术 ready 不等于权限；没有独立上下文时披露缺口。
 
@@ -27,3 +27,9 @@ UI 按已选设计和目标平台检查最终真实渲染与操作；交独立go
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 需求驱动闭环（按当前任务使用）
+
+沿稳定需求/模块/任务/验收引用实施；先贯通一条完整用户场景，保留必要安全、授权与数据完整性。同步原进度与证据，不把任务勾选升级为需求验收；中途变化只更新影响链。
+
+具体来源、关联、转向、旧项目与设计协同遵循[需求闭环契约](references/intent-loop.md)；小改内联，同次任务已读且未变化时复用定位。

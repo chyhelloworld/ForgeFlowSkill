@@ -1,0 +1,9 @@
+{
+  "build.mjs": true,
+  "ff-build.mjs": true,
+  "ff-spec.mjs": true,
+  "ff-receipt.mjs": true,
+  "ff-snapshot.mjs": true,
+  "upstream.json": true,
+  "trial.test.mjs": true
+}

@@ -2,9 +2,9 @@
 name: ff-diagnose
 description: 定位实际故障或性能回归，建立可重复失败信号与有证据的原因；不替代实现、审核或扩大调试权限。
 metadata:
-  version: "0.9.5-review.1"
+  version: "0.9.6-intent.1"
 ---
-# ff-diagnose 0.9.5-review.1
+# ff-diagnose 0.9.6-intent.1
 
 按需调用的诊断方法，不是必经阶段。先读最新目标、用户原始症状、项目 GLOSSARY/ADR（若有）、授权环境与当前版本。未知目标先回 Grill/Spec；不要用附近异常替换用户问题；无关配置、导入或fixture错误不算用户症状的复现。诊断结论和证据引用回现有任务，不另建事实库。
 
@@ -17,3 +17,7 @@ metadata:
 ## OpenSpec 与 FF 有效性
 
 遵循 [规格生命周期契约](references/spec-lifecycle.md)。所有 FF 子命令均通过项目本地 `node tools/openspec/ff-spec.mjs` 运行，工作目录为目标项目根；工具不在此相对位置时使用其真实路径，不回退到全局官方 CLI。仅允许 `init --tools none`，不刷新官方工具集成，`update` 拒绝；包名 `@forgeflow/ff-spec`、用户配置/数据命名空间 `ff-spec` 与官方入口分开，项目 `openspec/` 树仍兼容，这不是文件系统安全边界。现行规格只在 openspec/specs；活动 changes 保存差异和回执，Git 保存历史。按稳定 artifact ID、明确路径、排序内容指纹与依赖指纹判断有效性；review 必须绑定目标版本/内容及依赖。文件存在、任务勾选或旧审核均不自动代表 ready。status / instructions apply / validate / archive 共用 FF evaluator；apply 是实施指导，archive 正常路径同步规格并保存历史。不得继续写旧 spec-state.json，不自动导入旧接受或伪造 pass；取消/拒绝只能走显式 disposition+原因+决议引用的关闭路径，保留失败/未完成记录且不合入规格、不制造 pass。三类独立审核、真实主流程、CRAP ≤50（目标约10）、按需 Diagnose/TDD/Handoff 和既有权限边界保持不变。
+
+## 任务级收尾（独立使用也适用）
+
+整个任务/切片完成、失败或中断时，按[使用反馈](references/use-feedback.md)复用已有事实附一次五维定性评价及问题指针；不是每条消息、每个写作块或每次测试循环都评价。已有记录复用，不强行调用其他技能，不自动保存或上传讨论日志。

@@ -2,9 +2,9 @@
 name: ff-review
 description: 在可独立验收的切片阶段末综合独立审查 ForgeFlow 目标/主流程、计划覆盖与代码质量；关键变更提前审方案，修复只复核问题及影响链，只读不改代码。
 metadata:
-  version: "0.9.5-review.1"
+  version: "0.9.6-intent.1"
 ---
-# ff-review 0.9.5-review.1
+# ff-review 0.9.6-intent.1
 
 review_kind=plan | goal-mainflow | code 是职责标签，不是 CLI 参数。普通任务先自检与确定性检查，阶段末默认由一名独立审核者一次读取最小证据包，分别给三类适用结论；必要专业视角才拆分。阶段是可独立验收的功能切片，不是每个小任务，也不能无限延至整个项目结束。
 
@@ -32,3 +32,9 @@ review_kind=plan | goal-mainflow | code 是职责标签，不是 CLI 参数。�
 ## 固定审阅版本与失败分流
 v2 审核前生成 `receipt snapshot CHANGE FILE`，审核者核对快照的适用规则、每个文件的实际字节摘要和依赖输入；HEAD 不能代表 dirty workspace。审核报告记录 snapshotHash、逐产物结论和未验证范围，使用 `receipt template` 生成的 not-reviewed 模板可避免手拼字段。结束前运行 `receipt check CHANGE SNAPSHOT`；变更后只能复核受影响范围，不能把旧结论绑定到最新指纹。生产者用 `receipt record` 录入已完成报告，工具不默认声明 pass，证据替换会失效。内容绑定不认证审核者身份。
 FAIL 按原因处理：需求冲突回 Grill/澄清；技术假设未知转 Prove；计划漏项回 Plan；审核意见冲突先裁决。不能机械按次数切换、把不同 change 的失败合并计数或默认全测；失败测试只是已知依赖的下界。
+
+## 需求驱动闭环（按当前任务使用）
+
+在原综合审查中核对提炼需求与实际完整路径的差异、跨模块验收和未知；任务/模块局部通过不能抵消整体失败。只消费原权威状态及同版证据，不以引用完整或关键词存在判行为通过。
+
+具体来源、关联、转向、旧项目与设计协同遵循[需求闭环契约](references/intent-loop.md)；小改内联，同次任务已读且未变化时复用定位。

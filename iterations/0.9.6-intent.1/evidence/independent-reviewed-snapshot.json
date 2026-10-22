@@ -1,0 +1,108 @@
+{
+  "observed_at": "2026-10-22T04:25:12.292250+00:00",
+  "baseline": "898b6ef447abb95b0fbad7aa8069408164f09a32",
+  "head": "898b6ef447abb95b0fbad7aa8069408164f09a32",
+  "branch": "work/intent-loop-096",
+  "input_snapshot_sha256": "92cf4c862db940075822e66ae90d78b5a338e0543c9f117ae39d5ea7fdb76a13",
+  "comparison": "direct baseline-to-working-tree plus untracked",
+  "file_count": 49,
+  "untracked_count": 21,
+  "mismatches": [
+    "iterations/0.9.6-intent.1/behavior-evaluation.md"
+  ],
+  "expected_paths_missing_from_current_change_set": [],
+  "files": {
+    "README.md": "b25ea9bfb4bde30523f9e9f571296ea34ae24ce432d32b11b7f1b95e2c17c78b",
+    "ROUTING.md": "05e41a50d1556dc4ec167e41b928ad503b13afd7635df2e58b90bfdeef9b07e4",
+    "docs/FF-中文使用手册.md": "c5fbb54df4dd6bfc62f9ed8a6ad8a1f12dd10272d17da24e087ec662afef9515",
+    "docs/FF-离线图文手册.html": "8b99e450edeb954baa177e85bc97cb4967da2d2d48bb78d9e672d6e9907d6c27",
+    "docs/guide-qa.json": "a4c41e2717c8289f7f26f4f351104ba5fe71dbab9278bc2a9303c3c52c62a4c2",
+    "docs/maintainers/INTENT-LOOP.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "docs/maintainers/USE-FEEDBACK.md": "bd621f0efffa9c1f592f1007353ea31059aee05051accf03b1669985b33c48f0",
+    "docs/maintainers/development.md": "5dd6f961cdaec2f9d26b1bcf9b4cfbce6783a5017585a55307f6ddf5665d8878",
+    "docs/user/capabilities.md": "a91b23e2e014e76569e149852c47222363ad5592cedcd816c996a205fa1bd5bd",
+    "evaluations/scenarios.json": "aae27b51574dea92e82860e403262b25a2160d9c58a51f225ef653d340c32323",
+    "examples/intent-loop-minimal.md": "35bceb887c69e3065ee3752e0861fc13f60faca4b447122857bef193839c104b",
+    "iterations/0.9.6-intent.1/README.md": "2cb3ff745cc50cc92f20a05012349fe263a156e28a8855fb7baf17b46e950f00",
+    "iterations/0.9.6-intent.1/behavior-evaluation.md": "2d8cb74a72faf879027019fac19c94cff77c447a0c44a8b636bf9fba6275c7be",
+    "package.json": "ce6bd1f5fa71af19bfbacd2c7221887cea8dcd6790e6c90e9b8e734b0fcdd7cd",
+    "planning/INTENT-LOOP-096.md": "115fac57d921386301a231033486c68e233a3f26db9960b8ad90432a8300ab25",
+    "planning/ROADMAP-061-09.md": "481cc5783bd3d15a92d4177942cefa44b93013c3f6f873b7c2ce6e60e3d23e0d",
+    "skills/ff-deliver/SKILL.md": "147c4569bd674a7cbd7bd903dba16f96109bdfc0bbc32019722c6bb924164fe3",
+    "skills/ff-deliver/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-deliver/references/use-feedback.md": "bd621f0efffa9c1f592f1007353ea31059aee05051accf03b1669985b33c48f0",
+    "skills/ff-design/SKILL.md": "f63a55b6932f92c976688a61c0bca1d61843a72b13d2427e18741e9a4fbc48b2",
+    "skills/ff-design/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-diagnose/SKILL.md": "fd2ae10b8b361640afb266d483f5a8af4ad0a50f1fbf40f6eb0e705403bf9f71",
+    "skills/ff-grill/SKILL.md": "809b621e871732296c94b4a79f4fc4b941949570c70bce50a6b5e65fd678113d",
+    "skills/ff-grill/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-grill/references/records.md": "3e22dc83e7a48058c3db6451996b46971d72868023d72c2e1d2aff24fcde3b25",
+    "skills/ff-handoff/SKILL.md": "f8381d9fa326eda6b787a027da5ccf6b456d78fe45012f953738c696d1e3f04b",
+    "skills/ff-handoff/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-handoff/references/use-feedback.md": "bd621f0efffa9c1f592f1007353ea31059aee05051accf03b1669985b33c48f0",
+    "skills/ff-implement/SKILL.md": "bb461547d8da2b795da80bb06edf0e30bf835f658bc4f8bef9986b4f05309baa",
+    "skills/ff-implement/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-intake/SKILL.md": "11f007bb2b55ea097e0f0bb330b7a6d3ca5d7d789eb392e43c755450869e516c",
+    "skills/ff-intake/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-plan/SKILL.md": "8975fbba70a414f380caeb073fbe9e1d0eb19fabddb07b094bf4e968537f0d67",
+    "skills/ff-plan/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-prove/SKILL.md": "96d2b600bcb2dcbb6e979434ecb46f1cbfd064b35f70ba23c946e000a5d294de",
+    "skills/ff-prove/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-research/SKILL.md": "eadf70c0283f7089460b102709962a20ccf34e25e47fae4499148d05573ffbdd",
+    "skills/ff-retro/SKILL.md": "9296a06efd27fb60ef3abd475de5eca1b6ea748d345b89bd78e99bbb27431796",
+    "skills/ff-retro/references/use-feedback.md": "bd621f0efffa9c1f592f1007353ea31059aee05051accf03b1669985b33c48f0",
+    "skills/ff-review/SKILL.md": "07e4465779c25d057aa8e6ec4e54fc88769f020b6922977ea0ac6370f332041d",
+    "skills/ff-review/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-spec/SKILL.md": "02d6a0e053ff219c9318f476cc49e4926c05419c7c96b0aec1a465e37aa12550",
+    "skills/ff-spec/references/intent-loop.md": "601edf4f7ecde4ec4856208de501723a728be7293a7b422ddb07af169e67e358",
+    "skills/ff-spec/references/intent-template.md": "a0ae8b8efadebf8fc3d3024b1df618c7786f55cda3ebdf3d0c4b60f90b054634",
+    "skills/ff-tdd/SKILL.md": "93fb7a46859711c1f353aca683ed3935f79dfae8b6b1d0cc22b422e9cdfd4291",
+    "skills/ff-writing-beats/SKILL.md": "ab98b24ed46ab8892d2a40b1bfed8450445b0488408547800a0fcf986e309f66",
+    "skills/ff-writing-fragments/SKILL.md": "13728d0d416093e691cf86513214dc95972dcb8525f9cf3a59c1787679cf4abc",
+    "skills/ff-writing-shape/SKILL.md": "fff1354972e52861cee39592ac1514018ed359074649ed005ef795b0dbb859a7",
+    "tools/workflow/test_intent_contract.py": "52c175ba9d639d372979bc6c983e86a2e431b39d3fdc97a05b73a5047921b12e"
+  },
+  "feedback_distribution": {
+    "grill": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "intake": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "spec": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "plan": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "design": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "prove": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "implement": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "review": {
+      "local_feedback_reference_exists": false,
+      "skill_links_feedback": false
+    },
+    "deliver": {
+      "local_feedback_reference_exists": true,
+      "skill_links_feedback": true
+    },
+    "handoff": {
+      "local_feedback_reference_exists": true,
+      "skill_links_feedback": true
+    }
+  },
+  "responses_sha256": "f11d5b75af0f10dec5d38978369aa729088e662c38722cdb51916caf9b4a600f"
+}

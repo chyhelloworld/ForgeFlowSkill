@@ -59,3 +59,7 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 
 ## 0.9.4 试点候选回归
 本轮计划与17项对照见 planning/TRIAL-FIXES-20261020.md；从目标项目调用源码 launcher 时，测试 fixture 的工作目录必须显式设为该项目。trial.test.mjs 验证 v2 与保留的 v1 边界；原生测试目录通过 FF_TEST_ROOT 指定 E 盘，避免产生 C 盘构建/测试产物。只在干净导出中打包和运行安装器回归，不能将 .build/.bootstrap 或 Git 元数据装入 payload。
+
+## 0.9.6 需求闭环维护
+
+[INTENT-LOOP.md](INTENT-LOOP.md)是需求闭环的维护源，十个接线技能内的 references/intent-loop.md 为独立安装同源副本；[USE-FEEDBACK.md](USE-FEEDBACK.md)同步到 Deliver/Handoff/Retro 及可独立收尾的 Diagnose/TDD/Research/三个Writing技能；十个闭环技能同时在契约内获得最短规则。修改只在维护源定义后同步，安装包内不依赖跨技能路径。`python -X utf8 tools/workflow/test_intent_contract.py` 检查副本、引用和合成关系结构，仅属静态格式检查，不是模型行为测试。新增合成场景与真实宿主验证边界见[本轮记录](../../iterations/0.9.6-intent.1/README.md)。

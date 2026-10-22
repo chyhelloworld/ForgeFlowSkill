@@ -1,0 +1,24 @@
+Trial fixtures retained: E:\github\ForgeFlowSKill\_verification\intent-loop-096\tmp\ff-trial-hYoQ3l
+✔ v1 removed IDs retain current fingerprints and fail with migration diagnostic (29.7558ms)
+✔ v2 independent same-ID A/B additions, edits and archive do not invalidate A; shared changes do (3546.1331ms)
+✔ v2 progress ticks preserve plan review; task scope changes fail; archive requires completion (1208.8542ms)
+✔ valid v1 receipts never automatically become valid v2; explicit reviewed migration keeps original bytes (1479.2829ms)
+✔ native archive requires completed progress and preserves the independent change (4919.4615ms)
+✔ snapshot rejects dirty content, rule changes, report replacement and cross-change receipts (3696.4143ms)
+✔ gate diagnostics separate unconfigured, zero checks, invalid evidence and valid evidence (4775.7518ms)
+✔ autocrlf checkout and worktree preserve protected text; unprotected bytes and real edits invalidate (3157.8825ms)
+✔ doctor LF suggestions protect literal bracket paths without matching unrelated siblings (1043.1904ms)
+✔ report template is not pass; fail verdict differs from stale binding; migration preserves old bytes (3037.8416ms)
+✔ malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence (1644.632ms)
+✔ external review evidence is frozen by the tool and checked before and after recording (2256.0762ms)
+✔ v2 archive requires stable progress mapping and zero archived checks cannot pass (2584.3942ms)
+✔ zero validation is non-success and installed CLI hints use project entry (2281.2511ms)
+✔ Chinese prose obeys explicit MUST/SHALL body format; header-only and non-normative fail strict (1639.5729ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 37562.9329
