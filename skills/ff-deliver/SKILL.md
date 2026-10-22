@@ -2,9 +2,9 @@
 name: ff-deliver
 description: 汇总 ForgeFlow 当前版本有效证据、偏差与用户验收入口，按仓库流程交 PR 或交接；不承担实现或独立审核，不自动合并部署。
 metadata:
-  version: "0.9.6-intent.1"
+  version: "0.9.6-intent.2"
 ---
-# ff-deliver 0.9.6-intent.1
+# ff-deliver 0.9.6-intent.2
 
 消费有效规格/计划、实际交付版本、实现证据与 plan / goal-mainflow / code 的独立审核结论。普通切片阶段末的一次综合报告可分别覆盖三类，不要求三名审核者或重复读取；关键风险前置审核、用户要求和既有门禁仍须满足。缺证据或结论失效交相应职责补齐，只复核问题和影响链，无关非阻断建议进待办，新关键缺陷继续阻断。参考 [交接与接受](references/handoff.md)。
 

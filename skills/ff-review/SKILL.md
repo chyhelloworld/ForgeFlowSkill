@@ -2,9 +2,9 @@
 name: ff-review
 description: 在可独立验收的切片阶段末综合独立审查 ForgeFlow 目标/主流程、计划覆盖与代码质量；关键变更提前审方案，修复只复核问题及影响链，只读不改代码。
 metadata:
-  version: "0.9.6-intent.1"
+  version: "0.9.6-intent.2"
 ---
-# ff-review 0.9.6-intent.1
+# ff-review 0.9.6-intent.2
 
 review_kind=plan | goal-mainflow | code 是职责标签，不是 CLI 参数。普通任务先自检与确定性检查，阶段末默认由一名独立审核者一次读取最小证据包，分别给三类适用结论；必要专业视角才拆分。阶段是可独立验收的功能切片，不是每个小任务，也不能无限延至整个项目结束。
 

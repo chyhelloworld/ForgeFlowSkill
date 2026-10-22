@@ -2,7 +2,7 @@
 name: ff-writing-fragments
 description: 通过轻量采访积累作者的原始写作素材，保留碎片与作者编辑，不做大纲或文章结构；适合还在探索观点、故事和表达的阶段。
 metadata:
-  version: "0.9.6-intent.1"
+  version: "0.9.6-intent.2"
 ---
 
 # FF Writing Fragments

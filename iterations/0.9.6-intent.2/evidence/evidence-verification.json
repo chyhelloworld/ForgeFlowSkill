@@ -1,0 +1,25 @@
+{
+  "kind": "input-and-evidence-integrity",
+  "candidate": "0.9.6-intent.2",
+  "cases": [
+    {
+      "case": "E26",
+      "prompt_unchanged": true,
+      "read_file_hashes_match": 12,
+      "response_sha256": "99abba9e2c5f3efd0b2a463095942571e4eb2391f659eac3d6cc349757c0d0d1",
+      "fresh_context": true,
+      "attempts": 1
+    },
+    {
+      "case": "E29",
+      "prompt_unchanged": true,
+      "read_file_hashes_match": 9,
+      "response_sha256": "2c501aa96d9fc213fe2504bdb2d2a13764e6233539e396d21dfda1b66ef3b886",
+      "fresh_context": true,
+      "attempts": 1
+    }
+  ],
+  "old_iteration_unchanged_from": "ceb3ae197d074ab76b0cb71ffa2b1188d36bc9fa",
+  "snapshot_files_match": 6,
+  "limits": "Hash checks only; semantic grading is in README, not inferred from these checks."
+}

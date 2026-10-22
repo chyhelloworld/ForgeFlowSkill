@@ -1,0 +1,44 @@
+{
+  "case_id": "E26",
+  "context_type": "synthetic-context",
+  "fresh_context": true,
+  "fork_turns": "none",
+  "context_note": "Parent delegated this as a fresh-context, single-answer synthetic case. Available project conversation is only the three-round summary in E26-prompt.json; other host history was not accessed.",
+  "candidate_version": "0.9.6-intent.2",
+  "candidate_version_source": "metadata.version in each of the four actual local SKILL.md files",
+  "working_directory": "E:\\github\\ForgeFlowSKill\\source",
+  "recorded_at_utc": "2026-10-22T04:39:19.6381911Z",
+  "response_path": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E26-response.md",
+  "answer_attempts": 1,
+  "self_scoring_performed": false,
+  "private_reasoning_saved": false,
+  "business_execution": {
+    "performed": false,
+    "scope": "Only local instruction/prompt/reference reads, SHA256 calculation, and writing the two authorized evaluation outputs. No booking operations, business code, prototype execution, external models/services, derived agents, source changes, installation, or deployment.",
+    "product_acceptance": "NOT_RUN",
+    "visual_validation": "NOT_RUN",
+    "independent_review": "NOT_RUN",
+    "human_acceptance": "UNVERIFIED"
+  },
+  "excluded_materials_read": false,
+  "excluded_materials": ["planning", "iterations", "examples", "evaluations", "other task files", "other cases"],
+  "read_files": [
+    {"path": "C:\\Users\\admin\\.codex\\AGENTS.md", "sha256": "f15f05f2bd2c8f2d4f5e16cf4ee9e406cfaedccf7d165747f5f8bc70b4178733"},
+    {"path": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E26-prompt.json", "sha256": "82b622f6fdf67789fb7596a8b416f5fcfdb73390bf2aa22b8f83e65847d70791"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\SKILL.md", "sha256": "921ccbb5194c0ffb6358b045a5aeda9b2647cdd397c65444910bb419b2e44259"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-spec\\SKILL.md", "sha256": "3aa1589029756d9935e826e12b50e8e996257a67a340d7a8fb5202a775045df1"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-plan\\SKILL.md", "sha256": "9138c10c307faa47117b8e2547ca02eca5860c00159ee866a9fd1c855b1080f6"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\SKILL.md", "sha256": "9a5bf87119365d5459e79e64cc57559a92e5a945356c7c2ec668137b5494ecb7"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\references\\clarify.md", "sha256": "450e976ea6114aff22d9f212212918843635c65dcc40eedba970b051d353eb0b"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\references\\intent-loop.md", "sha256": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-spec\\references\\intent-template.md", "sha256": "a0ae8b8efadebf8fc3d3024b1df618c7786f55cda3ebdf3d0c4b60f90b054634"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-plan\\references\\slicing.md", "sha256": "dafe5b4c71ae07acf7e9f7593e6a65a23cb2cf0576bab890b18cca00820ba546"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\references\\visual-direction.md", "sha256": "45120846e5ce131c04e41e3e1ee418a2e69871560bbe4b78c44ad01d54dacc07"},
+    {"path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-design\\references\\journey.md", "sha256": "807d54d83f5fb551c91dc4f1f25e52814685d43bfc2d7ef86c7d2c9a127bedf2"}
+  ],
+  "written_files": [
+    "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E26-response.md",
+    "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E26-metadata.json"
+  ],
+  "remaining_execution_blockers": []
+}

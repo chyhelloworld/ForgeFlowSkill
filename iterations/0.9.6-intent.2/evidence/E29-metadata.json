@@ -1,0 +1,78 @@
+{
+  "case_id": "E29",
+  "context_type": "synthetic-context",
+  "fork_turns": "none",
+  "fresh_context": true,
+  "context_basis": "Fresh delegated context; no parent conversation history was supplied beyond the task instructions.",
+  "candidate_version": "0.9.6-intent.2",
+  "candidate_version_source": "metadata.version in the three permitted local skills/ff-*/SKILL.md files",
+  "candidate_source_root": "E:\\github\\ForgeFlowSKill\\source",
+  "completed_at_utc": "2026-10-22T04:40:37.0317285Z",
+  "response_attempts": 1,
+  "read_files": [
+    {
+      "path": "C:\\Users\\admin\\.codex\\AGENTS.md",
+      "sha256": "f15f05f2bd2c8f2d4f5e16cf4ee9e406cfaedccf7d165747f5f8bc70b4178733"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E29-prompt.json",
+      "sha256": "c108982f9f96a79a38b9014dc78a5bb68951ceb476bfe87f6433df6cc2b43aba"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\SKILL.md",
+      "sha256": "921ccbb5194c0ffb6358b045a5aeda9b2647cdd397c65444910bb419b2e44259"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-spec\\SKILL.md",
+      "sha256": "3aa1589029756d9935e826e12b50e8e996257a67a340d7a8fb5202a775045df1"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-plan\\SKILL.md",
+      "sha256": "9138c10c307faa47117b8e2547ca02eca5860c00159ee866a9fd1c855b1080f6"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\references\\clarify.md",
+      "sha256": "450e976ea6114aff22d9f212212918843635c65dcc40eedba970b051d353eb0b"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-grill\\references\\intent-loop.md",
+      "sha256": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-plan\\references\\slicing.md",
+      "sha256": "dafe5b4c71ae07acf7e9f7593e6a65a23cb2cf0576bab890b18cca00820ba546"
+    },
+    {
+      "path": "E:\\github\\ForgeFlowSKill\\source\\skills\\ff-spec\\references\\spec-lifecycle.md",
+      "sha256": "e6a7441d32e30a03e4c3946b96acb262eb5bb0de5b4d78e80c8a746c2ab020dc"
+    }
+  ],
+  "reference_reuse": "The ff-grill intent-loop-v1 contract was read once and reused for the same task; no conditional goal-bridge, record-mode, or tool-readable mapping reference was needed.",
+  "no_actual_business_execution": {
+    "performed": "Read only the global AGENTS.md, E29 prompt, listed skill entry files and task-needed same-skill references; generated one synthetic two-round response; wrote only the two authorized E29 output files.",
+    "not_performed": [
+      "Business operations",
+      "Source edits",
+      "Installation changes",
+      "Product implementation",
+      "Product tests or independent review",
+      "Database migrations",
+      "External model or service calls",
+      "Sub-agent delegation",
+      "Reading planning, iterations, examples, evaluations, other case files, or other task files"
+    ]
+  },
+  "measurements": {
+    "business_time": "NOT_MEASURED",
+    "token_cost": "NOT_MEASURED",
+    "product_runtime_evidence": "NOT_RUN",
+    "user_acceptance": "NOT_OBSERVED"
+  },
+  "private_reasoning_saved": false,
+  "self_scoring_performed": false,
+  "output_files": [
+    "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E29-response.md",
+    "E:\\github\\ForgeFlowSKill\\_verification\\intent-loop-096-focused\\E29-metadata.json"
+  ],
+  "response_sha256": "2c501aa96d9fc213fe2504bdb2d2a13764e6233539e396d21dfda1b66ef3b886"
+}

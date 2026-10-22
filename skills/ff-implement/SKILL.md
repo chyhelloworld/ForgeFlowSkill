@@ -2,9 +2,9 @@
 name: ff-implement
 description: 执行已获准且计划有效的 ForgeFlow 纵向切片，修复与验证主要业务流程；不代替独立审核或宣布用户接受。
 metadata:
-  version: "0.9.6-intent.1"
+  version: "0.9.6-intent.2"
 ---
-# ff-implement 0.9.6-intent.1
+# ff-implement 0.9.6-intent.2
 
 读取最新确认目标、有效规格与唯一计划、适用审核结论、真实工作区和项目命令。有效资料直接复用，不重复 Grill/Design/Prove；缺规格/过期任务分别交 ff-spec / ff-plan。普通任务自检与相关确定性检查，阶段末一次独立综合审查；不逐任务启动审核。核心替换、主要用户路径、数据迁移、安全边界、验收口径变化须先独立审方案，风险不按行数/文件数判断。用户额外要求和既有 policy 门禁仍优先；要求前置计划回执而未满足时先交 ff-review，不能关闭门禁或自签独立 pass。技术 ready 不等于权限；没有独立上下文时披露缺口。
 

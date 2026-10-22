@@ -1,0 +1,22 @@
+{
+  "baseline": "ceb3ae197d074ab76b0cb71ffa2b1188d36bc9fa",
+  "candidate": "0.9.6-intent.2",
+  "cases": {
+    "E26": {
+      "prompt_unchanged": true,
+      "prompt_file_sha256": "82b622f6fdf67789fb7596a8b416f5fcfdb73390bf2aa22b8f83e65847d70791"
+    },
+    "E29": {
+      "prompt_unchanged": true,
+      "prompt_file_sha256": "c108982f9f96a79a38b9014dc78a5bb68951ceb476bfe87f6433df6cc2b43aba"
+    }
+  },
+  "files": {
+    "package.json": "8aea417086edc0b916897d96e88eddc3ddf68d1855dd11e153d8910b3e352986",
+    "skills/ff-grill/SKILL.md": "921ccbb5194c0ffb6358b045a5aeda9b2647cdd397c65444910bb419b2e44259",
+    "skills/ff-spec/SKILL.md": "3aa1589029756d9935e826e12b50e8e996257a67a340d7a8fb5202a775045df1",
+    "skills/ff-plan/SKILL.md": "9138c10c307faa47117b8e2547ca02eca5860c00159ee866a9fd1c855b1080f6",
+    "skills/ff-design/SKILL.md": "9a5bf87119365d5459e79e64cc57559a92e5a945356c7c2ec668137b5494ecb7",
+    "docs/maintainers/INTENT-LOOP.md": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9"
+  }
+}
