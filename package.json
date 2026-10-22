@@ -1,6 +1,6 @@
 {
   "name": "@forgeflow/project-installer",
-  "version": "0.9.6-intent.2",
+  "version": "0.9.6-small.1",
   "private": true,
   "type": "module",
   "description": "Pinned project-local ForgeFlow installer; no lifecycle scripts",
