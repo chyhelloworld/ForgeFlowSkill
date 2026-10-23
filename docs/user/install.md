@@ -106,3 +106,9 @@ node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --
 该路径内须有 upstream.json 与已验证 .build（包括依赖）；源 pin、marker 和运行时文件哈希都要匹配。也可选择已有项目 `.forgeflow/install/releases/<release>/tools/openspec`。复用仍复制本地运行时，未实现共享缓存或承诺减少磁盘占用；各项目的状态/配置/证据完全隔离。`--reuse-build` 与 `--build` 互斥，技能专用模式不可用。launcher 以当前项目为目标，遇到未安装的 Git worktree 边界会阻塞并提示在该 worktree 安装，不会写主 checkout。
 
 安装结果含 gitGuidance，精确列运行时、launcher 和每个 FF 技能目录，供用户选择 ignore 或 vendor；不会改 `.gitignore`。不要忽略整个 `.forgeflow`。版本控制 policy、稳定计划/进度、回执、审核证据和精确 LF 属性；安装生成物与业务配置分开处理。doctor 的 runtime READY 只说明程序可运行，gates 的 UNCONFIGURED/NO_CHECKS/INVALID 均不能当作门禁通过。普通回执操作见[生命周期 v2](../maintainers/SPEC-LIFECYCLE.md)。
+
+## 0.9.6-architecture.1 源码候选增量
+
+该候选将独立 `ff-architecture-review` 纳入原技能分发机制，共18项，保留旧17项安装记录读取/回滚边界。既有 full/skills-only、Codex/Claude 目录及权限模式不变，不新增 FF CLI 子命令或安全门禁。当前规则与使用方式见[可选架构评估](architecture-review.md)；前面的0.9.3验证回执仍只对应其原版本。
+
+本轮只在 E 盘临时 fixture 做 skills-only 分发验证，不升级真实安装、不重建 full 运行时。文件已分发与宿主原生发现/加载是两种事实；后者尚未验证，不声称用户当前宿主已有该命令。

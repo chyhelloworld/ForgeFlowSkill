@@ -31,7 +31,8 @@ def validate(root):
         need(bool(data.get('description')),f'{folder.name}: empty description')
         need(data.get('metadata',{}).get('version')==expected_version,f'{folder.name}: expected version {expected_version}')
         need((folder/'NOTICE.md').is_file(),f'{folder.name}: missing NOTICE')
-        need((folder/('LICENSE-IMPECCABLE' if folder.name=='ff-design' else 'LICENSE-MATT')).is_file(),f'{folder.name}: missing license')
+        license_name = {'ff-design': 'LICENSE-IMPECCABLE', 'ff-architecture-review': 'LICENSE'}.get(folder.name, 'LICENSE-MATT')
+        need((folder/license_name).is_file(),f'{folder.name}: missing license')
         ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
         need(25<=len(ui['short_description'])<=64,f'{folder.name}: UI description length')
         need('$'+folder.name in ui['default_prompt'],f'{folder.name}: UI prompt invocation')
@@ -42,11 +43,11 @@ def validate(root):
                 target=(file.parent/link.split('#')[0]).resolve()
                 need(target.is_relative_to(folder.resolve()),f'{file}: external local dependency {link}')
                 need(target.is_file(),f'{file}: broken link {link}')
-    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats'},'expected twelve baseline plus five optional skills')
+    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats','ff-architecture-review'},'expected twelve baseline plus six optional skills')
     cases=json.loads((root/'evaluations/scenarios.json').read_text())['cases']
     ids=[c['id'] for c in cases]
     need(len(ids)==len(set(ids)), 'duplicate evaluation case IDs')
-    need(set(['E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17','E18','E21','E22','E23','E24','E25']).issubset(ids), 'missing required workflow or method scenarios')
+    need(set(['E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17','E18','E21','E22','E23','E24','E25','E33','E34','E35','E36','E37','E38']).issubset(ids), 'missing required workflow or method scenarios')
     installed={p.name for p in skills.iterdir() if p.is_dir()}
     for case in cases:
         need(bool(case.get('prompt')) and len(case.get('criteria', []))==3 and bool(case.get('critical_failures')), f"invalid scenario: {case.get('id')}")

@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { safe, sha, read, fail, regularFiles, relative } from './files.mjs';
-import { hostBase } from './state.mjs';
+import { hostBase, currentSkills } from './state.mjs';
 function skillFiles(source) {
   return regularFiles(path.join(source, 'skills')).filter(n => !n.split('/').includes('__pycache__') && !n.endsWith('.pyc'));
 }
@@ -16,7 +16,7 @@ export function verifySource(source) {
   needed.push(...regularFiles(path.join(source, 'tools/openspec')).map(n => `tools/openspec/${n}`));
   for (const name of needed) if (!manifest.files[name]) fail(`Unlisted payload: ${name}`);
   const names = fs.readdirSync(path.join(source, 'skills')).sort();
-  if (names.length !== 17 || names.some(n => !/^ff-[a-z-]+$/.test(n))) fail('Expected exactly 17 FF skills');
+  if (JSON.stringify(names) !== JSON.stringify(currentSkills)) fail('Expected current FF skill inventory');
   return { version: manifest.version, hash: sha(fs.readFileSync(path.join(source, 'MANIFEST.json'))), names, files: manifest.files };
 }
 export function skillPayload(source, pin, host) {

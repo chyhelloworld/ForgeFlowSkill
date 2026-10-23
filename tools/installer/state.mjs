@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import { safe, read, digest, fail } from './files.mjs';
 export const control = '.forgeflow/install';
 export const hosts = ['codex', 'claude'];
+export const baselineSkills = ['ff-intake', 'ff-grill', 'ff-spec', 'ff-design', 'ff-prove', 'ff-plan', 'ff-implement', 'ff-review', 'ff-deliver', 'ff-diagnose', 'ff-tdd', 'ff-handoff', 'ff-research', 'ff-retro', 'ff-writing-fragments', 'ff-writing-shape', 'ff-writing-beats'].sort();
+export const currentSkills = [...baselineSkills, 'ff-architecture-review'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
@@ -39,9 +41,14 @@ export function validateState(project, state) {
   // Schema 1 may be an old three-helper installation. Do not rewrite it on read.
   const required = state.schema === 2 ? sharedFiles : sharedFiles.slice(0, 3);
   if (required.some(name => !state.files[name])) fail('Missing shared entry in state');
+  let priorEntries;
   for (const host of selected) {
     const entries = Object.keys(state.files).filter(name => name.startsWith(`${hostBase(host)}/`) && /^ff-[a-z-]+\/SKILL\.md$/.test(name.slice(hostBase(host).length + 1)));
-    if (entries.length !== 17) fail('Expected 17 skill entries per installed host');
+    const names = entries.map(name => name.slice(hostBase(host).length + 1).split('/')[0]).sort();
+    const key = JSON.stringify(names);
+    if (key !== JSON.stringify(baselineSkills) && key !== JSON.stringify(currentSkills)) fail('Expected complete legacy or current skill inventory');
+    if (priorEntries && priorEntries !== key) fail('Mixed skill inventory across installed hosts');
+    priorEntries = key;
   }
   return state;
 }

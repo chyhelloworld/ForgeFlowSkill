@@ -32,4 +32,6 @@ full 构建依赖网络，历史新包验证曾受 npm TLS 阻塞；skills-only 
 
 ## 源码工具：需求关联简明视图
 
-[只读需求视图](docs/intent-view.md) 复用 intent-links-v1，展示需求、模块、任务与验收原记录/缺口。入口：`python -X utf8 -B tools/workflow/intent_view.py --root . --index planning/intent-view-links.json --requirement R096-2`。这是源码切片，尚未加入冻结安装载荷；不把任务完成或记录 PASS 当作需求/用户验收。
+[只读需求视图](docs/intent-view.md) 复用 intent-links-v1，展示需求、模块、任务与验收原记录/缺口。入口：`python -X utf8 -B tools/workflow/intent_view.py --root . --index planning/intent-view-links.json --requirement R096-2`。这是源码工具，不注册为安装后的宿主命令；不把任务完成或记录 PASS 当作需求/用户验收。
+
+当前 0.9.6-architecture.1 候选新增[可独立调用的架构评估技能](docs/user/architecture-review.md)，Design/Spec 仅推荐，用户选择后才分析。候选包含上述 intent-view，未升级真实安装；旧旁支试验和原生加载结论不自动继承。

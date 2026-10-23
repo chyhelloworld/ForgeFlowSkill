@@ -2,9 +2,9 @@
 name: ff-review
 description: 在可独立验收的切片阶段末综合独立审查 ForgeFlow 目标/主流程、计划覆盖与代码质量；关键变更提前审方案，修复只复核问题及影响链，只读不改代码。
 metadata:
-  version: "0.9.6-handoff.1"
+  version: "0.9.6-architecture.1"
 ---
-# ff-review 0.9.6-handoff.1
+# ff-review 0.9.6-architecture.1
 
 ## 先选择适用路径
 

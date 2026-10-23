@@ -18,4 +18,4 @@ python -X utf8 -B tools/workflow/intent_view.py --root . --index planning/intent
 
 只接受根目录内普通 UTF-8 文件，每文件至多 1 MiB；拒绝越界、绝对引用与可检测的 symlink/reparse 路径。不是原子多文件快照；并发替换、非 Windows 尚未实测。真实 symlink 测试若宿主不能创建会明确跳过，不提升权限。
 
-此切片是源码工具，尚未加入冻结的安装载荷；package 仍标记基础 0.9.6-handoff.1。使用以当前工作分支源码/提交为准，不把旧 payload 视为包含本工具。开发依据及验收见 [规划](../planning/INTENT-VIEW-096.md)，实际结果见 [记录](../iterations/intent-view/results.md)。
+此切片是源码工具，最初交付基于 0.9.6-handoff.1；当前源码/归档版本以 package.json 与提交为准。安装器只安装声明的技能和 FF CLI，不把此源码工具注册成宿主命令；旧 payload 不含本工具。开发依据及验收见 [规划](../planning/INTENT-VIEW-096.md)，实际结果见 [记录](../iterations/intent-view/results.md)。

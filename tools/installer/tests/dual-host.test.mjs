@@ -68,7 +68,7 @@ test('explicit dual install and reentry share one release and preserve exact sta
   assert.equal(state.schema, 2); assert.deepEqual(hostsOf(state), ['codex', 'claude']);
   assert.equal('host' in state, false);
   for (const host of hostsOf(state)) {
-    assert.equal(fs.readdirSync(path.join(p, hostBase(host))).length, 17);
+    assert.equal(fs.readdirSync(path.join(p, hostBase(host))).length, 18);
     assert.match(fs.readFileSync(file(p, host), 'utf8'), new RegExp(`doctor.mjs --host ${host}`));
     assert.match(fs.readFileSync(file(p, host), 'utf8'), new RegExp(state.sourceHash));
     assert.throws(() => main(['doctor', '--project', p, '--host', host]), /skills-only/);

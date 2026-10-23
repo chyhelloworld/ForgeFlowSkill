@@ -31,6 +31,10 @@ FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命
 
 具体事实疑问→ff-research；真实事件代价复盘→ff-retro（零候选有效）；素材采访→ff-writing-fragments；已有素材成文→ff-writing-shape或ff-writing-beats，作者选一路，不强制串行。任一入口均可独立使用，不触发全流程或自动健康检查。详见 docs/user/optional-methods.md。
 
+## 0.9.6 可选架构评估入口（当前合计18技能）
+
+架构初稿/定稿取舍、接手旧项目或重构准备→独立 `ff-architecture-review`。Design/Spec 只在真实复杂度或风险需要时推荐，说明收益/额外工作/视角并等用户选择，小 demo 默认跳过；拒绝不构成门禁失败，不反复劝说。主动调用即选择评估，不重复启动确认；安全权限与既有强制审查仍在。入口及共享模板只按需读取，不是第18个必经步骤，也不新增 `ff-spec` 子命令。详见[可选架构评估](docs/user/architecture-review.md)。上文17项是历史增量描述。
+
 ## 实验2：可选决策索引
 
 保留17个技能。Grill、Research、Handoff、Intake 可按需引用单一决策权威记录，恢复原始目标和未决依赖；简单任务跳过。索引不授予执行、不增加状态数据库；[中文说明](docs/user/decision-index.md)。CLI 不变。
