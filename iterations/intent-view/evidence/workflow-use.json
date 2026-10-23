@@ -1,0 +1,72 @@
+{
+  "recorded_at": "2026-10-23T02:50:23.150651+00:00",
+  "host": "current Codex delegated task; explicit checkout file reads, not native automatic loading",
+  "model": "exact identifier unknown; no model override or external API call",
+  "fixed_source": "E:\\github\\ForgeFlowSKill\\worktrees\\review-handoff-096",
+  "fixed_sha": "8b9858aa8795d83ea33881b3d8c2e1ef40cce6b8",
+  "fixed_version": "0.9.6-handoff.1",
+  "stages": [
+    {
+      "stage": "goal/design/mapping",
+      "evidence": "planning/INTENT-VIEW-096.md; actual ff-plan and intent-loop reads in task trace; existing fixed intake/implement content reused"
+    },
+    {
+      "stage": "implementation/tests/real use",
+      "evidence": "tools/workflow/intent_view.py; evidence/tests-*.json; evidence/demo-*.json"
+    },
+    {
+      "stage": "combined independent review",
+      "evidence": "review/handoff.txt and input-snapshot.json; one fresh context assigned; outcome to be recorded separately"
+    },
+    {
+      "stage": "delivery",
+      "evidence": "ff-deliver read after real demo and while independent review runs"
+    }
+  ],
+  "skill_sources": [
+    {
+      "path": "skills/ff-intake/SKILL.md",
+      "sha256": "df6dd10584c5d67fb5e1bd8a2a1eb9d2aa550f5990526fb8d6d47ddaecb7af45",
+      "file_characters": 1144,
+      "use": "reuse of previously read fixed skill in this task history; no claim of another read this round"
+    },
+    {
+      "path": "skills/ff-implement/SKILL.md",
+      "sha256": "ac79fbdf84964b70f6428d5a68bff44bf2ba9712e2691a9bf1c7f6eaea2aecc7",
+      "file_characters": 1594,
+      "use": "reuse of previously read fixed skill in this task history; no claim of another read this round"
+    },
+    {
+      "path": "skills/ff-review/SKILL.md",
+      "sha256": "038ddf9660b6c345aba428233864f7c99fb45b9c7492cd54ada3c152c23ed415",
+      "file_characters": 1441,
+      "use": "reuse of previously read fixed skill in this task history; no claim of another read this round"
+    },
+    {
+      "path": "skills/ff-review/references/review-handoff.md",
+      "sha256": "8616e975cb897d8a205eb1633c6b952f98323bb2b3d0b7efa66684a7041ed519",
+      "file_characters": 802,
+      "use": "reuse of previously read fixed skill in this task history; no claim of another read this round"
+    },
+    {
+      "path": "skills/ff-plan/SKILL.md",
+      "sha256": "5d84fe01a71fc8aa946bbb932203d03749292e3b3109ce2abe8233216412955e",
+      "file_characters": 1064,
+      "use": "read this round, full file requested"
+    },
+    {
+      "path": "skills/ff-plan/references/intent-loop.md",
+      "sha256": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9",
+      "file_characters": 2813,
+      "use": "read this round, full file requested"
+    },
+    {
+      "path": "skills/ff-deliver/SKILL.md",
+      "sha256": "3439dfc0cf2c62270dcbcfadc50635d0223a9d5016200941240fbd6000061856",
+      "file_characters": 1203,
+      "use": "read this round, full file requested"
+    }
+  ],
+  "measurement_limits": "File character counts are static file sizes, not complete model-visible reads or tokens. Some earlier combined outputs were truncated. Full round read/tool/token/time/cost totals unknown. Reviewer records its own reads. No comparative savings claim.",
+  "native_loading": "unknown; .agents/skills absent in checkout; no real installation changed"
+}

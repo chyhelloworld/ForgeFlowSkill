@@ -1,0 +1,605 @@
+[
+  {
+    "name": "tests-initial.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": false,
+      "tools/workflow/test_intent_view.py": false
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/test_intent_view.py"
+        ],
+        "exit_code": 1,
+        "stderr": "test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok\ntest_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ERROR\ntest_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ERROR\ntest_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ERROR\ntest_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ERROR\ntest_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok\ntest_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ERROR\ntest_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ERROR\ntest_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ERROR\ntest_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ERROR\ntest_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize) ... ERROR\ntest_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ERROR\ntest_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... \n  test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='module_ids') ... ERROR\n  test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='acceptance_ids') ... ERROR\n  test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='progress_ref') ... ERROR\n\n======================================================================\nERROR: test_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 43, in test_done_never_means_requirement_accepted\n    row = self.report()['requirements'][0]\n          ^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-bo7oeewu'\n\n======================================================================\nERROR: test_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 91, in test_existing_markdown_contract_example_is_supported\n    report = view.build_report(ROOT, 'examples/intent-loop-minimal.md', 'R-1a')\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096'\n\n======================================================================\nERROR: test_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 116, in test_inline_status_is_not_authority\n    report = self.report()\n             ^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-aydnckcy'\n\n======================================================================\nERROR: test_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 104, in test_invalid_index_formats_fail_clearly\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-z6udqkt7'\n\n======================================================================\nERROR: test_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 61, in test_missing_broken_and_dangling_are_visible\n    report = self.report()\n             ^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-rr61nzmz'\n\n======================================================================\nERROR: test_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 83, in test_multiple_relations_and_exact_requirement_filter\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-4hxte23q'\n\n======================================================================\nERROR: test_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 71, in test_no_result_can_be_inferred_from_unrelated_section\n    self.assertEqual(self.report()['requirements'][0]['acceptance'][0]['recorded_result'], 'unknown')\n                     ^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-_48r8jor'\n\n======================================================================\nERROR: test_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 51, in test_pass_is_only_reported_not_freshness_or_acceptance\n    row = self.report()['requirements'][0]\n          ^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-ohrj0xyy'\n\n======================================================================\nERROR: test_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 121, in test_reader_rejects_escape_links_binary_and_oversize\n    reader = view.Reader(self.root)\n             ^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-x4tnnypk'\n\n======================================================================\nERROR: test_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 142, in test_real_cli_json_text_errors_and_no_input_writes\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-je688ux_'\n\n======================================================================\nERROR: test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='module_ids')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 111, in test_typed_relations_and_refs_validated\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-uplh6mbk'\n\n======================================================================\nERROR: test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='acceptance_ids')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 111, in test_typed_relations_and_refs_validated\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-uplh6mbk'\n\n======================================================================\nERROR: test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) (field='progress_ref')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 111, in test_typed_relations_and_refs_validated\n    self.report()\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 40, in report\n    return view.build_report(self.root, 'index.json')\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 153, in build_report\n    reader = Reader(root)\n             ^^^^^^^^^^^^\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 20, in __init__\n    self.root = Path(root).resolve(strict=True)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 993, in resolve\n    s = os.path.realpath(self, strict=strict)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"<frozen ntpath>\", line 696, in realpath\nPermissionError: [WinError 5] 拒绝访问。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\intent-view-test-uplh6mbk'\n\n----------------------------------------------------------------------\nRan 13 tests in 0.215s\n\nFAILED (errors=13)\n"
+      }
+    ]
+  },
+  {
+    "name": "tests-path-fix.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": false,
+      "tools/workflow/test_intent_view.py": false
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/test_intent_view.py"
+        ],
+        "exit_code": 1,
+        "stderr": "test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok\ntest_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ok\ntest_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ok\ntest_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ok\ntest_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ok\ntest_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok\ntest_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ok\ntest_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ok\ntest_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ok\ntest_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ok\ntest_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize) ... \n  test_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize) (name='/private.txt') ... ERROR\ntest_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize) ... skipped 'host cannot create symlink without extra privilege; no escalation'\ntest_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ok\ntest_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... ok\n\n======================================================================\nERROR: test_reader_rejects_escape_links_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_links_binary_and_oversize) (name='/private.txt')\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\test_intent_view.py\", line 124, in test_reader_rejects_escape_links_binary_and_oversize\n    reader.read(name)\n  File \"E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py\", line 40, in read\n    info = path.lstat()\n           ^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 1163, in lstat\n    return self.stat(follow_symlinks=False)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\ProgramData\\anaconda3\\Lib\\pathlib.py\", line 1013, in stat\n    return os.stat(self, follow_symlinks=follow_symlinks)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [WinError 2] 系统找不到指定的文件。: 'E:\\\\private.txt'\n\n----------------------------------------------------------------------\nRan 13 tests in 0.844s\n\nFAILED (errors=1, skipped=1)\n"
+      }
+    ]
+  },
+  {
+    "name": "tests-local.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": false,
+      "tools/workflow/test_intent_view.py": true
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/test_intent_view.py"
+        ],
+        "exit_code": 0,
+        "stderr": "test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok\ntest_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ok\ntest_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ok\ntest_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ok\ntest_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ok\ntest_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok\ntest_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ok\ntest_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ok\ntest_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ok\ntest_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ok\ntest_reader_rejects_escape_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_binary_and_oversize) ... ok\ntest_reader_rejects_real_symlink_when_available (__main__.IntentViewTests.test_reader_rejects_real_symlink_when_available) ... skipped 'host cannot create symlink without extra privilege; no escalation'\ntest_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ok\ntest_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 0.858s\n\nOK (skipped=1)\n"
+      }
+    ]
+  },
+  {
+    "name": "tests-final.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": true,
+      "tools/workflow/test_intent_view.py": true
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/test_intent_view.py"
+        ],
+        "exit_code": 0,
+        "stderr": "test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok\ntest_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ok\ntest_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ok\ntest_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ok\ntest_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ok\ntest_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok\ntest_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ok\ntest_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ok\ntest_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ok\ntest_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ok\ntest_reader_rejects_escape_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_binary_and_oversize) ... ok\ntest_reader_rejects_real_symlink_when_available (__main__.IntentViewTests.test_reader_rejects_real_symlink_when_available) ... skipped 'host cannot create symlink without extra privilege; no escalation'\ntest_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ok\ntest_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... ok\n\n----------------------------------------------------------------------\nRan 14 tests in 1.247s\n\nOK (skipped=1)\n"
+      },
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/test_intent_contract.py"
+        ],
+        "exit_code": 0,
+        "stderr": "test_example_relations_resolve_without_copying_state (__main__.IntentDistributionTests.test_example_relations_resolve_without_copying_state) ... ok\ntest_feedback_is_available_at_completion_interruption_and_retro (__main__.IntentDistributionTests.test_feedback_is_available_at_completion_interruption_and_retro) ... ok\ntest_independently_installed_contracts_are_identical (__main__.IntentDistributionTests.test_independently_installed_contracts_are_identical) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.026s\n\nOK\n"
+      }
+    ]
+  },
+  {
+    "name": "demo-initial.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": false
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/intent_view.py",
+          "--root",
+          ".",
+          "--index",
+          "planning/intent-view-links.json",
+          "--requirement",
+          "R096-2",
+          "--json"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "observed_input_matches_current": {
+          "planning/intent-view-links.json": false,
+          "planning/INTENT-LOOP-096.md": true,
+          "skills/ff-spec/SKILL.md": true,
+          "skills/ff-plan/SKILL.md": true,
+          "planning/INTENT-VIEW-096.md": true,
+          "iterations/intent-view/results.md": false,
+          "iterations/intent-view/evidence/tests-local.json": true
+        },
+        "report_summary": [
+          {
+            "id": "R096-2",
+            "modules": [
+              "M-spec",
+              "M-plan",
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T096-2",
+                "unknown"
+              ],
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PENDING"
+              ]
+            ],
+            "gaps": [
+              "T096-2: task progress unknown",
+              "T096-2: no acceptance mapping",
+              "T096-2: missing reference",
+              "A-local: recorded result UNKNOWN",
+              "A-demo: no evidence references",
+              "A-demo: recorded result PENDING"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "demo-reviewed-input.json",
+    "source_matches_current": {
+      "tools/workflow/intent_view.py": true
+    },
+    "runs": [
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/intent_view.py",
+          "--root",
+          ".",
+          "--index",
+          "planning/intent-view-links.json",
+          "--requirement",
+          "R096-2",
+          "--json"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "observed_input_matches_current": {
+          "planning/intent-view-links.json": true,
+          "planning/INTENT-LOOP-096.md": true,
+          "skills/ff-spec/SKILL.md": true,
+          "skills/ff-plan/SKILL.md": true,
+          "planning/INTENT-VIEW-096.md": true,
+          "iterations/intent-view/results.md": true,
+          "iterations/intent-view/evidence/tests-final.json": true,
+          "iterations/intent-view/evidence/demo-initial.json": true
+        },
+        "report_summary": [
+          {
+            "id": "R096-2",
+            "modules": [
+              "M-spec",
+              "M-plan",
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T096-2",
+                "unknown"
+              ],
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "T096-2: task progress unknown",
+              "T096-2: no acceptance mapping",
+              "T096-2: missing reference",
+              "A-local: recorded result UNKNOWN"
+            ]
+          }
+        ]
+      },
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/intent_view.py",
+          "--root",
+          ".",
+          "--index",
+          "planning/intent-view-links.json",
+          "--requirement",
+          "R096-2"
+        ],
+        "exit_code": 0,
+        "stderr": ""
+      },
+      {
+        "argv": [
+          "D:\\ProgramData\\anaconda3\\python.exe",
+          "-X",
+          "utf8",
+          "-B",
+          "tools/workflow/intent_view.py",
+          "--root",
+          ".",
+          "--index",
+          "planning/intent-view-links.json",
+          "--json"
+        ],
+        "exit_code": 0,
+        "stderr": "",
+        "observed_input_matches_current": {
+          "planning/intent-view-links.json": true,
+          "planning/INTENT-LOOP-096.md": true,
+          "skills/ff-grill/SKILL.md": true,
+          "skills/ff-intake/SKILL.md": true,
+          "skills/ff-spec/SKILL.md": true,
+          "skills/ff-plan/SKILL.md": true,
+          "planning/INTENT-VIEW-096.md": true,
+          "iterations/intent-view/results.md": true,
+          "iterations/intent-view/evidence/tests-final.json": true,
+          "iterations/intent-view/evidence/demo-initial.json": true,
+          "skills/ff-design/SKILL.md": true,
+          "skills/ff-prove/SKILL.md": true,
+          "skills/ff-implement/SKILL.md": true,
+          "skills/ff-deliver/SKILL.md": true,
+          "skills/ff-handoff/SKILL.md": true,
+          "skills/ff-retro/SKILL.md": true,
+          "skills/ff-review/SKILL.md": true
+        },
+        "report_summary": [
+          {
+            "id": "R096-1",
+            "modules": [
+              "M-grill",
+              "M-intake"
+            ],
+            "tasks": [
+              [
+                "T096-1",
+                "unknown"
+              ]
+            ],
+            "acceptance": [],
+            "gaps": [
+              "T096-1: task progress unknown",
+              "T096-1: no acceptance mapping",
+              "T096-1: missing reference",
+              "no acceptance mapping in index"
+            ]
+          },
+          {
+            "id": "R096-2",
+            "modules": [
+              "M-spec",
+              "M-plan",
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T096-2",
+                "unknown"
+              ],
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "T096-2: task progress unknown",
+              "T096-2: no acceptance mapping",
+              "T096-2: missing reference",
+              "A-local: recorded result UNKNOWN"
+            ]
+          },
+          {
+            "id": "R096-3",
+            "modules": [
+              "M-grill",
+              "M-spec",
+              "M-plan"
+            ],
+            "tasks": [
+              [
+                "T096-1",
+                "unknown"
+              ],
+              [
+                "T096-2",
+                "unknown"
+              ]
+            ],
+            "acceptance": [],
+            "gaps": [
+              "T096-1: task progress unknown",
+              "T096-1: no acceptance mapping",
+              "T096-1: missing reference",
+              "T096-2: task progress unknown",
+              "T096-2: no acceptance mapping",
+              "T096-2: missing reference",
+              "no acceptance mapping in index"
+            ]
+          },
+          {
+            "id": "R096-4",
+            "modules": [
+              "M-design",
+              "M-prove",
+              "M-implement"
+            ],
+            "tasks": [
+              [
+                "T096-2",
+                "unknown"
+              ]
+            ],
+            "acceptance": [],
+            "gaps": [
+              "T096-2: task progress unknown",
+              "T096-2: no acceptance mapping",
+              "T096-2: missing reference",
+              "no acceptance mapping in index"
+            ]
+          },
+          {
+            "id": "R096-5",
+            "modules": [
+              "M-deliver",
+              "M-handoff",
+              "M-retro"
+            ],
+            "tasks": [
+              [
+                "T096-3",
+                "unknown"
+              ]
+            ],
+            "acceptance": [],
+            "gaps": [
+              "T096-3: task progress unknown",
+              "T096-3: no acceptance mapping",
+              "T096-3: missing reference",
+              "no acceptance mapping in index"
+            ]
+          },
+          {
+            "id": "R096-6",
+            "modules": [
+              "M-review"
+            ],
+            "tasks": [
+              [
+                "T096-4",
+                "unknown"
+              ]
+            ],
+            "acceptance": [],
+            "gaps": [
+              "T096-4: task progress unknown",
+              "T096-4: no acceptance mapping",
+              "T096-4: missing reference",
+              "no acceptance mapping in index"
+            ]
+          },
+          {
+            "id": "R-view",
+            "modules": [
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "A-local: recorded result UNKNOWN"
+            ]
+          },
+          {
+            "id": "R-links",
+            "modules": [
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "A-local: recorded result UNKNOWN"
+            ]
+          },
+          {
+            "id": "R-truth",
+            "modules": [
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "A-local: recorded result UNKNOWN"
+            ]
+          },
+          {
+            "id": "R-local",
+            "modules": [
+              "M-read",
+              "M-map",
+              "M-view"
+            ],
+            "tasks": [
+              [
+                "T-view",
+                "pending"
+              ]
+            ],
+            "acceptance": [
+              [
+                "A-links",
+                "PASS"
+              ],
+              [
+                "A-truth",
+                "PASS"
+              ],
+              [
+                "A-local",
+                "UNKNOWN"
+              ],
+              [
+                "A-demo",
+                "PASS"
+              ]
+            ],
+            "gaps": [
+              "A-local: recorded result UNKNOWN"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

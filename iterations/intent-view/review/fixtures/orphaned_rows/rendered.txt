@@ -1,0 +1,11 @@
+需求关联视图 | 声明版本: review-fixture
+观察时间: 2026-10-23T02:52:48.903924+00:00
+任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。
+
+R1 | 需求验收=unknown | 用户接受=unknown
+  目的/原文: ## R1 Inspect links.
+  定位: plan.md#R1
+  模块 M1: ## M1 Reader.
+  任务 T1=done | 模块 M1 -> A1
+  验收 A1 原记录=PASS / 有效性=unknown -> plan.md#result
+    证据: evidence.log [可读取，未认证]

@@ -1,0 +1,98 @@
+{
+  "cases": [
+    {
+      "name": "control",
+      "exit_code": 0,
+      "global_gaps": [],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "render_contains_orphan": false,
+      "json_contains_orphan_id": false
+    },
+    {
+      "name": "mixed_unknown",
+      "exit_code": 0,
+      "global_gaps": [],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "render_contains_orphan": false,
+      "json_contains_orphan_id": false
+    },
+    {
+      "name": "orphaned_rows",
+      "exit_code": 0,
+      "global_gaps": [],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "render_contains_orphan": false,
+      "json_contains_orphan_id": true
+    },
+    {
+      "name": "task_without_module",
+      "exit_code": 0,
+      "global_gaps": [],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "render_contains_orphan": false,
+      "json_contains_orphan_id": false
+    }
+  ],
+  "current_real_cli_exit": 0,
+  "real_input_hashes_unchanged": {
+    "planning/intent-view-links.json": true,
+    "planning/INTENT-LOOP-096.md": true,
+    "skills/ff-grill/SKILL.md": true,
+    "skills/ff-intake/SKILL.md": true,
+    "skills/ff-spec/SKILL.md": true,
+    "skills/ff-plan/SKILL.md": true,
+    "planning/INTENT-VIEW-096.md": true,
+    "iterations/intent-view/results.md": true,
+    "iterations/intent-view/evidence/tests-final.json": true,
+    "iterations/intent-view/evidence/demo-initial.json": true,
+    "skills/ff-design/SKILL.md": true,
+    "skills/ff-prove/SKILL.md": true,
+    "skills/ff-implement/SKILL.md": true,
+    "skills/ff-deliver/SKILL.md": true,
+    "skills/ff-handoff/SKILL.md": true,
+    "skills/ff-retro/SKILL.md": true,
+    "skills/ff-review/SKILL.md": true
+  },
+  "reviewed_files_unchanged": {
+    "README.md": true,
+    "docs/intent-view.md": true,
+    "planning/INTENT-VIEW-096.md": true,
+    "planning/INTENT-LOOP-096.md": true,
+    "planning/intent-view-links.json": true,
+    "examples/intent-loop-minimal.md": true,
+    "tools/workflow/intent_view.py": true,
+    "tools/workflow/test_intent_view.py": true,
+    "iterations/intent-view/results.md": true,
+    "iterations/intent-view/evidence/demo-initial.json": true,
+    "iterations/intent-view/evidence/demo-readable.txt": true,
+    "iterations/intent-view/evidence/demo-reviewed-input.json": true,
+    "iterations/intent-view/evidence/path-diagnostic.json": true,
+    "iterations/intent-view/evidence/protection-checkpoint.json": true,
+    "iterations/intent-view/evidence/tests-final.json": true,
+    "iterations/intent-view/evidence/tests-initial.json": true,
+    "iterations/intent-view/evidence/tests-local.json": true,
+    "iterations/intent-view/evidence/tests-path-fix.json": true,
+    "iterations/intent-view/evidence/workflow-use.json": true
+  },
+  "fixed_skill_files_unchanged": {
+    "skills/ff-review/SKILL.md": true,
+    "skills/ff-review/references/review-handoff.md": true,
+    "skills/ff-review/references/intent-loop.md": true
+  },
+  "notes": [
+    "Original unit suite not rerun: its TemporaryDirectory writes at repository root, outside review write scope.",
+    "Real symlink/reparse, non-Windows execution, atomic snapshots and CRAP measurement remain unverified."
+  ]
+}

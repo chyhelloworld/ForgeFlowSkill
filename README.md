@@ -29,3 +29,7 @@ full 构建依赖网络，历史新包验证曾受 npm TLS 阻塞；skills-only 
 根目录保留本页、[安装入口](INSTALL.md)、[宿主路由约定](ROUTING.md)、[来源变更映射](CHANGE-MAP.md)和[兼容迁移约定](MIGRATION.md)。旧接入报告依赖迁移约定，保留两者原路径和原始内容。技能发现文件与原始证据保持既有位置；原路径追溯见[历史目录](docs/archive/README.md)。
 
 本轮本地候选与兼容边界见 [试点修复计划](planning/TRIAL-FIXES-20261020.md)及[验证记录](iterations/trial-fixes-20261020/README.md)。旧实验结论不外推为本候选通过；不自动迁移回执或升级安装。
+
+## 源码工具：需求关联简明视图
+
+[只读需求视图](docs/intent-view.md) 复用 intent-links-v1，展示需求、模块、任务与验收原记录/缺口。入口：`python -X utf8 -B tools/workflow/intent_view.py --root . --index planning/intent-view-links.json --requirement R096-2`。这是源码切片，尚未加入冻结安装载荷；不把任务完成或记录 PASS 当作需求/用户验收。

@@ -1,0 +1,264 @@
+{
+  "recorded_at": "2026-10-23T03:01:40.848599+00:00",
+  "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+  "python": "D:\\ProgramData\\anaconda3\\python.exe",
+  "version": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+  "before_sha256": {
+    "tools/workflow/intent_view.py": "696459a9809c5f3bf2f97b87291a682c604823192694170dbdd76bc8339bc2e9",
+    "tools/workflow/test_intent_view.py": "fb7dcb0901552b3ecdd3805c117f7e0f94bae0385f55528433caae9b203fe5ca",
+    "tools/workflow/test_intent_contract.py": "f8c070c1d987e8f97ecb08e2bf847f90a880b7d1680114bb840492495e5e1fd4",
+    "docs/intent-view.md": "ac4ca256bbb53813a4aa6144834585cafa77409c19199b3f0a4fc1d36f7fd969",
+    "planning/intent-view-links.json": "b99acd5517ed5ef6f09649445e3bafe5908871b463f2f80d7f9324040da69979",
+    "iterations/intent-view/results.md": "8ecb5b6002e88c857f11cbb4127295a3939a2e071d365007a93ac26936155cc2",
+    "iterations/intent-view/evidence/review-regression-before.json": "734b3b73570050cf0b87816824e0e9aa59a3578eb4bd099d22f0814fb63cd437",
+    "iterations/intent-view/evidence/tests-after-review.json": "5dad5dff90906ddf1d155b802ecbb11f0b2d9a7288c8abfedff5a70921b4d498",
+    "iterations/intent-view/review/initial-review.md": "603e3fe182049752d37c2a74683bf8bffecd38e9398ee0373d36e477b0c67b78",
+    "iterations/intent-view/review/probe-commands.json": "26336b3c5fdafaa03761bedcf8a8df456092596db64ece8a26103f1a3bb4c0ac",
+    "iterations/intent-view/review/probe-summary.json": "f0f2c33625bd72542c2d0785464363969cf64958068d1a7bc682b698d4c6e9ae",
+    "iterations/intent-view/review/reviewed-snapshot.json": "c9590dea8d35b121144979b0c0492c9d7779466a2db645ea88e0eddf925a1604",
+    "iterations/intent-view/review/fixtures/control/evidence.log": "60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f",
+    "iterations/intent-view/review/fixtures/control/index.json": "72262a4e4c80ac4dbeab8b4e85ec61c403b56cf89a5f07edf5706b271453ba03",
+    "iterations/intent-view/review/fixtures/control/plan.md": "d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c",
+    "iterations/intent-view/review/fixtures/control/rendered.txt": "a0815c6f284e26ea9118296224f3a2b59495e825a5464e99a91793adccc6e999",
+    "iterations/intent-view/review/fixtures/mixed_unknown/evidence.log": "60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f",
+    "iterations/intent-view/review/fixtures/mixed_unknown/index.json": "72262a4e4c80ac4dbeab8b4e85ec61c403b56cf89a5f07edf5706b271453ba03",
+    "iterations/intent-view/review/fixtures/mixed_unknown/plan.md": "443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603",
+    "iterations/intent-view/review/fixtures/mixed_unknown/rendered.txt": "f0429596bc92d479cd512d7b2eac97556a14cff7ccad02c8c0d98a5db71f25cd",
+    "iterations/intent-view/review/fixtures/orphaned_rows/evidence.log": "60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f",
+    "iterations/intent-view/review/fixtures/orphaned_rows/index.json": "c7392c4a85be585a5cf0b6caf9f9d865c8b506e9e8add310d0df22fd7b009026",
+    "iterations/intent-view/review/fixtures/orphaned_rows/plan.md": "4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478",
+    "iterations/intent-view/review/fixtures/orphaned_rows/rendered.txt": "74a6ae0d6f1589e6258b2cff6ee05c4f914b6f1447411b23481374e4ae3f8693",
+    "iterations/intent-view/review/fixtures/task_without_module/evidence.log": "60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f",
+    "iterations/intent-view/review/fixtures/task_without_module/index.json": "4427dc6948cbc144ab58a00d2ff377521ff920d8e7bfd74240a485bc031e93da",
+    "iterations/intent-view/review/fixtures/task_without_module/plan.md": "d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c",
+    "iterations/intent-view/review/fixtures/task_without_module/rendered.txt": "e6edeefce99fa08cfdfa7601bf2711ad3007d972b7dd8dc01d5dad3eea3e8181"
+  },
+  "evidence_source_matches_current": {
+    "tools/workflow/intent_view.py": true,
+    "tools/workflow/test_intent_view.py": true,
+    "tools/workflow/test_intent_contract.py": true
+  },
+  "commands": [
+    {
+      "label": "control",
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\iterations\\intent-view\\review\\fixtures\\control",
+        "--index",
+        "index.json",
+        "--json"
+      ],
+      "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+      "started_at": "2026-10-23T03:01:40.850033+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"format\": \"intent-view-v1\",\n  \"observed_at\": \"2026-10-23T03:01:41.013585+00:00\",\n  \"root\": \"E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\control\",\n  \"index\": \"index.json\",\n  \"declared_source_revision\": \"review-fixture\",\n  \"baseline\": {\n    \"ref\": \"plan.md#R1\",\n    \"excerpt\": \"## R1 Inspect links.\",\n    \"problem\": null,\n    \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"R1\",\n      \"source\": {\n        \"ref\": \"plan.md#R1\",\n        \"excerpt\": \"## R1 Inspect links.\",\n        \"problem\": null,\n        \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n      },\n      \"parent_ids\": [],\n      \"children\": [],\n      \"requirement_acceptance\": \"unknown\",\n      \"user_acceptance\": \"unknown\",\n      \"modules\": [\n        {\n          \"id\": \"M1\",\n          \"source\": {\n            \"ref\": \"plan.md#M1\",\n            \"excerpt\": \"## M1 Reader.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          }\n        }\n      ],\n      \"tasks\": [\n        {\n          \"id\": \"T1\",\n          \"source\": {\n            \"ref\": \"plan.md#T1\",\n            \"excerpt\": \"## T1 Read.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"acceptance_ids\": [\n            \"A1\"\n          ],\n          \"progress\": \"done\",\n          \"progress_source\": {\n            \"ref\": \"plan.md#progress\",\n            \"excerpt\": \"## progress - [x] T1\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          }\n        }\n      ],\n      \"acceptance\": [\n        {\n          \"id\": \"A1\",\n          \"source\": {\n            \"ref\": \"plan.md#A1\",\n            \"excerpt\": \"## A1 Observe.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"recorded_result\": \"PASS\",\n          \"result_source\": {\n            \"ref\": \"plan.md#result\",\n            \"excerpt\": \"## result A1=PASS\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"validity\": \"unknown\",\n          \"evidence\": [\n            {\n              \"ref\": \"evidence.log\",\n              \"excerpt\": \"Synthetic probe evidence.\",\n              \"problem\": null,\n              \"sha256\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n            }\n          ]\n        }\n      ],\n      \"gaps\": []\n    }\n  ],\n  \"gaps\": [],\n  \"observed_sha256\": {\n    \"index.json\": \"72262a4e4c80ac4dbeab8b4e85ec61c403b56cf89a5f07edf5706b271453ba03\",\n    \"plan.md\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\",\n    \"evidence.log\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n  },\n  \"limits\": \"Recorded facts only. Source revision/freshness, user confirmation and acceptance are not verified. No aggregate completion score.\"\n}\n",
+      "stderr": "",
+      "rendered_from_same_report": "需求关联视图 | 声明版本: review-fixture\n观察时间: 2026-10-23T03:01:41.013585+00:00\n任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。\n\nR1 | 需求验收=unknown | 用户接受=unknown\n  目的/原文: ## R1 Inspect links.\n  定位: plan.md#R1\n  模块 M1: ## M1 Reader.\n  任务 T1=done | 模块 M1 -> A1\n  验收 A1 原记录=PASS / 有效性=unknown -> plan.md#result\n    证据: evidence.log [可读取，未认证]"
+    },
+    {
+      "label": "mixed_unknown",
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\iterations\\intent-view\\review\\fixtures\\mixed_unknown",
+        "--index",
+        "index.json",
+        "--json"
+      ],
+      "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+      "started_at": "2026-10-23T03:01:41.021584+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"format\": \"intent-view-v1\",\n  \"observed_at\": \"2026-10-23T03:01:41.184769+00:00\",\n  \"root\": \"E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\mixed_unknown\",\n  \"index\": \"index.json\",\n  \"declared_source_revision\": \"review-fixture\",\n  \"baseline\": {\n    \"ref\": \"plan.md#R1\",\n    \"excerpt\": \"## R1 Inspect links.\",\n    \"problem\": null,\n    \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"R1\",\n      \"source\": {\n        \"ref\": \"plan.md#R1\",\n        \"excerpt\": \"## R1 Inspect links.\",\n        \"problem\": null,\n        \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n      },\n      \"parent_ids\": [],\n      \"children\": [],\n      \"requirement_acceptance\": \"unknown\",\n      \"user_acceptance\": \"unknown\",\n      \"modules\": [\n        {\n          \"id\": \"M1\",\n          \"source\": {\n            \"ref\": \"plan.md#M1\",\n            \"excerpt\": \"## M1 Reader.\",\n            \"problem\": null,\n            \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n          }\n        }\n      ],\n      \"tasks\": [\n        {\n          \"id\": \"T1\",\n          \"source\": {\n            \"ref\": \"plan.md#T1\",\n            \"excerpt\": \"## T1 Read.\",\n            \"problem\": null,\n            \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"acceptance_ids\": [\n            \"A1\"\n          ],\n          \"progress\": \"done\",\n          \"progress_source\": {\n            \"ref\": \"plan.md#progress\",\n            \"excerpt\": \"## progress - [x] T1\",\n            \"problem\": null,\n            \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n          }\n        }\n      ],\n      \"acceptance\": [\n        {\n          \"id\": \"A1\",\n          \"source\": {\n            \"ref\": \"plan.md#A1\",\n            \"excerpt\": \"## A1 Observe.\",\n            \"problem\": null,\n            \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"recorded_result\": \"unknown\",\n          \"result_source\": {\n            \"ref\": \"plan.md#result\",\n            \"excerpt\": \"## result A1=PASS A1=NOT_RUN\",\n            \"problem\": null,\n            \"sha256\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\"\n          },\n          \"validity\": \"unknown\",\n          \"evidence\": [\n            {\n              \"ref\": \"evidence.log\",\n              \"excerpt\": \"Synthetic probe evidence.\",\n              \"problem\": null,\n              \"sha256\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n            }\n          ]\n        }\n      ],\n      \"gaps\": [\n        \"A1: recorded result unknown\"\n      ]\n    }\n  ],\n  \"gaps\": [],\n  \"observed_sha256\": {\n    \"index.json\": \"72262a4e4c80ac4dbeab8b4e85ec61c403b56cf89a5f07edf5706b271453ba03\",\n    \"plan.md\": \"443fc781b74bbba8a4b2686edc16ce45f665a3b04d6d82dddfbbe4b3c0d44603\",\n    \"evidence.log\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n  },\n  \"limits\": \"Recorded facts only. Source revision/freshness, user confirmation and acceptance are not verified. No aggregate completion score.\"\n}\n",
+      "stderr": "",
+      "rendered_from_same_report": "需求关联视图 | 声明版本: review-fixture\n观察时间: 2026-10-23T03:01:41.184769+00:00\n任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。\n\nR1 | 需求验收=unknown | 用户接受=unknown\n  目的/原文: ## R1 Inspect links.\n  定位: plan.md#R1\n  模块 M1: ## M1 Reader.\n  任务 T1=done | 模块 M1 -> A1\n  验收 A1 原记录=unknown / 有效性=unknown -> plan.md#result\n    证据: evidence.log [可读取，未认证]\n  缺口: A1: recorded result unknown"
+    },
+    {
+      "label": "orphaned_rows",
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\iterations\\intent-view\\review\\fixtures\\orphaned_rows",
+        "--index",
+        "index.json",
+        "--json"
+      ],
+      "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+      "started_at": "2026-10-23T03:01:41.195605+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"format\": \"intent-view-v1\",\n  \"observed_at\": \"2026-10-23T03:01:41.409568+00:00\",\n  \"root\": \"E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\",\n  \"index\": \"index.json\",\n  \"declared_source_revision\": \"review-fixture\",\n  \"baseline\": {\n    \"ref\": \"plan.md#R1\",\n    \"excerpt\": \"## R1 Inspect links.\",\n    \"problem\": null,\n    \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"R1\",\n      \"source\": {\n        \"ref\": \"plan.md#R1\",\n        \"excerpt\": \"## R1 Inspect links.\",\n        \"problem\": null,\n        \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n      },\n      \"parent_ids\": [],\n      \"children\": [],\n      \"requirement_acceptance\": \"unknown\",\n      \"user_acceptance\": \"unknown\",\n      \"modules\": [\n        {\n          \"id\": \"M1\",\n          \"source\": {\n            \"ref\": \"plan.md#M1\",\n            \"excerpt\": \"## M1 Reader.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          }\n        }\n      ],\n      \"tasks\": [\n        {\n          \"id\": \"T1\",\n          \"source\": {\n            \"ref\": \"plan.md#T1\",\n            \"excerpt\": \"## T1 Read.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"acceptance_ids\": [\n            \"A1\"\n          ],\n          \"progress\": \"done\",\n          \"progress_source\": {\n            \"ref\": \"plan.md#progress\",\n            \"excerpt\": \"## progress - [x] T1\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          }\n        }\n      ],\n      \"acceptance\": [\n        {\n          \"id\": \"A1\",\n          \"source\": {\n            \"ref\": \"plan.md#A1\",\n            \"excerpt\": \"## A1 Observe.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"recorded_result\": \"PASS\",\n          \"result_source\": {\n            \"ref\": \"plan.md#result\",\n            \"excerpt\": \"## result A1=PASS A-orphan=FAIL\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"validity\": \"unknown\",\n          \"evidence\": [\n            {\n              \"ref\": \"evidence.log\",\n              \"excerpt\": \"Synthetic probe evidence.\",\n              \"problem\": null,\n              \"sha256\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n            }\n          ]\n        }\n      ],\n      \"gaps\": []\n    }\n  ],\n  \"gaps\": [\n    \"M-orphan: no valid requirement mapping -> missing.md#M-orphan\",\n    \"M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"T-orphan: no valid requirement mapping -> missing.md#T-orphan\",\n    \"T-orphan: task progress unknown\",\n    \"T-orphan: no acceptance mapping\",\n    \"T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"T-orphan: None: missing reference\",\n    \"T-orphan: no module mapping -> missing.md#T-orphan\",\n    \"A-orphan: no valid requirement mapping -> missing.md#A-orphan\",\n    \"A-orphan: recorded result FAIL / validity=unknown -> plan.md#result\",\n    \"A-orphan: no evidence references\",\n    \"A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"A-orphan: no module mapping -> missing.md#A-orphan\"\n  ],\n  \"observed_sha256\": {\n    \"index.json\": \"c7392c4a85be585a5cf0b6caf9f9d865c8b506e9e8add310d0df22fd7b009026\",\n    \"plan.md\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\",\n    \"evidence.log\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n  },\n  \"limits\": \"Recorded facts only. Source revision/freshness, user confirmation and acceptance are not verified. No aggregate completion score.\"\n}\n",
+      "stderr": "",
+      "rendered_from_same_report": "需求关联视图 | 声明版本: review-fixture\n观察时间: 2026-10-23T03:01:41.409568+00:00\n任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。\n\nR1 | 需求验收=unknown | 用户接受=unknown\n  目的/原文: ## R1 Inspect links.\n  定位: plan.md#R1\n  模块 M1: ## M1 Reader.\n  任务 T1=done | 模块 M1 -> A1\n  验收 A1 原记录=PASS / 有效性=unknown -> plan.md#result\n    证据: evidence.log [可读取，未认证]\n索引缺口: M-orphan: no valid requirement mapping -> missing.md#M-orphan\n索引缺口: M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: T-orphan: no valid requirement mapping -> missing.md#T-orphan\n索引缺口: T-orphan: task progress unknown\n索引缺口: T-orphan: no acceptance mapping\n索引缺口: T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: T-orphan: None: missing reference\n索引缺口: T-orphan: no module mapping -> missing.md#T-orphan\n索引缺口: A-orphan: no valid requirement mapping -> missing.md#A-orphan\n索引缺口: A-orphan: recorded result FAIL / validity=unknown -> plan.md#result\n索引缺口: A-orphan: no evidence references\n索引缺口: A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: A-orphan: no module mapping -> missing.md#A-orphan"
+    },
+    {
+      "label": "orphaned_rows-filtered",
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\iterations\\intent-view\\review\\fixtures\\orphaned_rows",
+        "--index",
+        "index.json",
+        "--json",
+        "--requirement",
+        "R1"
+      ],
+      "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+      "started_at": "2026-10-23T03:01:41.419568+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"format\": \"intent-view-v1\",\n  \"observed_at\": \"2026-10-23T03:01:41.597175+00:00\",\n  \"root\": \"E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\",\n  \"index\": \"index.json\",\n  \"declared_source_revision\": \"review-fixture\",\n  \"baseline\": {\n    \"ref\": \"plan.md#R1\",\n    \"excerpt\": \"## R1 Inspect links.\",\n    \"problem\": null,\n    \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"R1\",\n      \"source\": {\n        \"ref\": \"plan.md#R1\",\n        \"excerpt\": \"## R1 Inspect links.\",\n        \"problem\": null,\n        \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n      },\n      \"parent_ids\": [],\n      \"children\": [],\n      \"requirement_acceptance\": \"unknown\",\n      \"user_acceptance\": \"unknown\",\n      \"modules\": [\n        {\n          \"id\": \"M1\",\n          \"source\": {\n            \"ref\": \"plan.md#M1\",\n            \"excerpt\": \"## M1 Reader.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          }\n        }\n      ],\n      \"tasks\": [\n        {\n          \"id\": \"T1\",\n          \"source\": {\n            \"ref\": \"plan.md#T1\",\n            \"excerpt\": \"## T1 Read.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"acceptance_ids\": [\n            \"A1\"\n          ],\n          \"progress\": \"done\",\n          \"progress_source\": {\n            \"ref\": \"plan.md#progress\",\n            \"excerpt\": \"## progress - [x] T1\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          }\n        }\n      ],\n      \"acceptance\": [\n        {\n          \"id\": \"A1\",\n          \"source\": {\n            \"ref\": \"plan.md#A1\",\n            \"excerpt\": \"## A1 Observe.\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"recorded_result\": \"PASS\",\n          \"result_source\": {\n            \"ref\": \"plan.md#result\",\n            \"excerpt\": \"## result A1=PASS A-orphan=FAIL\",\n            \"problem\": null,\n            \"sha256\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\"\n          },\n          \"validity\": \"unknown\",\n          \"evidence\": [\n            {\n              \"ref\": \"evidence.log\",\n              \"excerpt\": \"Synthetic probe evidence.\",\n              \"problem\": null,\n              \"sha256\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n            }\n          ]\n        }\n      ],\n      \"gaps\": []\n    }\n  ],\n  \"gaps\": [\n    \"M-orphan: no valid requirement mapping -> missing.md#M-orphan\",\n    \"M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"T-orphan: no valid requirement mapping -> missing.md#T-orphan\",\n    \"T-orphan: task progress unknown\",\n    \"T-orphan: no acceptance mapping\",\n    \"T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"T-orphan: None: missing reference\",\n    \"T-orphan: no module mapping -> missing.md#T-orphan\",\n    \"A-orphan: no valid requirement mapping -> missing.md#A-orphan\",\n    \"A-orphan: recorded result FAIL / validity=unknown -> plan.md#result\",\n    \"A-orphan: no evidence references\",\n    \"A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\\\\\github\\\\\\\\ForgeFlowSKill\\\\\\\\worktrees\\\\\\\\intent-view-096\\\\\\\\iterations\\\\\\\\intent-view\\\\\\\\review\\\\\\\\fixtures\\\\\\\\orphaned_rows\\\\\\\\missing.md'\",\n    \"A-orphan: no module mapping -> missing.md#A-orphan\"\n  ],\n  \"observed_sha256\": {\n    \"index.json\": \"c7392c4a85be585a5cf0b6caf9f9d865c8b506e9e8add310d0df22fd7b009026\",\n    \"plan.md\": \"4ac174d57a46b2b1587ef62b9893bc22e6619b02514c2e17b282044e69a0e478\",\n    \"evidence.log\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n  },\n  \"limits\": \"Recorded facts only. Source revision/freshness, user confirmation and acceptance are not verified. No aggregate completion score.\"\n}\n",
+      "stderr": "",
+      "rendered_from_same_report": "需求关联视图 | 声明版本: review-fixture\n观察时间: 2026-10-23T03:01:41.597175+00:00\n任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。\n\nR1 | 需求验收=unknown | 用户接受=unknown\n  目的/原文: ## R1 Inspect links.\n  定位: plan.md#R1\n  模块 M1: ## M1 Reader.\n  任务 T1=done | 模块 M1 -> A1\n  验收 A1 原记录=PASS / 有效性=unknown -> plan.md#result\n    证据: evidence.log [可读取，未认证]\n索引缺口: M-orphan: no valid requirement mapping -> missing.md#M-orphan\n索引缺口: M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: T-orphan: no valid requirement mapping -> missing.md#T-orphan\n索引缺口: T-orphan: task progress unknown\n索引缺口: T-orphan: no acceptance mapping\n索引缺口: T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: T-orphan: None: missing reference\n索引缺口: T-orphan: no module mapping -> missing.md#T-orphan\n索引缺口: A-orphan: no valid requirement mapping -> missing.md#A-orphan\n索引缺口: A-orphan: recorded result FAIL / validity=unknown -> plan.md#result\n索引缺口: A-orphan: no evidence references\n索引缺口: A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'\n索引缺口: A-orphan: no module mapping -> missing.md#A-orphan"
+    },
+    {
+      "label": "task_without_module",
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\tools\\workflow\\intent_view.py",
+        "--root",
+        "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096\\iterations\\intent-view\\review\\fixtures\\task_without_module",
+        "--index",
+        "index.json",
+        "--json"
+      ],
+      "cwd": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+      "started_at": "2026-10-23T03:01:41.605955+00:00",
+      "exit_code": 0,
+      "stdout": "{\n  \"format\": \"intent-view-v1\",\n  \"observed_at\": \"2026-10-23T03:01:41.805673+00:00\",\n  \"root\": \"E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\task_without_module\",\n  \"index\": \"index.json\",\n  \"declared_source_revision\": \"review-fixture\",\n  \"baseline\": {\n    \"ref\": \"plan.md#R1\",\n    \"excerpt\": \"## R1 Inspect links.\",\n    \"problem\": null,\n    \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n  },\n  \"requirements\": [\n    {\n      \"id\": \"R1\",\n      \"source\": {\n        \"ref\": \"plan.md#R1\",\n        \"excerpt\": \"## R1 Inspect links.\",\n        \"problem\": null,\n        \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n      },\n      \"parent_ids\": [],\n      \"children\": [],\n      \"requirement_acceptance\": \"unknown\",\n      \"user_acceptance\": \"unknown\",\n      \"modules\": [\n        {\n          \"id\": \"M1\",\n          \"source\": {\n            \"ref\": \"plan.md#M1\",\n            \"excerpt\": \"## M1 Reader.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          }\n        }\n      ],\n      \"tasks\": [\n        {\n          \"id\": \"T1\",\n          \"source\": {\n            \"ref\": \"plan.md#T1\",\n            \"excerpt\": \"## T1 Read.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"module_ids\": [],\n          \"acceptance_ids\": [\n            \"A1\"\n          ],\n          \"progress\": \"done\",\n          \"progress_source\": {\n            \"ref\": \"plan.md#progress\",\n            \"excerpt\": \"## progress - [x] T1\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          }\n        }\n      ],\n      \"acceptance\": [\n        {\n          \"id\": \"A1\",\n          \"source\": {\n            \"ref\": \"plan.md#A1\",\n            \"excerpt\": \"## A1 Observe.\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"module_ids\": [\n            \"M1\"\n          ],\n          \"recorded_result\": \"PASS\",\n          \"result_source\": {\n            \"ref\": \"plan.md#result\",\n            \"excerpt\": \"## result A1=PASS\",\n            \"problem\": null,\n            \"sha256\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\"\n          },\n          \"validity\": \"unknown\",\n          \"evidence\": [\n            {\n              \"ref\": \"evidence.log\",\n              \"excerpt\": \"Synthetic probe evidence.\",\n              \"problem\": null,\n              \"sha256\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n            }\n          ]\n        }\n      ],\n      \"gaps\": []\n    }\n  ],\n  \"gaps\": [\n    \"T1: no module mapping -> plan.md#T1\"\n  ],\n  \"observed_sha256\": {\n    \"index.json\": \"4427dc6948cbc144ab58a00d2ff377521ff920d8e7bfd74240a485bc031e93da\",\n    \"plan.md\": \"d664dfeb0a16c81a30f41539c5d55c65ce9abeeab63ed7c8bcfaf74894b8fa6c\",\n    \"evidence.log\": \"60081dbe1e99b3714d2d180872f463154427e5caa1a1f9b94d6d3b055d65821f\"\n  },\n  \"limits\": \"Recorded facts only. Source revision/freshness, user confirmation and acceptance are not verified. No aggregate completion score.\"\n}\n",
+      "stderr": "",
+      "rendered_from_same_report": "需求关联视图 | 声明版本: review-fixture\n观察时间: 2026-10-23T03:01:41.805673+00:00\n任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。\n\nR1 | 需求验收=unknown | 用户接受=unknown\n  目的/原文: ## R1 Inspect links.\n  定位: plan.md#R1\n  模块 M1: ## M1 Reader.\n  任务 T1=done | 模块  -> A1\n  验收 A1 原记录=PASS / 有效性=unknown -> plan.md#result\n    证据: evidence.log [可读取，未认证]\n索引缺口: T1: no module mapping -> plan.md#T1"
+    }
+  ],
+  "observations": [
+    {
+      "label": "control",
+      "global_gaps": [],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "requirement_acceptance": "unknown",
+      "user_acceptance": "unknown"
+    },
+    {
+      "label": "mixed_unknown",
+      "global_gaps": [],
+      "requirement_gaps": [
+        [
+          "A1: recorded result unknown"
+        ]
+      ],
+      "recorded_result": "unknown",
+      "requirement_acceptance": "unknown",
+      "user_acceptance": "unknown"
+    },
+    {
+      "label": "orphaned_rows",
+      "global_gaps": [
+        "M-orphan: no valid requirement mapping -> missing.md#M-orphan",
+        "M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "T-orphan: no valid requirement mapping -> missing.md#T-orphan",
+        "T-orphan: task progress unknown",
+        "T-orphan: no acceptance mapping",
+        "T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "T-orphan: None: missing reference",
+        "T-orphan: no module mapping -> missing.md#T-orphan",
+        "A-orphan: no valid requirement mapping -> missing.md#A-orphan",
+        "A-orphan: recorded result FAIL / validity=unknown -> plan.md#result",
+        "A-orphan: no evidence references",
+        "A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "A-orphan: no module mapping -> missing.md#A-orphan"
+      ],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "requirement_acceptance": "unknown",
+      "user_acceptance": "unknown"
+    },
+    {
+      "label": "orphaned_rows-filtered",
+      "global_gaps": [
+        "M-orphan: no valid requirement mapping -> missing.md#M-orphan",
+        "M-orphan: missing.md#M-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "T-orphan: no valid requirement mapping -> missing.md#T-orphan",
+        "T-orphan: task progress unknown",
+        "T-orphan: no acceptance mapping",
+        "T-orphan: missing.md#T-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "T-orphan: None: missing reference",
+        "T-orphan: no module mapping -> missing.md#T-orphan",
+        "A-orphan: no valid requirement mapping -> missing.md#A-orphan",
+        "A-orphan: recorded result FAIL / validity=unknown -> plan.md#result",
+        "A-orphan: no evidence references",
+        "A-orphan: missing.md#A-orphan: [WinError 2] 系统找不到指定的文件。: 'E:\\\\github\\\\ForgeFlowSKill\\\\worktrees\\\\intent-view-096\\\\iterations\\\\intent-view\\\\review\\\\fixtures\\\\orphaned_rows\\\\missing.md'",
+        "A-orphan: no module mapping -> missing.md#A-orphan"
+      ],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "requirement_acceptance": "unknown",
+      "user_acceptance": "unknown"
+    },
+    {
+      "label": "task_without_module",
+      "global_gaps": [
+        "T1: no module mapping -> plan.md#T1"
+      ],
+      "requirement_gaps": [
+        []
+      ],
+      "recorded_result": "PASS",
+      "requirement_acceptance": "unknown",
+      "user_acceptance": "unknown"
+    }
+  ],
+  "unchanged_after": {
+    "tools/workflow/intent_view.py": true,
+    "tools/workflow/test_intent_view.py": true,
+    "tools/workflow/test_intent_contract.py": true,
+    "docs/intent-view.md": true,
+    "planning/intent-view-links.json": true,
+    "iterations/intent-view/results.md": true,
+    "iterations/intent-view/evidence/review-regression-before.json": true,
+    "iterations/intent-view/evidence/tests-after-review.json": true,
+    "iterations/intent-view/review/initial-review.md": true,
+    "iterations/intent-view/review/probe-commands.json": true,
+    "iterations/intent-view/review/probe-summary.json": true,
+    "iterations/intent-view/review/reviewed-snapshot.json": true,
+    "iterations/intent-view/review/fixtures/control/evidence.log": true,
+    "iterations/intent-view/review/fixtures/control/index.json": true,
+    "iterations/intent-view/review/fixtures/control/plan.md": true,
+    "iterations/intent-view/review/fixtures/control/rendered.txt": true,
+    "iterations/intent-view/review/fixtures/mixed_unknown/evidence.log": true,
+    "iterations/intent-view/review/fixtures/mixed_unknown/index.json": true,
+    "iterations/intent-view/review/fixtures/mixed_unknown/plan.md": true,
+    "iterations/intent-view/review/fixtures/mixed_unknown/rendered.txt": true,
+    "iterations/intent-view/review/fixtures/orphaned_rows/evidence.log": true,
+    "iterations/intent-view/review/fixtures/orphaned_rows/index.json": true,
+    "iterations/intent-view/review/fixtures/orphaned_rows/plan.md": true,
+    "iterations/intent-view/review/fixtures/orphaned_rows/rendered.txt": true,
+    "iterations/intent-view/review/fixtures/task_without_module/evidence.log": true,
+    "iterations/intent-view/review/fixtures/task_without_module/index.json": true,
+    "iterations/intent-view/review/fixtures/task_without_module/plan.md": true,
+    "iterations/intent-view/review/fixtures/task_without_module/rendered.txt": true
+  }
+}

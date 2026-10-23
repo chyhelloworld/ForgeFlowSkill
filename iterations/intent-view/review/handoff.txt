@@ -1,0 +1,32 @@
+请执行本轮唯一一次独立综合审查（目标/规划/实现/真实使用），不开发新功能、不扩大为全套流程。当前上下文应独立判断，不以作者结果标签作为审查结论。
+
+<transcript_evidence>
+用户曾要求：“根据总需求形成子需求，再映射功能模块；模块说明职责、边界、协作和验收条件。 这一步后续可以做成可视化任务进度,就可以判断当前项目进度”
+用户随后授权：“可以 设计规划好就开始推进”。
+用户 2026-10-23 01:42 UTC：“继续ff的自我迭代”。
+上一轮交付后建议转到真实开发任务验收，而非反复加审查测试。用户最新回复（2026-10-23 02:23 UTC）：“继续”。
+用户授权规则：“在用户已确认的 ForgeFlow 工作计划范围内，执行开发、测试、文档与计划维护以及工作分支提交时默认通过审批，无需重复询问。范围以用户最新确认的目标、预算和权限为准；不包含主分支合并、发布部署、额外付费、扩大持久访问或安全敏感设置变更，也不覆盖平台要求逐次确认或用户亲自操作的事项。”
+</transcript_evidence>
+
+工作目录 E:/github/ForgeFlowSKill/worktrees/intent-view-096，分支 work/intent-view-096，从 8b9858aa8795d83ea33881b3d8c2e1ef40cce6b8 起；当前改动未提交。
+固定流程技能来自 E:/github/ForgeFlowSKill/worktrees/review-handoff-096，版本 0.9.6-handoff.1 / 同一 8b9858 SHA。请显式读取其中 skills/ff-review/SKILL.md 以及其实际需要的 review-handoff 引用，记录读取文件和范围；不声称原生自动加载。不得修改技能来源或真实安装。
+
+目标：最小源码只读 CLI，用既有 intent-links-v1 让用户看见需求→模块→任务→验收原始记录/证据的对应与缺口；技术完成不冒充需求或用户接受，不建立第二状态库。非目标：网页平台、自动验收、任意自然语言状态理解、安装/发行。验收及设计在 planning/INTENT-VIEW-096.md（R-view/R-links/R-truth/R-local 和 A-*）；既有授权规划 planning/INTENT-LOOP-096.md，既有合成格式 examples/intent-loop-minimal.md。
+
+变更位置：
+- tools/workflow/intent_view.py、test_intent_view.py
+- planning/INTENT-VIEW-096.md、intent-view-links.json
+- docs/intent-view.md、README.md 追加源码使用入口
+- iterations/intent-view/results.md 与 evidence/ 原始记录（新增的本轮材料）
+package/MANIFEST/skills/安装载荷未作为本轮改动目标。
+请核对真实资料映射、状态未知/失败的保留、文件读取边界、错误提示及用户能否直接用它判别关联与缺口。检查按需求/模块/任务/验收的关系是否与约定吻合，代码与测试之间是否有重要遗漏。
+
+原始执行证据供独立核查，均在 iterations/intent-view/evidence：
+tests-initial.json、path-diagnostic.json、tests-path-fix.json、tests-local.json、tests-final.json；
+demo-initial.json、demo-reviewed-input.json、demo-readable.txt；
+protection-checkpoint.json。
+保留已知限制：初次 strict realpath 在授权目录遇到 WinError 5；修改读取策略后 /private.txt 的 Windows rooted-path 校验暴露错误，后改为 anchor 校验。原始记录均未覆盖。实际 symlink 创建受宿主权限限制，那个分支未实证；没有权限升级、跨平台和并发原子快照验证。results.md 中的 A-* 是产品视图读取的作者记录，连同其证据支持范围一起受审，不是对你的结论或期待的提示。
+
+你可运行必要、便宜且有针对性的探针；先复核已有原始证据，避免无意义昂贵重复。不新增审查委托、不重建运行时、不安装依赖、不联系外部服务、不修改产品或其他工作树、不提交。仅可写 iterations/intent-view/review/ 下的报告/探针/原始输出，临时fixture也必须在该目录内。UTF-8，优先LF；运行 Python 请 -X utf8 -B。
+将独立初始结论、按严重程度的问题（文件/行号、复现、影响）、未证实点与实际命令/读取范围写到 review/initial-review.md，原始探针输出另存。不能将失败或未知改写为通过，用户接受保持待用户。若无问题也说明审查范围/局限。
+如有工具拒绝，报告 exact action、target、reason、已完成和 denied/pending/uncertain；不要提升权限或绕过。结束后回复报告位置和可行动发现。

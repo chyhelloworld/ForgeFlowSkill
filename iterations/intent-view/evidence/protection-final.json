@@ -1,0 +1,69 @@
+{
+  "recorded_at": "2026-10-23T03:05:58.719364+00:00",
+  "protected_files": {
+    "E:\\github\\ForgeFlowSKill\\global-codex\\current.json": {
+      "sha256": "bf6f8d700d832fd10c0c125b51d16af26244a856893de9baaa27d9baa2a59cc3",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\global-codex\\links-receipt.json": {
+      "sha256": "85a29eb4b56628773bb3a5c00de71e2a78d75a33aedda73c0cdd567cf9409f8e",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\.forgeflow\\install\\state.json": {
+      "sha256": "43ac1152bb31eeb9d25ed00c9379db010efd7766d66750a1b1ef58e5d7aa70bf",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\small-task-096-trial\\experiments\\newline-audit\\evidence\\issues.md": {
+      "sha256": "5da3dd8770381b2d8d208e3e525d9d097790e0bcb071cc7ea72a4ccde762c703",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\small-task-096-trial\\experiments\\newline-audit\\evidence\\reviewer-report.md": {
+      "sha256": "4d6a8caf8b5ea9ed3f463a8243e73be0ac21b1f5135a2ac5930ae6ac790d068e",
+      "unchanged": true
+    }
+  },
+  "protected_worktrees": {
+    "E:\\github\\ForgeFlowSKill\\source": {
+      "sha": "a9885402cd03d427193a5beff15d706a202524cc",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\review-handoff-096": {
+      "sha": "8b9858aa8795d83ea33881b3d8c2e1ef40cce6b8",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\review-handoff-096-validation": {
+      "sha": "2872aa8de1fd6abb4731e1dcad69dc81ed17f1b9",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\small-task-096": {
+      "sha": "c1fa2fb6f12d1a4e875fb9222e0e76cc0485423b",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\small-task-096-trial": {
+      "sha": "8083fc9efb0c0d5936a1f5e5f36d73c0f08ac830",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\self-use-096-status": {
+      "sha": "129d47611461dd7d873d42257fd1ef0dbfe1cd8a",
+      "status": "",
+      "unchanged": true
+    },
+    "E:\\github\\ForgeFlowSKill\\worktrees\\review-contamination-096": {
+      "sha": "8d7939d0da469c33968c041fa6a5953385819950",
+      "status": "",
+      "unchanged": true
+    }
+  },
+  "tested_sources_still_identical": {
+    "tools/workflow/intent_view.py": true,
+    "tools/workflow/test_intent_view.py": true,
+    "tools/workflow/test_intent_contract.py": true
+  },
+  "frozen_skill_and_payload_diff": "",
+  "release_operations": "none; no merge/push/publish/install"
+}

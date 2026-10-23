@@ -1,0 +1,22 @@
+{
+  "time": "2026-10-23T02:48:37.060089+00:00",
+  "sha256": {
+    "README.md": "6cee88daf21d06a42edbb480e2f172ecd7f0b4e3cbd279e91509746f24ac7a9f",
+    "tools/workflow/intent_view.py": "f24fd907347d75c7b9ed2bb36ae8dad40d4dd1c5dec166830268687a2109d776",
+    "tools/workflow/test_intent_view.py": "46e2dae918d3deefc77b4b82afb896b66a6396e3deecf378e4267a519c9c73f0",
+    "planning/INTENT-VIEW-096.md": "00e2d4ed49a9dd96e3bdec750e72a152e915066e667e637d66522a63505eabf6",
+    "planning/intent-view-links.json": "a2f225eba895288f807ee2a2c70784a18a93034146030c965aa552249e9e47b0",
+    "docs/intent-view.md": "0e5136934c1d21c498255d795c516509c2d055ee14a8b7db9e8109dcf818f565",
+    "iterations/intent-view/results.md": "37c3d2d67f76169f5b29332d68d94275c1432d171b8b117b61e92510e29fab9d",
+    "iterations/intent-view/review/handoff.txt": "4672715c960846547d8663e4a4b6d7c4148ac981e03f9345ac6d22977b43f739",
+    "iterations/intent-view/evidence/demo-initial.json": "cc41c3260044239e5edd9355ea8384e6a7da0e5e284b73e09f331786b2bfd8f4",
+    "iterations/intent-view/evidence/demo-readable.txt": "8ec661c5bfc9137d7d40990c1a2d4451be63f9d80cd9aa9c79f3e03ea667da92",
+    "iterations/intent-view/evidence/demo-reviewed-input.json": "54bf32cf52c49489768c6f9b98d1561e1874aba14fdc51cf0df9df25ec3dd6e3",
+    "iterations/intent-view/evidence/path-diagnostic.json": "7f2954e78789dc27077a8ca83951b70faada9907875d21d4ab2452781743b0e0",
+    "iterations/intent-view/evidence/protection-checkpoint.json": "6124064d40f8421aba2064c51e7129ad0fcd00be0055f8e662febb52fc59ebf2",
+    "iterations/intent-view/evidence/tests-final.json": "e7ec945e2efeb811e55622d609c8d545fe02bc06be2aa1e516d06221efeb99cc",
+    "iterations/intent-view/evidence/tests-initial.json": "171bf0843ad3b5d32b70c15cfa2ebcbdc5e19ace15e3f0c20db0d28b4f42d69d",
+    "iterations/intent-view/evidence/tests-local.json": "572f6a2e623d3c13706680d185b8be4b95db65d55e4ae523bce1deb80c0d8972",
+    "iterations/intent-view/evidence/tests-path-fix.json": "d0113e5a8c200bd7c975b5f220b584c84acbc0d66b1f72960106f54690e3eb88"
+  }
+}

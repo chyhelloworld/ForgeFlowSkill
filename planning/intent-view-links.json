@@ -1,0 +1,345 @@
+{
+  "format": "intent-links-v1",
+  "baseline_ref": "planning/INTENT-LOOP-096.md",
+  "source_revision": "8b9858aa8795d83ea33881b3d8c2e1ef40cce6b8 + work/intent-view-096 (working slice, not a verified evidence revision)",
+  "requirements": [
+    {
+      "id": "R096-1",
+      "ref": "planning/INTENT-LOOP-096.md#R096-1",
+      "parent_ids": []
+    },
+    {
+      "id": "R096-2",
+      "ref": "planning/INTENT-LOOP-096.md#R096-2",
+      "parent_ids": []
+    },
+    {
+      "id": "R096-3",
+      "ref": "planning/INTENT-LOOP-096.md#R096-3",
+      "parent_ids": []
+    },
+    {
+      "id": "R096-4",
+      "ref": "planning/INTENT-LOOP-096.md#R096-4",
+      "parent_ids": []
+    },
+    {
+      "id": "R096-5",
+      "ref": "planning/INTENT-LOOP-096.md#R096-5",
+      "parent_ids": []
+    },
+    {
+      "id": "R096-6",
+      "ref": "planning/INTENT-LOOP-096.md#R096-6",
+      "parent_ids": []
+    },
+    {
+      "id": "R-view",
+      "ref": "planning/INTENT-VIEW-096.md#R-view",
+      "parent_ids": [
+        "R096-2"
+      ]
+    },
+    {
+      "id": "R-links",
+      "ref": "planning/INTENT-VIEW-096.md#R-links",
+      "parent_ids": [
+        "R-view"
+      ]
+    },
+    {
+      "id": "R-truth",
+      "ref": "planning/INTENT-VIEW-096.md#R-truth",
+      "parent_ids": [
+        "R-view"
+      ]
+    },
+    {
+      "id": "R-local",
+      "ref": "planning/INTENT-VIEW-096.md#R-local",
+      "parent_ids": [
+        "R-view"
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "M-grill",
+      "ref": "skills/ff-grill/SKILL.md",
+      "requirement_ids": [
+        "R096-1",
+        "R096-3"
+      ]
+    },
+    {
+      "id": "M-intake",
+      "ref": "skills/ff-intake/SKILL.md",
+      "requirement_ids": [
+        "R096-1"
+      ]
+    },
+    {
+      "id": "M-spec",
+      "ref": "skills/ff-spec/SKILL.md",
+      "requirement_ids": [
+        "R096-2",
+        "R096-3"
+      ]
+    },
+    {
+      "id": "M-plan",
+      "ref": "skills/ff-plan/SKILL.md",
+      "requirement_ids": [
+        "R096-2",
+        "R096-3"
+      ]
+    },
+    {
+      "id": "M-design",
+      "ref": "skills/ff-design/SKILL.md",
+      "requirement_ids": [
+        "R096-4"
+      ]
+    },
+    {
+      "id": "M-prove",
+      "ref": "skills/ff-prove/SKILL.md",
+      "requirement_ids": [
+        "R096-4"
+      ]
+    },
+    {
+      "id": "M-implement",
+      "ref": "skills/ff-implement/SKILL.md",
+      "requirement_ids": [
+        "R096-4"
+      ]
+    },
+    {
+      "id": "M-deliver",
+      "ref": "skills/ff-deliver/SKILL.md",
+      "requirement_ids": [
+        "R096-5"
+      ]
+    },
+    {
+      "id": "M-handoff",
+      "ref": "skills/ff-handoff/SKILL.md",
+      "requirement_ids": [
+        "R096-5"
+      ]
+    },
+    {
+      "id": "M-retro",
+      "ref": "skills/ff-retro/SKILL.md",
+      "requirement_ids": [
+        "R096-5"
+      ]
+    },
+    {
+      "id": "M-review",
+      "ref": "skills/ff-review/SKILL.md",
+      "requirement_ids": [
+        "R096-6"
+      ]
+    },
+    {
+      "id": "M-read",
+      "ref": "planning/INTENT-VIEW-096.md#M-read",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ]
+    },
+    {
+      "id": "M-map",
+      "ref": "planning/INTENT-VIEW-096.md#M-map",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ]
+    },
+    {
+      "id": "M-view",
+      "ref": "planning/INTENT-VIEW-096.md#M-view",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T096-1",
+      "ref": "planning/INTENT-LOOP-096.md#R096-1",
+      "requirement_ids": [
+        "R096-1",
+        "R096-3"
+      ],
+      "module_ids": [
+        "M-grill",
+        "M-intake"
+      ],
+      "acceptance_ids": [],
+      "progress_ref": null
+    },
+    {
+      "id": "T096-2",
+      "ref": "planning/INTENT-LOOP-096.md#R096-2",
+      "requirement_ids": [
+        "R096-2",
+        "R096-3",
+        "R096-4"
+      ],
+      "module_ids": [
+        "M-spec",
+        "M-plan",
+        "M-design",
+        "M-prove",
+        "M-implement"
+      ],
+      "acceptance_ids": [],
+      "progress_ref": null
+    },
+    {
+      "id": "T096-3",
+      "ref": "planning/INTENT-LOOP-096.md#R096-5",
+      "requirement_ids": [
+        "R096-5"
+      ],
+      "module_ids": [
+        "M-deliver",
+        "M-handoff",
+        "M-retro"
+      ],
+      "acceptance_ids": [],
+      "progress_ref": null
+    },
+    {
+      "id": "T096-4",
+      "ref": "planning/INTENT-LOOP-096.md#R096-6",
+      "requirement_ids": [
+        "R096-6"
+      ],
+      "module_ids": [
+        "M-review"
+      ],
+      "acceptance_ids": [],
+      "progress_ref": null
+    },
+    {
+      "id": "T-view",
+      "ref": "planning/INTENT-VIEW-096.md#T-view",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ],
+      "module_ids": [
+        "M-read",
+        "M-map",
+        "M-view"
+      ],
+      "acceptance_ids": [
+        "A-links",
+        "A-truth",
+        "A-local",
+        "A-demo"
+      ],
+      "progress_ref": "planning/INTENT-VIEW-096.md#progress"
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "A-links",
+      "ref": "planning/INTENT-VIEW-096.md#A-links",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ],
+      "module_ids": [
+        "M-read",
+        "M-map",
+        "M-view"
+      ],
+      "result_ref": "iterations/intent-view/results.md#A-links",
+      "evidence_refs": [
+        "iterations/intent-view/evidence/tests-after-review.json"
+      ]
+    },
+    {
+      "id": "A-truth",
+      "ref": "planning/INTENT-VIEW-096.md#A-truth",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ],
+      "module_ids": [
+        "M-read",
+        "M-map",
+        "M-view"
+      ],
+      "result_ref": "iterations/intent-view/results.md#A-truth",
+      "evidence_refs": [
+        "iterations/intent-view/evidence/tests-after-review.json"
+      ]
+    },
+    {
+      "id": "A-local",
+      "ref": "planning/INTENT-VIEW-096.md#A-local",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ],
+      "module_ids": [
+        "M-read",
+        "M-map",
+        "M-view"
+      ],
+      "result_ref": "iterations/intent-view/results.md#A-local",
+      "evidence_refs": [
+        "iterations/intent-view/evidence/tests-after-review.json"
+      ]
+    },
+    {
+      "id": "A-demo",
+      "ref": "planning/INTENT-VIEW-096.md#A-demo",
+      "requirement_ids": [
+        "R096-2",
+        "R-view",
+        "R-links",
+        "R-truth",
+        "R-local"
+      ],
+      "module_ids": [
+        "M-read",
+        "M-map",
+        "M-view"
+      ],
+      "result_ref": "iterations/intent-view/results.md#A-demo",
+      "evidence_refs": [
+        "iterations/intent-view/evidence/demo-after-review.json"
+      ]
+    }
+  ]
+}

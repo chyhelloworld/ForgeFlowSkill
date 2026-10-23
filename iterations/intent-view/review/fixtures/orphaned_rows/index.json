@@ -1,0 +1,74 @@
+{
+  "format": "intent-links-v1",
+  "baseline_ref": "plan.md#R1",
+  "source_revision": "review-fixture",
+  "requirements": [
+    {
+      "id": "R1",
+      "ref": "plan.md#R1",
+      "parent_ids": []
+    }
+  ],
+  "modules": [
+    {
+      "id": "M1",
+      "ref": "plan.md#M1",
+      "requirement_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "M-orphan",
+      "ref": "missing.md#M-orphan",
+      "requirement_ids": []
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T1",
+      "ref": "plan.md#T1",
+      "requirement_ids": [
+        "R1"
+      ],
+      "module_ids": [
+        "M1"
+      ],
+      "acceptance_ids": [
+        "A1"
+      ],
+      "progress_ref": "plan.md#progress"
+    },
+    {
+      "id": "T-orphan",
+      "ref": "missing.md#T-orphan",
+      "requirement_ids": [],
+      "module_ids": [],
+      "acceptance_ids": [],
+      "progress_ref": null
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "A1",
+      "ref": "plan.md#A1",
+      "requirement_ids": [
+        "R1"
+      ],
+      "module_ids": [
+        "M1"
+      ],
+      "evidence_refs": [
+        "evidence.log"
+      ],
+      "result_ref": "plan.md#result"
+    },
+    {
+      "id": "A-orphan",
+      "ref": "missing.md#A-orphan",
+      "requirement_ids": [],
+      "module_ids": [],
+      "evidence_refs": [],
+      "result_ref": "plan.md#result"
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "mapped_ids": {
+    "modules": [
+      "M1"
+    ],
+    "tasks": [
+      "T1"
+    ],
+    "acceptance": [
+      "A1"
+    ]
+  },
+  "global_gaps": [],
+  "requirement_gaps": [
+    []
+  ],
+  "incidental_orphan_text": "## result A1=PASS A-orphan=FAIL",
+  "note": "A-orphan occurs only in the unclassified excerpt for A1; it is absent as an entity and is not reported as a gap. The original substring flag is not entity reachability."
+}

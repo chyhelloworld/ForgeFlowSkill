@@ -1,0 +1,37 @@
+{
+  "sources": {
+    "tools/workflow/intent_view.py": "696459a9809c5f3bf2f97b87291a682c604823192694170dbdd76bc8339bc2e9",
+    "tools/workflow/test_intent_view.py": "fb7dcb0901552b3ecdd3805c117f7e0f94bae0385f55528433caae9b203fe5ca",
+    "tools/workflow/test_intent_contract.py": "f8c070c1d987e8f97ecb08e2bf847f90a880b7d1680114bb840492495e5e1fd4"
+  },
+  "commands": [
+    {
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tools/workflow/test_intent_view.py"
+      ],
+      "started_at": "2026-10-23T02:59:00.954955+00:00",
+      "seconds": 1.016,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok\ntest_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ok\ntest_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ok\ntest_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ok\ntest_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ok\ntest_known_record_must_not_hide_unknown_assignment (__main__.IntentViewTests.test_known_record_must_not_hide_unknown_assignment) ... ok\ntest_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok\ntest_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ok\ntest_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ok\ntest_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ok\ntest_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ok\ntest_reader_rejects_escape_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_binary_and_oversize) ... ok\ntest_reader_rejects_real_symlink_when_available (__main__.IntentViewTests.test_reader_rejects_real_symlink_when_available) ... skipped 'host cannot create symlink without extra privilege; no escalation'\ntest_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ok\ntest_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... ok\ntest_unmapped_objects_and_missing_edges_survive_filter (__main__.IntentViewTests.test_unmapped_objects_and_missing_edges_survive_filter) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.785s\n\nOK (skipped=1)\n"
+    },
+    {
+      "argv": [
+        "D:\\ProgramData\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "tools/workflow/test_intent_contract.py"
+      ],
+      "started_at": "2026-10-23T02:59:01.968673+00:00",
+      "seconds": 0.219,
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_example_relations_resolve_without_copying_state (__main__.IntentDistributionTests.test_example_relations_resolve_without_copying_state) ... ok\ntest_feedback_is_available_at_completion_interruption_and_retro (__main__.IntentDistributionTests.test_feedback_is_available_at_completion_interruption_and_retro) ... ok\ntest_independently_installed_contracts_are_identical (__main__.IntentDistributionTests.test_independently_installed_contracts_are_identical) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.025s\n\nOK\n"
+    }
+  ]
+}

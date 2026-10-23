@@ -1,0 +1,27 @@
+需求关联视图 | 声明版本: 8b9858aa8795d83ea33881b3d8c2e1ef40cce6b8 + work/intent-view-096 (working slice, not a verified evidence revision)
+观察时间: 2026-10-23T02:41:58.103385+00:00
+任务进度 ≠ 需求验收；原记录 PASS ≠ 当前有效或用户接受。
+
+R096-2 | 需求验收=unknown | 用户接受=unknown
+  目的/原文: | R096-2 | 需求到模块与交付 / Spec + Plan | T096-2：稳定 ID、多对多、职责/边界/协作/验收/未知；局部任务完成且跨模块失败时总需求仍未验收 |
+  定位: planning/INTENT-LOOP-096.md#R096-2
+  子需求: R-view
+  模块 M-spec: --- name: ff-spec description: 把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格；用于缺失或过期规格，不拆工作票、不决定未经确认的需求。 metadata: version: "0.9.6-handoff.1" --- # ff-spec 0.9.6-handoff.1 ## 先选择适用路径 低风险小任务：已确
+  模块 M-plan: --- name: ff-plan description: 将 ForgeFlow 最新确认的需求或规格拆成可独立演示和验收的纵向切片，明确需求映射、真实依赖、顺序与变化后的重排。用于拆计划、拆票或重排实施；小修可给内联短计划，不创建通用待办流水线。 metadata: version: "0.9.6-handoff.1" --- # ff-plan 0.
+  模块 M-read: ## M-read 职责：受限读取索引/引用、定位支持的锚点。边界：不解析任意 Markdown、不执行文件或网络。输入 root/ref，输出文本片段、来源 hash 或缺口，交 M-map。验收 A-links/A-local；未知：并发文件替换不提供原子快照。
+  模块 M-map: ## M-map 职责：按既有 intent-links-v1 组装关联，读取窄格式的原记录并保留 unknown。边界：不推导需求验收、用户确认或 freshness，不写第二状态库。依赖 M-read，输出结构化报告给 M-view；原文文件拥有状态。验收 A-links/A-truth。
+  模块 M-view: ## M-view 职责：把同一报告显示为简短文本或 JSON，给用户原文定位和缺口。边界：不提供编辑/更新/审批/安装入口。与 M-map 共用数据，不另做状态计算。验收 A-demo/A-truth。
+  任务 T096-2=unknown | 模块 M-spec, M-plan, M-design, M-prove, M-implement -> 
+  任务 T-view=pending | 模块 M-read, M-map, M-view -> A-links, A-truth, A-local, A-demo
+  验收 A-links 原记录=PASS / 有效性=unknown -> iterations/intent-view/results.md#A-links
+    证据: iterations/intent-view/evidence/tests-local.json [可读取，未认证]
+  验收 A-truth 原记录=PASS / 有效性=unknown -> iterations/intent-view/results.md#A-truth
+    证据: iterations/intent-view/evidence/tests-local.json [可读取，未认证]
+  验收 A-local 原记录=UNKNOWN / 有效性=unknown -> iterations/intent-view/results.md#A-local
+    证据: iterations/intent-view/evidence/tests-local.json [可读取，未认证]
+  验收 A-demo 原记录=PASS / 有效性=unknown -> iterations/intent-view/results.md#A-demo
+    证据: iterations/intent-view/evidence/demo-initial.json [可读取，未认证]
+  缺口: T096-2: task progress unknown
+  缺口: T096-2: no acceptance mapping
+  缺口: T096-2: missing reference
+  缺口: A-local: recorded result UNKNOWN

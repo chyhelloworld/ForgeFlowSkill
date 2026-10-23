@@ -1,0 +1,8 @@
+{
+  "root": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+  "absolute": "E:\\github\\ForgeFlowSKill\\worktrees\\intent-view-096",
+  "root_is_dir": true,
+  "root_attributes": 16,
+  "source_read_sha256": "1dc8829e145bf322311de1d920e12d5ac8a43e7cad2ee511991c4ea66d29c430",
+  "note": "No retry of strict realpath API. Exact authorized checkout remains readable; inspect root metadata for a portable lexical path plus reparse guard."
+}

@@ -1,0 +1,32 @@
+{
+  "time": "2026-10-23T03:06:46.973403+00:00",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check"
+      ],
+      "exit_code": 2,
+      "stdout": "iterations/intent-view/evidence/demo-delivery.txt:14: trailing whitespace.\n+  任务 T096-2=unknown | 模块 M-spec, M-plan, M-design, M-prove, M-implement -> \niterations/intent-view/evidence/demo-readable.txt:14: trailing whitespace.\n+  任务 T096-2=unknown | 模块 M-spec, M-plan, M-design, M-prove, M-implement -> \n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)iterations/intent-view/evidence/demo-readable.txt",
+        ":(exclude)iterations/intent-view/evidence/demo-delivery.txt"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "note": "Full check reports exactly two trailing-space lines in preserved raw CLI output. Exclusion applies only to those two immutable captured text files; no whitespace rule disabled, no raw evidence rewritten."
+}
