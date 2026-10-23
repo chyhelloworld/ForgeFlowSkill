@@ -2,9 +2,9 @@
 name: ff-spec
 description: 把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格；用于缺失或过期规格，不拆工作票、不决定未经确认的需求。
 metadata:
-  version: "0.9.6-small.1"
+  version: "0.9.6-handoff.1"
 ---
-# ff-spec 0.9.6-small.1
+# ff-spec 0.9.6-handoff.1
 
 ## 先选择适用路径
 
