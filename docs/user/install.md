@@ -116,3 +116,7 @@ node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --
 ## 0.9.6-derivation.1 源码候选增量
 
 保留18项技能和既有安装机制，只在 ff-spec 增加[可选架构推导](architecture-derivation.md)的条件入口及本地参考，ff-design保留短推荐指引。没有新增宿主命令或运行时策略引擎，安装状态schema及CLI不变。本轮源码候选不更新真实全局/项目安装；用户使用已安装旧候选时不能假定新增方法已加载。
+
+## 0.9.6-derivation.2 源码候选增量
+
+独立 `ff-architecture-derive` 通过既有Codex/Claude技能目录分发，共19项技能，唯一推导模板迁至新技能本地；ff-spec只推荐并引用成果。状态读取保留旧17/18与新19完整清单兼容，隔离fixture验证迁移和回滚，不自动更新真实安装。没有新FF CLI子命令或full运行时构建。文件分发与原生加载、真实用户验收仍是不同事实；真实安装更新以单独授权及该目标的安装回执为准。

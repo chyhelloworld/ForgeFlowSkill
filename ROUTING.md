@@ -31,7 +31,7 @@ FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命
 
 具体事实疑问→ff-research；真实事件代价复盘→ff-retro（零候选有效）；素材采访→ff-writing-fragments；已有素材成文→ff-writing-shape或ff-writing-beats，作者选一路，不强制串行。任一入口均可独立使用，不触发全流程或自动健康检查。详见 docs/user/optional-methods.md。
 
-## 0.9.6 可选架构评估入口（当前合计18技能）
+## 0.9.6 可选架构评估入口（引入时18技能，本候选合计19）
 
 架构初稿/定稿取舍、接手旧项目或重构准备→独立 `ff-architecture-review`。Design/Spec 只在真实复杂度或风险需要时推荐，说明收益/额外工作/视角并等用户选择，小 demo 默认跳过；拒绝不构成门禁失败，不反复劝说。主动调用即选择评估，不重复启动确认；安全权限与既有强制审查仍在。入口及共享模板只按需读取，不是第18个必经步骤，也不新增 `ff-spec` 子命令。详见[可选架构评估](docs/user/architecture-review.md)。上文17项是历史增量描述。
 
@@ -45,8 +45,8 @@ FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命
 
 ## 技术方案、接手与审核失败
 
-业务流程到职责/依赖的边界待明确时，由 ff-spec 按当前意图、规则/协作复杂度、外部变化、现有架构和代价动态推荐[可选架构推导](docs/user/architecture-derivation.md)。简单工作默认跳过，复杂也先给理由/未知/额外工作并让用户选择；拒绝继续，实质新信息才重新建议。主动请求直接在所选范围推导，不增加独立技能，不与 architecture-review 互相触发或互为前置。
-技术取舍 → ff-grill；关键技术假设未知 → 必要时 ff-prove；确认后技术设计 → ff-spec。ff-design 聚焦界面和视觉。ff-intake / ff-handoff 可单独执行受影响功能基线审查，仅在接手、核心替换或影响不明时需要；不扩成普通小改的全库盘点。
+需要从需求得到整体或模块的逻辑层、组件职责、依赖和目录→独立 `ff-architecture-derive`，详见[可选架构推导](docs/user/architecture-derivation.md)。Spec/Design按意图、规则/协作、外部变化、现有架构及代价动态推荐；简单默认跳过，复杂只给理由/未知/额外工作待选择，拒绝继续，实质新信息才再建议。主动调用直接按所选范围处理，无需重走Spec；与architecture-review独立，不自动实现或评估。结构经用户确认后在已有需求/设计/计划引用为实现参照，实质变更沿已有确认流程，不给层内细节加审批。
+技术取舍 → ff-grill；关键技术假设未知 → 必要时 ff-prove；行为规格与已选结构引用 → ff-spec；逻辑架构方案 → 可选 ff-architecture-derive。ff-design 聚焦界面和视觉。ff-intake / ff-handoff 可单独执行受影响功能基线审查，仅在接手、核心替换或影响不明时需要；不扩成普通小改的全库盘点。
 FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失败次数切换，不默认全量回归；不同 change 不合并计数。
 
 ## 0.9.6 需求闭环增量

@@ -1,4 +1,4 @@
 interface:
   display_name: "ff-spec"
-  short_description: "ForgeFlow 专责技能：把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格；用"
+  short_description: "确认行为、范围与验收规格，引用已选架构并按需推荐独立推导"
   default_prompt: "使用 $ff-spec 完成当前获准职责，复用有效产物并报告真实证据与限制。"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF Architecture Derive"
+  short_description: "Optional logical architecture derivation"
+  default_prompt: "Use $ff-architecture-derive to propose logical layers, their components and responsibilities, dependency constraints and directory mappings for the selected scope; preserve unknowns and do not implement."

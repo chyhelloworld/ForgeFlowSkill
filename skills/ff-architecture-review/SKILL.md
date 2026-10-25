@@ -2,11 +2,13 @@
 name: ff-architecture-review
 description: 按用户选择，对架构初稿、旧项目接手或重构方案做有界场景评估，比较质量属性、变化影响与成本不确定性；可独立调用。复杂项目仅推荐，小 demo 默认跳过，不替代强制安全审查或正式认证。
 metadata:
-  version: "0.9.6-derivation.1"
+  version: "0.9.6-derivation.2"
 ---
 # FF Architecture Review
 
 一个可选方法，不是新增必经阶段或 `ff-spec` 子命令。可在架构初稿后、关键定稿前推荐，也可在接手旧项目、准备重构时独立使用；无需先运行全套 FF 流程。
+
+需要从需求得到逻辑层、组件职责、依赖和目录时可独立选择 `ff-architecture-derive`；本职责评估已有方案，两者互不自动触发、互非前提，不为评估强制先做推导。
 
 ## 选择与授权
 

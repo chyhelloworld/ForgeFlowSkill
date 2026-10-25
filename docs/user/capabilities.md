@@ -1,8 +1,8 @@
 # 具体能力与使用场景
 
-当前源码候选 0.9.6-derivation.1，18 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
+当前源码候选 0.9.6-derivation.2，19 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
 
-需要从业务流程解释模块边界时，可在 ff-spec 中选择[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立，不增加技能数量或必经流程。
+需要从业务流程解释模块边界时，可独立选择 ff-architecture-derive 的[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立；本候选共19项技能，不增加必经流程。
 
 本轮沿用 0.9.2 的既有契约，给 Intake、Plan、Implement、Handoff、Deliver 增加条件启用的 [Codex `/goal` 对账](codex-goal.md)：复用现行规格、唯一计划和已有回执，不新增技能、调度器或原生写入 API。普通 FF 不要求设置目标；原生状态、技术证据与真人接受分别报告，端到端结论以本候选实际实验为准。
 
@@ -108,6 +108,8 @@ Python 工具的退出码均为 0（声明记录通过本工具核对）、1（�
 | --- | --- | --- |
 | [ff-intake](../../skills/ff-intake/SKILL.md) | 接手、恢复、状态不明 | 只读事实对账、有效/失效/未知项和下一职责 |
 | [ff-grill](../../skills/ff-grill/SKILL.md) | 目标、范围或重要取舍不清 | 用户原意、目标、约束、候选与确认状态；按既有记录模式处理讨论 |
+| [ff-architecture-derive](../../skills/ff-architecture-derive/SKILL.md) | 需在编码前核对整体/模块逻辑架构 | 层数与理由、逐层组件职责、需求映射、源码依赖/核心协作、拟议或已核实目录；阻碍和最少所需输入 |
+| [ff-architecture-review](../../skills/ff-architecture-review/SKILL.md) | 用户选择比较已有架构方案 | 按需质量场景、变化影响、权衡与成本未知；不自动推导或实施 |
 | [ff-spec](../../skills/ff-spec/SKILL.md) | 缺行为规格或获准变更需求 | 主要行为、边界、失败路径、验收及受影响范围 |
 | [ff-design](../../skills/ff-design/SKILL.md) | 有视觉与交互未知 | 可评审设计候选、主要旅程、状态与视觉约束；需要真实用户选定的取舍保持候选 |
 | [ff-prove](../../skills/ff-prove/SKILL.md) | 可行性或真实入口存在关键未知 | 有预算/停止条件的实验、实际观察、限制和建议 |
@@ -124,7 +126,7 @@ Python 工具的退出码均为 0（声明记录通过本工具核对）、1（�
 | [ff-writing-shape](../../skills/ff-writing-shape/SKILL.md) | 已有素材，需要组织成文 | 文章结构与成稿，保留素材来源与未知项 |
 | [ff-writing-beats](../../skills/ff-writing-beats/SKILL.md) | 希望按叙事节拍组织文章 | 节拍安排及对应文章内容；与 Shape 按需选一路 |
 
-前九项是主职责，Diagnose / TDD / Handoff 是三个按需执行方法，后五项为独立可选方法。写作的 Shape 与 Beats 选一路即可；[可选方法示例](optional-methods.md)、[决策索引](decision-index.md)与[CodeGraph 适配器](codegraph.md)也按需选用，不增加必经阶段。扩展说明保留各自实验版本与限制。
+Intake至Deliver的九个工作流主职责按缺口选择；Diagnose / TDD / Handoff是三个按需执行方法，Research / Retro / 三个Writing和两项Architecture合计七个独立可选方法。写作的Shape与Beats选一路即可；[可选方法示例](optional-methods.md)、[决策索引](decision-index.md)与[CodeGraph适配器](codegraph.md)也按需选用，不增加必经阶段。扩展说明保留各自实验版本与限制。
 
 
 ## 自动检查与使用边界

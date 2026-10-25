@@ -2,7 +2,7 @@
 name: ff-writing-shape
 description: 把既有素材逐段塑造成文章，与作者选择开头和下一段；原素材只读，保留作者编辑。与 writing-beats 是替代路线，不必串行。
 metadata:
-  version: "0.9.6-derivation.1"
+  version: "0.9.6-derivation.2"
 ---
 
 # FF Writing Shape

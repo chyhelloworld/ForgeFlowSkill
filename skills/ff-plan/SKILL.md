@@ -2,9 +2,9 @@
 name: ff-plan
 description: 将 ForgeFlow 最新确认的需求或规格拆成可独立演示和验收的纵向切片，明确需求映射、真实依赖、顺序与变化后的重排。用于拆计划、拆票或重排实施；小修可给内联短计划，不创建通用待办流水线。
 metadata:
-  version: "0.9.6-derivation.1"
+  version: "0.9.6-derivation.2"
 ---
-# ff-plan 0.9.6-derivation.1
+# ff-plan 0.9.6-derivation.2
 
 ## 先选择适用路径
 
