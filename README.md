@@ -1,17 +1,17 @@
 # ForgeFlow Skill
 
-本地候选 `0.9.6-handoff.1` 在 `0.9.6-small.1 / c1fa2fb6` 上仅澄清审查交接：发送事实和原始证据，不预置作者通过结论，保留风险/失败/未知及证据复用。见[本轮有界设计](planning/REVIEW-HANDOFF-096.md)；前轮[小任务设计](planning/SMALL-TASK-096.md)保留，未合入试验原型或升级真实安装。
+本地候选 `0.9.6-derivation.1` 在 `0.9.6-architecture.1 / 00c099f6` 上增加[可选架构推导](docs/user/architecture-derivation.md)：AI按当前需求推荐，用户选择后由 ff-spec 从业务流程推导职责和依赖。继承需求闭环、小任务路径、审查交接、intent-view及独立架构评估；[本轮范围](planning/ARCHITECTURE-DERIVATION-096.md)不包含真实安装升级。
 
 面向 AI 编程的轻量工作流技能集：澄清需求、拆分任务、按需设计与实现、独立审核和中断接手，帮助人核对 AI 是否仍沿着当前目标工作。
 
-当前为 **0.9.6-handoff.1 审查交接候选、17 项技能**，工作分支 `work/review-handoff-096`。六个入口保留小任务必要约束，复杂场景读取各自完整职责；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.9.6-derivation.1 源码候选、18 项技能**，工作分支 `work/architecture-derivation-096`。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ## 从这里开始
 
 | 想做什么 | 直接入口 |
 | --- | --- |
 | 安装、选择 full / skills-only、首次使用与恢复 | [安装与首次使用](docs/user/install.md) |
-| 看具体能力、使用场景、17 项技能与真实命令 | [能力与使用场景](docs/user/capabilities.md) |
+| 看具体能力、使用场景、18 项技能与真实命令 | [能力与使用场景](docs/user/capabilities.md) |
 | 在 Codex 原生目标中使用 FF | [Codex Goal 使用与边界](docs/user/codex-goal.md) |
 | 从零启动新项目 | [新项目流程](docs/FF-中文使用手册.md#新项目如何从想法走到交付) |
 | 接手旧项目、半成品或中断任务 | [旧项目流程](docs/FF-中文使用手册.md#旧项目或半成品项目怎么接手) |
@@ -34,4 +34,4 @@ full 构建依赖网络，历史新包验证曾受 npm TLS 阻塞；skills-only 
 
 [只读需求视图](docs/intent-view.md) 复用 intent-links-v1，展示需求、模块、任务与验收原记录/缺口。入口：`python -X utf8 -B tools/workflow/intent_view.py --root . --index planning/intent-view-links.json --requirement R096-2`。这是源码工具，不注册为安装后的宿主命令；不把任务完成或记录 PASS 当作需求/用户验收。
 
-当前 0.9.6-architecture.1 候选新增[可独立调用的架构评估技能](docs/user/architecture-review.md)，Design/Spec 仅推荐，用户选择后才分析。候选包含上述 intent-view，未升级真实安装；旧旁支试验和原生加载结论不自动继承。
+本候选保留 0.9.6-architecture.1 的[独立架构评估技能](docs/user/architecture-review.md)，Design/Spec 仅推荐，用户选择后才分析。新增的[业务到架构推导](docs/user/architecture-derivation.md)与它独立，均不自动触发另一个。旧旁支试验和原生加载结论不自动继承。

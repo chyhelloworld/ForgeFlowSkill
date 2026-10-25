@@ -112,3 +112,7 @@ node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --
 该候选将独立 `ff-architecture-review` 纳入原技能分发机制，共18项，保留旧17项安装记录读取/回滚边界。既有 full/skills-only、Codex/Claude 目录及权限模式不变，不新增 FF CLI 子命令或安全门禁。当前规则与使用方式见[可选架构评估](architecture-review.md)；前面的0.9.3验证回执仍只对应其原版本。
 
 本轮只在 E 盘临时 fixture 做 skills-only 分发验证，不升级真实安装、不重建 full 运行时。文件已分发与宿主原生发现/加载是两种事实；后者尚未验证，不声称用户当前宿主已有该命令。
+
+## 0.9.6-derivation.1 源码候选增量
+
+保留18项技能和既有安装机制，只在 ff-spec 增加[可选架构推导](architecture-derivation.md)的条件入口及本地参考，ff-design保留短推荐指引。没有新增宿主命令或运行时策略引擎，安装状态schema及CLI不变。本轮源码候选不更新真实全局/项目安装；用户使用已安装旧候选时不能假定新增方法已加载。

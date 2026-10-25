@@ -34,7 +34,7 @@ test('missing baseline, renamed skill and mixed-host inventory are rejected', ()
   assert.throws(() => validateState(suite, state), /Mixed skill inventory/);
 });
 
-test('both host payloads include standalone entry, metadata and local template', () => {
+test('both host payloads include optional review entry and spec-local derivation reference', () => {
   const pin = verifySource(source);
   assert.deepEqual(pin.names, currentSkills);
   for (const host of ['codex', 'claude']) {
@@ -44,6 +44,10 @@ test('both host payloads include standalone entry, metadata and local template',
       assert.ok(payload[prefix + name], name);
     }
     assert.deepEqual(payload[prefix + 'references/scenario-review.md'], fs.readFileSync(path.join(source, 'skills/ff-architecture-review/references/scenario-review.md')));
+    const derivation = `${hostBase(host)}/ff-spec/references/architecture-derivation.md`;
+    assert.deepEqual(payload[derivation], fs.readFileSync(path.join(source, 'skills/ff-spec/references/architecture-derivation.md')));
+    assert.ok(payload[`${hostBase(host)}/ff-spec/SKILL.md`].toString().includes('references/architecture-derivation.md'));
+    assert.deepEqual(Object.keys(payload).filter(n => n.endsWith('/architecture-derivation.md')), [derivation]);
   }
 });
 
@@ -57,6 +61,8 @@ test('isolated skills-only install and reentry preserve optional entry on both h
   for (const host of options.hosts) {
     assert.equal(fs.readdirSync(path.join(project, hostBase(host))).length, 18);
     assert.ok(fs.readFileSync(path.join(project, hostBase(host), 'ff-architecture-review/SKILL.md'), 'utf8').includes('references/scenario-review.md'));
+    assert.deepEqual(fs.readFileSync(path.join(project, hostBase(host), 'ff-spec/references/architecture-derivation.md')),
+      fs.readFileSync(path.join(source, 'skills/ff-spec/references/architecture-derivation.md')));
     assert.throws(() => doctor(project, host), /skills-only/);
   }
   assert.equal(install(project, source, options).status, 'UNCHANGED');

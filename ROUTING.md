@@ -44,6 +44,8 @@ FF 命令统一在目标项目根运行 `node tools/openspec/ff-spec.mjs <子命
 仅显式启用时辅助静态代码定位，不新增技能或必经门禁。详见 [使用说明](docs/user/codegraph.md) 与 [真实试验报告](docs/archive/reports/CodeGraph试验报告.md)。沿用实验2决策索引；旧报告仅代表对应历史版本。
 
 ## 技术方案、接手与审核失败
+
+业务流程到职责/依赖的边界待明确时，由 ff-spec 按当前意图、规则/协作复杂度、外部变化、现有架构和代价动态推荐[可选架构推导](docs/user/architecture-derivation.md)。简单工作默认跳过，复杂也先给理由/未知/额外工作并让用户选择；拒绝继续，实质新信息才重新建议。主动请求直接在所选范围推导，不增加独立技能，不与 architecture-review 互相触发或互为前置。
 技术取舍 → ff-grill；关键技术假设未知 → 必要时 ff-prove；确认后技术设计 → ff-spec。ff-design 聚焦界面和视觉。ff-intake / ff-handoff 可单独执行受影响功能基线审查，仅在接手、核心替换或影响不明时需要；不扩成普通小改的全库盘点。
 FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失败次数切换，不默认全量回归；不同 change 不合并计数。
 
