@@ -2,9 +2,9 @@
 name: ff-spec
 description: 把已确认需求整理为 ForgeFlow 行为、范围、约束与验收规格，引用已选架构成果；缺逻辑分层时可推荐独立推导，不承担架构方法、不拆工作票、不决定未经确认的需求。
 metadata:
-  version: "0.9.6-derivation.2"
+  version: "0.9.6-derivation.3"
 ---
-# ff-spec 0.9.6-derivation.2
+# ff-spec 0.9.6-derivation.3
 
 ## 先选择适用路径
 
