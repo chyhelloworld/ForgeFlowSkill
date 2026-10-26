@@ -49,3 +49,11 @@ AR-T1 已实现。AR-1/2 对应新技能及其唯一场景参考，Design/Spec �
 候选包含 intent.2 → small-task.1 → handoff.1 → intent-view 的祖先链以及本轮入口；`inheritance.json` 保留完整 SHA 和祖先探针。self-use-status、small-task-trial、handoff-validation、review-contamination 旁支不因此自动集成。源码 source、旧工作树和真实安装的保护比对见 `protection-final.json`。最终提交与归档绑定见 `commit-verification.json`；这些外部回执是本机证据，不声称随发行载荷可用。
 
 停止边界：可提交用户验收此可选入口；不据此宣布0.9.6正式发布可用。原生宿主发现/加载、E33独立读取行为、full运行时、真实架构效益和用户接受仍未证；没有全量回归、重建运行时、真实安装升级、主线合并或推送。
+
+## 2026-10-26：默认独立上下文遗漏修正
+
+用户13:13指出`ff-architecture-review`默认不会独立审查，13:17明确“修复下”。基线87dab650145237033c3fe113e8ec9e4d496d3a78；在既有工作树的work/architecture-independent-review-096实现，source/DH/global不自动同步。沿现有0.9.6-derivation.4测试版本，以提交和hash区分本修正。
+
+任务AR-T2：在review入口补齐发起/接收职责，复用宿主现有子代理与ff-review的最小交接语义；正常选择后创建一个不继承作者历史的新上下文，审查者只读返回且不递归委派。必要版本/范围/原始失败不能因隔离作者结论而遗漏；自查尊重、能力不足诚实降级，原会话核实而不盲从。只改SKILL、宿主短提示及用户说明，场景模板/derive/运行时不改，不新增引擎或门禁。
+
+修改前方案与判据在E:/github/ForgeFlowSKill/_verification/architecture-independent-review-096-20261026/PLAN.md冻结。D实际Codex子代理链，S显式自查，F合成无委派能力情境，O小demo未选择/拒绝路由边界，各首次输出，不提供预期发现或重采样。显式文件加载、原生发现、合成环境分别标注。一次独立综合读者检查结果与变更；必要分发/引用/payload检查，无旧derive对照或full构建。具体调用、限制、首次失败、五维评价及最终提交见同目录RESULT.md，用户接受另计。

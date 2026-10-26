@@ -1,4 +1,4 @@
 interface:
   display_name: "FF Architecture Review"
   short_description: "Optional scenario-based architecture review"
-  default_prompt: "Use $ff-architecture-review to compare this architecture with the status quo using relevant quality scenarios and evidence."
+  default_prompt: "Use $ff-architecture-review for a read-only review in a fresh context when supported, disclose independence limits, and compare this architecture with the status quo using relevant scenarios and evidence."
