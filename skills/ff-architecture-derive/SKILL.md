@@ -2,7 +2,7 @@
 name: ff-architecture-derive
 description: 按用户选择，从已有需求推导整体或模块的逻辑架构，回答应分几层、各层组件与职责、依赖协作及目录映射。可独立调用，不要求先重走规格；不是部署审计或架构评估，不自动实现。
 metadata:
-  version: "0.9.6-derivation.3"
+  version: "0.9.6-derivation.4"
 ---
 # FF Architecture Derive
 

@@ -2,7 +2,7 @@
 name: ff-architecture-review
 description: 按用户选择，对架构初稿、旧项目接手或重构方案做有界场景评估，比较质量属性、变化影响与成本不确定性；可独立调用。复杂项目仅推荐，小 demo 默认跳过，不替代强制安全审查或正式认证。
 metadata:
-  version: "0.9.6-derivation.3"
+  version: "0.9.6-derivation.4"
 ---
 # FF Architecture Review
 

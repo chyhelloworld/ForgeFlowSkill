@@ -124,3 +124,7 @@ node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --
 ## 0.9.6-derivation.3 源码候选增量
 
 保持19项技能、安装机制和运行时不变，仅修正架构推导的关键结构完成判据及使用说明。旧derivation.2现场草案与本轮同输入首次输出对照分别留存，合成行为和分发检查不代表原生加载或业务验收。没有更新source、DH或全局真实安装；需要另行授权才能升级。architecture-review的评估规则未改（包metadata版本同步），两入口仍独立可选。
+
+## 0.9.6-derivation.4 源码候选增量
+
+保留derivation.3推导修复和19技能，给architecture-review的现有按需参考补充按决策范围判断颗粒度的短规则。安装/运行时机制未变，没有更新真实安装；显式读技能的合成执行与原生加载、用户验收分别记录。

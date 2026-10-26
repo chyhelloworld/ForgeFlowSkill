@@ -10,4 +10,8 @@ Design 和技术方案流程只在适当时推荐入口：小 demo 默认跳过�
 
 输出是短决策和证据：现状与候选、重要场景、推荐及代价、风险/未知和必要验证。保留“不改”方案；缺成本不编 ROI，定向实验需原授权覆盖，未运行不得写实测。入口本身不批准重构、发布或安装。
 
-本候选 `0.9.6-architecture.1` 从 intent-view 的 `da0ce532332dc56da96bd399afa50019a0da5bf7` 延续：包含 intent.2 需求闭环、small-task.1 短路径、handoff.1 交接修复、intent-view 源码和本入口。另开的 self-use/small-task-trial/handoff-validation/review-contamination 记录不是因此自动集成；真实全局安装仍独立。分支/范围见[本轮计划](../../planning/ARCHITECTURE-REVIEW-096.md)。
+颗粒度按本次决定双向审核：平台概览不必提前展开全部工具接口；工具准备实现时，关键调用、输入输出和状态归属应可检查。也要指出无理由包装、穷举文件或重复已有能力等过细设计。反馈落在“具体位置→影响的决定→最小补充/删减”，未知不等同缺陷，局部缺口不拖停无关工作。不强制类图、层数或新接口。
+
+例如：“用 `$ff-architecture-review` 只读审核这版方案，当前决策是首工具进入实现前的结构是否足够；指出过粗或过细的位置、影响与最小调整，保留未知和可继续部分，不改稿、不调用推导或实施。”
+
+本入口最初在候选 `0.9.6-architecture.1` 从 intent-view 的 `da0ce532332dc56da96bd399afa50019a0da5bf7` 延续：包含 intent.2 需求闭环、small-task.1 短路径、handoff.1 交接修复、intent-view 源码和本入口。另开的 self-use/small-task-trial/handoff-validation/review-contamination 记录不是因此自动集成；真实全局安装仍独立。分支/范围见[本轮计划](../../planning/ARCHITECTURE-REVIEW-096.md)。

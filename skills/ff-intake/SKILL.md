@@ -2,9 +2,9 @@
 name: ff-intake
 description: 只读核对 ForgeFlow 新任务或存量项目的真实状态、规格与工作票有效性，选择当前需要的职责；不写规格、不拆票、不实现。
 metadata:
-  version: "0.9.6-derivation.3"
+  version: "0.9.6-derivation.4"
 ---
-# ff-intake 0.9.6-derivation.3
+# ff-intake 0.9.6-derivation.4
 
 ## 先选择适用路径
 

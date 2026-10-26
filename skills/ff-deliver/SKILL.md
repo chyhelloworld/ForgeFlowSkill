@@ -2,9 +2,9 @@
 name: ff-deliver
 description: 汇总 ForgeFlow 当前版本有效证据、偏差与用户验收入口，按仓库流程交 PR 或交接；不承担实现或独立审核，不自动合并部署。
 metadata:
-  version: "0.9.6-derivation.3"
+  version: "0.9.6-derivation.4"
 ---
-# ff-deliver 0.9.6-derivation.3
+# ff-deliver 0.9.6-derivation.4
 
 ## 先选择适用路径
 

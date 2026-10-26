@@ -2,7 +2,7 @@
 name: ff-retro
 description: 收集任务级使用问题，并在用户要求或重要问题触发时复盘项目或 FF 自身的真实工作事件，提出可证伪的最小改进或可复用资产候选；先查已有机制，零候选合法，不递归自授权或自动晋级。
 metadata:
-  version: "0.9.6-derivation.3"
+  version: "0.9.6-derivation.4"
 ---
 
 # FF Retro
