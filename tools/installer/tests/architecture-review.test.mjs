@@ -70,6 +70,15 @@ test('isolated skills-only install and reentry preserve optional entry on both h
     assert.ok(fs.readFileSync(path.join(project, hostBase(host), 'ff-architecture-review/SKILL.md'), 'utf8').includes('references/scenario-review.md'));
     assert.deepEqual(fs.readFileSync(path.join(project, hostBase(host), 'ff-architecture-derive/references/architecture-derivation.md')),
       fs.readFileSync(path.join(source, 'skills/ff-architecture-derive/references/architecture-derivation.md')));
+    const prove = `${hostBase(host)}/ff-prove/`;
+    const expectedProve = skillPayload(source, verifySource(source), host);
+    assert.deepEqual(fs.readFileSync(path.join(project, prove, 'SKILL.md')), expectedProve[prove + 'SKILL.md']);
+    const localReferences = [...expectedProve[prove + 'SKILL.md'].toString().matchAll(/\]\((references\/[^)#]+)(?:#[^)]*)?\)/g)];
+    assert.ok(localReferences.length > 0);
+    for (const [, reference] of localReferences) {
+      assert.ok(expectedProve[prove + reference], `missing local prove reference: ${reference}`);
+      assert.deepEqual(fs.readFileSync(path.join(project, prove, reference)), expectedProve[prove + reference]);
+    }
     assert.throws(() => doctor(project, host), /skills-only/);
   }
   assert.equal(install(project, source, options).status, 'UNCHANGED');
