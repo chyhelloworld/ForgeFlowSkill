@@ -1,0 +1,33 @@
+# Evaluator-only rubric — frozen v1
+
+Do not give this file to the executor. No canonical class names, required layer count or reference implementation exist. Evaluate the frozen requirements and actual design, not similarity to an imagined solution. Multiple decompositions, functions and justified co-location can be correct.
+
+For every dimension mark PASS / MATERIAL FAIL / INCONCLUSIVE / NOT APPLICABLE. Cite the requirement and exact output passage/artifact; explain a concrete consequence. Missing optional elaboration is not failure. A material failure prevents a required use case or leaves a consequential design ambiguity that an implementer cannot resolve from the stated contracts/assumptions. Do not penalize failure to mention nonexistent requirements.
+
+1. **Concept fidelity and boundaries:** Can distinct facts and lifecycles required by the use cases be represented without ambiguity? If one object/service carries several concerns, is that coherent here or does it confuse different owners/lifecycles? A generic state blob is not automatically wrong: show precisely which required meaning or transition is lost. Conversely more classes are not automatically better. Boundary explanations must connect to use cases or independent change, not generic layer slogans.
+2. **Behavior ownership and flow:** Trace each principal use case from caller input through responsible behavior and observable result. Identify who decides state transitions and rules. Check whether a coordinator is merely arranging work or quietly owns incompatible business meanings. Distinguish actual ownership gaps from harmless naming variation.
+3. **Consumer-facing contracts and realization:** Are representative operations' required inputs/results and caller obligations clear enough to use? Can required work be implemented under the stated external-service assumptions? Check design, relationships, contracts and directory consistency. Do not require interface files, adapters, persistence or services where the case does not need them.
+4. **Overview density:** Does the main view expose recognizable objects/functions, short responsibilities, a small representative operation set and usable relationships? Can an implementer locate the normal path without wading through exhaustive failure/budget/concurrency detail? Judge information organization and lost visibility, not token count or fixed method quotas. Detail can be present in a separate section.
+5. **Review quality:** Does review test conceptual clarity, responsibility distribution and whether proposed/existing contracts support the required behavior, as well as any relevant operational risks? A finding needs evidence. If the design has no demonstrated structural flaw, review may explain why it is adequate; do not demand an invented defect. Generic praise or a failure-only checklist that never examines required responsibilities/contracts is insufficient evidence of review quality.
+6. **Prove discipline:** Are proposed experiments tied to a genuine consequential unknown and able to affect a design decision? Prove need not occur when no meaningful unknown remains. A performance/failure demonstration does not resolve missing behavior ownership or unclear meanings. Do not equate a proposed test with a completed validation.
+
+## Controls
+
+Case 02: assess fidelity to its exact arithmetic/validation requirement and minimal integration needs. No stateful architecture is required. An unnecessary split is a material failure only if it imposes unjustified operational/cognitive burden or obscures this simple capability; file/class count alone is not a verdict.
+
+Case 03: derive concepts from library operations and facts. Agent-flavored labels are a concern only when they substitute irrelevant semantics or obscure the actual domain. Check representability of required distinctions and transition ownership; do not require a preselected list of entities.
+
+Case 01: evaluate only against the frozen video-derived requirements and actual video reference. The optimization brief and earlier synthetic Harness case are NOT additional requirements. If the payload is missing or changed, evaluation is invalid, not red. Unspecified video requirements remain unknown; do not add budget/cancellation/reliability constraints.
+
+Record comparison to the video separately as SEMANTICALLY COMPARABLE / CONCRETELY BETTER / WORSE / INCONCLUSIVE. “Consistent or better” means required concepts, responsibilities, consumer contracts, collaboration and changeability are at least as clear and adequate under the SAME constraints, not identical labels, fixed three layers or directory spelling. A “better” verdict requires a specific demonstrated benefit (for example a required change has a smaller coherent impact while behavior/clarity is preserved), not more components or longer prose. Cite the reference frame and candidate evidence for each comparison; video style itself is not an absolute correctness oracle. Differences without demonstrated loss are not failures.
+
+## Evidence record
+
+Record anonymous run ID, case ID, all six dimension verdicts, requirement/output citations, concrete impact, assumptions and uncertainty. Overall red requires at least one material failure; inconclusive cannot silently become red or green. Mechanical check results stay separate. A repaired candidate passes only when the earlier material defect is resolved under the same criteria and no material control regression is observed. State that this is limited LLM behavioral evidence, not deterministic unit-test proof of architecture quality.
+
+
+## First-loop applicability (overrides draft execution assumptions)
+
+The single selected observable behavior is: under the video’s same task/scope, derive understandable, semantically distinct object behavior/contracts/collaboration and corresponding directories. Dimensions 1–4 and Case 01 video comparison assess this ONE behavior, not six independent implementation targets. Review/prove dimensions 5–6 are evaluated only if actually exercised as required by the skill; otherwise NOT APPLICABLE, never a forced red. Do not demand additional review/prove runs before the primary derivation comparison. Cases 02–03 are affected-regression controls after a confirmed primary red, minimal patch, and same-primary green; they are not concurrent primary tests.
+
+A real LLM invocation plus independent semantic judgment is skill-behavior evidence, not an automatically decidable code unit test. Use “behavioral red/green” with this qualification. Missing invocation/environment failure is NOT_RUN, not red. Mechanical validation supports artifact/link/relationship evidence only.

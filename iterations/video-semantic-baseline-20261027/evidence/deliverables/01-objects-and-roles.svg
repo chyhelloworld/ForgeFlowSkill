@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1220" viewBox="0 0 1600 1220" role="img"><title>01  多轮工具 Agent：对象与关键关系</title><defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#4c6578" stroke-width="1.5"/></marker></defs><rect width="1600" height="1220" fill="#fafbf9"/><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#243947}</style>
+<text x="40" y="53" font-size="32" font-weight="700">01  多轮工具 Agent：对象与关键关系</text>
+<text x="40" y="91" font-size="18" font-weight="400">保留旧版独立候选的三职责区与对象名；职责区不是三个服务。只展开关键契约关系，其余由流程说明。</text>
+<rect x="40" y="120" width="1520" height="185" rx="13" fill="#fbf0d3" stroke="none"/>
+<text x="62" y="156" font-size="24" font-weight="700">会话核心  /  保存完整历史及调用关联</text>
+<rect x="65" y="175" width="345" height="109" rx="13" fill="#fff" stroke="none"/>
+<text x="83" y="207" font-size="23" font-weight="700">Conversation</text>
+<text x="83" y="237" font-size="18" font-weight="400">有序历史，维护记录约束</text>
+<text x="83" y="262" font-size="18" font-weight="400">append(record)</text>
+<rect x="440" y="184" width="245" height="86" rx="13" fill="#fff" stroke="none"/>
+<text x="458" y="216" font-size="21" font-weight="700">UserRecord</text>
+<text x="458" y="246" font-size="18" font-weight="400">用户消息</text>
+<rect x="710" y="184" width="245" height="86" rx="13" fill="#fff" stroke="none"/>
+<text x="728" y="216" font-size="21" font-weight="700">AssistantRecord</text>
+<text x="728" y="246" font-size="18" font-weight="400">模型文本与 calls</text>
+<rect x="980" y="184" width="245" height="86" rx="13" fill="#fff" stroke="none"/>
+<text x="998" y="216" font-size="21" font-weight="700">ToolCall</text>
+<text x="998" y="246" font-size="18" font-weight="400">调用 ID、名称与参数</text>
+<rect x="1250" y="184" width="245" height="86" rx="13" fill="#fff" stroke="none"/>
+<text x="1268" y="216" font-size="21" font-weight="700">ToolResultRecord</text>
+<text x="1268" y="246" font-size="18" font-weight="400">按 callId 关联结果</text>
+<text x="444" y="291" font-size="16" font-weight="400">Conversation 拥有这些记录；ToolCall 是 AssistantRecord 内的数据，不另造一条对话消息。</text>
+<rect x="40" y="325" width="1520" height="470" rx="13" fill="#e8eef4" stroke="none"/>
+<text x="62" y="362" font-size="24" font-weight="700">交互过程  /  组织输入，审查、执行、继续与保存</text>
+<rect x="65" y="385" width="345" height="115" rx="13" fill="#fff" stroke="none"/>
+<text x="83" y="417" font-size="23" font-weight="700">TurnProcess</text>
+<text x="83" y="447" font-size="18" font-weight="400">控制整个回合与追加时机</text>
+<text x="83" y="472" font-size="18" font-weight="400">submit(id?, userText)</text>
+<rect x="455" y="385" width="300" height="115" rx="13" fill="#fff" stroke="none"/>
+<text x="473" y="417" font-size="23" font-weight="700">ReplyComposer</text>
+<text x="473" y="447" font-size="18" font-weight="400">组织正常回答的输入</text>
+<text x="473" y="472" font-size="18" font-weight="400">generate(snapshot, specs)</text>
+<rect x="815" y="385" width="300" height="115" rx="13" fill="#fff" stroke="none"/>
+<text x="833" y="417" font-size="23" font-weight="700">ToolReviewer</text>
+<text x="833" y="447" font-size="18" font-weight="400">组织审查输入并校验结论</text>
+<text x="833" y="472" font-size="18" font-weight="400">review(snapshot, call)</text>
+<rect x="1175" y="385" width="360" height="115" rx="13" fill="#fff" stroke="none"/>
+<text x="1193" y="417" font-size="23" font-weight="700">ToolExecutor</text>
+<text x="1193" y="447" font-size="18" font-weight="400">获允许后查工具、校验并执行</text>
+<text x="1193" y="472" font-size="18" font-weight="400">execute(call)</text>
+<rect x="65" y="615" width="345" height="130" rx="13" fill="#fff8e7" stroke="none"/>
+<text x="83" y="647" font-size="23" font-weight="700">ConversationStore</text>
+<text x="83" y="677" font-size="18" font-weight="400">会话保存 / 读取 / 列表</text>
+<text x="83" y="702" font-size="18" font-weight="400">save(snapshot)</text>
+<rect x="455" y="615" width="660" height="130" rx="13" fill="#fff8e7" stroke="none"/>
+<text x="473" y="647" font-size="22" font-weight="700">ModelPort  ·  complete(ModelInput, ModelConfig)</text>
+<text x="473" y="677" font-size="18" font-weight="400">回复与审查共用此接口；可注入不同实例 / 配置</text>
+<text x="473" y="702" font-size="18" font-weight="400">ModelInput = 本轮输入视图：目的、指令、消息、工具说明</text>
+<rect x="1175" y="615" width="360" height="130" rx="13" fill="#fff8e7" stroke="none"/>
+<text x="1193" y="647" font-size="23" font-weight="700">ToolCatalog</text>
+<text x="1193" y="677" font-size="18" font-weight="400">说明与执行对象共用登记</text>
+<text x="1193" y="702" font-size="18" font-weight="400">specs() / resolve(name)</text>
+<polyline points="230,500 230,615" fill="none" stroke="#4c6578" stroke-width="2.2" marker-end="url(#a)"/>
+<text x="245" y="560" font-size="17" font-weight="400">消费</text>
+<polyline points="600,500 600,615" fill="none" stroke="#4c6578" stroke-width="2.2" marker-end="url(#a)"/>
+<text x="615" y="560" font-size="17" font-weight="400">消费</text>
+<polyline points="965,500 965,615" fill="none" stroke="#4c6578" stroke-width="2.2" marker-end="url(#a)"/>
+<text x="980" y="560" font-size="17" font-weight="400">消费</text>
+<polyline points="1350,500 1350,615" fill="none" stroke="#4c6578" stroke-width="2.2" marker-end="url(#a)"/>
+<text x="1365" y="560" font-size="17" font-weight="400">查找</text>
+<text x="65" y="1127" font-size="18" font-weight="400">过程协作：TurnProcess 编排 ReplyComposer / ToolReviewer / ToolExecutor；ReplyComposer 从 ToolCatalog 取工具说明。</text>
+<rect x="40" y="815" width="1520" height="205" rx="13" fill="#edf2ef" stroke="none"/>
+<text x="62" y="851" font-size="24" font-weight="700">外部适配</text>
+<rect x="65" y="890" width="345" height="100" rx="13" fill="#fff" stroke="none"/>
+<text x="83" y="922" font-size="20" font-weight="700">JsonlConversationStore</text>
+<text x="83" y="952" font-size="18" font-weight="400">保存为 JSONL</text>
+<text x="83" y="977" font-size="18" font-weight="400">MemoryConversationStore：测试替代</text>
+<rect x="455" y="890" width="660" height="100" rx="13" fill="#fff" stroke="none"/>
+<text x="473" y="922" font-size="23" font-weight="700">ProviderAdapter</text>
+<text x="473" y="952" font-size="18" font-weight="400">实现模型接口，转换供应商格式</text>
+<text x="473" y="977" font-size="18" font-weight="400">供应商 / SDK 尚未选定，不声称真实接入已验证</text>
+<rect x="1175" y="890" width="360" height="100" rx="13" fill="#fff" stroke="none"/>
+<text x="1193" y="922" font-size="23" font-weight="700">ShellTool</text>
+<text x="1193" y="952" font-size="18" font-weight="400">提供 spec / invoke；具体命令工具</text>
+<text x="1193" y="977" font-size="18" font-weight="400">进程能力待选；模型审查不是沙箱</text>
+<text x="435" y="812" font-size="17" font-weight="400">实现</text>
+<text x="1155" y="812" font-size="17" font-weight="400">实现</text>
+<polyline points="395,890 425,890 425,680 410,680" fill="none" stroke="#4c6578" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<polyline points="1095,890 1145,890 1145,680 1115,680" fill="none" stroke="#4c6578" stroke-width="2.2" stroke-dasharray="7 5" marker-end="url(#a)"/>
+<text x="65" y="1055" font-size="20" font-weight="400">工具链：生成请求 → 审查 → ReviewDecision（允许 / 理由）→ 允许才执行 → ToolResultRecord 写入历史 → 再次生成</text>
+<text x="65" y="1091" font-size="19" font-weight="400">入口：CliEntry → TurnProcess；HttpEntry 为替换位置。无工具时跳过审查与执行；拒绝则记录结果、不执行。</text>
+<text x="65" y="1170" font-size="17" font-weight="400">图例：实线 → 消费 / 查找契约；虚线 → 实现契约。底部箭头另表示运行顺序；未绘出所有源码依赖。</text>
+<text x="40" y="1198" font-size="16" font-weight="400">旧版首次候选的后续可视化整理；不是模型一次直接生成的图片。拟议、未实现，细节见原架构文档。</text></svg>

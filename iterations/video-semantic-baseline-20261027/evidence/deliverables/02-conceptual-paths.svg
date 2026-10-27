@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1190" viewBox="0 0 1600 1190" role="img"><title>02  拟议概念目录 → 对象与启动连接</title><defs><marker id="a" markerWidth="9" markerHeight="9" refX="8" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#4c6578" stroke-width="1.5"/></marker></defs><rect width="1600" height="1190" fill="#fafbf9"/><style>text{font-family:"Noto Sans CJK SC",sans-serif;fill:#243947}</style>
+<text x="40" y="53" font-size="32" font-weight="700">02  拟议概念目录 → 对象与启动连接</text>
+<text x="40" y="91" font-size="18" font-weight="400">语言尚未选定：路径不加 .py 等扩展名。这里呈现原候选的目录分工，不代表已有产品源码。</text>
+<text x="45" y="140" font-size="27" font-weight="700">src/</text>
+<rect x="40" y="162" width="745" height="206" rx="13" fill="#fbf0d3" stroke="none"/>
+<text x="62" y="198" font-size="24" font-weight="700">core/  会话核心</text>
+<text x="68" y="242" font-size="21" font-weight="700">conversation</text>
+<rect x="270" y="220" width="490" height="125" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="252" font-size="22" font-weight="700">Conversation</text>
+<text x="288" y="282" font-size="18" font-weight="400">UserRecord · AssistantRecord · ToolCall</text>
+<text x="288" y="307" font-size="18" font-weight="400">ToolResultRecord；有序历史与调用关联</text>
+<rect x="40" y="390" width="745" height="570" rx="13" fill="#e8eef4" stroke="none"/>
+<text x="62" y="429" font-size="24" font-weight="700">application/  交互过程</text>
+<text x="68" y="483" font-size="20" font-weight="700">turn</text>
+<rect x="270" y="452" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="484" font-size="20" font-weight="700">TurnProcess</text>
+<text x="288" y="514" font-size="18" font-weight="400">回合推进 / 结果与列表用例</text>
+<text x="68" y="563" font-size="20" font-weight="700">reply</text>
+<rect x="270" y="532" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="564" font-size="20" font-weight="700">ReplyComposer</text>
+<text x="288" y="594" font-size="18" font-weight="400">正常指令与模型输入组织</text>
+<text x="68" y="643" font-size="20" font-weight="700">review</text>
+<rect x="270" y="612" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="644" font-size="20" font-weight="700">ToolReviewer · ReviewDecision</text>
+<text x="288" y="674" font-size="18" font-weight="400">审查指令 / 结论解析</text>
+<text x="68" y="723" font-size="20" font-weight="700">tools</text>
+<rect x="270" y="692" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="724" font-size="20" font-weight="700">ToolCatalog · ToolExecutor · Tool</text>
+<text x="288" y="754" font-size="18" font-weight="400">登记 / 执行 / 工具契约</text>
+<text x="68" y="803" font-size="20" font-weight="700">ports/model</text>
+<rect x="270" y="772" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="804" font-size="20" font-weight="700">ModelPort · ModelInput</text>
+<text x="288" y="834" font-size="18" font-weight="400">内部输入输出及 ModelConfig</text>
+<text x="68" y="883" font-size="20" font-weight="700">ports/storage</text>
+<rect x="270" y="852" width="490" height="69" rx="13" fill="#fff" stroke="none"/>
+<text x="288" y="884" font-size="20" font-weight="700">ConversationStore</text>
+<text x="288" y="914" font-size="18" font-weight="400">会话保存、读取、列表契约</text>
+<rect x="815" y="162" width="745" height="798" rx="13" fill="#edf2ef" stroke="none"/>
+<text x="838" y="198" font-size="24" font-weight="700">adapters/  外部适配</text>
+<text x="841" y="246" font-size="21" font-weight="700">models/provider_*</text>
+<rect x="841" y="260" width="690" height="75" rx="13" fill="#fff" stroke="none"/>
+<text x="859" y="292" font-size="22" font-weight="700">ProviderAdapter</text>
+<text x="859" y="322" font-size="18" font-weight="400">待选供应商格式映射</text>
+<text x="841" y="381" font-size="21" font-weight="700">storage/jsonl</text>
+<rect x="841" y="395" width="690" height="75" rx="13" fill="#fff" stroke="none"/>
+<text x="859" y="427" font-size="22" font-weight="700">JsonlConversationStore</text>
+<text x="859" y="457" font-size="18" font-weight="400">JSONL 会话存储</text>
+<text x="841" y="516" font-size="21" font-weight="700">storage/memory</text>
+<rect x="841" y="530" width="690" height="75" rx="13" fill="#fff" stroke="none"/>
+<text x="859" y="562" font-size="22" font-weight="700">MemoryConversationStore</text>
+<text x="859" y="592" font-size="18" font-weight="400">相同存储契约的测试替代</text>
+<text x="841" y="651" font-size="21" font-weight="700">tools/shell</text>
+<rect x="841" y="665" width="690" height="75" rx="13" fill="#fff" stroke="none"/>
+<text x="859" y="697" font-size="22" font-weight="700">ShellTool</text>
+<text x="859" y="727" font-size="18" font-weight="400">本地命令工具；执行机制待选</text>
+<text x="841" y="786" font-size="21" font-weight="700">entry/cli</text>
+<rect x="841" y="800" width="690" height="75" rx="13" fill="#fff" stroke="none"/>
+<text x="859" y="832" font-size="22" font-weight="700">CliEntry</text>
+<text x="859" y="862" font-size="18" font-weight="400">首选入口；提交用例、显示结果</text>
+<text x="841" y="922" font-size="18" font-weight="400">HttpEntry：文中保留替换位置，未列入本次目录。</text>
+<rect x="40" y="986" width="1520" height="123" rx="13" fill="#f0edf6" stroke="none"/>
+<text x="62" y="1021" font-size="24" font-weight="700">composition  /  启动连接，不另算职责层</text>
+<text x="62" y="1055" font-size="20" font-weight="400">读取配置 → 构造回复 / 审查的 ProviderAdapter 与 JSONL Store → ShellTool 登记到 Catalog</text>
+<text x="62" y="1088" font-size="20" font-weight="400">构造 Executor、ReplyComposer、ToolReviewer → 注入 TurnProcess → 交给 CLI。普通构造参数，不加容器。</text>
+<text x="40" y="1146" font-size="18" font-weight="400">映射约定：每行左侧是拟议路径，右侧是对象 / 类型；只表示落点，不表示调用方向。</text>
+<text x="40" y="1168" font-size="16" font-weight="400">旧版首次候选的后续可视化整理；不是模型一次直接生成的图片。拟议、未实现，细节见原架构文档。</text></svg>

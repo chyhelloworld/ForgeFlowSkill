@@ -1,0 +1,373 @@
+{
+  "record_type": "cloud_evidence_repository_import",
+  "imported_at_utc": "2026-10-27T15:55:44.376847+00:00",
+  "baseline_commit": "50cfd100b72aa1920f9184ca448df7bf8366419f",
+  "baseline_branch": "work/prove-ablation-096",
+  "source_delivery": "13 numbered parent-task-message chunks; base64(gzip(UTF-8 JSON)); supersedes truncated single-message transfer",
+  "gzip_sha256": "ddaf80fabffd6e4d767ba17aa01d49e26eab4129948006200c2ecac6f109327d",
+  "gzip_bytes": 52493,
+  "gzip_hash_verified": true,
+  "original_zip": {
+    "library_file_id": "libfile_7e7c43a8093881918e56af50c235e464",
+    "file_id": "file_000000004a8081f5a0541b231b866491",
+    "filename": "ForgeFlow-Video-Semantic-Baseline-20261027.zip",
+    "declared_sha256": "9bfa13e097e9de71e9f089b1df9cc47233e2a0b2d9a4945a233874aa7b470097",
+    "local_verification": "NOT_RUN: official download failed twice; ZIP not imported"
+  },
+  "files": [
+    {
+      "source_path": "RUN-RESULT.md",
+      "repository_path": "evidence/RUN-RESULT.md",
+      "bytes": 4824,
+      "sha256": "1667c855ad780f9bb7bc43078c3de9f4298499d619560d0e413bf4da4cbdfd56",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "FREEZE.sha256",
+      "repository_path": "evidence/FREEZE.sha256",
+      "bytes": 2376,
+      "sha256": "eb6eaf85d196b58f7f314b20ec8a37bd14894bd0918a67a1ec853ab5be656f0d",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "RESULT-EVIDENCE.sha256",
+      "repository_path": "evidence/RESULT-EVIDENCE.sha256",
+      "bytes": 530,
+      "sha256": "1e64082281a2c06d4aec6fde373e98d168d46a50f31536497e8c3ce7222e7282",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "baseline/MANIFEST.sha256",
+      "repository_path": "evidence/baseline/MANIFEST.sha256",
+      "bytes": 1292,
+      "sha256": "252a71bddeef520150f9f28ee1eecd9a01d567491eee906e95bbf3994a9e76e0",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "runs/base-video/architecture.md",
+      "repository_path": "evidence/runs/base-video/architecture.md",
+      "bytes": 17630,
+      "sha256": "b8f7f2d56ac4c89a3a9df6e5b47277bff8b54371fd1e1f0dbbd45a2d2e013dc6",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "runs/base-video/execution.md",
+      "repository_path": "evidence/runs/base-video/execution.md",
+      "bytes": 1487,
+      "sha256": "47e084cdcfacec9f41d6a0fbfcfdecb3284ad6067cc33710ff22013ae3ee961b",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "evaluation/run-a.md",
+      "repository_path": "evidence/evaluation/run-a.md",
+      "bytes": 8733,
+      "sha256": "768329a0354174291566cb09f11c9651b6eb3147f07ebb7366559e3918f75a85",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/PRE-RUN.md",
+      "repository_path": "evidence/freeze-v1/PRE-RUN.md",
+      "bytes": 1870,
+      "sha256": "a5535acfd0a5aa60d46ea62f057ffaa6b569a96cad86d93e68448df68c843e47",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/TEST-PLAN.md",
+      "repository_path": "evidence/freeze-v1/TEST-PLAN.md",
+      "bytes": 4042,
+      "sha256": "0a90e5c30ac7c0cb1d11c69e796ec2e5e96b776d0c47d4c1881f4b5ff9deebda",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/evaluation/video-reference.md",
+      "repository_path": "evidence/freeze-v1/evaluation/video-reference.md",
+      "bytes": 10621,
+      "sha256": "233a487c03812a103477c6d8c6c8a7a984501aef716257ce04b102e59c82d8b7",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/evaluation/RUBRIC.md",
+      "repository_path": "evidence/freeze-v1/evaluation/RUBRIC.md",
+      "bytes": 6680,
+      "sha256": "043ee998149c4d4e34f28086b773174fc9c4c03d6f7a896570adc214c57428f9",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/cases/COMMON-HANDOFF.md",
+      "repository_path": "evidence/freeze-v1/cases/COMMON-HANDOFF.md",
+      "bytes": 1040,
+      "sha256": "7df602ca3481e50ae5245ea443502283916eecc4fde5ec43137752ea79ee9aee",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/cases/03-library-transfer.md",
+      "repository_path": "evidence/freeze-v1/cases/03-library-transfer.md",
+      "bytes": 1280,
+      "sha256": "3e0ae77e391279da78a3b4aa5bc23d73a927b5512a44caa5d9a68c4c6d1d952e",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/cases/02-pure-function.md",
+      "repository_path": "evidence/freeze-v1/cases/02-pure-function.md",
+      "bytes": 840,
+      "sha256": "d967959e518e5661584556e17b79db68b4961b7f77bc73f73fcf9601072f5489",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "freeze-v1/cases/01-video-task.md",
+      "repository_path": "evidence/freeze-v1/cases/01-video-task.md",
+      "bytes": 4718,
+      "sha256": "c6311f0321ce9c95cd037ba0527408627d91d63f28dfdcd18392a608b14cd2ab",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "deliverables/01-objects-and-roles.svg",
+      "repository_path": "evidence/deliverables/01-objects-and-roles.svg",
+      "bytes": 8532,
+      "sha256": "4569c8d4425107736b3ad22ec8bcdf71f49353786c81722ad5a60cb363fab1f3",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "deliverables/02-conceptual-paths.svg",
+      "repository_path": "evidence/deliverables/02-conceptual-paths.svg",
+      "bytes": 6481,
+      "sha256": "d97970ee3eac385c2dcfcb144cb9b57f012300242424fc2a635caef09b630e09",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "deliverables/generate_views.py",
+      "repository_path": "evidence/deliverables/generate_views.py",
+      "bytes": 7711,
+      "sha256": "c77f15fe2bcec0bdab90f14f64eb3d39f32b809f12e619182234c9e80b49c65c",
+      "status": "EXACT_BYTES_VERIFIED"
+    },
+    {
+      "source_path": "deliverables/render-validation.md",
+      "repository_path": "evidence/deliverables/render-validation.md",
+      "bytes": 1459,
+      "sha256": "6937b862e07504a5bd367910f127be177adb7abc23401e56473967503b033e5c",
+      "status": "EXACT_BYTES_VERIFIED"
+    }
+  ],
+  "baseline_manifest_checks": [
+    {
+      "source_path": "skills/ff-architecture-derive/SKILL.md",
+      "sha256": "4f04b604146252e64deee599024eee0a91d9e5cbaa2c92bb7f83a129d334756a",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-architecture-derive/references/architecture-derivation.md",
+      "sha256": "e80b9be07409d5e60c253ce3a1b4e1a74a75024e52907baa7de5a5840c5758a9",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-architecture-review/SKILL.md",
+      "sha256": "856c71fd129c0727466e93c28211799a6cf6f5874309a58e387f8505653a469c",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-architecture-review/references/scenario-review.md",
+      "sha256": "8479ad6c799cb32de858a27a0c2dc6b9a13d89360b1b59e435fc61be7b612000",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-prove/SKILL.md",
+      "sha256": "43460ab1af5bcf2f4110876b63011bea334eeee4b6a32e98b9a509d1302f2083",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-prove/references/design.md",
+      "sha256": "9242fe97a859b0e36da4906c203b1a28299b08b93e97abf168de384032de7184",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-tdd/SKILL.md",
+      "sha256": "5146cf37a39297d7670da8a3dd2885101867795ca5d2f04a49972fe88b56c25a",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-tdd/references/test-loop.md",
+      "sha256": "36abd2b9f0bb820bb83cfbae323637c3bfd869db453dfa3ee39d8cf5a0e020fd",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-tdd/references/spec-lifecycle.md",
+      "sha256": "e6a7441d32e30a03e4c3946b96acb262eb5bb0de5b4d78e80c8a746c2ab020dc",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-tdd/references/use-feedback.md",
+      "sha256": "38d0598fc17ac7508609bfe43c24e9fff25309410b730fb94486e101d4737c90",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-prove/references/spec-lifecycle.md",
+      "sha256": "e6a7441d32e30a03e4c3946b96acb262eb5bb0de5b4d78e80c8a746c2ab020dc",
+      "status": "MATCHES_GIT_BASELINE"
+    },
+    {
+      "source_path": "skills/ff-prove/references/intent-loop.md",
+      "sha256": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9",
+      "status": "MATCHES_GIT_BASELINE"
+    }
+  ],
+  "source_manifest_coverage": {
+    "FREEZE.sha256": [
+      {
+        "source_path": "baseline/MANIFEST.sha256",
+        "sha256": "252a71bddeef520150f9f28ee1eecd9a01d567491eee906e95bbf3994a9e76e0",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "baseline/skills/ff-architecture-derive/SKILL.md",
+        "sha256": "4f04b604146252e64deee599024eee0a91d9e5cbaa2c92bb7f83a129d334756a",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-architecture-derive/references/architecture-derivation.md",
+        "sha256": "e80b9be07409d5e60c253ce3a1b4e1a74a75024e52907baa7de5a5840c5758a9",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-architecture-review/SKILL.md",
+        "sha256": "856c71fd129c0727466e93c28211799a6cf6f5874309a58e387f8505653a469c",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-architecture-review/references/scenario-review.md",
+        "sha256": "8479ad6c799cb32de858a27a0c2dc6b9a13d89360b1b59e435fc61be7b612000",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-prove/SKILL.md",
+        "sha256": "43460ab1af5bcf2f4110876b63011bea334eeee4b6a32e98b9a509d1302f2083",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-prove/references/design.md",
+        "sha256": "9242fe97a859b0e36da4906c203b1a28299b08b93e97abf168de384032de7184",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-prove/references/intent-loop.md",
+        "sha256": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-prove/references/spec-lifecycle.md",
+        "sha256": "e6a7441d32e30a03e4c3946b96acb262eb5bb0de5b4d78e80c8a746c2ab020dc",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-tdd/SKILL.md",
+        "sha256": "5146cf37a39297d7670da8a3dd2885101867795ca5d2f04a49972fe88b56c25a",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-tdd/references/spec-lifecycle.md",
+        "sha256": "e6a7441d32e30a03e4c3946b96acb262eb5bb0de5b4d78e80c8a746c2ab020dc",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-tdd/references/test-loop.md",
+        "sha256": "36abd2b9f0bb820bb83cfbae323637c3bfd869db453dfa3ee39d8cf5a0e020fd",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "baseline/skills/ff-tdd/references/use-feedback.md",
+        "sha256": "38d0598fc17ac7508609bfe43c24e9fff25309410b730fb94486e101d4737c90",
+        "status": "VERIFIED_GIT_BASELINE_NOT_DUPLICATED"
+      },
+      {
+        "source_path": "freeze-v1/PRE-RUN.md",
+        "sha256": "a5535acfd0a5aa60d46ea62f057ffaa6b569a96cad86d93e68448df68c843e47",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/TEST-PLAN.md",
+        "sha256": "0a90e5c30ac7c0cb1d11c69e796ec2e5e96b776d0c47d4c1881f4b5ff9deebda",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/cases/01-video-task.md",
+        "sha256": "c6311f0321ce9c95cd037ba0527408627d91d63f28dfdcd18392a608b14cd2ab",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/cases/02-pure-function.md",
+        "sha256": "d967959e518e5661584556e17b79db68b4961b7f77bc73f73fcf9601072f5489",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/cases/03-library-transfer.md",
+        "sha256": "3e0ae77e391279da78a3b4aa5bc23d73a927b5512a44caa5d9a68c4c6d1d952e",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/cases/COMMON-HANDOFF.md",
+        "sha256": "7df602ca3481e50ae5245ea443502283916eecc4fde5ec43137752ea79ee9aee",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/evaluation/RUBRIC.md",
+        "sha256": "043ee998149c4d4e34f28086b773174fc9c4c03d6f7a896570adc214c57428f9",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "freeze-v1/evaluation/video-reference.md",
+        "sha256": "233a487c03812a103477c6d8c6c8a7a984501aef716257ce04b102e59c82d8b7",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "source-transfer/VERIFICATION.json",
+        "sha256": "539cbd1bab0972a7e1b907cd98f49f12345d0b769bf3054483610071c61b0b00",
+        "status": "NOT_INCLUDED_NOT_VERIFIED"
+      }
+    ],
+    "RESULT-EVIDENCE.sha256": [
+      {
+        "source_path": "FREEZE.sha256",
+        "sha256": "eb6eaf85d196b58f7f314b20ec8a37bd14894bd0918a67a1ec853ab5be656f0d",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "baseline/MANIFEST.sha256",
+        "sha256": "252a71bddeef520150f9f28ee1eecd9a01d567491eee906e95bbf3994a9e76e0",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "runs/base-video/architecture.md",
+        "sha256": "b8f7f2d56ac4c89a3a9df6e5b47277bff8b54371fd1e1f0dbbd45a2d2e013dc6",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "runs/base-video/execution.md",
+        "sha256": "47e084cdcfacec9f41d6a0fbfcfdecb3284ad6067cc33710ff22013ae3ee961b",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "evaluation/run-a.md",
+        "sha256": "768329a0354174291566cb09f11c9651b6eb3147f07ebb7366559e3918f75a85",
+        "status": "VERIFIED_IMPORTED_FILE"
+      },
+      {
+        "source_path": "RUN-RESULT.md",
+        "sha256": "1667c855ad780f9bb7bc43078c3de9f4298499d619560d0e413bf4da4cbdfd56",
+        "status": "VERIFIED_IMPORTED_FILE"
+      }
+    ]
+  },
+  "local_actions": {
+    "payload_executed": false,
+    "model_tests_rerun": false,
+    "rendering_rerun": false,
+    "skill_source_changed": false,
+    "installation_updated": false
+  },
+  "limits": [
+    "PNG excluded from this text transfer; cloud render-validation is preserved, not re-executed.",
+    "source-transfer/VERIFICATION.json not included and not independently verified.",
+    "baseline/skills is not duplicated; all 12 manifest entries checked against baseline Git objects.",
+    "Original reports remain unchanged, including historical cloud-only permissions and no-commit statements."
+  ]
+}
