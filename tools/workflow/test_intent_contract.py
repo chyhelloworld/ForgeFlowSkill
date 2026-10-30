@@ -17,6 +17,20 @@ class IntentDistributionTests(unittest.TestCase):
                 self.assertEqual(source, (folder / 'references/intent-loop.md').read_bytes())
                 self.assertIn('(references/intent-loop.md)', (folder / 'SKILL.md').read_text(encoding='utf-8'))
 
+    def test_reporting_rule_is_in_every_independent_skill_entry(self):
+        # Distribution only: matching prose is not proof of model behavior.
+        source = (ROOT / 'docs/maintainers/INTENT-LOOP.md').read_text(encoding='utf-8')
+        heading = '## 具体汇报\n\n'
+        self.assertTrue(heading in source, 'shared source lacks the concrete-reporting section')
+        rule = source.split(heading, 1)[1].split('\n\n', 1)[0]
+        folders = sorted((ROOT / 'skills').iterdir())
+        self.assertEqual(len(folders), 19)
+        for folder in folders:
+            with self.subTest(skill=folder.name):
+                entry = (folder / 'SKILL.md').read_text(encoding='utf-8')
+                self.assertEqual(entry.count(heading), 1)
+                self.assertEqual(entry.split(heading, 1)[1].split('\n\n', 1)[0], rule)
+
     def test_feedback_is_available_at_completion_interruption_and_retro(self):
         source = (ROOT / 'docs/maintainers/USE-FEEDBACK.md').read_bytes()
         for role in ('deliver', 'handoff', 'retro', 'diagnose', 'tdd', 'research', 'writing-fragments', 'writing-shape', 'writing-beats'):

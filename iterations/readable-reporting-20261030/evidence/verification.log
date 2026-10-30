@@ -1,0 +1,198 @@
+# Environment: Linux, Python 3.12.14, Node v24.22.1.
+# Normalization: checkout absolute prefix replaced with <repo>; command output otherwise unchanged.
+
+$ python tools/installer/pack-release.py
+EXIT_CODE=0
+
+$ python tools/workflow/test_intent_contract.py
+test_example_relations_resolve_without_copying_state (__main__.IntentDistributionTests.test_example_relations_resolve_without_copying_state) ... ok
+test_feedback_is_available_at_completion_interruption_and_retro (__main__.IntentDistributionTests.test_feedback_is_available_at_completion_interruption_and_retro) ... ok
+test_independently_installed_contracts_are_identical (__main__.IntentDistributionTests.test_independently_installed_contracts_are_identical) ... ok
+test_reporting_rule_is_in_every_independent_skill_entry (__main__.IntentDistributionTests.test_reporting_rule_is_in_every_independent_skill_entry) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK
+EXIT_CODE=0
+
+$ python tools/workflow/test_intent_view.py
+test_conflicting_and_malformed_states_are_unknown (__main__.IntentViewTests.test_conflicting_and_malformed_states_are_unknown) ... ok
+test_done_never_means_requirement_accepted (__main__.IntentViewTests.test_done_never_means_requirement_accepted) ... ok
+test_existing_markdown_contract_example_is_supported (__main__.IntentViewTests.test_existing_markdown_contract_example_is_supported) ... ok
+test_inline_status_is_not_authority (__main__.IntentViewTests.test_inline_status_is_not_authority) ... ok
+test_invalid_index_formats_fail_clearly (__main__.IntentViewTests.test_invalid_index_formats_fail_clearly) ... ok
+test_known_record_must_not_hide_unknown_assignment (__main__.IntentViewTests.test_known_record_must_not_hide_unknown_assignment) ... ok
+test_missing_and_ambiguous_anchor (__main__.IntentViewTests.test_missing_and_ambiguous_anchor) ... ok
+test_missing_broken_and_dangling_are_visible (__main__.IntentViewTests.test_missing_broken_and_dangling_are_visible) ... ok
+test_multiple_relations_and_exact_requirement_filter (__main__.IntentViewTests.test_multiple_relations_and_exact_requirement_filter) ... ok
+test_no_result_can_be_inferred_from_unrelated_section (__main__.IntentViewTests.test_no_result_can_be_inferred_from_unrelated_section) ... ok
+test_pass_is_only_reported_not_freshness_or_acceptance (__main__.IntentViewTests.test_pass_is_only_reported_not_freshness_or_acceptance) ... ok
+test_reader_rejects_escape_binary_and_oversize (__main__.IntentViewTests.test_reader_rejects_escape_binary_and_oversize) ... ok
+test_reader_rejects_real_symlink_when_available (__main__.IntentViewTests.test_reader_rejects_real_symlink_when_available) ... ok
+test_real_cli_json_text_errors_and_no_input_writes (__main__.IntentViewTests.test_real_cli_json_text_errors_and_no_input_writes) ... ok
+test_typed_relations_and_refs_validated (__main__.IntentViewTests.test_typed_relations_and_refs_validated) ... ok
+test_unmapped_objects_and_missing_edges_survive_filter (__main__.IntentViewTests.test_unmapped_objects_and_missing_edges_survive_filter) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.114s
+
+OK
+EXIT_CODE=0
+
+$ python tools/validate_package.py .
+{
+  "kind": "static-package-validation",
+  "checks": {
+    "skills": 19,
+    "local_links": 135,
+    "source_hashes": 25,
+    "manifest_files": 1330,
+    "scenarios": 38
+  },
+  "errors": [],
+  "passed": true,
+  "limits": "Not a behavioral test, installer, license clearance or T3 integration test."
+}
+EXIT_CODE=0
+
+$ python tools/test_validate_package.py .
+{
+  "kind": "static-validator-mutation-tests",
+  "passed": true,
+  "cases": [
+    {
+      "case": "valid_package",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "case": "missing_optional",
+      "passed": true,
+      "detected": [
+        "expected twelve baseline plus seven optional skills",
+        "unknown scenario skill: E21"
+      ]
+    },
+    {
+      "case": "missing_optional_scenario",
+      "passed": true,
+      "detected": [
+        "missing required workflow or method scenarios"
+      ]
+    },
+    {
+      "case": "missing_method",
+      "passed": true,
+      "detected": [
+        "expected twelve baseline plus seven optional skills",
+        "unknown scenario skill: E17",
+        "unknown scenario skill: E18",
+        "unknown scenario skill: E20",
+        "unknown scenario skill: E32"
+      ]
+    },
+    {
+      "case": "wrong_version",
+      "passed": true,
+      "detected": [
+        "ff-tdd: expected version 0.9.6-derivation.4"
+      ]
+    },
+    {
+      "case": "broken_reference",
+      "passed": true,
+      "detected": [
+        "/tmp/ff-static-negative-r_3qb6sw/package/skills/ff-diagnose/SKILL.md: broken link references/missing.md"
+      ]
+    },
+    {
+      "case": "missing_license",
+      "passed": true,
+      "detected": [
+        "ff-handoff: missing license"
+      ]
+    },
+    {
+      "case": "missing_replay",
+      "passed": true,
+      "detected": [
+        "missing required workflow or method scenarios"
+      ]
+    },
+    {
+      "case": "changed_source",
+      "passed": true,
+      "detected": [
+        "source changed: /tmp/ff-static-negative-40jlckqg/package/provenance/matt/engineering/tdd/tests.md"
+      ]
+    },
+    {
+      "case": "unknown_scenario_skill",
+      "passed": true,
+      "detected": [
+        "unknown scenario skill: E38"
+      ]
+    },
+    {
+      "case": "hash_tamper",
+      "passed": true,
+      "detected": [
+        "manifest mismatch: skills/ff-tdd/NOTICE.md"
+      ]
+    }
+  ],
+  "limits": "Not model behavior, native integration, product testing or user acceptance."
+}
+EXIT_CODE=0
+
+$ node --test --test-concurrency=1 --test-reporter=spec tools/installer/tests/install.test.mjs tools/installer/tests/dual-host.test.mjs tools/installer/tests/architecture-review.test.mjs tools/installer/tests/payload.test.mjs tools/installer/tests/npx-cleanup.test.mjs
+✔ legacy 17/18 and current 19 complete inventories remain readable (11.673419ms)
+✔ missing baseline, renamed skill and mixed-host inventory are rejected (4.670768ms)
+✔ both host payloads include independent entries and exactly one derivation template (78.455041ms)
+✔ isolated skills-only install and reentry preserve optional entry on both hosts (416.360022ms)
+✔ explicit dual install and reentry share one release and preserve exact state (397.804067ms)
+✔ schema 1 migrates to dual, rollback restores old state and schema 2 re-add works (1339.788263ms)
+✔ remove one host preserves other bytes/mtime, user extras and shared runtime; rollback restores both (974.214092ms)
+✔ new host conflicts and edits in either host block mutations without overwriting (707.355797ms)
+✔ current runtime tampering blocks upgrade, remove and rollback (434.800272ms)
+✔ write and state failures restore all old bytes and remove only attempted new entries (613.52462ms)
+✔ actual child exit leaves pending; recovery conflicts preserve diagnostics until repaired (500.413061ms)
+✔ exit after state commit verifies COMMITTED and refuses altered committed state or files (483.147105ms)
+✔ actual removal child exits recover before deletion commit and confirm after state commit (1029.83582ms)
+✔ transient pending cleanup failure confirms committed state instead of claiming rollback (318.519174ms)
+✔ schema 2 rejects undeclared hosts, missing skill/helper entries and malformed host sets (209.212129ms)
+✔ command grammar rejects ambiguous/destructive combinations before touching a project (0.528907ms)
+✔ installed doctor argument protocol and skills-only errors stay explicit (161.888892ms)
+✔ older journals without state hashes remain recoverable with backup state verification (865.33456ms)
+✔ cold install: Chinese/space path, 19 skills, binding, honest blocked runtime (353.341601ms)
+✔ Claude install and same-version reentry leave exact state unchanged (205.74369ms)
+✔ unmanaged conflict blocks without overwriting (65.189717ms)
+✔ user edit prevents same-version reinstall and rollback (196.590168ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (550.225812ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (440.285419ms)
+✔ state commit failure restores previous state and bytes (378.114645ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (212.460636ms)
+✔ tampered source, runtime, and unsafe state are blocked (321.246252ms)
+✔ project move remains bound locally and official openspec never invoked (258.804649ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (76.165857ms)
+✔ path and local-home isolation checks (151.660092ms)
+✔ rollback refuses a modified inactive runtime release (419.573799ms)
+✔ Python skill caches are not install payload; installed health helper is executable (268.573715ms)
+✔ npx bootstrap removes its Unicode temporary source after success, reentry and installer failure (941.809764ms)
+✔ strict decoder accepts complete manifest payload (107.557056ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (2.545978ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (1.747528ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (0.861605ms)
+ℹ tests 37
+ℹ suites 0
+ℹ pass 37
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 13922.488174
+EXIT_CODE=0
+
+$ git diff --check
+EXIT_CODE=0

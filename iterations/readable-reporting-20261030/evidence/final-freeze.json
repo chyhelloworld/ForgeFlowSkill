@@ -1,0 +1,53 @@
+{
+  "kind": "final-candidate-binding",
+  "baseline_commit": "ab2ca09305e0a0f5f33a25511a08823d85afef72",
+  "changed_from_first_candidate": "Only the common reporting sentence added explicit permission-boundary preservation, synchronized across shared source, 10 references and 19 entries. No model output was edited.",
+  "behavior_coverage": "Only C6 was rerun in a fresh generator context after this sentence change. C1-C5 were not rerun.",
+  "rules_and_tests": {
+    "docs/maintainers/INTENT-LOOP.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-architecture-derive/SKILL.md": "8edd71019a9b24d67eac134a95f631e2ae607868436580475f6b3ec7c72bf24b",
+    "skills/ff-architecture-review/SKILL.md": "d9967023f4104548fe79deb43f68ff0591a8386130d6032e17d00bd220ae331a",
+    "skills/ff-deliver/SKILL.md": "3a188cf61476a573871cd23edae19b7a0bab0d3b6469f7ff4c4d5a3009046037",
+    "skills/ff-deliver/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-design/SKILL.md": "0f56637865c123f3f7ea6acd4119540c99986c326af50ef69952344c6922a3c8",
+    "skills/ff-design/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-diagnose/SKILL.md": "1d285e06f66227ac1b0ee42c7af946f4752d1f44066fa2f025355cccebe7205e",
+    "skills/ff-grill/SKILL.md": "240e21bfca3936c1fdca9451fd439740abaef614a2020d2f47edaf625ca66ceb",
+    "skills/ff-grill/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-handoff/SKILL.md": "06f5b4bb7bcc42c95b6e85a080cd70f7bf146ebe7f1da8cb45583817210cc1df",
+    "skills/ff-handoff/references/checkpoint.md": "040b3a923004fbabaaf36e7ea553449008b5e89cc0e5b1eab7ee5e4724534bb1",
+    "skills/ff-handoff/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-implement/SKILL.md": "903c8425ec746c8847d401ff43188659cfa2e7b71af2bfa939a6360094da65dc",
+    "skills/ff-implement/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-intake/SKILL.md": "3e5f0fcb90eea568cce5e83dace25ad92deff934ec0810c49894819a6280a162",
+    "skills/ff-intake/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-plan/SKILL.md": "64363616c16241c7a00e4c0968c21b7b8adf1d7ad1cc5b7c1be60518619d7872",
+    "skills/ff-plan/references/full-workflow.md": "c69e3b6073355150ea476f4957b181abde353adaabb918a17cc5ad597b790777",
+    "skills/ff-plan/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-plan/references/slicing.md": "9e55c741e6265525960c2bdcc340ea6414ac15535704fb94ea844f62ba896cb6",
+    "skills/ff-prove/SKILL.md": "c8f78231d3be4c609d1a88eb3b7ec611741e371fab549576f876aaac2243f920",
+    "skills/ff-prove/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-research/SKILL.md": "dc010645d0b95462b6f5181fed7de9f7eb356feb6c2aefbdc0830845851a05ef",
+    "skills/ff-retro/SKILL.md": "6d43ee4ae56e57893add519a43eb25292dbfc90d7a15ed8154b4203598c6cd2b",
+    "skills/ff-review/SKILL.md": "c3b1b1d0fd457f2e7d64ef0ef1511845cb2c81d7bfbf35e8562e3078637b8387",
+    "skills/ff-review/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-spec/SKILL.md": "b6c34eb3ef494637439e80fb93b43cfea0b1d939c1ca7327869b83ee0ad49f8f",
+    "skills/ff-spec/references/intent-loop.md": "1c21f70eaf6b102d10ea853d9d5a75d07f6b215193366db0bceac2fe3a87c7ce",
+    "skills/ff-tdd/SKILL.md": "b9b13adb5c489ce2883d789a1b97022b5a4d8ba1df83edcf2bbdcc68c3fe0d93",
+    "skills/ff-writing-beats/SKILL.md": "b1ef48f46f910c11bc110ade7d59ffe3d7e23c7225aca3a6be9a0cf324fbfe81",
+    "skills/ff-writing-fragments/SKILL.md": "4d1075e1d6779eb8f82dbb5bc825ab56649521295958b14925defc82b3305c86",
+    "skills/ff-writing-shape/SKILL.md": "b523c8d7e1f8e0de2d43a165ded695efc8a07a3bea6f4e8d4c1984d8413a04fc",
+    "tools/installer/tests/dual-host.test.mjs": "54433751fa77cbc84f720c6b5e258e40874406c2522b809ba23d041a0970d904",
+    "tools/installer/tests/payload.test.mjs": "a2677cbc67405c151937086343840eddbda6428648961c1e5b66d4fe68317d01",
+    "tools/workflow/test_intent_contract.py": "fb16efa9f851ace6c7de5ddea713bd8e8e6a7694d450d05a85b9fe61a94e4ad8"
+  },
+  "inputs": {
+    "cases.json": "7d1c2b58d4397ed29424d3bf5f2b9e82a84b65cc550b082d2024bc57373c7355",
+    "reader-questions.json": "51e4dbf0325d1a009e53ba9cac02f9acc85c3cf3b4ae3e4b1c9109ab15767633"
+  },
+  "followup_output": {
+    "candidate-C6-followup.md": "f42e2fa9d366908746cdc820cb6d585ad30f4ee3f2ec90d18d9bd34c691ef451"
+  },
+  "generation": "Fresh child; only ff-research/SKILL.md and C6 read; no INTENT-LOOP, rubric, prior outputs or defect hint",
+  "limits": "Synthetic records, not real project operations; reader knows baseline and first candidate; no cross-model or repeated sampling."
+}

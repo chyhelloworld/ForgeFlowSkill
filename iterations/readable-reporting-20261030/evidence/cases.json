@@ -1,0 +1,74 @@
+{
+  "kind": "simulated-context-behavior",
+  "fixture_notice": "以下业务修改、测试与审查结果均为合成材料，不是本仓库实际执行结果；路径已在基线仓库核实存在。仅用于生成给场景用户的回答，不运行场景命令、不声称对真实产品验收。",
+  "cases": [
+    {
+      "id": "C1",
+      "skills": [
+        "ff-plan"
+      ],
+      "references": [
+        "skills/ff-plan/references/slicing.md",
+        "skills/ff-plan/references/full-workflow.md"
+      ],
+      "prompt": "用户：摘要太长了，改成最多120个字符，保留省略号。先给我精炼的实施计划，不要开始改。已确认这是低风险局部改动。已核实定位：tools/workflow/intent_view.py 的 preview(text) 负责摘要，当前先压缩空白，超过180字符取前177字符加...；tools/workflow/test_intent_view.py 是现有测试文件；docs/intent-view.md 是使用说明。目标是保留原处理顺序，截断后的总长度不超过120；不改变索引或接受状态。没有额外依赖或待决定项，当前只授权计划。请给用户本次答复。"
+    },
+    {
+      "id": "C2",
+      "skills": [
+        "ff-implement",
+        "ff-tdd",
+        "ff-review",
+        "ff-deliver"
+      ],
+      "references": [
+        "skills/ff-tdd/references/test-loop.md",
+        "skills/ff-review/references/review-handoff.md"
+      ],
+      "prompt": "用户：这阶段做完了吗？给我能直接放进项目文档的精炼交付说明，别把长记录全贴出来。合成证据包：本阶段修改了 tools/workflow/intent_view.py 的 preview()，将长摘要阈值从180调整为120，仍先压缩空白；长文本取前117字符加...。tools/workflow/test_intent_view.py 补了120字符边界和长文本截断检查；docs/intent-view.md 更新长度说明。测试记录：长文本用例首次得到180而非120，FAIL；实现修改后同例得到120且以...结尾，PASS；恰好120字符不截断，PASS；原有空白折叠行为仍为单空格，PASS。受影响测试套件77项通过，exit 0。独立读者实际查看了这三份文件差异及这些原始结果，计划覆盖与摘要主流程无阻断发现；代码发现过省略号被计到限长之外的问题，当前117+3已修正，读者复查该函数和边界用例后关闭。未测目标宿主原生安装、真人阅读效果，未发布，用户接受待反馈。CC和覆盖率没有采集，不得声称CRAP通过。目的只是减少摘要长度，不修改验收状态推断逻辑。测试记录只属于本合成场景；没有真实用户对阅读体验反馈，没有token/耗时数据。请给用户本次答复。"
+    },
+    {
+      "id": "C3",
+      "skills": [
+        "ff-deliver",
+        "ff-review"
+      ],
+      "references": [],
+      "prompt": "用户：结果怎样？简短说一下。接手材料只有一句“77项通过”，没有测试名称、命令、日志、退出码、版本、差异、文件路径或审查范围。没有工具可以补查。不要假设其他证据存在。请给用户本次答复。"
+    },
+    {
+      "id": "C4",
+      "skills": [
+        "ff-implement",
+        "ff-prove",
+        "ff-deliver"
+      ],
+      "references": [],
+      "prompt": "用户：先到这里，把现在能用什么、还有什么问题说清楚。合成证据：本阶段在 tools/codegraph/ff_codegraph.py 的路径归一化模块统一斜杠，tools/codegraph/test_ff_codegraph.py 的同一路径正反斜杠查询得到同一条记录，PASS。CodeGraph仍默认关闭，要显式启用；当前不是自动开启。遗留缺陷：同名符号仍可能返回多条结果，尚未修复，也未在真实大型仓库验证。清理旧索引的删除动作被用户拒绝，因此没有执行，旧索引保留；不要再次索取删除授权。可以继续的下一项是只读核对重复记录的来源并给局部修复方案，不能直接删索引、启用功能或声称已收尾全部问题。本次到这里暂停，既有记录已有五维评价，无需重复。请给用户本次答复。"
+    },
+    {
+      "id": "C5",
+      "skills": [
+        "ff-implement"
+      ],
+      "references": [],
+      "prompt": "用户：把说明里的“只读读查看”改成“只读查看”，改完告诉我就行。合成证据：已在 docs/intent-view.md 的使用说明中替换这一处错字；差异核对只有该处变化；未改代码、不影响行为。不需要运行代码测试；没有新增设计、转向或依赖。当前只需结束这次小任务，不创建文件、不再执行命令。请给用户本次答复。"
+    },
+    {
+      "id": "C6",
+      "skills": [
+        "ff-research"
+      ],
+      "references": [],
+      "prompt": "你单独使用ff-research，为用户只读核查现有执行记录；不能运行测试、改代码或代签结论。下面是同一摘要长度任务的四个互不继承状态的停顿情景，每个分别给用户一段短回复。A 阶段完成：仅完成 preview() 的现状核查，定位 tools/workflow/intent_view.py 当前180字符截断，尚未改；下一步要在该函数改120并在 tools/workflow/test_intent_view.py 验证120边界和长文本，不是整个功能已完成。B 受阻：修改已做，但测试启动时缺少Python解释器，没有运行任何用例；当前环境不允许安装。不能以缺依赖当行为失败；需可用Python环境后先运行该测试文件，不能声称已通过。C 等用户决定：目标已明确要更短摘要，尚未选是否保留省略号；这一点会改变边界期望，不实施相关截断改动。只需用户选保留...还是直接截断，其他确认不重复问。D 中途暂停：preview() 改动已写入，测试进程job-42最后观察为running，退出状态未知；暂停前不重跑，不终止进程。接手后先核实该进程，再看测试输出；实际HEAD、dirty清单及来源文档不可访问，保持unknown。所有场景都没有获准发布或删除。请分别给A/B/C/D的用户答复。"
+    }
+  ],
+  "run_order": [
+    "C6",
+    "C1",
+    "C2",
+    "C3",
+    "C4",
+    "C5"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "command": "python validation/scan_privacy.py .",
+  "exit_code": 1,
+  "kind": "pattern-scan-inherited-source-findings",
+  "full_scan_passed": false,
+  "findings": 62,
+  "note": "Source/payload and decoded/raw duplicates are counted; not a distinct-secret count. Matched values are not copied.",
+  "secret_like_pattern_findings": 0,
+  "new_iteration_findings": 0,
+  "baseline_comparison": [
+    {
+      "path": "iterations/0.7/agent-behavior-result.json",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": true,
+      "old_payload_matches_baseline_source": true
+    },
+    {
+      "path": "iterations/0.7/independent-probe.py",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": true,
+      "old_payload_matches_baseline_source": true
+    },
+    {
+      "path": "iterations/trial-fixes-20261020/evidence/independent-recheck.log",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": true,
+      "old_payload_matches_baseline_source": true
+    },
+    {
+      "path": "iterations/video-semantic-baseline-20261027/IMPORT.json",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": false
+    },
+    {
+      "path": "iterations/video-semantic-baseline-20261027/evidence/freeze-v1/PRE-RUN.md",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": false
+    },
+    {
+      "path": "iterations/video-semantic-baseline-20261027/evidence/freeze-v1/evaluation/video-reference.md",
+      "unchanged_source_bytes": true,
+      "already_in_old_payload": false
+    },
+    {
+      "path": "tools/installer/tests/dual-host.test.mjs",
+      "unchanged_source_bytes": false,
+      "already_in_old_payload": true,
+      "old_payload_matches_baseline_source": true,
+      "unchanged_matched_uuid_values": true
+    }
+  ],
+  "decision": "All matched values already existed in pinned baseline source. Some pre-existing source files were absent from the old embedded package and are included now by the existing whole-manifest packer. Historical evidence is not edited. Full scan remains FAIL; no new source pattern match is not proof of no secrets. No external package publication.",
+  "baseline_commit": "ab2ca09305e0a0f5f33a25511a08823d85afef72"
+}

@@ -69,6 +69,12 @@ test('explicit dual install and reentry share one release and preserve exact sta
   assert.equal('host' in state, false);
   for (const host of hostsOf(state)) {
     assert.equal(fs.readdirSync(path.join(p, hostBase(host))).length, 19);
+    const reporting = fs.readFileSync(path.join(source, 'docs/maintainers/INTENT-LOOP.md'), 'utf8')
+      .split('## 具体汇报\n\n')[1].split('\n\n')[0];
+    for (const name of fs.readdirSync(path.join(p, hostBase(host)))) {
+      const entry = fs.readFileSync(path.join(p, hostBase(host), name, 'SKILL.md'), 'utf8');
+      assert.equal(entry.split('## 具体汇报\n\n')[1].split('\n\n')[0], reporting, `${host}/${name}`);
+    }
     assert.match(fs.readFileSync(file(p, host), 'utf8'), new RegExp(`doctor.mjs --host ${host}`));
     assert.match(fs.readFileSync(file(p, host), 'utf8'), new RegExp(state.sourceHash));
     assert.throws(() => main(['doctor', '--project', p, '--host', host]), /skills-only/);

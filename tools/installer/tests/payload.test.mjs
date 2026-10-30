@@ -20,7 +20,10 @@ function valid(extra = []) {
 test('strict decoder accepts complete manifest payload', () => {
  assert.equal(decodePayload(valid()).get('a.txt').toString(),'hello');
  const payload = fs.readFileSync(new URL('../../../forgeflow-payload.tgz',import.meta.url));
- assert.ok(decodePayload(payload).size > 800);
+ const files = decodePayload(payload);
+ assert.ok(files.size > 800);
+ assert.deepEqual(files.get('MANIFEST.json'), fs.readFileSync(new URL('../../../MANIFEST.json', import.meta.url)), 'embedded payload must match current source manifest');
+ assert.equal(sha(payload), fs.readFileSync(new URL('../../../forgeflow-payload.sha256', import.meta.url), 'utf8').trim());
 });
 test('strict decoder rejects traversal, absolute paths, links, special files', () => {
  for(const name of ['../escape','/escape','a/../../escape','a\\escape']) assert.throws(()=>decodePayload(tar([[name,'x']])));

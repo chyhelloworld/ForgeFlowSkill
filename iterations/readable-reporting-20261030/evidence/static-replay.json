@@ -1,0 +1,16 @@
+{
+  "kind": "static-distribution-baseline-replay",
+  "note": "Post-change replay of the new static test against the pinned baseline, not a pre-change TDD run or behavioral red/green. Original model baseline responses remain unchanged.",
+  "baseline": {
+    "tests": 1,
+    "failures": 1,
+    "errors": 0,
+    "reason": "The baseline shared source lacks the concrete-reporting section."
+  },
+  "candidate": {
+    "tests": 1,
+    "failures": 0,
+    "errors": 0
+  },
+  "scope": "Shared paragraph and all 19 independent SKILL.md entries; no model behavior verdict."
+}

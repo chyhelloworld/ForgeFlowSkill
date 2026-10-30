@@ -1,0 +1,39 @@
+{
+  "baseline_commit": "ab2ca09305e0a0f5f33a25511a08823d85afef72",
+  "scenario_kind": "simulated-context-behavior",
+  "order": "baseline-first; untouched first output retained; candidate in fresh context",
+  "files": {
+    "skills/ff-architecture-derive/SKILL.md": "4f04b604146252e64deee599024eee0a91d9e5cbaa2c92bb7f83a129d334756a",
+    "skills/ff-architecture-review/SKILL.md": "856c71fd129c0727466e93c28211799a6cf6f5874309a58e387f8505653a469c",
+    "skills/ff-deliver/SKILL.md": "893ed8ea31bf2dccb65e11a5094a5c6bc8b3b8a06b1e8ca075b49808b0a61db0",
+    "skills/ff-design/SKILL.md": "f64cff93a57a5e7c57a887368576bb00717d5f01ca4a8b4ab1a272d99862933f",
+    "skills/ff-diagnose/SKILL.md": "ae127efbd487feedf1956cfb12e43c01dc5584d30519ae9018ccb5bebc70d2a2",
+    "skills/ff-grill/SKILL.md": "0dc40e7ed915bb031a953489aedcae2e4b1ac2f732cb6dba9c2a82e2849b17cf",
+    "skills/ff-handoff/SKILL.md": "3d412a0a051b24e58c50bf14f82af4f1d888fa0c4c6dfafe767b51639ef305dc",
+    "skills/ff-implement/SKILL.md": "0fcbf9785d20520ed490d16c4fe604a6d6ba3d8eebdbbacd824506670083c2f0",
+    "skills/ff-intake/SKILL.md": "384e859e301ce285f559b9673918c7693a6caf445c09320cb107fdd41e1085cd",
+    "skills/ff-plan/SKILL.md": "7002a5cbfc9cf5a8e355a5f5003f67ba55dbb68d503598f928109d6ec9c5580d",
+    "skills/ff-prove/SKILL.md": "43460ab1af5bcf2f4110876b63011bea334eeee4b6a32e98b9a509d1302f2083",
+    "skills/ff-research/SKILL.md": "f05fcd3f94f0e702cda61f7cf61ac6d6a24175cc9a4437e2c11310762aaaa8ea",
+    "skills/ff-retro/SKILL.md": "1995df78ef48049d3253672058f31e7f4533950709f192ebf7a985d57e526ffd",
+    "skills/ff-review/SKILL.md": "f5801678a598499599c1e5c461b5b1c81d5232ea4f036a53b1dd39f851143b59",
+    "skills/ff-spec/SKILL.md": "59a4e500bb668ef167514e5e9cc3ecb17c3175d94e93ff79ab9fb3cb190bd3e0",
+    "skills/ff-tdd/SKILL.md": "5146cf37a39297d7670da8a3dd2885101867795ca5d2f04a49972fe88b56c25a",
+    "skills/ff-writing-beats/SKILL.md": "990b569349ceb58fc483a447a183afef7ce0440df7879872fb6b1736e7cc8aa2",
+    "skills/ff-writing-fragments/SKILL.md": "53f2172d1798070658f252fecc48c97b9cad286498db25d2aefbc5f7734a656a",
+    "skills/ff-writing-shape/SKILL.md": "5cc49ce5af883f776fdff3d891c1b90f16c4958d35000033f12ec4528e2a13b9",
+    "docs/maintainers/INTENT-LOOP.md": "c505e7dd5445c3b9f2d6f32488265f41254f63fa8155b7f84ecd017ba1dd54c9",
+    "skills/ff-plan/references/slicing.md": "dafe5b4c71ae07acf7e9f7593e6a65a23cb2cf0576bab890b18cca00820ba546",
+    "skills/ff-plan/references/full-workflow.md": "589727311ef56ad420ea7120656ff3c7665c329152051cd38aaf87bdc1f84ee6",
+    "skills/ff-handoff/references/checkpoint.md": "1363bfda3f600d5323e9924872aa5df6ecbdf75670a369952d929a7d382f83a2"
+  },
+  "inputs": {
+    "cases.json": "7d1c2b58d4397ed29424d3bf5f2b9e82a84b65cc550b082d2024bc57373c7355",
+    "reader-questions.json": "51e4dbf0325d1a009e53ba9cac02f9acc85c3cf3b4ae3e4b1c9109ab15767633"
+  },
+  "entry_isolation": "C6 must be generated first after reading only ff-research/SKILL.md; no INTENT-LOOP or other skills loaded until its output is saved.",
+  "baseline_outputs": {
+    "baseline-C6.md": "b86a55c9f05257842b187351f06cc39ea4a746efd5af385fbd19d6e0513ae44d",
+    "baseline-responses.md": "78ceafeaa72ff1a079093fb084b2c4910d2747ced8a04eccf8222ce5d34e2a74"
+  }
+}

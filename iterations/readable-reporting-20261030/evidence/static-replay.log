@@ -1,0 +1,26 @@
+# Normalization: checkout absolute prefix replaced with <repo>; test output otherwise unchanged.
+baseline commit: ab2ca09305e0a0f5f33a25511a08823d85afef72
+candidate test SHA256: fb16efa9f851ace6c7de5ddea713bd8e8e6a7694d450d05a85b9fe61a94e4ad8
+BASELINE: expected structural failure, replayed after the change
+test_reporting_rule_is_in_every_independent_skill_entry (contract.IntentDistributionTests.test_reporting_rule_is_in_every_independent_skill_entry) ... FAIL
+
+======================================================================
+FAIL: test_reporting_rule_is_in_every_independent_skill_entry (contract.IntentDistributionTests.test_reporting_rule_is_in_every_independent_skill_entry)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<repo>/tools/workflow/test_intent_contract.py", line 24, in test_reporting_rule_is_in_every_independent_skill_entry
+    self.assertTrue(heading in source, 'shared source lacks the concrete-reporting section')
+AssertionError: False is not true : shared source lacks the concrete-reporting section
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+FAILED (failures=1)
+CANDIDATE: current working-tree rule distribution
+test_reporting_rule_is_in_every_independent_skill_entry (contract.IntentDistributionTests.test_reporting_rule_is_in_every_independent_skill_entry) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.001s
+
+OK
+Replay matched expectations; no behavioral improvement claim.

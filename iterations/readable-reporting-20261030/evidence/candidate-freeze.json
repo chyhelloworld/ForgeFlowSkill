@@ -1,0 +1,51 @@
+{
+  "kind": "simulated-context-candidate-binding",
+  "generation": "candidate-first-output",
+  "baseline_commit": "ab2ca09305e0a0f5f33a25511a08823d85afef72",
+  "generator_context": "fresh child; C6 first with ff-research only, then C1-C5 sequentially; not per-case isolation",
+  "model": "not exposed by collaboration result; inherited default",
+  "reader": "separate child from generators/implementer; has seen baseline, not blind",
+  "rules": {
+    "docs/maintainers/INTENT-LOOP.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-architecture-derive/SKILL.md": "017109c5969434ea0d2127d4b1b65bff7e72eed3bc44471b144b6be54f2b0319",
+    "skills/ff-architecture-review/SKILL.md": "13d60f9675af41b217764a8c6c7657e67c8d8dc99a49e033a0633340cd24b8b0",
+    "skills/ff-deliver/SKILL.md": "259e30b0428c40815572f2900f154c6e3efac61b673446d889e9602f657d110c",
+    "skills/ff-deliver/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-design/SKILL.md": "4fda000ffd064842fe5addd02758b00b686e8aea62ac927318186055c29f78c8",
+    "skills/ff-design/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-diagnose/SKILL.md": "9f3c88861503fffc715fde117e21a9e9322519d5761f26fec3ffb91a21126ef4",
+    "skills/ff-grill/SKILL.md": "20c8fbf105767f68469f1abbde67dcd9fc640c8052ea652c93088c3eee48e0cb",
+    "skills/ff-grill/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-handoff/SKILL.md": "a1f511c5b7425d4bb8c8b3e004412e885a24352b1625ac1b79d1650429d34dca",
+    "skills/ff-handoff/references/checkpoint.md": "040b3a923004fbabaaf36e7ea553449008b5e89cc0e5b1eab7ee5e4724534bb1",
+    "skills/ff-handoff/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-implement/SKILL.md": "2d5c32ecff341526ee51ab9fa2b25281c3a855f0f2ffab4b9bcb3774fa2e73d2",
+    "skills/ff-implement/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-intake/SKILL.md": "a857abc6e1d2ce230023e9a7f1a670031f49c888cedbdd93fcf8b9a5ae98f949",
+    "skills/ff-intake/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-plan/SKILL.md": "2acb57c6ecdf907dfd47eab81e8718da464ee1dfb555dd5414af9b8335867c67",
+    "skills/ff-plan/references/full-workflow.md": "c69e3b6073355150ea476f4957b181abde353adaabb918a17cc5ad597b790777",
+    "skills/ff-plan/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-plan/references/slicing.md": "9e55c741e6265525960c2bdcc340ea6414ac15535704fb94ea844f62ba896cb6",
+    "skills/ff-prove/SKILL.md": "7194428b4c628410da4faefb8129e2f2b892746fa16659f5cf713fe337ba56c2",
+    "skills/ff-prove/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-research/SKILL.md": "03f30d9c3524085eed7f02942ee368779739a6b9fd64f3712313b6666c8bc8d9",
+    "skills/ff-retro/SKILL.md": "8f2976d1456ac932d1c8a18486c5b42eb55df4fd5d2294e95d4d8eb6e012fb4f",
+    "skills/ff-review/SKILL.md": "122ff808e16bf0875e01cdc418a8ba6b7d3385b564df4549d3e40f6cb7da534d",
+    "skills/ff-review/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-spec/SKILL.md": "2493dbaa300b6792e4859939871762a1d7013b4588067e586f5cb1456c14fc73",
+    "skills/ff-spec/references/intent-loop.md": "8b0bb58725b72807a7a92c2bc1c545a9ee204e3b7aaab70a5eca541f8d6fa08d",
+    "skills/ff-tdd/SKILL.md": "da515c4ea6beeb94a3b1a8f38a89256d7de64b2095fdc24ab197c238639ca333",
+    "skills/ff-writing-beats/SKILL.md": "2354e372fa73d5afd42080150e94f1b4d2ee0b27f000b3acb0610bbf55c0883d",
+    "skills/ff-writing-fragments/SKILL.md": "d9cc09c5826ee6f3cfb6eefc71778f34e4d080804c604ec1ccbbca467b6a4e6a",
+    "skills/ff-writing-shape/SKILL.md": "c61bba29695c9e8807ffc696888d3c0cf485f52586e91dd32402078b4e4270f3"
+  },
+  "inputs": {
+    "cases.json": "7d1c2b58d4397ed29424d3bf5f2b9e82a84b65cc550b082d2024bc57373c7355",
+    "reader-questions.json": "51e4dbf0325d1a009e53ba9cac02f9acc85c3cf3b4ae3e4b1c9109ab15767633"
+  },
+  "outputs": {
+    "candidate-C6.md": "231c928f1701da9f40bf42f80887a3e69629de31dcc2faf07825eb84d34186b4",
+    "candidate-responses.md": "ed97785b9a22445604bc35c95eb52b3d35dedd34e88ea8365d8f049c68a624d0"
+  }
+}
