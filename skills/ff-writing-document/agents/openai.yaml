@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF Writing Document"
+  short_description: "Reader-focused work documents with outline approval"
+  default_prompt: "Use $ff-writing-document to clarify the reader and purpose, propose chapter headings, wait for outline confirmation, then write and check the requested work document."

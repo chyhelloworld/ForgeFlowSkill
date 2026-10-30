@@ -24,7 +24,7 @@ class IntentDistributionTests(unittest.TestCase):
         self.assertTrue(heading in source, 'shared source lacks the concrete-reporting section')
         rule = source.split(heading, 1)[1].split('\n\n', 1)[0]
         folders = sorted((ROOT / 'skills').iterdir())
-        self.assertEqual(len(folders), 19)
+        self.assertEqual(len(folders), 21)
         for folder in folders:
             with self.subTest(skill=folder.name):
                 entry = (folder / 'SKILL.md').read_text(encoding='utf-8')

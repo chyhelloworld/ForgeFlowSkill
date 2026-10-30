@@ -68,7 +68,7 @@ test('explicit dual install and reentry share one release and preserve exact sta
   assert.equal(state.schema, 2); assert.deepEqual(hostsOf(state), ['codex', 'claude']);
   assert.equal('host' in state, false);
   for (const host of hostsOf(state)) {
-    assert.equal(fs.readdirSync(path.join(p, hostBase(host))).length, 20);
+    assert.equal(fs.readdirSync(path.join(p, hostBase(host))).length, 21);
     const reporting = fs.readFileSync(path.join(source, 'docs/maintainers/INTENT-LOOP.md'), 'utf8')
       .split('## 具体汇报\n\n')[1].split('\n\n')[0];
     for (const name of fs.readdirSync(path.join(p, hostBase(host)))) {

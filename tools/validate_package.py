@@ -38,7 +38,7 @@ def validate(root):
         skill_version=independent.get(folder.name,expected_version)
         need(data.get('metadata',{}).get('version')==skill_version,f'{folder.name}: expected version {skill_version}')
         need((folder/'NOTICE.md').is_file(),f'{folder.name}: missing NOTICE')
-        license_name = {'ff-design': 'LICENSE-IMPECCABLE', 'ff-architecture-review': 'LICENSE', 'ff-architecture-derive': 'LICENSE', 'ff-diagram': 'LICENSE'}.get(folder.name, 'LICENSE-MATT')
+        license_name = {'ff-design': 'LICENSE-IMPECCABLE', 'ff-architecture-review': 'LICENSE', 'ff-architecture-derive': 'LICENSE', 'ff-diagram': 'LICENSE', 'ff-writing-document': 'LICENSE'}.get(folder.name, 'LICENSE-MATT')
         need((folder/license_name).is_file(),f'{folder.name}: missing license')
         ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
         need(25<=len(ui['short_description'])<=64,f'{folder.name}: UI description length')
@@ -50,7 +50,7 @@ def validate(root):
                 target=(file.parent/link.split('#')[0]).resolve()
                 need(target.is_relative_to(folder.resolve()),f'{file}: external local dependency {link}')
                 need(target.is_file(),f'{file}: broken link {link}')
-    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats','ff-architecture-review','ff-architecture-derive','ff-diagram'},'expected twelve baseline plus eight optional skills')
+    need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats','ff-architecture-review','ff-architecture-derive','ff-diagram','ff-writing-document'},'expected twelve baseline plus nine optional skills')
     cases=json.loads((root/'evaluations/scenarios.json').read_text())['cases']
     ids=[c['id'] for c in cases]
     need(len(ids)==len(set(ids)), 'duplicate evaluation case IDs')

@@ -26,9 +26,9 @@ function fixture(version = '0.6.0-experimental.7') {
   manifest.files['skills/ff-spec/SKILL.md'] = sha(fs.readFileSync(path.join(p, 'skills/ff-spec/SKILL.md')));
   json(path.join(p, 'MANIFEST.json'), manifest); return p;
 }
-test('cold install: Chinese/space path, 20 skills, binding, honest blocked runtime', () => {
+test('cold install: Chinese/space path, 21 skills, binding, honest blocked runtime', () => {
   const p = setup(); const state = loadState(p);
-  assert.equal(fs.readdirSync(path.join(p, '.agents/skills')).length, 20);
+  assert.equal(fs.readdirSync(path.join(p, '.agents/skills')).length, 21);
   assert.equal(state.mode, 'skills-only');
   const upstream = path.join(p, '.forgeflow/install', state.release, 'tools/openspec/upstream.json');
   assert.ok(fs.statSync(upstream).isFile(), 'runtime copy must include upstream.json in a Chinese path');
@@ -43,7 +43,7 @@ test('Claude install and same-version reentry leave exact state unchanged', () =
   const p = setup('claude'); const before = fs.readFileSync(path.join(p, '.forgeflow/install/state.json'));
   assert.equal(install(p, source, { ...options, host: 'claude' }).status, 'UNCHANGED');
   assert.deepEqual(fs.readFileSync(path.join(p, '.forgeflow/install/state.json')), before);
-  assert.equal(fs.readdirSync(path.join(p, '.claude/skills')).length, 20);
+  assert.equal(fs.readdirSync(path.join(p, '.claude/skills')).length, 21);
 });
 test('unmanaged conflict blocks without overwriting', () => {
   const p = project(); const file = path.join(p, '.agents/skills/ff-spec/SKILL.md');

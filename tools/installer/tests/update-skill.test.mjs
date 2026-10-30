@@ -16,7 +16,7 @@ function source(version = '0.1.0', extra = '') {
   const dest = fs.mkdtempSync(path.join(temp, 'source-'));
   for (const folder of ['skills', 'tools/openspec', 'tools/installer']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true });
   fs.copyFileSync(path.join(root, 'skill-versions.json'), path.join(dest, 'skill-versions.json'));
-  json(path.join(dest, 'skill-versions.json'), { 'ff-diagram': version });
+  json(path.join(dest, 'skill-versions.json'), { ...JSON.parse(fs.readFileSync(path.join(dest, 'skill-versions.json'))), 'ff-diagram': version });
   const skill = path.join(dest, 'skills/ff-diagram/SKILL.md');
   fs.writeFileSync(skill, fs.readFileSync(skill, 'utf8').replace('version: "0.1.0"', `version: "${version}"`) + extra);
   refresh(dest); return dest;
@@ -57,7 +57,7 @@ test('source tamper anywhere rejects and uninstalled or unsupported skill reject
  assert.throws(()=>update(fs.mkdtempSync(path.join(temp,'empty-'))),/Not installed/);
 });
 test('legacy state without selected skill rejects without adding runtime helpers',()=>{
- const p=setup(), before=loadState(p); for(const n of Object.keys(before.files)) if(n.includes('/skills/ff-diagram/')) {fs.unlinkSync(path.join(p,n));delete before.files[n];} json(path.join(p,'.forgeflow/install/state.json'),before);
+ const p=setup(), before=loadState(p); for(const n of Object.keys(before.files)) if(n.includes('/skills/ff-diagram/') || n.includes('/skills/ff-writing-document/')) {fs.unlinkSync(path.join(p,n));delete before.files[n];} json(path.join(p,'.forgeflow/install/state.json'),before);
  const bytes=fs.readFileSync(path.join(p,'.forgeflow/install/state.json')); assert.throws(()=>update(p),/already installed|full install/); assert.deepEqual(fs.readFileSync(path.join(p,'.forgeflow/install/state.json')),bytes);
 });
 test('failure before state commit restores bytes and state, rollback restores successful update',()=>{

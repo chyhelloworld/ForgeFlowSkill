@@ -1,13 +1,13 @@
 # 单独更新已安装的元能力技能
 
-本版本提供 `update-skill`，第一阶段仅支持 **已安装的 `ff-diagram`**。
+本版本提供 `update-skill`，支持 **已安装的 `ff-diagram` 和 `ff-writing-document`**。
 技能以 `skill-versions.json` 的独立版本与技能文件内容摘要识别，不要求整个 FF 包同步升版。
 这是现有项目安装器的一条事务命令，不是第二套安装器或文件所有权清单。
 
 ## 使用条件与命令
 
 1. 使用本版本或之后明确支持 `update-skill` 的完整 FF 源包/安装器；保持整个源包完整，命令会先验证全部 manifest 文件，并非仅校验目标技能。
-2. 项目必须已经安装 FF，且所有已安装宿主都已拥有 `ff-diagram`。
+2. 项目必须已经安装 FF，且所有已安装宿主都已拥有要更新的目标技能。
 3. 先保留并处理受管文件的本地修改。任何受管文件被改动都会阻断更新，包括其他技能；不会自动覆盖、stash 或删除用户修改。
 
 从要采用的完整 FF 源包根目录运行：
@@ -21,6 +21,8 @@ node installer.mjs update-skill --project /absolute/path/to/project --skill ff-d
 ```bash
 node bin/ff-install.mjs update-skill --project /absolute/path/to/project --skill ff-diagram
 ```
+
+更新文档技能时，将命令中的 `--skill ff-diagram` 改为 `--skill ff-writing-document`；一次只更新一个技能。
 
 成功返回 `SKILL_UPDATED`。同一独立版本和内容摘要再次执行返回 `UNCHANGED`，不改写项目 state；首次安装后未变化也不写入 override。
 
@@ -36,9 +38,9 @@ node bin/ff-install.mjs update-skill --project /absolute/path/to/project --skill
 - 项目 `state.json` 记录 `skillOverrides` 中的独立版本、技能内容 SHA256 和来源 manifest SHA256。文件所有权仍只有 `state.files` 一处。
 - 目标 SKILL.md 的安装绑定分别注明技能来源与保留的运行时来源，不把技能更新冒充运行时升级。
 
-## 旧项目首次添加 ff-diagram
+## 旧项目首次添加独立技能
 
-尚无 `ff-diagram` 的 17/18/19 技能安装不能使用此命令新增它。旧项目内部的状态校验器不认识新库存，直接增加技能而保持该运行时不变会破坏校验。
+尚无目标技能的旧安装不能使用此命令新增它。例如 17/18/19 技能安装没有 ff-diagram，20 技能绘图版也没有 ff-writing-document。旧项目内部的状态校验器不认识新库存，直接增加技能而保持该运行时不变会破坏校验。
 请先按[完整安装说明](install.md)显式完成完整安装迁移，再进行后续独立更新。
 **完整安装迁移会更新其他受管技能和运行时，不具备单技能更新的 byte 不变保证。**
 

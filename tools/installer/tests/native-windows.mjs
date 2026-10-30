@@ -43,7 +43,7 @@ const dual = loadState(project); assert.equal(dual.schema, 2); assert.deepEqual(
 const manifestHash = sha(fs.readFileSync(path.join(source, 'MANIFEST.json')));
 assert.equal(dual.sourceHash, manifestHash);
 for (const host of ['codex', 'claude']) {
-  assert.equal(fs.readdirSync(path.join(project, hostBase(host))).length, 20);
+  assert.equal(fs.readdirSync(path.join(project, hostBase(host))).length, 21);
   assert.match(fs.readFileSync(skill(host), 'utf8'), new RegExp(manifestHash));
   assert.equal(JSON.parse(run(`package-doctor-${host}`, source, 'doctor', ['--host', host]).stdout).status, 'RUNTIME_READY');
   assert.equal(JSON.parse(installed(`installed-doctor-${host}`, '.forgeflow/install/doctor.mjs', ['--host', host]).stdout).status, 'RUNTIME_READY');

@@ -5,7 +5,8 @@ export const hosts = ['codex', 'claude'];
 export const baselineSkills = ['ff-intake', 'ff-grill', 'ff-spec', 'ff-design', 'ff-prove', 'ff-plan', 'ff-implement', 'ff-review', 'ff-deliver', 'ff-diagnose', 'ff-tdd', 'ff-handoff', 'ff-research', 'ff-retro', 'ff-writing-fragments', 'ff-writing-shape', 'ff-writing-beats'].sort();
 export const architectureSkills = [...baselineSkills, 'ff-architecture-review'].sort();
 export const derivationSkills = [...architectureSkills, 'ff-architecture-derive'].sort();
-export const currentSkills = [...derivationSkills, 'ff-diagram'].sort();
+export const diagramSkills = [...derivationSkills, 'ff-diagram'].sort();
+export const currentSkills = [...diagramSkills, 'ff-writing-document'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
@@ -48,7 +49,7 @@ export function validateState(project, state) {
     const entries = Object.keys(state.files).filter(name => name.startsWith(`${hostBase(host)}/`) && /^ff-[a-z-]+\/SKILL\.md$/.test(name.slice(hostBase(host).length + 1)));
     const names = entries.map(name => name.slice(hostBase(host).length + 1).split('/')[0]).sort();
     const key = JSON.stringify(names);
-    if (![baselineSkills, architectureSkills, derivationSkills, currentSkills].some(names => key === JSON.stringify(names))) fail('Expected complete legacy or current skill inventory');
+    if (![baselineSkills, architectureSkills, derivationSkills, diagramSkills, currentSkills].some(names => key === JSON.stringify(names))) fail('Expected complete legacy or current skill inventory');
     if (priorEntries && priorEntries !== key) fail('Mixed skill inventory across installed hosts');
     priorEntries = key;
   }

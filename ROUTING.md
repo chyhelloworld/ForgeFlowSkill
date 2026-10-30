@@ -53,6 +53,10 @@ FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失
 
 持续项目按[需求闭环契约](docs/maintainers/INTENT-LOOP.md)在同一载体提炼需求，以稳定 ID 关联子需求、模块、任务与验收。Intake 旧项目先观察并提供可跳过的未知对齐；Grill 分清探索和转向决定；Spec/Plan/Design/Prove/Implement 复用同一场景。Review 保持阶段末一次综合审查和局部复核。Deliver/Handoff 复用事实附[任务级使用评价](docs/maintainers/USE-FEEDBACK.md)，失败/中断也收集，深入 Retro 按需。不新增技能、运行时门禁或每消息仪式。
 
-## 独立图示（当前20技能）
+## 独立图示（引入时20技能）
 
 软件图的创建、修改或审查 → `ff-diagram`，参考国内软件工程/系统架构设计常用要求及适用国标，按需处理架构、DFD、E-R、UML与流程图。可独立使用，不触发全FF或架构推导/评估；与现有技能组合时只支持当前授权产物。技能缺席不阻断原有工作。详见[图示使用说明](docs/user/diagrams.md)。
+
+## 独立工作文档（当前21技能）
+
+需求说明、方案、报价、报告等工作文档的新写或实质修订 → `ff-writing-document`：澄清读者、用途和质量相关缺口，先出章节目录，明确确认后再补正文，最后按读者任务检查。局部改字不重走整套流程。可独立使用，不强制 Spec 或全FF；不改变逐段共创文章的 ff-writing-shape / beats。绘图按需用 ff-diagram，Word/PDF 排版交格式工具。详见[工作文档使用说明](docs/user/writing-document.md)。

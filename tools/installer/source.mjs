@@ -35,9 +35,9 @@ export function skillPayload(source, pin, host, selectedSkill, installed) {
   return files;
 }
 
-// v1 deliberately permits only the reviewed runtime-independent diagram meta-skill.
+// Only reviewed runtime-independent meta-skills may use independent updates.
 // Registry membership alone does not establish runtime/dependency compatibility.
-export const independentlyUpdatable = ['ff-diagram'];
+export const independentlyUpdatable = ['ff-diagram', 'ff-writing-document'];
 export function skillIdentity(source, pin, name) {
   if (!independentlyUpdatable.includes(name)) fail('Unsupported independent skill update');
   if (!pin.files['skill-versions.json']) fail('Independent skill registry must be manifest-listed');
