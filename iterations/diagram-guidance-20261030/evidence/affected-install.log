@@ -1,0 +1,85 @@
+✔ legacy 17/18/19 and current 20 complete inventories remain readable (15.867011ms)
+✖ missing baseline, renamed skill and mixed-host inventory are rejected (8.34577ms)
+✔ both host payloads include independent entries and exactly one derivation template (117.870545ms)
+✔ isolated skills-only install and reentry preserve optional entry on both hosts (691.869768ms)
+✔ only the standalone diagram skill owns references; old entries have optional name routing (9.276396ms)
+✔ individual skill folder copies resolve diagram references without siblings (2.948089ms)
+✔ real skills-only dual-host install includes every guidance byte and is idempotent (604.594571ms)
+✖ explicit dual install and reentry share one release and preserve exact state (517.452118ms)
+✔ schema 1 migrates to dual, rollback restores old state and schema 2 re-add works (2799.417227ms)
+✔ remove one host preserves other bytes/mtime, user extras and shared runtime; rollback restores both (1902.959362ms)
+✔ new host conflicts and edits in either host block mutations without overwriting (1504.809704ms)
+✔ current runtime tampering blocks upgrade, remove and rollback (1011.756938ms)
+✔ write and state failures restore all old bytes and remove only attempted new entries (1154.702256ms)
+✔ actual child exit leaves pending; recovery conflicts preserve diagnostics until repaired (905.890218ms)
+✔ exit after state commit verifies COMMITTED and refuses altered committed state or files (822.689344ms)
+✔ actual removal child exits recover before deletion commit and confirm after state commit (1917.534145ms)
+✔ transient pending cleanup failure confirms committed state instead of claiming rollback (555.598101ms)
+✔ schema 2 rejects undeclared hosts, missing skill/helper entries and malformed host sets (404.024769ms)
+✔ command grammar rejects ambiguous/destructive combinations before touching a project (0.932731ms)
+✔ installed doctor argument protocol and skills-only errors stay explicit (279.093934ms)
+✔ older journals without state hashes remain recoverable with backup state verification (1545.269431ms)
+✔ cold install: Chinese/space path, 20 skills, binding, honest blocked runtime (629.888084ms)
+✔ Claude install and same-version reentry leave exact state unchanged (289.577676ms)
+✔ unmanaged conflict blocks without overwriting (102.820057ms)
+✔ user edit prevents same-version reinstall and rollback (318.33639ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (1189.94586ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (824.864163ms)
+✔ state commit failure restores previous state and bytes (811.570002ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (463.495276ms)
+✔ tampered source, runtime, and unsafe state are blocked (620.054442ms)
+✔ project move remains bound locally and official openspec never invoked (428.568823ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (100.760798ms)
+✔ path and local-home isolation checks (216.310137ms)
+✔ rollback refuses a modified inactive runtime release (776.527783ms)
+✔ Python skill caches are not install payload; installed health helper is executable (483.890515ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 33
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 15544.935897
+
+✖ failing tests:
+
+test at tools/installer/tests/architecture-review.test.mjs:29:1
+✖ missing baseline, renamed skill and mixed-host inventory are rejected (8.34577ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Mixed skill inventory/. Input:
+  
+  'Error: BLOCKED: Expected complete legacy or current skill inventory'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Expected complete legacy or current skill inventory
+        at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+        at validateState (file://<REPO>/tools/installer/state.mjs:51:126)
+        at file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /Mixed skill inventory/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/dual-host.test.mjs:64:1
+✖ explicit dual install and reentry share one release and preserve exact state (517.452118ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'split')
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:76:49)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)

@@ -1,0 +1,54 @@
+sequenceDiagram
+participant C as 客户端
+participant A as Order API
+participant P as PaymentService
+participant D as 本地数据库
+participant W as Publisher
+participant Q as 消息通道
+participant M as 邮件消费者
+C->>A: 确认订单(订单资料, 请求标识)
+A->>P: authorize(付款资料)
+alt 授权明确拒绝
+ P-->>A: 拒绝
+ A-->>C: 未确认：授权拒绝
+else 授权超时或结果不明
+ Note over A,P: 超时不是明确拒绝，也不证明未扣款
+ A->>A: 记录待核对线索（机制待定）
+ A-->>C: 结果未知／待核对，非订单确认
+else 授权明确成功
+ P-->>A: 授权成功及授权引用
+ rect rgb(240,245,255)
+ Note over A,D: 本地原子事务，仅含订单与outbox
+ A->>D: BEGIN；写订单与outbox；COMMIT
+ alt 本地明确提交成功
+  D-->>A: 已提交
+  A-->>C: 订单已确认
+ else 本地明确提交失败
+  D-->>A: 失败（事务回滚）
+  A->>A: 进入支付核对／补偿处理
+  A-->>C: 订单未确认，支付处理中
+ else 本地提交结果未知
+  Note over A,D: 不可当作回滚；先按稳定标识核对是否已提交
+  A->>A: 进入订单与支付核对
+  A-->>C: 确认结果未知
+ end
+ end
+end
+opt 有已提交 OrderConfirmed outbox（独立后台）
+ W->>D: 读取已提交待投递事件
+ D-->>W: OrderConfirmed(eventId, orderId)
+ W-)Q: OrderConfirmed（可能重发）
+ Q-)M: OrderConfirmed（可能重复投递）
+ M->>M: 按eventId幂等处理
+ alt 已成功处理
+  M->>M: 不再发送重复邮件
+ else 尚未成功处理
+  M->>M: 发送邮件
+  alt 邮件成功
+   M->>M: 记录成功处理结果
+  else 邮件失败
+   M->>M: 保留可重试状态；按策略重试
+   Note over M,D: 不撤销已确认订单
+  end
+ end
+end

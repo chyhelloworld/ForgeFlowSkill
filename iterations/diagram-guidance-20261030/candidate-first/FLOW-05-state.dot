@@ -1,0 +1,14 @@
+digraph G {
+graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.75"];
+node [shape=box,fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.1"];
+edge [fontname="Noto Sans CJK SC",fontsize=12];
+draft [label="草稿",style=rounded];pending [label="待审核",style=rounded];published [label="已发布",style=rounded];rejected [label="已驳回",style=rounded];withdrawn [label="已撤回",style=rounded];
+draft -> pending [label="提交 [作者且正文非空] / 创建一次审核任务"];
+rejected -> pending [label="提交 [作者且正文非空] / 创建一次审核任务"];
+pending -> published [label="批准 [审核员且合规检查通过] / 发布"];
+pending -> rejected [label="驳回 [审核员且原因非空] / 记录原因"];
+pending -> withdrawn [label="撤回 [作者] / 撤回内容"];
+published -> withdrawn [label="撤回 [作者] / 撤回内容"];
+note [shape=note,label="主体：单条内容\n所有未列操作/守卫不满足：拒绝并保持原状态\n重复提交不得重复创建任务\n已撤回无已定义离开迁移\n未规定初始建立事件，不新增自动迁移"];
+
+}

@@ -1,8 +1,8 @@
 # 具体能力与使用场景
 
-当前源码候选 0.9.6-derivation.4，19 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
+当前源码候选 0.9.6-derivation.4，20 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
 
-需要从业务流程解释模块边界时，可独立选择 ff-architecture-derive 的[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立；本候选共19项技能，不增加必经流程。
+需要从业务流程解释模块边界时，可独立选择 ff-architecture-derive 的[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立；本候选共20项技能，不增加必经流程。
 
 本轮沿用 0.9.2 的既有契约，给 Intake、Plan、Implement、Handoff、Deliver 增加条件启用的 [Codex `/goal` 对账](codex-goal.md)：复用现行规格、唯一计划和已有回执，不新增技能、调度器或原生写入 API。普通 FF 不要求设置目标；原生状态、技术证据与真人接受分别报告，端到端结论以本候选实际实验为准。
 
@@ -110,6 +110,7 @@ Python 工具的退出码均为 0（声明记录通过本工具核对）、1（�
 | [ff-grill](../../skills/ff-grill/SKILL.md) | 目标、范围或重要取舍不清 | 用户原意、目标、约束、候选与确认状态；按既有记录模式处理讨论 |
 | [ff-architecture-derive](../../skills/ff-architecture-derive/SKILL.md) | 需在编码前核对整体/模块逻辑架构 | 层数与理由、逐层组件职责、需求映射、源码依赖/核心协作、拟议或已核实目录；阻碍和最少所需输入 |
 | [ff-architecture-review](../../skills/ff-architecture-review/SKILL.md) | 用户选择比较已有架构方案 | 按需质量场景、变化影响、权衡与成本未知；不自动推导或实施 |
+| [ff-diagram](../../skills/ff-diagram/SKILL.md) | 创建、修改或检查软件工程图 | 国内软件工程/架构师语境的按类图法、可编辑源、语义/渲染/视觉检查；独立0.1.0版本 |
 | [ff-spec](../../skills/ff-spec/SKILL.md) | 缺行为规格或获准变更需求 | 主要行为、边界、失败路径、验收及受影响范围 |
 | [ff-design](../../skills/ff-design/SKILL.md) | 有视觉与交互未知 | 可评审设计候选、主要旅程、状态与视觉约束；需要真实用户选定的取舍保持候选 |
 | [ff-prove](../../skills/ff-prove/SKILL.md) | 可行性或真实入口存在关键未知 | 有预算/停止条件的实验、实际观察、限制和建议 |
@@ -152,3 +153,7 @@ Intake至Deliver的九个工作流主职责按缺口选择；Diagnose / TDD / Ha
 短请求：`用 ff-prove 验证这个争议结构或关键缺口，保留既定约束，先给最小判据与证据边界。` derive贯通路径、review独立核缺口，需要事实时再按需交prove，不自动执行或安装。
 
 [ff-architecture-review](../../skills/ff-architecture-review/SKILL.md) 是独立技能入口，供架构定稿、旧项目接手或重构准备时按用户选择使用；Design/Spec 只推荐，小 demo 默认跳过，不强制三种方法串行。用户主动调用即选择开始评估。调用与范围见[架构评估使用说明](architecture-review.md)。本候选同时包含需求闭环、小任务短路径、审查交接修复与 intent-view 源码视图，旁支验证记录不代表已集成或已原生加载。
+
+## 独立软件图示
+
+`ff-diagram` 用于架构图、DFD、E-R、UML和流程图的创建/修改/检查，按国内软件工程/系统架构设计语境选择记法，保留源文件，分别说明语义、渲染和视觉验证。见[图示使用说明](diagrams.md)。不要求先运行其他FF技能，不自动设计或批准业务架构。

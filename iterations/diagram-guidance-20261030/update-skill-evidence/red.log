@@ -1,0 +1,206 @@
+✖ CLI accepts only explicit update-skill target and rejects install flags (1.134731ms)
+✖ single skill success keeps every nonselected byte and runtime pin; repeat exact no-op (136.035224ms)
+✖ dual host updates together and keeps runtime and other skill hashes (179.264184ms)
+✖ user edits in selected and unselected files reject without overwrite (90.134659ms)
+✖ selected managed deletions/new files are reconciled; unmanaged collision rejects (113.757187ms)
+✖ source tamper anywhere rejects and uninstalled or unsupported skill rejects (99.938042ms)
+✖ legacy state without selected skill rejects without adding runtime helpers (101.618844ms)
+✖ failure before state commit restores bytes and state, rollback restores successful update (98.95622ms)
+✖ full install rejects mismatched pin before unchanged; exact pin accepts and clears override (93.930115ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 0
+ℹ fail 9
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1102.484742
+
+✖ failing tests:
+
+test at tools/installer/tests/update-skill.test.mjs:31:1
+✖ CLI accepts only explicit update-skill target and rejects install flags (1.134731ms)
+  Error: BLOCKED: Usage: node installer.mjs install|doctor|remove-host|rollback|recover --project PATH [--host codex|claude | --hosts codex,claude] [--mode full|skills-only --build]
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at parse (file://<REPO>/installer.mjs:11:95)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:32:15)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tools/installer/tests/update-skill.test.mjs:36:1
+✖ single skill success keeps every nonselected byte and runtime pin; repeat exact no-op (136.035224ms)
+  TypeError [Error]: installer.updateSkill is not a function
+      at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+      at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:37:53)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tools/installer/tests/update-skill.test.mjs:42:1
+✖ dual host updates together and keeps runtime and other skill hashes (179.264184ms)
+  TypeError [Error]: installer.updateSkill is not a function
+      at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+      at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:43:44)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tools/installer/tests/update-skill.test.mjs:46:1
+✖ user edits in selected and unselected files reject without overwrite (90.134659ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /User modification/. Input:
+  
+  'TypeError: installer.updateSkill is not a function'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:47:184)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: installer.updateSkill is not a function
+        at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+        at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+        at file://<REPO>/tools/installer/tests/update-skill.test.mjs:47:195
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:47:184)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /User modification/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/update-skill.test.mjs:49:1
+✖ selected managed deletions/new files are reconciled; unmanaged collision rejects (113.757187ms)
+  TypeError [Error]: installer.updateSkill is not a function
+      at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+      at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:51:19)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)
+
+test at tools/installer/tests/update-skill.test.mjs:54:1
+✖ source tamper anywhere rejects and uninstalled or unsupported skill rejects (99.938042ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Source integrity/. Input:
+  
+  'TypeError: installer.updateSkill is not a function'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:55:116)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: installer.updateSkill is not a function
+        at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+        at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+        at file://<REPO>/tools/installer/tests/update-skill.test.mjs:55:127
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:55:116)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /Source integrity/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/update-skill.test.mjs:59:1
+✖ legacy state without selected skill rejects without adding runtime helpers (101.618844ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /already installed|full install/. Input:
+  
+  'TypeError: installer.updateSkill is not a function'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:61:84)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: installer.updateSkill is not a function
+        at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+        at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+        at file://<REPO>/tools/installer/tests/update-skill.test.mjs:61:95
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:61:84)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /already installed|full install/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/update-skill.test.mjs:63:1
+✖ failure before state commit restores bytes and state, rollback restores successful update (98.95622ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /injected failure/. Input:
+  
+  'TypeError: installer.updateSkill is not a function'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:66:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: TypeError: installer.updateSkill is not a function
+        at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+        at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+        at file://<REPO>/tools/installer/tests/update-skill.test.mjs:66:25
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:66:14)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /injected failure/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/update-skill.test.mjs:70:1
+✖ full install rejects mismatched pin before unchanged; exact pin accepts and clears override (93.930115ms)
+  TypeError [Error]: installer.updateSkill is not a function
+      at updateSkill (file://<REPO>/tools/installer/tests/update-skill.test.mjs:9:44)
+      at update (file://<REPO>/tools/installer/tests/update-skill.test.mjs:30:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/update-skill.test.mjs:71:18)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

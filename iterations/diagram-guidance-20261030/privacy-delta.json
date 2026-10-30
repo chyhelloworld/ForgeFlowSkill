@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "6468847234f1e30c3ff8b186c38790de93c45293",
+  "baseline_findings": 62,
+  "candidate_findings": 62,
+  "added_findings": [],
+  "removed_findings": 0,
+  "new_findings_pass": true,
+  "limits": "Existing historical findings retained; pattern scanner, not OCR or proof of no secrets. Newly added logs have executor roots normalized with digest record."
+}

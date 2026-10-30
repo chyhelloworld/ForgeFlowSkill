@@ -2,11 +2,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { randomUUID } from 'node:crypto';
-import { safe, fail, read, json } from './files.mjs';
-import { verifySource, skillPayload } from './source.mjs';
+import { safe, fail, read, json, sha } from './files.mjs';
+import { verifySource, skillPayload, skillIdentity, checkSkillPins, compareStableSkillVersions } from './source.mjs';
 import { inventory, runNode, checkRelease, diagnose, environment } from './runtime.mjs';
 import { control, loadState, preflight, checkOwned, commit } from './transaction.mjs';
-import { hostsOf, normalizeHosts, fileHost } from './state.mjs';
+import { hostsOf, normalizeHosts, fileHost, hostBase } from './state.mjs';
 import { verifyReusableBuild } from '../openspec/ff-build.mjs';
 export function dependencies() {
   const [major, minor] = process.versions.node.split('.').map(Number);
@@ -112,6 +112,7 @@ export function install(project, source, options) {
   if (!dependencies().node) fail('Node >=20.19 required');
   const pin = verifySource(source);
   const before = loadState(project);
+  checkSkillPins(source, pin, before);
   if (options.host && options.hosts) fail('--host conflicts with --hosts');
   const selected = normalizeHosts(options.hosts ?? [options.host]);
   if (options.hosts && selected.length !== 2) fail('--hosts requires codex,claude');
@@ -122,7 +123,7 @@ export function install(project, source, options) {
   const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))));
   preflight(project, before, files);
   if (before) checkRelease(project, before);
-  if (before?.sourceHash === pin.hash && JSON.stringify(hostsOf(before)) === JSON.stringify(selected) && before.mode === options.mode) {
+  if (!Object.keys(before?.skillOverrides ?? {}).length && before?.sourceHash === pin.hash && JSON.stringify(hostsOf(before)) === JSON.stringify(selected) && before.mode === options.mode) {
     return { status: 'UNCHANGED', version: pin.version, mode: options.mode };
   }
   if (options.mode === 'full' && !options.build && !options['reuse-build']) fail('full requires --build or --reuse-build; build downloads locked dependencies');
@@ -156,4 +157,43 @@ export function removeHost(project, host) {
   const next = { ...before, hosts: selected.filter(item => item !== host) };
   commit(project, before, next, files);
   return { status: 'HOST_REMOVED', host, hosts: next.hosts, version: next.version, mode: next.mode };
+}
+
+export function updateSkill(project, source, options) {
+  if (!dependencies().node) fail('Node >=20.19 required');
+  if (!options?.skill || Object.keys(options).some(k => !['skill', 'project', 'command'].includes(k))) fail('update-skill requires only --project and --skill');
+  const pin = verifySource(source); // Verify the entire source, never trust a detached subtree.
+  const before = loadState(project);
+  if (!before) fail('Not installed; use full install first');
+  const identity = skillIdentity(source, pin, options.skill);
+  const selected = hostsOf(before);
+  const prefixes = selected.map(host => `${hostBase(host)}/${options.skill}/`);
+  if (prefixes.some(prefix => !before.files[`${prefix}SKILL.md`])) fail('Skill must be already installed on every host; use full install for new skills');
+  checkOwned(project, before);
+  checkRelease(project, before);
+  const previous = before.skillOverrides?.[options.skill];
+  const installedVersions = prefixes.map(prefix => {
+    const header = fs.readFileSync(safe(project, `${prefix}SKILL.md`), 'utf8').split('---')[1] ?? '';
+    return header.match(/^\s+version: "([^"]+)"\s*$/m)?.[1];
+  });
+  if (installedVersions.some(version => version !== installedVersions[0]) || (previous && previous.version !== installedVersions[0])) fail('Installed independent skill versions disagree');
+  const order = compareStableSkillVersions(identity.version, previous?.version ?? installedVersions[0]);
+  if (order < 0) fail('Independent skill downgrade refused; use rollback to restore the previous installation');
+  if (order === 0) {
+    let equal = previous ? previous.hash === identity.hash : true;
+    if (!previous) {
+      const originalBinding = { ...pin, version: before.version, hash: before.sourceHash };
+      const expected = Object.assign({}, ...selected.map(host => skillPayload(source, originalBinding, host, options.skill)));
+      const currentNames = Object.keys(before.files).filter(name => prefixes.some(prefix => name.startsWith(prefix))).sort();
+      equal = JSON.stringify(Object.keys(expected).sort()) === JSON.stringify(currentNames) && currentNames.every(name => sha(expected[name]) === before.files[name]);
+    }
+    if (!equal) fail('Independent skill same-version content conflict; increment the skill version for changed content');
+  }
+  if (order === 0) return { status: 'UNCHANGED', skill: options.skill, version: identity.version, hosts: selected };
+  const files = Object.fromEntries(Object.keys(before.files).filter(name => !prefixes.some(prefix => name.startsWith(prefix))).map(name => [name, fs.readFileSync(safe(project, name))]));
+  for (const host of selected) Object.assign(files, skillPayload(source, pin, host, options.skill, before));
+  preflight(project, before, files);
+  const next = { ...before, skillOverrides: { ...before.skillOverrides, [options.skill]: { ...identity, sourceHash: pin.hash } } };
+  commit(project, before, next, files);
+  return { status: 'SKILL_UPDATED', skill: options.skill, version: identity.version, hash: identity.hash, hosts: selected, runtimeVersion: before.version, runtimeUnchanged: true };
 }

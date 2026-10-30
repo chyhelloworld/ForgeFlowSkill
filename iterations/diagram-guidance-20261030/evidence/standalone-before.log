@@ -1,0 +1,64 @@
+✖ only the standalone diagram skill owns references; old entries have optional name routing (4.016991ms)
+✖ individual skill folder copies resolve diagram references without siblings (2.737587ms)
+✖ real skills-only dual-host install includes every guidance byte and is idempotent (186.039512ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 624.615292
+
+✖ failing tests:
+
+test at tools/installer/tests/diagrams.test.mjs:25:1
+✖ only the standalone diagram skill owns references; old entries have optional name routing (4.016991ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  true !== false
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:28:39)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: true,
+    expected: false,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/diagrams.test.mjs:37:1
+✖ individual skill folder copies resolve diagram references without siblings (2.737587ms)
+  Error: ENOENT: no such file or directory, lstat '<REPO>/skills/ff-diagram'
+      at cpSyncFn (node:internal/fs/cp/cp-sync:56:13)
+      at Object.cpSync (node:fs:3252:3)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:40:8)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'lstat',
+    path: '<REPO>/skills/ff-diagram'
+  }
+
+test at tools/installer/tests/diagrams.test.mjs:44:1
+✖ real skills-only dual-host install includes every guidance byte and is idempotent (186.039512ms)
+  Error: BLOCKED: Source integrity: skills/ff-architecture-derive/SKILL.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:47:16)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

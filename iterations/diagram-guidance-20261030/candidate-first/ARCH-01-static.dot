@@ -1,0 +1,12 @@
+digraph G {
+graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.75"];
+node [shape=box,fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.1"];
+edge [fontname="Noto Sans CJK SC",fontsize=12];
+front [label="前端"]; api [label="Booking API"]; svc [label="«interface»\nBookingService"]; repo [label="«interface»\nRoomRepository"]; pg [label="PostgresRoomRepository"]; pub [label="Publisher\n后台事件投递职责"];
+front -> api [style=dashed,label="仅消费 API 契约"];
+api -> svc [style=dashed,label="依赖接口"];
+api -> repo [style=dashed,label="依赖接口"];
+pg -> repo [style=dashed,arrowhead=empty,label="实现"];
+pubnote [shape=note,label="Publisher 的源码依赖未提供，\n不从运行调用反推 import。\nBookingService 实现与仓储依赖待确认。"];
+
+}

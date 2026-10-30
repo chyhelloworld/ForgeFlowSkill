@@ -52,3 +52,7 @@ FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失
 ## 0.9.6 需求闭环增量
 
 持续项目按[需求闭环契约](docs/maintainers/INTENT-LOOP.md)在同一载体提炼需求，以稳定 ID 关联子需求、模块、任务与验收。Intake 旧项目先观察并提供可跳过的未知对齐；Grill 分清探索和转向决定；Spec/Plan/Design/Prove/Implement 复用同一场景。Review 保持阶段末一次综合审查和局部复核。Deliver/Handoff 复用事实附[任务级使用评价](docs/maintainers/USE-FEEDBACK.md)，失败/中断也收集，深入 Retro 按需。不新增技能、运行时门禁或每消息仪式。
+
+## 独立图示（当前20技能）
+
+软件图的创建、修改或审查 → `ff-diagram`，参考国内软件工程/系统架构设计常用要求及适用国标，按需处理架构、DFD、E-R、UML与流程图。可独立使用，不触发全FF或架构推导/评估；与现有技能组合时只支持当前授权产物。技能缺席不阻断原有工作。详见[图示使用说明](docs/user/diagrams.md)。

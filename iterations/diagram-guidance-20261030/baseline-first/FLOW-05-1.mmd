@@ -1,0 +1,20 @@
+stateDiagram-v2
+state 草稿 as Draft
+state 待审核 as Pending
+state 已发布 as Published
+state 已驳回 as Rejected
+state 已撤回 as Withdrawn
+Draft --> Pending: 提交 [作者且正文非空] / 原子创建一次审核任务
+Rejected --> Pending: 提交 [作者且正文非空] / 原子创建一次审核任务
+Pending --> Published: 批准 [审核员且合规检查通过] / 发布
+Pending --> Rejected: 驳回 [审核员且原因非空] / 保存原因
+Pending --> Withdrawn: 撤回 [作者] / 撤回内容
+Published --> Withdrawn: 撤回 [作者] / 撤回内容
+note right of Pending
+重复提交不创建新任务；状态保持
+其他条件不满足均拒绝并保持原状态
+end note
+note right of Withdrawn
+未指定恢复或重新提交能力
+不自动增加出口
+end note

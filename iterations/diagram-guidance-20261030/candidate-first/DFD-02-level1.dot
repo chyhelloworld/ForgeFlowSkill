@@ -1,0 +1,10 @@
+digraph G {
+graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.75"];
+node [shape=box,fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.1"];
+edge [fontname="Noto Sans CJK SC",fontsize=12];
+emp [shape=box,label="员工"]; rev [shape=box,label="审核员"]; fin [shape=box,label="财务系统"];p1 [shape=ellipse,label="1 处理申请"];p2 [shape=ellipse,label="2 执行付款"];
+d1 [shape=plain,label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD BORDER="1" SIDES="TB">D1 申请库</TD></TR></TABLE>>];
+d2 [shape=plain,label=<<TABLE BORDER="0" CELLBORDER="0"><TR><TD BORDER="1" SIDES="TB">D2 付款记录库</TD></TR></TABLE>>];
+emp -> p1 [label="申请资料"];p1 -> emp [label="受理结果"];p1 -> rev [label="待审资料"];rev -> p1 [label="审核意见"];p1 -> d1 [label="申请记录更新"];d1 -> p1 [label="申请记录"];p1 -> p2 [label="已批准付款资料"];p2 -> fin [label="付款指令"];fin -> p2 [label="付款回执"];p2 -> d2 [label="付款记录"];
+
+}

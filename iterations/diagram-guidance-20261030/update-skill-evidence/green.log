@@ -1,0 +1,22 @@
+✔ CLI accepts only explicit update-skill target and rejects install flags (2.178187ms)
+✔ single skill success keeps every nonselected byte and runtime pin; repeat exact no-op (316.917528ms)
+✔ dual host updates together and keeps runtime and other skill hashes (409.621579ms)
+✔ user edits in selected and unselected files reject without overwrite (264.293958ms)
+✔ selected managed deletions/new files are reconciled; unmanaged collision rejects (408.044652ms)
+✔ source tamper anywhere rejects and uninstalled or unsupported skill rejects (168.086936ms)
+✔ legacy state without selected skill rejects without adding runtime helpers (140.393385ms)
+✔ failure before state commit restores bytes and state, rollback restores successful update (515.628803ms)
+✔ full install rejects mismatched pin before unchanged; exact pin accepts and clears override (400.688091ms)
+✔ old source without independent registry rejects; malformed override rejects (183.304163ms)
+✔ same version and bytes on initial install is a state-byte no-op (168.318104ms)
+✔ recovery refuses an intervening user edit, then completes after explicit restoration (311.089642ms)
+✔ same-version content mutation and version downgrade are refused (529.414722ms)
+✔ full source with same skill pin but different unrelated content accepts (401.961089ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4438.967153

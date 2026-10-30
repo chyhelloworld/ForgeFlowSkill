@@ -1,0 +1,204 @@
+{
+  "suite_id": "ff-diagram-behavior-v3-domestic-practice",
+  "frozen_at_utc": "2026-10-30T07:57:05Z",
+  "status": "frozen_before_execution",
+  "data_origin": "synthetic; no user files or business records",
+  "purpose": "Small-scope regression check for diagram-method integration; not standards certification",
+  "model_input_contract": "Send ONLY each case.model_prompt to the model, plus the tested skill/environment. Never send judge_rubric or evaluation README as generation instructions. Baseline and candidate receive identical model_prompt bytes.",
+  "cases": [
+    {
+      "id": "ARCH-01",
+      "category": "architecture",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n我们在做小型会议室预订服务，请给开发交接用的架构说明及必要的图，避免一张图塞满实现细节。前端只调 Booking API；API 依赖 BookingService 和 RoomRepository 的接口，PostgresRoomRepository 实现后者。核心能力是 BookingService.checkAvailability(roomId, slot)、createBooking(userId, roomId, slot, requestId)、cancelBooking(userId, bookingId)。创建时先校验权限和时段，再由数据库事务检查冲突并写入预订及 outbox，成功后返回；后台 Publisher 投递通知事件，通知失败不能回滚预订。模块静态依赖与一次创建请求的运行时调用都要看得清。请明确哪些约束适合文字说明，不要把所有函数都画成模块。",
+      "judge_rubric": [
+        {
+          "id": "A1",
+          "behavioral_criterion": "结构视图与创建请求的运行时顺序可以区分，接口实现关系不会被误表述为一次网络调用；允许分图或清晰分区。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "A2",
+          "behavioral_criterion": "核心服务的三个方法及职责可定位，但不把每个方法扩张成独立部署服务，也不遗漏 API、服务、仓储接口/实现及数据库的主要责任。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "A3",
+          "behavioral_criterion": "保留事务内冲突检查与预订/outbox 原子写入、提交后异步通知及通知失败不回滚的约束；在图或邻近文字表达都算满足，不因主图线少判机制缺失。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "A4",
+          "behavioral_criterion": "层次可读：概览与关键交互分别服务结构/行为问题，没有把静态依赖箭头自动解释成严格执行次序或纳入无关全量函数。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "ARCH-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    },
+    {
+      "id": "DFD-02",
+      "category": "data_flow",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n为报销申请系统做上下文及一级数据流图，并将“处理申请”进一步分解。员工提交申请资料并收到受理结果；审核员收到待审资料并提交审核意见；财务系统收到付款指令并返回付款回执。一级含“处理申请”“执行付款”，数据存储含申请库和付款记录库。处理申请接收员工资料与审核意见，向员工发受理结果，向审核员发待审资料，读写申请库，并向执行付款输出已批准付款资料；执行付款对接财务系统并写付款记录。不要自行增加参与方。业务会有驳回、补充材料等动作，图要帮助我们看数据去哪，而不是把审批步骤当流程图。",
+      "judge_rubric": [
+        {
+          "id": "D1",
+          "behavioral_criterion": "用数据对象或内容表达流的含义，不把时间先后、通过/不通过判断和开始/结束控制节点当作数据流主体；可以附文字说明控制逻辑。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "D2",
+          "behavioral_criterion": "上下文边界与一级对外数据流在语义上守恒，员工、审核员、财务系统的输入输出没有消失或无依据新增。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "D3",
+          "behavioral_criterion": "处理申请的子图保持该父过程边界上的全部输入输出含义和方向，包括申请库及执行付款方向；允许合并/拆分复合数据但必须可追踪，不要求箭头数相同。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "D4",
+          "behavioral_criterion": "数据存储与外部实体不直接互传数据，存储间也不直接搬运；新增内部处理若有，仅用于合理分解且不伪造业务确认。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "DFD-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    },
+    {
+      "id": "ER-03",
+      "category": "conceptual_er",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n我们正在访谈社区共享工具业务，先画概念 ER，暂不做表设计。已确认的概念是会员、工具、借用记录；会员可多次借用，每条借用记录属于一个会员，借用记录需记录借出和归还时间。业务还没确认一条借用记录能否包含多件工具，也没确认工具在什么条件下允许重复被借。请给产品与业务人员一版可讨论的概念模型，清楚标注待确认问题，不要假设我们已有数据库主键和外键。",
+      "judge_rubric": [
+        {
+          "id": "E1",
+          "behavioral_criterion": "用业务实体、关系和业务属性表达概念模型，不以缺少 PK/FK 判无效，也不强制用联结表或键字段替代尚未确认的业务关系。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "E2",
+          "behavioral_criterion": "已知会员—借用记录的关系正确表达：每条记录属于一个会员，会员可多次借用；不能把会员必须已有借用记录当成已确认事实。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "E3",
+          "behavioral_criterion": "工具—借用记录的未定基数、同一工具重复借出的限制保持待确认，或并列给出明确标为假设的备选；不得选定某基数后冒充已确认。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "E4",
+          "behavioral_criterion": "区分概念模型与后续逻辑/物理设计；允许展示可选后续方案，但未知的业务规则不能被数据库惯例悄悄确定。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "ER-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    },
+    {
+      "id": "SEQ-04",
+      "category": "uml_sequence",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n请给订单确认路径画 UML 时序图并说明失败边界。客户端同步调用 Order API，API 同步调用 PaymentService.authorize，只有授权明确成功才在本地事务写订单与 outbox，然后向客户端返回结果；付款授权超时意味着结果未知，不代表没扣款。本地提交失败不能发送“订单已确认”事件，需要进入支付核对/补偿处理；先说明边界，不要假定补偿永远成功。独立 Publisher 在提交后异步发 OrderConfirmed；消息可能重复，邮件消费者须幂等，邮件失败可重试，不能撤销已确认订单。表现同步返回与异步消息的区别，不要把所有异常混成一个失败框。",
+      "judge_rubric": [
+        {
+          "id": "S1",
+          "behavioral_criterion": "调用/返回语义足以区分客户端及支付授权的同步等待与提交后事件的异步投递，消费者处理不阻塞原始请求成功。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "S2",
+          "behavioral_criterion": "授权明确失败、授权超时结果未知与本地提交失败被区分；未宣称超时即未扣款，且未在提交失败路径发送成功确认事件。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "S3",
+          "behavioral_criterion": "核对/补偿是可失败或待处理的后续边界，不被画成跨支付与本地数据库的天然原子事务；不得无依据保证自动完全回滚。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "S4",
+          "behavioral_criterion": "保留重复消息幂等和邮件重试语义，邮件失败不改写已提交订单结果；图或配套说明均可承载细节。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "SEQ-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    },
+    {
+      "id": "FLOW-05",
+      "category": "state_and_flow",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n给内容审核做状态图及一张简洁处理流程，供开发写测试。状态为草稿、待审核、已发布、已驳回、已撤回。作者仅能在草稿或已驳回时提交，且正文非空；审核员仅在待审核时可批准或驳回，批准要求合规检查通过，驳回必须给原因；作者可撤回待审核或已发布内容。重复提交不得重复创建审核任务，其他不允许的操作要拒绝且保持原状态。请标明触发事件、条件及各种出口，不要自行增加“超时自动批准”。",
+      "judge_rubric": [
+        {
+          "id": "F1",
+          "behavioral_criterion": "状态与动作分开；已知合法迁移、操作者及提交/批准/驳回 guard 可追踪，满足条件才迁移，不把校验动作当持久状态。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "F2",
+          "behavioral_criterion": "有成功、校验不满足、无权/当前状态不允许以及重复提交的可判定结果；不满足条件保持原状态且不得产生重复审核任务。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "F3",
+          "behavioral_criterion": "流程中的条件分支有相应出口，拒绝或重试等路径不会悬空或误通向成功；条件语义一致且没有必然死循环。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "F4",
+          "behavioral_criterion": "不新增超时批准等未经确认的业务规则；未说明的撤回后恢复等迁移可标未知，不能伪装成已确认。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "FLOW-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    },
+    {
+      "id": "SIMPLE-06",
+      "category": "proportionality_normal_control",
+      "model_prompt": "请参考国内软件工程或系统架构设计常用的规范与实践处理本任务，有相关适用的国内标准时优先参考；不必为每份回答强行罗列标准编号，未核实适用性、有效版本或正文时不要宣称符合国标。\n\n这次只改现有导出页面一处文案：把“下载报表”改成“导出 CSV”，不改变按钮条件、接口、权限和失败处理。已有交接说明写明：按钮仅对具有 report.export 权限的用户显示；服务端再次鉴权；网络失败展示可重试提示；重复点击期间按钮禁用。现有总览图只有“页面 → 导出 API → 报表存储”三块。请给一个小范围变更说明和验收点，并判断现有图是否必须补画。不要把本次文案修改升级成系统重构。",
+      "judge_rubric": [
+        {
+          "id": "P1",
+          "behavioral_criterion": "把交付范围保持为文案替换及相关验收，不强制产出架构、DFD、ER、UML、流程等全套图；可明确现图无需改动。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "P2",
+          "behavioral_criterion": "依据已有文字识别权限、服务端鉴权、失败提示与重复点击控制已说明，不仅因为三块总览图没画分支就报告这些机制缺失。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "P3",
+          "behavioral_criterion": "验收聚焦新旧文案与既有交互不回归，不引入新接口、数据模型或权限策略；现有约束未被修改或遗漏为不再适用。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "P4",
+          "behavioral_criterion": "区分“已有说明包含约束”与“实现已被验证”：不凭合成描述声称已实际运行测试或验证生产实现。",
+          "scoring": "pass | fail | not_observable"
+        },
+        {
+          "id": "SIMPLE-CN",
+          "behavioral_criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "scoring": "pass | fail | not_observable"
+        }
+      ]
+    }
+  ],
+  "revision_note": "Supersedes unexecuted v1/v2 following final user wording: reference domestic software-engineering/system-architecture practice; standalone drawing skill. No model run performed.",
+  "comparison_limit": "New-capability comparison: baseline uses the applicable original skill entry; candidate uses standalone ff-diagram. User request bytes remain identical, but skill entry/context changes, so results cannot isolate diagram guidance from routing/context effects."
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "FF Diagram"
+  short_description: "Software diagrams with scoped notation and visual checks"
+  default_prompt: "Use $ff-diagram to create or review the requested software diagram using applicable Chinese engineering conventions, preserve assumptions, and report semantic, rendering and visual-check limits."

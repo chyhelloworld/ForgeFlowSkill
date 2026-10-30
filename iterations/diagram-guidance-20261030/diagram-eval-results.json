@@ -1,0 +1,544 @@
+{
+  "suite_id": "ff-diagram-behavior-v3-domestic-practice",
+  "frozen_suite_sha256": "b63a9300d932c23b0c46b583f2f99b96e4b991ea66520444aa0b07df274fd7bd",
+  "evaluated_at_utc": "2026-10-30T08:12:00Z",
+  "method": "Independent semantic review of output text and graph sources; original prompt quotations excluded from positive evidence. No implementation or CHECKS.md self-evaluation used. Frozen rubric unchanged.",
+  "status_mapping": "Frozen pass => PASS; fail => FAIL; not_observable/insufficient evidence => PARTIAL (not pass). Case PASS requires all five PASS.",
+  "summary": {
+    "baseline": {
+      "criteria_pass": 30,
+      "criteria_fail": 0,
+      "criteria_partial": 0,
+      "cases_pass": 6
+    },
+    "candidate": {
+      "criteria_pass": 30,
+      "criteria_fail": 0,
+      "criteria_partial": 0,
+      "cases_pass": 6
+    },
+    "observed_regressions": 0,
+    "observed_red_to_green": 0,
+    "conclusion": "Both satisfy this small semantic suite; no demonstrated improvement or red-to-green change. Experimental protocol deviations prevent a clean causal claim."
+  },
+  "blockers_or_confirmed_semantic_errors": [],
+  "cases": [
+    {
+      "case_id": "ARCH-01",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "A1",
+          "criterion": "结构视图与创建请求的运行时顺序可以区分，接口实现关系不会被误表述为一次网络调用；允许分图或清晰分区。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:13-47,49-104",
+            "reason": "静态实现→接口与独立运行时序分开；明确 Publisher 非同步依赖。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:10-14; ARCH-01-static.dot:5-10; ARCH-01-runtime.svg",
+            "reason": "静态依赖/实现与创建生命线分别表达，未把实现箭头当调用。"
+          }
+        },
+        {
+          "criterion_id": "A2",
+          "criterion": "核心服务的三个方法及职责可定位，但不把每个方法扩张成独立部署服务，也不遗漏 API、服务、仓储接口/实现及数据库的主要责任。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:5-11,20-24,107-113",
+            "reason": "三个服务方法、入口/业务/基础设施职责齐全；方法未拆独立部署服务。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:14-16; ARCH-01-static.dot:5-10; ARCH-01-runtime.svg",
+            "reason": "同一服务保留三个核心方法，接口、仓储实现、数据库与后台职责可定位；未拆成方法服务。"
+          }
+        },
+        {
+          "criterion_id": "A3",
+          "criterion": "保留事务内冲突检查与预订/outbox 原子写入、提交后异步通知及通知失败不回滚的约束；在图或邻近文字表达都算满足，不因主图线少判机制缺失。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:75-103,108-112",
+            "reason": "事务内冲突检查、预订/outbox 原子提交及通知失败不回滚明确。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:16; ARCH-01-runtime.svg",
+            "reason": "前置校验、事务冲突检查与原子写入、提交后成功及通知失败不回滚明确。"
+          }
+        },
+        {
+          "criterion_id": "A4",
+          "criterion": "层次可读：概览与关键交互分别服务结构/行为问题，没有把静态依赖箭头自动解释成严格执行次序或纳入无关全量函数。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:13-50,107-113",
+            "reason": "概览、创建交互及跨调用文字约束分层，图例未混淆源码依赖与时序。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:10-16; ARCH-01-static.dot:10",
+            "reason": "两视图加文字约束，未提供的源码依赖保留未知；没有从调用推断 import。"
+          }
+        },
+        {
+          "criterion_id": "ARCH-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:120",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ARCH-01.md:19",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "DFD-02",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "D1",
+          "criterion": "用数据对象或内容表达流的含义，不把时间先后、通过/不通过判断和开始/结束控制节点当作数据流主体；可以附文字说明控制逻辑。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:3,8-13,62",
+            "reason": "箭头均为申请资料、审核意见等数据；驳回/补充为数据内容而非控制分支。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:12,20; DFD-02-level1.dot:8",
+            "reason": "边为具名数据，明确不以处理编号/驳回动作表达控制次序。"
+          }
+        },
+        {
+          "criterion_id": "D2",
+          "criterion": "上下文边界与一级对外数据流在语义上守恒，员工、审核员、财务系统的输入输出没有消失或无依据新增。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:8-13,19-28",
+            "reason": "上下文六条外部流在一级均保持方向和语义。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "DFD-02-context.dot:6; DFD-02-level1.dot:8",
+            "reason": "六条外部流逐条守恒，无新外部实体。"
+          }
+        },
+        {
+          "criterion_id": "D3",
+          "criterion": "处理申请的子图保持该父过程边界上的全部输入输出含义和方向，包括申请库及执行付款方向；允许合并/拆分复合数据但必须可追踪，不要求箭头数相同。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:38-48,51-60",
+            "reason": "父过程七类边界流逐项映射，写库复合流拆分有等价说明。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:14; DFD-02-decompose.dot:8",
+            "reason": "申请记录读取、更新与受理反馈拆分有复合数据等价定义，父过程边界全部保留。"
+          }
+        },
+        {
+          "criterion_id": "D4",
+          "criterion": "数据存储与外部实体不直接互传数据，存储间也不直接搬运；新增内部处理若有，仅用于合理分解且不伪造业务确认。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:19-28,38-48",
+            "reason": "实际边均经过处理，无实体直存储或存储直连；子处理未添加业务参与者。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "DFD-02-level1.dot:8; DFD-02-decompose.dot:5-8; DFD-02.md:20",
+            "reason": "所有存储/外部边经过加工；父层相邻加工未被当新参与方，分解为待确认分析模型。"
+          }
+        },
+        {
+          "criterion_id": "DFD-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:69",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "DFD-02.md:23",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "ER-03",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "E1",
+          "criterion": "用业务实体、关系和业务属性表达概念模型，不以缺少 PK/FK 判无效，也不强制用联结表或键字段替代尚未确认的业务关系。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ER-03.md:3,7-12,15",
+            "reason": "实体/联系/属性构成概念模型，不强制 PK/FK 或关联表。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ER-03.md:10; ER-03-concept.dot:5-9",
+            "reason": "Chen 风格业务概念，无物理键与表约束。"
+          }
+        },
+        {
+          "criterion_id": "E2",
+          "criterion": "已知会员—借用记录的关系正确表达：每条记录属于一个会员，会员可多次借用；不能把会员必须已有借用记录当成已确认事实。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ER-03.md:7-8,15",
+            "reason": "每记录恰属一会员，可多次借用；0..多明确为暂按理解并允许业务纠正，未要求必须已有记录。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ER-03.md:12; ER-03-concept.dot:7",
+            "reason": "每记录恰属一会员、会员可多条；会员最小参与数留待确认。"
+          }
+        },
+        {
+          "criterion_id": "E3",
+          "criterion": "工具—借用记录的未定基数、同一工具重复借出的限制保持待确认，或并列给出明确标为假设的备选；不得选定某基数后冒充已确认。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ER-03.md:11-12,18-19",
+            "reason": "工具基数与重复借用条件明确待确认，历史多次与并发分开。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ER-03.md:14-16; ER-03-concept.dot:8",
+            "reason": "工具双向基数与重复条件均待确认，无默认关系强填。"
+          }
+        },
+        {
+          "criterion_id": "E4",
+          "criterion": "区分概念模型与后续逻辑/物理设计；允许展示可选后续方案，但未知的业务规则不能被数据库惯例悄悄确定。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ER-03.md:18-21",
+            "reason": "讨论借用明细只作为业务答案决定的新概念，未直接进入建库。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ER-03.md:16",
+            "reason": "先业务确认再决定逻辑模型，不提前引入明细表。"
+          }
+        },
+        {
+          "criterion_id": "ER-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "ER-03.md:26",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "ER-03.md:19",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "SEQ-04",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "S1",
+          "criterion": "调用/返回语义足以区分客户端及支付授权的同步等待与提交后事件的异步投递，消费者处理不阻塞原始请求成功。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:3,14-15,42-46",
+            "reason": "同步调用/返回与异步投递分开；后台不等待客户端接收响应。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:10; SEQ-04-order.svg（同步实心/异步空心/虚线回复及独立后台片段）",
+            "reason": "同步授权与返回、独立异步消息均可辨，消费者不阻塞请求。"
+          }
+        },
+        {
+          "criterion_id": "S2",
+          "criterion": "授权明确失败、授权超时结果未知与本地提交失败被区分；未宣称超时即未扣款，且未在提交失败路径发送成功确认事件。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:16-38,63-66",
+            "reason": "授权拒绝、授权未知、本地失败分开；失败无确认事件，未知不等于未扣款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:13-16; SEQ-04-order.svg（授权结果与提交结果 alt）",
+            "reason": "拒绝、超时未知、本地失败不同分支；超时无伪造支付失败回复，提交失败不发确认。"
+          }
+        },
+        {
+          "criterion_id": "S3",
+          "criterion": "核对/补偿是可失败或待处理的后续边界，不被画成跨支付与本地数据库的天然原子事务；不得无依据保证自动完全回滚。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:26,33,65-66",
+            "reason": "本地事务与支付分界清晰；补偿可失败且需核对/升级。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:15,18; SEQ-04-order.svg（核对/补偿注释）",
+            "reason": "支付不属于本地原子事务；核对线索持久性待确认，补偿非必然成功。"
+          }
+        },
+        {
+          "criterion_id": "S4",
+          "criterion": "保留重复消息幂等和邮件重试语义，邮件失败不改写已提交订单结果；图或配套说明均可承载细节。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:47-56,68",
+            "reason": "幂等、重试、不撤单齐全，且不无依据承诺严格一次发送。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:16; SEQ-04-order.svg（邮件消费者注释）",
+            "reason": "重复幂等、失败重试及不撤单有明确说明。"
+          }
+        },
+        {
+          "criterion_id": "SEQ-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:75",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SEQ-04.md:21",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "FLOW-05",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "F1",
+          "criterion": "状态与动作分开；已知合法迁移、操作者及提交/批准/驳回 guard 可追踪，满足条件才迁移，不把校验动作当持久状态。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:13-18,55-63",
+            "reason": "五状态合法迁移与事件/角色/guard 一一对应。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:12-18; FLOW-05-state.dot:5-12",
+            "reason": "状态、事件、角色及 guard 完整对应，没有动作伪装成状态。"
+          }
+        },
+        {
+          "criterion_id": "F2",
+          "criterion": "有成功、校验不满足、无权/当前状态不允许以及重复提交的可判定结果；不满足条件保持原状态且不得产生重复审核任务。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:29,35-49,52,61-63",
+            "reason": "拒绝不改状态、重复无新任务及成功出口可判定；重放返回作为建议并要求鉴权。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:20; FLOW-05-process.dot:5-6",
+            "reason": "合法成功、不合法/重复拒绝及失败出口齐全；并发最多一任务且保持一致性。"
+          }
+        },
+        {
+          "criterion_id": "F3",
+          "criterion": "流程中的条件分支有相应出口，拒绝或重试等路径不会悬空或误通向成功；条件语义一致且没有必然死循环。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:35-49",
+            "reason": "条件真假、并发冲突及存储失败均有出口；冲突重读非必然循环。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "FLOW-05-process.dot:5-6",
+            "reason": "guard、提交类型、提交成功与冲突条件都有去向；拒绝/成功/失败均到本请求结束。"
+          }
+        },
+        {
+          "criterion_id": "F4",
+          "criterion": "不新增超时批准等未经确认的业务规则；未说明的撤回后恢复等迁移可标未知，不能伪装成已确认。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:23-29,65",
+            "reason": "未增加撤回恢复、初始创建或超时批准规则。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:20; FLOW-05-state.dot:12",
+            "reason": "无超时批准/撤回恢复；实现保护建议没有改变业务状态集合。"
+          }
+        },
+        {
+          "criterion_id": "FLOW-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:70",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "FLOW-05.md:23",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    },
+    {
+      "case_id": "SIMPLE-06",
+      "baseline_status": "PASS",
+      "candidate_status": "PASS",
+      "criteria": [
+        {
+          "criterion_id": "P1",
+          "criterion": "把交付范围保持为文案替换及相关验收，不强制产出架构、DFD、ER、UML、流程等全套图；可明确现图无需改动。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:3,12",
+            "reason": "仅替换文案，现图无需补画或扩张全套图。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:10,19",
+            "reason": "只改标签，明确无需新图，不扩成系统重构。"
+          }
+        },
+        {
+          "criterion_id": "P2",
+          "criterion": "依据已有文字识别权限、服务端鉴权、失败提示与重复点击控制已说明，不仅因为三块总览图没画分支就报告这些机制缺失。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:12",
+            "reason": "明确文字已包含权限、鉴权、失败及重复点击，不因总览线少判缺失。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:19",
+            "reason": "承认权限、重试和禁用已经由文字表达，没有机制缺失误报。"
+          }
+        },
+        {
+          "criterion_id": "P3",
+          "criterion": "验收聚焦新旧文案与既有交互不回归，不引入新接口、数据模型或权限策略；现有约束未被修改或遗漏为不再适用。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:6-10",
+            "reason": "验收文案及既有交互不回归，不引入接口/权限变化。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:13-17",
+            "reason": "新文案及原有鉴权、接口、重复点击/失败回归覆盖，不改范围。"
+          }
+        },
+        {
+          "criterion_id": "P4",
+          "criterion": "区分“已有说明包含约束”与“实现已被验证”：不凭合成描述声称已实际运行测试或验证生产实现。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:14",
+            "reason": "明确未访问页面、未改代码、未跑验收。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:19,25",
+            "reason": "只给变更说明与计划，未取得源码/页面、不声称实际验收通过。"
+          }
+        },
+        {
+          "criterion_id": "SIMPLE-CN",
+          "criterion": "表达符合本任务的软件工程/架构设计用途，没有将不同图种的语义混用；若作具体国内标准主张，适用范围、版本和现行/替代状态须有可核查依据，否则明确保留核实限制，不伪称合规，也不将国际记法冒充国标。未读正文不得以编号/目录或二手摘要证明条款符合性。无需强行列出标准或每案进行国标审计；简单任务不因规范要求而被扩张。评审者对实际提出的具体标准主张独立查证，无主张时按图法行为评审。",
+          "baseline": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:19",
+            "reason": "两标准目录现行状态经本次独立官方查询支持；输出明确未读正文、不宣称合规，无虚构图法条款。"
+          },
+          "candidate": {
+            "status": "PASS",
+            "evidence": "SIMPLE-06.md:22",
+            "reason": "国际 UML 约定仅作补充，未核正文不称合规；无具体编号/条款主张需强制审计。"
+          }
+        }
+      ]
+    }
+  ],
+  "input_checks": [
+    {
+      "case_id": "ARCH-01",
+      "candidate_embedded_prompt_matches": true
+    },
+    {
+      "case_id": "DFD-02",
+      "candidate_embedded_prompt_matches": true
+    },
+    {
+      "case_id": "ER-03",
+      "candidate_embedded_prompt_matches": true
+    },
+    {
+      "case_id": "SEQ-04",
+      "candidate_embedded_prompt_matches": true
+    },
+    {
+      "case_id": "FLOW-05",
+      "candidate_embedded_prompt_matches": true
+    },
+    {
+      "case_id": "SIMPLE-06",
+      "candidate_embedded_prompt_matches": true
+    }
+  ],
+  "standard_checks": [
+    {
+      "standard": "GB/T 8567-2006",
+      "verified": "Official directory status current; no full-text applicability audit",
+      "url": "https://openstd.samr.gov.cn/bzgk/gb/newGbInfo?hcno=84C42B6277D2714B7176B10C6E6B1A44"
+    },
+    {
+      "standard": "GB/T 9385-2008",
+      "verified": "Official directory status current; no full-text applicability audit",
+      "url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=2790825C43AD0B69E3C38C140BFFCFE6"
+    }
+  ],
+  "candidate_only_visual_smoke": {
+    "independently_viewed": [
+      "ARCH-01-runtime.png",
+      "SEQ-04-order.png"
+    ],
+    "result": "PASS for these two previews: readable Chinese, distinguishable arrows/branches and no observed clipping; not full-suite visual certification",
+    "excluded_from_comparative_score": true
+  },
+  "limitations": [
+    "新增能力对照：基准原适用技能入口，候选独立 ff-diagram，路由与上下文不同，非单变量实验。",
+    "候选交接额外强调尽可能实际渲染查看，基准只说可用渲染工具；视觉产物差异不可归因 skill，仅可作候选独立 smoke。",
+    "冻结 README 要求逐案新上下文，但基准明确六案共用一个上下文；未把该偏差当单个输出的语义失败，实验隔离条件未满足。候选上下文隔离亦未独立核实。",
+    "仅一次六案合成输出；无盲化、无多采样、无多模型稳定性结论；评审独立于实现 agent，但知道 baseline/candidate 身份。",
+    "候选正文中的六份原始请求与冻结 model_prompt 可逐字核验；基准输出未附完整请求，基准实际输入及额外上下文仅据父代理交接，不独立证明全部输入字节相同。",
+    "仅检查实际标准主张：两项基准标准目录现行状态核验通过，未读正文、未做条款符合性审计，不能解释为国标认证。",
+    "未测业务代码、真实系统权限/事务/幂等实现、真实用户验收、全量 UML/大规模图布局、draw.io 可编辑性或同条件渲染质量。"
+  ]
+}

@@ -1,0 +1,11 @@
+digraph G {
+graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.75"];
+node [shape=box,fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.1"];
+edge [fontname="Noto Sans CJK SC",fontsize=12];
+member [label="会员"];loan [label="借用记录"];tool [label="工具"];
+r1 [shape=diamond,label="属于"];r2 [shape=diamond,label="涉及"];
+member -> r1 [dir=none,label="每记录恰属 1 会员"];r1 -> loan [dir=none,label="每会员可有多条\n最小参与数待确认"];
+loan -> r2 [dir=none,label="每记录工具数待定"];r2 -> tool [dir=none,label="每工具记录数/可重复条件待定"];
+a1 [shape=ellipse,label="借出时间"];a2 [shape=ellipse,label="归还时间"];loan -> a1 [dir=none];loan -> a2 [dir=none];
+
+}

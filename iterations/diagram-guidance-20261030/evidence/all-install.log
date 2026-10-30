@@ -1,0 +1,175 @@
+✔ legacy 17/18/19 and current 20 complete inventories remain readable (45.185105ms)
+✖ missing baseline, renamed skill and mixed-host inventory are rejected (9.380898ms)
+✔ both host payloads include independent entries and exactly one derivation template (203.3724ms)
+✔ isolated skills-only install and reentry preserve optional entry on both hosts (1233.633476ms)
+✔ only the standalone diagram skill owns references; old entries have optional name routing (27.401166ms)
+✔ individual skill folder copies resolve diagram references without siblings (12.843577ms)
+✔ real skills-only dual-host install includes every guidance byte and is idempotent (1654.138651ms)
+✖ explicit dual install and reentry share one release and preserve exact state (685.740299ms)
+✔ schema 1 migrates to dual, rollback restores old state and schema 2 re-add works (3805.936306ms)
+✔ remove one host preserves other bytes/mtime, user extras and shared runtime; rollback restores both (2708.723201ms)
+✔ new host conflicts and edits in either host block mutations without overwriting (1442.125652ms)
+✔ current runtime tampering blocks upgrade, remove and rollback (1091.890198ms)
+✔ write and state failures restore all old bytes and remove only attempted new entries (1173.401369ms)
+✔ actual child exit leaves pending; recovery conflicts preserve diagnostics until repaired (963.558486ms)
+✔ exit after state commit verifies COMMITTED and refuses altered committed state or files (940.644041ms)
+✖ actual removal child exits recover before deletion commit and confirm after state commit (939.083686ms)
+✖ transient pending cleanup failure confirms committed state instead of claiming rollback (6.571362ms)
+✖ schema 2 rejects undeclared hosts, missing skill/helper entries and malformed host sets (6.51009ms)
+✔ command grammar rejects ambiguous/destructive combinations before touching a project (1.545545ms)
+✖ installed doctor argument protocol and skills-only errors stay explicit (8.432483ms)
+✖ older journals without state hashes remain recoverable with backup state verification (8.283385ms)
+✔ cold install: Chinese/space path, 20 skills, binding, honest blocked runtime (1231.936964ms)
+✔ Claude install and same-version reentry leave exact state unchanged (439.788982ms)
+✔ unmanaged conflict blocks without overwriting (90.693776ms)
+✔ user edit prevents same-version reinstall and rollback (327.384191ms)
+✔ upgrade and rollback preserve unrelated files and restore exact old payload (1191.871952ms)
+✔ same source can switch project hosts with rollback and no orphan blockage (1034.700421ms)
+✔ state commit failure restores previous state and bytes (1418.136599ms)
+✔ pending recovery preserves user conflict; source and destination symlinks rejected (813.43569ms)
+✔ tampered source, runtime, and unsafe state are blocked (592.655129ms)
+✔ project move remains bound locally and official openspec never invoked (383.818241ms)
+✔ CLI arguments, full build consent, uninstalled doctor and lock checks (105.512969ms)
+✔ path and local-home isolation checks (214.825374ms)
+✔ rollback refuses a modified inactive runtime release (898.596844ms)
+✔ Python skill caches are not install payload; installed health helper is executable (664.132967ms)
+✔ npx bootstrap removes its Unicode temporary source after success, reentry and installer failure (3120.128832ms)
+✔ strict decoder accepts complete manifest payload (281.598078ms)
+✔ strict decoder rejects traversal, absolute paths, links, special files (6.688065ms)
+✔ strict decoder rejects missing, extra, duplicate and corrupt members (3.012297ms)
+✔ strict decoder rejects missing terminators and nonzero trailers (2.737331ms)
+✔ staged bootstrap cleanup is Windows-only and leaves source, siblings, runtime and project data alone (11.482941ms)
+✔ Windows cleanup cannot be prepared over a bootstrap copied from source (6.696208ms)
+✔ cleanup refuses a replacement stage and cannot clean a moved release (1.449249ms)
+✔ cleanup refuses symbolic links at the bootstrap or any stage ancestor (6.07957ms)
+✔ cleanup unlinks nested directory links without traversing external data (1.756716ms)
+✔ cleanup reports deletion errors and retains remaining diagnostics (2.811981ms)
+✔ cleanup rejects a silent no-op instead of reporting success (4.781076ms)
+✔ stage creation rejects a linked destination ancestor (1.598624ms)
+✔ mocked Windows full install cleans only after successful build and probe, before inventory (54.642352ms)
+✔ mocked Windows install preserves pre-existing source bootstrap and rejects before any build (21.758121ms)
+✔ edits during a mocked full build block commit and preserve active host files and state (241.66117ms)
+✔ mocked Windows failed build or CLI probe retains stage diagnostics and no active installation (28.155546ms)
+✔ Windows cleanup does not relax strict absolute or escaping runtime link rejection (46.913114ms)
+✔ runtime inventory still rejects relative escaping links and chained escapes (2.548925ms)
+✔ standalone builder preserves an existing bootstrap and adds hoisted only on Windows (mocked subprocesses) (1079.557581ms)
+ℹ tests 55
+ℹ suites 0
+ℹ pass 48
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 14039.19682
+
+✖ failing tests:
+
+test at tools/installer/tests/architecture-review.test.mjs:29:1
+✖ missing baseline, renamed skill and mixed-host inventory are rejected (9.380898ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /Mixed skill inventory/. Input:
+  
+  'Error: BLOCKED: Expected complete legacy or current skill inventory'
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: BLOCKED: Expected complete legacy or current skill inventory
+        at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+        at validateState (file://<REPO>/tools/installer/state.mjs:51:126)
+        at file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:23
+        at getActual (node:assert:611:5)
+        at strict.throws (node:assert:759:24)
+        at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/architecture-review.test.mjs:35:10)
+        at Test.runInAsyncScope (node:async_hooks:227:14)
+        at Test.run (node:internal/test_runner/test:1402:25)
+        at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+        at Test.postRun (node:internal/test_runner/test:1542:19),
+    expected: /Mixed skill inventory/,
+    operator: 'throws',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/dual-host.test.mjs:64:1
+✖ explicit dual install and reentry share one release and preserve exact state (685.740299ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'split')
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:76:49)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17)
+
+test at tools/installer/tests/dual-host.test.mjs:191:1
+✖ actual removal child exits recover before deletion commit and confirm after state commit (939.083686ms)
+  Error: BLOCKED: Source integrity: docs/user/diagrams.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at main (file://<REPO>/installer.mjs:49:12)
+      at invoke (file://<REPO>/tools/installer/tests/dual-host.test.mjs:20:36)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:193:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tools/installer/tests/dual-host.test.mjs:204:1
+✖ transient pending cleanup failure confirms committed state instead of claiming rollback (6.571362ms)
+  Error: BLOCKED: Source integrity: docs/user/diagrams.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at main (file://<REPO>/installer.mjs:49:12)
+      at invoke (file://<REPO>/tools/installer/tests/dual-host.test.mjs:20:36)
+      at single (file://<REPO>/tools/installer/tests/dual-host.test.mjs:21:21)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:205:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+
+test at tools/installer/tests/dual-host.test.mjs:214:1
+✖ schema 2 rejects undeclared hosts, missing skill/helper entries and malformed host sets (6.51009ms)
+  Error: BLOCKED: Source integrity: docs/user/diagrams.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at main (file://<REPO>/installer.mjs:49:12)
+      at invoke (file://<REPO>/tools/installer/tests/dual-host.test.mjs:20:36)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:215:24)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+
+test at tools/installer/tests/dual-host.test.mjs:231:1
+✖ installed doctor argument protocol and skills-only errors stay explicit (8.432483ms)
+  Error: BLOCKED: Source integrity: docs/user/diagrams.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at main (file://<REPO>/installer.mjs:49:12)
+      at invoke (file://<REPO>/tools/installer/tests/dual-host.test.mjs:20:36)
+      at single (file://<REPO>/tools/installer/tests/dual-host.test.mjs:21:21)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:232:37)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+
+test at tools/installer/tests/dual-host.test.mjs:243:1
+✖ older journals without state hashes remain recoverable with backup state verification (8.283385ms)
+  Error: BLOCKED: Source integrity: docs/user/diagrams.md
+      at fail (file://<REPO>/tools/installer/files.mjs:6:39)
+      at verifySource (file://<REPO>/tools/installer/source.mjs:13:86)
+      at install (file://<REPO>/tools/installer/install.mjs:113:15)
+      at main (file://<REPO>/installer.mjs:49:12)
+      at invoke (file://<REPO>/tools/installer/tests/dual-host.test.mjs:20:36)
+      at single (file://<REPO>/tools/installer/tests/dual-host.test.mjs:21:21)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/dual-host.test.mjs:245:26)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)

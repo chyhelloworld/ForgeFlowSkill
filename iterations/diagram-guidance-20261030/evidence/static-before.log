@@ -1,0 +1,68 @@
+✖ four consumers carry byte-identical local guidance; other skills stay lean (9.55987ms)
+✖ individual skill folder copies resolve diagram references without siblings (10.146641ms)
+✖ real skills-only dual-host install includes every guidance byte and is idempotent (451.074555ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 0
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 635.527915
+
+✖ failing tests:
+
+test at tools/installer/tests/diagrams.test.mjs:25:1
+✖ four consumers carry byte-identical local guidance; other skills stay lean (9.55987ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(fs.readFileSync(path.join(folder, 'SKILL.md'), 'utf8').includes('(references/diagrams/core.md)'))
+  
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:29:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tools/installer/tests/diagrams.test.mjs:35:1
+✖ individual skill folder copies resolve diagram references without siblings (10.146641ms)
+  Error: ENOENT: no such file or directory, open '<FIXTURES>/ff-diagrams-w3bhxD/single/ff-architecture-derive/references/diagrams/core.md'
+      at Object.readFileSync (node:fs:483:20)
+      at checkLinks (file://<REPO>/tools/installer/tests/diagrams.test.mjs:17:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:39:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '<FIXTURES>/ff-diagrams-w3bhxD/single/ff-architecture-derive/references/diagrams/core.md'
+  }
+
+test at tools/installer/tests/diagrams.test.mjs:42:1
+✖ real skills-only dual-host install includes every guidance byte and is idempotent (451.074555ms)
+  Error: ENOENT: no such file or directory, open '<FIXTURES>/ff-diagrams-w3bhxD/installed-6zSmDP/.agents/skills/ff-architecture-derive/references/diagrams/core.md'
+      at Object.readFileSync (node:fs:483:20)
+      at checkLinks (file://<REPO>/tools/installer/tests/diagrams.test.mjs:17:31)
+      at TestContext.<anonymous> (file://<REPO>/tools/installer/tests/diagrams.test.mjs:48:5)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '<FIXTURES>/ff-diagrams-w3bhxD/installed-6zSmDP/.agents/skills/ff-architecture-derive/references/diagrams/core.md'
+  }

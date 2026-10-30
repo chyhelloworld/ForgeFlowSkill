@@ -1,17 +1,17 @@
 # ForgeFlow Skill
 
-本地候选 `0.9.6-derivation.4` 在 `0.9.6-derivation.3 / 4f64f0e8` 上给[架构评估](docs/user/architecture-review.md)增加按当前决策检查颗粒度的简短判据，指出过粗/过细的具体位置及最小调整。完整保留上一候选的[推导修复](docs/user/architecture-derivation.md)、19项技能和既有能力；不自动更新真实安装。范围见[计划T2](planning/ARCHITECTURE-DERIVE-QUALITY-096.md)。
+此前 `0.9.6-derivation.4` 基线在 `0.9.6-derivation.3 / 4f64f0e8` 上给[架构评估](docs/user/architecture-review.md)增加按当前决策检查颗粒度的简短判据，指出过粗/过细的具体位置及最小调整。完整保留上一候选的[推导修复](docs/user/architecture-derivation.md)、19项技能和既有能力；不自动更新真实安装。范围见[计划T2](planning/ARCHITECTURE-DERIVE-QUALITY-096.md)。
 
 面向 AI 编程的轻量工作流技能集：澄清需求、拆分任务、按需设计与实现、独立审核和中断接手，帮助人核对 AI 是否仍沿着当前目标工作。
 
-当前为 **0.9.6-derivation.4 源码候选、19 项技能**，工作分支 `work/architecture-review-granularity-096`。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.9.6-derivation.4 源码候选、20 项技能**，工作分支 `work/prove-ablation-096`。新增独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ## 从这里开始
 
 | 想做什么 | 直接入口 |
 | --- | --- |
 | 安装、选择 full / skills-only、首次使用与恢复 | [安装与首次使用](docs/user/install.md) |
-| 看具体能力、使用场景、19 项技能与真实命令 | [能力与使用场景](docs/user/capabilities.md) |
+| 看具体能力、使用场景、20 项技能与真实命令 | [能力与使用场景](docs/user/capabilities.md) |
 | 在 Codex 原生目标中使用 FF | [Codex Goal 使用与边界](docs/user/codex-goal.md) |
 | 从零启动新项目 | [新项目流程](docs/FF-中文使用手册.md#新项目如何从想法走到交付) |
 | 接手旧项目、半成品或中断任务 | [旧项目流程](docs/FF-中文使用手册.md#旧项目或半成品项目怎么接手) |

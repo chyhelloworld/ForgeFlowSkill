@@ -1,0 +1,8 @@
+digraph G {
+graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.45", ranksep="0.75"];
+node [shape=box,fontname="Noto Sans CJK SC", fontsize=14, margin="0.15,0.1"];
+edge [fontname="Noto Sans CJK SC",fontsize=12];
+start [shape=oval,label="接收操作请求"];read [label="读取当前状态与角色\n校验事件条件（见状态表）"];valid [shape=diamond,label="当前事件及守卫\n允许？"]; reject [shape=parallelogram,label="拒绝并说明原因\n原状态不变 / 不创建任务"];submit [shape=diamond,label="是提交事件？"];once [label="并发/重复保护下\n状态迁移 + 创建一次任务"];other [label="原子执行批准/驳回/撤回\n并记录效果"];commit [shape=diamond,label="持久化成功且\n状态版本未冲突？"];ok [shape=parallelogram,label="返回成功及新状态"];fail [shape=parallelogram,label="返回失败/冲突\n不保留本次局部更新"];end [shape=oval,label="本请求结束"];
+start -> read;read -> valid;valid -> reject [label="否（含不允许的重复提交）"];valid -> submit [label="是"];submit -> once [label="是"];submit -> other [label="否"];once -> commit;other -> commit;commit -> ok [label="是"];commit -> fail [label="否"];reject -> end;ok -> end;fail -> end;
+
+}

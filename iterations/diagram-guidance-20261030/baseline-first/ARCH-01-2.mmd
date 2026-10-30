@@ -1,0 +1,52 @@
+sequenceDiagram
+participant F as 前端
+participant A as Booking API
+participant B as BookingService实现
+participant R as 房间仓储实现
+participant T as 预订事务适配
+participant D as Postgres
+participant P as Publisher
+participant N as 通知接收端
+F->>A: 创建(userId, roomId, slot, requestId)
+A->>B: createBooking(userId, roomId, slot, requestId)
+B->>B: 校验权限与时段
+alt 权限或时段不合法
+ B-->>A: 拒绝原因
+ A-->>F: 创建失败
+else 前置校验通过
+ B->>R: 查询房间（拟议契约）
+ R-->>B: 房间信息或不存在
+ alt 房间不存在
+  B-->>A: 拒绝
+  A-->>F: 创建失败
+ else 房间有效
+  B->>T: 原子预订(roomId, slot, userId, requestId)
+  T->>D: BEGIN；事务内检查冲突
+  D-->>T: 冲突检查结果
+  alt 有冲突
+   T->>D: ROLLBACK
+   T-->>B: 时段冲突
+   B-->>A: 拒绝
+   A-->>F: 冲突结果
+  else 无冲突
+   T->>D: 写预订和outbox；COMMIT
+   alt 提交成功
+    D-->>T: 已提交
+    T-->>B: bookingId
+    B-->>A: 创建成功
+    A-->>F: 成功及bookingId
+   else 提交失败
+    D-->>T: 错误
+    T-->>B: 存储失败
+    B-->>A: 创建未成功确认
+    A-->>F: 失败或待核对结果
+   end
+  end
+ end
+end
+opt 有已提交outbox（独立后台，不等待前端接收响应）
+ P->>D: 读取待投递事件
+ D-->>P: 已提交事件
+ P-)N: 预订通知事件
+ Note over P,N: 通知失败可重试；不能回滚预订
+end

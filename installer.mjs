@@ -3,18 +3,20 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { checkedRoot, safe, fail } from './tools/installer/files.mjs';
-import { install, doctor, removeHost } from './tools/installer/install.mjs';
+import { install, doctor, removeHost, updateSkill } from './tools/installer/install.mjs';
 import { normalizeHosts, hosts } from './tools/installer/state.mjs';
 import { control, recover, rollback, loadState } from './tools/installer/transaction.mjs';
 export function parse(args) {
   const options = { command: args.shift() };
-  if (!['install', 'doctor', 'remove-host', 'rollback', 'recover'].includes(options.command)) fail('Usage: node installer.mjs install|doctor|remove-host|rollback|recover --project PATH [--host codex|claude | --hosts codex,claude] [--mode full|skills-only --build]');
+  if (!['install', 'update-skill', 'doctor', 'remove-host', 'rollback', 'recover'].includes(options.command)) fail('Usage: node installer.mjs install|update-skill|doctor|remove-host|rollback|recover --project PATH [--host codex|claude | --hosts codex,claude] [--mode full|skills-only --build]');
   while (args.length) {
     const key = args.shift();
     if (key === '--build' && !options.build) { options.build = true; continue; }
-    if (!['--project', '--host', '--hosts', '--mode', '--reuse-build'].includes(key) || options[key.slice(2)] || !args.length) fail('Invalid or duplicate argument');
+    if (!['--project', '--host', '--hosts', '--mode', '--reuse-build', '--skill'].includes(key) || options[key.slice(2)] || !args.length) fail('Invalid or duplicate argument');
     options[key.slice(2)] = args.shift();
   }
+  if (options.command === 'update-skill' && (!options.skill || options.host || options.hosts)) fail('update-skill requires --skill and updates all installed hosts; no host flags');
+  if (options.command !== 'update-skill' && options.skill) fail('--skill applies only to update-skill');
   if (!options.project) fail('--project is required');
   if (options.host && !hosts.includes(options.host)) fail('Unknown host');
   if (options.host && options.hosts) fail('--host conflicts with --hosts');
@@ -46,6 +48,7 @@ export function main(args) {
     if (fs.existsSync(safe(project, `${control}/pending.json`))) fail('Pending transaction; run recover first');
     if (options.command === 'rollback') return { status: 'ROLLED_BACK', version: rollback(project, loadState(project)).version };
     if (options.command === 'remove-host') return removeHost(project, options.host);
+    if (options.command === 'update-skill') return updateSkill(project, source, options);
     return install(project, source, options);
   } finally { fs.rmdirSync(lock); }
 }

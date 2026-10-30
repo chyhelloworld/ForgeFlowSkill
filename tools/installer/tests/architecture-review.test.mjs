@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { baselineSkills, architectureSkills, currentSkills, sharedFiles, hostBase, validateState, loadState } from '../state.mjs';
+import { baselineSkills, architectureSkills, derivationSkills, currentSkills, sharedFiles, hostBase, validateState, loadState } from '../state.mjs';
 import { verifySource, skillPayload } from '../source.mjs';
 import { install, doctor } from '../install.mjs';
 
@@ -18,9 +18,9 @@ function fixtureState(names, hosts = ['codex']) {
   return { schema: 2, hosts, mode: 'skills-only', files };
 }
 
-test('legacy 17/18 and current 19 complete inventories remain readable', () => {
-  assert.equal(currentSkills.length, 19);
-  for (const names of [baselineSkills, architectureSkills, currentSkills]) {
+test('legacy 17/18/19 and current 20 complete inventories remain readable', () => {
+  assert.equal(currentSkills.length, 20);
+  for (const names of [baselineSkills, architectureSkills, derivationSkills, currentSkills]) {
     const state = fixtureState(names, ['codex', 'claude']);
     assert.equal(validateState(suite, state), state);
   }
@@ -31,7 +31,7 @@ test('missing baseline, renamed skill and mixed-host inventory are rejected', ()
     assert.throws(() => validateState(suite, fixtureState(names)), /skill inventory/);
   }
   const state = fixtureState(currentSkills, ['codex', 'claude']);
-  delete state.files['.claude/skills/ff-architecture-derive/SKILL.md'];
+  delete state.files['.claude/skills/ff-diagram/SKILL.md'];
   assert.throws(() => validateState(suite, state), /Mixed skill inventory/);
   const invalid = fixtureState(currentSkills.filter(n => n !== 'ff-architecture-review'));
   assert.throws(() => validateState(suite, invalid), /skill inventory/);
@@ -66,7 +66,7 @@ test('isolated skills-only install and reentry preserve optional entry on both h
   const before = fs.readFileSync(statePath);
   assert.equal(loadState(project).schema, 2);
   for (const host of options.hosts) {
-    assert.equal(fs.readdirSync(path.join(project, hostBase(host))).length, 19);
+    assert.equal(fs.readdirSync(path.join(project, hostBase(host))).length, 20);
     assert.ok(fs.readFileSync(path.join(project, hostBase(host), 'ff-architecture-review/SKILL.md'), 'utf8').includes('references/scenario-review.md'));
     assert.deepEqual(fs.readFileSync(path.join(project, hostBase(host), 'ff-architecture-derive/references/architecture-derivation.md')),
       fs.readFileSync(path.join(source, 'skills/ff-architecture-derive/references/architecture-derivation.md')));

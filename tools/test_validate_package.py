@@ -16,7 +16,13 @@ def manifest(root):
     p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
 
 def mutate(root,kind):
-    if kind=='missing_optional': shutil.rmtree(root/'skills/ff-research')
+    if kind=='independent_version_mismatch':
+        p=root/'skills/ff-diagram/SKILL.md';p.write_text(p.read_text().replace('version: \"0.1.0\"','version: \"0.2.0\"'))
+    elif kind=='unknown_independent_skill':
+        p=root/'skill-versions.json';d=json.loads(p.read_text());d['ff-nonexistent']='1.0.0';p.write_text(json.dumps(d))
+    elif kind=='malformed_independent_version':
+        p=root/'skill-versions.json';p.write_text(json.dumps({'ff-diagram': 1}))
+    elif kind=='missing_optional': shutil.rmtree(root/'skills/ff-research')
     elif kind=='missing_optional_scenario':
         p=root/'evaluations/scenarios.json';d=json.loads(p.read_text());d['cases']=[c for c in d['cases'] if c['id']!='E25'];p.write_text(json.dumps(d))
     elif kind=='missing_method': shutil.rmtree(root/'skills/ff-handoff')
@@ -39,7 +45,7 @@ if __name__=='__main__':
     root=Path(sys.argv[1]).resolve()
     baseline=validate(root)
     results=[{'case':'valid_package','passed':baseline['passed'],'errors':baseline['errors']}]
-    for kind in ['missing_optional','missing_optional_scenario','missing_method','wrong_version','broken_reference','missing_license','missing_replay','changed_source','unknown_scenario_skill','hash_tamper']:
+    for kind in ['independent_version_mismatch','unknown_independent_skill','malformed_independent_version','missing_optional','missing_optional_scenario','missing_method','wrong_version','broken_reference','missing_license','missing_replay','changed_source','unknown_scenario_skill','hash_tamper']:
         with tempfile.TemporaryDirectory(prefix='ff-static-negative-') as d:
             clone=Path(d)/'package';shutil.copytree(root,clone,ignore=shutil.ignore_patterns(".git", ".build", ".bootstrap", "__pycache__", ".pnpm-data", ".pnpm-cache", ".pnpm-store"));mutate(clone,kind)
             outcome=validate(clone)

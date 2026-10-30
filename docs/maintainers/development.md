@@ -6,7 +6,7 @@
 
 | 位置 | 用途 |
 | --- | --- |
-| `skills/` | 19 项技能，保留 SKILL.md、agents/openai.yaml、references、NOTICE 与 LICENSE 的发现/依赖布局 |
+| `skills/` | 20 项技能，保留 SKILL.md、agents/openai.yaml、references、NOTICE 与 LICENSE 的发现/依赖布局 |
 | `tools/installer/`、`installer.mjs`、`bin/` | 安装、打包与项目内运行入口 |
 | `tools/openspec/` | 固定 CLI 来源、构建和补丁；[来源与构建说明](../../tools/openspec/README.md) |
 | `docs/user/` | 安装、能力/场景与可选方法；中文主手册/离线 HTML/图源为兼容现有脚本保留在 docs 根 |
@@ -15,9 +15,9 @@
 
 [生命周期契约](SPEC-LIFECYCLE.md)与[旧状态迁移](../../MIGRATION.md)保留原基线版本标识，描述 FF 原生门禁和兼容边界；已安装项目业务入口用 `.forgeflow/ff-spec.mjs`，源码构建入口用 `tools/openspec/ff-spec.mjs`。不要把迁移文档的旧版本号当当前包版本。
 
-ROUTING、根 CHANGE-MAP 和 tools/openspec/README 同样保留来源/实验基线标识；ROUTING 的十二个工作流职责加七项可选方法合计19技能。当前安装入口和验证边界以[安装页](../user/install.md)为准，不能用这些旧版本标识覆盖当前包事实。
+ROUTING、根 CHANGE-MAP 和 tools/openspec/README 同样保留来源/实验基线标识；ROUTING 的历史十二个工作流职责加七项可选方法为19技能；独立ff-diagram加入后当前为20技能。当前安装入口和验证边界以[安装页](../user/install.md)为准，不能用这些旧版本标识覆盖当前包事实。
 
-Codex Goal 隔离候选的唯一契约是 [CODEX-GOAL-BRIDGE.md](CODEX-GOAL-BRIDGE.md)。五个接入技能中的 `references/goal-bridge.md` 必须与它逐字节相同且由各自 SKILL 条件路由；安装后不依赖仓库文档路径。包版本与全部技能 metadata 同步，原 CLI 固定版本不变；原生实验和模拟行为不能互相替代。候选冻结后若再改源文件，须重新打包、核对哈希并重做受影响验证，不能改签既有安装证据。
+Codex Goal 隔离候选的唯一契约是 [CODEX-GOAL-BRIDGE.md](CODEX-GOAL-BRIDGE.md)。五个接入技能中的 `references/goal-bridge.md` 必须与它逐字节相同且由各自 SKILL 条件路由；安装后不依赖仓库文档路径。旧工作流技能 metadata 沿用包版本；独立元能力版本按 skill-versions.json 显式登记并与该技能 metadata 核对，原 CLI 固定版本不变；原生实验和模拟行为不能互相替代。候选冻结后若再改源文件，须重新打包、核对哈希并重做受影响验证，不能改签既有安装证据。
 
 ## 验证入口
 
@@ -46,7 +46,7 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 
 维护者显式执行 `python -X utf8 tools/installer/pack-release.py` 重新生成 MANIFEST/payload/校验文件，不能只改文档而留下旧包。脚本不由 npm 生命周期自动运行。现有 packer 不过滤 Git worktree 的 `.git` 指针文件；从不含 Git 元数据/缓存的干净源码导出打包，并核对文件清单，不修改源或绕过验证。
 
-新包核对版本、19技能、全部 manifest 文件、tar 条目/校验和、相对链接和实际安装入口。full需要固定依赖网络，失败保留原始结果；可分别报告 skills-only 的限域验证，不将其说成 full READY。主分支合并、版本发布和生产操作各需相应授权。
+新包核对版本、20技能、全部 manifest 文件、tar 条目/校验和、相对链接和实际安装入口。full需要固定依赖网络，失败保留原始结果；可分别报告 skills-only 的限域验证，不将其说成 full READY。主分支合并、版本发布和生产操作各需相应授权。
 
 0.9.2-goal.1 暴露了实际的提交前打包缺陷：工作区 CRLF 字节进入 manifest，但 Git 按 `.gitattributes` 提交为 LF，检出后完整性失效。0.9.2-goal.2 在保留原候选与回执后用 `write_bytes` 修正预期文本字节并重新冻结。打包前对清单文件比较 `git hash-object --path=<相对路径> <文件>` 与 `git hash-object --no-filters <文件>`，必须一致；再生成并复核 manifest/payload，不能把换行警告当无害。已有 `-text` 原始证据保持原字节，不批量归一化历史记录，也不通过改属性隐藏差异。
 
@@ -69,3 +69,9 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 ## 0.9.6 需求闭环维护
 
 [INTENT-LOOP.md](INTENT-LOOP.md)是需求闭环的维护源，十个接线技能内的 references/intent-loop.md 为独立安装同源副本；[USE-FEEDBACK.md](USE-FEEDBACK.md)同步到 Deliver/Handoff/Retro 及可独立收尾的 Diagnose/TDD/Research/三个Writing技能；十个闭环技能同时在契约内获得最短规则。修改只在维护源定义后同步，安装包内不依赖跨技能路径。`python -X utf8 tools/workflow/test_intent_contract.py` 检查副本、引用和合成关系结构，仅属静态格式检查，不是模型行为测试。新增合成场景与真实宿主验证边界见[本轮记录](../../iterations/0.9.6-intent.1/README.md)。
+
+## 元能力的独立演进原则
+
+用户2026-10-30明确：元能力抽象为独立skill，允许单个版本迭代。流程skill只按需引用，不复制元能力正文。ff-diagram先实行独立0.1.0版本、变更记录、测试与本地参考；本轮不重构其他19技能。
+
+版本登记是内容版本契约，不冒充升级能力。全包安装器要求完整清单，事务把缺失受管文件视为删除，且各SKILL追加全包绑定；不得仅过滤payload模拟单项升级。新增update-skill v1复用原事务，保留未选受管文件，只允许已安装ff-diagram独立更新并记录pin；不改原runtime/version/sourceHash，不新增第二所有权表。旧库存首次新增仍需完整迁移。参见[命令与边界](../user/update-skill.md)，独立目录复制验证只能证明自包含，不代替更新/回滚测试。

@@ -1,0 +1,40 @@
+{
+  "purpose": "Publishable copies only: replace executor roots in new evidence, preserve outcome text and original digests; raw originals remain outside repository. Existing historical evidence untouched.",
+  "files": [
+    {
+      "file": "evidence/standalone-before.log",
+      "original_sha256": "2f75c400d9851b757136e63097224ff42c98c550f974dfc160385743d2e8542a",
+      "normalized_sha256": "1c06c1f466b0db2b9117c57db20cf89407d1b2d3769e6134d017d7bf1a484353"
+    },
+    {
+      "file": "evidence/static-mutations-final.json",
+      "original_sha256": "9af19819cc6e73c58f7eadf8fd54a111088cd3cc44cd5499ed1a7ee09322ae35",
+      "normalized_sha256": "7f4fd3b2bad363ee0f405dc4a2625fc7b677f6b641160589e3d5f4b16cb718fc"
+    },
+    {
+      "file": "evidence/affected-install.log",
+      "original_sha256": "70a51907e1f2097ec41d979b300972cd3e5287b8573d72f0803dc8b06eb6eb9e",
+      "normalized_sha256": "af9ff3686b5665974bd7eea5b02e2ed14be50a27f793a4d11e4edb73cf5d2e2f"
+    },
+    {
+      "file": "evidence/static-before.log",
+      "original_sha256": "5d46038441005f11d95d2b7ee07ff46cdc3da4d7776a644a4d256b27fc7d4bd9",
+      "normalized_sha256": "f0879191d1014db5de5614fde3ffa61eac8c4f44c9e0340ed0d1acaf57244fb6"
+    },
+    {
+      "file": "evidence/combined-mutations.json",
+      "original_sha256": "fdffd9cd8538562f839ae18f0220f1433954f612da59fdc0b1902d471b46d142",
+      "normalized_sha256": "fba7c9a09ea06437dba12762061bb6c02409448ae5622d679c334c6456caaba5"
+    },
+    {
+      "file": "evidence/all-install.log",
+      "original_sha256": "cfde566d50e16984be1843da5065edaff102b1e946627eedf00d6ea92af74a47",
+      "normalized_sha256": "0314823d42d313c0530e6b8ef8ec3f58a29f64d4317500ccc0dcfeb3abdcbc6f"
+    },
+    {
+      "file": "update-skill-evidence/red.log",
+      "original_sha256": "df4034adb4d11305416def996094c4e358950338888ab076d8624f4a9a5e97cb",
+      "normalized_sha256": "12d588e8692fbfd8633956644a761132ec1f1ba3d8ecbd2b2959a891c464f434"
+    }
+  ]
+}

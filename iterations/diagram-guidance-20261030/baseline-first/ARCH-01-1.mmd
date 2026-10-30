@@ -1,0 +1,28 @@
+classDiagram
+class Frontend
+class BookingAPI
+class BookingService {
+  <<interface>>
+  checkAvailability(roomId, slot)
+  createBooking(userId, roomId, slot, requestId)
+  cancelBooking(userId, bookingId)
+}
+class RoomRepository {
+  <<interface>>
+}
+class BookingServiceImpl
+class PostgresRoomRepository
+class BookingTransactionPort {
+  <<interface>>
+  reserveAndAppendOutbox()
+}
+class PostgresBookingTransaction
+class Publisher
+Frontend ..> BookingAPI : HTTP
+BookingAPI ..> BookingService
+BookingAPI ..> RoomRepository
+BookingServiceImpl ..|> BookingService
+BookingServiceImpl ..> RoomRepository
+BookingServiceImpl ..> BookingTransactionPort
+PostgresRoomRepository ..|> RoomRepository
+PostgresBookingTransaction ..|> BookingTransactionPort

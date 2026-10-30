@@ -1,0 +1,64 @@
+{
+  "baseline_commit": "6468847234f1e30c3ff8b186c38790de93c45293",
+  "source_read_method": "git show <commit>:<path>",
+  "skills_read": [
+    "skills/ff-spec/SKILL.md",
+    "skills/ff-spec/references/full-workflow.md",
+    "skills/ff-architecture-derive/SKILL.md",
+    "skills/ff-architecture-derive/references/architecture-derivation.md",
+    "skills/ff-review/SKILL.md"
+  ],
+  "cases": [
+    {
+      "id": "ARCH-01",
+      "file": "ARCH-01.md",
+      "bytes": 6751,
+      "sha256": "e4e78a855866bfb07145baba5e50dead5f5a517327b2c77dbd37fdfa46338be2",
+      "mermaid_sources": 2
+    },
+    {
+      "id": "DFD-02",
+      "file": "DFD-02.md",
+      "bytes": 4237,
+      "sha256": "44f67d06edace0854253504ca4cc6927d9244b3ba71558cc5b1c43fa7048a7cd",
+      "mermaid_sources": 3
+    },
+    {
+      "id": "ER-03",
+      "file": "ER-03.md",
+      "bytes": 3207,
+      "sha256": "52c18f61d969d2d472ec80706a5bc6bf963419cece105e138dd70ba7419e7951",
+      "mermaid_sources": 1
+    },
+    {
+      "id": "SEQ-04",
+      "file": "SEQ-04.md",
+      "bytes": 4921,
+      "sha256": "edc3ef9854fd05d7d236bdc4187e148fb00424f1c18eb7ae0903e7dd801ab1f5",
+      "mermaid_sources": 1
+    },
+    {
+      "id": "FLOW-05",
+      "file": "FLOW-05.md",
+      "bytes": 4869,
+      "sha256": "19c8d17ea8af5bb520272aeecc577626d28303a8fce788004365bcef3b1b421b",
+      "mermaid_sources": 2
+    },
+    {
+      "id": "SIMPLE-06",
+      "file": "SIMPLE-06.md",
+      "bytes": 2816,
+      "sha256": "8ee696692677df8ddfb1b66943e9282e8887a368a097509e5e0bbe014015f8fc",
+      "mermaid_sources": 0
+    }
+  ],
+  "checks": {
+    "all_six_files_present": true,
+    "balanced_markdown_fences": true,
+    "renderer_validation": "NOT_RUN: local Mermaid renderer not found; no install performed",
+    "product_tests": "NOT_RUN: specification-only outputs",
+    "independent_review": "NOT_RUN: parent performs review",
+    "isolation_limitation": "One agent context produced all six cases; not six isolated model runs",
+    "standard_verification": "Official GB/T 8567-2006 and GB/T 9385-2008 catalog information found; full text and clause applicability not verified; no compliance claim"
+  }
+}
