@@ -73,7 +73,7 @@ node .forgeflow/ff-spec.mjs receipt check my-change reviews/plan-snapshot.json
 node .forgeflow/ff-spec.mjs receipt record my-change reviews/plan-snapshot.json reviews/plan-report.json
 ```
 
-已有 design.md/plan.md 的项目可先用 `node .forgeflow/ff-spec.mjs adopt` 让工具从现有文件推断 v2 policy（只打印）；`--write` 落盘并用内置求值器预览每个活动 change，已存在的 policy 需 `--force` 才替换。只有所有活动 change 都具备该文件时才登记产物；plan 文档缺少 `## Task plan` 时不登记 progress。
+已有 design.md/plan.md 的项目可先用 `node .forgeflow/ff-spec.mjs adopt` 让工具从现有文件推断 v2 policy（只打印）；`--write` 落盘并用内置求值器预览每个活动 change，已存在的 policy 需 `--force` 才替换。只有所有活动 change 都具备该文件时才登记产物；plan 文档缺少 `## Task plan` 时不登记 progress。不想依赖推断时，可从 `templates/ff-policy.example.json` 复制一份 v2 policy 再按需删改；示例只演示 design/plan 与 progress 的形状，不含具体项目路径。
 
 snapshot 和 report 放产物 scope 外。快照 create-only；模板默认 not-reviewed，录入拒绝草稿，明确 fail 可录入但 gate 不通过。录入仅使用所审快照的绑定，先重新核对实际内容/规则/schema/输入和证据，再写回执；报告原始字节自动 SHA256。报告中的未验证范围是报告事实，不由工具改成“全验”。审核者只读时在报告记录固定 snapshotHash；可由生产者根据审核者已完成报告录入，不能代填结论。内容绑定不认证身份、不取代授权或语义质量判断，也不声称对恶意并发写者的事务锁。
 

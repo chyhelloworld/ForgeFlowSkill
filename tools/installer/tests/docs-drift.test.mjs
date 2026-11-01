@@ -31,3 +31,17 @@ test('user docs name the adopt command wherever policies are introduced', () => 
     assert.match(text, /ff-spec\.mjs adopt/, name + ' must mention ff-spec.mjs adopt');
   }
 });
+
+test('the example policy shows the v2 shape adopt infers', () => {
+  const policy = JSON.parse(read(path.join(root, 'templates/ff-policy.example.json')).toString());
+  assert.equal(policy.version, 2);
+  assert.deepEqual(policy.artifacts.map(artifact => artifact.id), ['design', 'plan']);
+  for (const artifact of policy.artifacts) {
+    assert.deepEqual(artifact.changes, ['*']);
+    assert.equal(artifact.reviewRequired, true);
+    assert.ok(artifact.paths.every(target => target.startsWith('openspec/changes/{change}/')), artifact.id + ' must stay change-relative');
+  }
+  const plan = policy.artifacts[1];
+  assert.deepEqual(plan.requires, ['design']);
+  assert.deepEqual(plan.progress, { plan: 'openspec/changes/{change}/plan.md', tasks: 'openspec/changes/{change}/tasks.md' });
+});

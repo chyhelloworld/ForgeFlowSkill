@@ -24,7 +24,7 @@ node tools/openspec/ff-spec.mjs validate trial --strict --json
 node tools/openspec/ff-spec.mjs archive trial --yes --json
 ```
 
-`adopt` reads the active changes and proposes a v2 policy for files that already exist in every one of them (currently `design.md` and `plan.md`); it only prints unless `--write` is passed, never replaces an existing `openspec/ff-policy.json` without `--force`, and adds a progress mapping only when each change has `tasks.md` and a document with a `## Task plan` heading.
+`adopt` reads the active changes and proposes a v2 policy for files that already exist in every one of them (currently `design.md` and `plan.md`); it only prints unless `--write` is passed, never replaces an existing `openspec/ff-policy.json` without `--force`, and adds a progress mapping only when each change has `tasks.md` and a document with a `## Task plan` heading. A v2 example policy ships in `templates/ff-policy.example.json` for projects that prefer to start from a file and delete what they do not need.
 
 If this checkout lives in a nested directory or a separate location, replace `tools/openspec/ff-spec.mjs` with its actual relative or absolute path. For example, from `/path/to/YourProject`, run `node /path/to/ForgeFlowSkill/tools/openspec/ff-spec.mjs status --change trial --json`. The current working directory must remain the target project; locating the launcher must not silently switch which project is read or modified. Do not invoke internal build entrypoints or fall back to a globally installed official CLI. A missing build must be rebuilt using the pinned builder first. Archive examples require the real acceptance/decision and write authorization described below; they are not authorization themselves.
 
