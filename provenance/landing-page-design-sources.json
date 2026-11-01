@@ -1,0 +1,31 @@
+{
+  "upstream": "https://github.com/elayadesign/ai-design-skills",
+  "commit": "4fdcdd52f15eda09da1257c303c860c13e0c879f",
+  "retrieved_utc": "2026-11-01",
+  "files": [
+    {
+      "path": "LICENSE",
+      "url": "https://raw.githubusercontent.com/elayadesign/ai-design-skills/4fdcdd52f15eda09da1257c303c860c13e0c879f/LICENSE",
+      "sha256": "5f9af6ce7083838497676a8dfa651ad8e2559fdabd4586afc73587beec476b0e"
+    },
+    {
+      "path": "skills/landing-page-design/SKILL.md",
+      "url": "https://raw.githubusercontent.com/elayadesign/ai-design-skills/4fdcdd52f15eda09da1257c303c860c13e0c879f/skills/landing-page-design/SKILL.md",
+      "sha256": "0c0ad9323121c0cc4f52b637f64a3a446016f065ae9ebf012dab210559f03d5f"
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/elayadesign/ai-design-skills/4fdcdd52f15eda09da1257c303c860c13e0c879f/README.md",
+      "sha256": "3d3c86f2166622eecd14d20f1db4c0b310a5b15ae6402eee65152d3f6d2b80fb"
+    }
+  ],
+  "adapted_into": [
+    "skills/ff-design/references/landing-page.md"
+  ],
+  "scope": "Selected landing-page content/goal/evidence/section iteration and shared-style ideas only. No runtime, fixed palette, mandatory navigation, animations or universal UI trigger.",
+  "indirect_credit": "Leonxlnx/taste-skill; MIT text retained from pinned upstream credits.",
+  "license_files": [
+    "skills/ff-design/LICENSE-AI-DESIGN-SKILLS",
+    "skills/ff-design/LICENSE-TASTE-SKILL"
+  ]
+}

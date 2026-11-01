@@ -1,0 +1,51 @@
+{
+  "repository": "https://github.com/pbakaus/impeccable",
+  "commit": "2f98774f86bc05563876643db37e6c37c322850f",
+  "read_date": "2026-11-01",
+  "license": "Apache-2.0; existing LICENSE-IMPECCABLE and NOTICE-IMPECCABLE.md retained",
+  "upstream_paths": [
+    ".agent/skills/impeccable/reference/android.md",
+    ".agent/skills/impeccable/reference/audit.native.md",
+    ".agent/skills/impeccable/reference/ios.md"
+  ],
+  "source_sha256": {
+    "provenance/impeccable-native/android.md": "058f81f256134841875fd3183e06b37a023de0c877fd2b9eecd97011640791fe",
+    "provenance/impeccable-native/audit.native.md": "fe91fcf28638f95577af481a50edaf339d6c9a3ad3b9fa477bc81c116b8bc392",
+    "provenance/impeccable-native/ios.md": "40c87038b5f75147a5952a96237acf312a327bf70c1bcd8e0a5f064625ae9668"
+  },
+  "modified_files": [
+    "skills/ff-design/SKILL.md",
+    "skills/ff-design/references/native-app.md",
+    "skills/ff-design/references/ios.md",
+    "skills/ff-design/references/android.md",
+    "skills/ff-design/references/native-audit.md"
+  ],
+  "ff_additions": [
+    "target OS versus implementation framework routing",
+    "brand/design-system preservation",
+    "permission denial, draft, offline and lifecycle recovery checks",
+    "evidence levels instead of unsupported aggregate scoring"
+  ],
+  "excluded": [
+    "engine",
+    "hooks",
+    "live",
+    "upstream commands",
+    "mandatory font/icon choices",
+    "device setting commands",
+    "automatic repairs"
+  ],
+  "official_flutter_read": [
+    "https://api.flutter.dev/flutter/widgets/SafeArea-class.html",
+    "https://api.flutter.dev/flutter/widgets/MediaQuery-class.html",
+    "https://api.flutter.dev/flutter/widgets/PopScope-class.html"
+  ],
+  "transitive_mit_license": {
+    "repository": "ehmo/platform-design-skills",
+    "path": "LICENSE",
+    "read_ref": "main",
+    "git_blob_sha": "14fac913ccf80234b1848540089a3bbcb6e5283d",
+    "sha256": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685",
+    "source": "Upstream Impeccable NOTICE identifies this derivation. License blob pinned; upstream source commit for derivation not specified by Impeccable."
+  }
+}

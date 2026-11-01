@@ -6,6 +6,8 @@
 
 当前为 **0.9.6-derivation.4 源码候选、21 项技能**，工作分支 `work/prove-ablation-096`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
+ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)：目标与受众、疑虑与真实证据、先确认纲要再逐节实现；不改变后台/App业务界面和各项目品牌，不增加技能或运行时。
+
 ## 从这里开始
 
 | 想做什么 | 直接入口 |

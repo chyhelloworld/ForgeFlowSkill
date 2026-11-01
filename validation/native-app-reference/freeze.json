@@ -1,0 +1,8 @@
+{
+  "baseline": "589423cb6f05d73c0d905ea8d57ed5df68ac260d",
+  "frozen_before_candidate": true,
+  "files": {
+    "cases.json": "59e3a71ab96bd0f17ca496dd461786e2292e1dd2f7915487ade48d9841a34dbb",
+    "criteria.md": "a03bc8f2e7eaa43a9bbb634d263ad83b662cc0d7967cf4ac28214029655635b5"
+  }
+}

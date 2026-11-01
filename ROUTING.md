@@ -60,3 +60,9 @@ FAIL 按原因回澄清、技术实验、计划修正或意见裁决，不按失
 ## 独立工作文档（当前21技能）
 
 需求说明、方案、报价、报告等工作文档的新写或实质修订 → `ff-writing-document`：澄清读者、用途和质量相关缺口，先出章节目录，明确确认后再补正文，最后按读者任务检查。局部改字不重走整套流程。可独立使用，不强制 Spec 或全FF；不改变逐段共创文章的 ff-writing-shape / beats。绘图按需用 ff-diagram，Word/PDF 排版交格式工具。详见[工作文档使用说明](docs/user/writing-document.md)。
+
+## 可选落地页专项（仍为21技能）
+
+产品介绍、营销落地页或报名/预约页面 → ff-design 按需读取 references/landing-page.md。沿已确认目标、真实证据和品牌，先确认纲要再逐节实现；后台/操作页和局部小改不进入营销流程。不替代通用视觉候选与实际验证，也不新增上游运行时。详见[落地页设计说明](docs/user/landing-page-design.md)。
+
+原生 App（包括 Flutter/RN）设计或审查 → ff-design 的 references/native-app.md，按目标OS与框架加载iOS/Android与native-audit；混合仓库按本轮界面分流，不把营销页风格套进App。详见[原生App设计说明](docs/user/native-app-design.md)。
