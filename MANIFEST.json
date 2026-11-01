@@ -935,6 +935,7 @@
     "tools/installer/state.mjs": "f41ea507e94ea8b7b242052d100ec5a0a030dbbc9dc36d659942d5b37714ca53",
     "tools/installer/tests/architecture-review.test.mjs": "ec0a44be0627630cce3ad7c6b8a02c10df84fee2926a0c6142bfa85f4a726629",
     "tools/installer/tests/diagrams.test.mjs": "1507d41aac8355622d64abfc1a40853fc5a24d04843ad3310f9201224475838c",
+    "tools/installer/tests/docs-drift.test.mjs": "830ce679d303b6ac308f502e7e6c6238802745074c0fdf22788ccc0b93fc82fd",
     "tools/installer/tests/dsh-host.test.mjs": "bd8a5daef19148b30004651832ef587861c5c2adc077ab7903eccb258467c632",
     "tools/installer/tests/dual-host.test.mjs": "0b3bcbb8a0f57b4ad2a2df4aee90768553bcd90d4dafa415abc31805897030ff",
     "tools/installer/tests/install.test.mjs": "afdd902124fa81f75c6209ba871048b32f4a25c3837acc4d8017b420855f0813",
