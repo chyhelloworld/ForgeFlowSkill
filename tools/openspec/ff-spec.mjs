@@ -6,6 +6,7 @@ import { pathToFileURL } from 'node:url';
 import { verifyBuild } from './ff-build.mjs';
 import { receiptMain } from './ff-receipt.mjs';
 import { statusOverview } from './ff-status.mjs';
+import { adoptMain } from './ff-adopt.mjs';
 
 const argv = process.argv.slice(2);
 const ungated = () => !fs.existsSync(path.resolve(process.cwd(), 'openspec/ff-policy.json'));
@@ -13,6 +14,7 @@ try {
   const build = verifyBuild();
   if (argv[0] === 'receipt') await receiptMain(build, argv.slice(1));
   else if (argv[0] === 'status' && !argv.includes('--change') && !argv.includes('--all')) process.exitCode = await statusOverview(build, argv.slice(1));
+  else if (argv[0] === 'adopt') process.exitCode = await adoptMain(build, argv.slice(1));
   else {
     // Completing a change without a policy is a silent pass; say so instead of implying the gates ran.
     if (argv[0] === 'archive' && ungated() && process.env.FF_ALLOW_UNGATED !== '1')

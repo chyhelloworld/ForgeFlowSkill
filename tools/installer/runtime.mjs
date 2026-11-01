@@ -75,11 +75,17 @@ export function discovery(project, host) {
   return { root: hostBase(host), skills: skillDirs(project, hostBase(host)), gitRoot: fs.existsSync(path.join(project, '.git')), projectRoot: path.resolve(project), others,
     note: host === 'dsh' && others.length ? 'DSH ranks project .dsh/skills (100) above .agents/skills (200); other roots stay readable to their own host but cannot shadow DSH.' : undefined };
 }
-// Skills, install state and the CLI's embedded adapter pin can drift independently; name which one is stale.
+// Skills, install state and the CLI version can drift independently; name which one is stale.
 export function handshake(stateVersion, skillVersion, cliVersion) {
+  // Builds made before the version stamp carry "1.14.2-ff.<adapter>"; newer ones carry the FF version.
   const adapterPin = cliVersion?.match(/(?:^|-)ff\.(.+)$/)?.[1] ?? null;
-  return { skills: skillVersion, state: stateVersion, verdict: !skillVersion ? 'UNKNOWN' : skillVersion === stateVersion ? 'MATCH' : 'DRIFT', cli: cliVersion, adapterPin,
-    ...(adapterPin && adapterPin !== stateVersion ? { note: `CLI 内嵌 adapter 固定为 ${adapterPin}，与安装版本 ${stateVersion} 不同；这是打包补丁的硬编码版本，门禁行为不受影响，重新打包时才会更新。` } : {}) };
+  const cliMatchesState = Boolean(cliVersion) && cliVersion === stateVersion;
+  const cliNote = !cliVersion ? 'CLI 未返回版本，运行 .forgeflow/install/doctor.mjs 查看具体错误。'
+    : adapterPin && adapterPin !== stateVersion ? `CLI 内嵌 adapter 固定为 ${adapterPin}，与安装版本 ${stateVersion} 不同；这是旧构建的硬编码版本，用当前源码重建 .build 后重新安装即可对齐。`
+    : !cliMatchesState && !adapterPin ? `CLI 报告 ${cliVersion}，与安装版本 ${stateVersion} 不同；用当前源码重建 .build 后重新安装。`
+    : null;
+  return { skills: skillVersion, state: stateVersion, verdict: !skillVersion ? 'UNKNOWN' : skillVersion === stateVersion ? 'MATCH' : 'DRIFT', cli: cliVersion, cliMatchesState, adapterPin,
+    ...(cliNote ? { note: cliNote } : {}) };
 }
 export function diagnose(project, host, expected) {
   assertIdle(project);

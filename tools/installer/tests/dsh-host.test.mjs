@@ -66,6 +66,6 @@ test('handshake names the stale side', () => {
   assert.equal(handshake('0.9.7-dsh.1', null, null).verdict, 'UNKNOWN');
   const stale = handshake('0.9.7-dsh.1', '0.9.7-dsh.1', '1.14.2-ff.0.9.4-trial.1');
   assert.equal(stale.adapterPin, '0.9.4-trial.1');
-  assert.match(stale.note, /重新打包/);
+  assert.match(stale.note, /重建/);
   assert.equal(handshake('0.9.7-dsh.1', '0.9.7-dsh.1', '1.14.2-ff.0.9.7-dsh.1').note, undefined);
 });

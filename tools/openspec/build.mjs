@@ -56,7 +56,18 @@ function main() {
     XDG_DATA_HOME: path.join(bootstrap, 'data'), XDG_CACHE_HOME: path.join(bootstrap, 'cache'),
   });
   run(process.execPath, ['build.js'], build);
-  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, runtimeHashes: runtimeHashes(build), dependencyHashes: dependencyHashes(build), platform: process.platform, arch: process.arch, node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
+  // The CLI reports its own package.json version, and the patch freezes a trial pin there.
+  // Stamp the FF source version so doctor can compare skills, state and CLI without a false drift.
+  // A checkout always has the FF package.json two levels up; a copied fixture may not.
+  const sourcePackage = path.join(home, '../../package.json');
+  const sourceVersion = existsSync(sourcePackage) ? JSON.parse(readFileSync(sourcePackage, 'utf8')).version : undefined;
+  if (sourceVersion) {
+    const builtManifest = path.join(build, 'package.json');
+    const manifest = JSON.parse(readFileSync(builtManifest, 'utf8'));
+    manifest.version = sourceVersion;
+    writeFileSync(builtManifest, JSON.stringify(manifest, null, 2) + '\n');
+  }
+  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, ...(sourceVersion ? { sourceVersion } : {}), runtimeHashes: runtimeHashes(build), dependencyHashes: dependencyHashes(build), platform: process.platform, arch: process.arch, node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
   console.log(`Built project-local CLI: ${path.join(home, 'ff-spec.mjs')}`);
 }
 // --clean owns only the fixed sibling .build; existing .bootstrap data is retained.

@@ -294,7 +294,7 @@ test('standalone builder preserves an existing bootstrap and adds hoisted only o
   for (const platform of ['linux', 'darwin', 'win32']) {
     const fixture = directory();
     const home = path.join(fixture, 'tools/openspec');
-    fs.cpSync(path.join(source, 'tools/openspec'), home, { recursive: true, ...(nativePlatform === 'win32' ? { filter: () => true } : {}) });
+    fs.cpSync(path.join(source, 'tools/openspec'), home, { recursive: true, filter: name => !['.bootstrap', '.build'].includes(path.basename(name)) });
     assert.ok(fs.statSync(path.join(home, 'upstream.json')).isFile());
     put(path.join(home, '.bootstrap/user-note'));
     put(path.join(home, '.build/old-output'));

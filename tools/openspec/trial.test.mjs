@@ -34,7 +34,7 @@ function reviewed(p,c='a',opts={}) {
   const snap=`reviews/${c}-${Date.now()}-${Math.random()}.json`, report=snap+'.report.json';
   cli(p,['receipt','snapshot',c,snap]); cli(p,['receipt','template',snap,report]);
   const r=json(path.join(p,report));
-  for (const a of Object.values(r.artifacts)) Object.assign(a,{verdict:'pass',reviewer:'independent fixture reviewer',toolVersion:'fixture-1',unverified:['Semantic quality is outside this deterministic fixture.']});
+  for (const a of Object.values(r.artifacts)) Object.assign(a,{verdict:'pass',reviewer:'independent fixture reviewer',independence:'L1',toolVersion:'fixture-1',unverified:['Semantic quality is outside this deterministic fixture.']});
   write(p,report,r); cli(p,['receipt','record',c,snap,report,...(opts.migrate?['--migrate']:[])]); return {snap,report};
 }
 test('v1 removed IDs retain current fingerprints and fail with migration diagnostic',()=>{
@@ -66,7 +66,7 @@ test('valid v1 receipts never automatically become valid v2; explicit reviewed m
   assert.equal(validity(p).valid,true);const old=fs.readFileSync(path.join(p,'openspec/changes/a/ff-artifacts.json'));
   write(p,'openspec/ff-policy.json',{version:2,artifacts:[rule('plan',['*'],['openspec/changes/{change}/design.md'])]});assert.equal(validity(p).valid,false);
   cli(p,['receipt','snapshot','a','snapshot.json']);cli(p,['receipt','template','snapshot.json','report.json']);assert.deepEqual(fs.readFileSync(path.join(p,'openspec/changes/a/ff-artifacts.json')),old);
-  const report=json(path.join(p,'report.json'));Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'new fixture reviewer',toolVersion:'2',unverified:[]});write(p,'report.json',report);
+  const report=json(path.join(p,'report.json'));Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'new fixture reviewer',independence:'L1',toolVersion:'2',unverified:[]});write(p,'report.json',report);
   cli(p,['receipt','record','a','snapshot.json','report.json'],1);assert.deepEqual(fs.readFileSync(path.join(p,'openspec/changes/a/ff-artifacts.json')),old);cli(p,['receipt','record','a','snapshot.json','report.json','--migrate']);assert.equal(validity(p).valid,true);
   assert.ok(fs.readdirSync(path.join(p,'openspec/changes/a')).some(n=>n.startsWith('ff-artifacts.history-')&&fs.readFileSync(path.join(p,'openspec/changes/a',n)).equals(old)));
 });
@@ -107,7 +107,7 @@ test('doctor LF suggestions protect literal bracket paths without matching unrel
 });
 test('report template is not pass; fail verdict differs from stale binding; migration preserves old bytes',()=>{
   const p=fixture(); cli(p,['receipt','snapshot','a','snapshot.json']); cli(p,['receipt','template','snapshot.json','report.json']); cli(p,['receipt','record','a','snapshot.json','report.json'],1);
-  const r=json(path.join(p,'report.json')); Object.assign(r.artifacts.plan,{verdict:'fail',reviewer:'reviewer',toolVersion:'test',unverified:['none tested']}); write(p,'report.json',r); cli(p,['receipt','record','a','snapshot.json','report.json']);
+  const r=json(path.join(p,'report.json')); Object.assign(r.artifacts.plan,{verdict:'fail',reviewer:'reviewer',toolVersion:'test',independence:'L1',unverified:['none tested']}); write(p,'report.json',r); cli(p,['receipt','record','a','snapshot.json','report.json']);
   assert.match(validity(p).reasons.join(),/verdict is fail/); assert.doesNotMatch(validity(p).reasons.join(),/does not match/);
   const old=fs.readFileSync(path.join(p,'openspec/changes/a/ff-artifacts.json')); const policy=json(path.join(p,'openspec/ff-policy.json')); policy.artifacts[0].id='replacement'; write(p,'openspec/ff-policy.json',policy);
   const state=validity(p); assert.ok(state.artifacts[0].fingerprint); assert.equal(state.valid,false); reviewed(p,'a',{migrate:true});
@@ -115,13 +115,13 @@ test('report template is not pass; fail verdict differs from stale binding; migr
 });
 test('malformed old receipts migrate from a fixed reviewed snapshot without deleting evidence',()=>{
   const p=fixture(); cli(p,['receipt','snapshot','a','snapshot.json']); cli(p,['receipt','template','snapshot.json','report.json']);
-  const report=json(path.join(p,'report.json')); Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'fixture reviewer',toolVersion:'1',unverified:[]});write(p,'report.json',report);
+  const report=json(path.join(p,'report.json')); Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'fixture reviewer',toolVersion:'1',independence:'L1',unverified:[]});write(p,'report.json',report);
   write(p,'openspec/changes/a/ff-artifacts.json','{ malformed original\n');cli(p,['receipt','record','a','snapshot.json','report.json'],1);cli(p,['receipt','record','a','snapshot.json','report.json','--migrate']);assert.equal(validity(p).valid,true);
   assert.ok(fs.readdirSync(path.join(p,'openspec/changes/a')).some(n=>n.startsWith('ff-artifacts.history-')&&fs.readFileSync(path.join(p,'openspec/changes/a',n),'utf8')==='{ malformed original\n'));
 });
 test('external review evidence is frozen by the tool and checked before and after recording',()=>{
   const p=fixture();write(p,'test.log','tested version\n');cli(p,['receipt','snapshot','a','snapshot.json']);cli(p,['receipt','template','snapshot.json','report.json','--evidence','test.log']);
-  const report=json(path.join(p,'report.json'));Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'fixture',toolVersion:'1',unverified:[]});write(p,'report.json',report);
+  const report=json(path.join(p,'report.json'));Object.assign(report.artifacts.plan,{verdict:'pass',reviewer:'fixture',toolVersion:'1',independence:'L1',unverified:[]});write(p,'report.json',report);
   write(p,'test.log','replaced before record\n');cli(p,['receipt','record','a','snapshot.json','report.json'],1);write(p,'test.log','tested version\n');cli(p,['receipt','record','a','snapshot.json','report.json']);assert.equal(validity(p).valid,true);
   write(p,'test.log','replaced after record\n');assert.equal(validity(p).valid,false);
   report.artifacts.plan.unexpected='ignored?';write(p,'report.json',report);cli(p,['receipt','record','a','snapshot.json','report.json'],1);

@@ -49,7 +49,9 @@ export function verifyBuild(candidate = home) {
     const pin = JSON.parse(readFileSync(path.join(candidate, 'upstream.json'), 'utf8'));
     const marker = JSON.parse(readFileSync(path.join(build, 'FF-BUILD.json'), 'utf8'));
     const pkg = JSON.parse(readFileSync(path.join(build, 'package.json'), 'utf8'));
-    if (pkg.name !== '@forgeflow/ff-spec' || pkg.version !== `1.14.2-ff.${pin.adapter}` || pkg.bin?.['ff-spec'] !== './bin/ff-spec.js' || pkg.bin?.openspec) throw new Error('package identity mismatch');
+    // Newer builds stamp the FF source version; older ones still carry the frozen adapter pin.
+    const expectedVersion = marker.sourceVersion ?? `1.14.2-ff.${pin.adapter}`;
+    if (pkg.name !== '@forgeflow/ff-spec' || pkg.version !== expectedVersion || pkg.bin?.['ff-spec'] !== './bin/ff-spec.js' || pkg.bin?.openspec) throw new Error('package identity mismatch');
     for (const key of ['commit', 'archiveSha256', 'patchSha256', 'adapter']) {
       if (marker[key] !== pin[key]) throw new Error(`stale build ${key}`);
     }

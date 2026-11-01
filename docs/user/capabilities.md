@@ -59,6 +59,7 @@ FF 帮助 AI 执行者沿同一份需求和项目事实工作：澄清目标、�
 | 检查已安装 CLI 能否启动 | `node .forgeflow/install/doctor.mjs` | full 模式可探测 CLI，skills-only 会 BLOCKED；不是业务或宿主验收 |
 | 列出已有变更 | `node .forgeflow/ff-spec.mjs list --json` | 实际项目中的变更列表，不自动创建任务 |
 | 查看活动变更有效性 | `node .forgeflow/ff-spec.mjs status --change CHANGE --json` | 产物状态与适用的 FF 规则结果；`CHANGE` 要换成真实活动变更名 |
+| 推断 FF policy | `node .forgeflow/ff-spec.mjs adopt [--write]` | 依据现有 design.md/plan.md 推断 v2 policy；默认只打印，`--write` 才落盘并预览，已有 policy 需 `--force` |
 | 读取实施指导 | `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json` | 指导与就绪信息，不执行代码、不表示人类接受 |
 | 校验已有变更 | `node .forgeflow/ff-spec.mjs validate CHANGE --strict --json` | 校验发现；配置 FF policy 后按现有规则核对声明的产物/审核有效性，不证明语义正确或授权 |
 | 0.7 审核证据摘要 | `python -X utf8 .agents/skills/ff-review/scripts/health.py health-record.json --root .` | `RECORDED` / `GAPS` / `INVALID`；[索引格式](../../skills/ff-review/references/health.md)，不替代三类独立审核或真实计量 |

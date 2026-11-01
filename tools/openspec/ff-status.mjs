@@ -62,7 +62,7 @@ function render(report) {
     : '  gates: DISABLED — openspec/ff-policy.json missing; archive still succeeds without validity or receipt checks.');
   if (!report.rows.length) {
     lines.push('  changes: none active');
-    if (!report.configured) lines.push('  next:  write openspec/ff-policy.json before claiming any gate protection');
+    if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write  (infers a policy from files you already have)');
     return lines;
   }
   lines.push(`  changes: ${report.rows.length} active`);
@@ -78,7 +78,7 @@ function render(report) {
   lines.push(format(head));
   for (const line of body) lines.push(format(line));
   for (const row of report.rows) if (row.reasons.length) lines.push(`  ${row.change}: ${row.reasons[0]}`);
-  if (!report.configured) lines.push('  next:  write openspec/ff-policy.json, then node .forgeflow/ff-spec.mjs receipt diagnose');
+  if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write, then node .forgeflow/ff-spec.mjs receipt diagnose');
   else if (report.rows.some(row => !row.valid)) lines.push('  next:  node .forgeflow/ff-spec.mjs receipt diagnose');
   return lines;
 }
