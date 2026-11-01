@@ -193,7 +193,7 @@ test('mocked Windows full install cleans only after successful build and probe, 
   assert.equal(fs.existsSync(path.join(input, 'tools/openspec/.bootstrap')), false);
 });
 
-test('mocked Windows install preserves pre-existing source bootstrap and rejects before any build', () => {
+test('mocked Windows install leaves a pre-existing source bootstrap out of the release', () => {
   const project = directory();
   const input = smallSource();
   const sentinel = path.join(input, 'tools/openspec/.bootstrap/source-note');
@@ -201,16 +201,17 @@ test('mocked Windows install preserves pre-existing source bootstrap and rejects
   const manifest = JSON.parse(fs.readFileSync(path.join(input, 'MANIFEST.json'), 'utf8'));
   manifest.files['tools/openspec/.bootstrap/source-note'] = sha(fs.readFileSync(sentinel));
   json(path.join(input, 'MANIFEST.json'), manifest);
-  withWindowsToolchain(() => assert.fail('pre-existing bootstrap must block before build'),
-    () => assert.fail('pre-existing bootstrap must block before CLI probe'), () => {
-      assert.throws(() => install(project, input, { host: 'codex', mode: 'full', build: true }), /Pre-existing bootstrap/);
-    });
+  withWindowsToolchain(home => {
+    assert.equal(fs.existsSync(path.join(home, '.bootstrap')), false, 'source bootstrap must not be copied into the stage');
+    put(path.join(home, '.build/runtime-file'));
+    return { status: 0 };
+  }, () => ({ status: 0 }), () => assert.equal(install(project, input, { host: 'codex', mode: 'full', build: true }).status, 'INSTALLED'));
   assert.equal(fs.readFileSync(sentinel, 'utf8'), 'keep');
-  const control = path.join(project, '.forgeflow/install');
-  const stage = fs.readdirSync(control).find(name => name.startsWith('staging-'));
-  assert.ok(stage);
-  assert.equal(fs.readFileSync(path.join(control, stage, 'tools/openspec/.bootstrap/source-note'), 'utf8'), 'keep');
-  assert.equal(loadState(project), null);
+  const state = loadState(project);
+  const release = path.join(project, '.forgeflow/install', state.release);
+  assert.equal(fs.existsSync(bootstrapAt(release)), false);
+  assert.equal(Object.keys(state.releaseInventory).some(name => name.includes('/.bootstrap/')), false);
+  assert.equal(fs.readdirSync(path.join(project, '.forgeflow/install')).some(name => name.startsWith('staging-')), false);
 });
 
 test('edits during a mocked full build block commit and preserve active host files and state', () => {

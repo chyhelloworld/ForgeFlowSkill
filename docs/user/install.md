@@ -28,6 +28,21 @@ node .forgeflow/ff-spec.mjs --help
 
 只要技能、暂不需要 CLI 门禁：将 `--mode full --build` 改为 `--mode skills-only`。此模式的 doctor 和 CLI 会返回 **BLOCKED**。Claude Code 将宿主参数改为 `--host claude`，技能安装至 `.claude/skills/`，原生 ff-intake 仅有人工空白项目的[限定成功回执](../../iterations/0.9.3-dual-host.1/native-host-validation.md)，不代表所有技能或实际业务验收。CodeGraph 默认关闭。
 
+## 在 DeepSeek Harness（DSH）中使用
+
+DSH 的宿主参数是 `--host dsh`，技能安装至项目内的 `.dsh/skills/`（技能名与数量不变，仍为当前的 21 个 `ff-*` 目录）。DSH 按项目级优先读取技能目录，同一项目里 `.dsh/skills` 排在 `.agents/skills` 之前，因此 DSH 会加载 FF 副本，Codex 仍读取自己的 `.agents/skills`，互不覆盖。
+
+```powershell
+node "$Source\bin\ff-install.mjs" install --project "$Project" --host dsh --mode full --build
+Set-Location $Project
+node .forgeflow/install/doctor.mjs --host dsh
+node .forgeflow/ff-spec.mjs status
+```
+
+安装时会在每个 `SKILL.md` 追加宿主协作块：独立审查交给 `subagent`，`tasks.md` 是任务权威（`todo_write` 只做镜像），交付用 `present`，plan mode 下先 `exit_plan_mode` 再动手。`doctor --host dsh` 额外输出 `discovery`（实际发现的技能目录、数量、同项目内其他宿主根）与 `handshake`（技能版本、安装状态版本、CLI 内嵌 adapter 版本）；三者不一致时指出是哪一侧过期，而不是笼统报 READY。
+
+与 Codex 共用同一项目时用 `--hosts dsh,codex`；只给 DSH 用时保持单宿主，避免为另一宿主重复维护技能副本。没有 `openspec/ff-policy.json` 时 `archive` 会打印 `⚠ FF gates disabled` 而不是静默通过，`FF_ALLOW_UNGATED=1` 可关闭该提示。
+
 
 ## 同一项目同时供 Codex 和 Claude 使用
 

@@ -2,8 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { safe, sha, read, fail, regularFiles, relative } from './files.mjs';
 import { hostBase, currentSkills } from './state.mjs';
+// Walk from the source root so excluded build caches under tools/openspec are never listed as payload.
 function skillFiles(source) {
-  return regularFiles(path.join(source, 'skills')).filter(n => !n.split('/').includes('__pycache__') && !n.endsWith('.pyc'));
+  return regularFiles(source, 'skills').filter(n => !n.split('/').includes('__pycache__') && !n.endsWith('.pyc')).map(n => n.slice('skills/'.length));
 }
 export function verifySource(source) {
   const manifest = read(safe(source, 'MANIFEST.json'));
@@ -13,11 +14,29 @@ export function verifySource(source) {
     if (!/^[a-f0-9]{64}$/.test(expected) || sha(fs.readFileSync(file)) !== expected) fail(`Source integrity: ${name}`);
   }
   const needed = skillFiles(source).map(n => `skills/${n}`);
-  needed.push(...regularFiles(path.join(source, 'tools/openspec')).map(n => `tools/openspec/${n}`));
+  needed.push(...regularFiles(source, 'tools/openspec'));
   for (const name of needed) if (!manifest.files[name]) fail(`Unlisted payload: ${name}`);
   const names = fs.readdirSync(path.join(source, 'skills')).sort();
   if (JSON.stringify(names) !== JSON.stringify(currentSkills)) fail('Expected current FF skill inventory');
   return { version: manifest.version, hash: sha(fs.readFileSync(path.join(source, 'MANIFEST.json'))), names, files: manifest.files };
+}
+// Host-specific guidance appended to every installed SKILL.md. Only behaviour the
+// host actually provides is claimed here; unknown capabilities stay silent.
+const dshBinding = [
+  '## 宿主协作（DSH）',
+  '- 独立审查用 subagent：父上下文只交出产物路径与判据，子代理只读并回传 verdict 与证据；不得在同一上下文自审后宣称独立审查。',
+  '- tasks.md 是进度权威；todo_write 只是镜像，不作为完成证据。',
+  '- 交付用 present 呈现关键产物，最终回复给出验收命令。',
+  '- plan mode 下先 exit_plan_mode 提交计划，批准后再改文件。',
+].join('\n');
+export function bindingNote(host, pin, independent) {
+  const run = `node .forgeflow/ff-spec.mjs`;
+  const doctor = `node .forgeflow/install/doctor.mjs --host ${host}`;
+  const tail = `从项目根运行 ${run}。先运行 ${doctor}；BLOCKED 时不得宣称门禁可用，不回退到官方 openspec。`;
+  const head = independent
+    ? `## 项目安装绑定\n独立技能 ${independent.name} ${independent.version}；技能内容 SHA256 ${independent.hash}；技能来源 manifest SHA256 ${pin.hash}。保留运行时安装版本 ${independent.runtime.version}；运行时源 manifest SHA256 ${independent.runtime.sourceHash}；宿主 ${host}。`
+    : `## 项目安装绑定\n安装版本 ${pin.version}；源 manifest SHA256 ${pin.hash}；宿主 ${host}。`;
+  return ['', '', head + tail, ...(host === 'dsh' ? ['', dshBinding] : []), ''].join('\n');
 }
 export function skillPayload(source, pin, host, selectedSkill, installed) {
   const base = hostBase(host);
@@ -26,10 +45,10 @@ export function skillPayload(source, pin, host, selectedSkill, installed) {
     if (selectedSkill && !name.startsWith(`${selectedSkill}/`)) continue;
     let data = fs.readFileSync(path.join(source, 'skills', name));
     if (/\.(md|yaml|yml|json|txt)$/.test(name)) data = Buffer.from(data.toString().replaceAll('tools/openspec/ff-spec.mjs', '.forgeflow/ff-spec.mjs'));
-    if (selectedSkill && installed && name.endsWith('/SKILL.md')) {
-      const identity = skillIdentity(source, pin, selectedSkill);
-      data = Buffer.concat([data, Buffer.from(`\n\n## 项目安装绑定\n独立技能 ${selectedSkill} ${identity.version}；技能内容 SHA256 ${identity.hash}；技能来源 manifest SHA256 ${pin.hash}。保留运行时安装版本 ${installed.version}；运行时源 manifest SHA256 ${installed.sourceHash}；宿主 ${host}。从项目根运行 \`node .forgeflow/ff-spec.mjs\`。先运行 \`node .forgeflow/install/doctor.mjs --host ${host}\`；BLOCKED 时不得宣称门禁可用，不回退到官方 openspec。\n`)]);
-    } else if (name.endsWith('/SKILL.md')) data = Buffer.concat([data, Buffer.from(`\n\n## 项目安装绑定\n安装版本 ${pin.version}；源 manifest SHA256 ${pin.hash}；宿主 ${host}。从项目根运行 \`node .forgeflow/ff-spec.mjs\`。先运行 \`node .forgeflow/install/doctor.mjs --host ${host}\`；BLOCKED 时不得宣称门禁可用，不回退到官方 openspec。\n`)]);
+    if (name.endsWith('/SKILL.md')) {
+      const independent = selectedSkill && installed ? { ...skillIdentity(source, pin, selectedSkill), runtime: installed } : null;
+      data = Buffer.concat([data, Buffer.from(bindingNote(host, pin, independent))]);
+    }
     files[`${base}/${relative(name)}`] = data;
   }
   return files;

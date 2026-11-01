@@ -83,7 +83,7 @@ function release(project, source, pin, mode, build, reuse) {
   const src = path.join(source, 'tools/openspec');
   fs.cpSync(src, path.join(stage, 'tools/openspec'), { recursive: true, errorOnExist: true,
     // The callback avoids Node 24's Windows Unicode-path native-copy omission.
-    filter: () => true,
+    filter: name => !['.build', '.bootstrap'].includes(path.basename(name)),
   });
   if (mode === 'full') {
     if (!build && !reuse) fail('full requires --build or --reuse-build');
@@ -115,11 +115,11 @@ export function install(project, source, options) {
   checkSkillPins(source, pin, before);
   if (options.host && options.hosts) fail('--host conflicts with --hosts');
   const selected = normalizeHosts(options.hosts ?? [options.host]);
-  if (options.hosts && selected.length !== 2) fail('--hosts requires codex,claude');
+  if (options.hosts && selected.length < 2) fail('--hosts requires at least two hosts (codex,claude,dsh)');
   if (!['full', 'skills-only'].includes(options.mode)) fail('Invalid install mode');
   if (options['reuse-build'] && (options.build || options.mode !== 'full')) fail('--reuse-build requires full and conflicts with --build');
   if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
-  if (!options.hosts && before && hostsOf(before).length > 1) fail('Dual-host install requires --hosts codex,claude; use remove-host explicitly to remove one');
+  if (!options.hosts && before && hostsOf(before).length > 1) fail(`Multi-host install (${hostsOf(before).join(',')}) requires --hosts with every host you keep; use remove-host explicitly to remove one`);
   const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))));
   preflight(project, before, files);
   if (before) checkRelease(project, before);
@@ -136,7 +136,7 @@ export function install(project, source, options) {
   const next = { ...hostState, version: pin.version, sourceHash: pin.hash, mode: options.mode, ...runtime };
   commit(project, before, next, files);
   return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, ...(next.schema === 1 ? { host: selected[0] } : {}), hosts: selected, mode: options.mode,
-    gitGuidance: { generated: ['/.forgeflow/install/', '/.forgeflow/ff-spec.mjs', ...selected.flatMap(host => pin.names.map(name => `/${host === 'codex' ? '.agents' : '.claude'}/skills/${name}/`))],
+    gitGuidance: { generated: ['/.forgeflow/install/', '/.forgeflow/ff-spec.mjs', ...selected.flatMap(host => pin.names.map(name => `/${hostBase(host).split('/')[0]}/skills/${name}/`))],
       versionControl: ['openspec/ff-policy.json', 'openspec/changes/<change>/design.md', 'openspec/changes/<change>/tasks.md', 'openspec/changes/<change>/ff-artifacts.json', '.gitattributes'],
       note: 'Choose whether to ignore generated entries or vendor them. No ignore file was modified. Keep project policy, plans and evidence; never ignore all of .forgeflow.' } };
 }

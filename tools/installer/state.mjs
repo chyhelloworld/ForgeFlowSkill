@@ -1,7 +1,10 @@
 import fs from 'node:fs';
 import { safe, read, digest, fail } from './files.mjs';
 export const control = '.forgeflow/install';
-export const hosts = ['codex', 'claude'];
+export const hosts = ['codex', 'claude', 'dsh'];
+// Host skill roots. DSH ranks a project .dsh/skills above .agents/skills, so a
+// dedicated root keeps stale Codex copies from shadowing a DSH install.
+export const hostRoots = { codex: '.agents/skills', claude: '.claude/skills', dsh: '.dsh/skills' };
 export const baselineSkills = ['ff-intake', 'ff-grill', 'ff-spec', 'ff-design', 'ff-prove', 'ff-plan', 'ff-implement', 'ff-review', 'ff-deliver', 'ff-diagnose', 'ff-tdd', 'ff-handoff', 'ff-research', 'ff-retro', 'ff-writing-fragments', 'ff-writing-shape', 'ff-writing-beats'].sort();
 export const architectureSkills = [...baselineSkills, 'ff-architecture-review'].sort();
 export const derivationSkills = [...architectureSkills, 'ff-architecture-derive'].sort();
@@ -10,7 +13,7 @@ export const currentSkills = [...diagramSkills, 'ff-writing-document'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
-  return host === 'codex' ? '.agents/skills' : '.claude/skills';
+  return hostRoots[host];
 }
 export function normalizeHosts(values) {
   if (!Array.isArray(values) || !values.length || values.some(host => !hosts.includes(host)) || new Set(values).size !== values.length) fail('Invalid hosts');
@@ -27,7 +30,7 @@ export function fileHost(name) {
   return hosts.find(host => name.startsWith(`${hostBase(host)}/`));
 }
 export function owned(name) {
-  if (/^\.(agents|claude)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
+  if (/^\.(agents|claude|dsh)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
   if (sharedFiles.includes(name)) return;
   fail('Invalid managed path');
 }

@@ -31,12 +31,13 @@ export function atomic(file, data) {
   finally { if (fs.existsSync(tmp)) fs.unlinkSync(tmp); }
 }
 export const json = (p, data) => atomic(p, JSON.stringify(data, null, 2) + '\n');
-export function regularFiles(root, prefix = '') {
+// skip() runs before recursion so excluded build caches (which may contain non-regular entries) are never walked.
+export function regularFiles(root, prefix = '', skip = name => name.split('/').includes('__pycache__') || name === '.git' || name.startsWith('.git/') || name === 'tools/openspec/.build' || name.startsWith('tools/openspec/.build/') || name === 'tools/openspec/.bootstrap' || name.startsWith('tools/openspec/.bootstrap/') || name === 'evidence/installer-coverage-raw' || name.startsWith('evidence/installer-coverage-raw/')) {
   const result = [];
   for (const entry of fs.readdirSync(path.join(root, prefix), { withFileTypes: true })) {
     const name = prefix ? `${prefix}/${entry.name}` : entry.name;
     relative(name);
-    if (entry.isDirectory()) result.push(...regularFiles(root, name));
+    if (entry.isDirectory()) { if (!skip(name)) result.push(...regularFiles(root, name, skip)); }
     else if (entry.isFile()) result.push(name);
     else fail(`Unsupported source entry: ${name}`);
   }
