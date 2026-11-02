@@ -65,7 +65,8 @@ node .forgeflow/dsh-plugin/generate-board.mjs --intent source/planning/intent-vi
 
 - 数据来自 `intent-view-links.json`；任务进度只在存在 `openspec/changes/*/tasks.md` 时统计代码围栏外的 `[x]`/`[ ]`，没有 OpenSpec 时显示"权威进度未知"，不会用完成率猜测。
 - 架构区没有结构化模型，只列 `--architecture-doc` 指定的参考文档，并标注"不是本项目组件与依赖"。
-- 浏览器半通过宿主的 workspace-files API 读取，需要该工作区至少有一个会话；读取失败、快照缺失、格式不符都会在面板里给出中文原因。
+- 浏览器半通过宿主的 workspace-files API 读取，需要该工作区至少有一个会话；读取失败、快照缺失（含宿主的 `no entry at` 错误）、格式不符都会在面板里给出中文原因。
+- 注册是幂等的：宿主重复 apply 同一客户端插件时，已有的 `ff-board` 侧栏项与主面板会被跳过，不再向控制台报“already has an entry”。
 - **客户端插件需要重启 DSH 才生效**；更新快照后点面板的"刷新"即可，无需重启。
 - 面板只读：改需求/任务仍走 FF 技能与 `openspec`，插件不写项目文件。
 

@@ -4,11 +4,11 @@
 
 `0.9.7-dsh.1` 把同一套门禁接到 DeepSeek Harness：新增 `dsh` 宿主（`.dsh/skills`），安装时写入宿主协作块（子代理独立审查、`tasks.md` 权威、`present` 交付、plan mode 先 `exit_plan_mode`），`doctor` 报告技能发现根与技能版本↔CLI 版本握手；`status` 无参给出项目门禁总览，没有 `openspec/ff-policy.json` 时 archive 打印告警而不是静默放行（`FF_ALLOW_UNGATED=1` 可静默）。
 
-`0.9.8-dsh.1` 在 0.9.7 的 DSH 宿主之上补齐 DSH 原生接入面：新增 `dsh-plugin/` 原生插件，把 `ff_status`、`ff_gate` 暴露为 DSH 工具，`/ff-status` 为斜杠命令，向 `systemPrompt` 注册四层失效常驻锚点，并在 `tools/pre-execute` 对 `pwsh`/`bash` 命令位置上的 `ff-spec.mjs archive` 做门禁守卫（blocked/invalid 拒绝，只读 `--help`/`--ff-disposition canceled|rejected` 放行，可 `FF_ALLOW_UNGATED=1` 显式跳过）；插件随安装产物复制到 `.forgeflow/dsh-plugin`，用 `register.mjs` 显式注册到某个 DSH profile（备份、幂等、可 `--remove` 撤销，并建立 profile 内 `node_modules/@local/forgeflow-dsh` 链接），需重启 DSH 生效；同一插件还提供只读看板：`generate-board.mjs` 把需求/模块映射与 OpenSpec 勾选状态写成 `.forgeflow/board.json` 快照，左侧栏 `ForgeFlow 看板` 展示需求、架构参考、模块与任务进度。同一版本把四层 AI 失效自检写入 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并新增 E39–E44 评测场景（E43/E44 为 L2 过度防御的泛化场景：无失败样本即引入缓存/队列/读写分离，以及为一次性脚本搭框架）。
+`0.9.9-dsh.1` 在 0.9.7 的 DSH 宿主之上补齐 DSH 原生接入面：新增 `dsh-plugin/` 原生插件，把 `ff_status`、`ff_gate` 暴露为 DSH 工具，`/ff-status` 为斜杠命令，向 `systemPrompt` 注册四层失效常驻锚点，并在 `tools/pre-execute` 对 `pwsh`/`bash` 命令位置上的 `ff-spec.mjs archive` 做门禁守卫（blocked/invalid 拒绝，只读 `--help`/`--ff-disposition canceled|rejected` 放行，可 `FF_ALLOW_UNGATED=1` 显式跳过）；插件随安装产物复制到 `.forgeflow/dsh-plugin`，用 `register.mjs` 显式注册到某个 DSH profile（备份、幂等、可 `--remove` 撤销，并建立 profile 内 `node_modules/@local/forgeflow-dsh` 链接），需重启 DSH 生效；同一插件还提供只读看板：`generate-board.mjs` 把需求/模块映射与 OpenSpec 勾选状态写成 `.forgeflow/board.json` 快照，左侧栏 `ForgeFlow 看板` 展示需求、架构参考、模块与任务进度。同一版本把四层 AI 失效自检写入 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并新增 E39–E44 评测场景（E43/E44 为 L2 过度防御的泛化场景：无失败样本即引入缓存/队列/读写分离，以及为一次性脚本搭框架）。
 
 面向 AI 编程的轻量工作流技能集：澄清需求、拆分任务、按需设计与实现、独立审核和中断接手，帮助人核对 AI 是否仍沿着当前目标工作。
 
-当前为 **0.9.8-dsh.1 源码候选、21 项技能**，工作分支 `feat/dsh-adapter`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.9.9-dsh.1 源码候选、21 项技能**，工作分支 `feat/dsh-adapter`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)：目标与受众、疑虑与真实证据、先确认纲要再逐节实现；不改变后台/App业务界面和各项目品牌，不增加技能或运行时。
 

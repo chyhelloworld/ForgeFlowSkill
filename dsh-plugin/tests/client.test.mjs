@@ -43,6 +43,45 @@ test('client half registers the sidebar entry and main panel', async (t) => {
   assert.equal(registered[1].value.key, 'ff-board');
 });
 
+test('apply skips entries that a previous apply already registered', async (t) => {
+  t.after(() => { delete globalThis.window; });
+  const plugin = await loadPlugin(() => fakeReact);
+  const existing = {
+    'sidebar.panellist': [{ options: { id: 'ff-board' } }],
+    main: [{ options: { key: 'ff-board' } }],
+  };
+  const registered = [];
+  const ctx = {
+    slots: {
+      entries: (name) => existing[name] || [],
+      inject: (name, callback) => { registered.push({ name, value: callback() }); },
+      register: (definition) => definition,
+    },
+  };
+  plugin.apply(ctx);
+  assert.deepEqual(registered, [
+    { name: 'sidebar.panellist', value: undefined },
+    { name: 'main', value: undefined },
+  ]);
+});
+
+test('apply registers when the slot reports unrelated entries', async (t) => {
+  t.after(() => { delete globalThis.window; });
+  const plugin = await loadPlugin(() => fakeReact);
+  const registered = [];
+  const ctx = {
+    slots: {
+      entries: () => [{ options: { id: 'plugins', key: 'plugins' } }],
+      inject: (name, callback) => { registered.push({ name, value: callback() }); },
+      register: (definition) => definition,
+    },
+  };
+  plugin.apply(ctx);
+  assert.equal(registered.length, 2);
+  assert.equal(registered[0].value.id, 'ff-board');
+  assert.equal(registered[1].value.key, 'ff-board');
+});
+
 test('apply keeps boot alive when slot registration throws', async (t) => {
   t.after(() => { delete globalThis.window; });
   const plugin = await loadPlugin(() => fakeReact);
@@ -115,6 +154,8 @@ test('loadBoard reads the snapshot and reports envelope failures', async (t) => 
   assert.equal(ready.board.requirements[0].id, 'R-1');
   const denied = await plugin.__test.loadBoard(fakeContext(async () => ({ ok: false, error: { message: 'not found' } })), 'w1');
   assert.equal(denied.status, 'no-snapshot');
+  const absent = await plugin.__test.loadBoard(fakeContext(async () => ({ ok: false, error: { message: 'no entry at "E:/ws/a/.forgeflow/board.json"' } })), 'w1');
+  assert.equal(absent.status, 'no-snapshot');
   const corrupt = sampleBoard();
   corrupt.sources = 'x';
   const bad = await plugin.__test.loadBoard(fakeContext(async () => ({ ok: true, value: { text: JSON.stringify(corrupt) } })), 'w1');

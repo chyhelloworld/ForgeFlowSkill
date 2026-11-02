@@ -60,3 +60,24 @@
 ## 边界
 
 以上是“当前工作树 + 重新打出的 payload”的机器结果；`candidate-not-published` 表示尚未发布，不等于用户接受或可合并部署。
+
+## 0.9.9-dsh.1 客户端加固后的重新回归（2026-11-02 20:35 起）
+
+本轮改动：`dsh-plugin/client.js`（重复 apply 幂等、`no entry at` 缺快照空态）、`dsh-plugin/tests/client.test.mjs`（+2 项）、插件版本 0.1.0 → 0.1.1、发布版本 0.9.8-dsh.1 → 0.9.9-dsh.1（package.json、19 个 SKILL.md、README、docs/user 两处、`docs/guide-qa.json`）。日志目录 `_verification/client-hardening-20261102/`（`installer-tests.log`、`validate.log`、`test-validate-sealed.log`、`install.log`）。
+
+| 步骤 | 退出码 | 计数 |
+| --- | --- | --- |
+| plugin-tests（board/client/plugin/register） | 0 | 48 tests / 48 pass / 0 fail（新增幂等注册 2 项） |
+| installer-tests（`FF_TEST_ROOT=_verify_tmp/ff-test-root-hardening`） | 0 | 95 tests / 94 pass / 1 skip / 0 fail |
+| python-workflow-unittest | 0 | 73 tests OK，skipped=2 |
+| intent-contract | 0 | 4 tests OK |
+| check_guide | 0 | 重写 `docs/guide-qa.json`（version=0.9.9-dsh.1，21 技能目录） |
+| pack-release | 0 | 重写 MANIFEST.json 与 payload |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、manifest_files=1532、scenarios=44 |
+| test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出） |
+
+合计本轮 **220 个用例 / 0 失败 / 3 skip**（48+95+73+4）；3 个 skip 仍是无 Developer Mode 的 symlink 权限用例。
+
+静态包（本轮最终）：MANIFEST version=0.9.9-dsh.1、status=candidate-not-published、条目 1532；payload `forgeflow-payload.tgz` 9,897,230 字节，sha256=`2dd8907cf52377c2122152cec1ad87750767361813916c778812d4e79c84b2b3`。本节计入 MANIFEST，因此上面这行哈希只对本次封包有效。
+
+**对前文“未运行/未证明”的更正**：看板 Client 半已于 18:16 在重启后的 desktop GUI 用真实鼠标点击（UIA clickable point）打开，显示需求 10 条与快照路径，截图存 `_verification/dsh-native-20261102/board-real-click-20261102.png`；此前的“点不开”是 175% DPI 下自动化坐标换算错误，不是功能缺陷。0.9.9 的幂等注册与空态修复仍需重启后复验（见 `evidence/client-hardening.md`）。

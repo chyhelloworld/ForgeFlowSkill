@@ -203,7 +203,7 @@ function createPlugin(require) {
       if (problem) return { status: 'bad-format', scope: scope, format: board && board.format, error: problem };
       return { status: 'ready', scope: scope, board: board };
     } catch (error) {
-      var missing = /not.?found|ENOENT|不存在|no such file/i.test(errorText(error));
+      var missing = /not.?found|ENOENT|ENOTDIR|no entry at|不存在|no such file/i.test(errorText(error));
       return { status: missing ? 'no-snapshot' : 'read-error', scope: scope, error: error };
     }
   }
@@ -491,10 +491,26 @@ function createPlugin(require) {
     };
   }
 
+  // The host may apply a client plugin twice (for example after a hot reload or a
+  // profile re-read). A slot rejects duplicate ids/keys, so check the live slot
+  // before registering and treat an already-present entry as success.
+  function alreadyRegistered(ctx, slotName, matches) {
+    try {
+      if (!ctx.slots || typeof ctx.slots.entries !== 'function') return false;
+      var entries = ctx.slots.entries(slotName);
+      return Array.isArray(entries) && entries.some(function (entry) {
+        return entry && entry.options && matches(entry.options);
+      });
+    } catch (error) {
+      return false;
+    }
+  }
+
   function apply(ctx) {
     var pluginCtx = ctx;
     try {
       ctx.slots.inject('sidebar.panellist', guarded('sidebar', function () {
+        if (alreadyRegistered(ctx, 'sidebar.panellist', function (options) { return options.id === PANEL_ID; })) return undefined;
         return ctx.slots.register({
           name: 'sidebar.panellist',
           id: PANEL_ID,
@@ -503,6 +519,7 @@ function createPlugin(require) {
         }, Icon);
       }));
       ctx.slots.inject('main', guarded('main', function () {
+        if (alreadyRegistered(ctx, 'main', function (options) { return options.key === PANEL_ID; })) return undefined;
         return ctx.slots.register({ name: 'main', key: PANEL_ID }, function () {
           return h(Board, { ctx: pluginCtx });
         });

@@ -2,7 +2,7 @@
 name: ff-architecture-review
 description: 按用户选择，对已有架构做有界场景评估；默认由真正新审查上下文只读执行，不支持时披露独立性限制。可独立调用，复杂项目仅推荐，小 demo 默认跳过，不替代强制安全审查或正式认证。
 metadata:
-  version: "0.9.8-dsh.1"
+  version: "0.9.9-dsh.1"
 ---
 # FF Architecture Review
 
