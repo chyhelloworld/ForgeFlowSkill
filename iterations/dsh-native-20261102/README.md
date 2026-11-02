@@ -1,4 +1,4 @@
-# DSH 原生嵌入与四层失效防护（0.9.9-dsh.1）
+# DSH 原生嵌入与四层失效防护（0.9.10-dsh.1）
 
 日期：2026-11-02
 前置：`iterations/dsh-embed-20261102/`（0.9.7-dsh.1 的安装、门禁与四层验证）
@@ -18,7 +18,7 @@
 - `skills/ff-review/references/reviews.md`：目标/主流程类补“总需求验收账本”（:19）、方案类补“更简单替代”（:29）与“等价机制核查”（:30）、缺账本判待验证（:33）。
 - `skills/ff-review/SKILL.md:31`：把 reviews.md 的读取条件扩到“阶段末综合审查、方案取舍判断”，让审核规则在常规审查中真正被读取。
 - `skills/ff-intake/SKILL.md:23`：L4 触发从自指改为可观察信号（用户原话未复述、命名先于事实等）。
-- `evaluations/scenarios.json`：新增 E39–E44 六个四层场景（38 → 44；E43/E44 为 L2 泛化场景）。
+- `evaluations/scenarios.json`：新增 E39–E44 六个四层场景（38 → 44；E43/E44 为 L2 泛化场景）；再加入 E45/E46 两个 L2 双向校准场景（44 → 46）。
 
 ### DSH 原生插件（`dsh-plugin/`）
 
@@ -29,7 +29,7 @@
 
 ### 版本与产物
 
-- 0.9.7-dsh.1 → **0.9.8-dsh.1**（插件与看板落地）；0.9.8-dsh.1 → **0.9.9-dsh.1**（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
+- 0.9.8-dsh.1（插件与看板落地）→ 0.9.9-dsh.1（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）→ **0.9.10-dsh.1**（L2 双向校准场景 E45/E46 与证据；插件版本不变）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
 - `ff-diagram`、`ff-writing-document` 保持自身 0.1.0 技能版本，不随包版本。
 
 ## 四层重放结果（详细见 `evidence/replay-E39-E42.md`）
@@ -53,13 +53,17 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 2026-11-02 15:50–15:57，新增两个不同领域的 L2 场景并各重放三次：**E43 3/3 次 6/6 PASS、E44 3/3 次 6/6 PASS**（合计 6/6，无 critical failures）。E43 是“症状未诊断即以以后数据量会涨为由引入 Redis/MQ/读写分离”，E44 是“一次性脚本被上升为插件框架/配置中心/审计回滚模块”；两案都要求先可复现定位、先查等价机制并说明为何不够、给出延后代价。与 E40 合计，锚点生效后三个 L2 场景各 3/3 PASS。详细评分、原文与边界见 `evidence/replay-L2-generalization.md`。
 
+### L2 双向校准（E45/E46）
+
+2026-11-02 21:15–21:23，补测反方向：**有失败样本时是否仍敢采纳必要机制**，防止锚点把执行者推向“一概拒绝”的另一种 L2/L3 失效。新增 E45（支付回调重复发货，有证据的数据库唯一约束应实施）与 E46（导出 OOM，采纳流式、延后无证据的平台化），各用 3 个全新上下文执行者、再由独立评分者盲评：**E45 3/3 PASS、E46 3/3 PASS，18/18 criteria 满分、0 次 critical failures**。六份回答都带出常驻锚点首行；三份 E45 都采纳唯一约束并收窄幂等表范围（而非否决修复），三份 E46 都采纳流式并延后平台/配置中心。详细评分、原文与边界见 `evidence/replay-L2-calibration.md`。
+
 ## 验证状态
 
 - 插件自测：`node --test dsh-plugin/tests/{plugin,register,board,client}.test.mjs` → 48 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵、看板快照/坏结构/多工作区/注册抛错、重复 apply 幂等、缺快照空态）。
-- 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=195（含插件 7 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
+- 安装与握手：`.forgeflow/install/state.json` version=0.9.10-dsh.1、files=195（含插件 7 文件）；`ff-spec.mjs --version`=0.9.10-dsh.1；doctor `handshake.verdict=MATCH`（skills/state/cli 均为 0.9.10-dsh.1）、`plugin.available=true`、`discovery.skills=21`。安装的 `.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致（sha256 见 `_verification/l2-calibration-20261102/` 日志）。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
-- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 48、安装器 95/94 pass/1 skip、workflow 73、intent 4，合计 220 用例 0 失败 3 skip；0.9.9 的最终数字以 `_verification/client-hardening-20261102/` 日志为准）。最终 MANIFEST/payload 在**所有** `source/` 编辑（含看板文件、测试与证据）完成后重新生成，最终结果记录在 `_verification/board-20261102/board-pack-final.log` 与 `board-sealed-final.log`；场景数 44。
-- L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；泛化场景 E43、E44 各 3/3 PASS（6/6），见 `evidence/replay-L2-generalization.md`；边界同上（n=3、同模型同日、simulated-context）。
+- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 48、安装器 95/94 pass/1 skip、workflow 73、intent 4，合计 220 用例 0 失败 3 skip；0.9.9 的最终数字以 `_verification/client-hardening-20261102/` 日志为准）。0.9.10 只新增评测场景与证据，测试数不变（插件 48、workflow 73、intent 4），静态包在**所有** `source/` 编辑完成后重新生成：MANIFEST files=1535、validate passed（skills 21 / links 160 / source_hashes 25 / scenarios 46）、sealed mutation 14 例通过；payload 哈希与条目数只记日志，不写文档（避免“写文档→包过期”的循环）。
+- L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；泛化场景 E43、E44 各 3/3 PASS（6/6），见 `evidence/replay-L2-generalization.md`；反向校准场景 E45、E46 各 3/3 PASS（6/6，18/18 criteria），见 `evidence/replay-L2-calibration.md`；边界同上（n=3、同模型同日、simulated-context）。
 - 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。看板在复审后新增，已由 gpt-6.1-sol（xhigh）做单独细节审查，P0/P1/P2 逐条修复对照见 `evidence/board-panel.md`。
 
 ## 边界
@@ -67,7 +71,7 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
 - 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
 - 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。用户重启后的当前 GUI 也验证了 Host 半（工具可用、守卫拒绝/放行实测）；看板 Client 半也已在同一 GUI 验收（见下一条与 `evidence/client-hardening.md` 的“重启后验收”）。
-- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 E40/E43/E44 各 3/3 PASS，但样本小、同模型同日，且 E43/E44 是合成场景，证据强度有限（见上）。
+- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 E40/E43/E44（拒绝无证据机制）与 E45/E46（采纳有证据机制）各 3/3 PASS，但样本小、同模型同日、均为合成场景，且不能证明锚点是唯一原因，证据强度有限（见上）。
 - 看板的 Client 半在 0.9.8 已由真实鼠标点击验收（UIA clickable point，见 `_verification/dsh-native-20261102/board-real-click-20261102.png`）；0.9.9 的幂等注册与缺快照空态已在 2026-11-02 21:09–21:11 重启后的真实 GUI 验收：看板正常打开、控制台无 duplicate 注册报错、DHAgent 显示友好空态（截图 `_verification/client-hardening-20261102/post-restart-*.png`）；Node 测试只覆盖 fake ModuleLoader 与 fake ctx，不能替代该次验收。数据只有 `intent-view-links.json` 时任务进度显示未知，架构区只有参考文档索引。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 
@@ -76,6 +80,7 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - `evidence/replay-E39-E42.md`：四层重放方法、评分、E40 缺口与原始响应节选。
 - `evidence/replay-E40-after-anchor.md`：锚点生效后 E40 复测（3/3 PASS）、与锚点前的对比、评分依据与统计边界。
 - `evidence/replay-L2-generalization.md`、`evidence/replay-L2-generalization-responses.md`：新增 E43/E44 两个 L2 泛化场景的 3×2 重放、独立评分、与锚点前对比、边界与六份响应原文。
+- `evidence/replay-L2-calibration.md`、`evidence/replay-L2-calibration-responses.md`、`evidence/replay-L2-calibration-scoring.md`：E45/E46 两个 L2 双向校准场景的 3×2 重放、独立盲评（18/18 criteria）、与 E40/E43/E44 的对照、边界与六份评分原文。
 - `evidence/profile-registration.txt`、`evidence/register-dry-run.json`：profile 依赖/bundle 差异与幂等 dry-run。
 - `evidence/doctor-0.9.8.txt`：安装后 doctor 全量输出。
 - `evidence/install-state-summary.txt`、`evidence/ff-spec-version.txt`：安装状态与版本。

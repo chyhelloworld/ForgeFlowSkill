@@ -81,3 +81,25 @@
 静态包（本轮最终）：MANIFEST version=0.9.9-dsh.1、status=candidate-not-published、条目 1532；payload `forgeflow-payload.tgz` 9,897,230 字节，sha256=`2dd8907cf52377c2122152cec1ad87750767361813916c778812d4e79c84b2b3`。本节计入 MANIFEST，因此上面这行哈希只对本次封包有效。
 
 **对前文“未运行/未证明”的更正**：看板 Client 半已于 18:16 在重启后的 desktop GUI 用真实鼠标点击（UIA clickable point）打开，显示需求 10 条与快照路径，截图存 `_verification/dsh-native-20261102/board-real-click-20261102.png`；此前的“点不开”是 175% DPI 下自动化坐标换算错误，不是功能缺陷。0.9.9 的幂等注册与空态修复仍需重启后复验（见 `evidence/client-hardening.md`）。
+
+
+## 0.9.10-dsh.1 L2 双向校准后的重新回归（2026-11-02 21:30 起）
+
+本轮改动：`evaluations/scenarios.json` 44 → 46（新增 E45/E46）、发布版本 0.9.9-dsh.1 → 0.9.10-dsh.1（package.json、19 个 SKILL.md、README、docs/user 两处、`docs/guide-qa.json`）、新增三份 L2 校准证据文档。**插件与安装器代码未改**，因此测试数应与 0.9.9 相同。日志目录 `_verification/l2-calibration-20261102/`。
+
+| 步骤 | 退出码 | 计数 |
+| --- | --- | --- |
+| plugin-tests（board/client/plugin/register） | 0 | 48 tests / 48 pass / 0 fail |
+| installer-tests（`FF_TEST_ROOT=_verify_tmp/ff-test-root-0.9.10`） | 0 | 95 tests / 94 pass / 1 skip / 0 fail（日志 `installer-tests-final.log`） |
+| python-workflow-unittest | 0 | 73 tests OK，skipped=2 |
+| intent-contract | 0 | 4 tests OK |
+| check_guide | 0 | 重写 `docs/guide-qa.json`（version=0.9.10-dsh.1，21 技能目录） |
+| pack-release | 0 | 重写 MANIFEST.json 与 payload |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、source_hashes=25、scenarios=46 |
+| test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出） |
+
+合计 **220 个用例 / 0 失败 / 3 skip**（48+95+73+4），与 0.9.9 相同；3 个 skip 仍是无 Developer Mode 的 symlink 权限用例。**注意时序**：本证据文件也计入 MANIFEST，所以最终 payload/哈希/条目数只记最终日志；任何 `source/` 文档改动后都必须重跑 `update-manifest + pack-release` 再验证，这也是第一次安装器跑测时 37 例报 `BLOCKED: Source integrity: iterations/dsh-native-20261102/README.md` 的原因（README 在打包之后被编辑），重新打包后全部通过。
+
+安装与运行时：install `--host dsh --mode full --build` → `{"status":"INSTALLED","version":"0.9.10-dsh.1"}`；`state.json` version=0.9.10-dsh.1、files=195；`.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致；`ff-spec.mjs --version`=0.9.10-dsh.1；doctor=`RUNTIME_READY`、handshake `MATCH`（skills/state/cli 均 0.9.10-dsh.1）、`plugin.available=true`、`discovery.skills=21`；`register.mjs` 返回 `changed=[]`（幂等）。doctor 全文在 `_verification/l2-calibration-20261102/doctor-0.9.10.txt`（工作区外，未随包）。
+
+未运行 / 未证明：本轮**没有**重启 DSH，因此“新版本插件在重启后仍正常工作”未在本轮复验（0.9.9 已于 2026-11-02 21:09–21:11 验收，插件代码与 0.9.9 相同，仅版本号变化）；E45/E46 仍是 n=3、同模型同日的合成场景，不替代用户验收。
