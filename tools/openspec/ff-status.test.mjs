@@ -11,7 +11,7 @@ const home = path.dirname(fileURLToPath(import.meta.url));
 const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-status-'));
 const project = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const write = (p, name, data) => { const file = path.join(p, name); fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, data); };
-const policy = p => write(p, 'openspec/ff-policy.json', JSON.stringify({ version: 1, artifacts: [] }));
+const policy = p => write(p, 'openspec/ff-policy.json', JSON.stringify({ version: 1, artifacts: [{ id: 'plan', paths: ['openspec/changes/{change}/design.md'], requires: [], reviewRequired: true }] }));
 const change = (p, name, tasks) => write(p, `openspec/changes/${name}/tasks.md`, tasks);
 function sink() { let text = ''; return { write: chunk => { text += chunk; }, get text() { return text; } }; }
 const valid = () => ({ valid: true, artifacts: [{ id: 'design', state: 'valid' }] });
@@ -35,6 +35,7 @@ test('openspec without a policy is DISABLED and lists untracked changes with tas
   assert.equal(r.code, 0);
   assert.match(r.out, /gates: DISABLED — openspec\/ff-policy\.json missing/);
   assert.match(r.out, /add-login\s+—\s+1\/2\s+not tracked/);
+  assert.equal((await run(p, ['--strict'])).code, 0, 'a missing policy is not a failing gate');
 });
 test('a tracked but invalid change is BLOCKED and fails only under --strict', async () => {
   const p = project(); policy(p); change(p, 'add-export', '- [ ] T1');
@@ -50,6 +51,26 @@ test('a valid change passes --strict and names the artifact ratio', async () => 
   const r = await run(p, ['--strict']);
   assert.equal(r.code, 0);
   assert.match(r.out, /add-export\s+1\/1\s+1\/1\s+valid/);
+});
+test('a policy file without usable artifacts is INVALID, not CONFIGURED', async () => {
+  const p = project(); change(p, 'add-export', '- [ ] T1');
+  write(p, 'openspec/ff-policy.json', '{"version":2,"artifacts":[]}');
+  const r = await run(p, [], { evaluate: invalid });
+  assert.match(r.out, /gates: INVALID/);
+  assert.match(r.out, /nonempty artifacts/);
+  const parsed = JSON.parse((await run(p, ['--json'], { evaluate: invalid })).out);
+  assert.equal(parsed.configured, false);
+  assert.equal(parsed.policy.state, 'invalid');
+});
+test('--strict fails on an INVALID policy even with no active change', async () => {
+  const p = project();
+  write(p, 'openspec/ff-policy.json', '{"version":2,"artifacts":[]}');
+  const plain = await run(p, [], { evaluate: invalid });
+  assert.equal(plain.code, 0);
+  const r = await run(p, ['--strict'], { evaluate: invalid });
+  assert.equal(r.code, 1);
+  assert.match(r.out, /gates: INVALID/);
+  assert.match(r.out, /changes: none active/);
 });
 test('--json exposes blocked changes for other tools', async () => {
   const p = project(); policy(p); change(p, 'add-export', '- [ ] T1');

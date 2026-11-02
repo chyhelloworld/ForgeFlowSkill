@@ -35,9 +35,19 @@ function relativeChange(name) {
   return `openspec/changes/${name}`.split(path.sep).join('/');
 }
 
+// A present file is not a usable gate: the evaluator rejects version/artifacts shapes.
+function policyState(file) {
+  if (!fs.existsSync(file)) return { state: 'missing' };
+  let parsed;
+  try { parsed = JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return { state: 'invalid', reason: 'unreadable JSON' }; }
+  if (![1, 2].includes(parsed?.version) || !Array.isArray(parsed?.artifacts) || !parsed.artifacts.length)
+    return { state: 'invalid', reason: 'requires version 1 or 2 and nonempty artifacts' };
+  return { state: 'configured' };
+}
+
 function collect(project, evaluate) {
-  const policyFile = path.join(project, 'openspec/ff-policy.json');
-  const configured = fs.existsSync(policyFile);
+  const policy = policyState(path.join(project, 'openspec/ff-policy.json'));
+  const configured = policy.state === 'configured';
   const rows = activeChanges(project).map(change => {
     const dir = path.join(project, 'openspec/changes', change);
     const tasks = taskCounts(path.join(dir, 'tasks.md'));
@@ -47,7 +57,7 @@ function collect(project, evaluate) {
     const artifacts = validity?.artifacts?.length ? { valid: validity.artifacts.filter(a => a.state === 'valid').length, total: validity.artifacts.length } : null;
     return { change, configured, tasks, artifacts, valid: Boolean(validity?.valid), tracked: Boolean(validity), reasons: [...(validity?.reasons ?? []), ...(error ? [error] : [])].slice(0, 3) };
   });
-  return { project, configured, rows };
+  return { project, configured, policy, rows };
 }
 
 function render(report) {
@@ -57,12 +67,15 @@ function render(report) {
     lines.push('  next:  node .forgeflow/ff-spec.mjs init');
     return lines;
   }
-  lines.push(report.configured
+  lines.push(report.policy.state === 'configured'
     ? '  gates: CONFIGURED — openspec/ff-policy.json present; archive and validate enforce FF artifacts.'
-    : '  gates: DISABLED — openspec/ff-policy.json missing; archive still succeeds without validity or receipt checks.');
+    : report.policy.state === 'invalid'
+      ? '  gates: INVALID — openspec/ff-policy.json is present but ' + report.policy.reason + '; run node .forgeflow/ff-spec.mjs receipt diagnose.'
+      : '  gates: DISABLED — openspec/ff-policy.json missing; archive still succeeds without validity or receipt checks.');
   if (!report.rows.length) {
     lines.push('  changes: none active');
-    if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write  (infers a policy from files you already have)');
+    if (report.policy.state === 'invalid') lines.push('  next:  fix openspec/ff-policy.json, or rerun node .forgeflow/ff-spec.mjs adopt --write --force');
+    else if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write  (infers a policy from files you already have)');
     return lines;
   }
   lines.push(`  changes: ${report.rows.length} active`);
@@ -78,7 +91,8 @@ function render(report) {
   lines.push(format(head));
   for (const line of body) lines.push(format(line));
   for (const row of report.rows) if (row.reasons.length) lines.push(`  ${row.change}: ${row.reasons[0]}`);
-  if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write, then node .forgeflow/ff-spec.mjs receipt diagnose');
+  if (report.policy.state === 'invalid') lines.push('  next:  fix openspec/ff-policy.json, or rerun node .forgeflow/ff-spec.mjs adopt --write --force, then node .forgeflow/ff-spec.mjs receipt diagnose');
+  else if (!report.configured) lines.push('  next:  node .forgeflow/ff-spec.mjs adopt --write, then node .forgeflow/ff-spec.mjs receipt diagnose');
   else if (report.rows.some(row => !row.valid)) lines.push('  next:  node .forgeflow/ff-spec.mjs receipt diagnose');
   return lines;
 }
@@ -103,5 +117,6 @@ export async function statusOverview(build, argv, options = {}) {
   if (json) out.write(JSON.stringify({ ...report, blocked: report.rows.filter(row => row.tracked && !row.valid).map(row => row.change) }, null, 2) + '\n');
   else out.write(render(report).join('\n') + '\n');
   const blocked = report.rows.filter(row => row.tracked && !row.valid);
-  return strict && blocked.length ? 1 : 0;
+  // A malformed policy is a failing gate even when no change is active to expose it.
+  return strict && (blocked.length || report.policy.state === 'invalid') ? 1 : 0;
 }

@@ -68,6 +68,11 @@ export function createReleaseStage(project) {
   }
   return { stage, prepareBootstrapCleanup };
 }
+// The release stage copies only tools/openspec, so the staged build cannot read the
+// source package.json two levels up; pass the version that verifySource already pinned.
+export function buildArguments(pin) {
+  return ['--source-version=' + pin.version];
+}
 function release(project, source, pin, mode, build, reuse) {
   const id = `${pin.version}-${pin.hash.slice(0, 16)}-${mode}`;
   const name = `releases/${id}`;
@@ -91,11 +96,11 @@ function release(project, source, pin, mode, build, reuse) {
     if (reuse) {
       const reusable = path.resolve(reuse);
       if (JSON.stringify(read(path.join(reusable, 'upstream.json'))) !== JSON.stringify(read(path.join(src, 'upstream.json')))) fail('Reusable build source pin mismatch');
-      const built = verifyReusableBuild(reusable);
+      const built = verifyReusableBuild(reusable, pin.version);
       fs.cpSync(built, path.join(stage, 'tools/openspec/.build'), { recursive: true, filter: () => true, verbatimSymlinks: true });
-      verifyReusableBuild(path.join(stage, 'tools/openspec'));
+      verifyReusableBuild(path.join(stage, 'tools/openspec'), pin.version);
     } else {
-      const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), []);
+      const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), buildArguments(pin));
       if (result.status !== 0) fail('Build failed; staged diagnostic output retained inside project; active install unchanged');
     }
     const probe = runNode(project, path.join(stage, 'tools/openspec/ff-spec.mjs'), ['--help'], true);

@@ -6,7 +6,7 @@ import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main, parse } from '../../../installer.mjs';
-import { install, doctor, buildDependencies } from '../install.mjs';
+import { install, doctor, buildDependencies, buildArguments } from '../install.mjs';
 import { verifySource } from '../source.mjs';
 import { safe, checkedRoot, relative, digest, sha, json, regularFiles } from '../files.mjs';
 import { loadState, recover, rollback, commit, preflight } from '../transaction.mjs';
@@ -26,6 +26,9 @@ function fixture(version = '0.6.0-experimental.7') {
   manifest.files['skills/ff-spec/SKILL.md'] = sha(fs.readFileSync(path.join(p, 'skills/ff-spec/SKILL.md')));
   json(path.join(p, 'MANIFEST.json'), manifest); return p;
 }
+test('release builds carry the pinned source version into the staged build', () => {
+  assert.deepEqual(buildArguments({ version: '0.9.7-dsh.1' }), ['--source-version=0.9.7-dsh.1']);
+});
 test('cold install: Chinese/space path, 21 skills, binding, honest blocked runtime', () => {
   const p = setup(); const state = loadState(p);
   assert.equal(fs.readdirSync(path.join(p, '.agents/skills')).length, 21);

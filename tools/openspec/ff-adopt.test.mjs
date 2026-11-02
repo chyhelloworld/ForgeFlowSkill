@@ -65,6 +65,38 @@ test('an artifact missing from one active change is skipped, not silently requir
   assert.match(report.skipped[0].reason, /missing in fix-doc/);
   assert.match(report.note, /no progress mapping/);
 });
+test('--write refuses to create an empty policy when nothing is inferable', async () => {
+  const p = project(); fs.mkdirSync(path.join(p, 'openspec'), { recursive: true });
+  const r = await run(p, ['--write']);
+  assert.equal(r.code, 1);
+  assert.match(r.err, /no artifact file is present in every active change/);
+  assert.equal(fs.existsSync(path.join(p, 'openspec/ff-policy.json')), false);
+});
+test('--write refuses when the artifact exists in only some active changes', async () => {
+  const p = project(); fs.mkdirSync(path.join(p, 'openspec'), { recursive: true });
+  change(p, 'add-export', { 'design.md': '# D\n' });
+  change(p, 'fix-doc', { 'proposal.md': '## Why\nfocused\n' });
+  const r = await run(p, ['--write']);
+  assert.equal(r.code, 1);
+  assert.match(r.err, /nothing written/);
+  assert.equal(fs.existsSync(path.join(p, 'openspec/ff-policy.json')), false);
+});
+test('--write refuses an artifact file the evaluator would reject as empty', async () => {
+  const p = project(); fs.mkdirSync(path.join(p, 'openspec'), { recursive: true });
+  change(p, 'add-export', { 'design.md': '' });
+  const r = await run(p, ['--write']);
+  assert.equal(r.code, 1);
+  assert.match(r.err, /no artifact file is present in every active change/);
+  assert.equal(fs.existsSync(path.join(p, 'openspec/ff-policy.json')), false);
+});
+test('--force without --write is rejected instead of silently ignored', async () => {
+  const p = project(); fs.mkdirSync(path.join(p, 'openspec'), { recursive: true });
+  change(p, 'add-export', { 'design.md': '# D\n' });
+  const r = await run(p, ['--force']);
+  assert.equal(r.code, 1);
+  assert.match(r.err, /Usage: node .forgeflow\/ff-spec.mjs adopt/);
+  assert.equal(fs.existsSync(path.join(p, 'openspec/ff-policy.json')), false);
+});
 test('adopt refuses a project that was never initialized', async () => {
   const r = await run(project(), ['--write']);
   assert.equal(r.code, 1);

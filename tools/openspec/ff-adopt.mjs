@@ -7,6 +7,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { randomUUID } from 'node:crypto';
 import { pathToFileURL } from 'node:url';
 
 const usage = 'Usage: node .forgeflow/ff-spec.mjs adopt [--write] [--force] [--json]';
@@ -23,8 +24,12 @@ function activeChanges(project) {
     .map(entry => entry.name)
     .sort();
 }
+// The evaluator rejects missing, empty and nonregular files; inference must not propose
+// a path it would reject, or --write would succeed and the preview would fail afterwards.
 function has(project, change, file) {
-  return fs.existsSync(path.join(project, 'openspec/changes', change, file));
+  const target = path.join(project, 'openspec/changes', change, file);
+  try { const stat = fs.lstatSync(target); return stat.isFile() && stat.size > 0; }
+  catch { return false; }
 }
 function infer(project, changes) {
   const artifacts = [], skipped = [];
@@ -93,14 +98,19 @@ export async function adoptMain(build, argv, options = {}) {
     else if (arg === '--json') json = true;
     else { err.write(usage + '\n'); return 1; }
   }
+  if (force && !write) { err.write(usage + '\n'); return 1; }
   if (!fs.existsSync(path.join(project, 'openspec'))) { err.write('adopt expects an initialized project: run node .forgeflow/ff-spec.mjs init first\n'); return 1; }
   const changes = activeChanges(project);
   const { policy, skipped, timed, note } = infer(project, changes);
   const target = path.join(project, 'openspec/ff-policy.json');
   if (write && fs.existsSync(target) && !force) { err.write('openspec/ff-policy.json exists; review it, or pass --force to replace it\n'); return 1; }
+  // An empty policy is rejected by the evaluator, so writing one would leave status and validate disagreeing.
+  if (write && !policy.artifacts.length) { err.write('no artifact file is present in every active change; nothing written\n'); return 1; }
   const report = { project, changes, policy, skipped, progress: Boolean(timed), ...(note ? { note } : {}), written: false };
   if (write) {
-    fs.writeFileSync(target, JSON.stringify(policy, null, 2) + '\n');
+    const temporary = target + '.' + randomUUID() + '.tmp';
+    fs.writeFileSync(temporary, JSON.stringify(policy, null, 2) + '\n');
+    try { fs.renameSync(temporary, target); } finally { if (fs.existsSync(temporary)) fs.unlinkSync(temporary); }
     report.written = true;
     if (build || options.evaluate) {
       let evaluate = options.evaluate;

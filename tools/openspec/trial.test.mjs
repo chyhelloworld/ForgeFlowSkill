@@ -105,6 +105,18 @@ test('doctor LF suggestions protect literal bracket paths without matching unrel
   const diagnostic=JSON.parse(cli(p,['receipt','diagnose']).stdout);const suggestion=diagnostic.lineEndings.unprotected.find(f=>f.path==='src/[id].txt').suggestion;write(p,'.gitattributes',suggestion+'\n');
   assert.equal(git(['check-attr','-z','eol','--','src/[id].txt']).stdout.split('\0')[2],'lf');assert.equal(git(['check-attr','-z','eol','--','src/i.txt']).stdout.split('\0')[2],'unspecified');
 });
+test('review independence must be a known level and is recorded verbatim',()=>{
+  const p=fixture(); cli(p,['receipt','snapshot','a','independence.json']); cli(p,['receipt','template','independence.json','independence.report.json']);
+  const report=json(path.join(p,'independence.report.json')); const artifact=report.artifacts.plan;
+  Object.assign(artifact,{verdict:'pass',reviewer:'fixture reviewer',toolVersion:'fixture-1',independence:'L4',unverified:[]});
+  write(p,'independence.report.json',report);
+  assert.match(cli(p,['receipt','record','a','independence.json','independence.report.json'],1).stderr,/independence/);
+  assert.equal(validity(p).valid,false);
+  artifact.independence='L2'; write(p,'independence.report.json',report);
+  cli(p,['receipt','record','a','independence.json','independence.report.json']);
+  assert.equal(validity(p).valid,true);
+  assert.equal(json(path.join(p,'openspec/changes/a/ff-artifacts.json')).artifacts.plan.review.independence,'L2');
+});
 test('report template is not pass; fail verdict differs from stale binding; migration preserves old bytes',()=>{
   const p=fixture(); cli(p,['receipt','snapshot','a','snapshot.json']); cli(p,['receipt','template','snapshot.json','report.json']); cli(p,['receipt','record','a','snapshot.json','report.json'],1);
   const r=json(path.join(p,'report.json')); Object.assign(r.artifacts.plan,{verdict:'fail',reviewer:'reviewer',toolVersion:'test',independence:'L1',unverified:['none tested']}); write(p,'report.json',r); cli(p,['receipt','record','a','snapshot.json','report.json']);

@@ -31,7 +31,17 @@ function npm(args) {
   }
   run('npm', args);
 }
-function main() {
+function sourceVersionArg(argv) {
+  if (argv.includes('--source-version')) throw new Error('--source-version requires a value');
+  const flag = argv.find(arg => arg.startsWith('--source-version='));
+  if (!flag) return undefined;
+  const value = flag.slice('--source-version='.length);
+  if (!value) throw new Error('--source-version requires a value');
+  return value;
+}
+function main(explicitVersion) {
+  // Validate the stamp before the expensive, network-bound build so a typo cannot
+  // leave a finished .build that a rerun then refuses to overwrite.
   const [major, minor] = process.versions.node.split('.').map(Number);
   if (major < 20 || (major === 20 && minor < 19)) throw new Error('Node >=20.19 required');
   verify(pin.archive, pin.archiveSha256);
@@ -60,7 +70,7 @@ function main() {
   // Stamp the FF source version so doctor can compare skills, state and CLI without a false drift.
   // A checkout always has the FF package.json two levels up; a copied fixture may not.
   const sourcePackage = path.join(home, '../../package.json');
-  const sourceVersion = existsSync(sourcePackage) ? JSON.parse(readFileSync(sourcePackage, 'utf8')).version : undefined;
+  const sourceVersion = explicitVersion ?? (existsSync(sourcePackage) ? JSON.parse(readFileSync(sourcePackage, 'utf8')).version : undefined);
   if (sourceVersion) {
     const builtManifest = path.join(build, 'package.json');
     const manifest = JSON.parse(readFileSync(builtManifest, 'utf8'));
@@ -85,6 +95,8 @@ function cleanBuild() {
   if (lstatSync(build, { throwIfNoEntry: false })) throw new Error('.build cleanup incomplete');
 }
 try {
+  // Parse before --clean: a malformed stamp must not delete an existing .build.
+  const explicitVersion = sourceVersionArg(process.argv);
   if (process.argv.includes('--clean')) cleanBuild();
-  main();
+  main(explicitVersion);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

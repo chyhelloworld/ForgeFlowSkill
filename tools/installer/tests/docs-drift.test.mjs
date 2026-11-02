@@ -24,10 +24,9 @@ test('every skill reference copy matches the canonical lifecycle contract', () =
 });
 
 test('user docs name the adopt command wherever policies are introduced', () => {
-  const capabilities = read(path.join(root, 'docs/user/capabilities.md')).toString();
-  const install = read(path.join(root, 'docs/user/install.md')).toString();
-  const handbook = read(path.join(root, 'docs/FF-中文使用手册.md')).toString();
-  for (const [name, text] of [['docs/user/capabilities.md', capabilities], ['docs/user/install.md', install], ['docs/FF-中文使用手册.md', handbook]]) {
+  const docs = ['docs/user/capabilities.md', 'docs/user/install.md', 'docs/FF-中文使用手册.md', 'docs/user/optional-methods.md', 'docs/user/codegraph.md'];
+  for (const name of docs) {
+    const text = read(path.join(root, name)).toString();
     assert.match(text, /ff-spec\.mjs adopt/, name + ' must mention ff-spec.mjs adopt');
   }
 });

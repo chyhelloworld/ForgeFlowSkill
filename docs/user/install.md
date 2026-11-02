@@ -41,7 +41,7 @@ node .forgeflow/ff-spec.mjs adopt            # 查看推断出的 policy
 node .forgeflow/ff-spec.mjs adopt --write    # 落盘并预览每个活动 change
 ```
 
-安装时会在每个 `SKILL.md` 追加宿主协作块：独立审查交给 `subagent`，`tasks.md` 是任务权威（`todo_write` 只做镜像），交付用 `present`，plan mode 下先 `exit_plan_mode` 再动手。`doctor --host dsh` 额外输出 `discovery`（实际发现的技能目录、数量、同项目内其他宿主根）与 `handshake`（技能版本、安装状态版本、CLI 内嵌 adapter 版本）；三者不一致时指出是哪一侧过期，而不是笼统报 READY。
+安装时会在每个 `SKILL.md` 追加宿主协作块：独立审查交给 `subagent`，`tasks.md` 是任务权威（`todo_write` 只做镜像），交付用 `present`，plan mode 下先 `exit_plan_mode` 再动手。`doctor --host dsh` 额外输出 `discovery`（实际发现的技能目录、数量、同项目内其他宿主根）与 `handshake`（技能版本、安装状态版本、CLI 报告的版本；CLI 版本由源版本派生）；三者不一致时指出是哪一侧过期，而不是笼统报 READY。
 
 与 Codex 共用同一项目时用 `--hosts dsh,codex`；只给 DSH 用时保持单宿主，避免为另一宿主重复维护技能副本。没有 `openspec/ff-policy.json` 时 `archive` 会打印 `⚠ FF gates disabled` 而不是静默通过，`FF_ALLOW_UNGATED=1` 可关闭该提示。
 
