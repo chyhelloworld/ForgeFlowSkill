@@ -24,7 +24,7 @@ node .forgeflow/ff-spec.mjs --help
 
 `--build` 明确允许安装器构建本地 CLI。**未发布到 npm registry**；不要假定存在可直接安装的公开 FF npm 版本。原生 Windows full 构建/安装已在 0.8/0.9 冻结提交执行，具体版本与哈希见对应[版本与证据](../archive/README.md)。
 
-安装内容位于项目的 `.forgeflow/` 与 `.agents/skills/`。full 构建的内层缓存和临时数据仍在项目 `.forgeflow/install/` 下；上述外层设置不保证所有系统工具都不写项目外文件。工具源无需复制进每个项目，也不替换全局 OpenSpec。
+安装内容位于项目的 `.forgeflow/` 与 `.agents/skills/`。所有宿主都会同时安装独立的 RSI 证据工具 `node .forgeflow/ff-rsi.mjs`（见 [FF RSI 证据工具](rsi.md)）；它只冻结/对照/记录，不激活版本。full 构建的内层缓存和临时数据仍在项目 `.forgeflow/install/` 下；上述外层设置不保证所有系统工具都不写项目外文件。工具源无需复制进每个项目，也不替换全局 OpenSpec。
 
 只要技能、暂不需要 CLI 门禁：将 `--mode full --build` 改为 `--mode skills-only`。此模式的 doctor 和 CLI 会返回 **BLOCKED**。Claude Code 将宿主参数改为 `--host claude`，技能安装至 `.claude/skills/`，原生 ff-intake 仅有人工空白项目的[限定成功回执](../../iterations/0.9.3-dual-host.1/native-host-validation.md)，不代表所有技能或实际业务验收。CodeGraph 默认关闭。
 
@@ -50,13 +50,17 @@ node .forgeflow/ff-spec.mjs adopt --write    # 落盘并预览每个活动 chang
 `--host dsh` 的安装会把可选的 DSH 插件复制到项目 `.forgeflow/dsh-plugin/`：两个只读工具 `ff_status`/`ff_gate`、`/ff-status` 命令、注册到 `systemPrompt` 的四层失效常驻锚点、`ff-spec.mjs archive` 的本地守卫，以及左侧栏的只读 "ForgeFlow 看板"（需求/架构参考/模块/任务进度）。插件零外部依赖，不替代 FF CLI。注册到某个 DSH profile 后需**重启 DSH** 才生效：
 
 ```powershell
-# 注册（--dry-run 只预览；--profile 可指向其他 profile）
+# 推荐：全局安装（物化到 %USERPROFILE%\.dsh\plugins\forgeflow-dsh，所有工作区共用）
+node .forgeflow/dsh-plugin/register.mjs --global
+# 撤销注册（保留全局副本）；加 --purge 连副本一起删除
+node .forgeflow/dsh-plugin/register.mjs --remove --global
+# 仅本项目：link 指向该插件目录（不带 --global）
 node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profiles\desktop"
-# 撤销注册，恢复注册前的 profile 文件
-node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profiles\desktop" --remove
 ```
 
-注册会写该 profile 的 `package.json`（`link:` 依赖与 `dsh.profile.bundles`）、`cordis.patch.yml`（`forgeflow-dsh` id 的注册块），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；`package.json` 与 `cordis.patch.yml` 写前生成 `*.bak-<时间戳>` 备份。重复执行不会重复写入，已有同名但指向别处的目录时拒绝覆盖（退出码 2），缺少 profile 时退出码 2。`doctor --host dsh` 只报告项目内插件副本是否存在（`plugin.available`/`plugin.path`，以及 `plugin.client`/`plugin.generator`），不读取全局 profile。
+`--global` 会先把插件的 7 个运行文件物化到 `<DSH_HOME>/plugins/forgeflow-dsh`（`DSH_HOME` 默认 `%USERPROFILE%\.dsh`，可用 `--home` 覆盖），profile 的 link 只指向这个稳定副本；因此项目目录被移动或删除时，其他工作区的插件不会再加载失败。物化逐文件按字节比较，只在缺失或内容不同时写入，重复执行返回空 `changed`；旧版本指向项目目录的 FF 插件链接会被自动替换，外来目录仍拒绝覆盖。
+
+注册会写该 profile 的 `package.json`（`link:` 依赖与 `dsh.profile.bundles`）、`cordis.patch.yml`（`forgeflow-dsh` id 的注册块），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；`package.json` 与 `cordis.patch.yml` 写前生成 `*.bak-<时间戳>` 备份。重复执行不会重复写入，缺少 profile 时退出码 2。`doctor --host dsh` 只报告项目内插件副本是否存在（`plugin.available`/`plugin.path`，以及 `plugin.client`/`plugin.generator`），不读取全局 profile。
 
 看板读取项目根的 `.forgeflow/board.json` 快照；快照由插件自带的生成器手动生成（加 `--write` 才落盘，内容不变不重写）：
 

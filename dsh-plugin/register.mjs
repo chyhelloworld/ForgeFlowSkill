@@ -22,7 +22,7 @@ const BLOCK = [
   '',
 ].join(NL);
 const SELF_DIR = path.dirname(fileURLToPath(import.meta.url));
-const LINK_LABEL = 'node_modules/' + PLUGIN_NAME.replace(/\\/g, '/');
+export const LINK_LABEL = 'node_modules/' + PLUGIN_NAME.replace(/\\/g, '/');
 
 export function defaultProfile() {
   const home = process.env.USERPROFILE || os.homedir();
@@ -69,7 +69,15 @@ export function ensureLink(profileDir, pluginDir, options, changed) {
   const existing = linkTargetIfExists(target);
   if (existing !== null) {
     if (existing && sameTarget(existing, pluginDir)) return true;
-    return { code: 2, message: '已存在 ' + LINK_LABEL + '，但它指向 ' + (existing || '不可解析目标') + '；未覆盖，请手动处理后重试。' };
+    const forgeflowTarget = existing && isForgeflowPluginDir(existing);
+    const replace = options.replaceLink || (options.global && forgeflowTarget);
+    if (!replace) {
+      return { code: 2, message: '已存在 ' + LINK_LABEL + '，但它指向 ' + (existing || '不可解析目标') + '；未覆盖，请手动处理后重试（--global 可自动替换旧的 FF 插件链接，其他目标需手动清理）。' };
+    }
+    if (!options.dryRun) {
+      try { fs.unlinkSync(target); } catch { fs.rmdirSync(target); }
+    }
+    changed.push(LINK_LABEL + '（替换旧目标）');
   }
   if (!options.dryRun) {
     fs.mkdirSync(path.dirname(target), { recursive: true });
@@ -82,6 +90,70 @@ export function ensureLink(profileDir, pluginDir, options, changed) {
 export function linkBelongsTo(profileDir, pluginDir) {
   const existing = linkTargetIfExists(linkPath(profileDir));
   return existing !== null && Boolean(existing) && sameTarget(existing, pluginDir);
+}
+
+
+// --- 全局安装（--global）----------------------------------------------------
+// profile 里的 link 若指向某个项目目录，会随该项目移动/删除而失效，并让“其他项目”
+// 实际依赖该项目存在。--global 先把插件物化到 <dshHome>/plugins/forgeflow-dsh，
+// 再让 profile link 到这个稳定副本；项目内 .forgeflow/dsh-plugin 仍是安装器产物。
+export const PLUGIN_FILES = [
+  'package.json',
+  'index.js',
+  'register.mjs',
+  'client.js',
+  'generate-board.mjs',
+  'cordis.patch.yml',
+  'README.md',
+];
+
+export function dshHome(options = {}) {
+  if (options.home) return path.resolve(options.home);
+  if (process.env.DSH_HOME) return path.resolve(process.env.DSH_HOME);
+  const home = process.env.USERPROFILE || os.homedir();
+  return path.join(home, '.dsh');
+}
+
+export function globalPluginDir(options = {}) {
+  return path.join(dshHome(options), 'plugins', 'forgeflow-dsh');
+}
+
+export function isForgeflowPluginDir(dir) {
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(dir, 'package.json'), 'utf8'));
+    const name = data && data.name;
+    return typeof name === 'string' && (name === 'forgeflow-dsh' || name.endsWith('/forgeflow-dsh'));
+  } catch {
+    return false;
+  }
+}
+
+// 幂等物化：逐文件按字节比较，只在缺失或内容不同时写入。
+export function materializeGlobal(sourceDir, targetDir, options, changed) {
+  for (const name of PLUGIN_FILES) {
+    const from = path.join(sourceDir, name);
+    if (!fs.existsSync(from)) {
+      return { code: 2, message: '插件目录不完整：缺少 ' + name + '（' + sourceDir + '）' };
+    }
+  }
+  if (!options.dryRun) fs.mkdirSync(targetDir, { recursive: true });
+  for (const name of PLUGIN_FILES) {
+    const from = path.join(sourceDir, name);
+    const to = path.join(targetDir, name);
+    const next = fs.readFileSync(from);
+    if (fs.existsSync(to) && fs.readFileSync(to).equals(next)) continue;
+    if (!options.dryRun) fs.writeFileSync(to, next);
+    changed.push('plugins/forgeflow-dsh/' + name);
+  }
+  return true;
+}
+
+export function removeGlobal(options, changed) {
+  const target = globalPluginDir(options);
+  if (!fs.existsSync(target)) return false;
+  if (!options.dryRun) fs.rmSync(target, { recursive: true, force: true });
+  changed.push('plugins/forgeflow-dsh');
+  return true;
 }
 
 export function removeLink(profileDir, pluginDir) {
@@ -201,7 +273,9 @@ function writeWithBackup(file, text, options, changed) {
 }
 
 function resolveProfile(options) {
-  return path.resolve(options.profile || defaultProfile());
+  if (options.profile) return path.resolve(options.profile);
+  if (options.global) return path.join(dshHome(options), 'profiles', 'desktop');
+  return path.resolve(defaultProfile());
 }
 
 function resolvePlugin(options) {
@@ -217,7 +291,7 @@ function checkPlugin(pluginDir, result) {
 
 export function register(options = {}) {
   const profileDir = resolveProfile(options);
-  const pluginDir = resolvePlugin(options);
+  let pluginDir = resolvePlugin(options);
   const result = { action: 'register', profile: profileDir, plugin: pluginDir, changed: [], dryRun: Boolean(options.dryRun), code: 0, message: '' };
   const packageFile = path.join(profileDir, 'package.json');
   const patchFile = path.join(profileDir, 'cordis.patch.yml');
@@ -227,6 +301,18 @@ export function register(options = {}) {
     return result;
   }
   if (!checkPlugin(pluginDir, result)) return result;
+  if (options.global) {
+    const target = globalPluginDir(options);
+    const materialized = materializeGlobal(pluginDir, target, options, result.changed);
+    if (materialized !== true) {
+      result.code = materialized.code;
+      result.message = materialized.message;
+      return result;
+    }
+    result.source = pluginDir;
+    pluginDir = target;
+    result.plugin = target;
+  }
   const packageText = readText(packageFile);
   const patchText = fs.existsSync(patchFile) ? readText(patchFile) : '';
   let nextPackage;
@@ -265,7 +351,7 @@ export function register(options = {}) {
 
 export function remove(options = {}) {
   const profileDir = resolveProfile(options);
-  const pluginDir = resolvePlugin(options);
+  const pluginDir = options.global ? globalPluginDir(options) : resolvePlugin(options);
   const result = { action: 'remove', profile: profileDir, plugin: pluginDir, changed: [], dryRun: Boolean(options.dryRun), code: 0, message: '' };
   const packageFile = path.join(profileDir, 'package.json');
   const patchFile = path.join(profileDir, 'cordis.patch.yml');
@@ -314,6 +400,9 @@ export function remove(options = {}) {
   result.message = result.changed.length
     ? (result.dryRun ? '将撤销：' : '已撤销：') + result.changed.join('、') + '；重启 DSH 后不再加载插件。'
     : (linkNote || '未发现已注册内容，无需撤销（幂等）。');
+  if (options.purge && removeGlobal(options, result.changed) && !options.dryRun) {
+    if (!result.changed.includes(LINK_LABEL)) result.changed.push('plugins/forgeflow-dsh');
+  }
   if (linkNote && result.changed.length) result.message += ' ' + linkNote;
   return result;
 }
@@ -325,6 +414,9 @@ export function usage() {
     '  --profile <dir>  默认 %USERPROFILE%/.dsh/profiles/desktop',
     '  --plugin <dir>   默认本文件所在目录（应包含 package.json）',
     '  --remove         撤销注册（删除 dependencies/bundles 条目与 cordis.patch.yml 注册块）',
+    '  --global         把插件物化到 <DSH_HOME>/plugins/forgeflow-dsh 并 link 到该稳定副本',
+    '                   （默认 DSH_HOME=%USERPROFILE%/.dsh；不带此参数时 link 指向 --plugin 目录）',
+    '  --purge          仅与 --remove + --global 一起用：同时删除全局插件副本',
     '  --dry-run        只报告将改动的文件，不写入',
     '  --json           以 JSON 输出结果',
     '',
@@ -333,7 +425,7 @@ export function usage() {
 }
 
 export function main(argv = process.argv.slice(2)) {
-  const options = { profile: null, plugin: null, remove: false, dryRun: false, json: false, help: false };
+  const options = { profile: null, plugin: null, home: null, remove: false, global: false, purge: false, replaceLink: false, dryRun: false, json: false, help: false };
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === '--profile') {
@@ -344,8 +436,18 @@ export function main(argv = process.argv.slice(2)) {
       options.plugin = argv[index + 1];
       index += 1;
       if (!options.plugin) return { code: 2, lines: ['--plugin 需要一个目录参数。'] };
+    } else if (arg === '--home') {
+      options.home = argv[index + 1];
+      index += 1;
+      if (!options.home) return { code: 2, lines: ['--home 需要一个目录参数。'] };
     } else if (arg === '--remove') {
       options.remove = true;
+    } else if (arg === '--global') {
+      options.global = true;
+    } else if (arg === '--purge') {
+      options.purge = true;
+    } else if (arg === '--replace-link') {
+      options.replaceLink = true;
     } else if (arg === '--dry-run') {
       options.dryRun = true;
     } else if (arg === '--json') {

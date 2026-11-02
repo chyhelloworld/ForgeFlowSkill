@@ -103,3 +103,25 @@
 安装与运行时：install `--host dsh --mode full --build` → `{"status":"INSTALLED","version":"0.9.10-dsh.1"}`；`state.json` version=0.9.10-dsh.1、files=195；`.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致；`ff-spec.mjs --version`=0.9.10-dsh.1；doctor=`RUNTIME_READY`、handshake `MATCH`（skills/state/cli 均 0.9.10-dsh.1）、`plugin.available=true`、`discovery.skills=21`；`register.mjs` 返回 `changed=[]`（幂等）。doctor 全文在 `_verification/l2-calibration-20261102/doctor-0.9.10.txt`（工作区外，未随包）。
 
 未运行 / 未证明：本轮**没有**重启 DSH，因此“新版本插件在重启后仍正常工作”未在本轮复验（0.9.9 已于 2026-11-02 21:09–21:11 验收，插件代码与 0.9.9 相同，仅版本号变化）；E45/E46 仍是 n=3、同模型同日的合成场景，不替代用户验收。
+
+## 0.9.11-dsh.1 RSI 证据工具接入后的重新回归（2026-11-02 23:10 起）
+
+本轮改动：新增 `tools/rsi/ff-rsi.mjs` 与 `tools/rsi/ff-rsi.test.mjs`（15 例）、安装器接入（`state.mjs` 的 `rsiFile` 与 `owned()`、`install.mjs` 的 `bindings()`、`dsh-host.test.mjs` 新增 1 例）、`docs/user/rsi.md`、`capabilities.md`/`ff-improvement.md`/`ff-retro/SKILL.md` 的 RSI 边界同步、发布版本 0.9.10-dsh.1 → 0.9.11-dsh.1，以及 `evidence/rsi-tool.md`。日志目录 `_verification/rsi-20261102/`。
+
+| 步骤 | 退出码 | 计数 |
+| --- | --- | --- |
+| rsi-tool-tests | 0 | 15 tests / 15 pass / 0 fail |
+| plugin-tests（board/client/plugin/register） | 0 | 53 tests / 53 pass / 0 fail |
+| installer-tests（`FF_TEST_ROOT=_verify_tmp/ff-test-root-0.9.11`） | 0 | 96 tests / 95 pass / 1 skip / 0 fail（新增 ff-rsi 安装用例） |
+| python-workflow-unittest | 0 | 73 tests OK，skipped=2 |
+| intent-contract | 0 | 4 tests OK |
+| check_guide | 0 | 重写 `docs/guide-qa.json`（version=0.9.11-dsh.1，21 技能目录） |
+| pack-release | 0 | 重写 MANIFEST.json 与 payload |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、source_hashes=25、scenarios=46、manifest_files=1542 |
+| test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出） |
+
+合计 **241 个用例 / 0 失败 / 3 skip**（15+53+96+73+4）；3 个 skip 仍是无 Developer Mode 的 symlink 权限用例。
+
+安装与运行时（已执行）：本工作区与 DHAgent 均 install `--host dsh --mode full --build` → `INSTALLED 0.9.11-dsh.1`；两处 `state.json` files=196（新增 `.forgeflow/ff-rsi.mjs`）；`node .forgeflow/ff-rsi.mjs --version` 输出 0.9.11-dsh.1；doctor `RUNTIME_READY`、handshake `MATCH`、plugin.available=true、discovery.skills=21。DHAgent 细节见 `dha-agent-install.md`。
+
+未运行 / 未证明：本轮未重启 DSH（插件代码未变，仍为 0.2.0；0.9.9 的运行时验收仍适用）；RSI 已在 DHAgent 真实项目用演示 fixture 跑完 five-verb 链（见 `rsi-five-verb-demo.md`），但尚未承载一次真实 FF 技能改进，且 `compare.rows[].rawSha256` 仍为 null（原始输出未哈希绑定）。

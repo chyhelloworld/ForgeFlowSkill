@@ -2,9 +2,9 @@
 name: ff-design
 description: 为 ForgeFlow 界面建立有证据的视觉与交互方向，提供关键页面可见候选供真实用户选择，并交接可实现的视觉目标。用于新界面、体验重设计或明确的视觉改进；已有明确设计的小改不强制多方案，不把设计讨论当整站实现授权。
 metadata:
-  version: "0.9.10-dsh.1"
+  version: "0.9.11-dsh.1"
 ---
-# FF-Design 0.9.10-dsh.1
+# FF-Design 0.9.11-dsh.1
 
 ## 具体汇报
 

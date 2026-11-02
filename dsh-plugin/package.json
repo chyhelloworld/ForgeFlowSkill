@@ -1,6 +1,6 @@
 {
   "name": "@local/forgeflow-dsh",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "description": "ForgeFlow state/gate tools, four-layer anchor, archive guard and read-only board panel for DeepSeek Harness",

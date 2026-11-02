@@ -143,6 +143,7 @@ function smallSource() {
   put(path.join(root, 'tools/openspec/build.mjs'), '// Mocked subprocess fixture\n');
   put(path.join(root, 'tools/openspec/ff-spec.mjs'), '// Mocked CLI fixture\n');
   for (const name of ['runtime', 'state', 'files']) put(path.join(root, `tools/installer/${name}.mjs`), fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`)));
+  put(path.join(root, 'tools/rsi/ff-rsi.mjs'), fs.readFileSync(path.join(source, 'tools/rsi/ff-rsi.mjs')));
   json(path.join(root, 'MANIFEST.json'), { version: '0.0.0-test', files: Object.fromEntries(regularFiles(root).map(name => [name, sha(fs.readFileSync(path.join(root, name)))])) });
   return root;
 }

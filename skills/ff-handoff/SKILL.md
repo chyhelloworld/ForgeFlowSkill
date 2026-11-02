@@ -2,9 +2,9 @@
 name: ff-handoff
 description: 在暂停或换会话时准备最小项目内交出检查点，供接收方经 Intake 核实后续做；不是交付验收或自动启动任务。
 metadata:
-  version: "0.9.10-dsh.1"
+  version: "0.9.11-dsh.1"
 ---
-# ff-handoff 0.9.10-dsh.1
+# ff-handoff 0.9.11-dsh.1
 
 ## 具体汇报
 

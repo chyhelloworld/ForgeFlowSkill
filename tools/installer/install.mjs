@@ -6,7 +6,7 @@ import { safe, fail, read, json, sha } from './files.mjs';
 import { verifySource, skillPayload, skillIdentity, checkSkillPins, compareStableSkillVersions } from './source.mjs';
 import { inventory, runNode, checkRelease, diagnose, environment } from './runtime.mjs';
 import { control, loadState, preflight, checkOwned, commit } from './transaction.mjs';
-import { hostsOf, normalizeHosts, fileHost, hostBase, pluginDir, pluginFiles } from './state.mjs';
+import { hostsOf, normalizeHosts, fileHost, hostBase, pluginDir, pluginFiles, rsiFile } from './state.mjs';
 import { verifyReusableBuild } from '../openspec/ff-build.mjs';
 export function dependencies() {
   const [major, minor] = process.versions.node.split('.').map(Number);
@@ -39,6 +39,7 @@ function bindings(source, pin, files, selected = []) {
   const expected = JSON.stringify({ version: pin.version, hash: pin.hash });
   files['.forgeflow/ff-spec.mjs'] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { launch } from './install/runtime.mjs';\nlaunch(fileURLToPath(new URL('../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
   for (const name of ['runtime', 'state', 'files']) files[`${control}/${name}.mjs`] = fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`));
+  files[rsiFile] = fs.readFileSync(path.join(source, 'tools/rsi/ff-rsi.mjs'));
   files[`${control}/doctor.mjs`] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { doctorMain } from './runtime.mjs';\ndoctorMain(fileURLToPath(new URL('../../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
   if (selected.includes('dsh')) pluginBundle(source, files);
   return files;

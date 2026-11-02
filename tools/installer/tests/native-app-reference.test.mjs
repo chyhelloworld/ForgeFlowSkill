@@ -15,7 +15,7 @@ const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'
 const added = ['references/native-app.md', 'references/ios.md', 'references/android.md', 'references/native-audit.md', 'LICENSE-PLATFORM-DESIGN-SKILLS'];
 function source(old = false) {
  const dest = fs.mkdtempSync(path.join(temp, 'source-'));
- for (const folder of ['skills', 'tools/openspec', 'tools/installer']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
+ for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
  fs.copyFileSync(path.join(root, 'skill-versions.json'), path.join(dest, 'skill-versions.json'));
  // Controlled previous-layout fixture, not a historical installer or native-host test.
  if (old) for (const name of added) fs.rmSync(path.join(dest, 'skills/ff-design', name));

@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main } from '../../../installer.mjs';
 import { install, removeHost } from '../install.mjs';
-import { loadState, hostBase, hostRoots, hosts, pluginDir, pluginFiles } from '../state.mjs';
+import { loadState, hostBase, hostRoots, hosts, pluginDir, pluginFiles, rsiFile } from '../state.mjs';
 import { discovery, handshake } from '../runtime.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -75,6 +75,20 @@ test('reinstall repairs a plugin inventory that predates client and generator', 
   }
 });
 
+test('install ships the host-independent ff-rsi tool and keeps it when a host is removed', () => {
+  const p = setup('codex');
+  assert.ok(fs.existsSync(path.join(p, rsiFile)), rsiFile);
+  assert.ok(rsiFile in loadState(p).files);
+  assert.deepEqual(fs.readFileSync(path.join(p, rsiFile)), fs.readFileSync(path.join(source, 'tools/rsi/ff-rsi.mjs')));
+  const result = spawnSync(process.execPath, [path.join(p, rsiFile), 'status', '--dir', path.join(p, 'missing-run'), '--json'], { cwd: p, encoding: 'utf8' });
+  assert.equal(result.status, 0);
+  assert.equal(JSON.parse(result.stdout).state, 'EMPTY');
+  const both = project();
+  main(['install', '--project', both, '--hosts', 'codex,dsh', '--mode', 'skills-only']);
+  removeHost(both, 'codex');
+  assert.ok(fs.existsSync(path.join(both, rsiFile)));
+  assert.ok(rsiFile in loadState(both).files);
+});
 test('remove-host dsh takes the plugin files; removing codex keeps them', () => {
   const p = project();
   main(['install', '--project', p, '--hosts', 'codex,dsh', '--mode', 'skills-only']);

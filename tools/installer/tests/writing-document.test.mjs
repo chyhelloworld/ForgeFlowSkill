@@ -22,7 +22,7 @@ function refresh(source) {
 }
 function source(versions = {}) {
  const dest = fs.mkdtempSync(path.join(temp, 'source-'));
- for (const folder of ['skills', 'tools/openspec', 'tools/installer']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
+ for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
  const registry = JSON.parse(fs.readFileSync(path.join(root, 'skill-versions.json')));
  for (const [name, version] of Object.entries(versions)) {
   const file = path.join(dest, 'skills', name, 'SKILL.md');

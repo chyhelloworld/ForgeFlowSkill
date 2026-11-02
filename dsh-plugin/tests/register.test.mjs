@@ -6,7 +6,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { test } from 'node:test';
-import { main, register, remove, PLUGIN_NAME } from '../register.mjs';
+import { main, register, remove, LINK_LABEL, PLUGIN_NAME } from '../register.mjs';
 
 const SELF_DIR = path.dirname(fileURLToPath(import.meta.url));
 const PLUGIN_DIR = path.resolve(SELF_DIR, '..');
@@ -182,6 +182,68 @@ test('register.mjs 可直接用 node 运行（CLI 断言）', () => {
   assert.equal(JSON.parse(removed.stdout.trim()).action, 'remove');
 });
 
+
+test('--global 把插件物化到 DSH_HOME 并让 profile link 指向全局副本', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "ff-dsh-home-"));
+  const dir = makeProfile();
+  const result = register({ profile: dir, global: true, home });
+  assert.equal(result.code, 0);
+  const globalDir = path.join(home, "plugins", "forgeflow-dsh");
+  assert.ok(fs.existsSync(path.join(globalDir, "package.json")));
+  assert.ok(fs.existsSync(path.join(globalDir, "index.js")));
+  assert.equal(fs.realpathSync(linkPathOf(dir)).toLowerCase(), fs.realpathSync(globalDir).toLowerCase());
+  assert.equal(readJson(path.join(globalDir, 'package.json')).name, PLUGIN_NAME);
+  const data = readJson(path.join(dir, "package.json"));
+  assert.equal(data.dependencies[PLUGIN_NAME], "link:" + globalDir.split(path.sep).join("/"));
+  assert.ok(result.changed.includes("plugins/forgeflow-dsh/index.js"));
+});
+
+test('--global 幂等，且全局副本被改写后自愈', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "ff-dsh-home-"));
+  const dir = makeProfile();
+  register({ profile: dir, global: true, home });
+  assert.deepEqual(register({ profile: dir, global: true, home }).changed, []);
+  const globalIndex = path.join(home, "plugins", "forgeflow-dsh", "index.js");
+  fs.writeFileSync(globalIndex, "// tampered" + String.fromCharCode(10));
+  const again = register({ profile: dir, global: true, home });
+  assert.equal(again.code, 0);
+  assert.deepEqual(again.changed, ["plugins/forgeflow-dsh/index.js"]);
+  const sourceText = fs.readFileSync(path.join(PLUGIN_DIR, "index.js"), "utf8");
+  assert.equal(fs.readFileSync(globalIndex, "utf8"), sourceText);
+});
+
+test('--global 迁移旧的本地 link 到全局副本', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "ff-dsh-home-"));
+  const dir = makeProfile();
+  assert.equal(register({ profile: dir }).code, 0);
+  const result = register({ profile: dir, global: true, home });
+  assert.equal(result.code, 0);
+  assert.ok(result.changed.includes(LINK_LABEL + "（替换旧目标）"));
+  const globalDir = path.join(home, "plugins", "forgeflow-dsh");
+  assert.equal(fs.realpathSync(linkPathOf(dir)).toLowerCase(), fs.realpathSync(globalDir).toLowerCase());
+});
+
+test('remove --global 保留全局副本，--purge 才删除', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "ff-dsh-home-"));
+  const dir = makeProfile();
+  register({ profile: dir, global: true, home });
+  const globalDir = path.join(home, "plugins", "forgeflow-dsh");
+  const kept = remove({ profile: dir, global: true, home });
+  assert.equal(kept.code, 0);
+  assert.ok(fs.existsSync(path.join(globalDir, "index.js")));
+  const purged = remove({ profile: dir, global: true, home, purge: true });
+  assert.equal(purged.code, 0);
+  assert.ok(purged.changed.includes("plugins/forgeflow-dsh"));
+  assert.ok(!fs.existsSync(globalDir));
+});
+
+test('--global --dry-run 不创建全局副本', () => {
+  const home = fs.mkdtempSync(path.join(os.tmpdir(), "ff-dsh-home-"));
+  const dir = makeProfile();
+  const result = register({ profile: dir, global: true, home, dryRun: true });
+  assert.equal(result.code, 0);
+  assert.ok(!fs.existsSync(path.join(home, "plugins", "forgeflow-dsh", "package.json")));
+});
 test('已存在的 node_modules 目标是外来目录时不覆盖，退出码 2', () => {
   const dir = makeProfile();
   const foreign = path.join(dir, 'node_modules', '@local', 'forgeflow-dsh');

@@ -12,7 +12,7 @@
 | `client.js` | Web 客户端半：左侧栏 "ForgeFlow 看板" 入口与只读主面板（需求/架构/模块/任务进度） |
 | `generate-board.mjs` | 生成 `.forgeflow/board.json` 快照的唯一写入方；只用 Node 内置模块，可手动重复运行 |
 | `cordis.patch.yml` | 插件自带的 loader patch：`- insert: [{ id: forgeflow-dsh, ... }]` |
-| `register.mjs` | 把本插件注册进指定 DSH profile（`package.json` 的 link 依赖与 `dsh.profile.bundles`、`cordis.patch.yml` 注册块、`node_modules/@local/forgeflow-dsh` 目录链接） |
+| `register.mjs` | 把本插件注册进指定 DSH profile：`--global` 先物化到 `<DSH_HOME>/plugins/forgeflow-dsh`，再写 `package.json` 的 link 依赖与 `dsh.profile.bundles`、`cordis.patch.yml` 注册块、`node_modules/@local/forgeflow-dsh` 目录链接 |
 | `package.json` | `dsh.bundle.patch` 指向本目录的 `cordis.patch.yml`，`dsh.client` 声明 Web 客户端半 |
 
 ## 注册与撤销
@@ -20,18 +20,29 @@
 安装器（`--host dsh`）会把本目录复制到项目的 `.forgeflow/dsh-plugin/`；也可以直接用源码目录。
 
 ```powershell
-# 注册到默认 profile（%USERPROFILE%/.dsh/profiles/desktop）；可加 --dry-run 预览
+# 推荐：全局安装（幂等；DSH_HOME 默认 %USERPROFILE%\.dsh，可用 --home 覆盖）
+node .forgeflow/dsh-plugin/register.mjs --global
+
+# 仅本项目使用：link 直接指向本目录
 node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE/.dsh/profiles/desktop"
 
-# 撤销注册
-node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE/.dsh/profiles/desktop" --remove
+# 撤销注册（保留全局副本）；加 --purge 连副本一起删除
+node .forgeflow/dsh-plugin/register.mjs --remove --global
+node .forgeflow/dsh-plugin/register.mjs --remove --global --purge
 ```
 
+- `--global` 先把本目录 7 个运行文件逐字节物化到 `<DSH_HOME>/plugins/forgeflow-dsh`，
+  profile 的 link 指向该稳定副本，因此项目移动/删除不会让所有工作区插件加载失败。
+  物化是幂等的：只在文件缺失或内容不同时写入（被改写的全局副本会自动修复），
+  `changed` 为空表示已是最新。
+- 不带 `--global` 时 link 指向 `--plugin` 目录（默认本目录），适合单项目使用。
 - 改 `--profile` 指定目录下的 `package.json` 与 `cordis.patch.yml`（写前分别备份为
   `<文件名>.bak-<ISO 时间戳>`），并建立 `node_modules/@local/forgeflow-dsh` 目录链接
-  （Windows 用 junction）。只有 `--dry-run` 会跳过链接创建。
-- 链接已存在且指向本插件目录时视为已注册；指向其他目录时拒绝覆盖（退出码 2），需先手动处理。
-  `--remove` 只删除指向本插件的链接，不动外来目录。
+  （Windows 用 junction）。只有 `--dry-run` 会跳过链接创建与物化。
+- 链接已存在且指向本插件目录时视为已注册；指向其他目录时拒绝覆盖（退出码 2）。
+  `--global` 会替换旧版本指向某个项目目录的 FF 插件链接（仅当目标的 `package.json`
+  确为 FF 插件），外来目录仍需手动处理。
+- profile 默认 `<DSH_HOME>/profiles/desktop`（`--global` 时也遵守 `DSH_HOME`/`--home`）。
 - `--remove` 精确删除注册块、依赖/bundles 条目与目录链接；删除后文件为空则一并删除 `cordis.patch.yml`。
 - 不启动、不重启 DSH；**注册后需要重启 DSH 才生效**。
 - 缺少 profile 或 `package.json` 时退出码 2。

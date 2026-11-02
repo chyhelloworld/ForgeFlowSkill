@@ -13,6 +13,8 @@ export const currentSkills = [...diagramSkills, 'ff-writing-document'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
 // Project-local copy of the optional DSH plugin (installed only with --host dsh).
 // sharedFiles stays unchanged so existing schema-1/2 state validation keeps working.
+// The RSI evidence tool is host-independent; install it next to ff-spec.
+export const rsiFile = '.forgeflow/ff-rsi.mjs';
 export const pluginDir = '.forgeflow/dsh-plugin';
 export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
@@ -38,6 +40,7 @@ export function fileHost(name) {
 export function owned(name) {
   if (/^\.(agents|claude|dsh)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
   if (pluginFiles.includes(name)) return;
+  if (name === rsiFile) return;
   if (sharedFiles.includes(name)) return;
   fail('Invalid managed path');
 }
