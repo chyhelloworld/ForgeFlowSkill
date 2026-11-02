@@ -44,12 +44,17 @@
 
 L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给出“已有等价机制 → 为何不够 → 延后代价”。同 prompt 重放 3 次，c2 稳定为 1；把 `ff-review/SKILL.md:31` 的读取条件扩到方案取舍后第 3 次仍为 1。结论是**文本触发条件不足以保证逐条对照**，本迭代不再加长技能文本（继续加正是 L2 自身的表现），把 L2 记为已知限制，候选结构锚点写入 evidence。
 
+### 锚点生效后复测（L2）
+
+2026-11-02 15:30，在用户重启 DSH、插件的四层锚点已进入 system prompt 后，按同一协议重放 E40 三次：**3/3 次 6/6 PASS**（c2 由稳定 1 变为 2），而锚点生效前的同协议重放为 3/3 次 5/6 FAIL。详细方法与边界见 `evidence/replay-E40-after-anchor.md`。结论：常驻锚点覆盖了这条检查；但两种条件各 n=3、同模型同日，属可复现行为提示，不是统计显著结论。
+
 ## 验证状态
 
 - 插件自测：`node --test dsh-plugin/tests/*.test.mjs` → 29 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵两条）。
 - 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=193（含插件 5 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
 - 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 29、安装器 94/93 pass/1 skip、workflow 73、intent 4，合计 200 用例 0 失败 3 skip）。最终 MANIFEST/payload 在所有 `source/` 编辑（含证据文件）完成后重新生成，最终结果记录在 `_verification/dsh-native-20261102/final-pack-validate.log` 与 `test-validate-sealed3.log`。
+- L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；边界同上。
 - 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。
 
 ## 边界
@@ -57,12 +62,13 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
 - 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
 - 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。这不是用户当前 GUI 的重启效果。
-- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 未彻底解决（见上）。
+- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 3/3 PASS，但样本小、同模型，证据强度有限（见上）。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 
 ## 证据索引
 
 - `evidence/replay-E39-E42.md`：四层重放方法、评分、E40 缺口与原始响应节选。
+- `evidence/replay-E40-after-anchor.md`：锚点生效后 E40 复测（3/3 PASS）、与锚点前的对比、评分依据与统计边界。
 - `evidence/profile-registration.txt`、`evidence/register-dry-run.json`：profile 依赖/bundle 差异与幂等 dry-run。
 - `evidence/doctor-0.9.8.txt`：安装后 doctor 全量输出。
 - `evidence/install-state-summary.txt`、`evidence/ff-spec-version.txt`：安装状态与版本。
