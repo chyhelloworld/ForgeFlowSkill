@@ -7,7 +7,7 @@
 
 在 0.9.7-dsh.1 已能“装进 DSH 并跑通”的基础上，补齐两件事：
 
-1. **原生接入面（结构性嵌入）**：技能发现只是第一层；把 FF 的门禁与状态检查变成 DSH 原生工具、命令和工具执行前的守卫，而不是让模型自己记得去跑 CLI。
+1. **原生接入面（结构性嵌入）**：技能发现只是第一层；把 FF 的门禁与状态检查变成 DSH 原生工具、命令和工具执行前的守卫，而不是让模型自己记得去跑 CLI；再给侧边栏一个只读看板，直接查看需求、架构参考、模块与任务进度。
 2. **四层失效防护**：把 L1 局部正确整体偏航、L2 过度防御复杂度失控、L3 过早接受平庸方案、L4 过早收敛原始问题被替换，落进既有 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并用可复现的评测场景验证。
 
 ## 变更
@@ -24,7 +24,8 @@
 
 - `index.js`：`ff_status`、`ff_gate` 两个只读工具；`/ff-status` 命令；向 `systemPrompt` 注册四层失效常驻锚点（`anchor: false` 可关）；`tools/pre-execute` 守卫按 shell 引号切词，只检查命令位置上由 `node`/`npx` 执行的 `.forgeflow/ff-spec.mjs archive`，`blocked`/`invalid` 时 `{kind:'deny', reason}`，`--help`/`-h` 与 `--ff-disposition canceled|rejected` 放行，其余放行。
 - `register.mjs`：把插件以 `link:` 依赖加入指定 DSH profile 的 `dsh.profile.bundles` 与 `cordis.patch.yml`（带 managed 标记），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；支持 `--remove`、`--dry-run`、`--json`，写前备份，幂等，已有外来同名目录时拒绝覆盖（退出码 2）。
-- 安装器集成：`tools/installer/state.mjs` 增加 `pluginDir='.forgeflow/dsh-plugin'` 与 5 个受管文件；`install.mjs` 从 payload 复制插件（旧 payload 缺目录时静默跳过）；`runtime.mjs` 的 `diagnose()` 在选中 dsh 时输出 `plugin{available,path,note}`；`docs/user/install.md` 增加“DSH 原生插件（可选，需重启）”一节。
+- `generate-board.mjs` + `client.js`：只读看板。生成器把 `planning/intent-view-links.json`（或 `source/planning/...`）与 `openspec/changes/*/tasks.md` 的勾选状态汇成 `<workspace>/.forgeflow/board.json`；Client 半注册左侧栏 `ff-board` 入口与 `main` 面板，通过 `remote.workspaceFiles` 读快照，显示需求、架构参考、模块、任务进度。面板不写项目文件，快照需手动生成，更新后点“刷新”。
+- 安装器集成：`tools/installer/state.mjs` 增加 `pluginDir='.forgeflow/dsh-plugin'` 与 7 个受管文件；`install.mjs` 从 payload 复制插件（旧 payload 缺目录时静默跳过）；`runtime.mjs` 的 `diagnose()` 在选中 dsh 时输出 `plugin{available,path,client,generator,note}`；`docs/user/install.md` 增加“DSH 原生插件（可选，需重启）”一节。
 
 ### 版本与产物
 
@@ -54,19 +55,20 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 ## 验证状态
 
-- 插件自测：`node --test dsh-plugin/tests/*.test.mjs` → 29 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵两条）。
-- 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=193（含插件 5 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
+- 插件自测：`node --test dsh-plugin/tests/{plugin,register,board,client}.test.mjs` → 46 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵、看板快照/坏结构/多工作区/注册抛错）。
+- 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=195（含插件 7 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
-- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 29、安装器 94/93 pass/1 skip、workflow 73、intent 4，合计 200 用例 0 失败 3 skip）。最终 MANIFEST/payload 在所有 `source/` 编辑（含 E43/E44 与证据文件）完成后重新生成，最终结果记录在 `_verification/dsh-native-20261102/l2-generalization-pack-validate.log` 与 `l2-generalization-sealed.log`；场景数 44。
+- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 46、安装器 95/94 pass/1 skip、workflow 73、intent 4，合计 218 用例 0 失败 3 skip）。最终 MANIFEST/payload 在**所有** `source/` 编辑（含看板文件、测试与证据）完成后重新生成，最终结果记录在 `_verification/board-20261102/board-pack-final.log` 与 `board-sealed-final.log`；场景数 44。
 - L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；泛化场景 E43、E44 各 3/3 PASS（6/6），见 `evidence/replay-L2-generalization.md`；边界同上（n=3、同模型同日、simulated-context）。
-- 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。
+- 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。看板在复审后新增，已由 gpt-6.1-sol（xhigh）做单独细节审查，P0/P1/P2 逐条修复对照见 `evidence/board-panel.md`。
 
 ## 边界
 
 - 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
 - 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
-- 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。这不是用户当前 GUI 的重启效果。
+- 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。用户重启后的当前 GUI 也验证了 Host 半（工具可用、守卫拒绝/放行实测）；看板 Client 半仍未重启验证。
 - 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 E40/E43/E44 各 3/3 PASS，但样本小、同模型同日，且 E43/E44 是合成场景，证据强度有限（见上）。
+- 看板的 Client 半只在 Node 测试与 fake ModuleLoader 中验证；**当前 GUI 需重启后才能看到面板**，视觉与真实工作区切换属于重启后的人工验收项。数据只有 `intent-view-links.json` 时任务进度显示未知，架构区只有参考文档索引。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 
 ## 证据索引
@@ -81,3 +83,4 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - `evidence/dsh-plugin-load.md`：插件安装一致性、profile 注册、junction 与解析验证、未重启边界。
 - `evidence/runtime-smoke.md`：隔离 DSH 实例中的真实加载、工具可见/执行、守卫拒绝与锚点证据。
 - `evidence/review-fixes.md`：对独立审核 P1 项的逐条修复对照与仍未关闭项。
+- `evidence/board-panel.md`：看板方案、生成器/Client 实现、sol 细节审查 P0/P1/P2 修复对照、测试与未验证边界。

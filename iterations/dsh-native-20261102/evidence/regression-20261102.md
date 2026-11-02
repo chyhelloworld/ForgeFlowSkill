@@ -4,9 +4,9 @@
 
 ## 全量回归
 
-命令（source/ 为 cwd；`FF_TEST_ROOT=E:\github\ForgeFlowSKill\_verify_tmp\ff-test-root-dsh-native`）：
+命令（source/ 为 cwd；`FF_TEST_ROOT=E:\github\ForgeFlowSKill\_verify_tmp\ff-test-root-board`）：
 
-1. `node --test dsh-plugin/tests/plugin.test.mjs dsh-plugin/tests/register.test.mjs`
+1. `node --test dsh-plugin/tests/{plugin,register,board,client}.test.mjs`
 2. `node --test <tools/installer/tests/*.test.mjs 展开后的文件列表>`
 3. `python -X utf8 -m unittest discover -s tools/workflow -p 'test_*.py' -v`
 4. `python -X utf8 docs/check_guide.py`
@@ -15,20 +15,20 @@
 7. `python -X utf8 tools/validate_package.py .`
 8. `python -X utf8 tools/test_validate_package.py .`
 
-结果（日志目录 `_verification/dsh-native-20261102/`，以时间戳最新的同名文件为准：`installer-tests*.log`、`finalize*.log`、`final-pack-validate.log`、`test-validate-sealed*.log`）：
+结果（日志目录 `_verification/board-20261102/`；看板改动后的最终一次：`installer-tests-board.log`、`board-pack-final.log`、`board-sealed-final.log`）：
 
 | 步骤 | 退出码 | 计数 |
 | --- | --- | --- |
-| plugin-tests | 0 | 29 tests / 29 pass / 0 fail（含 node_modules 链接、空模板 `[]` 哨兵） |
-| installer-tests | 0 | 94 tests / 93 pass / 1 skip / 0 fail（新增 2 条 dsh-host 插件集成测试；skip 为无 Developer Mode 的相对 symlink 用例） |
+| plugin-tests | 0 | 46 tests / 46 pass / 0 fail（含 node_modules 链接、空模板 `[]` 哨兵、看板生成器/Client） |
+| installer-tests | 0 | 95 tests / 94 pass / 1 skip / 0 fail（新增看板文件安装与旧插件清单重装修复测试；skip 为无 Developer Mode 的相对 symlink 用例） |
 | python-workflow-unittest | 0 | 73 tests OK，skipped=2 |
 | check_guide | 0 | 重写 docs/guide-qa.json（version=0.9.8-dsh.1，21 技能目录） |
 | intent-contract | 0 | 4 tests OK |
 | pack-release | 0 | 重写 MANIFEST.json 与 payload |
-| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、scenarios=44（追加 E43/E44 后的复验）；具体 source_hashes/payload 数字以最终日志为准 |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、scenarios=44；具体 manifest 条目数与 payload 数字以最终日志为准 |
 | test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出） |
 
-合计本轮 **200 个用例 / 0 失败 / 3 skip**（29+94+73+4）；3 个 skip 全部是无 Developer Mode 的 symlink 权限用例（installer 1、workflow 2）。
+合计本轮 **218 个用例 / 0 失败 / 3 skip**（46+95+73+4）；3 个 skip 全部是无 Developer Mode 的 symlink 权限用例（installer 1、workflow 2）。
 
 ## 运行时冒烟（独立 DSH 实例，非当前 GUI）
 
@@ -44,9 +44,15 @@
 
 2026-11-02 15:58 在追加 E43/E44 与相关证据文件后重新执行 `pack-release.py`、`validate_package.py`、`test_validate_package.py` 与 payload 测试：validate passed（scenarios=44），sealed 负向测试通过，payload 测试通过；命令与输出在 `_verification/dsh-native-20261102/l2-generalization-pack.log`、`l2-generalization-validate.log`、`l2-generalization-sealed.log`。本段也计入 MANIFEST，所以条目数与哈希只记日志、不写死。
 
+## 只读看板（本轮新增）
+
+- `dsh-plugin/tests/board.test.mjs` 与 `client.test.mjs` 并入插件测试，合计 46 tests / 46 pass / 0 fail；安装器新增“安装看板文件”与“旧插件清单重装修复”覆盖，安装器总数 95。
+- 在本仓库生成 `.forgeflow/board.json`：需求 10、模块 14、任务 5、验收 4、架构参考 2；无 `openspec/` 时 `tasks.progress` 的 done/total 为 null，并给出原因。
+- 面板 Client 半仅在 Node 测试（fake `__ModuleLoader__` / fake ctx）与结构校验中验证；真实 DSH 重启后的视觉、工作区切换与卡片内容尚未验证。
+
 ## 未运行 / 未证明
 
-- 当前 GUI 未重启；已用隔离 DSH 实例验证真实加载（`evidence/runtime-smoke.md`），但未验证用户当前 GUI 重启后的效果。
+- 插件 Host 半已在用户重启后的当前 GUI 验证（`ff_status`/`ff_gate` 可用，守卫实测拒绝 invalid 门禁并放行只读参数）；隔离 DSH 实例另有完整加载证据（`evidence/runtime-smoke.md`）。**看板 Client 半尚未重启验证**，因此侧边栏入口与四块内容仍是待人工验收项。
 - 四层评测覆盖 E39–E44 六个合成场景，不替代用户验收或真实项目流程；L1/L3/L4 各 n=1，L2 在锚点生效后对 E40/E43/E44 各重放 3 次、均 3/3 PASS，但样本小、同模型同日，不能称已解决（见 `evidence/replay-L2-generalization.md`）。
 - 未做浏览器 UI 冒烟、未做 DSH 自动加载/跨会话恢复的行为测试。
 - 静态包校验不覆盖安装器行为、许可与 T3 集成，validate_package 输出已自述此边界。

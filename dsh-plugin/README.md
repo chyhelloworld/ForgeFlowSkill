@@ -1,17 +1,19 @@
 # ForgeFlow DSH 插件（可选）
 
 把 ForgeFlow 的项目状态与门禁接到 DeepSeek Harness（DSH）里：一条常驻的四层失效自检 systemPrompt 段、
-两个只读工具、一个 `/ff-status` 命令，以及 `ff-spec.mjs archive` 的本地守卫。插件零外部依赖，只用 Node
-内置模块；它不替代 FF CLI，也不改变 openspec 目录或 FF 安装产物。
+两个只读工具、一个 `/ff-status` 命令、`ff-spec.mjs archive` 的本地守卫，以及左侧栏的只读看板。插件零外部依赖，
+只用 Node 内置模块；它不替代 FF CLI，也不改变 openspec 目录或 FF 安装产物。
 
 ## 文件
 
 | 文件 | 作用 |
 | --- | --- |
 | `index.js` | Cordis 插件入口：注册 `ff_status`/`ff_gate` 工具、`tools/pre-execute` 守卫、`/ff-status` 命令与四层锚点 |
+| `client.js` | Web 客户端半：左侧栏 "ForgeFlow 看板" 入口与只读主面板（需求/架构/模块/任务进度） |
+| `generate-board.mjs` | 生成 `.forgeflow/board.json` 快照的唯一写入方；只用 Node 内置模块，可手动重复运行 |
 | `cordis.patch.yml` | 插件自带的 loader patch：`- insert: [{ id: forgeflow-dsh, ... }]` |
 | `register.mjs` | 把本插件注册进指定 DSH profile（`package.json` 的 link 依赖与 `dsh.profile.bundles`、`cordis.patch.yml` 注册块、`node_modules/@local/forgeflow-dsh` 目录链接） |
-| `package.json` | `dsh.bundle.patch` 指向本目录的 `cordis.patch.yml` |
+| `package.json` | `dsh.bundle.patch` 指向本目录的 `cordis.patch.yml`，`dsh.client` 声明 Web 客户端半 |
 
 ## 注册与撤销
 
@@ -50,6 +52,23 @@ L2 过度防御复杂度失控、L3 过早接受平庸方案、L4 过早收敛�
 不依赖技能文件被读取。它只是一条短自检提示，完整规则仍在 FF 的 INTENT-LOOP 契约与技能文本里；
 宿主没有 `systemPrompt.section` 时静默跳过。用 `anchor: false` 可关闭。
 
+## 看板面板（只读）
+
+侧边栏的 "ForgeFlow 看板" 读取项目根的 `.forgeflow/board.json`，显示需求、架构参考、模块与任务进度。
+快照不是自动生成的：在项目根运行一次（加 `--write` 才会落盘，重复运行内容不变时不会重写）：
+
+```powershell
+node .forgeflow/dsh-plugin/generate-board.mjs --write
+# 指定来源（默认自动找 planning/ 或 source/planning/ 下的 intent-view-links.json）
+node .forgeflow/dsh-plugin/generate-board.mjs --intent source/planning/intent-view-links.json --source-root source --architecture-doc source/docs/user/architecture-derivation.md --write
+```
+
+- 数据来自 `intent-view-links.json`；任务进度只在存在 `openspec/changes/*/tasks.md` 时统计代码围栏外的 `[x]`/`[ ]`，没有 OpenSpec 时显示"权威进度未知"，不会用完成率猜测。
+- 架构区没有结构化模型，只列 `--architecture-doc` 指定的参考文档，并标注"不是本项目组件与依赖"。
+- 浏览器半通过宿主的 workspace-files API 读取，需要该工作区至少有一个会话；读取失败、快照缺失、格式不符都会在面板里给出中文原因。
+- **客户端插件需要重启 DSH 才生效**；更新快照后点面板的"刷新"即可，无需重启。
+- 面板只读：改需求/任务仍走 FF 技能与 `openspec`，插件不写项目文件。
+
 ## 守卫的边界（best-effort）
 
 守卫监听 DSH 的 `tools/pre-execute`，只检查 **pwsh/bash 工具的 `command` 参数**：
@@ -80,8 +99,7 @@ config:
 ## 测试
 
 ```powershell
-node --test source/dsh-plugin/tests/plugin.test.mjs
-node --test source/dsh-plugin/tests/register.test.mjs
+node --test source/dsh-plugin/tests/plugin.test.mjs source/dsh-plugin/tests/register.test.mjs source/dsh-plugin/tests/board.test.mjs source/dsh-plugin/tests/client.test.mjs
 ```
 
 测试用 fake ctx 与临时目录，不写真实用户 profile，也不需要 Electron/asar。

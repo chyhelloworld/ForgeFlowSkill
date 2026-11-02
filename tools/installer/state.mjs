@@ -14,7 +14,7 @@ export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', '
 // Project-local copy of the optional DSH plugin (installed only with --host dsh).
 // sharedFiles stays unchanged so existing schema-1/2 state validation keeps working.
 export const pluginDir = '.forgeflow/dsh-plugin';
-export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
+export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
   return hostRoots[host];

@@ -8,8 +8,9 @@ const hash = data => createHash('sha256').update(data).digest('hex');
 // DSH 插件只是项目内副本；doctor 只报告它是否存在，不读取全局 profile。
 function pluginStatus(project) {
   const dir = path.join(project, pluginDir);
-  const available = ['package.json', 'index.js', 'register.mjs'].every(name => fs.existsSync(path.join(dir, name)));
-  return { available, path: available ? pluginDir : null, note: '项目内 DSH 插件副本；register.mjs 只写显式 --profile 指定的 profile，doctor 不读取全局 profile。' };
+  const present = name => fs.existsSync(path.join(dir, name));
+  const available = ['package.json', 'index.js', 'register.mjs'].every(present);
+  return { available, path: available ? pluginDir : null, client: present('client.js'), generator: present('generate-board.mjs'), note: '项目内 DSH 插件副本；register.mjs 只写显式 --profile 指定的 profile，doctor 不读取全局 profile。' };
 }
 export function inventory(root, relative = '') {
   const result = {};

@@ -3,14 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "ForgeFlow state/gate tools and archive guard for DeepSeek Harness",
+  "description": "ForgeFlow state/gate tools, four-layer anchor, archive guard and read-only board panel for DeepSeek Harness",
   "exports": {
     ".": "./index.js",
+    "./client": "./client.js",
     "./register": "./register.mjs",
     "./package.json": "./package.json"
   },
   "files": [
     "index.js",
+    "client.js",
+    "generate-board.mjs",
     "register.mjs",
     "cordis.patch.yml",
     "README.md"
@@ -18,6 +21,10 @@
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
     }
   }
 }

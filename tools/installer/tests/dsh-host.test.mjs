@@ -42,10 +42,39 @@ test('DSH install ships the native plugin and only DSH owns it', () => {
     assert.deepEqual(fs.readFileSync(installed), fs.readFileSync(path.join(source, 'dsh-plugin', path.basename(name))));
     assert.ok(name in loadState(p).files, name);
   }
+  const manifest = JSON.parse(fs.readFileSync(path.join(p, pluginDir, 'package.json'), 'utf8'));
+  assert.equal(manifest.exports['./client'], './client.js');
+  assert.equal(manifest.dsh.client.platform, 'web');
+  for (const name of ['client.js', 'generate-board.mjs']) assert.ok(fs.existsSync(path.join(p, pluginDir, name)), name);
   const codex = setup('codex');
   assert.equal(fs.existsSync(path.join(codex, pluginDir)), false);
   assert.ok(pluginFiles.every(name => !(name in loadState(codex).files)));
 });
+test('reinstall repairs a plugin inventory that predates client and generator', () => {
+  // Node 24's Windows rmSync can silently leave Unicode paths behind, so this
+  // repair test uses an ASCII project name; Unicode project paths stay covered above.
+  const p = fs.mkdtempSync(path.join(suite, 'upgrade-'));
+  install(p, source, { host: 'dsh', mode: 'skills-only' });
+  const statePath = path.join(p, '.forgeflow/install/state.json');
+  const state = loadState(p);
+  const added = ['.forgeflow/dsh-plugin/client.js', '.forgeflow/dsh-plugin/generate-board.mjs'];
+  for (const name of added) {
+    delete state.files[name];
+    fs.rmSync(path.join(p, name));
+  }
+  // An install that predates these files was made from an older payload, so its
+  // source hash differs; install then runs a full commit instead of UNCHANGED.
+  state.sourceHash = '0'.repeat(64);
+  fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+  const result = install(p, source, { host: 'dsh', mode: 'skills-only' });
+  assert.equal(result.status, 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED');
+  const next = loadState(p);
+  for (const name of added) {
+    assert.ok(fs.existsSync(path.join(p, name)), name);
+    assert.ok(name in next.files, name);
+  }
+});
+
 test('remove-host dsh takes the plugin files; removing codex keeps them', () => {
   const p = project();
   main(['install', '--project', p, '--hosts', 'codex,dsh', '--mode', 'skills-only']);

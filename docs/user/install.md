@@ -47,7 +47,7 @@ node .forgeflow/ff-spec.mjs adopt --write    # 落盘并预览每个活动 chang
 
 ## DSH 原生插件（可选，需重启）
 
-`--host dsh` 的安装会把可选的 DSH 插件复制到项目 `.forgeflow/dsh-plugin/`：两个只读工具 `ff_status`/`ff_gate`、`/ff-status` 命令、注册到 `systemPrompt` 的四层失效常驻锚点，以及 `ff-spec.mjs archive` 的本地守卫。插件零外部依赖，不替代 FF CLI。注册到某个 DSH profile 后需**重启 DSH** 才生效：
+`--host dsh` 的安装会把可选的 DSH 插件复制到项目 `.forgeflow/dsh-plugin/`：两个只读工具 `ff_status`/`ff_gate`、`/ff-status` 命令、注册到 `systemPrompt` 的四层失效常驻锚点、`ff-spec.mjs archive` 的本地守卫，以及左侧栏的只读 "ForgeFlow 看板"（需求/架构参考/模块/任务进度）。插件零外部依赖，不替代 FF CLI。注册到某个 DSH profile 后需**重启 DSH** 才生效：
 
 ```powershell
 # 注册（--dry-run 只预览；--profile 可指向其他 profile）
@@ -56,7 +56,15 @@ node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profile
 node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profiles\desktop" --remove
 ```
 
-注册会写该 profile 的 `package.json`（`link:` 依赖与 `dsh.profile.bundles`）、`cordis.patch.yml`（`forgeflow-dsh` id 的注册块），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；`package.json` 与 `cordis.patch.yml` 写前生成 `*.bak-<时间戳>` 备份。重复执行不会重复写入，已有同名但指向别处的目录时拒绝覆盖（退出码 2），缺少 profile 时退出码 2。`doctor --host dsh` 只报告项目内插件副本是否存在（`plugin.available`/`plugin.path`），不读取全局 profile。
+注册会写该 profile 的 `package.json`（`link:` 依赖与 `dsh.profile.bundles`）、`cordis.patch.yml`（`forgeflow-dsh` id 的注册块），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；`package.json` 与 `cordis.patch.yml` 写前生成 `*.bak-<时间戳>` 备份。重复执行不会重复写入，已有同名但指向别处的目录时拒绝覆盖（退出码 2），缺少 profile 时退出码 2。`doctor --host dsh` 只报告项目内插件副本是否存在（`plugin.available`/`plugin.path`，以及 `plugin.client`/`plugin.generator`），不读取全局 profile。
+
+看板读取项目根的 `.forgeflow/board.json` 快照；快照由插件自带的生成器手动生成（加 `--write` 才落盘，内容不变不重写）：
+
+```powershell
+node .forgeflow/dsh-plugin/generate-board.mjs --write
+```
+
+数据来自 `planning/intent-view-links.json`（或 `source/planning/...`）；任务进度只在存在 `openspec/changes/*/tasks.md` 时统计代码围栏外的 `[x]`/`[ ]`，没有 OpenSpec 时显示"权威进度未知"。架构区只列参考文档，不声称已有结构化架构模型。面板只读，更新快照后点"刷新"即可，不需要重启。
 
 边界（best-effort）：守卫按 shell 引号切词，只把**命令位置**上由 `node`/`npx` 执行的 `.forgeflow/ff-spec.mjs archive` 当作目标（`echo`、引号文本里的同名子串不算，`build` 不再匹配）；`-h`/`--help` 与 `--ff-disposition canceled|rejected` 是只读或回滚式收尾，直接放行。命中且在磁盘上找到时先运行 `status --json`，门禁 `blocked` 或 policy `invalid` 才拒绝。`run_code` 等不透明调用、变量拼出的命令或其他入口无法拦截，最终仍以 FF CLI 自身门禁为准。`enabled: false` 或 `FF_ALLOW_UNGATED=1` 可关闭拦截；`anchor: false` 关闭常驻锚点；skills-only 安装没有 CLI 门禁，工具会明确报告 BLOCKED/disabled。
 
