@@ -18,7 +18,7 @@
 - `skills/ff-review/references/reviews.md`：目标/主流程类补“总需求验收账本”（:19）、方案类补“更简单替代”（:29）与“等价机制核查”（:30）、缺账本判待验证（:33）。
 - `skills/ff-review/SKILL.md:31`：把 reviews.md 的读取条件扩到“阶段末综合审查、方案取舍判断”，让审核规则在常规审查中真正被读取。
 - `skills/ff-intake/SKILL.md:23`：L4 触发从自指改为可观察信号（用户原话未复述、命名先于事实等）。
-- `evaluations/scenarios.json`：新增 E39–E42 四个四层场景（38 → 42）。
+- `evaluations/scenarios.json`：新增 E39–E44 六个四层场景（38 → 44；E43/E44 为 L2 泛化场景）。
 
 ### DSH 原生插件（`dsh-plugin/`）
 
@@ -48,13 +48,17 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 2026-11-02 15:30，在用户重启 DSH、插件的四层锚点已进入 system prompt 后，按同一协议重放 E40 三次：**3/3 次 6/6 PASS**（c2 由稳定 1 变为 2），而锚点生效前的同协议重放为 3/3 次 5/6 FAIL。详细方法与边界见 `evidence/replay-E40-after-anchor.md`。结论：常驻锚点覆盖了这条检查；但两种条件各 n=3、同模型同日，属可复现行为提示，不是统计显著结论。
 
+### L2 泛化重放（E43/E44）
+
+2026-11-02 15:50–15:57，新增两个不同领域的 L2 场景并各重放三次：**E43 3/3 次 6/6 PASS、E44 3/3 次 6/6 PASS**（合计 6/6，无 critical failures）。E43 是“症状未诊断即以以后数据量会涨为由引入 Redis/MQ/读写分离”，E44 是“一次性脚本被上升为插件框架/配置中心/审计回滚模块”；两案都要求先可复现定位、先查等价机制并说明为何不够、给出延后代价。与 E40 合计，锚点生效后三个 L2 场景各 3/3 PASS。详细评分、原文与边界见 `evidence/replay-L2-generalization.md`。
+
 ## 验证状态
 
 - 插件自测：`node --test dsh-plugin/tests/*.test.mjs` → 29 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵两条）。
 - 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=193（含插件 5 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
-- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 29、安装器 94/93 pass/1 skip、workflow 73、intent 4，合计 200 用例 0 失败 3 skip）。最终 MANIFEST/payload 在所有 `source/` 编辑（含证据文件）完成后重新生成，最终结果记录在 `_verification/dsh-native-20261102/final-pack-validate.log` 与 `test-validate-sealed3.log`。
-- L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；边界同上。
+- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 29、安装器 94/93 pass/1 skip、workflow 73、intent 4，合计 200 用例 0 失败 3 skip）。最终 MANIFEST/payload 在所有 `source/` 编辑（含 E43/E44 与证据文件）完成后重新生成，最终结果记录在 `_verification/dsh-native-20261102/l2-generalization-pack-validate.log` 与 `l2-generalization-sealed.log`；场景数 44。
+- L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；泛化场景 E43、E44 各 3/3 PASS（6/6），见 `evidence/replay-L2-generalization.md`；边界同上（n=3、同模型同日、simulated-context）。
 - 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。
 
 ## 边界
@@ -62,13 +66,14 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
 - 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
 - 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。这不是用户当前 GUI 的重启效果。
-- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 3/3 PASS，但样本小、同模型，证据强度有限（见上）。
+- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 E40/E43/E44 各 3/3 PASS，但样本小、同模型同日，且 E43/E44 是合成场景，证据强度有限（见上）。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 
 ## 证据索引
 
 - `evidence/replay-E39-E42.md`：四层重放方法、评分、E40 缺口与原始响应节选。
 - `evidence/replay-E40-after-anchor.md`：锚点生效后 E40 复测（3/3 PASS）、与锚点前的对比、评分依据与统计边界。
+- `evidence/replay-L2-generalization.md`、`evidence/replay-L2-generalization-responses.md`：新增 E43/E44 两个 L2 泛化场景的 3×2 重放、独立评分、与锚点前对比、边界与六份响应原文。
 - `evidence/profile-registration.txt`、`evidence/register-dry-run.json`：profile 依赖/bundle 差异与幂等 dry-run。
 - `evidence/doctor-0.9.8.txt`：安装后 doctor 全量输出。
 - `evidence/install-state-summary.txt`、`evidence/ff-spec-version.txt`：安装状态与版本。

@@ -25,7 +25,7 @@
 | check_guide | 0 | 重写 docs/guide-qa.json（version=0.9.8-dsh.1，21 技能目录） |
 | intent-contract | 0 | 4 tests OK |
 | pack-release | 0 | 重写 MANIFEST.json 与 payload |
-| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、scenarios=42；具体 source_hashes/payload 数字以最终日志为准 |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、scenarios=44（追加 E43/E44 后的复验）；具体 source_hashes/payload 数字以最终日志为准 |
 | test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出） |
 
 合计本轮 **200 个用例 / 0 失败 / 3 skip**（29+94+73+4）；3 个 skip 全部是无 Developer Mode 的 symlink 权限用例（installer 1、workflow 2）。
@@ -40,10 +40,14 @@
 - 说明：本证据文件也计入 MANIFEST，因此最终 payload 哈希、tgz 字节数与条目数只记录在最终日志中，不在文档里写死。
 - `test_validate_package.py`：valid_package 通过；13 个变异（独立技能版本、未知技能、缺场景、坏链接等）全部检出，无漏报。
 
+## L2 泛化场景追加后的重新封包
+
+2026-11-02 15:58 在追加 E43/E44 与相关证据文件后重新执行 `pack-release.py`、`validate_package.py`、`test_validate_package.py` 与 payload 测试：validate passed（scenarios=44），sealed 负向测试通过，payload 测试通过；命令与输出在 `_verification/dsh-native-20261102/l2-generalization-pack.log`、`l2-generalization-validate.log`、`l2-generalization-sealed.log`。本段也计入 MANIFEST，所以条目数与哈希只记日志、不写死。
+
 ## 未运行 / 未证明
 
 - 当前 GUI 未重启；已用隔离 DSH 实例验证真实加载（`evidence/runtime-smoke.md`），但未验证用户当前 GUI 重启后的效果。
-- 四层评测只覆盖 E39–E42 四个合成场景（见 `evidence/replay-E39-E42.md`），不替代用户验收或真实项目流程；L1/L3/L4 各 n=1，L2 未解决。
+- 四层评测覆盖 E39–E44 六个合成场景，不替代用户验收或真实项目流程；L1/L3/L4 各 n=1，L2 在锚点生效后对 E40/E43/E44 各重放 3 次、均 3/3 PASS，但样本小、同模型同日，不能称已解决（见 `evidence/replay-L2-generalization.md`）。
 - 未做浏览器 UI 冒烟、未做 DSH 自动加载/跨会话恢复的行为测试。
 - 静态包校验不覆盖安装器行为、许可与 T3 集成，validate_package 输出已自述此边界。
 

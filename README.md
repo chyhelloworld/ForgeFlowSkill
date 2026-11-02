@@ -4,7 +4,7 @@
 
 `0.9.7-dsh.1` 把同一套门禁接到 DeepSeek Harness：新增 `dsh` 宿主（`.dsh/skills`），安装时写入宿主协作块（子代理独立审查、`tasks.md` 权威、`present` 交付、plan mode 先 `exit_plan_mode`），`doctor` 报告技能发现根与技能版本↔CLI 版本握手；`status` 无参给出项目门禁总览，没有 `openspec/ff-policy.json` 时 archive 打印告警而不是静默放行（`FF_ALLOW_UNGATED=1` 可静默）。
 
-`0.9.8-dsh.1` 在 0.9.7 的 DSH 宿主之上补齐 DSH 原生接入面：新增 `dsh-plugin/` 原生插件，把 `ff_status`、`ff_gate` 暴露为 DSH 工具，`/ff-status` 为斜杠命令，向 `systemPrompt` 注册四层失效常驻锚点，并在 `tools/pre-execute` 对 `pwsh`/`bash` 命令位置上的 `ff-spec.mjs archive` 做门禁守卫（blocked/invalid 拒绝，只读 `--help`/`--ff-disposition canceled|rejected` 放行，可 `FF_ALLOW_UNGATED=1` 显式跳过）；插件随安装产物复制到 `.forgeflow/dsh-plugin`，用 `register.mjs` 显式注册到某个 DSH profile（备份、幂等、可 `--remove` 撤销，并建立 profile 内 `node_modules/@local/forgeflow-dsh` 链接），需重启 DSH 生效。同一版本把四层 AI 失效自检写入 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并新增 E39–E42 评测场景。
+`0.9.8-dsh.1` 在 0.9.7 的 DSH 宿主之上补齐 DSH 原生接入面：新增 `dsh-plugin/` 原生插件，把 `ff_status`、`ff_gate` 暴露为 DSH 工具，`/ff-status` 为斜杠命令，向 `systemPrompt` 注册四层失效常驻锚点，并在 `tools/pre-execute` 对 `pwsh`/`bash` 命令位置上的 `ff-spec.mjs archive` 做门禁守卫（blocked/invalid 拒绝，只读 `--help`/`--ff-disposition canceled|rejected` 放行，可 `FF_ALLOW_UNGATED=1` 显式跳过）；插件随安装产物复制到 `.forgeflow/dsh-plugin`，用 `register.mjs` 显式注册到某个 DSH profile（备份、幂等、可 `--remove` 撤销，并建立 profile 内 `node_modules/@local/forgeflow-dsh` 链接），需重启 DSH 生效。同一版本把四层 AI 失效自检写入 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并新增 E39–E44 评测场景（E43/E44 为 L2 过度防御的泛化场景：无失败样本即引入缓存/队列/读写分离，以及为一次性脚本搭框架）。
 
 面向 AI 编程的轻量工作流技能集：澄清需求、拆分任务、按需设计与实现、独立审核和中断接手，帮助人核对 AI 是否仍沿着当前目标工作。
 
