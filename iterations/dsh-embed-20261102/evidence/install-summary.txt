@@ -1,0 +1,15 @@
+# FF full install to E:\github\ForgeFlowSKill (host dsh)
+# original log: E:\github\ForgeFlowSKill\_verification\dsh-embed-20261102\install-20261102-124540.log
+# copied log: evidence/install-install-20261102-124540.log
+
+[START] 2026-11-02T12:44:49.9011761+08:00 cwd=E:\github\ForgeFlowSKill
+node=v24.12.0 python=Python 3.11.5
+source head=c1f53b6 status='' (clean before install)
+Done in 1m 36.6s using pnpm v10.34.5
+Build completed successfully! (OpenSpec compile, TypeScript 6.0.3)
+Built project-local CLI: .../staging-dc80b4a8.../tools/openspec/ff-spec.mjs
+"status": "INSTALLED"
+[END] 2026-11-02T12:47:17.8797810+08:00 exit=0 elapsed_sec=148
+
+version=0.9.7-dsh.1 host=dsh hosts=[dsh] mode=full
+skills installed=21 (.dsh/skills/ff-*)

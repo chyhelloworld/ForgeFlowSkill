@@ -2,9 +2,9 @@
 name: ff-review
 description: 在可独立验收的切片阶段末综合独立审查 ForgeFlow 目标/主流程、计划覆盖与代码质量；关键变更提前审方案，修复只复核问题及影响链，只读不改代码。
 metadata:
-  version: "0.9.7-dsh.1"
+  version: "0.9.8-dsh.1"
 ---
-# ff-review 0.9.7-dsh.1
+# ff-review 0.9.8-dsh.1
 
 ## 具体汇报
 
@@ -28,7 +28,7 @@ CRAP逐函数硬上限≤50、目标约10；只用同版真实CC与方法覆盖�
 
 ## 按需补充
 
-重大/前置方案、复杂影响/冲突或审核有效性不清读[审核规则](references/reviews.md)；跨模块/转向读[需求闭环](references/intent-loop.md)；已有FF policy/回执或生命周期操作读[生命周期](references/spec-lifecycle.md)。UI/动态核心读[视觉审核](references/visual-review.md)，不以静态图代替实际主流程。已读且版本/目标/依赖未变则复用定位；如本职责负责收尾，在已有记录附需求理解/设计/交付/变化适应/成本五维与证据类型，缺数据unknown、无变化可不适用，不再启动整轮审查。
+阶段末综合审查、方案取舍判断、重大/前置方案、复杂影响/冲突或审核有效性不清，读[审核规则](references/reviews.md)；跨模块/转向读[需求闭环](references/intent-loop.md)；已有FF policy/回执或生命周期操作读[生命周期](references/spec-lifecycle.md)。UI/动态核心读[视觉审核](references/visual-review.md)，不以静态图代替实际主流程。已读且版本/目标/依赖未变则复用定位；如本职责负责收尾，在已有记录附需求理解/设计/交付/变化适应/成本五维与证据类型，缺数据unknown、无变化可不适用，不再启动整轮审查。
 
 ## 图示按需支持
 

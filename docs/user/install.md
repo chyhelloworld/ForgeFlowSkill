@@ -45,6 +45,20 @@ node .forgeflow/ff-spec.mjs adopt --write    # 落盘并预览每个活动 chang
 
 与 Codex 共用同一项目时用 `--hosts dsh,codex`；只给 DSH 用时保持单宿主，避免为另一宿主重复维护技能副本。没有 `openspec/ff-policy.json` 时 `archive` 会打印 `⚠ FF gates disabled` 而不是静默通过，`FF_ALLOW_UNGATED=1` 可关闭该提示。
 
+## DSH 原生插件（可选，需重启）
+
+`--host dsh` 的安装会把可选的 DSH 插件复制到项目 `.forgeflow/dsh-plugin/`：两个只读工具 `ff_status`/`ff_gate`、`/ff-status` 命令、注册到 `systemPrompt` 的四层失效常驻锚点，以及 `ff-spec.mjs archive` 的本地守卫。插件零外部依赖，不替代 FF CLI。注册到某个 DSH profile 后需**重启 DSH** 才生效：
+
+```powershell
+# 注册（--dry-run 只预览；--profile 可指向其他 profile）
+node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profiles\desktop"
+# 撤销注册，恢复注册前的 profile 文件
+node .forgeflow/dsh-plugin/register.mjs --profile "$env:USERPROFILE\.dsh\profiles\desktop" --remove
+```
+
+注册会写该 profile 的 `package.json`（`link:` 依赖与 `dsh.profile.bundles`）、`cordis.patch.yml`（`forgeflow-dsh` id 的注册块），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；`package.json` 与 `cordis.patch.yml` 写前生成 `*.bak-<时间戳>` 备份。重复执行不会重复写入，已有同名但指向别处的目录时拒绝覆盖（退出码 2），缺少 profile 时退出码 2。`doctor --host dsh` 只报告项目内插件副本是否存在（`plugin.available`/`plugin.path`），不读取全局 profile。
+
+边界（best-effort）：守卫按 shell 引号切词，只把**命令位置**上由 `node`/`npx` 执行的 `.forgeflow/ff-spec.mjs archive` 当作目标（`echo`、引号文本里的同名子串不算，`build` 不再匹配）；`-h`/`--help` 与 `--ff-disposition canceled|rejected` 是只读或回滚式收尾，直接放行。命中且在磁盘上找到时先运行 `status --json`，门禁 `blocked` 或 policy `invalid` 才拒绝。`run_code` 等不透明调用、变量拼出的命令或其他入口无法拦截，最终仍以 FF CLI 自身门禁为准。`enabled: false` 或 `FF_ALLOW_UNGATED=1` 可关闭拦截；`anchor: false` 关闭常驻锚点；skills-only 安装没有 CLI 门禁，工具会明确报告 BLOCKED/disabled。
 
 ## 同一项目同时供 Codex 和 Claude 使用
 

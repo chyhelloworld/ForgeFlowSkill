@@ -7,7 +7,7 @@ import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main } from '../../../installer.mjs';
 import { install, removeHost } from '../install.mjs';
-import { loadState, hostBase, hostRoots, hosts } from '../state.mjs';
+import { loadState, hostBase, hostRoots, hosts, pluginDir, pluginFiles } from '../state.mjs';
 import { discovery, handshake } from '../runtime.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
@@ -33,6 +33,29 @@ test('install writes the DSH collaboration block only for the DSH host', () => {
   const codex = setup('codex');
   assert.doesNotMatch(fs.readFileSync(skill(codex, 'codex'), 'utf8'), /宿主协作（DSH）/);
   assert.match(fs.readFileSync(skill(codex, 'codex'), 'utf8'), /项目安装绑定/);
+});
+test('DSH install ships the native plugin and only DSH owns it', () => {
+  const p = setup('dsh');
+  for (const name of pluginFiles) {
+    const installed = path.join(p, name);
+    assert.ok(fs.existsSync(installed), name);
+    assert.deepEqual(fs.readFileSync(installed), fs.readFileSync(path.join(source, 'dsh-plugin', path.basename(name))));
+    assert.ok(name in loadState(p).files, name);
+  }
+  const codex = setup('codex');
+  assert.equal(fs.existsSync(path.join(codex, pluginDir)), false);
+  assert.ok(pluginFiles.every(name => !(name in loadState(codex).files)));
+});
+test('remove-host dsh takes the plugin files; removing codex keeps them', () => {
+  const p = project();
+  main(['install', '--project', p, '--hosts', 'codex,dsh', '--mode', 'skills-only']);
+  assert.ok(pluginFiles.every(name => fs.existsSync(path.join(p, name))));
+  removeHost(p, 'codex');
+  assert.ok(pluginFiles.every(name => fs.existsSync(path.join(p, name))));
+  install(p, source, { hosts: ['codex', 'dsh'], mode: 'skills-only' });
+  removeHost(p, 'dsh');
+  assert.ok(pluginFiles.every(name => !fs.existsSync(path.join(p, name))));
+  assert.ok(pluginFiles.every(name => !(name in loadState(p).files)));
 });
 test('doctor accepts --host dsh and reports skills-only instead of an unknown host', () => {
   const p = setup('dsh');

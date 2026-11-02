@@ -1,0 +1,72 @@
+# DSH 原生嵌入与四层失效防护（0.9.8-dsh.1）
+
+日期：2026-11-02
+前置：`iterations/dsh-embed-20261102/`（0.9.7-dsh.1 的安装、门禁与四层验证）
+
+## 目标
+
+在 0.9.7-dsh.1 已能“装进 DSH 并跑通”的基础上，补齐两件事：
+
+1. **原生接入面（结构性嵌入）**：技能发现只是第一层；把 FF 的门禁与状态检查变成 DSH 原生工具、命令和工具执行前的守卫，而不是让模型自己记得去跑 CLI。
+2. **四层失效防护**：把 L1 局部正确整体偏航、L2 过度防御复杂度失控、L3 过早接受平庸方案、L4 过早收敛原始问题被替换，落进既有 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并用可复现的评测场景验证。
+
+## 变更
+
+### 四层契约（技能文本，无新技能/新门禁）
+
+- `docs/maintainers/INTENT-LOOP.md`：新增“四层失效自检（failure-modes-v1）”一节（信号 → 动作 → 边界，含三条总则），并从该文件同步到 10 个 `skills/ff-*/references/intent-loop.md` 副本（逐字一致）。
+- `skills/ff-review/references/reviews.md`：目标/主流程类补“总需求验收账本”（:19）、方案类补“更简单替代”（:29）与“等价机制核查”（:30）、缺账本判待验证（:33）。
+- `skills/ff-review/SKILL.md:31`：把 reviews.md 的读取条件扩到“阶段末综合审查、方案取舍判断”，让审核规则在常规审查中真正被读取。
+- `skills/ff-intake/SKILL.md:23`：L4 触发从自指改为可观察信号（用户原话未复述、命名先于事实等）。
+- `evaluations/scenarios.json`：新增 E39–E42 四个四层场景（38 → 42）。
+
+### DSH 原生插件（`dsh-plugin/`）
+
+- `index.js`：`ff_status`、`ff_gate` 两个只读工具；`/ff-status` 命令；向 `systemPrompt` 注册四层失效常驻锚点（`anchor: false` 可关）；`tools/pre-execute` 守卫按 shell 引号切词，只检查命令位置上由 `node`/`npx` 执行的 `.forgeflow/ff-spec.mjs archive`，`blocked`/`invalid` 时 `{kind:'deny', reason}`，`--help`/`-h` 与 `--ff-disposition canceled|rejected` 放行，其余放行。
+- `register.mjs`：把插件以 `link:` 依赖加入指定 DSH profile 的 `dsh.profile.bundles` 与 `cordis.patch.yml`（带 managed 标记），并建立 `node_modules/@local/forgeflow-dsh` 目录链接（Windows 为 junction）；支持 `--remove`、`--dry-run`、`--json`，写前备份，幂等，已有外来同名目录时拒绝覆盖（退出码 2）。
+- 安装器集成：`tools/installer/state.mjs` 增加 `pluginDir='.forgeflow/dsh-plugin'` 与 5 个受管文件；`install.mjs` 从 payload 复制插件（旧 payload 缺目录时静默跳过）；`runtime.mjs` 的 `diagnose()` 在选中 dsh 时输出 `plugin{available,path,note}`；`docs/user/install.md` 增加“DSH 原生插件（可选，需重启）”一节。
+
+### 版本与产物
+
+- 0.9.7-dsh.1 → **0.9.8-dsh.1**（内容变化，避免同版本不同字节），覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
+- `ff-diagram`、`ff-writing-document` 保持自身 0.1.0 技能版本，不随包版本。
+
+## 四层重放结果（详细见 `evidence/replay-E39-E42.md`）
+
+方法：每个场景用全新上下文执行者（只给 case prompt 与技能清单，禁止读 criteria），再由独立评分者只读 rubric 打分（每案 3 criteria 各 0–2，全 2 且无 critical_failures 才 PASS）。
+
+| 场景 | 层 | 结果 |
+| --- | --- | --- |
+| E39 切片全绿但总需求未验收 | L1 | PASS 6/6 |
+| E40 为修设置项引入状态库与路由 | L2 | **FAIL 5/6**（c2=1） |
+| E41 能跑通即定稿的复制实现 | L3 | PASS 6/6 |
+| E42 未复述原话即重定义为架构缺陷 | L4 | PASS 6/6 |
+
+L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给出“已有等价机制 → 为何不够 → 延后代价”。同 prompt 重放 3 次，c2 稳定为 1；把 `ff-review/SKILL.md:31` 的读取条件扩到方案取舍后第 3 次仍为 1。结论是**文本触发条件不足以保证逐条对照**，本迭代不再加长技能文本（继续加正是 L2 自身的表现），把 L2 记为已知限制，候选结构锚点写入 evidence。
+
+## 验证状态
+
+- 插件自测：`node --test dsh-plugin/tests/*.test.mjs` → 29 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵两条）。
+- 安装与握手：`.forgeflow/install/state.json` version=0.9.8-dsh.1、files=193（含插件 5 文件）；`ff-spec.mjs --version`=0.9.8-dsh.1；doctor `handshake.verdict=MATCH`、`plugin.available=true`、`discovery.skills=21`。
+- 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
+- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 29、安装器 94/93 pass/1 skip、workflow 73、intent 4，合计 200 用例 0 失败 3 skip）。最终 MANIFEST/payload 在所有 `source/` 编辑（含证据文件）完成后重新生成，最终结果记录在 `_verification/dsh-native-20261102/final-pack-validate.log` 与 `test-validate-sealed3.log`。
+- 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。
+
+## 边界
+
+- 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
+- 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
+- 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。这不是用户当前 GUI 的重启效果。
+- 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 未彻底解决（见上）。
+- 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
+
+## 证据索引
+
+- `evidence/replay-E39-E42.md`：四层重放方法、评分、E40 缺口与原始响应节选。
+- `evidence/profile-registration.txt`、`evidence/register-dry-run.json`：profile 依赖/bundle 差异与幂等 dry-run。
+- `evidence/doctor-0.9.8.txt`：安装后 doctor 全量输出。
+- `evidence/install-state-summary.txt`、`evidence/ff-spec-version.txt`：安装状态与版本。
+- `evidence/regression-20261102.md`：全量回归、静态包校验与未运行范围。
+- `evidence/dsh-plugin-load.md`：插件安装一致性、profile 注册、junction 与解析验证、未重启边界。
+- `evidence/runtime-smoke.md`：隔离 DSH 实例中的真实加载、工具可见/执行、守卫拒绝与锚点证据。
+- `evidence/review-fixes.md`：对独立审核 P1 项的逐条修复对照与仍未关闭项。

@@ -2,9 +2,9 @@
 name: ff-diagnose
 description: 定位实际故障或性能回归，建立可重复失败信号与有证据的原因；不替代实现、审核或扩大调试权限。
 metadata:
-  version: "0.9.7-dsh.1"
+  version: "0.9.8-dsh.1"
 ---
-# ff-diagnose 0.9.7-dsh.1
+# ff-diagnose 0.9.8-dsh.1
 
 ## 具体汇报
 

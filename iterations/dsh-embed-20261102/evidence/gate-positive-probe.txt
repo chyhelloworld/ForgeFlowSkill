@@ -1,0 +1,66 @@
+TMP PROJECT: E:\github\ForgeFlowSKill\_verify_tmp\dsh-gate-positive-20261102
+rel=E:\github\ForgeFlowSKill\.forgeflow\install\releases\0.9.7-dsh.1-9d9cbee074c18280-full
+ADOPT_PREVIEW_EXIT=0
+ForgeFlow adopt  (E:\github\ForgeFlowSKill\_verify_tmp\dsh-gate-positive-20261102)
+  changes: demo
+  artifact: design  <- openspec/changes/{change}/design.md  (progress: openspec/changes/{change}/tasks.md)
+  policy (not written; rerun with --write):
+    {
+      "version": 2,
+      "artifacts": [
+        {
+          "id": "design",
+          "changes": [
+            "*"
+          ],
+          "paths": [
+            "openspec/changes/{change}/design.md"
+          ],
+          "requires": [],
+          "reviewRequired": true,
+          "progress": {
+            "plan": "openspec/changes/{change}/design.md",
+            "tasks": "openspec/changes/{change}/tasks.md"
+          }
+        }
+      ]
+    }
+ADOPT_WRITE_EXIT=1
+ForgeFlow adopt  (E:\github\ForgeFlowSKill\_verify_tmp\dsh-gate-positive-20261102)
+  changes: demo
+  artifact: design  <- openspec/changes/{change}/design.md  (progress: openspec/changes/{change}/tasks.md)
+  wrote:    openspec/ff-policy.json
+  demo: blocked — design: Stable plan requires unique task IDs under ## Task plan
+  next:  node .forgeflow/ff-spec.mjs status
+         node .forgeflow/ff-spec.mjs receipt snapshot demo reviews/demo-snapshot.json
+STATUS_JSON_EXIT=0
+{
+  "project": "E:\\github\\ForgeFlowSKill\\_verify_tmp\\dsh-gate-positive-20261102",
+  "configured": true,
+  "policy": {
+    "state": "configured"
+  },
+  "rows": [
+    {
+      "change": "demo",
+      "configured": true,
+      "tasks": {
+        "done": 0,
+        "total": 1
+      },
+      "artifacts": {
+        "valid": 0,
+        "total": 1
+      },
+      "valid": false,
+      "tracked": true,
+      "reasons": [
+        "design: Stable plan requires unique task IDs under ## Task plan"
+      ]
+    }
+  ],
+  "openspec": true,
+  "blocked": [
+    "demo"
+  ]
+}

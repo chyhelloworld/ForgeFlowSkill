@@ -11,6 +11,10 @@ export const derivationSkills = [...architectureSkills, 'ff-architecture-derive'
 export const diagramSkills = [...derivationSkills, 'ff-diagram'].sort();
 export const currentSkills = [...diagramSkills, 'ff-writing-document'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
+// Project-local copy of the optional DSH plugin (installed only with --host dsh).
+// sharedFiles stays unchanged so existing schema-1/2 state validation keeps working.
+export const pluginDir = '.forgeflow/dsh-plugin';
+export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
   return hostRoots[host];
@@ -27,10 +31,13 @@ export function hostsOf(state) {
   return selected;
 }
 export function fileHost(name) {
+  // The plugin only makes sense for DSH, so remove-host dsh takes it along.
+  if (pluginFiles.includes(name)) return 'dsh';
   return hosts.find(host => name.startsWith(`${hostBase(host)}/`));
 }
 export function owned(name) {
   if (/^\.(agents|claude|dsh)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
+  if (pluginFiles.includes(name)) return;
   if (sharedFiles.includes(name)) return;
   fail('Invalid managed path');
 }

@@ -1,0 +1,4 @@
+CMD: node .forgeflow/ff-spec.mjs archive nonexistent-change-xyz
+EXIT=1
+⚠ FF gates disabled: openspec/ff-policy.json not found, so this archive was not checked for FF artifacts, review receipts or task progress (set FF_ALLOW_UNGATED=1 to silence).
+× Error: Change 'nonexistent-change-xyz' not found. No active changes exist in this root.

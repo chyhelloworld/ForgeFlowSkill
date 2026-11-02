@@ -1,0 +1,41 @@
+{
+  "status": "RUNTIME_READY",
+  "runtime": "READY",
+  "gates": {
+    "configuration": "UNCONFIGURED",
+    "evidence": "NOT_CHECKED",
+    "checked": 0,
+    "lineEndings": {
+      "checked": 0,
+      "unprotected": []
+    }
+  },
+  "version": "0.9.8-dsh.1",
+  "host": "dsh",
+  "hosts": [
+    "dsh"
+  ],
+  "mode": "full",
+  "cli": ".forgeflow/ff-spec.mjs",
+  "plugin": {
+    "available": true,
+    "path": ".forgeflow/dsh-plugin",
+    "note": "项目内 DSH 插件副本；register.mjs 只写显式 --profile 指定的 profile，doctor 不读取全局 profile。"
+  },
+  "discovery": {
+    "root": ".dsh/skills",
+    "skills": 21,
+    "gitRoot": false,
+    "projectRoot": "E:\\github\\ForgeFlowSKill",
+    "others": []
+  },
+  "handshake": {
+    "skills": "0.9.8-dsh.1",
+    "state": "0.9.8-dsh.1",
+    "verdict": "MATCH",
+    "cli": "0.9.8-dsh.1",
+    "cliMatchesState": true,
+    "adapterPin": null
+  },
+  "note": "Runtime, configuration and evidence are separate. No actual model invocation, semantic review or human acceptance is established."
+}
