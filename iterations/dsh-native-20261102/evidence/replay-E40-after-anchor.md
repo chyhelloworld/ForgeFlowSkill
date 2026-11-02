@@ -12,7 +12,7 @@ L2（过度防御、复杂度失控）在上一轮文本契约下发稳定失分
 - 执行者：3 个全新上下文 subagent；只给 E40 原始 prompt 与可用技能清单（ff-intake / ff-prove / ff-review），明确禁止读取 `source/evaluations/` 与任何 criteria/rubric；不要求造任何工具调用。
 - 条件差异：仅"插件四层锚点是否在 system prompt 中"。执行者与上一轮同模型、同技能文本、同工作区；上一轮的 3 次重放发生于插件锚点注册/重启之前。
 - 评分：另一个全新上下文 subagent，只读 `source/evaluations/README.md` 规则、`scenarios.json` 的 E40 criteria/critical_failures 与三份响应；每 criterion 0–2，全 2 且无 critical_failures 才 PASS。
-- 原始响应保存于 `_verify_tmp/e40-anchor-replay/responses.md`（工作区临时目录，不入包）。
+- 原始响应与评分要点已摘录进本文件（工作区临时目录 `_verify_tmp/e40-anchor-replay` 已在验证后删除）。
 
 ## 结果
 
