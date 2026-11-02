@@ -66,9 +66,9 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 - 守卫只覆盖 `pwsh`/`bash` 的 `command` 字面量；`run_code`、变量拼接或其他入口看不到真实命令行，这是 best-effort，不是安全边界。
 - 插件注册后需**重启 DSH** 才生效；doctor 只检查项目内副本，不读全局 profile。
-- 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。用户重启后的当前 GUI 也验证了 Host 半（工具可用、守卫拒绝/放行实测）；看板 Client 半仍未重启验证。
+- 本迭代在**隔离的 DSH 实例**（独立 `DSH_HOME` + 从默认模板新建的 profile + 本地 mock 模型端点）中验证了真实加载：`ff_status`/`ff_gate` 出现在模型请求的工具列表、四层锚点进入 system 提示、`ff_status` 实际返回状态、守卫实际拒绝被门禁阻塞的 `archive`（见 `evidence/runtime-smoke.md`）。用户重启后的当前 GUI 也验证了 Host 半（工具可用、守卫拒绝/放行实测）；看板 Client 半也已在同一 GUI 验收（见下一条与 `evidence/client-hardening.md` 的“重启后验收”）。
 - 四层重放证明的是“同模型、同技能文本下的可复现行为”，不替代用户验收；L2 在锚点生效后 E40/E43/E44 各 3/3 PASS，但样本小、同模型同日，且 E43/E44 是合成场景，证据强度有限（见上）。
-- 看板的 Client 半在 0.9.8 已由真实鼠标点击验收（UIA clickable point，见 `_verification/dsh-native-20261102/board-real-click-20261102.png`）；0.9.9 的幂等注册与缺快照空态仍需重启后复验，Node 测试只覆盖 fake ModuleLoader 与 fake ctx。数据只有 `intent-view-links.json` 时任务进度显示未知，架构区只有参考文档索引。
+- 看板的 Client 半在 0.9.8 已由真实鼠标点击验收（UIA clickable point，见 `_verification/dsh-native-20261102/board-real-click-20261102.png`）；0.9.9 的幂等注册与缺快照空态已在 2026-11-02 21:09–21:11 重启后的真实 GUI 验收：看板正常打开、控制台无 duplicate 注册报错、DHAgent 显示友好空态（截图 `_verification/client-hardening-20261102/post-restart-*.png`）；Node 测试只覆盖 fake ModuleLoader 与 fake ctx，不能替代该次验收。数据只有 `intent-view-links.json` 时任务进度显示未知，架构区只有参考文档索引。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 
 ## 证据索引
@@ -84,4 +84,4 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - `evidence/runtime-smoke.md`：隔离 DSH 实例中的真实加载、工具可见/执行、守卫拒绝与锚点证据。
 - `evidence/review-fixes.md`：对独立审核 P1 项的逐条修复对照与仍未关闭项。
 - `evidence/board-panel.md`：看板方案、生成器/Client 实现、sol 细节审查 P0/P1/P2 修复对照、测试与未验证边界。
-- `evidence/client-hardening.md`：重复 apply 的幂等注册、`no entry at` 缺快照空态、新增测试与未重启边界。
+- `evidence/client-hardening.md`：重复 apply 的幂等注册、`no entry at` 缺快照空态、新增测试与重启后 GUI 验收。

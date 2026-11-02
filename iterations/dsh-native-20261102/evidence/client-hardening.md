@@ -39,8 +39,17 @@
 
 原有 “注册抛错/延迟注册抛错/React 缺失” 三条降级测试保持通过，确认加固没有把真实失败也吞掉。
 
+## 重启后验收（2026-11-02 21:09–21:11）
+
+用户重启 DSH（pid 29076，21:02:29 启动）后，在真实 desktop GUI 完成验收：
+
+- bundle 已重新编译：Electron `Code Cache\js\55f87542a06cc7d5_0`（mtime 21:02:38）的 key 含 `@local/forgeflow-dsh/client.js`、`rev=dc29c94a46e3`（旧条目 rev=3763a1d97838）。
+- 面板可打开：侧栏「ForgeFlow 看板」→ 主面板显示项目根、快照 `.forgeflow/board.json`、需求 10 条（基线 `source/planning/INTENT-LOOP-096.md`，列出 R096-1…R096-6 与 R-view）；截图 `_verification/client-hardening-20261102/post-restart-board.png`。
+- 幂等注册生效：DevTools Console 只有 3 条既有 404（`api/ch…seq=11139`、`api/fi…lick-20261102.png`、`plugins/events ERR_FAILED`），没有 `[forgeflow-board] … already has an entry` 报错；截图 `post-restart-console.png`。
+- 缺快照空态：切到 DHAgent（无 `.forgeflow/board.json`）显示“未找到 .forgeflow/board.json。在项目根运行：node .forgeflow/dsh-plugin/generate-board.mjs --write”，不再是 `读取快照失败：no entry at …`；截图 `post-restart-empty-state.png`，侧栏展开见 `post-restart-sidebar.png`。
+
 ## 边界
 
-- 这两处修复属客户端行为，**需重打包、重装、重启 DSH 后**才能在真实 GUI 观察；Node 测试使用 fake `__ModuleLoader__` 与 fake ctx，不能替代重启后的人工验收。
+- 这两处修复已在上述重启后的真实 GUI 验收；Node 测试仍使用 fake `__ModuleLoader__` 与 fake ctx，不能替代真实 GUI 验收。
 - `alreadyRegistered` 只按 id/key 判断，不区分注册者；若第三方插件占用了 `ff-board` 这个 id/key，本插件会选择跳过而不是覆盖（槽位本身也不允许同 id 重复注册）。
 - 缺快照判定仍是文本匹配，宿主错误文案变化时可能需要再补关键词；这是 best-effort 的显示降级，不影响快照读取的正确性。
