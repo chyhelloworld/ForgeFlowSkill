@@ -45,7 +45,7 @@ RSI 五项要求在 FF 已有机制中并非全缺：冻结证据（`ff-receipt.
 
 ## 验证
 
-- `node --test tools/rsi/ff-rsi.test.mjs` → **15 tests / 15 pass / 0 fail**（EMPTY；缺 existing/缺 normal 拒绝；成功冻结 + 重复冻结拒绝；篡改 cases → STALE；缺 candidate / 无 delta；缺侧观测 / command 不一致；PASS → COMPARED；旧版不失败 → NO_EFFECT；正常对照误伤 → REJECTED；SKIP 不算 PASS；promote 拒绝无 review/L0/verdict fail/stale candidateHash；promote 成功 + PROMOTED；withdraw 保留证据；`--list` 只扫给定目录）。
+- `node --test tools/rsi/ff-rsi.test.mjs` → 0.9.11 时 **15 tests / 15 pass / 0 fail**（EMPTY；缺 existing/缺 normal 拒绝；成功冻结 + 重复冻结拒绝；篡改 cases → STALE；缺 candidate / 无 delta；缺侧观测 / command 不一致；PASS → COMPARED；旧版不失败 → NO_EFFECT；正常对照误伤 → REJECTED；SKIP 不算 PASS；promote 拒绝无 review/L0/verdict fail/stale candidateHash；promote 成功 + PROMOTED；withdraw 保留证据；`--list` 只扫给定目录）。0.9.12 新增 re-review 字段校验用例后为 **16 tests / 16 pass / 0 fail**，见 `reviewer-reuse.md`。
 - `node --test tools/installer/tests/dsh-host.test.mjs`：新增“install ships the host-independent ff-rsi tool and keeps it when a host is removed”一例，验证安装文件逐字节一致、state 记录、安装后 CLI 可运行、移除 codex 后仍保留。
 - 文档：`docs/user/rsi.md`（使用与边界）、`docs/user/capabilities.md`（RSI 边界段落）、`skills/ff-retro/references/ff-improvement.md`（原“不是 rsi CLI”改为“可用独立 ff-rsi.mjs 留证”）、`skills/ff-retro/SKILL.md`（需要留证时的入口）。`capabilities.md` 关于“没有 `ff-spec rsi` 子命令”的陈述保持为真：本工具是独立 `ff-rsi.mjs`，未并入 `ff-spec`。
 

@@ -125,3 +125,24 @@
 安装与运行时（已执行）：本工作区与 DHAgent 均 install `--host dsh --mode full --build` → `INSTALLED 0.9.11-dsh.1`；两处 `state.json` files=196（新增 `.forgeflow/ff-rsi.mjs`）；`node .forgeflow/ff-rsi.mjs --version` 输出 0.9.11-dsh.1；doctor `RUNTIME_READY`、handshake `MATCH`、plugin.available=true、discovery.skills=21。DHAgent 细节见 `dha-agent-install.md`。
 
 未运行 / 未证明：本轮未重启 DSH（插件代码未变，仍为 0.2.0；0.9.9 的运行时验收仍适用）；RSI 已在 DHAgent 真实项目用演示 fixture 跑完 five-verb 链（见 `rsi-five-verb-demo.md`），但尚未承载一次真实 FF 技能改进，且 `compare.rows[].rawSha256` 仍为 null（原始输出未哈希绑定）。
+## 0.9.12-dsh.1 审查复用后的重新回归（2026-11-03 09:55 起）
+
+本轮改动：`skills/ff-review/references/reviews.md` 与 `SKILL.md:25` 的审查复用规则、`tools/rsi/ff-rsi.mjs` 的 `promote` 字段校验、`tools/rsi/ff-rsi.test.mjs`（+1 例）、`docs/user/rsi.md`、`ff-retro/references/ff-improvement.md`、版本 0.9.11-dsh.1 → 0.9.12-dsh.1，以及 `evidence/reviewer-reuse.md`。**插件、看板与安装器代码未改**。日志目录 `_verification/reviewer-reuse-20261103/`。
+
+| 步骤 | 退出码 | 计数 |
+| --- | --- | --- |
+| rsi-tool-tests | 0 | 16 tests / 16 pass / 0 fail（新增 re-review 字段校验） |
+| plugin-tests（board/client/plugin/register） | 0 | 53 tests / 53 pass / 0 fail |
+| installer-tests（`FF_TEST_ROOT=_verify_tmp/ff-test-root-reviewer-reuse`） | 0 | 96 tests / 95 pass / 1 skip / 0 fail |
+| python-workflow-unittest | 0 | 73 tests OK，skipped=2 |
+| intent-contract | 0 | 4 tests OK |
+| check_guide | 0 | 重写 `docs/guide-qa.json`（version=0.9.12-dsh.1，21 技能目录） |
+| pack-release | 0 | MANIFEST version=0.9.12-dsh.1、status=candidate-not-published、manifest_files=1543 |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=160、source_hashes=25、scenarios=46 |
+| test_validate_package | 0 | passed=true（valid_package + 13 个变异全部检出，共 14 例） |
+
+合计 **242 个用例 / 0 失败 / 3 skip**（16+53+96+73+4）；3 个 skip 仍是无 Developer Mode 的 symlink 权限用例。
+
+安装与运行时（已执行）：本工作区 install `--host dsh --mode full --build` → `INSTALLED 0.9.12-dsh.1`；`state.json` version=0.9.12-dsh.1、files=196（文件集与 0.9.11 相同，仅版本与内容更新）；`node .forgeflow/ff-rsi.mjs --version`=0.9.12-dsh.1；`ff-spec.mjs --version`=0.9.12-dsh.1；doctor `RUNTIME_READY`、handshake `MATCH`（skills/state/cli 均 0.9.12-dsh.1）、`plugin.available=true`、`discovery.skills=21`；`register.mjs --global --json` 返回 `changed=[]`（幂等；profile 的 `node_modules/@local/forgeflow-dsh` 链接到 `%USERPROFILE%/.dsh/plugins/forgeflow-dsh` 稳定副本，该副本与项目 `.forgeflow/dsh-plugin` 逐字节一致）。不带 `--global` 时脚本会因链接指向全局副本而拒绝覆盖并退出 2，这是防覆盖设计，不是故障；要更新稳定副本须显式加 `--global`。DHAgent 本轮未重装：插件与工具代码未变，0.9.11 的安装验证仍适用；`ff-rsi.mjs` 版本号会在下次安装时同步。
+
+未运行 / 未证明：本轮未重启 DSH（插件与看板代码未变，0.9.9 的运行时验收仍适用）；审查复用没有行为对照评测，也没有真实 token 计量；`reviewMode`/`reviewRound` 是声明字段，不是密码学证明。

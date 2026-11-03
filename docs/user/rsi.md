@@ -28,7 +28,7 @@ RSI（递归自我改进）在本仓库不是自动循环，也不是会自己�
 
 ```powershell
 # 1. 冻结：失败样本必须是真实可复现的，正常对照用来发现误伤
-node .forgeflow/ff-rsi.mjs freeze --dir .forgeflow/rsi/demo --target ff-retro --version 0.9.11-dsh.1 \
+node .forgeflow/ff-rsi.mjs freeze --dir .forgeflow/rsi/demo --target ff-retro --version 0.9.12-dsh.1 \
   --base path/to/old-skill --fail evidence/fail.json --normal evidence/normal.json \
   --request-quote "让 Retro 能记录一次有界改进" --request-ref m04592 \
   --existing "ff-receipt snapshot" --why-insufficient "不绑定执行者原始回答" \
@@ -46,6 +46,12 @@ node .forgeflow/ff-rsi.mjs status --dir .forgeflow/rsi/demo --installed path/to/
 ```
 
 裁决规则固定：失败用例旧版不失败 → `NO_EFFECT`；失败用例新版未通过 → `REJECTED`；正常对照旧版不通过 → `NO_EFFECT`；正常对照新版被误伤 → `REJECTED`；`SKIP`/`NOT_RUN` 不能当 PASS。`REJECTED`/`NO_EFFECT` 退出码为 3。
+
+## 审查者复用
+
+首次审查、关键变更前置方案、候选实质变化、出现新关键风险，或原审查者已接触作者通过结论时，仍使用新上下文（L1）或异模型（L2）。
+
+同一候选、同一授权任务的修复复核复用原审查者，不新建子代理：只复核原发现、受影响依赖和必要回归，并重新读取当前 candidate/compare 哈希，不接受作者转述。复用时在 `review.json` 写 `reviewMode: "re-review"`、`reviewRound`（>=2）和 `priorReviewHash`（上一份 `review.json` 的 sha256）；`initial` 可省略轮次字段。`promote` 会拒绝缺字段或轮次不成立的 re-review，避免把复用写成“独立首审”。没有实际 token 数据时节省记 unknown。
 
 ## 状态含义
 

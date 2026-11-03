@@ -12,7 +12,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const VERSION = '0.9.11-dsh.1';
+export const VERSION = '0.9.12-dsh.1';
 const VERDICTS = ['PASS', 'FAIL', 'SKIP', 'NOT_RUN', 'NO_EFFECT'];
 const NL = String.fromCharCode(10);
 
@@ -225,6 +225,15 @@ export function promote(options) {
   if (compared.conclusion !== 'PASS') fail('对照结论不是 PASS（' + compared.conclusion + '），不得晋级');
   if (review.verdict !== 'pass') fail('review.json 的 verdict 必须是 pass');
   if (review.independence === 'L0') fail('independence=L0 是自检冒充独立，拒绝晋级');
+  if (review.reviewMode !== undefined && !['initial', 're-review'].includes(review.reviewMode)) fail('reviewMode 只能是 initial 或 re-review');
+  const round = review.reviewRound;
+  if (round !== undefined && (!Number.isInteger(round) || round < 1)) fail('reviewRound 必须是 >=1 的整数');
+  if (review.reviewMode === 're-review') {
+    if (!Number.isInteger(round) || round < 2) fail('reviewMode=re-review 需要 reviewRound 为 >=2 的整数（记录这是第几轮复核）');
+    if (typeof review.priorReviewHash !== 'string' || !/^[0-9a-f]{64}$/.test(review.priorReviewHash)) fail('re-review 需要 priorReviewHash（上一份 review.json 的 sha256）');
+  } else if (Number.isInteger(round) && round > 1 && typeof review.priorReviewHash !== 'string') {
+    fail('reviewRound>1 需要 priorReviewHash，且应标 reviewMode=re-review');
+  }
   const candidateHash = treeHash(path.join(dir, 'candidate'));
   if (review.candidateHash !== candidateHash) fail('review.json 记录的 candidateHash 与当前 candidate/ 不符（stale 审核）');
   if (review.compareHash !== sha256(fs.readFileSync(compareFile))) fail('review.json 记录的 compareHash 与 compare.json 不符（stale 审核）');
@@ -236,6 +245,8 @@ export function promote(options) {
     userRef: ref,
     candidateHash,
     reviewHash: sha256(fs.readFileSync(reviewFile)),
+    reviewMode: review.reviewMode || 'initial',
+    reviewRound: Number.isInteger(round) ? round : 1,
     recordedAt: new Date().toISOString(),
     activationHint: '记录不是激活：按仓库流程发布/安装（node .forgeflow/ff-spec.mjs --version 确认）后才生效。',
     rollbackHint: '回退用安装器 rollback 或恢复冻结的 base/ 副本；不要直接改 review.json/promotion.json。',

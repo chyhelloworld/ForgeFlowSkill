@@ -1,4 +1,4 @@
-# DSH 原生嵌入与四层失效防护（0.9.11-dsh.1）
+# DSH 原生嵌入与四层失效防护（0.9.12-dsh.1）
 
 日期：2026-11-02
 前置：`iterations/dsh-embed-20261102/`（0.9.7-dsh.1 的安装、门禁与四层验证）
@@ -35,9 +35,15 @@
 - 设计依据：`_verification/rsi-design/report.md`；实现与未做项见 `evidence/rsi-tool.md`。
 - 真实项目闭环：在 DHAgent（安装 0.9.11）上用演示 fixture 跑完 freeze/compare/promote/withdraw/status；假修复被独立审核判 fail、`promote` 以 exit 2 拒绝，真修复记录为 `PROMOTION_RECORDED` 并在模拟安装目标上显示 `PROMOTED`。证据见 `evidence/rsi-five-verb-demo.md`。
 
+### 审查复用（0.9.12 新增）
+
+- `skills/ff-review/references/reviews.md` 新增“审查者复用与复核”：首次审查、关键变更前置、候选实质变化或新关键风险仍用新上下文；同一候选同一授权任务的修复复核复用原审查者，只复核原发现/影响链/必要回归，`review.json` 记录 `reviewMode=re-review`、`reviewRound>=2`、`priorReviewHash`，不称独立首审。
+- `ff-rsi.mjs promote` 把上述字段变成拒绝条件（未知 mode、轮次不成立、缺 64 位小写 priorReviewHash 均退出 2），promotion 记录同步写 `reviewMode`/`reviewRound`；新增 1 例测试（现 16 例）。
+- 文档同步：`docs/user/rsi.md`、`ff-retro/references/ff-improvement.md`；证据与边界见 `evidence/reviewer-reuse.md`。
+
 ### 版本与产物
 
-- 0.9.8-dsh.1（插件与看板落地）→ 0.9.9-dsh.1（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）→ 0.9.10-dsh.1（L2 双向校准场景 E45/E46 与证据）→ **0.9.11-dsh.1**（RSI 证据工具 `ff-rsi.mjs`、安装器接线与文档；插件版本保持 0.2.0）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
+- 0.9.8-dsh.1（插件与看板落地）→ 0.9.9-dsh.1（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）→ 0.9.10-dsh.1（L2 双向校准场景 E45/E46 与证据）→ 0.9.11-dsh.1（RSI 证据工具 `ff-rsi.mjs`、安装器接线与文档；插件版本保持 0.2.0）→ **0.9.12-dsh.1**（审查者复用规则与 `promote` 字段校验）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
 - `ff-diagram`、`ff-writing-document` 保持自身 0.1.0 技能版本，不随包版本。
 
 ## 四层重放结果（详细见 `evidence/replay-E39-E42.md`）
@@ -67,6 +73,7 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 ## 验证状态
 
+- RSI 自测：`node --test tools/rsi/ff-rsi.test.mjs` → 16 pass / 0 fail（0.9.12 新增 re-review 字段校验）；0.9.12 未改插件与看板代码，插件 53 例仍适用。
 - 插件自测：`node --test dsh-plugin/tests/{plugin,register,board,client}.test.mjs` → 53 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵、看板快照/坏结构/多工作区/注册抛错、重复 apply 幂等、缺快照空态）。
 - 安装与握手：`.forgeflow/install/state.json` version=0.9.11-dsh.1、files=196（含插件 7 文件与 `.forgeflow/ff-rsi.mjs`）；`ff-spec.mjs --version`=0.9.11-dsh.1；doctor `handshake.verdict=MATCH`（skills/state/cli 均为 0.9.11-dsh.1）、`plugin.available=true`、`discovery.skills=21`。安装的 `.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致（sha256 见 `_verification/l2-calibration-20261102/` 日志）。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
@@ -83,6 +90,7 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - 看板的 Client 半在 0.9.8 已由真实鼠标点击验收（UIA clickable point，见 `_verification/dsh-native-20261102/board-real-click-20261102.png`）；0.9.9 的幂等注册与缺快照空态已在 2026-11-02 21:09–21:11 重启后的真实 GUI 验收：看板正常打开、控制台无 duplicate 注册报错、DHAgent 显示友好空态（截图 `_verification/client-hardening-20261102/post-restart-*.png`）；Node 测试只覆盖 fake ModuleLoader 与 fake ctx，不能替代该次验收。数据只有 `intent-view-links.json` 时任务进度显示未知，架构区只有参考文档索引。
 - 本迭代不改 `openspec/` 门禁语义，也不新增常驻进程或后台服务。
 - RSI 工具没有自动评测/自动晋级：`promotion.json` 只是记录，激活与回滚命令需用户执行；已在 DHAgent 真实项目用演示 fixture 跑完 five-verb 链（见 `evidence/rsi-five-verb-demo.md`），但尚未用它承载一次真实 FF 技能改进；`compare.rows[].rawSha256` 仍为 null，原始输出未哈希绑定。
+- 审查复用是流程约定与字段校验，不是密码学证明：`reviewMode`/`reviewRound` 可被错误声明，工具只拒绝缺失或自相矛盾的记录；本轮没有实测 token 节省，也没有“复用 vs 新起”的对照评测。
 
 ## 证据索引
 
@@ -100,5 +108,6 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - `evidence/board-panel.md`：看板方案、生成器/Client 实现、sol 细节审查 P0/P1/P2 修复对照、测试与未验证边界。
 - `evidence/client-hardening.md`：重复 apply 的幂等注册、`no entry at` 缺快照空态、新增测试与重启后 GUI 验收。
 - `evidence/rsi-tool.md`：RSI 证据工具的设计映射、五个动词与拒绝条件、安装器接线、15 例测试与未做项。
+- `evidence/reviewer-reuse.md`：审查复用规则、`review.json` 字段、`promote` 拒绝条件、新增测试（16 例）与“没有 token 计量/无行为对照”的边界。
 - `evidence/rsi-five-verb-demo.md`：DHAgent 真实项目上的五动词闭环、假修复被拦、真修复晋级与保留风险。
 - `evidence/dha-agent-install.md`：0.9.11 安装到 DHAgent 的真实项目验证（state/技能/doctor/RSI 版本）与未做端到端冒烟的边界。

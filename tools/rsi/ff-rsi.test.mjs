@@ -247,6 +247,31 @@ test('promote 成功只写记录并打印激活/回滚命令', () => {
   assert.equal(promoted.state, 'PROMOTED');
 });
 
+test('re-review 必须记录轮次与上一份 review 哈希', () => {
+  const f = fixture();
+  freezeOk(f);
+  candidate(f);
+  compare(f);
+  review(f, { reviewMode: 're-review', reviewRound: 1, priorReviewHash: 'a'.repeat(64) });
+  const wrongRound = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root);
+  assert.equal(wrongRound.code, 2);
+  assert.match(wrongRound.err, /reviewRound/);
+  review(f, { reviewMode: 're-review', reviewRound: 2 });
+  const missingPrior = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root);
+  assert.equal(missingPrior.code, 2);
+  assert.match(missingPrior.err, /priorReviewHash/);
+  review(f, { reviewMode: 'bogus' });
+  const badMode = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root);
+  assert.equal(badMode.code, 2);
+  assert.match(badMode.err, /reviewMode/);
+  review(f, { reviewMode: 're-review', reviewRound: 2, priorReviewHash: 'a'.repeat(64) });
+  const ok = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1', '--json'], f.root);
+  assert.equal(ok.code, 0);
+  const promotion = JSON.parse(fs.readFileSync(path.join(f.runDir, 'promotion.json'), 'utf8'));
+  assert.equal(promotion.reviewMode, 're-review');
+  assert.equal(promotion.reviewRound, 2);
+});
+
 test('withdraw 保留原件与结论', () => {
   const f = fixture();
   freezeOk(f);
