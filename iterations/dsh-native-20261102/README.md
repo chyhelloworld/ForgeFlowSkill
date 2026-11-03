@@ -1,4 +1,4 @@
-# DSH 原生嵌入与四层失效防护（0.9.12-dsh.1）
+# DSH 原生嵌入、四层失效防护与可配置外部审查（0.9.13-dsh.1）
 
 日期：2026-11-02
 前置：`iterations/dsh-embed-20261102/`（0.9.7-dsh.1 的安装、门禁与四层验证）
@@ -41,9 +41,15 @@
 - `ff-rsi.mjs promote` 把上述字段变成拒绝条件（未知 mode、轮次不成立、缺 64 位小写 priorReviewHash 均退出 2），promotion 记录同步写 `reviewMode`/`reviewRound`；新增 1 例测试（现 16 例）。
 - 文档同步：`docs/user/rsi.md`、`ff-retro/references/ff-improvement.md`；证据与边界见 `evidence/reviewer-reuse.md`。
 
+### 可配置外部审查（0.9.13 新增）
+
+- `tools/review/ff-reviewer.mjs` 安装为 `.forgeflow/ff-reviewer.mjs`：`init/check/run/version`，配置 `openspec/ff-review.json` 的 `backend`（codex|claude）、`model`、`reasoning`、`enabled`、`timeoutSeconds`、`command`；env 与 run 参数可覆盖。Codex 走 `exec --sandbox read-only`，Claude 走 `-p --permission-mode plan --permission-prompts none --bare --strict-mcp-config`。run 写 `<out>.json`（L2、brief/config sha256、命令、退出码、verdict/findings、usage、未验证项）、`<out>.md` 原始回答与 stdout/stderr；失败仍保留记录并非零退出，不自动 fallback 或接受结论。
+- `skills/ff-review/SKILL.md` 与 `references/reviews.md` 接入：有配置时优先用 runner，无配置/disabled/后端不可用才回到独立子代理；失败写 NOT_RUN/待验证。文档 `docs/user/review-backends.md`；安装器 `state.mjs`/`install.mjs` 新增受管 `.forgeflow/ff-reviewer.mjs` 与 gitGuidance。
+- 实测：runner 单测 12/12（新增 backend 覆盖时丢弃旧后端 command/model/reasoning 的回归测试）；真实 Codex smoke 在 fixture 上用 `gpt-6.1-sol`/`reasoning=low` 成功返回（exit 0，duration 29286ms，verdict=needs-evidence，findings=1），record 正确记录 model/effort/independence=L2/brief/config 哈希；本机 Codex 的 `exec_command` 因 MCP transport 失败而无法读文件，brief 内嵌原文仍可审，文件读取未证明。Claude Code 本机未登录：`run` 退出 3 并保留原始输出 `Not logged in · Please run /login`，没有自动 fallback；`check` 修复覆盖 bug 后正确报告 `command=claude`、`commandVersion=2.1.316`。详见 `evidence/review-backends.md`。
+
 ### 版本与产物
 
-- 0.9.8-dsh.1（插件与看板落地）→ 0.9.9-dsh.1（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）→ 0.9.10-dsh.1（L2 双向校准场景 E45/E46 与证据）→ 0.9.11-dsh.1（RSI 证据工具 `ff-rsi.mjs`、安装器接线与文档；插件版本保持 0.2.0）→ **0.9.12-dsh.1**（审查者复用规则与 `promote` 字段校验）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
+- 0.9.8-dsh.1（插件与看板落地）→ 0.9.9-dsh.1（客户端加固：重复 apply 幂等、缺快照空态；插件自身 0.1.0 → 0.1.1）→ 0.9.10-dsh.1（L2 双向校准场景 E45/E46 与证据）→ 0.9.11-dsh.1（RSI 证据工具 `ff-rsi.mjs`、安装器接线与文档；插件版本保持 0.2.0）→ 0.9.12-dsh.1（审查者复用规则与 `promote` 字段校验）→ **0.9.13-dsh.1**（可配置外部独立审查：`ff-reviewer.mjs`、配置/技能/安装器/文档与测试）。版本覆盖 package.json、19 个技能 SKILL.md、README、docs/user 两处与 `docs/guide-qa.json`（由 `docs/check_guide.py` 生成）。
 - `ff-diagram`、`ff-writing-document` 保持自身 0.1.0 技能版本，不随包版本。
 
 ## 四层重放结果（详细见 `evidence/replay-E39-E42.md`）
@@ -73,11 +79,11 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 
 ## 验证状态
 
-- RSI 自测：`node --test tools/rsi/ff-rsi.test.mjs` → 16 pass / 0 fail（0.9.12 新增 re-review 字段校验）；0.9.12 未改插件与看板代码，插件 53 例仍适用。
+- RSI 自测：`node --test tools/rsi/ff-rsi.test.mjs` → 16 pass / 0 fail（0.9.12 新增 re-review 字段校验）；外部审查测试：`node --test tools/review/ff-reviewer.test.mjs` → 12 pass / 0 fail；0.9.13 未改插件代码，插件 53 例仍适用。
 - 插件自测：`node --test dsh-plugin/tests/{plugin,register,board,client}.test.mjs` → 53 pass / 0 fail（含链接创建/撤销/外来目录拒绝、常驻锚点、守卫放行/误伤、空模板 `[]` 哨兵、看板快照/坏结构/多工作区/注册抛错、重复 apply 幂等、缺快照空态）。
-- 安装与握手：`.forgeflow/install/state.json` version=0.9.11-dsh.1、files=196（含插件 7 文件与 `.forgeflow/ff-rsi.mjs`）；`ff-spec.mjs --version`=0.9.11-dsh.1；doctor `handshake.verdict=MATCH`（skills/state/cli 均为 0.9.11-dsh.1）、`plugin.available=true`、`discovery.skills=21`。安装的 `.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致（sha256 见 `_verification/l2-calibration-20261102/` 日志）。
+- 安装与握手：`.forgeflow/install/state.json` version=0.9.13-dsh.1、files=197（含插件 7 文件、`.forgeflow/ff-rsi.mjs` 与 `.forgeflow/ff-reviewer.mjs`）；`ff-spec.mjs --version` 与 `ff-reviewer.mjs version` 均为 0.9.13-dsh.1；doctor `handshake.verdict=MATCH`（skills/state/cli 均为 0.9.13-dsh.1）、`plugin.available=true`、`discovery.skills=21`、gates UNCONFIGURED/NOT_CHECKED。安装的 `.forgeflow/dsh-plugin` 7 个文件与 `source/dsh-plugin` 逐字节一致；安装后的 `.forgeflow/ff-reviewer.mjs` 与源文件 sha256 前 12 位一致（`d92a7f8df70d`）。
 - 注册：profile `~/.dsh/profiles/desktop` 增加 `@local/forgeflow-dsh` 依赖、bundle 与 `node_modules/@local/forgeflow-dsh` Junction，其他条目未动；写前备份 `.bak-<ts>`；从 profile 目录 `import("@local/forgeflow-dsh")` 实测解析成功（name/inject/apply 均正确）；`--remove` 可完全撤销（有测试，未对真实 profile 执行）。
-- 全量回归与静态包：见 `evidence/regression-20261102.md`（插件 48、安装器 95/94 pass/1 skip、workflow 73、intent 4，合计 220 用例 0 失败 3 skip；0.9.9 的最终数字以 `_verification/client-hardening-20261102/` 日志为准）。0.9.10 只新增评测场景与证据，测试数不变（插件 48、workflow 73、intent 4），静态包在**所有** `source/` 编辑完成后重新生成：MANIFEST files=1535、validate passed（skills 21 / links 160 / source_hashes 25 / scenarios 46）、sealed mutation 14 例通过；payload 哈希与条目数只记日志，不写文档（避免“写文档→包过期”的循环）。
+- 全量回归与静态包：见 `evidence/regression-20261102.md` 的 0.9.13 节（插件 53、安装器 97/96 pass/1 skip、workflow 73（skipped=2）、intent 4、review 12，合计 255 用例 0 失败 3 skip）。静态包在**所有** `source/` 编辑完成后重新生成：MANIFEST version=0.9.13-dsh.1、files=1547、validate passed（skills 21 / links 161 / source_hashes 25 / scenarios 46）、sealed mutation 14 例通过、payload 4 例通过；日志在 `_verification/review-backends-20261103/`，payload 哈希与条目数只记日志，不写文档（避免“写文档→包过期”的循环）。
 - L2 复测：锚点生效后 E40 3/3 PASS（6/6），见 `evidence/replay-E40-after-anchor.md`；泛化场景 E43、E44 各 3/3 PASS（6/6），见 `evidence/replay-L2-generalization.md`；反向校准场景 E45、E46 各 3/3 PASS（6/6，18/18 criteria），见 `evidence/replay-L2-calibration.md`；边界同上（n=3、同模型同日、simulated-context）。
 - 独立审核：首轮独立审核 FAIL 的 P1 项已逐条修复（`evidence/review-fixes.md`）；独立复审（全新上下文、只读）结论 **PASS（可作为候选交付）**、无阻断项，报告在 `_verification/independent-review-dsh-native-2/report.md`（工作区外，未随包）。看板在复审后新增，已由 gpt-6.1-sol（xhigh）做单独细节审查，P0/P1/P2 逐条修复对照见 `evidence/board-panel.md`。
 
@@ -111,3 +117,4 @@ L2 缺口：执行者都拒绝了“以后扩展需要”，但没有逐条给�
 - `evidence/reviewer-reuse.md`：审查复用规则、`review.json` 字段、`promote` 拒绝条件、新增测试（16 例）与“没有 token 计量/无行为对照”的边界。
 - `evidence/rsi-five-verb-demo.md`：DHAgent 真实项目上的五动词闭环、假修复被拦、真修复晋级与保留风险。
 - `evidence/dha-agent-install.md`：0.9.11 安装到 DHAgent 的真实项目验证（state/技能/doctor/RSI 版本）与未做端到端冒烟的边界。
+- `evidence/review-backends.md`：0.9.13 可配置外部审查的 runner/配置/技能/安装器改动、12 例单测、Codex 真实冒烟、Claude 未登录路径、后端覆盖 bug 与边界。

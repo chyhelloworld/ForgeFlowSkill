@@ -32,6 +32,7 @@ python -X utf8 tools/validate_package.py .
 python -X utf8 tools/test_validate_package.py .
 python -X utf8 -m unittest discover -s tools/workflow -p "test_*.py" -v
 node --test tools/installer/tests/*.test.mjs
+node --test tools/review/ff-reviewer.test.mjs
 python -X utf8 docs/build_manual_html.py
 python -X utf8 docs/check_guide.py
 ```

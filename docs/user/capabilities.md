@@ -1,6 +1,6 @@
 # 具体能力与使用场景
 
-当前源码候选 0.9.12-dsh.1，21 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
+当前源码候选 0.9.13-dsh.1，21 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
 
 需要从业务流程解释模块边界时，可独立选择 ff-architecture-derive 的[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立；本候选共21项技能，不增加必经流程。
 
@@ -15,6 +15,7 @@ FF 帮助 AI 执行者沿同一份需求和项目事实工作：澄清目标、�
 | **0.7：阶段审核与证据摘要** | 想知道当前做到了哪一步、缺什么证据，而不只看“任务已勾选” | 要求把必须交付项、预期价值、证据与假设分开；以核心目标/主要流程、计划、代码三类审核给出短结论、风险、缺口和下一步。可选工具核对已导出的审核/证据索引，输出 `RECORDED`、`GAPS` 或 `INVALID`；缺同版复杂度/覆盖率时标 `NOT_MEASURED` | `ff-grill`、`ff-spec`、`ff-prove`、`ff-review`、`ff-deliver`；可选 `ff-review/scripts/health.py` |
 | **0.8：变更范围与中断恢复** | 中途提新想法、明确改需求，或换会话后继续 | 在既有规则上补强：讨论不自动入计划，明确批准后只更新受影响规格/任务/测试/依赖；区分现行、活动和历史资料。恢复工具检查当前目标、依赖哈希和完成回执，逐动作输出 `SKIP_COMPLETED`、`VERIFY_CURRENT_AUTHORITY` 或 `INSPECT` | `ff-spec`、`ff-plan`、`ff-intake`、`ff-handoff`；新增可选 `ff-handoff/scripts/resume.py` |
 | **0.9：完整旅程与同版交互证据** | 做界面设计、验证一条主要用户路径，或检查设计与实现是否对得上 | 实现前先写视觉方向、从入口到结果的主要步骤和关键返回/失败状态；预期与实测分开。工具核对当前设计/源码、步骤 ID/顺序/状态连续性、操作轨迹和 UI 截图引用，输出 `OBSERVED`、`GAPS` 或 `INVALID` | `ff-design`、`ff-review`；新增可选 `ff-design/scripts/journey.py` |
+| **0.9.13：可配置外部独立审查** | 想让独立审查走 Codex 或 Claude，并能指定模型和思考强度 | 用 `openspec/ff-review.json` 配置 `backend`/`model`/`reasoning`/`enabled`/`timeoutSeconds`；`.forgeflow/ff-reviewer.mjs check` 核对配置与 CLI，`run --brief <材料> --out <记录>` 只读调用并保留原始回答与 L2 记录。未配置或 disabled 时仍用原独立子代理流程；失败不降级为自审 | `ff-review` + `.forgeflow/ff-reviewer.mjs`；见[外部独立审查](review-backends.md) |
 
 这三版没有增加技能数量或另建计划数据库。上表的流程要求写在技能提示词中，由执行者遵守；Python 工具只自动核对所列记录，不负责决定需求、执行恢复或操作浏览器。它们不是新的 `ff-spec health/resume/journey` 子命令。
 

@@ -32,6 +32,12 @@
 
 每类给结论（PASS / FAIL / 待验证 / 有理由的 N/A）、版本/范围、证据、重要缺口与下一步，可三行完成。关键未知不能判通过，也不能平均三类结论抵消主流程失败。缺总需求验收状态或账本时，目标/主要流程类只能判“待验证”，并列明缺哪一项。NOT_MEASURED 是计量状态，不能自动代表整类通过或失败。技术通过、用户接受、合并和发布分别判断。
 
+## 外部审查后端（可选）
+
+项目有 `openspec/ff-review.json` 且 `enabled` 不为 false 时，独立审查优先用已安装的 `.forgeflow/ff-reviewer.mjs`，而不是临时起子代理：先 `check --json` 看配置、后端可执行文件和认证提示，再 `run --brief <审查材料> --out <记录基名>`。配置字段 `backend`（codex|claude）、`model`、`reasoning`（codex: minimal/low/medium/high/xhigh；claude: low/medium/high/xhigh/max）、`enabled`、`timeoutSeconds`、`command`；环境变量 `FF_REVIEW_BACKEND/MODEL/REASONING/TIMEOUT_SECONDS/COMMAND` 和 run 参数可覆盖。run 写 `<out>.json`（含 L2、brief/config 哈希、命令、退出码、verdict/findings、usage、未验证项）、`<out>.md` 原始回答及 stdout/stderr；失败或超时仍保留记录并非零退出，不自动 fallback 到同模型自审，也不自动接受结论。
+
+外部后端的只读限制靠 `codex --sandbox read-only` / `claude --permission-mode plan --permission-prompts none --bare --strict-mcp-config`，ff-reviewer 不验证后端真的没写文件；`independence: "L2"` 是配置声明的异模型，不是密码学证明。审查者可能因本机 MCP/沙箱环境读不到文件；brief 内嵌原文仍可审，但文件读取成功必须标未证明。没有配置、配置为 disabled 或后端不可用时才回到原独立子代理/新上下文流程；后端失败写 NOT_RUN/待验证，不改写成自审通过。修复复核用同一后端时重新生成 brief、附上一份记录和未关闭发现编号，不因“同一个 CLI”省略复核。
+
 ## 修复、分流与复用
 
 发现交回实施者/相应负责人。修复后仅复核已发现问题、受影响依赖及必要回归，保留原失败；与当前目标无关的非阻断建议进待办，不扩大整改。复核中发现新关键缺陷仍阻断；轮次或 token 上限不能强制放行。相关范围扩大须说明影响依据，不能把局部复核误成只看改过的行。

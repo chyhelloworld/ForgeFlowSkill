@@ -24,7 +24,7 @@ node .forgeflow/ff-spec.mjs --help
 
 `--build` 明确允许安装器构建本地 CLI。**未发布到 npm registry**；不要假定存在可直接安装的公开 FF npm 版本。原生 Windows full 构建/安装已在 0.8/0.9 冻结提交执行，具体版本与哈希见对应[版本与证据](../archive/README.md)。
 
-安装内容位于项目的 `.forgeflow/` 与 `.agents/skills/`。所有宿主都会同时安装独立的 RSI 证据工具 `node .forgeflow/ff-rsi.mjs`（见 [FF RSI 证据工具](rsi.md)）；它只冻结/对照/记录，不激活版本。full 构建的内层缓存和临时数据仍在项目 `.forgeflow/install/` 下；上述外层设置不保证所有系统工具都不写项目外文件。工具源无需复制进每个项目，也不替换全局 OpenSpec。
+安装内容位于项目的 `.forgeflow/` 与 `.agents/skills/`。所有宿主都会同时安装独立的 RSI 证据工具 `node .forgeflow/ff-rsi.mjs`（见 [FF RSI 证据工具](rsi.md)），以及可选的外部审查调用器 `node .forgeflow/ff-reviewer.mjs`（见 [可配置的外部独立审查](review-backends.md)；没有 `openspec/ff-review.json` 时不会调用任何后端）。RSI 只冻结/对照/记录，不激活版本。full 构建的内层缓存和临时数据仍在项目 `.forgeflow/install/` 下；上述外层设置不保证所有系统工具都不写项目外文件。工具源无需复制进每个项目，也不替换全局 OpenSpec。
 
 只要技能、暂不需要 CLI 门禁：将 `--mode full --build` 改为 `--mode skills-only`。此模式的 doctor 和 CLI 会返回 **BLOCKED**。Claude Code 将宿主参数改为 `--host claude`，技能安装至 `.claude/skills/`，原生 ff-intake 仅有人工空白项目的[限定成功回执](../../iterations/0.9.3-dual-host.1/native-host-validation.md)，不代表所有技能或实际业务验收。CodeGraph 默认关闭。
 

@@ -146,3 +146,26 @@
 安装与运行时（已执行）：本工作区 install `--host dsh --mode full --build` → `INSTALLED 0.9.12-dsh.1`；`state.json` version=0.9.12-dsh.1、files=196（文件集与 0.9.11 相同，仅版本与内容更新）；`node .forgeflow/ff-rsi.mjs --version`=0.9.12-dsh.1；`ff-spec.mjs --version`=0.9.12-dsh.1；doctor `RUNTIME_READY`、handshake `MATCH`（skills/state/cli 均 0.9.12-dsh.1）、`plugin.available=true`、`discovery.skills=21`；`register.mjs --global --json` 返回 `changed=[]`（幂等；profile 的 `node_modules/@local/forgeflow-dsh` 链接到 `%USERPROFILE%/.dsh/plugins/forgeflow-dsh` 稳定副本，该副本与项目 `.forgeflow/dsh-plugin` 逐字节一致）。不带 `--global` 时脚本会因链接指向全局副本而拒绝覆盖并退出 2，这是防覆盖设计，不是故障；要更新稳定副本须显式加 `--global`。DHAgent 本轮未重装：插件与工具代码未变，0.9.11 的安装验证仍适用；`ff-rsi.mjs` 版本号会在下次安装时同步。
 
 未运行 / 未证明：本轮未重启 DSH（插件与看板代码未变，0.9.9 的运行时验收仍适用）；审查复用没有行为对照评测，也没有真实 token 计量；`reviewMode`/`reviewRound` 是声明字段，不是密码学证明。
+
+## 0.9.13-dsh.1 可配置外部审查后的重新回归（2026-11-03 15:45 起）
+
+本轮改动：新增 `tools/review/ff-reviewer.mjs`（12 例测试）、`docs/user/review-backends.md`、`ff-review/SKILL.md` 与 `references/reviews.md` 接线、安装器 `state.mjs`/`install.mjs` 的受管 `.forgeflow/ff-reviewer.mjs` 与 `dsh-host`/`windows` 测试、版本 0.9.12-dsh.1 → 0.9.13-dsh.1（19 个 SKILL.md、package.json、README、docs/user、`docs/guide-qa.json`、`tools/rsi/ff-rsi.mjs`），以及 `evidence/review-backends.md`。插件代码未改，插件版本保持 0.2.0。日志目录 `_verification/review-backends-20261103/`。
+
+| 步骤 | 退出码 | 计数 |
+| --- | --- | --- |
+| review-tool-tests（`tools/review/ff-reviewer.test.mjs`） | 0 | 12 tests / 12 pass / 0 fail |
+| plugin-tests（board/client/plugin/register） | 0 | 53 tests / 53 pass / 0 fail |
+| installer-tests（`FF_TEST_ROOT=_verify_tmp/ff-test-root-review-backends`） | 0 | 97 tests / 96 pass / 1 skip / 0 fail（`installer-tests-2.log`；新增 ff-reviewer 安装用例） |
+| python-workflow-unittest | 0 | 73 tests OK，skipped=2（`workflow.log`） |
+| intent-contract | 0 | 4 tests OK |
+| check_guide | 0 | 重写 `docs/guide-qa.json`（version=0.9.13-dsh.1，21 技能目录） |
+| pack-release | 0 | MANIFEST version=0.9.13-dsh.1、status=candidate-not-published、manifest_files=1547 |
+| validate_package | 0 | passed=true，errors=[]；skills=21、local_links=161、source_hashes=25、scenarios=46（`validate2.log`） |
+
+合计 **255 个用例 / 0 失败 / 3 skip**（12+53+97+73+16+4）；3 个 skip 仍是无 Developer Mode 的 symlink 权限用例。
+
+安装与运行时（已执行）：本工作区 install `--host dsh --mode full --build` → `INSTALLED 0.9.13-dsh.1`（`install.log`）；`state.json` version=0.9.13-dsh.1、files=197（0.9.12 的 196 + `.forgeflow/ff-reviewer.mjs`）；`node .forgeflow/ff-spec.mjs --version` 与 `node .forgeflow/ff-reviewer.mjs version` 均为 0.9.13-dsh.1；doctor `RUNTIME_READY` / runtime `READY` / version=0.9.13-dsh.1 / host=dsh / mode=full，plugin.available=true、client=true、generator=true，discovery root=`.dsh/skills` skills=21，handshake skills=state=cli=0.9.13-dsh.1 verdict=MATCH，gates configuration=UNCONFIGURED、evidence=NOT_CHECKED、checked=0（`doctor.txt`）。`register.mjs --global --json` 返回 `changed=[]`（幂等）；安装后的 `.forgeflow/ff-reviewer.mjs` 与源文件 sha256 前 12 位一致（`d92a7f8df70d`）。
+
+最终封包后的 `test_validate_package`（sealed 14 例）与 `payload.test.mjs` 在本节写入后另行执行，日志为 `sealed-final.log`、`payload-final.log`；本节不内联其数字，避免文档改动再次使封包过期。
+
+未运行 / 未证明：本轮**未重启 DSH**；runner 与技能文本需重启后才进入新会话（插件代码未变，0.9.9 的插件运行时验收仍适用）。Claude Code 本机未登录，只验证了“可发现、可调用、失败被记录”，没有成功审查样本；Codex 冒烟因本机 `exec_command`/MCP 环境失败未能读取文件，brief 内嵌原文可用但文件读取未证明；`independence:"L2"` 是配置声明而非模型身份证明；没有真实 token/费用计量。

@@ -28,7 +28,7 @@ RSI（递归自我改进）在本仓库不是自动循环，也不是会自己�
 
 ```powershell
 # 1. 冻结：失败样本必须是真实可复现的，正常对照用来发现误伤
-node .forgeflow/ff-rsi.mjs freeze --dir .forgeflow/rsi/demo --target ff-retro --version 0.9.12-dsh.1 \
+node .forgeflow/ff-rsi.mjs freeze --dir .forgeflow/rsi/demo --target ff-retro --version 0.9.13-dsh.1 \
   --base path/to/old-skill --fail evidence/fail.json --normal evidence/normal.json \
   --request-quote "让 Retro 能记录一次有界改进" --request-ref m04592 \
   --existing "ff-receipt snapshot" --why-insufficient "不绑定执行者原始回答" \

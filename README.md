@@ -6,9 +6,11 @@
 
 `0.9.12-dsh.1` 在 0.9.7 的 DSH 宿主之上补齐 DSH 原生接入面：新增 `dsh-plugin/` 原生插件，把 `ff_status`、`ff_gate` 暴露为 DSH 工具，`/ff-status` 为斜杠命令，向 `systemPrompt` 注册四层失效常驻锚点，并在 `tools/pre-execute` 对 `pwsh`/`bash` 命令位置上的 `ff-spec.mjs archive` 做门禁守卫（blocked/invalid 拒绝，只读 `--help`/`--ff-disposition canceled|rejected` 放行，可 `FF_ALLOW_UNGATED=1` 显式跳过）；插件随安装产物复制到 `.forgeflow/dsh-plugin`，用 `register.mjs` 显式注册到某个 DSH profile（备份、幂等、可 `--remove` 撤销，并建立 profile 内 `node_modules/@local/forgeflow-dsh` 链接），需重启 DSH 生效；同一插件还提供只读看板：`generate-board.mjs` 把需求/模块映射与 OpenSpec 勾选状态写成 `.forgeflow/board.json` 快照，左侧栏 `ForgeFlow 看板` 展示需求、架构参考、模块与任务进度。同一版本把四层 AI 失效自检写入 `INTENT-LOOP` 常驻契约与 `ff-review` 审核规则，并新增 E39–E44 评测场景（E43/E44 为 L2 过度防御的泛化场景：无失败样本即引入缓存/队列/读写分离，以及为一次性脚本搭框架）。
 
+`0.9.13-dsh.1` 增加**可配置的外部独立审查**：full 安装会写入 `.forgeflow/ff-reviewer.mjs`，项目在 `openspec/ff-review.json` 中选择 `backend`（codex 或 claude）、`model`、`reasoning`（思考强度）、`enabled` 与超时；`ff-reviewer check` 先核对配置/CLI/认证提示，`run --brief <材料> --out <记录基名>` 只读调用后端并写出 `<out>.json`（含 L2 声明、brief/config 哈希、命令、退出码、verdict/findings、usage 与未验证项）和原始回答。没有配置或 disabled 时仍走原独立子代理流程；后端失败保留记录并非零退出，不自动降级为自审。详见[可配置的外部独立审查](docs/user/review-backends.md)。
+
 面向 AI 编程的轻量工作流技能集：澄清需求、拆分任务、按需设计与实现、独立审核和中断接手，帮助人核对 AI 是否仍沿着当前目标工作。
 
-当前为 **0.9.12-dsh.1 源码候选、21 项技能**，工作分支 `feat/dsh-adapter`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.9.13-dsh.1 源码候选、21 项技能**，工作分支 `feat/dsh-adapter`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)：目标与受众、疑虑与真实证据、先确认纲要再逐节实现；不改变后台/App业务界面和各项目品牌，不增加技能或运行时。
 
@@ -19,6 +21,7 @@ ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)�
 | 安装、选择 full / skills-only、首次使用与恢复 | [安装与首次使用](docs/user/install.md) |
 | 看具体能力、使用场景、21 项技能与真实命令 | [能力与使用场景](docs/user/capabilities.md) |
 | 在 Codex 原生目标中使用 FF | [Codex Goal 使用与边界](docs/user/codex-goal.md) |
+| 配置 Codex/Claude 做独立审查，选模型与思考强度 | [可配置的外部独立审查](docs/user/review-backends.md) |
 | 从零启动新项目 | [新项目流程](docs/FF-中文使用手册.md#新项目如何从想法走到交付) |
 | 接手旧项目、半成品或中断任务 | [旧项目流程](docs/FF-中文使用手册.md#旧项目或半成品项目怎么接手) |
 | 开发、测试、打包和维护 FF | [开发维护](docs/maintainers/development.md) |

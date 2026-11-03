@@ -12,7 +12,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 
-export const VERSION = '0.9.12-dsh.1';
+export const VERSION = '0.9.13-dsh.1';
 const VERDICTS = ['PASS', 'FAIL', 'SKIP', 'NOT_RUN', 'NO_EFFECT'];
 const NL = String.fromCharCode(10);
 

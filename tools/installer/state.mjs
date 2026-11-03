@@ -15,6 +15,8 @@ export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', '
 // sharedFiles stays unchanged so existing schema-1/2 state validation keeps working.
 // The RSI evidence tool is host-independent; install it next to ff-spec.
 export const rsiFile = '.forgeflow/ff-rsi.mjs';
+// Optional external-review runner: host-independent, installed next to ff-spec.
+export const reviewFile = '.forgeflow/ff-reviewer.mjs';
 export const pluginDir = '.forgeflow/dsh-plugin';
 export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
@@ -41,6 +43,7 @@ export function owned(name) {
   if (/^\.(agents|claude|dsh)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
   if (pluginFiles.includes(name)) return;
   if (name === rsiFile) return;
+  if (name === reviewFile) return;
   if (sharedFiles.includes(name)) return;
   fail('Invalid managed path');
 }
