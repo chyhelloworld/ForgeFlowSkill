@@ -6,7 +6,7 @@ import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main, parse } from '../../../installer.mjs';
-import { install, doctor, buildDependencies } from '../install.mjs';
+import { install, doctor, buildDependencies, buildArguments } from '../install.mjs';
 import { verifySource } from '../source.mjs';
 import { safe, checkedRoot, relative, digest, sha, json, regularFiles } from '../files.mjs';
 import { loadState, recover, rollback, commit, preflight } from '../transaction.mjs';
@@ -18,7 +18,7 @@ const options = { host: 'codex', mode: 'skills-only' };
 const setup = (host = 'codex') => { const p = project(); install(p, source, { ...options, host }); return p; };
 const cli = (p, script) => spawnSync(process.execPath, [path.join(p, script), '--help'], { cwd: p, encoding: 'utf8' });
 function fixture(version = '0.6.0-experimental.7') {
-  const p = project(); fs.cpSync(source, p, { recursive: true, ...(process.platform === 'win32' ? { filter: () => true } : {}) });
+  const p = project(); fs.cpSync(source, p, { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
   assert.ok(fs.existsSync(path.join(p, 'tools/openspec/upstream.json')), 'fixture copy must include upstream.json in a Chinese path');
   const manifest = JSON.parse(fs.readFileSync(path.join(p, 'MANIFEST.json')));
   manifest.version = version;
@@ -26,6 +26,9 @@ function fixture(version = '0.6.0-experimental.7') {
   manifest.files['skills/ff-spec/SKILL.md'] = sha(fs.readFileSync(path.join(p, 'skills/ff-spec/SKILL.md')));
   json(path.join(p, 'MANIFEST.json'), manifest); return p;
 }
+test('release builds carry the pinned source version into the staged build', () => {
+  assert.deepEqual(buildArguments({ version: '0.9.7-dsh.1' }), ['--source-version=0.9.7-dsh.1']);
+});
 test('cold install: Chinese/space path, 21 skills, binding, honest blocked runtime', () => {
   const p = setup(); const state = loadState(p);
   assert.equal(fs.readdirSync(path.join(p, '.agents/skills')).length, 21);

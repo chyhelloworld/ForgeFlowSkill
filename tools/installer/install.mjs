@@ -6,7 +6,7 @@ import { safe, fail, read, json, sha } from './files.mjs';
 import { verifySource, skillPayload, skillIdentity, checkSkillPins, compareStableSkillVersions } from './source.mjs';
 import { inventory, runNode, checkRelease, diagnose, environment } from './runtime.mjs';
 import { control, loadState, preflight, checkOwned, commit } from './transaction.mjs';
-import { hostsOf, normalizeHosts, fileHost, hostBase } from './state.mjs';
+import { hostsOf, normalizeHosts, fileHost, hostBase, pluginDir, pluginFiles, rsiFile, reviewFile } from './state.mjs';
 import { verifyReusableBuild } from '../openspec/ff-build.mjs';
 export function dependencies() {
   const [major, minor] = process.versions.node.split('.').map(Number);
@@ -24,11 +24,29 @@ export function buildDependencies(project) {
   }
   return result;
 }
-function bindings(source, pin, files) {
+// The optional DSH plugin ships inside source/dsh-plugin. Older payloads may not
+// contain it: skip silently so a full DSH install still works, and never fail on it.
+function pluginBundle(source, files) {
+  const dir = path.join(source, 'dsh-plugin');
+  if (!fs.existsSync(path.join(dir, 'package.json'))) return files;
+  for (const name of pluginFiles) {
+    const file = path.join(dir, path.basename(name));
+    if (fs.existsSync(file)) files[name] = fs.readFileSync(file);
+  }
+  return files;
+}
+function bindings(source, pin, files, selected = []) {
   const expected = JSON.stringify({ version: pin.version, hash: pin.hash });
   files['.forgeflow/ff-spec.mjs'] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { launch } from './install/runtime.mjs';\nlaunch(fileURLToPath(new URL('../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
   for (const name of ['runtime', 'state', 'files']) files[`${control}/${name}.mjs`] = fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`));
+  files[rsiFile] = fs.readFileSync(path.join(source, 'tools/rsi/ff-rsi.mjs'));
+  // Older payloads (before 0.9.13) do not contain tools/review; skip the binding there
+  // so partial fixtures and legacy payloads still install. Full 0.9.13+ sources ship it,
+  // and the DSH host test asserts it is installed byte-for-byte.
+  const reviewSource = path.join(source, 'tools/review/ff-reviewer.mjs');
+  if (fs.existsSync(reviewSource)) files[reviewFile] = fs.readFileSync(reviewSource);
   files[`${control}/doctor.mjs`] = Buffer.from(`import { fileURLToPath } from 'node:url';\nimport { doctorMain } from './runtime.mjs';\ndoctorMain(fileURLToPath(new URL('../../', import.meta.url)), ${expected}, process.argv.slice(2));\n`);
+  if (selected.includes('dsh')) pluginBundle(source, files);
   return files;
 }
 // A cleanup capability belongs only to this newly created stage, never a caller path.
@@ -68,6 +86,11 @@ export function createReleaseStage(project) {
   }
   return { stage, prepareBootstrapCleanup };
 }
+// The release stage copies only tools/openspec, so the staged build cannot read the
+// source package.json two levels up; pass the version that verifySource already pinned.
+export function buildArguments(pin) {
+  return ['--source-version=' + pin.version];
+}
 function release(project, source, pin, mode, build, reuse) {
   const id = `${pin.version}-${pin.hash.slice(0, 16)}-${mode}`;
   const name = `releases/${id}`;
@@ -83,7 +106,7 @@ function release(project, source, pin, mode, build, reuse) {
   const src = path.join(source, 'tools/openspec');
   fs.cpSync(src, path.join(stage, 'tools/openspec'), { recursive: true, errorOnExist: true,
     // The callback avoids Node 24's Windows Unicode-path native-copy omission.
-    filter: () => true,
+    filter: name => !['.build', '.bootstrap'].includes(path.basename(name)),
   });
   if (mode === 'full') {
     if (!build && !reuse) fail('full requires --build or --reuse-build');
@@ -91,11 +114,11 @@ function release(project, source, pin, mode, build, reuse) {
     if (reuse) {
       const reusable = path.resolve(reuse);
       if (JSON.stringify(read(path.join(reusable, 'upstream.json'))) !== JSON.stringify(read(path.join(src, 'upstream.json')))) fail('Reusable build source pin mismatch');
-      const built = verifyReusableBuild(reusable);
+      const built = verifyReusableBuild(reusable, pin.version);
       fs.cpSync(built, path.join(stage, 'tools/openspec/.build'), { recursive: true, filter: () => true, verbatimSymlinks: true });
-      verifyReusableBuild(path.join(stage, 'tools/openspec'));
+      verifyReusableBuild(path.join(stage, 'tools/openspec'), pin.version);
     } else {
-      const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), []);
+      const result = runNode(project, path.join(stage, 'tools/openspec/build.mjs'), buildArguments(pin));
       if (result.status !== 0) fail('Build failed; staged diagnostic output retained inside project; active install unchanged');
     }
     const probe = runNode(project, path.join(stage, 'tools/openspec/ff-spec.mjs'), ['--help'], true);
@@ -115,12 +138,12 @@ export function install(project, source, options) {
   checkSkillPins(source, pin, before);
   if (options.host && options.hosts) fail('--host conflicts with --hosts');
   const selected = normalizeHosts(options.hosts ?? [options.host]);
-  if (options.hosts && selected.length !== 2) fail('--hosts requires codex,claude');
+  if (options.hosts && selected.length < 2) fail('--hosts requires at least two hosts (codex,claude,dsh)');
   if (!['full', 'skills-only'].includes(options.mode)) fail('Invalid install mode');
   if (options['reuse-build'] && (options.build || options.mode !== 'full')) fail('--reuse-build requires full and conflicts with --build');
   if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
-  if (!options.hosts && before && hostsOf(before).length > 1) fail('Dual-host install requires --hosts codex,claude; use remove-host explicitly to remove one');
-  const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))));
+  if (!options.hosts && before && hostsOf(before).length > 1) fail(`Multi-host install (${hostsOf(before).join(',')}) requires --hosts with every host you keep; use remove-host explicitly to remove one`);
+  const files = bindings(source, pin, Object.assign({}, ...selected.map(host => skillPayload(source, pin, host))), selected);
   preflight(project, before, files);
   if (before) checkRelease(project, before);
   if (!Object.keys(before?.skillOverrides ?? {}).length && before?.sourceHash === pin.hash && JSON.stringify(hostsOf(before)) === JSON.stringify(selected) && before.mode === options.mode) {
@@ -136,7 +159,7 @@ export function install(project, source, options) {
   const next = { ...hostState, version: pin.version, sourceHash: pin.hash, mode: options.mode, ...runtime };
   commit(project, before, next, files);
   return { status: options.mode === 'full' ? 'INSTALLED' : 'INSTALLED_SKILLS_ONLY_GATES_BLOCKED', version: pin.version, ...(next.schema === 1 ? { host: selected[0] } : {}), hosts: selected, mode: options.mode,
-    gitGuidance: { generated: ['/.forgeflow/install/', '/.forgeflow/ff-spec.mjs', ...selected.flatMap(host => pin.names.map(name => `/${host === 'codex' ? '.agents' : '.claude'}/skills/${name}/`))],
+    gitGuidance: { generated: ['/.forgeflow/install/', '/.forgeflow/ff-spec.mjs', '/.forgeflow/ff-rsi.mjs', '/.forgeflow/ff-reviewer.mjs', ...(selected.includes('dsh') ? [`/${pluginDir}/`] : []), ...selected.flatMap(host => pin.names.map(name => `/${hostBase(host).split('/')[0]}/skills/${name}/`))],
       versionControl: ['openspec/ff-policy.json', 'openspec/changes/<change>/design.md', 'openspec/changes/<change>/tasks.md', 'openspec/changes/<change>/ff-artifacts.json', '.gitattributes'],
       note: 'Choose whether to ignore generated entries or vendor them. No ignore file was modified. Keep project policy, plans and evidence; never ignore all of .forgeflow.' } };
 }

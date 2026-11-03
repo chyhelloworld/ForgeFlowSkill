@@ -1,0 +1,12 @@
+# Bundle patch for @local/forgeflow-dsh.
+#
+# 只有一个插入行；要改配置就在 profile 的 cordis.patch.yml 里用相同 id
+# (forgeflow-dsh) 覆盖，覆盖会整份替换 config，记得写全所有字段。
+- insert:
+    - id: forgeflow-dsh
+      name: '@local/forgeflow-dsh'
+      config:
+        enabled: true
+        guardTools:
+          - pwsh
+          - bash

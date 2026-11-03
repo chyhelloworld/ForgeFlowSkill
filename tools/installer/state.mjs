@@ -1,16 +1,27 @@
 import fs from 'node:fs';
 import { safe, read, digest, fail } from './files.mjs';
 export const control = '.forgeflow/install';
-export const hosts = ['codex', 'claude'];
+export const hosts = ['codex', 'claude', 'dsh'];
+// Host skill roots. DSH ranks a project .dsh/skills above .agents/skills, so a
+// dedicated root keeps stale Codex copies from shadowing a DSH install.
+export const hostRoots = { codex: '.agents/skills', claude: '.claude/skills', dsh: '.dsh/skills' };
 export const baselineSkills = ['ff-intake', 'ff-grill', 'ff-spec', 'ff-design', 'ff-prove', 'ff-plan', 'ff-implement', 'ff-review', 'ff-deliver', 'ff-diagnose', 'ff-tdd', 'ff-handoff', 'ff-research', 'ff-retro', 'ff-writing-fragments', 'ff-writing-shape', 'ff-writing-beats'].sort();
 export const architectureSkills = [...baselineSkills, 'ff-architecture-review'].sort();
 export const derivationSkills = [...architectureSkills, 'ff-architecture-derive'].sort();
 export const diagramSkills = [...derivationSkills, 'ff-diagram'].sort();
 export const currentSkills = [...diagramSkills, 'ff-writing-document'].sort();
 export const sharedFiles = ['.forgeflow/ff-spec.mjs', ...['runtime', 'doctor', 'state', 'files'].map(name => `${control}/${name}.mjs`)];
+// Project-local copy of the optional DSH plugin (installed only with --host dsh).
+// sharedFiles stays unchanged so existing schema-1/2 state validation keeps working.
+// The RSI evidence tool is host-independent; install it next to ff-spec.
+export const rsiFile = '.forgeflow/ff-rsi.mjs';
+// Optional external-review runner: host-independent, installed next to ff-spec.
+export const reviewFile = '.forgeflow/ff-reviewer.mjs';
+export const pluginDir = '.forgeflow/dsh-plugin';
+export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
-  return host === 'codex' ? '.agents/skills' : '.claude/skills';
+  return hostRoots[host];
 }
 export function normalizeHosts(values) {
   if (!Array.isArray(values) || !values.length || values.some(host => !hosts.includes(host)) || new Set(values).size !== values.length) fail('Invalid hosts');
@@ -24,10 +35,15 @@ export function hostsOf(state) {
   return selected;
 }
 export function fileHost(name) {
+  // The plugin only makes sense for DSH, so remove-host dsh takes it along.
+  if (pluginFiles.includes(name)) return 'dsh';
   return hosts.find(host => name.startsWith(`${hostBase(host)}/`));
 }
 export function owned(name) {
-  if (/^\.(agents|claude)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
+  if (/^\.(agents|claude|dsh)\/skills\/ff-[a-z-]+\/.+/.test(name)) return;
+  if (pluginFiles.includes(name)) return;
+  if (name === rsiFile) return;
+  if (name === reviewFile) return;
   if (sharedFiles.includes(name)) return;
   fail('Invalid managed path');
 }

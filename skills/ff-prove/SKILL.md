@@ -2,9 +2,9 @@
 name: ff-prove
 description: 用有界原型、实验或源码核查回答会改变方案的实际交互、技术或架构未知。用于尚需验证方向的 ForgeFlow 工作；明确的小改动直接实现，不默认做多变体、重构或全套原型。
 metadata:
-  version: "0.9.6-derivation.4"
+  version: "0.9.13-dsh.1"
 ---
-# FF-Prove 0.9.6-derivation.4
+# FF-Prove 0.9.13-dsh.1
 
 ## 具体汇报
 

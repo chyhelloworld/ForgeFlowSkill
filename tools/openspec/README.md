@@ -18,10 +18,13 @@ Use the stable launcher from the target project's root. These canonical examples
 
 ```sh
 node tools/openspec/ff-spec.mjs status --change trial --json
+node tools/openspec/ff-spec.mjs adopt --json
 node tools/openspec/ff-spec.mjs instructions apply --change trial --json
 node tools/openspec/ff-spec.mjs validate trial --strict --json
 node tools/openspec/ff-spec.mjs archive trial --yes --json
 ```
+
+`adopt` reads the active changes and proposes a v2 policy for files that already exist in every one of them (currently `design.md` and `plan.md`); it only prints unless `--write` is passed, never replaces an existing `openspec/ff-policy.json` without `--force`, and adds a progress mapping only when each change has `tasks.md` and a document with a `## Task plan` heading. A v2 example policy ships in `templates/ff-policy.example.json` for projects that prefer to start from a file and delete what they do not need.
 
 If this checkout lives in a nested directory or a separate location, replace `tools/openspec/ff-spec.mjs` with its actual relative or absolute path. For example, from `/path/to/YourProject`, run `node /path/to/ForgeFlowSkill/tools/openspec/ff-spec.mjs status --change trial --json`. The current working directory must remain the target project; locating the launcher must not silently switch which project is read or modified. Do not invoke internal build entrypoints or fall back to a globally installed official CLI. A missing build must be rebuilt using the pinned builder first. Archive examples require the real acceptance/decision and write authorization described below; they are not authorization themselves.
 
@@ -67,15 +70,15 @@ The output includes raw-byte `policyHash`, resolved-schema `schemaHash`, per-art
   "design":{"version":"design-v1","fingerprint":"<design fingerprint>","inputs":{},
     "review":{"verdict":"pass","targetId":"design","targetVersion":"design-v1",
       "targetFingerprint":"<design fingerprint>","inputs":{},"reviewer":"explicit reviewer/tool identity",
-      "toolVersion":"review-process-v1","evidence":[{"path":"reviews/design-v1.md","sha256":"<evidence SHA256>"}]}},
+      "toolVersion":"review-process-v1","independence":"L2","evidence":[{"path":"reviews/design-v1.md","sha256":"<evidence SHA256>"}]}},
   "handoff":{"version":"handoff-v1","fingerprint":"<handoff fingerprint>","inputs":{"design":"<design fingerprint>"},
     "review":{"verdict":"pass","targetId":"handoff","targetVersion":"handoff-v1",
       "targetFingerprint":"<handoff fingerprint>","inputs":{"design":"<design fingerprint>"},"reviewer":"explicit reviewer/tool identity",
-      "toolVersion":"review-process-v1","evidence":[{"path":"reviews/handoff-v1.md","sha256":"<evidence SHA256>"}]}}
+      "toolVersion":"review-process-v1","independence":"L2","evidence":[{"path":"reviews/handoff-v1.md","sha256":"<evidence SHA256>"}]}}
 }}
 ```
 
-Fingerprint formula: `SHA256(JSON.stringify(sorted [{path,sha256}]))`, with file records sorted by path; file SHA256 is over original bytes. Schema hash is SHA256 of JSON serialization of the effective parsed schema. Policy bytes, effective schema, file sets and dependency versions must all agree. A differing `--schema` override is blocked for an adopted change. Dependency maps must exactly match declared dependencies. Review target ID, target version, fingerprint, input map, checker/tool version and nonempty evidence file hashes must match. Any supplied invalid review fails even if reviewRequired is false.
+Fingerprint formula: `SHA256(JSON.stringify(sorted [{path,sha256}]))`, with file records sorted by path; file SHA256 is over original bytes. Schema hash is SHA256 of JSON serialization of the effective parsed schema. Policy bytes, effective schema, file sets and dependency versions must all agree. A differing `--schema` override is blocked for an adopted change. New review reports must declare independence L0-L3 (same context, fresh context, different model, human); the receipt records that claim, and content hashes cannot verify it. Receipts recorded before this field existed remain readable, but they cannot be re-recorded without it. Dependency maps must exactly match declared dependencies. Review target ID, target version, fingerprint, input map, checker/tool version and nonempty evidence file hashes must match. Any supplied invalid review fails even if reviewRequired is false.
 
 A changed upstream artifact makes its dependents stale transitively, even when intermediate bytes remain unchanged. Re-reading or snapshotting never refreshes records. After a real review, deliberately update its recorded version/inputs/evidence. Format-only changes conservatively trigger re-review too. States are `missing`, `stale`, `needs-review`, `valid`; hash validity does not establish semantic quality, reviewer identity or genuine user approval.
 

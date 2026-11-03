@@ -26,7 +26,7 @@ function assertBytes(p, state) {
 }
 function newer() {
   const candidate = project();
-  fs.cpSync(source, candidate, { recursive: true, filter: name => path.basename(name) !== '.git' });
+  fs.cpSync(source, candidate, { recursive: true, filter: name => !['.git', '.build', '.bootstrap'].includes(path.basename(name)) });
   const manifest = JSON.parse(fs.readFileSync(path.join(candidate, 'MANIFEST.json')));
   manifest.version = '0.9.3-dual-host.2-test';
   fs.appendFileSync(path.join(candidate, 'skills/ff-spec/SKILL.md'), '\nNew fixture revision.\n');
@@ -82,7 +82,7 @@ test('explicit dual install and reentry share one release and preserve exact sta
   assert.equal(invoke(p, ['--hosts', 'claude,codex', '--mode', 'skills-only']).status, 'UNCHANGED');
   assert.deepEqual(fs.readFileSync(stateFile(p)), bytes);
   assert.equal(fs.readdirSync(path.join(p, '.forgeflow/install/releases')).length, 1);
-  assert.throws(() => single(p), /Dual-host/); assertBytes(p, state);
+  assert.throws(() => single(p), /Multi-host install \(codex,claude\)/); assertBytes(p, state);
 });
 
 test('schema 1 migrates to dual, rollback restores old state and schema 2 re-add works', () => {

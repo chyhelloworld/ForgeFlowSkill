@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "artifacts": [
+    {
+      "id": "design",
+      "changes": [
+        "*"
+      ],
+      "paths": [
+        "openspec/changes/{change}/design.md"
+      ],
+      "requires": [],
+      "reviewRequired": true
+    },
+    {
+      "id": "plan",
+      "changes": [
+        "*"
+      ],
+      "paths": [
+        "openspec/changes/{change}/plan.md"
+      ],
+      "requires": [
+        "design"
+      ],
+      "reviewRequired": true,
+      "progress": {
+        "plan": "openspec/changes/{change}/plan.md",
+        "tasks": "openspec/changes/{change}/tasks.md"
+      }
+    }
+  ]
+}

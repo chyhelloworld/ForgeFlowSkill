@@ -22,7 +22,7 @@ rc3 包名为 `@forgeflow/ff-spec`、可执行名为 `ff-spec`；用户级配置
 
 每项回执包含 `version`、当前 `fingerprint`、`inputs` 依赖摘要及适用的 `review`。产物 fingerprint 是按路径排序的 `{path,sha256}` 文件列表经 JSON 序列化后的 SHA-256，路径使用统一项目相对形式。policyHash 绑定策略原始字节；schemaHash 绑定实际解析后的 OpenSpec schema（SHA-256 of JSON.stringify），schema 变化使回执失效；已启用 FF 的变更禁止使用不同的 --schema override。每个路径 scope 至少匹配一个非空文件；拒绝符号链接。glob 仅支持 */**/?/[]，不接受花括号/括号扩展。依赖指纹变化使消费者过期，即使消费者自身字节未变。新增/删除/重命名匹配文件都应影响指纹；不能用重写回执代替实际更新和复核。
 
-独立 review 必须绑定 `targetId`、`targetVersion`、`targetFingerprint`、依赖 `inputs`，并保留 `verdict`、`reviewer`、`toolVersion` 和带路径/哈希的 `evidence`。缺失或失效回执不能通过。保留旧回执和证据的 Git 历史，不删除失败来制造通过。哈希仅说明内容绑定，不认证评审者身份、不验证证据真实、不代表用户接受。
+独立 review 必须绑定 `targetId`、`targetVersion`、`targetFingerprint`、依赖 `inputs`，并保留 `verdict`、`reviewer`、`toolVersion`、`independence`（L0 同上下文自审 / L1 新上下文同模型 / L2 异模型 / L3 人类）和带路径/哈希的 `evidence`。缺失或失效回执不能通过。保留旧回执和证据的 Git 历史，不删除失败来制造通过。哈希仅说明内容绑定，不认证评审者身份、不验证证据真实、不代表用户接受。
 
 `status`、`instructions apply`、`validate`、`archive` 使用同一个 FF evaluator。status/apply 显示 FF 有效性和阻塞；validate 与正常 archive 必须遵守 gate；显式 canceled/rejected 关闭路径见下节。OpenSpec 文件存在或任务勾选本身不足以代表 FF ready。--yes、--no-validate、--skip-specs 不绕过 FF gate。实际 CLI 参数见随包帮助，不使用旧 Python apply 的含义解释新 CLI。
 
@@ -68,10 +68,12 @@ changes 默认 `["*"]`（每个活动 change），也可显式列平面 change �
 ```sh
 node .forgeflow/ff-spec.mjs receipt snapshot my-change reviews/plan-snapshot.json
 node .forgeflow/ff-spec.mjs receipt template reviews/plan-snapshot.json reviews/plan-report.json
-# 审核者独立核对 snapshot 中的实际文件、规则与 inputs，填写报告版本、reviewer、toolVersion、pass/fail、unverified
+# 审核者独立核对 snapshot 中的实际文件、规则与 inputs，填写报告版本、reviewer、toolVersion、independence（L0/L1/L2/L3）、pass/fail、unverified
 node .forgeflow/ff-spec.mjs receipt check my-change reviews/plan-snapshot.json
 node .forgeflow/ff-spec.mjs receipt record my-change reviews/plan-snapshot.json reviews/plan-report.json
 ```
+
+已有 design.md/plan.md 的项目可先用 `node .forgeflow/ff-spec.mjs adopt` 让工具从现有文件推断 v2 policy（只打印）；`--write` 落盘并用内置求值器预览每个活动 change，已存在的 policy 需 `--force` 才替换。只有所有活动 change 都具备该文件时才登记产物；推断只承认非空普通文件，plan 文档缺少 `## Task plan` 时不登记 progress。推断不到任何产物时 `--write` 报错且不写盘，不会留下 evaluator 拒绝的空 policy。不想依赖推断时，可从 `templates/ff-policy.example.json` 复制一份 v2 policy 再按需删改；示例只演示 design/plan 与 progress 的形状，不含具体项目路径。
 
 snapshot 和 report 放产物 scope 外。快照 create-only；模板默认 not-reviewed，录入拒绝草稿，明确 fail 可录入但 gate 不通过。录入仅使用所审快照的绑定，先重新核对实际内容/规则/schema/输入和证据，再写回执；报告原始字节自动 SHA256。报告中的未验证范围是报告事实，不由工具改成“全验”。审核者只读时在报告记录固定 snapshotHash；可由生产者根据审核者已完成报告录入，不能代填结论。内容绑定不认证身份、不取代授权或语义质量判断，也不声称对恶意并发写者的事务锁。
 

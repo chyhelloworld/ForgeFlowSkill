@@ -2,9 +2,9 @@
 name: ff-tdd
 description: 对获准切片按单个可观察行为执行真实 red→green，使用独立期望与真实接口；不强制全量测试或直接重构。
 metadata:
-  version: "0.9.6-derivation.4"
+  version: "0.9.13-dsh.1"
 ---
-# ff-tdd 0.9.6-derivation.4
+# ff-tdd 0.9.13-dsh.1
 
 ## 具体汇报
 

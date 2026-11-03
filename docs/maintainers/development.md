@@ -21,7 +21,7 @@ Codex Goal 隔离候选的唯一契约是 [CODEX-GOAL-BRIDGE.md](CODEX-GOAL-BRID
 
 ## 验证入口
 
-在已核对源码根目录运行。Python 使用 UTF-8；临时目录、覆盖率、缓存与测试回执放源码外的项目内交接目录，避免写进 payload。
+在已核对源码根目录运行。Python 使用 UTF-8；临时目录、覆盖率、缓存与测试回执放源码外的项目内交接目录，避免写进 payload。测试夹具统一放 `FF_TEST_ROOT`，跑完删除该目录；Windows 直接删除含中文或空格的夹具目录可能悄悄留下整棵目录，应先重命名为 ASCII 名再删。
 
 ```powershell
 # 先指定已授权、位于源码外的测试目录；以下为本项目 E 盘示例。
@@ -32,6 +32,7 @@ python -X utf8 tools/validate_package.py .
 python -X utf8 tools/test_validate_package.py .
 python -X utf8 -m unittest discover -s tools/workflow -p "test_*.py" -v
 node --test tools/installer/tests/*.test.mjs
+node --test tools/review/ff-reviewer.test.mjs
 python -X utf8 docs/build_manual_html.py
 python -X utf8 docs/check_guide.py
 ```

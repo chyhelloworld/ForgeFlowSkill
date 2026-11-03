@@ -11,17 +11,18 @@ import { parse } from '../../../installer.mjs';
 import { loadState, rollback, recover } from '../transaction.mjs';
 import { sha, digest, json, regularFiles } from '../files.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
+const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'))).version;
 const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ff-update-skill-'));
 function source(version = '0.1.0', extra = '') {
   const dest = fs.mkdtempSync(path.join(temp, 'source-'));
-  for (const folder of ['skills', 'tools/openspec', 'tools/installer']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true });
+  for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
   fs.copyFileSync(path.join(root, 'skill-versions.json'), path.join(dest, 'skill-versions.json'));
   json(path.join(dest, 'skill-versions.json'), { ...JSON.parse(fs.readFileSync(path.join(dest, 'skill-versions.json'))), 'ff-diagram': version });
   const skill = path.join(dest, 'skills/ff-diagram/SKILL.md');
   fs.writeFileSync(skill, fs.readFileSync(skill, 'utf8').replace('version: "0.1.0"', `version: "${version}"`) + extra);
   refresh(dest); return dest;
 }
-function refresh(dest) { json(path.join(dest, 'MANIFEST.json'), {version:'0.9.6-derivation.4', files:Object.fromEntries(regularFiles(dest).filter(n => n !== 'MANIFEST.json').map(n => [n, digest(path.join(dest,n))]))}); }
+function refresh(dest) { json(path.join(dest, 'MANIFEST.json'), {version:packageVersion, files:Object.fromEntries(regularFiles(dest).filter(n => n !== 'MANIFEST.json').map(n => [n, digest(path.join(dest,n))]))}); }
 const original = source();
 const newer = source('0.1.1', '\nUpdated diagram fixture.\n');
 const opts = {host:'codex',mode:'skills-only'};

@@ -143,6 +143,8 @@ function smallSource() {
   put(path.join(root, 'tools/openspec/build.mjs'), '// Mocked subprocess fixture\n');
   put(path.join(root, 'tools/openspec/ff-spec.mjs'), '// Mocked CLI fixture\n');
   for (const name of ['runtime', 'state', 'files']) put(path.join(root, `tools/installer/${name}.mjs`), fs.readFileSync(path.join(source, `tools/installer/${name}.mjs`)));
+  put(path.join(root, 'tools/rsi/ff-rsi.mjs'), fs.readFileSync(path.join(source, 'tools/rsi/ff-rsi.mjs')));
+  put(path.join(root, 'tools/review/ff-reviewer.mjs'), fs.readFileSync(path.join(source, 'tools/review/ff-reviewer.mjs')));
   json(path.join(root, 'MANIFEST.json'), { version: '0.0.0-test', files: Object.fromEntries(regularFiles(root).map(name => [name, sha(fs.readFileSync(path.join(root, name)))])) });
   return root;
 }
@@ -159,7 +161,7 @@ function withWindowsToolchain(onBuild, onProbe, action) {
     return copy(from, to, options);
   };
   childProcess.spawnSync = (command, args) => {
-    if (args[0]?.endsWith(`${path.sep}build.mjs`)) return onBuild(path.dirname(args[0]));
+    if (args[0]?.endsWith(`${path.sep}build.mjs`)) return onBuild(path.dirname(args[0]), args);
     if (args[0]?.endsWith(`${path.sep}ff-spec.mjs`)) return onProbe(path.dirname(args[0]));
     return { status: 0, stdout: 'test version', stderr: '' }; // npm/git/tar prerequisite probes only.
   };
@@ -173,7 +175,9 @@ test('mocked Windows full install cleans only after successful build and probe, 
   const input = smallSource();
   const outside = directory();
   put(path.join(outside, 'user-note'));
-  withWindowsToolchain(home => {
+  let buildArgs;
+  withWindowsToolchain((home, args) => {
+    buildArgs = args;
     assert.ok(fs.statSync(path.join(home, 'upstream.json')).isFile());
     put(path.join(home, '.build/runtime-file'));
     put(path.join(home, '.bootstrap/generated-file'));
@@ -183,6 +187,9 @@ test('mocked Windows full install cleans only after successful build and probe, 
     assert.ok(fs.existsSync(path.join(home, '.bootstrap/generated-file')), 'cleanup must follow CLI verification');
     return { status: 0 };
   }, () => assert.equal(install(project, input, { host: 'codex', mode: 'full', build: true }).status, 'INSTALLED'));
+  // The staged build cannot read the source package.json, so the install must forward the pinned version.
+  // Assert against the source manifest, not state (which itself derives from the pin).
+  assert.ok(buildArgs.includes('--source-version=0.0.0-test'), 'build must receive --source-version=<pin.version>');
   const state = loadState(project);
   const release = path.join(project, '.forgeflow/install', state.release);
   assert.ok(fs.statSync(path.join(release, 'tools/openspec/upstream.json')).isFile());
@@ -193,7 +200,7 @@ test('mocked Windows full install cleans only after successful build and probe, 
   assert.equal(fs.existsSync(path.join(input, 'tools/openspec/.bootstrap')), false);
 });
 
-test('mocked Windows install preserves pre-existing source bootstrap and rejects before any build', () => {
+test('mocked Windows install leaves a pre-existing source bootstrap out of the release', () => {
   const project = directory();
   const input = smallSource();
   const sentinel = path.join(input, 'tools/openspec/.bootstrap/source-note');
@@ -201,16 +208,17 @@ test('mocked Windows install preserves pre-existing source bootstrap and rejects
   const manifest = JSON.parse(fs.readFileSync(path.join(input, 'MANIFEST.json'), 'utf8'));
   manifest.files['tools/openspec/.bootstrap/source-note'] = sha(fs.readFileSync(sentinel));
   json(path.join(input, 'MANIFEST.json'), manifest);
-  withWindowsToolchain(() => assert.fail('pre-existing bootstrap must block before build'),
-    () => assert.fail('pre-existing bootstrap must block before CLI probe'), () => {
-      assert.throws(() => install(project, input, { host: 'codex', mode: 'full', build: true }), /Pre-existing bootstrap/);
-    });
+  withWindowsToolchain(home => {
+    assert.equal(fs.existsSync(path.join(home, '.bootstrap')), false, 'source bootstrap must not be copied into the stage');
+    put(path.join(home, '.build/runtime-file'));
+    return { status: 0 };
+  }, () => ({ status: 0 }), () => assert.equal(install(project, input, { host: 'codex', mode: 'full', build: true }).status, 'INSTALLED'));
   assert.equal(fs.readFileSync(sentinel, 'utf8'), 'keep');
-  const control = path.join(project, '.forgeflow/install');
-  const stage = fs.readdirSync(control).find(name => name.startsWith('staging-'));
-  assert.ok(stage);
-  assert.equal(fs.readFileSync(path.join(control, stage, 'tools/openspec/.bootstrap/source-note'), 'utf8'), 'keep');
-  assert.equal(loadState(project), null);
+  const state = loadState(project);
+  const release = path.join(project, '.forgeflow/install', state.release);
+  assert.equal(fs.existsSync(bootstrapAt(release)), false);
+  assert.equal(Object.keys(state.releaseInventory).some(name => name.includes('/.bootstrap/')), false);
+  assert.equal(fs.readdirSync(path.join(project, '.forgeflow/install')).some(name => name.startsWith('staging-')), false);
 });
 
 test('edits during a mocked full build block commit and preserve active host files and state', () => {
@@ -293,7 +301,7 @@ test('standalone builder preserves an existing bootstrap and adds hoisted only o
   for (const platform of ['linux', 'darwin', 'win32']) {
     const fixture = directory();
     const home = path.join(fixture, 'tools/openspec');
-    fs.cpSync(path.join(source, 'tools/openspec'), home, { recursive: true, ...(nativePlatform === 'win32' ? { filter: () => true } : {}) });
+    fs.cpSync(path.join(source, 'tools/openspec'), home, { recursive: true, filter: name => !['.bootstrap', '.build'].includes(path.basename(name)) });
     assert.ok(fs.statSync(path.join(home, 'upstream.json')).isFile());
     put(path.join(home, '.bootstrap/user-note'));
     put(path.join(home, '.build/old-output'));
@@ -322,7 +330,7 @@ test('standalone builder preserves an existing bootstrap and adds hoisted only o
         return { status: 0 };
       };
       syncBuiltinESMExports();
-      process.argv = [process.execPath, path.join(home, 'build.mjs'), '--clean'];
+      process.argv = [process.execPath, path.join(home, 'build.mjs'), '--clean', '--source-version=9.9.9'];
       await import(pathToFileURL(path.join(home, 'build.mjs')).href);
       fs.writeFileSync(${JSON.stringify(trace)}, JSON.stringify(commands));
     `;
@@ -332,6 +340,9 @@ test('standalone builder preserves an existing bootstrap and adds hoisted only o
     assert.equal(fs.existsSync(path.join(home, '.build/old-output')), false);
     assert.equal(fs.readFileSync(path.join(outside, 'user-note'), 'utf8'), 'keep');
     assert.ok(fs.existsSync(path.join(home, '.build/FF-BUILD.json')));
+    const marker = JSON.parse(fs.readFileSync(path.join(home, '.build/FF-BUILD.json'), 'utf8'));
+    assert.equal(marker.sourceVersion, '9.9.9');
+    assert.equal(JSON.parse(fs.readFileSync(path.join(home, '.build/package.json'), 'utf8')).version, '9.9.9');
     const commands = JSON.parse(fs.readFileSync(trace, 'utf8'));
     const pnpm = commands.find(call => call.args[0]?.endsWith('pnpm.cjs'));
     assert.ok(pnpm, 'builder must invoke its pinned local pnpm');

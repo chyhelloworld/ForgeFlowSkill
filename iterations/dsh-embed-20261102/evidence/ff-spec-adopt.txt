@@ -1,0 +1,2 @@
+adopt expects an initialized project: run node .forgeflow/ff-spec.mjs init first
+EXIT=1

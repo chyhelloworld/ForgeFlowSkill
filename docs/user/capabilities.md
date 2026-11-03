@@ -1,6 +1,6 @@
 # 具体能力与使用场景
 
-当前源码候选 0.9.6-derivation.4，21 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
+当前源码候选 0.9.13-dsh.1，21 项技能；此前各轮实际验证保留其原版本范围。先按缺口选择职责，不要求跑完全部技能。安装见 [安装入口](install.md)，完整流程与图见 [中文手册](../FF-中文使用手册.md)。
 
 需要从业务流程解释模块边界时，可独立选择 ff-architecture-derive 的[可选架构推导](architecture-derivation.md)：AI动态推荐、用户选择后按需展开，允许只看一个模块。它与[架构评估](architecture-review.md)独立；本候选共21项技能，不增加必经流程。
 
@@ -15,6 +15,7 @@ FF 帮助 AI 执行者沿同一份需求和项目事实工作：澄清目标、�
 | **0.7：阶段审核与证据摘要** | 想知道当前做到了哪一步、缺什么证据，而不只看“任务已勾选” | 要求把必须交付项、预期价值、证据与假设分开；以核心目标/主要流程、计划、代码三类审核给出短结论、风险、缺口和下一步。可选工具核对已导出的审核/证据索引，输出 `RECORDED`、`GAPS` 或 `INVALID`；缺同版复杂度/覆盖率时标 `NOT_MEASURED` | `ff-grill`、`ff-spec`、`ff-prove`、`ff-review`、`ff-deliver`；可选 `ff-review/scripts/health.py` |
 | **0.8：变更范围与中断恢复** | 中途提新想法、明确改需求，或换会话后继续 | 在既有规则上补强：讨论不自动入计划，明确批准后只更新受影响规格/任务/测试/依赖；区分现行、活动和历史资料。恢复工具检查当前目标、依赖哈希和完成回执，逐动作输出 `SKIP_COMPLETED`、`VERIFY_CURRENT_AUTHORITY` 或 `INSPECT` | `ff-spec`、`ff-plan`、`ff-intake`、`ff-handoff`；新增可选 `ff-handoff/scripts/resume.py` |
 | **0.9：完整旅程与同版交互证据** | 做界面设计、验证一条主要用户路径，或检查设计与实现是否对得上 | 实现前先写视觉方向、从入口到结果的主要步骤和关键返回/失败状态；预期与实测分开。工具核对当前设计/源码、步骤 ID/顺序/状态连续性、操作轨迹和 UI 截图引用，输出 `OBSERVED`、`GAPS` 或 `INVALID` | `ff-design`、`ff-review`；新增可选 `ff-design/scripts/journey.py` |
+| **0.9.13：可配置外部独立审查** | 想让独立审查走 Codex 或 Claude，并能指定模型和思考强度 | 用 `openspec/ff-review.json` 配置 `backend`/`model`/`reasoning`/`enabled`/`timeoutSeconds`；`.forgeflow/ff-reviewer.mjs check` 核对配置与 CLI，`run --brief <材料> --out <记录>` 只读调用并保留原始回答与 L2 记录。未配置或 disabled 时仍用原独立子代理流程；失败不降级为自审 | `ff-review` + `.forgeflow/ff-reviewer.mjs`；见[外部独立审查](review-backends.md) |
 
 这三版没有增加技能数量或另建计划数据库。上表的流程要求写在技能提示词中，由执行者遵守；Python 工具只自动核对所列记录，不负责决定需求、执行恢复或操作浏览器。它们不是新的 `ff-spec health/resume/journey` 子命令。
 
@@ -59,6 +60,7 @@ FF 帮助 AI 执行者沿同一份需求和项目事实工作：澄清目标、�
 | 检查已安装 CLI 能否启动 | `node .forgeflow/install/doctor.mjs` | full 模式可探测 CLI，skills-only 会 BLOCKED；不是业务或宿主验收 |
 | 列出已有变更 | `node .forgeflow/ff-spec.mjs list --json` | 实际项目中的变更列表，不自动创建任务 |
 | 查看活动变更有效性 | `node .forgeflow/ff-spec.mjs status --change CHANGE --json` | 产物状态与适用的 FF 规则结果；`CHANGE` 要换成真实活动变更名 |
+| 推断 FF policy | `node .forgeflow/ff-spec.mjs adopt [--write]` | 依据现有 design.md/plan.md 推断 v2 policy；默认只打印，`--write` 才落盘并预览，已有 policy 需 `--force` |
 | 读取实施指导 | `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json` | 指导与就绪信息，不执行代码、不表示人类接受 |
 | 校验已有变更 | `node .forgeflow/ff-spec.mjs validate CHANGE --strict --json` | 校验发现；配置 FF policy 后按现有规则核对声明的产物/审核有效性，不证明语义正确或授权 |
 | 0.7 审核证据摘要 | `python -X utf8 .agents/skills/ff-review/scripts/health.py health-record.json --root .` | `RECORDED` / `GAPS` / `INVALID`；[索引格式](../../skills/ff-review/references/health.md)，不替代三类独立审核或真实计量 |
@@ -93,13 +95,13 @@ Python 工具的退出码均为 0（声明记录通过本工具核对）、1（�
 
 ## 用户主动复盘与 RSI 的边界
 
-可以主动请求 **`ff-retro`**，例如：“请用 ff-retro 复盘 FF 本仓库这轮实际执行中的重复代价，只提出有证据的改进候选，先不要改代码或技能。”这是技能调用请求，**没有 `ff-spec retro` 或 `ff-spec rsi` 命令**。
+可以主动请求 **`ff-retro`**，例如：“请用 ff-retro 复盘 FF 本仓库这轮实际执行中的重复代价，只提出有证据的改进候选，先不要改代码或技能。”这是技能调用请求，**没有 `ff-spec retro` 或 `ff-spec rsi` 子命令**；安装同时提供独立的证据工具 `node .forgeflow/ff-rsi.mjs`（见 [FF RSI 证据工具](rsi.md)），它只冻结/对照/记录，不激活、不递归。
 
 复盘面向已发生的项目或工作流程事件，并不限定只能分析业务项目；用户可明确指定 FF 自身的一次真实执行作为对象。输出包含事件与来源、实际代价、已有机制、少量可证伪候选、最小补丁与撤销方式，最后给保留/撤销/暂缓及证据；没有值得做的候选也可以结束。候选本身不授予修改 FF 的权限。
 
 现有[复盘技能](../../skills/ff-retro/SKILL.md)和[候选模板](../../skills/ff-retro/references/template.md)要求：已有批准范围覆盖才实施；用原失败样本与正常样本验证最小改动，再独立复核，失败则撤销自有改动。这是由执行者遵守的流程，不是自动实验引擎。
 
-如果 RSI 指“递归自我改进”，当前尚无专用递归循环、自动创建 FF 改进分支、完整自动对照评估或自动晋级为默认版本的系统。一次用户发起的复盘可以提出改进 FF 的候选，但不会递归改写自己的技能、权限或批准记录，也不会自动合并、发布。本版补充了[用户发起的 FF 改进方法](../../skills/ff-retro/references/ff-improvement.md)：冻结旧版/失败及正常控制，隔离候选，独立审核后等待用户确认晋级；没有自动递归评估引擎。可把实际验证方法记为一个[资产候选](../../iterations/0.9.1/ASSET.md)，下次相关 Intake 只读核对，不自动复制、执行或上传私有内容。
+如果 RSI 指“递归自我改进”，当前尚无专用递归循环、自动创建 FF 改进分支、完整自动对照评估或自动晋级为默认版本的系统。一次用户发起的复盘可以提出改进 FF 的候选，但不会递归改写自己的技能、权限或批准记录，也不会自动合并、发布。本版补充了[用户发起的 FF 改进方法](../../skills/ff-retro/references/ff-improvement.md)：冻结旧版/失败及正常控制，隔离候选，独立审核后等待用户确认晋级；没有自动递归评估引擎。可选证据工具 `node .forgeflow/ff-rsi.mjs` 把失败样本、正常对照、执行者原始回答、评分结论与候选版本按哈希绑定，`status` 用 `PROMOTION_RECORDED` 与 `PROMOTED` 区分“已记录”和“已生效”。可把实际验证方法记为一个[资产候选](../../iterations/0.9.1/ASSET.md)，下次相关 Intake 只读核对，不自动复制、执行或上传私有内容。
 
 
 ## 技能索引

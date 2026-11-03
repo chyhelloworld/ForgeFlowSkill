@@ -29,7 +29,7 @@ Intake 读取现行 specs、活动 change、FF policy/回执和必要历史，�
 
 ### 内容变动怎样使依赖失效
 
-每个产物用稳定 artifact ID、显式路径、版本及排序内容哈希标识，inputs 保存依赖指纹。上游规格或证据变动后，下游任务/审核即使文件未变也可能 stale。review 绑定 targetId、targetVersion、targetFingerprint、依赖 inputs，以及 reviewer、toolVersion、evidence 路径/哈希。不能重写回执让过期证据看似通过。Git 保留旧内容、拒绝与替代记录。
+每个产物用稳定 artifact ID、显式路径、版本及排序内容哈希标识，inputs 保存依赖指纹。上游规格或证据变动后，下游任务/审核即使文件未变也可能 stale。review 绑定 targetId、targetVersion、targetFingerprint、依赖 inputs，以及 reviewer、toolVersion、evidence 路径/哈希；还须显式声明 independence：L0 同上下文自审 / L1 新上下文同模型 / L2 异模型 / L3 人类，回执记录声明值，由人判断是否足够。不能重写回执让过期证据看似通过。Git 保留旧内容、拒绝与替代记录。
 
 哈希只能说明内容绑定，不能认证评审者或证据真伪，更不是用户接受。三类独立审核和真实主流程测试仍要实际执行；CRAP ≤50、目标约10，未测记 NOT_MEASURED。
 
@@ -53,6 +53,7 @@ Handoff 记录当前 specs 与 Git 版本、活动 change、策略、产物/依�
 
 - `node .forgeflow/ff-spec.mjs --help`
 - `node .forgeflow/ff-spec.mjs status --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs adopt [--write]`
 - `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json`
 - `node .forgeflow/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
 

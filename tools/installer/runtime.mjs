@@ -3,8 +3,15 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { safe, fail } from './files.mjs';
-import { control, loadState, hostsOf, checkOwned, assertIdle } from './state.mjs';
+import { control, loadState, hostsOf, checkOwned, assertIdle, hostBase, hosts, pluginDir } from './state.mjs';
 const hash = data => createHash('sha256').update(data).digest('hex');
+// DSH 插件只是项目内副本；doctor 只报告它是否存在，不读取全局 profile。
+function pluginStatus(project) {
+  const dir = path.join(project, pluginDir);
+  const present = name => fs.existsSync(path.join(dir, name));
+  const available = ['package.json', 'index.js', 'register.mjs'].every(present);
+  return { available, path: available ? pluginDir : null, client: present('client.js'), generator: present('generate-board.mjs'), note: '项目内 DSH 插件副本；register.mjs 只写显式 --profile 指定的 profile，doctor 不读取全局 profile。' };
+}
 export function inventory(root, relative = '') {
   const result = {};
   for (const item of fs.readdirSync(path.join(root, relative), { withFileTypes: true })) {
@@ -58,6 +65,35 @@ export function validateRuntime(project, expected) {
   if (state.mode !== 'full') throw new Error('BLOCKED: skills-only; FF gates unavailable. Reinstall full with --build.');
   return checkRelease(project, state, 'runtime integrity mismatch');
 }
+function skillDirs(project, root) {
+  const dir = safe(project, root);
+  if (!fs.existsSync(dir)) return 0;
+  return fs.readdirSync(dir, { withFileTypes: true }).filter(entry => entry.isDirectory() && /^ff-[a-z-]+$/.test(entry.name) && fs.existsSync(path.join(dir, entry.name, 'SKILL.md'))).length;
+}
+function installedSkillVersion(project, host) {
+  const file = safe(project, `${hostBase(host)}/ff-spec/SKILL.md`);
+  if (!fs.existsSync(file)) return null;
+  const header = fs.readFileSync(file, 'utf8').split('---')[1] ?? '';
+  return header.match(/^\s+version: "([^"]+)"\s*$/m)?.[1] ?? null;
+}
+// Report where each host actually looks, so a "loaded nothing" surprise is diagnosable.
+export function discovery(project, host) {
+  const others = hosts.filter(other => other !== host).map(other => ({ host: other, root: hostBase(other), skills: skillDirs(project, hostBase(other)) })).filter(entry => entry.skills > 0);
+  return { root: hostBase(host), skills: skillDirs(project, hostBase(host)), gitRoot: fs.existsSync(path.join(project, '.git')), projectRoot: path.resolve(project), others,
+    note: host === 'dsh' && others.length ? 'DSH ranks project .dsh/skills (100) above .agents/skills (200); other roots stay readable to their own host but cannot shadow DSH.' : undefined };
+}
+// Skills, install state and the CLI version can drift independently; name which one is stale.
+export function handshake(stateVersion, skillVersion, cliVersion) {
+  // Builds made before the version stamp carry "1.14.2-ff.<adapter>"; newer ones carry the FF version.
+  const adapterPin = cliVersion?.match(/(?:^|-)ff\.(.+)$/)?.[1] ?? null;
+  const cliMatchesState = Boolean(cliVersion) && cliVersion === stateVersion;
+  const cliNote = !cliVersion ? 'CLI 未返回版本，运行 .forgeflow/install/doctor.mjs 查看具体错误。'
+    : adapterPin && adapterPin !== stateVersion ? `CLI 内嵌 adapter 固定为 ${adapterPin}，与安装版本 ${stateVersion} 不同；这是旧构建的硬编码版本，用当前源码重建 .build 后重新安装即可对齐。`
+    : !cliMatchesState && !adapterPin ? `CLI 报告 ${cliVersion}，与安装版本 ${stateVersion} 不同；用当前源码重建 .build 后重新安装。`
+    : null;
+  return { skills: skillVersion, state: stateVersion, verdict: !skillVersion ? 'UNKNOWN' : skillVersion === stateVersion ? 'MATCH' : 'DRIFT', cli: cliVersion, cliMatchesState, adapterPin,
+    ...(cliNote ? { note: cliNote } : {}) };
+}
 export function diagnose(project, host, expected) {
   assertIdle(project);
   const state = loadState(project);
@@ -78,15 +114,23 @@ export function diagnose(project, host, expected) {
   if (JSON.stringify(loadState(project)) !== JSON.stringify(state)) fail('Install state changed during gate diagnostics; retry when idle');
   checkOwned(project, state, host);
   checkRelease(project, state, 'runtime changed during gate diagnostics');
+  const selected = host ? [host] : hostsOf(state);
+  const plugin = selected.includes('dsh') ? pluginStatus(project) : null;
+  const cliProbe = runNode(project, entry, ['--version'], true);
+  const cliVersion = cliProbe.status === 0 ? (cliProbe.stdout.trim().split(/\r?\n/)[0] || null) : null;
   return { status: gates.configuration === 'CONFIGURED' && gates.evidence === 'VALID' ? 'READY' : 'RUNTIME_READY', runtime: 'READY', gates,
-    version: state.version, ...(state.schema === 1 ? { host: state.host } : {}), hosts: host ? [host] : hostsOf(state), mode: state.mode, cli: '.forgeflow/ff-spec.mjs', note: 'Runtime, configuration and evidence are separate. No actual model invocation, semantic review or human acceptance is established.' };
+    version: state.version, ...(state.schema === 1 ? { host: state.host } : {}), hosts: selected, mode: state.mode, cli: '.forgeflow/ff-spec.mjs',
+    ...(plugin ? { plugin } : {}),
+    discovery: discovery(project, selected[0]),
+    handshake: handshake(state.version, installedSkillVersion(project, selected[0]), cliVersion),
+    note: 'Runtime, configuration and evidence are separate. No actual model invocation, semantic review or human acceptance is established.' };
 }
 export function doctorMain(project, expected, args) {
   try {
     let host;
     if (args.length === 2 && args[0] === '--host') host = args[1];
-    else if (args.length && !(args.length === 1 && args[0] === '--help')) fail('Usage: doctor.mjs [--host codex|claude]');
-    if (args.length === 2 && !['codex', 'claude'].includes(host)) fail('Unknown host');
+    else if (args.length && !(args.length === 1 && args[0] === '--help')) fail('Usage: doctor.mjs [--host codex|claude|dsh]');
+    if (args.length === 2 && !hosts.includes(host)) fail('Unknown host');
     console.log(JSON.stringify(diagnose(project, host, expected), null, 2));
   } catch (error) { console.error(error.message); process.exitCode = 1; }
 }
