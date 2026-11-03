@@ -47,7 +47,7 @@
 - `node --test tools/review/ff-reviewer.test.mjs`：**12 tests / 12 pass / 0 fail**。覆盖配置校验、覆盖优先级、backend 覆盖时丢弃旧后端的 command/model/reasoning、init/check、参数构造、prompt、JSON 解析、进程执行、fake codex 端到端记录与拒绝覆盖。
 - 定向安装器 `dsh-host.test.mjs + windows.test.mjs`（`FF_TEST_ROOT=_verify_tmp/ff-test-root-reviewer`）：**26 tests / 25 pass / 1 skip / 0 fail**；skip 为无 Developer Mode 的相对 symlink 用例。新增用例确认安装后的 runner 与源码字节一致、`version` 可执行、移除宿主后仍保留。
 - `python -X utf8 tools/workflow/test_intent_contract.py`：4 tests OK。
-- `python -X utf8 tools/validate_package.py .`：passed=true，errors=[]；skills=21、local_links=161、source_hashes=25、manifest_files=1546、scenarios=46。
+- `python -X utf8 tools/validate_package.py .`：passed=true，errors=[]；skills=21、local_links=161、source_hashes=25、scenarios=46；最终封包 manifest_files=1547（`validate-final2.log`）。
 
 ### 后端检查
 
@@ -83,6 +83,5 @@ node source/tools/review/ff-reviewer.mjs run --project <fixture> --brief openspe
 
 ## 证据位置
 
-- runner 记录：`_verify_tmp/ff-reviewer-smoke-20261103/openspec/reviews/codex-smoke-0913.json`、`claude-smoke.json`
-- 原始回答/日志：同目录 `.md`、`.stdout.txt`、`.stderr.txt`
+- runner 记录：临时 fixture `_verify_tmp/ff-reviewer-smoke-20261103`（验证后按约定清理；关键字段与原始输出摘要已写入本文件“真实 Codex 冒烟”和“Claude 未登录路径”节）
 - 测试命令与输出：`_verification/review-backends-20261103/`（最终回归日志目录）
