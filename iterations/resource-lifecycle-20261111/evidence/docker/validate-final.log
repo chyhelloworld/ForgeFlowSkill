@@ -1,0 +1,13 @@
+{
+  "kind": "static-package-validation",
+  "checks": {
+    "skills": 21,
+    "local_links": 163,
+    "source_hashes": 25,
+    "manifest_files": 1566,
+    "scenarios": 46
+  },
+  "errors": [],
+  "passed": true,
+  "limits": "Not a behavioral test, installer, license clearance or T3 integration test."
+}

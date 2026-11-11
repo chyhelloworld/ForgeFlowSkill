@@ -31,3 +31,7 @@ metadata:
 ## 按需补充
 
 暂停恢复/采纳变化读[连续性](references/continuity.md)；复杂验证、UI/动态或证据缺口读[证据](references/evidence.md)；跨模块/转向读[需求闭环](references/intent-loop.md)。发现FF policy/回执或生命周期操作读[生命周期](references/spec-lifecycle.md)，不绕过/改签；原生目标条件触发才读[Goal](references/goal-bridge.md)。同次已读且相关输入未变则复用定位。
+
+## Docker 资源（条件加载）
+
+项目实施或测试使用 Docker、Compose 或 BuildKit 时，先读[构建复用与本轮资源收尾](references/docker-resources.md)。先复用已有镜像/缓存与项目脚本，只记录并处理本轮获准临时对象；保护已有服务、数据卷及未知资源。拒绝或结果不明确须报告，不换工具绕过。未使用 Docker 时不加载、不新增机制。

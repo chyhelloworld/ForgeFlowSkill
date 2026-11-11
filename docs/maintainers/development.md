@@ -86,3 +86,7 @@ wrapper 未传文件时会枚举 installer 的 `.test.mjs`，不依赖 PowerShel
 DSH 插件经 `systemPrompt.section` 注册短锚点，宿主服务缺失或 `anchor:false` 时不注册。L3 只针对重大取舍，允许有理由的 N/A；低风险小任务不强造候选，目标已确认且无实质变化不重复确认。插件注册测试不能证明宿主把提示段传给模型。
 
 验证分开报告：`four-layer-loading.test.mjs` 是分发静态合同；真实 skills-only 安装检查只证明路径与字节；`dsh-plugin/tests/plugin.test.mjs` 是模拟宿主注册；真实 Codex/DSH 会话须另留宿主版本、实际激活入口、读取路径与原始输出，登录/宿主不可用写 BLOCKED/NOT_RUN，不由前述测试推导已加载或行为保证。源码修改后须在维护者统一冻结的新包上复跑安装检查，不能把旧 payload 配新安装器的诊断当发布包验收。
+
+## Docker 条件契约维护
+
+[DOCKER-RESOURCES.md](DOCKER-RESOURCES.md) 为维护源，ff-implement 与 ff-tdd 的本地 references/docker-resources.md 是独立安装同源副本。修改后同步两份，并运行 `node --test tools/installer/tests/docker-resources.test.mjs`。它只检查规则/分发，不启动 Docker，也不验证模型行为；真实验收按契约分别记证。
