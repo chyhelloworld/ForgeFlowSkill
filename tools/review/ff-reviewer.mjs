@@ -14,7 +14,7 @@ import os from 'node:os';
 import path from 'node:path';
 import { spawn, spawnSync } from 'node:child_process';
 
-export const VERSION = '0.9.13-dsh.1';
+export const VERSION = '0.9.14-dsh.1';
 export const DEFAULT_CONFIG = 'openspec/ff-review.json';
 export const BACKENDS = ['codex', 'claude'];
 const REASONING = {

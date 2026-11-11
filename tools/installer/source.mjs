@@ -29,6 +29,15 @@ const dshBinding = [
   '- 交付用 present 呈现关键产物，最终回复给出验收命令。',
   '- plan mode 下先 exit_plan_mode 提交计划，批准后再改文件。',
 ].join('\n');
+// Inline guidance is loaded with an activated skill, not a global Codex hook.
+const fourLayerBinding = [
+  '## 四层失效自检（已激活 FF 技能内）',
+  '实质工作按触发信号自检，不新增阶段、门禁或台账；不要求为低风险小任务制造方案比较或重复确认。',
+  '- L1 局部正确、整体偏航：切片/测试通过仍须核对总需求的当版验收证据；缺失记未知，不以通过率求和。',
+  '- L2 过度防御、复杂度失控：为假设需求新增机制前，先查等价机制与当前失败样本；纯假设暂缓，不省略必要安全、授权与数据完整性。',
+  '- L3 过早接受平庸方案：重大取舍至少比较两个候选或做一个可证伪实验；无实质替代可记 N/A 并说明，普通小任务不强造比较。',
+  '- L4 过早收敛、原始问题被替换：先核对用户原话、未解项与授权再命名或拆任务；目标不清或实质变化才补确认，不把设计讨论当实现授权。',
+].join('\n');
 export function bindingNote(host, pin, independent) {
   const run = `node .forgeflow/ff-spec.mjs`;
   const doctor = `node .forgeflow/install/doctor.mjs --host ${host}`;
@@ -36,7 +45,7 @@ export function bindingNote(host, pin, independent) {
   const head = independent
     ? `## 项目安装绑定\n独立技能 ${independent.name} ${independent.version}；技能内容 SHA256 ${independent.hash}；技能来源 manifest SHA256 ${pin.hash}。保留运行时安装版本 ${independent.runtime.version}；运行时源 manifest SHA256 ${independent.runtime.sourceHash}；宿主 ${host}。`
     : `## 项目安装绑定\n安装版本 ${pin.version}；源 manifest SHA256 ${pin.hash}；宿主 ${host}。`;
-  return ['', '', head + tail, ...(host === 'dsh' ? ['', dshBinding] : []), ''].join('\n');
+  return ['', '', head + tail, '', fourLayerBinding, ...(host === 'dsh' ? ['', dshBinding] : []), ''].join('\n');
 }
 export function skillPayload(source, pin, host, selectedSkill, installed) {
   const base = hostBase(host);

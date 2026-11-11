@@ -1,7 +1,7 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import childProcess from 'node:child_process';
 import { syncBuiltinESMExports } from 'node:module';
@@ -12,7 +12,7 @@ import { loadState } from '../transaction.mjs';
 import { json, regularFiles, sha } from '../files.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-windows-regression-'));
+const suite = createFixtureDirectory('ff-windows-regression-');
 const nativePlatform = process.platform;
 const directory = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const bootstrapAt = stage => path.join(stage, 'tools/openspec/.bootstrap');

@@ -305,3 +305,14 @@ test('commands 服务可用时注册 /ff-status，不可用时安全降级', () 
   assert.doesNotThrow(() => apply(legacy, {}));
   assert.equal(legacy.commands.length, 0);
 });
+
+test('模拟宿主锚点限定重大取舍，不把短任务升格或重复确认', () => {
+  const ctx = fakeCtx();
+  apply(ctx, {});
+  const text = ctx.sections[0].text;
+  assert.match(text, /实质工作按触发信号适用/);
+  assert.match(text, /重大取舍/);
+  assert.match(text, /无实质替代可记 N\/A/);
+  assert.match(text, /普通小任务不强造比较/);
+  assert.match(text, /目标不清或实质变化才补确认/);
+});

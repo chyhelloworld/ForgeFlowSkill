@@ -59,9 +59,9 @@ node .forgeflow/dsh-plugin/register.mjs --remove --global --purge
 ## 四层失效常驻锚点
 
 插件通过 `ctx.systemPrompt.section({ name: 'forgeflow:four-layer', order: 240 })` 把 L1 局部正确整体偏航、
-L2 过度防御复杂度失控、L3 过早接受平庸方案、L4 过早收敛原始问题被替换的触发信号写进每次会话，
+L2 过度防御复杂度失控、L3 过早接受平庸方案、L4 过早收敛原始问题被替换的触发信号注册为提示段，
 不依赖技能文件被读取。它只是一条短自检提示，完整规则仍在 FF 的 INTENT-LOOP 契约与技能文本里；
-宿主没有 `systemPrompt.section` 时静默跳过。用 `anchor: false` 可关闭。
+宿主没有 `systemPrompt.section` 时静默跳过。用 `anchor: false` 可关闭。注册成功不等于真实会话已消费，模拟宿主测试只验证注册调用；真实 DSH 加载仍需会话证据。L3 仅适用重大取舍，普通小任务不强造方案比较；目标已确认且无实质变化不重复确认。
 
 ## 看板面板（只读）
 

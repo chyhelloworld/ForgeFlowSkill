@@ -1,7 +1,7 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
@@ -11,7 +11,7 @@ import { loadState, hostBase, hostRoots, hosts, pluginDir, pluginFiles, rsiFile,
 import { discovery, handshake } from '../runtime.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-dsh-host-'));
+const suite = createFixtureDirectory('ff-dsh-host-');
 const project = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const skill = (p, host) => path.join(p, hostBase(host), 'ff-spec/SKILL.md');
 const setup = (host, mode = 'skills-only') => { const p = project(); install(p, source, { host, mode }); return p; };

@@ -21,7 +21,7 @@ Codex Goal 隔离候选的唯一契约是 [CODEX-GOAL-BRIDGE.md](CODEX-GOAL-BRID
 
 ## 验证入口
 
-在已核对源码根目录运行。Python 使用 UTF-8；临时目录、覆盖率、缓存与测试回执放源码外的项目内交接目录，避免写进 payload。测试夹具统一放 `FF_TEST_ROOT`，跑完删除该目录；Windows 直接删除含中文或空格的夹具目录可能悄悄留下整棵目录，应先重命名为 ASCII 名再删。
+在已核对源码根目录运行。Python 使用 UTF-8；临时目录、覆盖率、缓存与测试回执放源码外的项目内交接目录，避免写进 payload。installer 测试夹具统一放预先创建、绝对路径且无 symlink 祖先的 `FF_TEST_ROOT`，不再回落系统 temp。不要删除整个共享根目录。用下述 wrapper 只收尾本次创建的目录，默认预览；资源归属、失败现场、证据和备份边界见 [测试资源生命周期](TEST-RESOURCES.md)。
 
 ```powershell
 # 先指定已授权、位于源码外的测试目录；以下为本项目 E 盘示例。
@@ -31,13 +31,15 @@ $env:FF_TEST_ROOT = $ffChecks
 python -X utf8 tools/validate_package.py .
 python -X utf8 tools/test_validate_package.py .
 python -X utf8 -m unittest discover -s tools/workflow -p "test_*.py" -v
-node --test tools/installer/tests/*.test.mjs
+node tools/installer/test-workspace.mjs
+# 核对测试范围且仅需成功后回收临时夹具时，显式选择：
+# node tools/installer/test-workspace.mjs --clean-success
 node --test tools/review/ff-reviewer.test.mjs
 python -X utf8 docs/build_manual_html.py
 python -X utf8 docs/check_guide.py
 ```
 
-Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令需要传入实际文件列表，可用 `node --test (Get-ChildItem tools/installer/tests/*.test.mjs).FullName`。按改动选择检查，别为文档调整重跑无关业务。Windows symlink 权限不足要记 SKIP/NOT_RUN，不能变为 PASS；失败现场保留。缺少同版函数复杂度/覆盖率时标 NOT_MEASURED，CRAP 硬上限50、目标约10。
+wrapper 未传文件时会枚举 installer 的 `.test.mjs`，不依赖 PowerShell 展开 glob；指定子集时传实际文件路径，例如 `node tools/installer/test-workspace.mjs --clean-success -- tools/installer/tests/resource-workspace.test.mjs`。按改动选择检查，别为文档调整重跑无关业务。Windows symlink 权限不足要记 SKIP/NOT_RUN，不能变为 PASS；失败现场保留。缺少同版函数复杂度/覆盖率时标 NOT_MEASURED，CRAP 硬上限50、目标约10。
 
 架构入口分发测试要求 `FF_TEST_ROOT` 是预先创建的绝对目录；未设置时应明确失败，不能静默回落系统临时目录。其他机器应把上述示例替换为自己的已授权目录。本轮只改规则/分发时按需运行 `architecture-review.test.mjs` 与受影响检查，不据此要求全套测试或 full 构建。
 
@@ -45,9 +47,9 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 
 修改中文主手册后重新生成 HTML 并运行 guide 检查。不移动手册、docs脚本或图源以打断已有 `iterations/0.9/ui_capture.py` 路径；旧截图仍属于原冻结源码，本次 HTML 改动不能继承旧视觉验收。
 
-维护者显式执行 `python -X utf8 tools/installer/pack-release.py` 重新生成 MANIFEST/payload/校验文件，不能只改文档而留下旧包。脚本不由 npm 生命周期自动运行。现有 packer 不过滤 Git worktree 的 `.git` 指针文件；从不含 Git 元数据/缓存的干净源码导出打包，并核对文件清单，不修改源或绕过验证。
+维护者显式执行 `python -X utf8 tools/installer/pack-release.py` 重新生成 MANIFEST/payload/校验文件，不能只改文档而留下旧包。脚本不由 npm 生命周期自动运行。清单枚举对目录和文件统一应用排除规则，既过滤 `.git` 目录也过滤 worktree 的 `.git` 指针文件；仍应从不含构建缓存的干净源码导出打包，并核对文件清单，不修改源或绕过验证。
 
-新包核对版本、20技能、全部 manifest 文件、tar 条目/校验和、相对链接和实际安装入口。full需要固定依赖网络，失败保留原始结果；可分别报告 skills-only 的限域验证，不将其说成 full READY。主分支合并、版本发布和生产操作各需相应授权。
+新包核对版本、21技能、全部 manifest 文件、tar 条目/校验和、相对链接和实际安装入口。full需要固定依赖网络，失败保留原始结果；可分别报告 skills-only 的限域验证，不将其说成 full READY。主分支合并、版本发布和生产操作各需相应授权。
 
 0.9.2-goal.1 暴露了实际的提交前打包缺陷：工作区 CRLF 字节进入 manifest，但 Git 按 `.gitattributes` 提交为 LF，检出后完整性失效。0.9.2-goal.2 在保留原候选与回执后用 `write_bytes` 修正预期文本字节并重新冻结。打包前对清单文件比较 `git hash-object --path=<相对路径> <文件>` 与 `git hash-object --no-filters <文件>`，必须一致；再生成并复核 manifest/payload，不能把换行警告当无害。已有 `-text` 原始证据保持原字节，不批量归一化历史记录，也不通过改属性隐藏差异。
 
@@ -76,3 +78,11 @@ Windows PowerShell 不一定展开原生程序的 `*.test.mjs`；该 Node 命令
 用户2026-10-30明确：元能力抽象为独立skill，允许单个版本迭代。流程skill只按需引用，不复制元能力正文。ff-diagram先实行独立0.1.0版本、变更记录、测试与本地参考；本轮不重构其他19技能。
 
 版本登记是内容版本契约，不冒充升级能力。全包安装器要求完整清单，事务把缺失受管文件视为删除，且各SKILL追加全包绑定；不得仅过滤payload模拟单项升级。新增update-skill v1复用原事务，保留未选受管文件，只允许已安装ff-diagram独立更新并记录pin；不改原runtime/version/sourceHash，不新增第二所有权表。旧库存首次新增仍需完整迁移。参见[命令与边界](../user/update-skill.md)，独立目录复制验证只能证明自包含，不代替更新/回滚测试。
+
+## 四层规则的加载证据边界
+
+安装器在各宿主每个 `SKILL.md` 的项目绑定后附自包含四层短规则。Codex 的路径是 `.agents/skills/<技能>/SKILL.md`：技能被激活并读取正文时不再依赖按需读取 `references/intent-loop.md` 才看到四层；这不是全局 AGENTS 注入，也不保证未激活技能的会话已加载。独立技能更新复用同一安装绑定。
+
+DSH 插件经 `systemPrompt.section` 注册短锚点，宿主服务缺失或 `anchor:false` 时不注册。L3 只针对重大取舍，允许有理由的 N/A；低风险小任务不强造候选，目标已确认且无实质变化不重复确认。插件注册测试不能证明宿主把提示段传给模型。
+
+验证分开报告：`four-layer-loading.test.mjs` 是分发静态合同；真实 skills-only 安装检查只证明路径与字节；`dsh-plugin/tests/plugin.test.mjs` 是模拟宿主注册；真实 Codex/DSH 会话须另留宿主版本、实际激活入口、读取路径与原始输出，登录/宿主不可用写 BLOCKED/NOT_RUN，不由前述测试推导已加载或行为保证。源码修改后须在维护者统一冻结的新包上复跑安装检查，不能把旧 payload 配新安装器的诊断当发布包验收。

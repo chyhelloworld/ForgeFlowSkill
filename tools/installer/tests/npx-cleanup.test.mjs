@@ -1,15 +1,13 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const entry = fileURLToPath(new URL('../../../bin/ff-install.mjs', import.meta.url));
-const project = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'npx 中文 空格 '));
-// Windows can leave a non-ASCII fixture behind when it is removed directly; rename to ASCII first.
-process.on('exit', () => { try { const parked = path.join(path.dirname(project), 'npx-cleanup-' + process.pid); fs.renameSync(project, parked); fs.rmSync(parked, { recursive: true, force: true, maxRetries: 3 }); } catch (error) { console.error('temp cleanup failed: ' + error.message); } });
+const project = createFixtureDirectory('npx 中文 空格 ');
 const invoke = args => spawnSync(process.execPath, [entry, ...args, '--project', project], { encoding: 'utf8' });
 const temporary = () => fs.readdirSync(path.join(project, '.forgeflow/install')).filter(n => n.startsWith('source-') || n.startsWith('staging-') || n === 'lock');
 

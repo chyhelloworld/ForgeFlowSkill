@@ -1,8 +1,8 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import * as installer from '../install.mjs';
 const { install } = installer;
@@ -12,10 +12,10 @@ import { loadState, rollback, recover } from '../transaction.mjs';
 import { sha, digest, json, regularFiles } from '../files.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'))).version;
-const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'ff-update-skill-'));
+const temp = createFixtureDirectory('ff-update-skill-');
 function source(version = '0.1.0', extra = '') {
   const dest = fs.mkdtempSync(path.join(temp, 'source-'));
-  for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
+  for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.git', '.build', '.bootstrap'].includes(path.basename(name)) });
   fs.copyFileSync(path.join(root, 'skill-versions.json'), path.join(dest, 'skill-versions.json'));
   json(path.join(dest, 'skill-versions.json'), { ...JSON.parse(fs.readFileSync(path.join(dest, 'skill-versions.json'))), 'ff-diagram': version });
   const skill = path.join(dest, 'skills/ff-diagram/SKILL.md');

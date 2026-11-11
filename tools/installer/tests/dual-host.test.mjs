@@ -1,8 +1,8 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main, parse } from '../../../installer.mjs';
@@ -12,7 +12,7 @@ import { digest, json, sha } from '../files.mjs';
 import { doctorMain } from '../runtime.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-dual-host-'));
+const suite = createFixtureDirectory('ff-dual-host-');
 const project = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const stateFile = p => path.join(p, '.forgeflow/install/state.json');
 const pendingFile = p => path.join(p, '.forgeflow/install/pending.json');

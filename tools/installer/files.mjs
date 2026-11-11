@@ -37,7 +37,8 @@ export function regularFiles(root, prefix = '', skip = name => name.split('/').i
   for (const entry of fs.readdirSync(path.join(root, prefix), { withFileTypes: true })) {
     const name = prefix ? `${prefix}/${entry.name}` : entry.name;
     relative(name);
-    if (entry.isDirectory()) { if (!skip(name)) result.push(...regularFiles(root, name, skip)); }
+    if (skip(name)) continue;
+    if (entry.isDirectory()) result.push(...regularFiles(root, name, skip));
     else if (entry.isFile()) result.push(name);
     else fail(`Unsupported source entry: ${name}`);
   }

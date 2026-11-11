@@ -1,7 +1,7 @@
-import test, { after } from 'node:test';
+import { createFixtureDirectory } from '../testing/workspace.mjs';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { install } from '../install.mjs';
@@ -9,13 +9,12 @@ import { rollback } from '../transaction.mjs';
 import { loadState, hostBase, currentSkills } from '../state.mjs';
 import { json, digest, regularFiles } from '../files.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const temp = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-landing-reference-'));
-after(() => fs.rmSync(temp, { recursive: true, force: true }));
+const temp = createFixtureDirectory('ff-landing-reference-');
 const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'))).version;
 const added = ['references/landing-page.md', 'LICENSE-AI-DESIGN-SKILLS', 'LICENSE-TASTE-SKILL'];
 function source(old = false) {
  const dest = fs.mkdtempSync(path.join(temp, 'source-'));
- for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
+ for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.git', '.build', '.bootstrap'].includes(path.basename(name)) });
  fs.copyFileSync(path.join(root, 'skill-versions.json'), path.join(dest, 'skill-versions.json'));
  // Controlled previous-layout fixture, not a historical installer or native-host test.
  if (old) for (const name of added) fs.rmSync(path.join(dest, 'skills/ff-design', name));

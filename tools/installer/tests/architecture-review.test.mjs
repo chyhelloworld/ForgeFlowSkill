@@ -1,3 +1,4 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -9,9 +10,7 @@ import { install, doctor } from '../install.mjs';
 
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 // Explicit fixture root prevents tests from silently creating projects on C:.
-const base = process.env.FF_TEST_ROOT;
-if (!base || !path.isAbsolute(base)) throw new Error('FF_TEST_ROOT must name an explicit absolute fixture directory');
-const suite = fs.mkdtempSync(path.join(base, 'ff-architecture-'));
+const suite = createFixtureDirectory('ff-architecture-');
 function fixtureState(names, hosts = ['codex']) {
   const files = Object.fromEntries(sharedFiles.map(name => [name, 'a'.repeat(64)]));
   for (const host of hosts) for (const name of names) files[`${hostBase(host)}/${name}/SKILL.md`] = 'a'.repeat(64);

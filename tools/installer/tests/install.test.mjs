@@ -1,8 +1,8 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import os from 'node:os';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
 import { main, parse } from '../../../installer.mjs';
@@ -12,13 +12,13 @@ import { safe, checkedRoot, relative, digest, sha, json, regularFiles } from '..
 import { loadState, recover, rollback, commit, preflight } from '../transaction.mjs';
 import { inventory, environment, validateRuntime } from '../runtime.mjs';
 const source = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const suite = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'ff-installer-tests-'));
+const suite = createFixtureDirectory('ff-installer-tests-');
 const project = () => fs.mkdtempSync(path.join(suite, '中文 project '));
 const options = { host: 'codex', mode: 'skills-only' };
 const setup = (host = 'codex') => { const p = project(); install(p, source, { ...options, host }); return p; };
 const cli = (p, script) => spawnSync(process.execPath, [path.join(p, script), '--help'], { cwd: p, encoding: 'utf8' });
 function fixture(version = '0.6.0-experimental.7') {
-  const p = project(); fs.cpSync(source, p, { recursive: true, filter: name => !['.build', '.bootstrap'].includes(path.basename(name)) });
+  const p = project(); fs.cpSync(source, p, { recursive: true, filter: name => !['.git', '.build', '.bootstrap'].includes(path.basename(name)) });
   assert.ok(fs.existsSync(path.join(p, 'tools/openspec/upstream.json')), 'fixture copy must include upstream.json in a Chinese path');
   const manifest = JSON.parse(fs.readFileSync(path.join(p, 'MANIFEST.json')));
   manifest.version = version;
