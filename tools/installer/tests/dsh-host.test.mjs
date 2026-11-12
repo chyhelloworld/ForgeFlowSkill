@@ -96,7 +96,7 @@ test('install ships the host-independent ff-reviewer runner and keeps it when a 
   assert.deepEqual(fs.readFileSync(path.join(p, reviewFile)), fs.readFileSync(path.join(source, 'tools/review/ff-reviewer.mjs')));
   const result = spawnSync(process.execPath, [path.join(p, reviewFile), 'version'], { cwd: p, encoding: 'utf8' });
   assert.equal(result.status, 0);
-  assert.match(result.stdout, /ff-reviewer 0\.9\./);
+  assert.equal(result.stdout.trim(), 'ff-reviewer ' + JSON.parse(fs.readFileSync(path.join(source, 'package.json'), 'utf8')).version);
   const both = project();
   main(['install', '--project', both, '--hosts', 'codex,dsh', '--mode', 'skills-only']);
   removeHost(both, 'codex');

@@ -45,8 +45,12 @@ export function environment(project) {
     npm_config_globalconfig: path.join(home, 'global-npmrc'), COREPACK_HOME: path.join(home, 'corepack'),
     TMPDIR: home, TEMP: home, TMP: home, PNPM_HOME: path.join(home, 'pnpm'), DO_NOT_TRACK: '1', OPENSPEC_TELEMETRY: '0', CI: '1' };
 }
+// Only the dedicated goal-status parser may run without a full CLI build.
+export function isGoalQuery(args) {
+  return args[0] === 'status' && args[1] === '--goal';
+}
 export function runNode(project, entry, args, capture = false) {
-  const result = spawnSync(process.execPath, [entry, ...args], { cwd: project, env: environment(project),
+  const result = spawnSync(process.execPath, [entry, ...args], { cwd: project, env: isGoalQuery(args) ? Object.fromEntries(Object.entries(process.env).filter(([key]) => !/^(node_options|node_path|pythonpath|pythonhome)$/i.test(key))) : environment(project),
     shell: false, stdio: capture ? 'pipe' : 'inherit', encoding: 'utf8' });
   if (result.error) throw result.error;
   return result;
@@ -57,12 +61,12 @@ export function checkRelease(project, state, message = 'Release was modified') {
   if (JSON.stringify(inventory(root)) !== JSON.stringify(state.releaseInventory)) fail(message);
   return path.join(root, 'tools/openspec/ff-spec.mjs');
 }
-export function validateRuntime(project, expected) {
+export function validateRuntime(project, expected, args = []) {
   assertIdle(project);
   const state = loadState(project);
   if (!state) fail('Not installed');
   if (state.version !== expected.version || state.sourceHash !== expected.hash) throw new Error('BLOCKED: launcher binding mismatch');
-  if (state.mode !== 'full') throw new Error('BLOCKED: skills-only; FF gates unavailable. Reinstall full with --build.');
+  if (state.mode !== 'full' && !isGoalQuery(args)) throw new Error('BLOCKED: skills-only; FF gates unavailable. Reinstall full with --build.');
   return checkRelease(project, state, 'runtime integrity mismatch');
 }
 function skillDirs(project, root) {
@@ -137,7 +141,7 @@ export function doctorMain(project, expected, args) {
 export function launch(project, expected, args) {
   try {
     project = currentProject(process.cwd());
-    process.exitCode = runNode(project, validateRuntime(project, expected), args).status ?? 1;
+    process.exitCode = runNode(project, validateRuntime(project, expected, args), args).status ?? 1;
   }
   catch (error) { console.error(error.message); process.exitCode = 1; }
 }

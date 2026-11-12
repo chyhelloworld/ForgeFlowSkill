@@ -2,9 +2,9 @@
 name: ff-implement
 description: 执行已获准且计划有效的 ForgeFlow 纵向切片，修复与验证主要业务流程；不代替独立审核或宣布用户接受。
 metadata:
-  version: "0.9.14-dsh.1"
+  version: "0.10.0"
 ---
-# ff-implement 0.9.14-dsh.1
+# ff-implement 0.10.0
 
 ## 具体汇报
 
@@ -43,3 +43,7 @@ metadata:
 ## Docker 资源（条件加载）
 
 项目实施或测试使用 Docker、Compose 或 BuildKit 时，先读[构建复用与本轮资源收尾](references/docker-resources.md)。先复用已有镜像/缓存与项目脚本，只记录并处理本轮获准临时对象；保护已有服务、数据卷及未知资源。拒绝或结果不明确须报告，不换工具绕过。未使用 Docker 时不加载、不新增机制。
+
+## 维护真实验证路径
+
+沿用项目现有启动/测试命令与用户路径说明；改动使入口、就绪条件或结果判据变化时，更新同一处并运行受影响路径。只生成说明而未运行，标草稿/NOT_RUN；构建或 helper 通过不代替真实用户结果。没有验证入口时补最小可重跑路径，不默认新增工具、工作区或持久服务。

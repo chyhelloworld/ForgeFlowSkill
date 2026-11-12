@@ -6,6 +6,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { goalStatus } from './ff-goal-status.mjs';
 
 const usage = 'Usage: node .forgeflow/ff-spec.mjs status [--strict] [--json]';
 
@@ -98,6 +99,7 @@ function render(report) {
 }
 
 export async function statusOverview(build, argv, options = {}) {
+  if (argv.includes('--goal')) return goalStatus(argv, options);
   const out = options.out ?? process.stdout;
   const err = options.err ?? process.stderr;
   const project = path.resolve(options.project ?? process.cwd());

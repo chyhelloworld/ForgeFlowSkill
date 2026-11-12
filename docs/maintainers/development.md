@@ -90,3 +90,7 @@ DSH 插件经 `systemPrompt.section` 注册短锚点，宿主服务缺失或 `an
 ## Docker 条件契约维护
 
 [DOCKER-RESOURCES.md](DOCKER-RESOURCES.md) 为维护源，ff-implement 与 ff-tdd 的本地 references/docker-resources.md 是独立安装同源副本。修改后同步两份，并运行 `node --test tools/installer/tests/docker-resources.test.mjs`。它只检查规则/分发，不启动 Docker，也不验证模型行为；真实验收按契约分别记证。
+
+## 0.10 目标状态查询
+
+`status --goal <checkpoint> --current-goal <revision>` 是唯一允许 skills-only 安装运行的只读 CLI 分支。安装状态/启动绑定/release 完整性仍校验；其他命令继续要求 full。该路径不创建 local-home、不构建CLI、不执行项目脚本，仅调用固定包内恢复校验器读取已有证据。临时执行环境变量不允许注入Node/Python模块；无法运行恢复检查则不显示已验证。新进度字段与更新约定见[goal-progress.md](goal-progress.md)。

@@ -139,6 +139,7 @@ test('stage creation rejects a linked destination ancestor', () => {
 function smallSource() {
   const root = directory();
   for (const name of fs.readdirSync(path.join(source, 'skills'))) put(path.join(root, 'skills', name, 'SKILL.md'), '# Test skill\n');
+  put(path.join(root, 'skills/ff-handoff/scripts/resume.py'), fs.readFileSync(path.join(source, 'skills/ff-handoff/scripts/resume.py')));
   put(path.join(root, 'tools/openspec/upstream.json'), '{}\n');
   put(path.join(root, 'tools/openspec/build.mjs'), '// Mocked subprocess fixture\n');
   put(path.join(root, 'tools/openspec/ff-spec.mjs'), '// Mocked CLI fixture\n');

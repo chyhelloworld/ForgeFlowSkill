@@ -1,5 +1,7 @@
 # ForgeFlow Skill
 
+`0.10.0` 在现有目标模式中增加[只读进度与停滞复盘](docs/user/goal-progress.md)，并将选定的pstack工程方法融入原职责。不新增隔夜模式、后台调度或自动合并。实施范围及实测边界见[0.10记录](iterations/0.10.0/README.md)。
+
 此前 `0.9.6-derivation.4` 基线在 `0.9.6-derivation.3 / 4f64f0e8` 上给[架构评估](docs/user/architecture-review.md)增加按当前决策检查颗粒度的简短判据，指出过粗/过细的具体位置及最小调整。完整保留上一候选的[推导修复](docs/user/architecture-derivation.md)、19项技能和既有能力；不自动更新真实安装。范围见[计划T2](planning/ARCHITECTURE-DERIVE-QUALITY-096.md)。
 
 `0.9.7-dsh.1` 把同一套门禁接到 DeepSeek Harness：新增 `dsh` 宿主（`.dsh/skills`），安装时写入宿主协作块（子代理独立审查、`tasks.md` 权威、`present` 交付、plan mode 先 `exit_plan_mode`），`doctor` 报告技能发现根与技能版本↔CLI 版本握手；`status` 无参给出项目门禁总览，没有 `openspec/ff-policy.json` 时 archive 打印告警而不是静默放行（`FF_ALLOW_UNGATED=1` 可静默）。
@@ -12,7 +14,7 @@
 
 `0.9.14-dsh.1` 为资源生命周期与轻量接入候选：测试目录显式受控、成功清理可预览、失败现场保留；已激活 FF 技能携带四层审查短规则，DSH 双候选仅适用于重大取舍。安装文本和模拟事件测试不等于真实模型会话加载通过。详见[本轮范围与证据](iterations/resource-lifecycle-20261111/README.md)。
 
-当前为 **0.9.14-dsh.1 源码候选、21 项技能**，工作分支 `work/resource-lifecycle-20261111`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.10.0 源码候选、21 项技能**，工作分支 `work/resource-lifecycle-20261111`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)：目标与受众、疑虑与真实证据、先确认纲要再逐节实现；不改变后台/App业务界面和各项目品牌，不增加技能或运行时。
 

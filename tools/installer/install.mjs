@@ -108,6 +108,10 @@ function release(project, source, pin, mode, build, reuse) {
     // The callback avoids Node 24's Windows Unicode-path native-copy omission.
     filter: name => !['.build', '.bootstrap'].includes(path.basename(name)),
   });
+  // Goal status reuses the pinned checkpoint reader, including in skills-only mode.
+  const resumeDir = path.join(stage, 'skills/ff-handoff/scripts');
+  fs.mkdirSync(resumeDir, { recursive: true });
+  fs.copyFileSync(path.join(source, 'skills/ff-handoff/scripts/resume.py'), path.join(resumeDir, 'resume.py'));
   if (mode === 'full') {
     if (!build && !reuse) fail('full requires --build or --reuse-build');
     const cleanupBootstrap = prepareBootstrapCleanup();
