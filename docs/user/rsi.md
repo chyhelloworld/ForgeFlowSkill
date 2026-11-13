@@ -18,11 +18,11 @@ RSI（递归自我改进）在本仓库不是自动循环，也不是会自己�
 | --- | --- | --- |
 | `freeze` | 冻结一次实验：目标、版本、基线与候选留出集、失败/正常对照、用户原话、L2 三字段 | 缺任一必填项退出 2；`run.json` 已存在则拒绝重写 |
 | `compare` | 用同一批用例比较旧/新版本观测 | 证据哈希漂移、缺一侧观测、命令不一致、候选与基线逐字节相同都退出 2 |
-| `promote` | 记录用户确认的晋级 | 无 `review.json`、审核 `L0`、审核结论非 pass、候选或对照哈希不符都退出 2；只写记录，不激活 |
+| `promote` | 记录用户确认的晋级 | 无 `review.json`、`independence` 缺失或不是 `L1`/`L2`、`unverified` 非数组、审核结论非 pass、候选或对照哈希不符都退出 2；只写记录，不激活 |
 | `withdraw` | 撤销本次候选，保留原件与结论 | 写一次 `withdraw.md`，不删除证据 |
 | `status` | 从证据推导当前状态 | 只读；`--list <dir>` 只扫给定目录 |
 
-`freeze` 强制填写 INTENT-LOOP 的 L2 三字段：已有机制（`--existing`）、为何不够（`--why-insufficient`）、失败样本（`--counterexample`）。这是把“先查等价机制”从文本约定变成可执行前置条件的唯一新增检查。
+`freeze` 强制填写 INTENT-LOOP 的 L2 三字段：已有机制（`--existing`）、为何不够（`--why-insufficient`）、失败样本（`--counterexample`）。`--fail` 和 `--normal` 均可重复指定，所有用例都会冻结且 id 必须唯一。这是把“先查等价机制”从文本约定变成可执行前置条件的唯一新增检查。
 
 ## 最小流程
 
@@ -37,7 +37,7 @@ node .forgeflow/ff-rsi.mjs freeze --dir .forgeflow/rsi/demo --target ff-retro --
 # 2. 实现候选后，在 run/candidate/ 放新版本，写 observations.json（每案 old/new 两侧）
 node .forgeflow/ff-rsi.mjs compare --dir .forgeflow/rsi/demo --runs evidence/observations.json
 
-# 3. 独立审核写 review.json（含 candidateHash/compareHash/independence/verdict）
+# 3. 独立审核写 review.json（含 candidateHash/compareHash/independence/verdict/unverified）
 node .forgeflow/ff-rsi.mjs promote --dir .forgeflow/rsi/demo \
   --user-quote "按这个方案改" --user-ref m04700
 
@@ -45,7 +45,7 @@ node .forgeflow/ff-rsi.mjs promote --dir .forgeflow/rsi/demo \
 node .forgeflow/ff-rsi.mjs status --dir .forgeflow/rsi/demo --installed path/to/installed
 ```
 
-裁决规则固定：失败用例旧版不失败 → `NO_EFFECT`；失败用例新版未通过 → `REJECTED`；正常对照旧版不通过 → `NO_EFFECT`；正常对照新版被误伤 → `REJECTED`；`SKIP`/`NOT_RUN` 不能当 PASS。`REJECTED`/`NO_EFFECT` 退出码为 3。
+裁决规则固定：失败用例旧版不失败 → `NO_EFFECT`；失败用例新版未通过 → `REJECTED`；正常对照旧版不通过 → `NO_EFFECT`；正常对照新版被误伤 → `REJECTED`；`SKIP`/`NOT_RUN` 不能当 PASS。多案汇总按 `REJECTED` > `NO_EFFECT` > `PASS`，不因后续行覆盖已发现的失败；`REJECTED`/`NO_EFFECT` 退出码为 3。
 
 ## 审查者复用
 
@@ -64,6 +64,6 @@ node .forgeflow/ff-rsi.mjs status --dir .forgeflow/rsi/demo --installed path/to/
 - 不创建分支、不合并、不发布、不修改正在使用的技能或全局规则；
 - 不自动跑评测；执行者与评分者仍按 [评估协议](../../evaluations/README.md) 由独立上下文完成；
 - 不替代用户验收；审核通过不等于用户批准；
-- 不隐藏未验证项：`review.json` 必须保留 `unverified` 数组。
+- 不隐藏未验证项：`review.json` 必须保留 `unverified` 数组，无未验证项时显式写 `[]`；工具只验证字段契约，不证明独立性或内容真实性。
 
 相关：[FF 自改进候选](../../skills/ff-retro/references/ff-improvement.md)、[复盘技能](../../skills/ff-retro/SKILL.md)、[安装说明](install.md)。

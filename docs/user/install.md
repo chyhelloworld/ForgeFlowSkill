@@ -1,10 +1,10 @@
 # 安装与首次使用
 
-本页对应 **0.9.3-dual-host.1 双宿主安装候选**（实现分支 `work/dual-host-coexistence`），基于已合并的 0.9.2。只在获准目标安装；不替换全局技能，不自动升级其他项目。17 项技能本体不增加新职责，Goal 契约保持原语义。
+本页当前口径为 **0.10.0 源码候选**，共 **21 项技能**，支持 Codex、Claude Code 和 DSH。只在获准目标安装；不替换全局技能，不自动升级其他项目。以核对过的提交、manifest 和 payload 哈希确定实际安装内容，不以版本号代替证据。下方历史候选记录保留原版本范围，不代表本版已在全部宿主验收。
 
 ## 快速开始：Windows + Codex
 
-基线 0.9.1 曾获准纳入 `work/061-through-09`，其[纳入回执](../../iterations/0.9.1/PROMOTION.md)不自动批准本双宿主候选晋级或其他现用安装升级。先取得并核对选定版本的源码，把下面 `$Source` 改为源码根目录（其中有 `package.json` 和 `bin/ff-install.mjs`）。`$Project` 是你要使用 FF 的获准目标项目，两者可以不同。已有安装先盘点；[历史布局参考](../archive/installation/项目内安装指南.md)保留当时结构，当前重入/恢复操作以本页为准，不把同版本号的不同包哈希当作相同安装。
+基线 0.9.1 曾获准纳入 `work/061-through-09`，其[纳入回执](../../iterations/0.9.1/PROMOTION.md)不自动批准当前候选晋级或其他现用安装升级。先取得并核对选定版本的源码，把下面 `$Source` 改为源码根目录（其中有 `package.json` 和 `bin/ff-install.mjs`）。`$Project` 是你要使用 FF 的获准目标项目，两者可以不同。已有安装先盘点；[历史布局参考](../archive/installation/项目内安装指南.md)保留当时结构，当前重入/恢复操作以本页为准，不把同版本号的不同包哈希当作相同安装。
 
 先准备 **Node.js >=20.19.0、npm、Git、tar**；三个可选只读检查器还需 **Python 3.9+**。full 构建需要访问 GitHub 和下载构建依赖。以下 PowerShell 示例把项目、外层 npm 缓存和临时目录放在 E 盘；旧项目请将 `$Project` 改为现有项目根目录。
 
@@ -74,7 +74,7 @@ node .forgeflow/dsh-plugin/generate-board.mjs --write
 
 ## 同一项目同时供 Codex 和 Claude 使用
 
-把单数 `--host codex` 改为显式的 `--hosts codex,claude`。目标项目已有单端安装时，同一命令迁移到双端；顺序 `claude,codex` 也可。每端仍各有 17 项技能，不是 34 个不同技能。
+把单数 `--host codex` 改为显式的 `--hosts codex,claude`。目标项目已有单端安装时，同一命令迁移到双端；顺序 `claude,codex` 也可。每端仍各有 21 项技能，不是 42 个不同技能。
 
 ```powershell
 node "$Source\bin\ff-install.mjs" install --project "$Project" --hosts codex,claude --mode full --build
@@ -112,13 +112,13 @@ flowchart LR
 
 ## 当前验证边界
 
-技能/安装包版本为 **0.9.3-dual-host.1**；固定 FF CLI 的 `--version` 为 **1.14.2-ff.0.5.0-rc3**，两者标识不同层次。skills-only 没有可用的 full CLI，不能据此要求版本输出成功。Goal 契约沿用 0.9.2，原生写入与状态同步未实现；使用与实验边界见[Codex Goal](codex-goal.md)。本轮验证范围和未测项见[双宿主安装回执](../../iterations/0.9.3-dual-host.1/README.md)。
+技能/安装包版本为 **0.10.0**；本源码的 full 构建将 FF CLI 版本派生为 **0.10.0**，不是历史 adapter 版本号。skills-only 没有可用的 full CLI，不能据此要求版本输出成功。Goal 原生写入与状态同步未实现；使用与实验边界见[Codex Goal](codex-goal.md)，本版新增只读[目标进度](goal-progress.md)。0.10 基线验证范围和未测项见[源码候选回执](../../iterations/0.10.0/README.md)；后续增量仍须核对自身提交及证据，不能直接继承全部通过结论。
 
 安装与证据按完整提交、manifest 和 payload 哈希区分，不能只看版本号。0.9.2-goal.2 已有实际 Windows/Codex 隔离项目 full 构建、安装及 doctor READY；skills-only 的 doctor 为预期 BLOCKED。选定桌面后端的技能加载/调用已有有界观察，包与提交、后续文档包的继承理由见[原生验证与证据继承](../../iterations/0.9.2-goal.2/native-closeout.md)。这些不是全平台或产品真人验收。
 
 历史失败仍保留：71d0464 原候选有 full 构建/CLI 记录；46022d7 文档包两次 full 构建因 npm TLS 下载失败，仅 skills-only 新包安装/Health 入口通过。此前成功不自动覆盖其他包；旧 PATH CLI 的 Codex setup refresh 故障不能概括为当前所有桌面后端均失败。Claude 当前仅有上述有界原生 ff-intake 结果；两端完整模型工作流、全平台与产品真人验收仍未证明。
 
-仅需技能时用 `--mode skills-only`，不要同时加 `--build`。成功状态是 `INSTALLED_SKILLS_ONLY_GATES_BLOCKED`，不是 full READY；17 项技能可分发，FF CLI 门禁不可用。full 依赖网络下载固定构建依赖，不修改锁文件、TLS 或权限来绕过失败。
+仅需技能时用 `--mode skills-only`，不要同时加 `--build`。成功状态是 `INSTALLED_SKILLS_ONLY_GATES_BLOCKED`，不是 full READY；21 项技能可分发，FF CLI 门禁不可用。full 依赖网络下载固定构建依赖，不修改锁文件、TLS 或权限来绕过失败。
 
 安装路径是目标项目的 `.agents/skills/`（Codex）或 `.claude/skills/`（Claude），控制与运行目录在 `.forgeflow/`。外层 npm cache/TEMP 可放 E 盘，full 内层缓存仍在目标项目；不承诺所有系统工具完全不写其他位置。
 
@@ -139,7 +139,11 @@ node "$Source\installer.mjs" recover --project "$Project"
 
 doctor 是只读检查。安装器异常退出后，先确认对应安装进程已结束，再仅移除其**空的** `.forgeflow/install/lock` 目录，运行 recover；不要删除 pending、backup 或整个安装目录。提交前中断返回 `RECOVERED` 并恢复原托管文件；state 已原子提交则核对最终文件与状态后返回 `COMMITTED`。有后续用户改动会保留 pending 并报冲突，须明确处理冲突再恢复；它不提供磁盘断电级原子性保证。
 
-## 试点候选：离线复用与 worktree
+## 历史演进记录（各节仅对应所标版本）
+
+以下保留旧候选的技能数量和验证依据，不覆盖上文 0.10.0 / 21 项技能的当前口径。
+
+### 试点候选：离线复用与 worktree
 0.9.4-trial.1 为本地候选，未升级现有项目或全局安装。已有同一源 pin 的完整构建时，可显式复用该 `tools/openspec` 目录，避免重新联网：
 
 ```powershell
@@ -150,29 +154,29 @@ node installer.mjs install --project E:\work\my-worktree --hosts codex,claude --
 
 安装结果含 gitGuidance，精确列运行时、launcher 和每个 FF 技能目录，供用户选择 ignore 或 vendor；不会改 `.gitignore`。不要忽略整个 `.forgeflow`。版本控制 policy、稳定计划/进度、回执、审核证据和精确 LF 属性；安装生成物与业务配置分开处理。doctor 的 runtime READY 只说明程序可运行，gates 的 UNCONFIGURED/NO_CHECKS/INVALID 均不能当作门禁通过。普通回执操作见[生命周期 v2](../maintainers/SPEC-LIFECYCLE.md)。
 
-## 0.9.6-architecture.1 源码候选增量
+### 0.9.6-architecture.1 源码候选增量
 
 该候选将独立 `ff-architecture-review` 纳入原技能分发机制，共18项，保留旧17项安装记录读取/回滚边界。既有 full/skills-only、Codex/Claude 目录及权限模式不变，不新增 FF CLI 子命令或安全门禁。当前规则与使用方式见[可选架构评估](architecture-review.md)；前面的0.9.3验证回执仍只对应其原版本。
 
 本轮只在 E 盘临时 fixture 做 skills-only 分发验证，不升级真实安装、不重建 full 运行时。文件已分发与宿主原生发现/加载是两种事实；后者尚未验证，不声称用户当前宿主已有该命令。
 
-## 0.9.6-derivation.1 源码候选增量
+### 0.9.6-derivation.1 源码候选增量
 
 保留18项技能和既有安装机制，只在 ff-spec 增加[可选架构推导](architecture-derivation.md)的条件入口及本地参考，ff-design保留短推荐指引。没有新增宿主命令或运行时策略引擎，安装状态schema及CLI不变。本轮源码候选不更新真实全局/项目安装；用户使用已安装旧候选时不能假定新增方法已加载。
 
-## 0.9.6-derivation.2 源码候选增量
+### 0.9.6-derivation.2 源码候选增量
 
 独立 `ff-architecture-derive` 通过既有Codex/Claude技能目录分发，共19项技能，唯一推导模板迁至新技能本地；ff-spec只推荐并引用成果。状态读取保留旧17/18与新19完整清单兼容，隔离fixture验证迁移和回滚，不自动更新真实安装。没有新FF CLI子命令或full运行时构建。文件分发与原生加载、真实用户验收仍是不同事实；真实安装更新以单独授权及该目标的安装回执为准。
 
-## 0.9.6-derivation.3 源码候选增量
+### 0.9.6-derivation.3 源码候选增量
 
 保持19项技能、安装机制和运行时不变，仅修正架构推导的关键结构完成判据及使用说明。旧derivation.2现场草案与本轮同输入首次输出对照分别留存，合成行为和分发检查不代表原生加载或业务验收。没有更新source、DH或全局真实安装；需要另行授权才能升级。architecture-review的评估规则未改（包metadata版本同步），两入口仍独立可选。
 
-## 0.9.6-derivation.4 源码候选增量
+### 0.9.6-derivation.4 源码候选增量
 
 保留derivation.3推导修复和19技能，给architecture-review的现有按需参考补充按决策范围判断颗粒度的短规则。安装/运行时机制未变，没有更新真实安装；显式读技能的合成执行与原生加载、用户验收分别记录。
 
-## 独立图示候选（2026-10-30）
+### 独立图示候选（2026-10-30）
 
 新增 `ff-diagram` 后本候选共20技能；安装器保留旧17/18/19完整清单读取，当前新装为20。技能本地含全部按需参考，可单独复制该目录使用，不依赖其他FF技能或仓库docs路径。四个相关旧入口仅名称推荐；未安装新技能不阻断原有独立工作。候选仍未发布，本轮不更新用户实际安装；skills-only分发通过不等于full门禁可用或宿主已实际加载。
 

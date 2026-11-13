@@ -297,3 +297,58 @@ test('status --list 只扫给定目录', () => {
   assert.equal(value.mode, 'list');
   assert.deepEqual(value.runs.map(item => item.dir), [f.runDir]);
 });
+
+test('freeze CLI 累积重复 --fail/--normal，不丢失前面的用例', () => {
+  const f = fixture();
+  const fail2 = makeCase(f.root, 'fail2.json', 'F2');
+  const normal2 = makeCase(f.root, 'normal2.json', 'N2');
+  const result = run(['freeze', '--dir', f.runDir, '--target', 't', '--version', 'v', '--base', f.base,
+    '--fail', f.failCase, '--fail', fail2, '--normal', f.normalCase, '--normal', normal2,
+    '--request-quote', 'q', '--request-ref', 'm1', '--existing', 'e', '--why-insufficient', 'w', '--counterexample', 'c'], f.root);
+  assert.equal(result.code, 0);
+  const cases = JSON.parse(fs.readFileSync(path.join(f.runDir, 'cases.json'), 'utf8')).cases;
+  assert.deepEqual(cases.map(row => row.id), ['F1', 'F2', 'N1', 'N2']);
+});
+
+test('compare REJECTED 优先于 NO_EFFECT，不受案例行顺序影响', () => {
+  for (const overrides of [
+    { F1new: { verdict: 'FAIL' }, N1old: { verdict: 'NOT_RUN' } },
+    { F1old: { verdict: 'NOT_RUN' }, N1new: { verdict: 'FAIL' } },
+  ]) {
+    const f = fixture();
+    freezeOk(f);
+    candidate(f);
+    const result = compare(f, observations(f, overrides));
+    assert.equal(result.code, 3);
+    const value = JSON.parse(fs.readFileSync(path.join(f.runDir, 'compare.json'), 'utf8'));
+    assert.equal(value.conclusion, 'REJECTED');
+  }
+});
+
+test('promote 必须明确声明合法 independence=L1/L2', () => {
+  for (const independence of [undefined, '', null, 'L0', 'L3', true]) {
+    const f = fixture();
+    freezeOk(f); candidate(f); compare(f); review(f, { independence });
+    const result = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root);
+    assert.equal(result.code, 2, 'reject independence=' + independence);
+    assert.match(result.err, /independence/);
+    assert.equal(fs.existsSync(path.join(f.runDir, 'promotion.json')), false);
+  }
+  const f = fixture();
+  freezeOk(f); candidate(f); compare(f); review(f, { independence: 'L1' });
+  assert.equal(run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root).code, 0);
+});
+
+test('promote 要求 unverified 数组，允许显式空数组', () => {
+  for (const unverified of [undefined, null, '', 'none', {}]) {
+    const f = fixture();
+    freezeOk(f); candidate(f); compare(f); review(f, { unverified });
+    const result = run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root);
+    assert.equal(result.code, 2, 'reject unverified=' + JSON.stringify(unverified));
+    assert.match(result.err, /unverified/);
+    assert.equal(fs.existsSync(path.join(f.runDir, 'promotion.json')), false);
+  }
+  const f = fixture();
+  freezeOk(f); candidate(f); compare(f); review(f, { unverified: [] });
+  assert.equal(run(['promote', '--dir', f.runDir, '--user-quote', 'q', '--user-ref', 'm1'], f.root).code, 0);
+});

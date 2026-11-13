@@ -47,7 +47,8 @@ function parseArgs(argv) {
     }
     const value = argv[index + 1];
     if (value === undefined || value.startsWith('--')) fail('参数 ' + arg + ' 缺少值');
-    options[key] = value;
+    if (key === 'fail' || key === 'normal') options[key] = [...(options[key] || []), value];
+    else options[key] = value;
     index += 1;
   }
   return options;
@@ -193,19 +194,17 @@ export function compare(options) {
     }
     rows.push({ caseId: item.id, role: item.role, command: oldSide.command, old: oldSide.verdict, new: newSide.verdict, rawSha256: [oldSide.rawSha256 || null, newSide.rawSha256 || null] });
   }
-  let conclusion = 'PASS';
-  for (const row of rows) {
-    const passed = verdict => verdict === 'PASS';
+  // Aggregate by severity, not case order: a real regression must remain visible.
+  const conclusions = rows.map(row => {
     if (row.role === 'fail') {
-      if (!passed(row.old) && row.old !== 'FAIL') conclusion = 'NO_EFFECT';
-      if (!passed(row.old) && row.old === 'FAIL' && !passed(row.new)) conclusion = 'REJECTED';
-      if (passed(row.old)) conclusion = 'NO_EFFECT';
-    } else if (!passed(row.old)) {
-      conclusion = 'NO_EFFECT';
-    } else if (!passed(row.new)) {
-      conclusion = 'REJECTED';
+      if (row.old !== 'FAIL') return 'NO_EFFECT';
+      return row.new === 'PASS' ? 'PASS' : 'REJECTED';
     }
-  }
+    if (row.old !== 'PASS') return 'NO_EFFECT';
+    return row.new === 'PASS' ? 'PASS' : 'REJECTED';
+  });
+  const conclusion = conclusions.includes('REJECTED') ? 'REJECTED'
+    : conclusions.includes('NO_EFFECT') ? 'NO_EFFECT' : 'PASS';
   const compareValue = { schema: 1, casesSha256: run.casesSha256, candidateHash, observationsSha256: sha256(observationsText), conclusion, rows, comparedAt: new Date().toISOString() };
   writeOnce(path.join(dir, 'compare.json'), compareValue);
   return { state: conclusion, dir, candidateHash, comparedAt: compareValue.comparedAt };
@@ -224,7 +223,8 @@ export function promote(options) {
   const review = readJson(reviewFile);
   if (compared.conclusion !== 'PASS') fail('对照结论不是 PASS（' + compared.conclusion + '），不得晋级');
   if (review.verdict !== 'pass') fail('review.json 的 verdict 必须是 pass');
-  if (review.independence === 'L0') fail('independence=L0 是自检冒充独立，拒绝晋级');
+  if (!['L1', 'L2'].includes(review.independence)) fail('independence 必须是 L1 或 L2；缺失、非法值及 L0 自检均不得晋级');
+  if (!Array.isArray(review.unverified)) fail('review.json 必须包含 unverified 数组（无未验证项时显式写 []）');
   if (review.reviewMode !== undefined && !['initial', 're-review'].includes(review.reviewMode)) fail('reviewMode 只能是 initial 或 re-review');
   const round = review.reviewRound;
   if (round !== undefined && (!Number.isInteger(round) || round < 1)) fail('reviewRound 必须是 >=1 的整数');
