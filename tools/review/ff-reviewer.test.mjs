@@ -204,3 +204,96 @@ test('run invokes a fake codex backend, parses its JSON and writes a record', as
   assert.equal(forced.code, 0);
   fs.rmSync(project, { recursive: true, force: true });
 });
+
+function reviewFixture(t, body, timeoutSeconds = 20) {
+  const project = tempProject();
+  t.after(() => fs.rmSync(project, { recursive: true, force: true }));
+  fakeCodexExec(project, body);
+  writeConfig(project, { version: 1, backend: 'codex', command: process.execPath, timeoutSeconds });
+  fs.writeFileSync(path.join(project, 'brief.md'), 'current brief');
+  return { project, brief: 'brief.md', out: 'review' };
+}
+
+function lastMessagePath(result) {
+  return result.data.command[result.data.command.indexOf('-o') + 1];
+}
+
+function assertTemporaryResultRemoved(result) {
+  assert.equal(fs.existsSync(lastMessagePath(result)), false);
+  assert.equal(fs.existsSync(path.dirname(lastMessagePath(result))), false);
+}
+
+for (const [label, body, expected] of [
+  ['empty output', '', 'unparsed'],
+  ['fresh stdout failure', 'console.log(JSON.stringify({verdict:"fail",findings:[]}));', 'fail'],
+]) {
+  test(`run ignores a legacy last.txt with ${label}`, async t => {
+    const options = reviewFixture(t, body);
+    const stale = path.join(options.project, 'review.last.txt');
+    fs.writeFileSync(stale, '{"verdict":"pass","summary":"stale","findings":[]}');
+    const result = await run(options, {});
+    assert.equal(result.data.verdict, expected);
+    assert.equal(result.code === 0, expected === 'fail');
+    assert.notEqual(lastMessagePath(result), stale);
+    assertTemporaryResultRemoved(result);
+    // An older run's artifact is not ours to remove.
+    assert.equal(fs.existsSync(stale), true);
+  });
+}
+
+test('run uses a fresh result path on forced retries and preserves current output', async t => {
+  const options = reviewFixture(t, 'const fs=require("node:fs");const a=process.argv;fs.writeFileSync(a[a.indexOf("-o")+1],JSON.stringify({verdict:"pass",findings:[]}));');
+  const first = await run(options, {});
+  const second = await run({ ...options, force: true }, {});
+  assert.equal(first.data.verdict, 'pass');
+  assert.equal(second.data.verdict, 'pass');
+  assert.equal(second.data.error, null);
+  assert.notEqual(lastMessagePath(first), lastMessagePath(second));
+  assertTemporaryResultRemoved(first);
+  assertTemporaryResultRemoved(second);
+});
+
+for (const [label, tail, timedOut] of [
+  ['nonzero exit', 'process.exitCode=1;', false],
+  ['timeout', 'setInterval(()=>{},1000);', true],
+]) {
+  test(`run does not expose an effective pass after ${label}`, async t => {
+    const options = reviewFixture(t, 'console.log(JSON.stringify({verdict:"pass",summary:"untrusted pass",findings:[]}));' + tail, 1);
+    const result = await run(options, {});
+    assert.equal(result.code, 3);
+    assert.equal(result.data.verdict, 'needs-evidence');
+    assert.equal(result.data.reportedVerdict, 'pass');
+    assert.ok(result.data.error);
+    assert.equal(result.data.timedOut, timedOut);
+    assert.match(fs.readFileSync(path.join(options.project, 'review.md'), 'utf8'), /untrusted pass/);
+    assertTemporaryResultRemoved(result);
+  });
+}
+
+test('run cleans its temporary directory if extracting the final result throws', async t => {
+  const options = reviewFixture(t, 'const fs=require("node:fs");const a=process.argv;const p=a[a.indexOf("-o")+1];fs.writeFileSync("result-path.txt",p);fs.mkdirSync(p);');
+  await assert.rejects(() => run(options, {}));
+  const file = fs.readFileSync(path.join(options.project, 'result-path.txt'), 'utf8');
+  assert.equal(fs.existsSync(path.dirname(file)), false);
+});
+
+test('run retains unparsed status and failure evidence for partial output on timeout', async t => {
+  const options = reviewFixture(t, 'console.log("partial response");setInterval(()=>{},1000);', 1);
+  const result = await run(options, {});
+  assert.equal(result.code, 3);
+  assert.equal(result.data.verdict, 'unparsed');
+  assert.equal(result.data.reportedVerdict, null);
+  assert.equal(result.data.timedOut, true);
+  assert.ok(result.data.error);
+  assert.ok(result.data.parseError);
+  assertTemporaryResultRemoved(result);
+});
+
+test('run cleans its temporary directory when the backend cannot start', async t => {
+  const options = reviewFixture(t, '');
+  const result = await run({ ...options, command: path.join(options.project, 'missing-backend') }, {});
+  assert.equal(result.code, 3);
+  assert.equal(result.data.verdict, 'unparsed');
+  assert.ok(result.data.error);
+  assertTemporaryResultRemoved(result);
+});

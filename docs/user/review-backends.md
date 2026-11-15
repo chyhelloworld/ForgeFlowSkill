@@ -72,6 +72,14 @@ node .forgeflow/ff-reviewer.mjs run --brief openspec/reviews/<name>-brief.md --o
 
 后端失败、超时或回答不是合法审查 JSON 时返回非零，但仍保留原始记录，便于判断原因。runner **不会**自动 fallback 到同模型自审，也不会自动把结论签成通过。
 
+## 如何判断结果有效
+
+先核对调用是否成功，再解释审查结论：工具返回码为 `0`，记录 `error === null`、`exitCode === 0` 且 `timedOut === false`，才可使用 `verdict`。返回码 `0` 只表示审查调用完成，`verdict` 仍可能是 `fail` 或 `needs-evidence`，不等于通过。
+
+失败或超时后即使回答包含合法 `pass`，有效 `verdict` 也会降为 `needs-evidence`；无法解析时为 `unparsed`。新增 `reportedVerdict` 仅保存后端原话中的结论（不可解析为 null），用于诊断，不能作为验收依据。原始回答、错误和退出状态仍保留。读取旧版记录时同样必须检查上述运行状态，不能只判断 `verdict === "pass"`。
+
+Codex 最终消息使用每次独立的临时目录，正常结束或异常退出后在 `finally` 清理本次目录，不再读取旧的 `<name>.last.txt`。强制终止 runner 可能留下临时目录，但下一次不会复用它；旧文件不会被本次运行自动删除。此隔离只防结果串用，不允许并发运行共用一个正式 `--out` 基名；并发审查仍应选择不同记录名。
+
 ## 只读与独立性边界
 
 - Codex 使用 `--sandbox read-only`；Claude Code 使用 `--permission-mode plan --permission-prompts none --bare --strict-mcp-config`。这依赖后端自身参数，ff-reviewer 不验证后端是否真的没有写文件。

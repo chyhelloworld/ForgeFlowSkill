@@ -464,13 +464,25 @@ function backendInvocation(config, lastMessageFile) {
 }
 
 async function execute(config, prompt, options) {
-  const invocation = backendInvocation(config, options.lastMessageFile);
-  const built = process.platform === 'win32' ? buildWindowsInvocation(invocation.command, invocation.args) : { file: invocation.command, args: invocation.args };
-  return {
-    command: invocation.command,
-    args: invocation.args,
-    result: await runProcess(built, { cwd: options.cwd, input: prompt, timeoutMs: options.timeoutMs, env: options.env }),
-  };
+  // Only this invocation can own this result path. Legacy <out>.last.txt files
+  // and interrupted/overlapping runs must never supply the current verdict.
+  const resultDir = config.backend === 'codex'
+    ? fs.mkdtempSync(path.join(path.dirname(options.outBase), '.ff-reviewer-'))
+    : null;
+  const lastMessageFile = resultDir ? path.join(resultDir, 'last.txt') : null;
+  try {
+    const invocation = backendInvocation(config, lastMessageFile);
+    const built = process.platform === 'win32' ? buildWindowsInvocation(invocation.command, invocation.args) : { file: invocation.command, args: invocation.args };
+    const result = await runProcess(built, { cwd: options.cwd, input: prompt, timeoutMs: options.timeoutMs, env: options.env });
+    return {
+      command: invocation.command,
+      args: invocation.args,
+      result,
+      extracted: finalMessage(config.backend, result, lastMessageFile),
+    };
+  } finally {
+    if (resultDir) fs.rmSync(resultDir, { recursive: true, force: true });
+  }
 }
 
 function finalMessage(backend, result, lastMessageFile) {
@@ -509,17 +521,14 @@ export async function run(options = {}, env = process.env) {
   const startedAt = new Date().toISOString();
   const started = Date.now();
   const prompt = buildPrompt(project, briefPath, brief);
-  const lastMessageFile = outBase + '.last.txt';
-  const execution = await execute(config, prompt, { cwd: project, timeoutMs: config.timeoutSeconds * 1000, lastMessageFile, env });
-  const result = execution.result;
-  const extracted = finalMessage(config.backend, result, lastMessageFile);
+  const execution = await execute(config, prompt, { cwd: project, timeoutMs: config.timeoutSeconds * 1000, outBase, env });
+  const { result, extracted } = execution;
   const rawText = extracted.text || String(result.stdout || result.stderr || '').trim();
   writeText(rawFile, rawText + (rawText.endsWith(NL) ? '' : NL));
   const stdoutFile = outBase + '.stdout.txt';
   const stderrFile = outBase + '.stderr.txt';
   if (result.stdout) writeText(stdoutFile, result.stdout); else if (fs.existsSync(stdoutFile)) fs.unlinkSync(stdoutFile);
   if (result.stderr) writeText(stderrFile, result.stderr); else if (fs.existsSync(stderrFile)) fs.unlinkSync(stderrFile);
-  if (fs.existsSync(lastMessageFile)) fs.unlinkSync(lastMessageFile);
   const parsed = parseReviewerMessage(rawText);
   let failure = extracted.error;
   if (result.timedOut) failure = '审查进程超过 ' + config.timeoutSeconds + ' 秒未结束';
@@ -550,7 +559,8 @@ export async function run(options = {}, env = process.env) {
     command: [execution.command, ...execution.args],
     exitCode: result.status === undefined ? null : result.status,
     timedOut: Boolean(result.timedOut),
-    verdict: parsed.ok ? parsed.verdict : 'unparsed',
+    verdict: parsed.ok ? (failure ? 'needs-evidence' : parsed.verdict) : 'unparsed',
+    reportedVerdict: parsed.ok ? parsed.verdict : null,
     summary: parsed.ok ? parsed.summary : '',
     findings: parsed.ok ? parsed.findings : [],
     notes: parsed.ok ? parsed.notes : [],

@@ -38,6 +38,8 @@
 
 项目有 `openspec/ff-review.json` 且 `enabled` 不为 false 时，独立审查优先用已安装的 `.forgeflow/ff-reviewer.mjs`，而不是临时起子代理：先 `check --json` 看配置、后端可执行文件和认证提示，再 `run --brief <审查材料> --out <记录基名>`。配置字段 `backend`（codex|claude）、`model`、`reasoning`（codex: minimal/low/medium/high/xhigh；claude: low/medium/high/xhigh/max）、`enabled`、`timeoutSeconds`、`command`；环境变量 `FF_REVIEW_BACKEND/MODEL/REASONING/TIMEOUT_SECONDS/COMMAND` 和 run 参数可覆盖。run 写 `<out>.json`（含 L2、brief/config 哈希、命令、退出码、verdict/findings、usage、未验证项）、`<out>.md` 原始回答及 stdout/stderr；失败或超时仍保留记录并非零退出，不自动 fallback 到同模型自审，也不自动接受结论。
 
+接受外部结论前同时核对工具返回码为 0、记录 `error === null`、`exitCode === 0`、`timedOut === false`，再判断 `verdict`；正常执行也可能判 fail/needs-evidence。`reportedVerdict` 只是后端原始结论，不作验收：失败/超时的可解析回答有效 verdict 为 needs-evidence，不可解析为 unparsed。旧版记录也按上述运行状态核对，不只看 pass 字样。
+
 外部后端的只读限制靠 `codex --sandbox read-only` / `claude --permission-mode plan --permission-prompts none --bare --strict-mcp-config`，ff-reviewer 不验证后端真的没写文件；`independence: "L2"` 是配置声明的异模型，不是密码学证明。审查者可能因本机 MCP/沙箱环境读不到文件；brief 内嵌原文仍可审，但文件读取成功必须标未证明。没有配置、配置为 disabled 或后端不可用时才回到原独立子代理/新上下文流程；后端失败写 NOT_RUN/待验证，不改写成自审通过。修复复核用同一后端时重新生成 brief、附上一份记录和未关闭发现编号，不因“同一个 CLI”省略复核。
 
 ## 修复、分流与复用
