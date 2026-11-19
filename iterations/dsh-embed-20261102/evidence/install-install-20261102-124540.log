@@ -1,0 +1,101 @@
+[START] 2026-11-02T12:44:49.9011761+08:00 cwd=E:\github\ForgeFlowSKill
+node=v24.12.0 python=Python 3.11.5
+source head=c1f53b6 status=''
+
+added 1 package, and audited 2 packages in 5s
+
+1 package is looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+Lockfile is up to date, resolution step is skipped
+Packages: +249
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Progress: resolved 0, reused 0, downloaded 1, added 0
+Progress: resolved 0, reused 0, downloaded 70, added 71
+Progress: resolved 0, reused 0, downloaded 132, added 129
+Progress: resolved 0, reused 0, downloaded 189, added 197
+Progress: resolved 0, reused 0, downloaded 223, added 233
+Progress: resolved 0, reused 0, downloaded 226, added 234
+Progress: resolved 0, reused 0, downloaded 226, added 236
+Progress: resolved 0, reused 0, downloaded 226, added 237
+Progress: resolved 0, reused 0, downloaded 227, added 237
+Progress: resolved 0, reused 0, downloaded 227, added 238
+Progress: resolved 0, reused 0, downloaded 228, added 239
+Progress: resolved 0, reused 0, downloaded 229, added 239
+Progress: resolved 0, reused 0, downloaded 229, added 240
+ WARN  Tarball download average speed 11 KiB/s (size 20 KiB) is below 50 KiB/s: https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz (GET)
+Progress: resolved 0, reused 0, downloaded 230, added 241
+ WARN  GET https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/@humanwhocodes/retry/-/retry-0.4.3.tgz error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+ WARN  GET https://registry.npmjs.org/chalk/-/chalk-5.6.2.tgz error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+ WARN  Tarball download average speed 8 KiB/s (size 114 KiB) is below 50 KiB/s: https://registry.npmjs.org/minimatch/-/minimatch-10.2.6.tgz (GET)
+Progress: resolved 0, reused 0, downloaded 231, added 241
+Progress: resolved 0, reused 0, downloaded 231, added 242
+Progress: resolved 0, reused 0, downloaded 232, added 242
+ WARN  GET https://registry.npmjs.org/fast-wrap-ansi/-/fast-wrap-ansi-0.2.2.tgz error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+Progress: resolved 0, reused 0, downloaded 233, added 244
+Progress: resolved 0, reused 0, downloaded 234, added 244
+Progress: resolved 0, reused 0, downloaded 234, added 245
+Progress: resolved 0, reused 0, downloaded 235, added 246
+ WARN  Tarball download average speed 0 KiB/s (size 5 KiB) is below 50 KiB/s: https://registry.npmjs.org/@manypkg/find-root/-/find-root-3.1.0.tgz (GET)
+Progress: resolved 0, reused 0, downloaded 236, added 247
+Progress: resolved 0, reused 0, downloaded 237, added 247
+Progress: resolved 0, reused 0, downloaded 237, added 248
+ WARN  GET https://registry.npmjs.org/@changesets/write/-/write-1.0.1.tgz error (ECONNRESET). Will retry in 10 seconds. 2 retries left.
+Progress: resolved 0, reused 0, downloaded 238, added 248
+Progress: resolved 0, reused 0, downloaded 238, added 249, done
+
+Done in 1m 36.6s using pnpm v10.34.5
+🔨 Building OpenSpec...
+
+Compiling TypeScript...
+Version 6.0.3
+
+✅ Build completed successfully!
+Built project-local CLI: E:\github\ForgeFlowSKill\.forgeflow\install\staging-dc80b4a8-7c4f-4d01-ab5b-b49ce1dc0f66\tools\openspec\ff-spec.mjs
+{
+  "status": "INSTALLED",
+  "version": "0.9.7-dsh.1",
+  "host": "dsh",
+  "hosts": [
+    "dsh"
+  ],
+  "mode": "full",
+  "gitGuidance": {
+    "generated": [
+      "/.forgeflow/install/",
+      "/.forgeflow/ff-spec.mjs",
+      "/.dsh/skills/ff-architecture-derive/",
+      "/.dsh/skills/ff-architecture-review/",
+      "/.dsh/skills/ff-deliver/",
+      "/.dsh/skills/ff-design/",
+      "/.dsh/skills/ff-diagnose/",
+      "/.dsh/skills/ff-diagram/",
+      "/.dsh/skills/ff-grill/",
+      "/.dsh/skills/ff-handoff/",
+      "/.dsh/skills/ff-implement/",
+      "/.dsh/skills/ff-intake/",
+      "/.dsh/skills/ff-plan/",
+      "/.dsh/skills/ff-prove/",
+      "/.dsh/skills/ff-research/",
+      "/.dsh/skills/ff-retro/",
+      "/.dsh/skills/ff-review/",
+      "/.dsh/skills/ff-spec/",
+      "/.dsh/skills/ff-tdd/",
+      "/.dsh/skills/ff-writing-beats/",
+      "/.dsh/skills/ff-writing-document/",
+      "/.dsh/skills/ff-writing-fragments/",
+      "/.dsh/skills/ff-writing-shape/"
+    ],
+    "versionControl": [
+      "openspec/ff-policy.json",
+      "openspec/changes/<change>/design.md",
+      "openspec/changes/<change>/tasks.md",
+      "openspec/changes/<change>/ff-artifacts.json",
+      ".gitattributes"
+    ],
+    "note": "Choose whether to ignore generated entries or vendor them. No ignore file was modified. Keep project policy, plans and evidence; never ignore all of .forgeflow."
+  }
+}
+[END] 2026-11-02T12:47:17.8797810+08:00 exit=0 elapsed_sec=148

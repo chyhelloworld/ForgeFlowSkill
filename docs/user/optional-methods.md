@@ -54,7 +54,7 @@ flowchart TD
 2. 要追踪时，把选中schema目录复制到目标项目 openspec/schemas/ 下；只选需要的路线。已有配置先读取合并，不覆盖。
 3. 在项目根用项目本地 launcher 执行：node tools/openspec/ff-spec.mjs new change article-demo --schema ff-blog-shape。
 4. 在该change的 .openspec.yaml 中保留实际schema并显式设置 skip_specs: true。不要把文章/研究/复盘放进 specs/ 子目录。change-metadata.yaml 是示例，不要直接覆盖已有元数据。
-5. 对照对应 policies/*.json，将 CHANGE_NAME 替换为实际change名，合并到 openspec/ff-policy.json，保留其他artifact；项目policy ID须唯一，多个活动change应使用稳定且不冲突的ID并同步schema。不要复制任何历史回执。
+5. 可先运行 node .forgeflow/ff-spec.mjs adopt --write，从已有文件生成基础 policy；再对照对应 policies/*.json，将 CHANGE_NAME 替换为实际change名，合并到 openspec/ff-policy.json，保留其他artifact；项目policy ID须唯一，多个活动change应使用稳定且不冲突的ID并同步schema。不要复制任何历史回执。
 6. 用 instructions <artifact-id> --change article-demo 查看当前指导；只按授权与作者本轮选择写目标文件。用 status --change article-demo --json 查看 ffValidity。后续review按 docs/maintainers/SPEC-LIFECYCLE.md 绑定真实当前指纹、schema/policy与证据，独立执行；本包不提供自动签pass工具。
 7. 上游内容改变后，不靠重新保存回执蒙混过关：核对依赖，更新实际受影响产物，独立重审。未发生依赖变化的独立产物无需重跑整套方法。
 8. 使用 validate article-demo --strict --json 验证。正常 archive article-demo --yes --json 只在真实必要审核/授权具备时执行；skip_specs: true 保证本非规格示例不把草稿提升为现行规格。归档是生命周期收尾，不是发布。

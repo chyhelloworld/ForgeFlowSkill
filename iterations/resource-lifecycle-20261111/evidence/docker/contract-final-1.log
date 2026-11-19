@@ -1,0 +1,17 @@
+✔ implementation and test entry points route Docker work to a local contract (1.716765ms)
+✔ each host receives the same self-contained Docker contract (57.520893ms)
+✔ contract explicitly covers reuse (0.52559ms)
+✔ contract explicitly covers ownership (0.163609ms)
+✔ contract explicitly covers protected (0.151532ms)
+✔ contract explicitly covers outcomes (0.165892ms)
+✔ contract explicitly covers approval (0.132521ms)
+✔ contract explicitly covers evidence (0.110688ms)
+✔ critical prohibitions retain explicit negative wording (0.615051ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 251.989846

@@ -8,7 +8,7 @@ import { normalizeHosts, hosts } from './tools/installer/state.mjs';
 import { control, recover, rollback, loadState } from './tools/installer/transaction.mjs';
 export function parse(args) {
   const options = { command: args.shift() };
-  if (!['install', 'update-skill', 'doctor', 'remove-host', 'rollback', 'recover'].includes(options.command)) fail('Usage: node installer.mjs install|update-skill|doctor|remove-host|rollback|recover --project PATH [--host codex|claude | --hosts codex,claude] [--mode full|skills-only --build]');
+  if (!['install', 'update-skill', 'doctor', 'remove-host', 'rollback', 'recover'].includes(options.command)) fail('Usage: node installer.mjs install|update-skill|doctor|remove-host|rollback|recover --project PATH [--host codex|claude|dsh | --hosts codex,claude,dsh] [--mode full|skills-only --build]');
   while (args.length) {
     const key = args.shift();
     if (key === '--build' && !options.build) { options.build = true; continue; }
@@ -22,12 +22,12 @@ export function parse(args) {
   if (options.host && options.hosts) fail('--host conflicts with --hosts');
   if (options.hosts) {
     options.hosts = normalizeHosts(options.hosts.split(','));
-    if (options.hosts.length !== 2) fail('--hosts requires codex,claude');
+    if (options.hosts.length < 2) fail('--hosts requires at least two hosts (codex,claude,dsh)');
   }
   if (options.command === 'install' && (!(options.host || options.hosts) || !['full', 'skills-only'].includes(options.mode))) fail('Explicit --host or --hosts and --mode full|skills-only required');
   if (options.command !== 'install' && (options.hosts || options.mode || options.build || options['reuse-build'])) fail('Install flags apply only to install');
   if (['rollback', 'recover'].includes(options.command) && options.host) fail('--host applies only to install, doctor or remove-host');
-  if (options.command === 'remove-host' && !options.host) fail('remove-host requires --host codex|claude');
+  if (options.command === 'remove-host' && !options.host) fail('remove-host requires --host codex|claude|dsh');
   if (options.mode === 'skills-only' && options.build) fail('--build conflicts with skills-only');
   if (options['reuse-build'] && (options.build || options.mode !== 'full')) fail('--reuse-build requires full and conflicts with --build');
   return options;

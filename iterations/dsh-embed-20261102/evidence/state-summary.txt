@@ -1,0 +1,11 @@
+state file: .forgeflow/install/state.json (bytes=1210475)
+schema=1
+version=0.9.7-dsh.1
+host=dsh
+mode=full
+release=releases/0.9.7-dsh.1-9d9cbee074c18280-full
+sourceHash=9d9cbee074c18280afcff0c48c626a3974f30af664668eaf489a333abdd3cbe9
+managed files in state.files=188
+releaseInventory entries=7994
+
+note: previous install (2026-10-16, 0.6.0-experimental.5.windows-test.2) was replaced; backups/ holds prior state.json copies.

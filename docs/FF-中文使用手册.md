@@ -29,7 +29,7 @@ Intake 读取现行 specs、活动 change、FF policy/回执和必要历史，�
 
 ### 内容变动怎样使依赖失效
 
-每个产物用稳定 artifact ID、显式路径、版本及排序内容哈希标识，inputs 保存依赖指纹。上游规格或证据变动后，下游任务/审核即使文件未变也可能 stale。review 绑定 targetId、targetVersion、targetFingerprint、依赖 inputs，以及 reviewer、toolVersion、evidence 路径/哈希。不能重写回执让过期证据看似通过。Git 保留旧内容、拒绝与替代记录。
+每个产物用稳定 artifact ID、显式路径、版本及排序内容哈希标识，inputs 保存依赖指纹。上游规格或证据变动后，下游任务/审核即使文件未变也可能 stale。review 绑定 targetId、targetVersion、targetFingerprint、依赖 inputs，以及 reviewer、toolVersion、evidence 路径/哈希；还须显式声明 independence：L0 同上下文自审 / L1 新上下文同模型 / L2 异模型 / L3 人类，回执记录声明值，由人判断是否足够。不能重写回执让过期证据看似通过。Git 保留旧内容、拒绝与替代记录。
 
 哈希只能说明内容绑定，不能认证评审者或证据真伪，更不是用户接受。三类独立审核和真实主流程测试仍要实际执行；CRAP ≤50、目标约10，未测记 NOT_MEASURED。
 
@@ -53,6 +53,7 @@ Handoff 记录当前 specs 与 Git 版本、活动 change、策略、产物/依�
 
 - `node .forgeflow/ff-spec.mjs --help`
 - `node .forgeflow/ff-spec.mjs status --change CHANGE --json`
+- `node .forgeflow/ff-spec.mjs adopt [--write]`
 - `node .forgeflow/ff-spec.mjs instructions apply --change CHANGE --json`
 - `node .forgeflow/ff-spec.mjs validate CHANGE --type change --strict --no-interactive`
 
@@ -312,3 +313,8 @@ CHECKPOINT_CURRENT 只表示选定记录相符；done 回执需要绑定动作�
 ## 0.9.6 最小需求驱动闭环
 
 先由可访问的项目讨论提炼短需求摘要，区分确认、事实、假设与未知；无需反复阅读原话。子需求关联功能模块、任务和验收，模块说明职责、边界与协作；任务勾完不代表整体满足。旧项目先观察相关行为，提供可跳过的未知对齐；探索不会自动改基线，明确转向只更新受影响部分并说明真实代价。UX与架构围绕同一场景先验证一个完整切片。任务末或失败中断时附轻量评价与问题记录，缺指标/反馈保留未知，深入复盘按需。候选设计、后续路线与本轮验证边界可从仓库首页的本轮入口查看。
+
+
+## 0.10 目标进度与有效推进
+
+当前候选为0.10.0，21技能不变。在目标项目查询 `node .forgeflow/ff-spec.mjs status --goal checkpoint.json --current-goal R2`。复用唯一计划、现有检查点及回执；勾选不等于已证，历史运行不等于当前活跃。停滞/低进度按可配置阈值给复盘建议，不新增隔夜调度。详情见[目标进度说明](user/goal-progress.md)与[本轮证据](../iterations/0.10.0/README.md)。

@@ -1,7 +1,7 @@
-import test, { after } from 'node:test';
+import { createFixtureDirectory } from '../testing/workspace.mjs';
+import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { currentSkills, baselineSkills, architectureSkills, derivationSkills, hostBase, loadState } from '../state.mjs';
@@ -10,18 +10,17 @@ import { install, updateSkill } from '../install.mjs';
 import { rollback, recover } from '../transaction.mjs';
 import { json, digest, regularFiles } from '../files.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
-const base = process.env.FF_TEST_ROOT || os.tmpdir();
-const temp = fs.mkdtempSync(path.join(base, 'ff-writing-document-'));
-after(() => fs.rmSync(temp, { recursive: true, force: true }));
+const temp = createFixtureDirectory('ff-writing-document-');
+const packageVersion = JSON.parse(fs.readFileSync(path.join(root, 'package.json'))).version;
 const document = 'ff-writing-document';
 const diagram = 'ff-diagram';
 const opts = { hosts: ['codex', 'claude'], mode: 'skills-only' };
 function refresh(source) {
- json(path.join(source, 'MANIFEST.json'), { version: '0.9.6-derivation.4', files: Object.fromEntries(regularFiles(source).filter(n => n !== 'MANIFEST.json').map(n => [n, digest(path.join(source, n))])) });
+ json(path.join(source, 'MANIFEST.json'), { version: packageVersion, files: Object.fromEntries(regularFiles(source).filter(n => n !== 'MANIFEST.json').map(n => [n, digest(path.join(source, n))])) });
 }
 function source(versions = {}) {
  const dest = fs.mkdtempSync(path.join(temp, 'source-'));
- for (const folder of ['skills', 'tools/openspec', 'tools/installer']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true });
+ for (const folder of ['skills', 'tools/openspec', 'tools/installer', 'tools/rsi']) fs.cpSync(path.join(root, folder), path.join(dest, folder), { recursive: true, filter: name => !['.git', '.build', '.bootstrap'].includes(path.basename(name)) });
  const registry = JSON.parse(fs.readFileSync(path.join(root, 'skill-versions.json')));
  for (const [name, version] of Object.entries(versions)) {
   const file = path.join(dest, 'skills', name, 'SKILL.md');

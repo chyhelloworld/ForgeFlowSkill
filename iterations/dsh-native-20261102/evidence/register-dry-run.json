@@ -1,0 +1,1 @@
+{"action":"register","profile":"C:\\Users\\admin\\.dsh\\profiles\\desktop","plugin":"E:\\github\\ForgeFlowSKill\\.forgeflow\\dsh-plugin","changed":[],"dryRun":true,"code":0,"message":"已经注册，无需改动（幂等）；如未生效请检查 profile 是否被 DSH 加载。"}

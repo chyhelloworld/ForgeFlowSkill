@@ -18,7 +18,7 @@
 
 ## ff-spec 接入示例
 
-templates/codegraph/openspec 提供独立 schema 与 policy。只在需要生命周期追踪时复制 schema 到项目 openspec/schemas/，按已有政策合并 policy，不覆盖其他配置；替换 CHANGE_NAME，多个活动change用不冲突ID。用已有项目本地 `node tools/openspec/ff-spec.mjs new change codegraph-trial --schema ff-codegraph-evidence`；在元数据显式 `skip_specs: true`，不要把证据提升为规范。
+templates/codegraph/openspec 提供独立 schema 与 policy。只在需要生命周期追踪时复制 schema 到项目 openspec/schemas/；可先运行 node .forgeflow/ff-spec.mjs adopt --write 生成基础 policy，再按已有政策合并此处的 policy，不覆盖其他配置；替换 CHANGE_NAME，多个活动change用不冲突ID。用已有项目本地 `node tools/openspec/ff-spec.mjs new change codegraph-trial --schema ff-codegraph-evidence`；在元数据显式 `skip_specs: true`，不要把证据提升为规范。
 
 将实际捕获文件复制为 change 下 code-evidence.json，独立分析写 impact-review.md。`status --change codegraph-trial --json` 的 done 只说明文件存在，必须看 ffValidity；审核依照 docs/maintainers/SPEC-LIFECYCLE.md 绑定当前文件/schema/policy指纹。证据更新会使依赖审阅失效，刷新索引绝不恢复旧批准。本示例不提供自动pass回执。`validate codegraph-trial --strict --json` 和归档仍走现有门禁，发布、主分支合并另需授权。
 

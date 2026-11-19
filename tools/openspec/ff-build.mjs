@@ -23,9 +23,13 @@ export function dependencyHashes(root) {
   walk(base);
   return Object.fromEntries(Object.entries(result).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0));
 }
-export function verifyReusableBuild(candidate) {
+export function verifyReusableBuild(candidate, expectedVersion) {
   const build = verifyBuild(candidate);
   const marker = JSON.parse(readFileSync(path.join(build, 'FF-BUILD.json'), 'utf8'));
+  // A reusable build is valid only for the FF version being installed; otherwise the
+  // installed state and the CLI's stamped version would disagree.
+  if (expectedVersion !== undefined && marker.sourceVersion !== expectedVersion)
+    throw new Error(`Reusable build FF version ${marker.sourceVersion ?? '(unstamped)'} does not match ${expectedVersion}; rebuild with --build`);
   if (marker.platform !== process.platform || marker.arch !== process.arch || !marker.dependencyHashes ||
       JSON.stringify(dependencyHashes(build)) !== JSON.stringify(marker.dependencyHashes)) throw new Error('Reusable build platform/dependency hashes mismatch; rebuild explicitly');
   return build;
@@ -49,7 +53,9 @@ export function verifyBuild(candidate = home) {
     const pin = JSON.parse(readFileSync(path.join(candidate, 'upstream.json'), 'utf8'));
     const marker = JSON.parse(readFileSync(path.join(build, 'FF-BUILD.json'), 'utf8'));
     const pkg = JSON.parse(readFileSync(path.join(build, 'package.json'), 'utf8'));
-    if (pkg.name !== '@forgeflow/ff-spec' || pkg.version !== `1.14.2-ff.${pin.adapter}` || pkg.bin?.['ff-spec'] !== './bin/ff-spec.js' || pkg.bin?.openspec) throw new Error('package identity mismatch');
+    // Newer builds stamp the FF source version; older ones still carry the frozen adapter pin.
+    const expectedVersion = marker.sourceVersion ?? `1.14.2-ff.${pin.adapter}`;
+    if (pkg.name !== '@forgeflow/ff-spec' || pkg.version !== expectedVersion || pkg.bin?.['ff-spec'] !== './bin/ff-spec.js' || pkg.bin?.openspec) throw new Error('package identity mismatch');
     for (const key of ['commit', 'archiveSha256', 'patchSha256', 'adapter']) {
       if (marker[key] !== pin[key]) throw new Error(`stale build ${key}`);
     }

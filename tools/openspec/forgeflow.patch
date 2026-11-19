@@ -1908,12 +1908,12 @@ new file mode 100644
 +  if (record.review === undefined) return ['Review is required'];
 +  try {
 +    const review = object(record.review, `${policy.id}.review`);
-+    keys(review, ['verdict', 'targetId', 'targetVersion', 'targetFingerprint', 'inputs', 'reviewer', 'toolVersion', 'evidence', 'snapshotHash'], 'Review');
++    keys(review, ['verdict', 'targetId', 'targetVersion', 'targetFingerprint', 'inputs', 'reviewer', 'toolVersion', 'independence', 'evidence', 'snapshotHash'], 'Review');
 +    const reasons: string[] = [];
 +    if (review.verdict !== 'pass') reasons.push(`Review verdict is ${String(review.verdict)}; passing review required`);
 +    if (!reviewBindingMatches(review, policy.id, record.version, fingerprint, inputs)) reasons.push('Review does not match the current artifact and inputs');
 +    if (reasons.length) return reasons;
-+    if (!nonemptyString(review.reviewer) || !nonemptyString(review.toolVersion)) return ['Review requires reviewer and toolVersion'];
++    const levels: string[] = ['L0', 'L1', 'L2', 'L3']; if (!nonemptyString(review.reviewer) || !nonemptyString(review.toolVersion) || (review.independence !== undefined && !levels.includes(String(review.independence)))) return ['Review requires reviewer, toolVersion and independence L0-L3'];
 +    validateEvidence(context, review.evidence);
 +    return [];
 +  } catch (error) { return [errorText(error)]; }

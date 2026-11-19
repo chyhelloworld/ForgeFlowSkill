@@ -1,0 +1,24 @@
+SKILLS INVENTORY (.dsh/skills) @ 2026-11-02T12:49:20.3335432+08:00
+total_dirs=21
+non_ff=
+ff-architecture-derive | version=0.9.7-dsh.1 | bytes=5613 | block=subagent,tasks.md,present,exit_plan_mode
+ff-architecture-review | version=0.9.7-dsh.1 | bytes=7394 | block=subagent,tasks.md,present,exit_plan_mode
+ff-deliver | version=0.9.7-dsh.1 | bytes=4195 | block=subagent,tasks.md,present,exit_plan_mode
+ff-design | version=0.9.7-dsh.1 | bytes=12540 | block=subagent,tasks.md,present,exit_plan_mode
+ff-diagnose | version=0.9.7-dsh.1 | bytes=5092 | block=subagent,tasks.md,present,exit_plan_mode
+ff-diagram | version=0.1.0 | bytes=3354 | block=subagent,tasks.md,present,exit_plan_mode
+ff-grill | version=0.9.7-dsh.1 | bytes=8287 | block=subagent,tasks.md,present,exit_plan_mode
+ff-handoff | version=0.9.7-dsh.1 | bytes=7308 | block=subagent,tasks.md,present,exit_plan_mode
+ff-implement | version=0.9.7-dsh.1 | bytes=5338 | block=subagent,tasks.md,present,exit_plan_mode
+ff-intake | version=0.9.7-dsh.1 | bytes=3953 | block=subagent,tasks.md,present,exit_plan_mode
+ff-plan | version=0.9.7-dsh.1 | bytes=3956 | block=subagent,tasks.md,present,exit_plan_mode
+ff-prove | version=0.9.7-dsh.1 | bytes=6873 | block=subagent,tasks.md,present,exit_plan_mode
+ff-research | version=0.9.7-dsh.1 | bytes=4457 | block=subagent,tasks.md,present,exit_plan_mode
+ff-retro | version=0.9.7-dsh.1 | bytes=5592 | block=subagent,tasks.md,present,exit_plan_mode
+ff-review | version=0.9.7-dsh.1 | bytes=5307 | block=subagent,tasks.md,present,exit_plan_mode
+ff-spec | version=0.9.7-dsh.1 | bytes=6157 | block=subagent,tasks.md,present,exit_plan_mode
+ff-tdd | version=0.9.7-dsh.1 | bytes=5292 | block=subagent,tasks.md,present,exit_plan_mode
+ff-writing-beats | version=0.9.7-dsh.1 | bytes=4302 | block=subagent,tasks.md,present,exit_plan_mode
+ff-writing-document | version=0.1.0 | bytes=5385 | block=subagent,tasks.md,present,exit_plan_mode
+ff-writing-fragments | version=0.9.7-dsh.1 | bytes=4166 | block=subagent,tasks.md,present,exit_plan_mode
+ff-writing-shape | version=0.9.7-dsh.1 | bytes=4187 | block=subagent,tasks.md,present,exit_plan_mode

@@ -1,0 +1,4 @@
+ForgeFlow status  (E:\github\ForgeFlowSKill)
+  gates: DISABLED — openspec/ not found; this project has no ForgeFlow configuration.
+  next:  node .forgeflow/ff-spec.mjs init
+EXIT=0

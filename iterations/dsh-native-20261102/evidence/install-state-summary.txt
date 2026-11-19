@@ -1,0 +1,6 @@
+{
+ "version": "0.9.8-dsh.1",
+ "host": "dsh",
+ "mode": "full",
+ "release": "releases/0.9.8-dsh.1-64e89f21beafa548-full"
+}

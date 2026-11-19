@@ -1,13 +1,13 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const entry = fileURLToPath(new URL('../../../bin/ff-install.mjs', import.meta.url));
-const project = fs.mkdtempSync(path.join(process.env.FF_TEST_ROOT || os.tmpdir(), 'npx 中文 空格 '));
+const project = createFixtureDirectory('npx 中文 空格 ');
 const invoke = args => spawnSync(process.execPath, [entry, ...args, '--project', project], { encoding: 'utf8' });
 const temporary = () => fs.readdirSync(path.join(project, '.forgeflow/install')).filter(n => n.startsWith('source-') || n.startsWith('staging-') || n === 'lock');
 

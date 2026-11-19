@@ -31,7 +31,17 @@ function npm(args) {
   }
   run('npm', args);
 }
-function main() {
+function sourceVersionArg(argv) {
+  if (argv.includes('--source-version')) throw new Error('--source-version requires a value');
+  const flag = argv.find(arg => arg.startsWith('--source-version='));
+  if (!flag) return undefined;
+  const value = flag.slice('--source-version='.length);
+  if (!value) throw new Error('--source-version requires a value');
+  return value;
+}
+function main(explicitVersion) {
+  // Validate the stamp before the expensive, network-bound build so a typo cannot
+  // leave a finished .build that a rerun then refuses to overwrite.
   const [major, minor] = process.versions.node.split('.').map(Number);
   if (major < 20 || (major === 20 && minor < 19)) throw new Error('Node >=20.19 required');
   verify(pin.archive, pin.archiveSha256);
@@ -56,7 +66,18 @@ function main() {
     XDG_DATA_HOME: path.join(bootstrap, 'data'), XDG_CACHE_HOME: path.join(bootstrap, 'cache'),
   });
   run(process.execPath, ['build.js'], build);
-  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, runtimeHashes: runtimeHashes(build), dependencyHashes: dependencyHashes(build), platform: process.platform, arch: process.arch, node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
+  // The CLI reports its own package.json version, and the patch freezes a trial pin there.
+  // Stamp the FF source version so doctor can compare skills, state and CLI without a false drift.
+  // A checkout always has the FF package.json two levels up; a copied fixture may not.
+  const sourcePackage = path.join(home, '../../package.json');
+  const sourceVersion = explicitVersion ?? (existsSync(sourcePackage) ? JSON.parse(readFileSync(sourcePackage, 'utf8')).version : undefined);
+  if (sourceVersion) {
+    const builtManifest = path.join(build, 'package.json');
+    const manifest = JSON.parse(readFileSync(builtManifest, 'utf8'));
+    manifest.version = sourceVersion;
+    writeFileSync(builtManifest, JSON.stringify(manifest, null, 2) + '\n');
+  }
+  writeFileSync(path.join(build, 'FF-BUILD.json'), JSON.stringify({ ...pin, ...(sourceVersion ? { sourceVersion } : {}), runtimeHashes: runtimeHashes(build), dependencyHashes: dependencyHashes(build), platform: process.platform, arch: process.arch, node: process.version, builtAt: new Date().toISOString() }, null, 2) + '\n');
   console.log(`Built project-local CLI: ${path.join(home, 'ff-spec.mjs')}`);
 }
 // --clean owns only the fixed sibling .build; existing .bootstrap data is retained.
@@ -74,6 +95,8 @@ function cleanBuild() {
   if (lstatSync(build, { throwIfNoEntry: false })) throw new Error('.build cleanup incomplete');
 }
 try {
+  // Parse before --clean: a malformed stamp must not delete an existing .build.
+  const explicitVersion = sourceVersionArg(process.argv);
   if (process.argv.includes('--clean')) cleanBuild();
-  main();
+  main(explicitVersion);
 } catch (error) { console.error(error.message); process.exitCode = 1; }

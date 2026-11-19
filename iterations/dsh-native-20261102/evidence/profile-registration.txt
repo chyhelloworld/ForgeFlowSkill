@@ -1,0 +1,6 @@
+profile=C:\Users\admin/.dsh/profiles/desktop
+dependency.after=link:E:/github/ForgeFlowSKill/.forgeflow/dsh-plugin
+dependency.before=undefined
+bundles.after=["@deepseek-ai/dsh-base","@deepseek-ai/dsh-web-app","@deepseek-ai/dsh-experimental-auto-review","@deepseek-ai/dsh-subagent-codex","@deepseek-ai/dsh-experimental-session-titles-bundle","@deepseek-ai/dsh-experimental-tool-worktree","@deepseek-ai/dsh-experimental-session-search","billion-context","@deepseek-ai/dsh-experimental-plugin-market-bundle","@local/dsh-sqlserver","@local/dsh-toll-audit","@deepseek-ai/dsh-experimental-agent-team-profile","@local/forgeflow-dsh"]
+bundles.before=["@deepseek-ai/dsh-base","@deepseek-ai/dsh-web-app","@deepseek-ai/dsh-experimental-auto-review","@deepseek-ai/dsh-subagent-codex","@deepseek-ai/dsh-experimental-session-titles-bundle","@deepseek-ai/dsh-experimental-tool-worktree","@deepseek-ai/dsh-experimental-session-search","billion-context","@deepseek-ai/dsh-experimental-plugin-market-bundle","@local/dsh-sqlserver","@local/dsh-toll-audit","@deepseek-ai/dsh-experimental-agent-team-profile"]
+bundlesDelta=["@local/forgeflow-dsh"]

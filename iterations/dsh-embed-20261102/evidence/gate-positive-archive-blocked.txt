@@ -1,0 +1,4 @@
+CMD: node <rel>/tools/openspec/ff-spec.mjs archive demo --yes
+cwd=E:\github\ForgeFlowSKill\_verify_tmp\dsh-gate-positive-20261102
+ARCHIVE_EXIT=1
+× Error: FF validity gate failed: design: Stable plan requires unique task IDs under ## Task plan

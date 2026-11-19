@@ -14,12 +14,12 @@ def is_deliverable(path, root):
     return parts[:3] not in {("tools", "openspec", ".build"), ("tools", "openspec", ".bootstrap")}
 
 def validate(root):
-    expected_version=json.loads((root/'package.json').read_text())['version']
+    expected_version=json.loads((root/'package.json').read_text(encoding='utf-8'))['version']
     errors=[]; checked={'skills':0,'local_links':0,'source_hashes':0,'manifest_files':0}
     def need(ok,msg):
         if not ok: errors.append(msg)
     skills=root/'skills'
-    independent=json.loads((root/'skill-versions.json').read_text())
+    independent=json.loads((root/'skill-versions.json').read_text(encoding='utf-8'))
     need(isinstance(independent,dict),'independent skill versions must be an object')
     if not isinstance(independent,dict): independent={}
     for name, version in independent.items():
@@ -28,7 +28,7 @@ def validate(root):
     for folder in sorted(skills.iterdir()):
         if not folder.is_dir(): continue
         checked['skills']+=1
-        source=(folder/'SKILL.md').read_text()
+        source=(folder/'SKILL.md').read_text(encoding='utf-8')
         match=re.match(r'^---\n(.*?)\n---\n',source,re.S)
         need(bool(match),f'{folder.name}: frontmatter absent')
         if not match: continue
@@ -40,18 +40,18 @@ def validate(root):
         need((folder/'NOTICE.md').is_file(),f'{folder.name}: missing NOTICE')
         license_name = {'ff-design': 'LICENSE-IMPECCABLE', 'ff-architecture-review': 'LICENSE', 'ff-architecture-derive': 'LICENSE', 'ff-diagram': 'LICENSE', 'ff-writing-document': 'LICENSE'}.get(folder.name, 'LICENSE-MATT')
         need((folder/license_name).is_file(),f'{folder.name}: missing license')
-        ui=yaml.safe_load((folder/'agents/openai.yaml').read_text())['interface']
+        ui=yaml.safe_load((folder/'agents/openai.yaml').read_text(encoding='utf-8'))['interface']
         need(25<=len(ui['short_description'])<=64,f'{folder.name}: UI description length')
         need('$'+folder.name in ui['default_prompt'],f'{folder.name}: UI prompt invocation')
         for file in folder.rglob('*.md'):
-            for link in re.findall(r'\[[^\]]+\]\(([^)]+)\)',file.read_text()):
+            for link in re.findall(r'\[[^\]]+\]\(([^)]+)\)',file.read_text(encoding='utf-8')):
                 if '://' in link or link.startswith('#'): continue
                 checked['local_links']+=1
                 target=(file.parent/link.split('#')[0]).resolve()
                 need(target.is_relative_to(folder.resolve()),f'{file}: external local dependency {link}')
                 need(target.is_file(),f'{file}: broken link {link}')
     need({p.name for p in skills.iterdir() if p.is_dir()}=={'ff-intake','ff-grill','ff-spec','ff-design','ff-prove','ff-plan','ff-implement','ff-review','ff-deliver','ff-diagnose','ff-tdd','ff-handoff','ff-research','ff-retro','ff-writing-fragments','ff-writing-shape','ff-writing-beats','ff-architecture-review','ff-architecture-derive','ff-diagram','ff-writing-document'},'expected twelve baseline plus nine optional skills')
-    cases=json.loads((root/'evaluations/scenarios.json').read_text())['cases']
+    cases=json.loads((root/'evaluations/scenarios.json').read_text(encoding='utf-8'))['cases']
     ids=[c['id'] for c in cases]
     need(len(ids)==len(set(ids)), 'duplicate evaluation case IDs')
     need(set(['E07','E08','E09','E10','E11','E12','E13','E14','E15','E16','E17','E18','E21','E22','E23','E24','E25','E33','E34','E35','E36','E37','E38']).issubset(ids), 'missing required workflow or method scenarios')
@@ -60,13 +60,13 @@ def validate(root):
         need(bool(case.get('prompt')) and len(case.get('criteria', []))==3 and bool(case.get('critical_failures')), f"invalid scenario: {case.get('id')}")
         need(set(case.get('skills', [])).issubset(installed), f"unknown scenario skill: {case.get('id')}")
     checked['scenarios']=len(cases)
-    sources=json.loads((root/'provenance/sources.json').read_text())
+    sources=json.loads((root/'provenance/sources.json').read_text(encoding='utf-8'))
     for entry in sources['sources']+[sources['ff_baseline']]:
         p=root/entry['path'];checked['source_hashes']+=1
         need(p.is_file() and hashlib.sha256(p.read_bytes()).hexdigest()==entry['sha256'],f'source changed: {p}')
     manifest=root/'MANIFEST.json'
     if manifest.exists():
-        manifest_data=json.loads(manifest.read_text())
+        manifest_data=json.loads(manifest.read_text(encoding='utf-8'))
         need(manifest_data.get('version')==expected_version,'manifest version mismatch')
         listed=manifest_data['files']
         actual={p.relative_to(root).as_posix() for p in root.rglob('*') if p.is_file() and p!=manifest and p.name not in {'forgeflow-payload.tgz','forgeflow-payload.sha256'} and is_deliverable(p, root)}

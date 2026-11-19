@@ -1,4 +1,7 @@
 // Deterministic evidence bookkeeping. Content binding is not reviewer authentication.
+// Review independence is recorded, not verified: the receipt states how separate the
+// reviewer was, and a human decides whether that was enough for this change.
+export const INDEPENDENCE = Object.freeze({ L0: 'same context, self-review', L1: 'fresh context, same model', L2: 'different model', L3: 'human reviewer' });
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
@@ -64,12 +67,13 @@ function recordsFromReport(root, saved, report, reportPath, bytes) {
   if (JSON.stringify(Object.keys(report.artifacts).sort()) !== JSON.stringify(expected)) throw new Error('Report must cover exactly the snapshot artifacts');
   return Object.fromEntries(saved.binding.artifacts.map(a => {
     const review = report.artifacts[a.id];
-    keys(review, ['version', 'verdict', 'reviewer', 'toolVersion', 'unverified', 'evidence'], 'Artifact report');
+    keys(review, ['version', 'verdict', 'reviewer', 'toolVersion', 'independence', 'unverified', 'evidence'], 'Artifact report');
     for (const field of ['version', 'reviewer', 'toolVersion']) if (typeof review[field] !== 'string' || !review[field].trim()) throw new Error(`Report requires explicit ${field}`);
+    if (!Object.hasOwn(INDEPENDENCE, review.independence ?? '')) throw new Error(`Report requires explicit independence: ${Object.entries(INDEPENDENCE).map(([level, label]) => `${level} (${label})`).join(', ')}`);
     if (!['pass', 'fail'].includes(review.verdict) || !Array.isArray(review.unverified) || review.unverified.some(s => typeof s !== 'string')) throw new Error('Report requires an explicit pass/fail verdict and unverified array; draft is not a verdict');
     return [a.id, { version: review.version, fingerprint: a.fingerprint, inputs: a.inputs,
       review: { verdict: review.verdict, targetId: a.id, targetVersion: review.version, targetFingerprint: a.fingerprint, inputs: a.inputs,
-        reviewer: review.reviewer, toolVersion: review.toolVersion, snapshotHash: saved.snapshotHash,
+        reviewer: review.reviewer, toolVersion: review.toolVersion, independence: review.independence, snapshotHash: saved.snapshotHash,
         evidence: [{ path: reportPath, sha256: sha(bytes) }, ...boundEvidence(root, review.evidence ?? [], reportPath)] } }];
   }));
 }
@@ -143,8 +147,9 @@ export async function receiptMain(build, args, project = process.cwd()) {
     const evidence = rest.slice(3).map(name => ({ path: name, sha256: sha(fs.readFileSync(safe(root, name))) }));
     boundEvidence(root, evidence, rest[1]);
     create(safe(root, rest[1]), { version: 1, snapshotHash: saved.snapshotHash, artifacts: Object.fromEntries(saved.binding.artifacts.map(a => [a.id,
-      { version: `${a.id}-v1`, verdict: 'not-reviewed', reviewer: '', toolVersion: '', evidence, unverified: ['Replace with actual unverified scope; independently inspect snapshot rules, files and inputs.'] }])) });
-    result = { status: 'DRAFT_CREATED', file: rest[1] };
+      { version: `${a.id}-v1`, verdict: 'not-reviewed', reviewer: '', toolVersion: '', independence: '',
+        evidence, unverified: ['Replace with actual unverified scope; independently inspect snapshot rules, files and inputs.'] }])) });
+    result = { status: 'DRAFT_CREATED', file: rest[1], next: `Fill reviewer, toolVersion, independence (${Object.keys(INDEPENDENCE).join('|')}) and a pass/fail verdict, then receipt record` };
   } else if (command === 'check' && rest.length === 2) {
     const saved = snapshot(safe(root, rest[1])); sameSnapshot(saved, capture(root, rest[0], evaluateFF)); result = { status: 'MATCHES', snapshotHash: saved.snapshotHash };
   } else if (command === 'record' && (rest.length === 3 || (rest.length === 4 && rest[3] === '--migrate'))) {

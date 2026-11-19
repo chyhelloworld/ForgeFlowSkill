@@ -1,3 +1,4 @@
+import { createFixtureDirectory } from '../testing/workspace.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -8,9 +9,7 @@ import { hostBase } from '../state.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
 const names = ['ff-diagram'];
 const files = ['core.md', 'architecture.md', 'data.md', 'uml.md'];
-const base = process.env.FF_TEST_ROOT;
-if (!base || !path.isAbsolute(base)) throw new Error('FF_TEST_ROOT must name an explicit absolute fixture directory');
-const suite = fs.mkdtempSync(path.join(base, 'ff-diagrams-'));
+const suite = createFixtureDirectory('ff-diagrams-');
 function checkLinks(folder) {
   for (const name of files) {
     const file = path.join(folder, 'references', name);
