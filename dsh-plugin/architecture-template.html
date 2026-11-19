@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>__FF_TITLE__ · ForgeFlow 架构检视</title>
+<!--
+Derived from Tobi1chi/arch-grower dashboard_template.html
+Upstream commit e2ebc241d0528e93664c5345fd4bbe2cad821fe2
+Modified for ForgeFlow: read-only projection, no execution or readiness inference.
+MIT License
+
+Copyright (c) 2026 tobiichieigetsu
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+-->
+<style>
+:root {
+  --ground: #e8ebf4;
+  --band: #dfe3ef;
+  --paper: #ffffff;
+  --ink: #1e2140;
+  --ink-2: #5b6083;
+  --line: #b9bfd6;
+  --blue: #2f6bff;
+  --sun: #ffb21f;
+  --sun-tint: #fff0c7;
+  --violet: #7354f6;
+  --violet-tint: #ece7ff;
+  --lilac: #a9afcb;
+  --green: #12b07a;
+  --green-tint: #d9f5ea;
+  --on-color: #ffffff;
+  --sans: "SF Pro Rounded", ui-rounded, "PingFang SC", "HarmonyOS Sans SC", "MiSans",
+          "Microsoft YaHei UI", "Microsoft YaHei", system-ui, sans-serif;
+  --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(.2, .8, .2, 1);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ground: #191b2e;
+    --band: #1f2236;
+    --paper: #282b46;
+    --ink: #eef0fa;
+    --ink-2: #a3a8c7;
+    --line: #4a4f74;
+    --sun-tint: #3d3420;
+    --violet-tint: #302a55;
+    --green-tint: #173a33;
+    color-scheme: dark;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font: 14px/1.5 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+button, input { font: inherit; color: inherit; }
+button { cursor: pointer; }
+code, kbd { font-family: var(--mono); }
+:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+
+.app { height: 100%; display: flex; flex-direction: column; }
+
+/* ── Top bar ─────────────────────────────────────────────── */
+.top {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 14px 24px;
+  padding: 16px 24px;
+  background: var(--paper);
+}
+.brand { position: relative; width: 40px; height: 40px; flex: none; }
+.brand i { position: absolute; display: block; }
+.brand .m-ring { left: 0; top: 0; width: 20px; height: 20px; border: 4px solid var(--sun); border-radius: 50%; }
+.brand .m-square { right: 0; top: 4px; width: 16px; height: 16px; background: var(--blue); border-radius: 4px; }
+.brand .m-stack { left: 10px; bottom: 0; width: 18px; height: 14px; background: var(--violet); border-radius: 4px; }
+.title-block { flex: 1 1 320px; min-width: 0; }
+.title-block h1 {
+  margin: 0; font-size: 20px; line-height: 1.3; font-weight: 800; letter-spacing: -.01em;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.title-block .sub { margin: 2px 0 0; color: var(--ink-2); font-size: 12.5px; }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+
+.chip, .pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  height: 32px; padding: 0 12px; border: 0; border-radius: 999px;
+  background: var(--ground); color: var(--ink); font-size: 13px; font-weight: 600;
+  transition: background-color .18s var(--ease), color .18s var(--ease);
+}
+.chip:hover, .pill:hover { background: var(--band); }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.chip .n { font-variant-numeric: tabular-nums; }
+.pill.toggle[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+.search {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 32px; padding: 0 6px 0 12px; border-radius: 999px; background: var(--ground);
+}
+.search input { width: 132px; border: 0; background: transparent; outline: none; font-size: 13px; }
+.search input::-webkit-search-cancel-button { display: none; }
+.search:focus-within { box-shadow: 0 0 0 3px var(--blue); }
+kbd {
+  display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px;
+  border-radius: 6px; background: var(--paper); color: var(--ink-2); font-size: 11px;
+}
+
+/* ── Status shapes: the visual language of the whole page ── */
+.shape { position: relative; display: inline-block; flex: none; width: 14px; height: 14px; }
+.shape.s-solid { background: var(--blue); border-radius: 4px; }
+.shape.s-hole { border: 3px solid var(--sun); border-radius: 50%; }
+.shape.s-fog { background: var(--lilac); border-radius: 50%; transform: scale(.8); }
+.shape.s-super { width: 12px; height: 12px; margin: 0 2px 2px 0; background: var(--violet); border-radius: 3px; }
+.shape.s-super::after {
+  content: ""; position: absolute; left: 4px; top: 4px; width: 100%; height: 100%;
+  border-radius: inherit; background: var(--violet); opacity: .45; z-index: -1;
+}
+.shape.s-path { background: var(--on-color); border-radius: 50%; width: 10px; height: 10px; }
+
+/* ── Board ──────────────────────────────────────────────── */
+.main { flex: 1; min-height: 0; display: flex; }
+.board { flex: 1; min-width: 0; overflow: auto; outline: none; }
+.canvas { position: relative; min-width: max-content; min-height: 100%; display: flex; flex-direction: column; }
+.lanes { display: flex; flex: 1; }
+.lane {
+  width: 340px; flex: none;
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 22px 44px 40px;
+}
+.lane:nth-child(even) { background: var(--band); }
+.lane-head { display: grid; grid-template-columns: auto 1fr; column-gap: 10px; align-items: center; margin-bottom: 4px; }
+.lane-no {
+  grid-row: span 2; display: grid; place-items: center;
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--ink); color: var(--paper); font-weight: 800; font-size: 14px;
+}
+.lane-head h2 { margin: 0; font-size: 15px; font-weight: 800; line-height: 1.25; }
+.lane-meta { color: var(--ink-2); font-size: 12px; }
+.lane-empty { color: var(--ink-2); font-size: 12.5px; padding: 8px 2px; }
+.fog-zone { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
+.fog-head { color: var(--ink-2); font-size: 12px; font-weight: 700; padding-left: 2px; }
+body.hide-fog .fog-zone { display: none; }
+
+/* ── Cards ──────────────────────────────────────────────── */
+.card {
+  position: relative; z-index: 2;
+  display: grid; grid-template-columns: 22px 1fr; column-gap: 10px;
+  padding: 13px 14px 12px 13px;
+  border: 2px solid transparent; border-radius: 16px;
+  background: var(--paper);
+  cursor: pointer; user-select: none;
+  transition: opacity .2s var(--ease), border-color .2s var(--ease);
+}
+.card .shape { width: 18px; height: 18px; margin-top: 2px; }
+.card .shape.s-super { width: 15px; height: 15px; }
+.card .shape.s-super::after { left: 5px; top: 5px; }
+.card-body { min-width: 0; }
+.card-title { font-weight: 700; font-size: 14px; line-height: 1.35; overflow-wrap: anywhere; }
+.card-spec {
+  margin: 4px 0 0; color: var(--ink-2); font-size: 12.5px; line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.card-foot { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 9px; }
+.card-foot code { color: var(--ink-2); font-size: 11.5px; overflow-wrap: anywhere; }
+.tag {
+  display: inline-flex; align-items: center; height: 20px; padding: 0 8px;
+  border-radius: 999px; font-size: 11.5px; font-weight: 700; white-space: nowrap;
+}
+.tag-next { background: var(--sun); color: #2a1d00; }
+.tag-impl { background: var(--ground); color: var(--ink-2); }
+.tag-rel { background: var(--ink); color: var(--paper); display: none; }
+.card.is-up .tag-up, .card.is-down .tag-down { display: inline-flex; }
+.card-tags { display: flex; gap: 6px; margin-left: auto; }
+
+.card.s-hole { background: var(--sun-tint); }
+.card.s-super { background: var(--violet-tint); }
+.card.s-fog { background: transparent; border: 2px dashed var(--lilac); }
+.card:hover { border-color: var(--line); }
+.card.s-fog:hover { border-color: var(--ink-2); }
+.card.is-sel { border: 2px solid var(--ink); }
+.card.on-path { border: 2px solid var(--green); }
+.card.is-sel.on-path { border-color: var(--ink); }
+
+/* Compact: unrelated cards fold down to a single title line. */
+.card.is-compact { padding-top: 8px; padding-bottom: 8px; opacity: .55; }
+.card.is-compact .card-spec,
+.card.is-compact .card-foot,
+.card.is-compact .kids-toggle,
+.card.is-compact .kids { display: none; }
+.card.is-compact .card-title { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.card.is-compact:hover { opacity: .9; }
+
+.kids-toggle {
+  grid-column: 2; justify-self: start;
+  margin-top: 8px; height: 26px; padding: 0 10px; border: 0; border-radius: 999px;
+  background: var(--paper); color: var(--violet); font-size: 12px; font-weight: 700;
+}
+.kids { grid-column: 2; margin: 8px 0 0; padding: 0; list-style: none; display: grid; gap: 6px; }
+.kids[hidden] { display: none; }
+.kids li { display: flex; align-items: center; gap: 8px; font-size: 12.5px; }
+.kids li code { margin-left: auto; color: var(--ink-2); font-size: 11px; }
+.kids .shape { width: 11px; height: 11px; }
+.kids .shape.s-hole { border-width: 2px; }
+
+/* ── Wires ──────────────────────────────────────────────── */
+.wires { position: absolute; left: 0; top: 0; z-index: 1; overflow: visible; pointer-events: none; }
+.wire { fill: none; stroke: var(--line); stroke-width: 2; stroke-linecap: round; transition: opacity .2s; }
+.wire.e-tbd { stroke-dasharray: 1 6; }
+.wire.e-fog { stroke: var(--lilac); stroke-dasharray: 7 6; }
+.wire.e-path { stroke: var(--green); stroke-width: 3; }
+.wire.e-active { stroke: var(--ink); stroke-width: 2.5; stroke-dasharray: 9 7; animation: flow .9s linear infinite; }
+.wire.e-dim { opacity: .22; }
+.hit { fill: none; stroke: transparent; stroke-width: 14; pointer-events: stroke; cursor: help; }
+.edge:hover .wire { stroke: var(--ink); opacity: 1; }
+.arrow { fill: var(--line); }
+.arrow.a-ink { fill: var(--ink); }
+.arrow.a-green { fill: var(--green); }
+.arrow.a-fog { fill: var(--lilac); }
+@keyframes flow { to { stroke-dashoffset: -32; } }
+
+.edge-labels { position: absolute; inset: 0; z-index: 3; pointer-events: none; }
+.lab {
+  position: absolute; transform: translate(-50%, -50%);
+  max-width: 82px; padding: 3px 8px; border-radius: 10px;
+  background: var(--paper); color: var(--ink); font-size: 11px; line-height: 1.35; font-weight: 600;
+  text-align: center; overflow-wrap: anywhere;
+  display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;
+}
+.lab.lab-tbd { background: var(--sun-tint); color: var(--ink-2); font-weight: 500; }
+
+/* ── Inspector ──────────────────────────────────────────── */
+.inspector {
+  width: 368px; flex: none; overflow-y: auto;
+  background: var(--paper); padding: 22px 24px 32px;
+}
+.ins-head { display: grid; grid-template-columns: auto 1fr auto; gap: 14px; align-items: start; margin-bottom: 18px; }
+.ins-head .big { width: 44px; height: 44px; margin-top: 2px; }
+.ins-head .big.s-hole { border-width: 7px; }
+.ins-head .big.s-solid { border-radius: 11px; }
+.ins-head .big.s-super { width: 38px; height: 38px; border-radius: 9px; }
+.ins-head .big.s-super::after { left: 9px; top: 9px; }
+.ins-head h2 { margin: 0; font-size: 20px; line-height: 1.3; font-weight: 800; overflow-wrap: anywhere; }
+.ins-head .status-line { margin-top: 3px; color: var(--ink-2); font-size: 13px; }
+.close {
+  width: 32px; height: 32px; border: 0; border-radius: 50%;
+  background: var(--ground); font-size: 18px; line-height: 1;
+}
+.close:hover { background: var(--band); }
+
+.sec { margin-top: 22px; }
+.sec h3 { margin: 0 0 8px; font-size: 13px; font-weight: 800; }
+.sec h3 .count { color: var(--ink-2); font-weight: 600; margin-left: 4px; }
+.sec p { margin: 0; }
+.muted { color: var(--ink-2); }
+.spec-text { font-size: 14px; line-height: 1.65; overflow-wrap: anywhere; }
+
+.id-row { display: flex; align-items: center; gap: 8px; }
+.id-row code { font-size: 12.5px; padding: 4px 10px; border-radius: 8px; background: var(--ground); overflow-wrap: anywhere; }
+.copy {
+  height: 28px; padding: 0 11px; border: 0; border-radius: 999px;
+  background: var(--ground); font-size: 12px; font-weight: 700;
+}
+.copy:hover { background: var(--band); }
+
+.callout { padding: 12px 14px; border-radius: 14px; font-size: 13px; line-height: 1.55; }
+.callout.sun { background: var(--sun-tint); }
+.callout.green { background: var(--green-tint); }
+.callout.warn { background: var(--sun-tint); }
+.callout + .callout { margin-top: 8px; }
+
+.nb-list { display: grid; gap: 8px; }
+.nb {
+  display: grid; grid-template-columns: 14px 1fr; column-gap: 10px; row-gap: 3px; align-items: center;
+  width: 100%; padding: 10px 12px; border: 0; border-radius: 14px;
+  background: var(--ground); text-align: left;
+}
+.nb:hover { background: var(--band); }
+.nb .nb-label { font-weight: 700; font-size: 13px; overflow-wrap: anywhere; }
+.nb .nb-contract { grid-column: 2; font-size: 12px; color: var(--ink-2); overflow-wrap: anywhere; }
+.nb .nb-contract.tbd { color: #a86d00; }
+@media (prefers-color-scheme: dark) { .nb .nb-contract.tbd { color: var(--sun); } }
+
+.cmd { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; margin-top: 8px; }
+.cmd code {
+  display: block; padding: 9px 11px; border-radius: 10px; background: var(--ground);
+  font-size: 11.5px; line-height: 1.5; overflow-wrap: anywhere;
+}
+.cmd-note { font-size: 12px; color: var(--ink-2); margin-top: 10px; }
+
+.progress { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--ground); gap: 3px; }
+.progress span { display: block; height: 100%; }
+.progress .p-done { background: var(--blue); }
+.progress .p-super { background: var(--violet); }
+.progress .p-hole { background: var(--sun); }
+.progress .p-fog { background: var(--lilac); }
+.progress-caption { margin-top: 8px; font-size: 13px; }
+
+.chain { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-top: 10px; }
+.chain button {
+  height: 28px; padding: 0 11px; border: 0; border-radius: 999px;
+  background: var(--paper); font-size: 12.5px; font-weight: 700;
+}
+.chain .sep { width: 10px; height: 2px; background: var(--green); border-radius: 2px; }
+.next-card {
+  display: grid; grid-template-columns: 18px 1fr; column-gap: 10px;
+  width: 100%; padding: 12px 14px; border: 0; border-radius: 16px;
+  background: var(--sun-tint); text-align: left;
+}
+.next-card .shape { width: 16px; height: 16px; margin-top: 2px; }
+.next-card strong { display: block; font-size: 14px; }
+.next-card span.spec { display: block; color: var(--ink-2); font-size: 12.5px; margin-top: 2px; }
+.list { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 13px; line-height: 1.55; }
+.keys { display: grid; grid-template-columns: auto 1fr; gap: 7px 12px; align-items: center; font-size: 13px; }
+.keys kbd { background: var(--ground); justify-self: start; }
+
+.empty { padding: 60px 40px; max-width: 420px; }
+.empty h2 { margin: 0 0 6px; font-size: 18px; }
+
+.toast {
+  position: fixed; left: 50%; bottom: 24px; z-index: 50;
+  padding: 10px 18px; border-radius: 999px; background: var(--ink); color: var(--paper);
+  font-size: 13px; font-weight: 700;
+  transform: translate(-50%, calc(100% + 40px)); visibility: hidden;
+  transition: transform .28s var(--ease), visibility 0s .28s;
+}
+.toast.show { transform: translate(-50%, 0); visibility: visible; transition: transform .28s var(--ease); }
+
+/* ── Morph transitions (View Transitions API) ───────────── */
+::view-transition-group(*) { animation-duration: .34s; animation-timing-function: var(--ease); }
+::view-transition-old(root), ::view-transition-new(root) { animation-duration: .2s; }
+::view-transition-group(sel-card) { border-radius: 16px; overflow: hidden; }
+::view-transition-old(sel-card), ::view-transition-new(sel-card) {
+  height: 100%; width: 100%; object-fit: cover; object-position: left top;
+}
+::view-transition-old(wires), ::view-transition-old(wire-labels) { animation: fade-out .1s both; }
+::view-transition-new(wires), ::view-transition-new(wire-labels) { animation: fade-in .2s .22s both; }
+.wires { view-transition-name: wires; }
+.edge-labels { view-transition-name: wire-labels; }
+@keyframes fade-out { to { opacity: 0; } }
+@keyframes fade-in { from { opacity: 0; } }
+
+/* ── First paint: nodes grow from their shapes, in topological order ── */
+body.intro .card { animation: grow .55s var(--ease) both; animation-delay: calc(var(--i) * 70ms); }
+body.intro .card .shape { animation: pop .45s var(--ease) both; animation-delay: calc(var(--i) * 70ms); }
+body.intro .wires, body.intro .edge-labels { animation: fade-in .45s both; animation-delay: var(--wire-delay, .4s); }
+@keyframes grow {
+  from { clip-path: circle(0 at 22px 22px); }
+  to { clip-path: circle(150% at 22px 22px); }
+}
+@keyframes pop {
+  0% { transform: scale(0); border-radius: 50%; }
+  60% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+/* ── Narrow screens: inspector becomes a bottom sheet ───── */
+@media (max-width: 900px) {
+  .top { padding: 12px 16px; gap: 10px 16px; }
+  .title-block h1 { font-size: 17px; }
+  .search input { width: 100px; }
+  .lane { width: 300px; padding: 18px 36px 32px; }
+  .inspector {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    width: auto; max-height: 58vh; border-radius: 22px 22px 0 0;
+    transform: translateY(105%); transition: transform .3s var(--ease);
+  }
+  body.has-sel .inspector { transform: none; }
+  .inspector::before {
+    content: ""; display: block; width: 40px; height: 5px; margin: -8px auto 14px;
+    border-radius: 999px; background: var(--line);
+  }
+}
+
+.ff-summary { flex-shrink:0; padding:10px 20px; border-bottom:2px solid var(--sun); background:var(--paper); max-height:30vh; overflow:auto; }
+.ff-summary p { margin:4px 0; } .ff-summary ul { margin:4px 0; padding-left:22px; }
+.ff-summary strong { color:var(--ink); } .lane.folded > .card,.lane.folded > .fog-zone { display:none; }
+.lane-fold { border:1px solid var(--line); border-radius:10px; background:var(--paper); padding:4px 8px; }
+@media(max-width:700px) { .ff-summary { max-height:25vh; padding:8px 12px; } }
+.wire.e-dependency { stroke-dasharray: 5 4; }
+</style>
+</head>
+<body class="intro">
+<div class="app">
+  <header class="top">
+    <div class="brand" aria-hidden="true"><i class="m-ring"></i><i class="m-square"></i><i class="m-stack"></i></div>
+    <div class="title-block">
+      <h1 id="seed-title"></h1>
+      <p class="sub" id="sub"></p>
+    </div>
+    <div class="controls">
+      <div class="chips" id="chips" role="group" aria-label="按状态突出显示"></div>
+      <button class="pill" id="skeleton-btn" type="button"></button>
+      <label class="search"><input id="search" type="search" placeholder="搜索节点" autocomplete="off" aria-label="搜索节点"><kbd>/</kbd></label>
+      <button class="pill toggle" id="toggle-fog" style="display:none" type="button" aria-pressed="true">储备区</button>
+      <button class="pill toggle" id="toggle-labels" type="button" aria-pressed="false">关系标注</button>
+    </div>
+  </header>
+  <section id="ff-blockers" class="ff-summary" aria-label="FF 状态与阻塞">__FF_SUMMARY__</section>
+  <div class="main">
+    <main class="board" id="board" tabindex="-1">
+      <div class="canvas" id="canvas">
+        <svg class="wires" id="wires" aria-hidden="true"></svg>
+        <div class="lanes" id="lanes"></div>
+        <div class="edge-labels" id="edge-labels" aria-hidden="true"></div>
+      </div>
+    </main>
+    <aside class="inspector" id="inspector" aria-label="节点详情"></aside>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script id="ff-data" type="application/json">__FF_DATA__</script>
+<script>
+(() => {
+  'use strict';
+
+  const DATA = JSON.parse(document.getElementById('ff-data').textContent);
+  const G = DATA.graph || { nodes: [], edges: [] };
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+  const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => (
+    { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const STATUS = {
+    solid: { key: 'solid', label: '文档标注已确认' },
+    hole: { key: 'hole', label: '设计待确认' },
+    super_node: { key: 'super', label: '模块' },
+    fog: { key: 'fog', label: '储备' },
+  };
+  const st = (n) => STATUS[n.status] || STATUS.solid;
+  const shape = (n, extra = '') => `<span class="shape s-${st(n).key} ${extra}" aria-hidden="true"></span>`;
+  const nameOf = (n) => String(n.label || n.id).replace(/^\?\s*/, '');
+
+
+  // ── Graph indexes ────────────────────────────────────────
+  const nodes = new Map(G.nodes.map((n) => [n.id, n]));
+  const inE = new Map(), outE = new Map();
+  G.nodes.forEach((n) => { inE.set(n.id, []); outE.set(n.id, []); });
+  const edges = G.edges.filter((e) => nodes.has(e.from) && nodes.has(e.to));
+  edges.forEach((e) => { outE.get(e.from).push(e); inE.get(e.to).push(e); });
+  const rank = new Map((DATA.topo_order || []).map((id, i) => [id, i]));
+  G.nodes.forEach((n, i) => { if (!rank.has(n.id)) rank.set(n.id, 1e4 + i); });
+  const skeleton = DATA.path || []; // Explicit FF design path, never a readiness verdict.
+  const skelSet = new Set(skeleton);
+  const skelEdges = new Set(skeleton.slice(1).map((id, i) => `${skeleton[i]}\u0000${id}`));
+  const isFog = (id) => nodes.get(id)?.status === 'fog';
+
+  // ── Lanes: stages when the graph has them, topological layers otherwise ──
+  function buildLanes() {
+    const active = G.nodes.filter((n) => n.status !== 'fog');
+    const fog = G.nodes.filter((n) => n.status === 'fog');
+    const staged = active.some((n) => n.stage);
+    const laneOf = new Map();
+
+    const nearestStage = (start, list, end) => {
+      const seen = new Set([start]);
+      let queue = [start];
+      while (queue.length) {
+        const next = [];
+        for (const id of queue) {
+          for (const e of list.get(id)) {
+            const nb = e[end];
+            if (seen.has(nb) || isFog(nb)) continue;
+            if (nodes.get(nb).stage) return nodes.get(nb).stage;
+            seen.add(nb); next.push(nb);
+          }
+        }
+        queue = next;
+      }
+      return '';
+    };
+
+    if (staged) {
+      active.forEach((n) => laneOf.set(n.id,
+        n.stage || nearestStage(n.id, inE, 'from') || nearestStage(n.id, outE, 'to') || '未分阶段'));
+    } else {
+      const layer = new Map();
+      (DATA.topo_order || []).forEach((id) => {
+        if (!nodes.has(id) || isFog(id)) return;
+        let l = 0;
+        inE.get(id).forEach((e) => { if (layer.has(e.from)) l = Math.max(l, layer.get(e.from) + 1); });
+        layer.set(id, l);
+      });
+      active.forEach((n) => laneOf.set(n.id, `第 ${(layer.get(n.id) ?? 0) + 1} 层`));
+    }
+    fog.forEach((n) => {
+      let lane = staged && n.stage ? n.stage : '';
+      if (!lane) {
+        const nb = [...inE.get(n.id).map((e) => e.from), ...outE.get(n.id).map((e) => e.to)]
+          .find((id) => laneOf.has(id) && !isFog(id));
+        if (nb) lane = laneOf.get(nb);
+      }
+      laneOf.set(n.id, lane || '未归属的储备');
+    });
+
+    const lanes = new Map();
+    G.nodes.forEach((n) => {
+      const key = laneOf.get(n.id);
+      if (!lanes.has(key)) lanes.set(key, { name: key, trunk: [], fog: [], first: Infinity });
+      const lane = lanes.get(key);
+      if (n.status === 'fog') lane.fog.push(n);
+      else { lane.trunk.push(n); lane.first = Math.min(lane.first, rank.get(n.id)); }
+    });
+    const list = [...lanes.values()];
+    list.forEach((l) => l.trunk.sort((a, b) => rank.get(a.id) - rank.get(b.id)));
+    list.sort((a, b) => a.first - b.first);
+    return list;
+  }
+
+  // ── State ────────────────────────────────────────────────
+  const prefs = (() => {
+    try { return JSON.parse(localStorage.getItem('forgeflow:architecture:prefs') || '{}'); } catch { return {}; }
+  })();
+  const savePrefs = () => {
+    try { localStorage.setItem('forgeflow:architecture:prefs', JSON.stringify({ fog: state.fog, labels: state.labels })); } catch { /* storage unavailable */ }
+  };
+  const state = {
+    sel: null, q: '', spot: null, path: false,
+    fog: prefs.fog !== false, labels: prefs.labels === true,
+  };
+  const laneIndex = new Map();
+  const cardEl = (id) => document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);
+  const visible = (el) => !!el && el.offsetParent !== null;
+
+  // ── Render: header ───────────────────────────────────────
+  function renderHeader() {
+    $('#seed-title').textContent = DATA.seed || '架构图';
+    $('#seed-title').title = DATA.seed || '';
+    $('#sub').textContent = `只读快照 · 来源版本 ${DATA.source_revision || '未标注'}`;
+
+    const counts = { solid: 0, hole: 0, super_node: 0, fog: 0 };
+    G.nodes.forEach((n) => { counts[n.status] = (counts[n.status] || 0) + 1; });
+    $('#chips').innerHTML = ['solid', 'hole', 'super_node', 'fog']
+      .filter((s) => counts[s])
+      .map((s) => `<button class="chip" type="button" data-spot="${s}" aria-pressed="false"
+        title="突出显示${STATUS[s].label}的节点">${shape({ status: s })}<span class="n">${counts[s] || 0}</span> ${STATUS[s].label}</button>`)
+      .join('');
+
+    const btn = $('#skeleton-btn');
+    btn.className = 'pill';
+    btn.textContent = skeleton.length ? '高亮设计路径' : '未提供设计路径';
+    btn.title = '仅查看设计路径，不代表实现或验收通过';
+    btn.disabled = !skeleton.length;
+
+  }
+
+  // ── Render: lanes and cards ──────────────────────────────
+  let vtCounter = 0;
+  function cardHTML(n) {
+    const i = vtCounter++;
+    const kids = n.children || [];
+    const delay = Math.min(rank.get(n.id) ?? i, 14);
+    const tags = [];
+    if (n.id === DATA.next_focus) tags.push('<span class="tag tag-next">当前关注</span>');
+
+    tags.push('<span class="tag tag-rel tag-up">上游</span><span class="tag tag-rel tag-down">下游</span>');
+    return `<div class="card s-${st(n).key}" role="button" tabindex="0" aria-pressed="false"
+        data-id="${esc(n.id)}" data-vt="c-${i}" style="view-transition-name:c-${i};--i:${n.status === 'fog' ? delay + 2 : delay}"
+        aria-label="${esc(st(n).label)}：${esc(nameOf(n))}">
+      ${shape(n)}
+      <div class="card-body">
+        <div class="card-title">${esc(nameOf(n))}</div>
+        ${n.spec ? `<p class="card-spec">${esc(n.spec)}</p>` : ''}
+        <div class="card-foot"><code>${esc(n.id)}</code><span class="card-tags">${tags.join('')}</span></div>
+      </div>
+      ${kids.length ? `<button class="kids-toggle" type="button" data-expand aria-expanded="false">展开 ${kids.length} 个子节点</button>
+        <ul class="kids" hidden>${kids.map((c) => `<li>${shape(c)}<span>${esc(nameOf(c))}</span><code>${esc(c.id)}</code></li>`).join('')}</ul>` : ''}
+    </div>`;
+  }
+
+  function renderLanes() {
+    const lanes = buildLanes();
+    if (!G.nodes.length) {
+      $('#lanes').innerHTML = `<div class="empty"><h2>图还是空的</h2>
+        <p class="muted">${esc(DATA.empty_note || "没有结构化架构图。参考文档不能自动视为项目组件图。")}</p></div>`;
+      return;
+    }
+    $('#lanes').innerHTML = lanes.map((l, idx) => {
+      l.trunk.concat(l.fog).forEach((n) => laneIndex.set(n.id, idx));
+      const holes = l.trunk.filter((n) => n.status === 'hole').length;
+      const meta = `${l.trunk.length} 个节点${holes ? `，${holes} 个待定` : ''}`;
+      return `<section class="lane" aria-label="${esc(l.name)}">
+        <header class="lane-head"><span class="lane-no" aria-hidden="true">${idx + 1}</span>
+          <h2>${esc(l.name)}</h2><span class="lane-meta">${l.trunk.length ? meta : '只有储备'}</span><button type="button" class="lane-fold" data-fold-lane aria-expanded="true">折叠阶段</button></header>
+        ${l.trunk.map(cardHTML).join('')}
+        ${l.fog.length ? `<div class="fog-zone"><div class="fog-head">储备 ${l.fog.length}</div>${l.fog.map(cardHTML).join('')}</div>` : ''}
+      </section>`;
+    }).join('');
+    const maxRank = Math.min(14, Math.max(0, ...G.nodes.map((n) => rank.get(n.id) < 1e4 ? rank.get(n.id) : 0)));
+    document.body.style.setProperty('--wire-delay', `${(maxRank + 1) * 70 + 300}ms`);
+  }
+
+  // ── Wires ────────────────────────────────────────────────
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  function drawEdges() {
+    const canvas = $('#canvas');
+    const svg = $('#wires');
+    const box = canvas.getBoundingClientRect();
+    svg.setAttribute('width', canvas.scrollWidth);
+    svg.setAttribute('height', canvas.scrollHeight);
+    const rect = (el) => {
+      const r = el.getBoundingClientRect();
+      return { l: r.left - box.left, r: r.right - box.left, t: r.top - box.top, b: r.bottom - box.top, cy: r.top - box.top + Math.min(r.height / 2, 24) };
+    };
+    const sel = state.sel;
+    const anyFocus = sel || state.path;
+    let out = `<defs>${['', 'a-ink', 'a-green', 'a-fog'].map((c) =>
+      `<marker id="m${c || '-line'}" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+        <path class="arrow ${c}" d="M0,0 L10,5 L0,10 z"/></marker>`).join('')}</defs>`;
+    let labels = '';
+
+    edges.forEach((e) => {
+      const a = cardEl(e.from), b = cardEl(e.to);
+      if (!visible(a) || !visible(b)) return;
+      const ra = rect(a), rb = rect(b);
+      const la = laneIndex.get(e.from), lb = laneIndex.get(e.to);
+      let p0, p1, p2, p3;
+      if (lb > la) {
+        const dx = Math.max(36, (rb.l - ra.r) / 2);
+        p0 = [ra.r, ra.cy]; p3 = [rb.l - 3, rb.cy]; p1 = [p0[0] + dx, p0[1]]; p2 = [p3[0] - dx, p3[1]];
+      } else if (lb === la) {
+        const off = 30 + Math.min(40, Math.abs(rb.cy - ra.cy) / 6);
+        p0 = [ra.r, ra.cy]; p3 = [rb.r + 3, rb.cy]; p1 = [p0[0] + off, p0[1]]; p2 = [p3[0] + off, p3[1]];
+      } else {
+        const dx = Math.max(36, (ra.l - rb.r) / 2);
+        p0 = [ra.l, ra.cy]; p3 = [rb.r + 3, rb.cy]; p1 = [p0[0] - dx, p0[1]]; p2 = [p3[0] + dx, p3[1]];
+      }
+      // Distinguish parallel source dependencies from runtime flow.
+      if (e.kind === 'dependency') {
+        p0[1] += 11; p1[1] += 11; p2[1] += 11; p3[1] += 11;
+      }
+      const d = `M${p0} C${p1} ${p2} ${p3}`;
+      const tbd = !e.contract || e.contract === 'TBD';
+      const fog = isFog(e.from) || isFog(e.to);
+      const incident = sel && (e.from === sel || e.to === sel);
+      const onPath = state.path && e.kind === 'flow' && skelEdges.has(`${e.from}\u0000${e.to}`);
+      const cls = ['wire'];
+      if (e.kind === 'dependency') cls.push('e-dependency');
+      let marker = 'm-line';
+      if (incident) { cls.push('e-active'); marker = 'ma-ink'; }
+      else if (onPath) { cls.push('e-path'); marker = 'ma-green'; }
+      else {
+        if (fog) { cls.push('e-fog'); marker = 'ma-fog'; } else if (tbd) cls.push('e-tbd');
+        if (anyFocus) cls.push('e-dim');
+      }
+      const contract = tbd ? '契约待定' : e.contract;
+      const tip = `${nameOf(nodes.get(e.from))} → ${nameOf(nodes.get(e.to))}\n${contract}`;
+      out += `<g class="edge"><title>${esc(tip)}</title>
+        <path class="${cls.join(' ')}" d="${d}" marker-end="url(#${marker})"/>
+        <path class="hit" d="${d}"/></g>`;
+      if (incident || (state.labels && !(anyFocus && !onPath))) {
+        const mx = (p0[0] + 3 * p1[0] + 3 * p2[0] + p3[0]) / 8;
+        const my = (p0[1] + 3 * p1[1] + 3 * p2[1] + p3[1]) / 8;
+        labels += `<div class="lab${tbd ? ' lab-tbd' : ''}" style="left:${mx}px;top:${my}px" title="${esc(contract)}">${esc(contract)}</div>`;
+      }
+    });
+    svg.innerHTML = out;
+    $('#edge-labels').innerHTML = labels;
+  }
+  let drawQueued = false;
+  const scheduleDraw = () => {
+    if (drawQueued) return;
+    drawQueued = true;
+    requestAnimationFrame(() => { drawQueued = false; drawEdges(); });
+  };
+
+  // ── Apply state to the board ─────────────────────────────
+  const matches = (n, q) => [n.id, n.label, n.spec, n.stage].some((v) => String(v || '').toLowerCase().includes(q));
+  function applyState() {
+    const sel = state.sel;
+    const up = new Set(sel ? inE.get(sel).map((e) => e.from) : []);
+    const down = new Set(sel ? outE.get(sel).map((e) => e.to) : []);
+    const q = state.q.trim().toLowerCase();
+
+    $$('.card').forEach((el) => {
+      const id = el.dataset.id;
+      const n = nodes.get(id);
+      let quiet = false;
+      if (sel && id !== sel && !up.has(id) && !down.has(id)) quiet = true;
+      if (state.spot && n.status !== state.spot) quiet = true;
+      if (q && !matches(n, q)) quiet = true;
+      if (state.path && !skelSet.has(id)) quiet = true;
+      el.classList.toggle('is-sel', id === sel);
+      el.classList.toggle('is-up', up.has(id));
+      el.classList.toggle('is-down', down.has(id));
+      el.classList.toggle('on-path', state.path && skelSet.has(id));
+      el.classList.toggle('is-compact', quiet && id !== sel);
+      el.setAttribute('aria-pressed', String(id === sel));
+    });
+    $$('#chips .chip').forEach((c) => c.setAttribute('aria-pressed', String(c.dataset.spot === state.spot)));
+    $('#skeleton-btn').setAttribute('aria-pressed', String(state.path));
+    $('#toggle-fog').setAttribute('aria-pressed', String(state.fog));
+    $('#toggle-labels').setAttribute('aria-pressed', String(state.labels));
+    document.body.classList.toggle('hide-fog', !state.fog);
+    document.body.classList.toggle('has-sel', !!sel);
+    renderInspector();
+    drawEdges();
+  }
+
+  // ── Inspector ────────────────────────────────────────────
+  function neighbourList(list, end, emptyText) {
+    if (!list.length) return `<p class="muted">${emptyText}</p>`;
+    return `<div class="nb-list">${list
+      .slice().sort((a, b) => rank.get(a[end]) - rank.get(b[end]))
+      .map((e) => {
+        const n = nodes.get(e[end]);
+        const tbd = !e.contract || e.contract === 'TBD';
+        return `<button class="nb" type="button" data-goto="${esc(n.id)}">
+          ${shape(n)}<span class="nb-label">${esc(nameOf(n))}</span>
+          <span class="nb-contract${tbd ? ' tbd' : ''}">${esc(tbd ? '契约待定' : e.contract)}</span></button>`;
+      }).join('')}</div>`;
+  }
+
+  function renderInspector() {
+    const box = $('#inspector');
+    const n = state.sel && nodes.get(state.sel);
+    if (!n) { box.innerHTML = overviewHTML(); return; }
+    box.innerHTML = `<div class="ins-head"><h2>${esc(nameOf(n))}</h2><button class="close" type="button" data-close aria-label="关闭详情">×</button></div>
+      <div class="sec"><h3>设计状态</h3><p>${esc(st(n).label)}。不代表任务完成或业务验收通过。</p></div>
+      <div class="sec"><h3>节点与来源</h3><code>${esc(n.id)}</code><p>${esc(n.ref || '未提供来源')}</p></div>
+      <div class="sec"><h3>需求关联</h3>${(n.requirements || []).map(r => `<p><strong>${esc(r.id)} ${esc(r.title)}</strong><br><code>${esc(r.ref || '未提供来源')}</code></p>`).join('') || '<p>未关联</p>'}</div>
+      <div class="sec"><h3>说明</h3><p class="spec-text">${esc(n.spec || '未提供说明')}</p></div>
+      <div class="sec"><h3>上游</h3>${neighbourList(inE.get(n.id), 'from', '没有上游连线。')}</div>
+      <div class="sec"><h3>下游</h3>${neighbourList(outE.get(n.id), 'to', '没有下游连线。')}</div>
+      <div class="sec"><h3>验收与证据引用（非验收结论）</h3>${(n.acceptance || []).map(a => `<p><strong>${esc(a.id)} ${esc(a.title)}</strong><br>验收定义：<code>${esc(a.ref || '未提供')}</code><br>结果引用：<code>${esc(a.result_ref || '未提供')}</code><br>证据引用：${(a.evidence_refs || []).map(r => `<code>${esc(r)}</code>`).join('、') || '未提供'}</p>`).join('') || '<p>未找到关联验收引用，不能推断通过。</p>'}</div>
+      <div class="sec"><h3>检视边界</h3><p>只读投影；本页不修改项目、审批或执行任务。</p></div>`;
+  }
+
+  function overviewHTML() {
+    return `<div class="sec"><h3>架构检视</h3><p>点击节点聚焦上下游；折叠阶段仅隐藏卡片，不改变设计或 FF 阻塞。</p></div>
+      <div class="sec"><h3>三类状态分开看</h3><ul><li>设计：${esc(DATA.design === 'confirmed' ? '已确认' : '未确认或未提供')}</li><li>任务：${esc(DATA.task_summary)}</li><li>证据：业务验收未判定，引用不等于通过。</li></ul></div>
+      <div class="sec"><h3>参考文档</h3>${(DATA.documents || []).map(d => `<p>${esc(d.title || d.ref || '未命名')}<br><code>${esc(d.ref || '')}</code></p>`).join('') || '<p>未提供</p>'}</div>
+      <div class="sec"><h3>快捷键</h3><p>/ 搜索；方向键切换节点；Esc 关闭详情。</p></div>
+      <div class="sec"><h3>来源许可</h3><p>界面复用 Arch-Grower 的 MIT 模板，状态含义由 ForgeFlow 提供。</p></div>`;
+  }
+
+  // ── Morph transitions ────────────────────────────────────
+  let activeVT = null;
+  const canMorph = () => !!document.startViewTransition && !reduceMotion && !document.body.classList.contains('intro');
+
+  function morph(update, opts = {}) {
+    if (activeVT) { activeVT.skipTransition(); activeVT = null; update(); return; }
+    if (!canMorph()) { update(); return; }
+    const restore = [];
+    const name = (el, n) => { if (el) { restore.push([el, el.style.viewTransitionName]); el.style.viewTransitionName = n; } };
+
+    // Old state: the card that is about to open carries the shared names.
+    if (opts.openCard) {
+      name($('.ins-head'), 'none');
+      name($('.ins-head .big'), 'none');
+      name(opts.openCard, 'sel-card');
+      name(opts.openCard.querySelector('.shape'), 'sel-shape');
+    }
+    const vt = document.startViewTransition(() => {
+      restore.splice(0).forEach(([el, v]) => { el.style.viewTransitionName = v; });
+      update();
+      // New state: when closing, the card takes the names back from the panel.
+      if (opts.closeCard) {
+        const card = cardEl(opts.closeCard);
+        if (visible(card) && !window.matchMedia('(max-width: 900px)').matches) {
+          name(card, 'sel-card');
+          name(card.querySelector('.shape'), 'sel-shape');
+        }
+      }
+    });
+    activeVT = vt;
+    vt.ready.catch(() => {});
+    vt.finished.finally(() => {
+      restore.splice(0).forEach(([el, v]) => { el.style.viewTransitionName = v; });
+      if (activeVT === vt) activeVT = null;
+    });
+  }
+
+  function select(id, { scroll = true } = {}) {
+    if (id && !nodes.has(id)) return;
+    if (id === state.sel) return;
+    const prev = state.sel;
+    const openCard = id && cardEl(id);
+    morph(() => {
+      state.sel = id;
+      history.replaceState(null, '', id ? `#${encodeURIComponent(id)}` : location.pathname + location.search);
+      applyState();
+    }, { openCard: visible(openCard) ? openCard : null, closeCard: !id ? prev : null });
+    if (id && scroll) {
+      const el = cardEl(id);
+      if (visible(el)) {
+        el.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: reduceMotion ? 'auto' : 'smooth' });
+        el.focus({ preventScroll: true });
+      }
+    }
+  }
+  const update = (fn) => morph(() => { fn(); applyState(); });
+
+  // ── Copy & toast ─────────────────────────────────────────
+  let toastTimer;
+  function toast(msg) {
+    const t = $('#toast');
+    t.textContent = msg; t.classList.add('show');
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 1600);
+  }
+  function bind() {
+    $('#lanes').addEventListener('click', (ev) => {
+      const fold = ev.target.closest('[data-fold-lane]');
+      if (fold) {
+        const lane = fold.closest('.lane');
+        const folded = lane.classList.toggle('folded');
+        fold.setAttribute('aria-expanded', String(!folded));
+        fold.textContent = folded ? '展开阶段' : '折叠阶段';
+        if (folded && state.sel && lane.contains(cardEl(state.sel))) select(null, {scroll:false});
+        scheduleDraw(); return;
+      }
+      const exp = ev.target.closest('[data-expand]');
+      if (exp) {
+        ev.stopPropagation();
+        const list = exp.nextElementSibling;
+        const open = list.hidden;
+        morph(() => {
+          list.hidden = !open;
+          exp.setAttribute('aria-expanded', String(open));
+          exp.textContent = open ? '收起子节点' : `展开 ${list.children.length} 个子节点`;
+          drawEdges();
+        });
+        return;
+      }
+      const card = ev.target.closest('.card');
+      if (card) select(card.dataset.id, { scroll: false });
+    });
+    $('#board').addEventListener('click', (ev) => {
+      if (!ev.target.closest('.card') && state.sel) select(null);
+    });
+    $('#lanes').addEventListener('keydown', (ev) => {
+      const card = ev.target.closest('.card');
+      if (card && ev.target === card && (ev.key === 'Enter' || ev.key === ' ')) {
+        ev.preventDefault(); select(card.dataset.id, { scroll: false });
+      }
+    });
+    $('#inspector').addEventListener('click', (ev) => {
+      const go = ev.target.closest('[data-goto]');
+      if (go) { select(go.dataset.goto); return; }
+      if (ev.target.closest('[data-close]')) select(null);
+    });
+    $('#chips').addEventListener('click', (ev) => {
+      const chip = ev.target.closest('[data-spot]');
+      if (chip) update(() => { state.spot = state.spot === chip.dataset.spot ? null : chip.dataset.spot; });
+    });
+    $('#skeleton-btn').addEventListener('click', () => {
+      if (skeleton.length) update(() => { state.path = !state.path; });
+      else if (DATA.next_focus) select(DATA.next_focus);
+    });
+    $('#toggle-fog').addEventListener('click', () => update(() => {
+      state.fog = !state.fog; savePrefs();
+      if (!state.fog && state.sel && isFog(state.sel)) state.sel = null;
+    }));
+    $('#toggle-labels').addEventListener('click', () => {
+      state.labels = !state.labels; savePrefs(); applyState();
+    });
+
+    const search = $('#search');
+    let searchTimer;
+    search.addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => update(() => { state.q = search.value; }), 140);
+    });
+    search.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter') {
+        const q = search.value.trim().toLowerCase();
+        const hit = q && $$('.card').find((el) => visible(el) && matches(nodes.get(el.dataset.id), q));
+        if (hit) select(hit.dataset.id);
+      }
+    });
+
+    document.addEventListener('keydown', (ev) => {
+      const typing = ev.target.matches('input, textarea');
+      if (ev.key === '/' && !typing) { ev.preventDefault(); search.focus(); search.select(); return; }
+      if (ev.key === 'Escape') {
+        if (typing && search.value) { search.value = ''; update(() => { state.q = ''; }); return; }
+        if (typing) { search.blur(); return; }
+        if (state.sel) { select(null); return; }
+        if (state.spot || state.path || state.q) update(() => { state.spot = null; state.path = false; });
+        return;
+      }
+      if (typing || ev.altKey || ev.metaKey || ev.ctrlKey) return;
+      if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(ev.key)) return;
+      ev.preventDefault();
+      navigate(ev.key);
+    });
+
+    const ro = new ResizeObserver(scheduleDraw);
+    ro.observe($('#canvas'));
+    $$('.lane').forEach((l) => ro.observe(l));
+    window.addEventListener('resize', scheduleDraw);
+  }
+
+  function navigate(key) {
+    const cards = $$('.card').filter(visible);
+    if (!cards.length) return;
+    if (!state.sel || !visible(cardEl(state.sel))) {
+      const start = DATA.next_focus && visible(cardEl(DATA.next_focus)) ? DATA.next_focus : cards[0].dataset.id;
+      select(start); return;
+    }
+    const sel = state.sel;
+    if (key === 'ArrowRight' || key === 'ArrowLeft') {
+      const list = key === 'ArrowRight' ? outE.get(sel).map((e) => e.to) : inE.get(sel).map((e) => e.from);
+      const target = list.filter((id) => visible(cardEl(id))).sort((a, b) => rank.get(a) - rank.get(b))[0];
+      if (target) select(target);
+      else toast(key === 'ArrowRight' ? '已经是最终交付' : '已经是起始边界');
+      return;
+    }
+    const lane = cardEl(sel).closest('.lane');
+    const inLane = $$('.card', lane).filter(visible);
+    const i = inLane.indexOf(cardEl(sel));
+    const next = inLane[i + (key === 'ArrowDown' ? 1 : -1)];
+    if (next) select(next.dataset.id);
+  }
+
+  // ── Boot ─────────────────────────────────────────────────
+  renderHeader();
+  renderLanes();
+  let fromHash = '';
+  try { fromHash = decodeURIComponent(location.hash.slice(1)); } catch { /* malformed hash */ }
+  if (fromHash && nodes.has(fromHash)) state.sel = fromHash;
+  bind();
+  applyState();
+  if (state.sel) cardEl(state.sel)?.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  const introMs = reduceMotion ? 0 : parseInt(getComputedStyle(document.body).getPropertyValue('--wire-delay'), 10) + 500;
+  setTimeout(() => document.body.classList.remove('intro'), introMs || 0);
+  if (document.fonts?.ready) document.fonts.ready.then(scheduleDraw);
+})();
+</script>
+</body>
+</html>

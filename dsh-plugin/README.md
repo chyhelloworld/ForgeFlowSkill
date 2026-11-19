@@ -31,7 +31,7 @@ node .forgeflow/dsh-plugin/register.mjs --remove --global
 node .forgeflow/dsh-plugin/register.mjs --remove --global --purge
 ```
 
-- `--global` 先把本目录 7 个运行文件逐字节物化到 `<DSH_HOME>/plugins/forgeflow-dsh`，
+- `--global` 先把本目录的运行文件逐字节物化到 `<DSH_HOME>/plugins/forgeflow-dsh`，
   profile 的 link 指向该稳定副本，因此项目移动/删除不会让所有工作区插件加载失败。
   物化是幂等的：只在文件缺失或内容不同时写入（被改写的全局副本会自动修复），
   `changed` 为空表示已是最新。
@@ -75,11 +75,46 @@ node .forgeflow/dsh-plugin/generate-board.mjs --intent source/planning/intent-vi
 ```
 
 - 数据来自 `intent-view-links.json`；任务进度只在存在 `openspec/changes/*/tasks.md` 时统计代码围栏外的 `[x]`/`[ ]`，没有 OpenSpec 时显示"权威进度未知"，不会用完成率猜测。
-- 架构区没有结构化模型，只列 `--architecture-doc` 指定的参考文档，并标注"不是本项目组件与依赖"。
+- 默认架构区只列 `--architecture-doc` 提供的参考文档。不从正文推测架构；结构化主干图需显式选择。
 - 浏览器半通过宿主的 workspace-files API 读取，需要该工作区至少有一个会话；读取失败、快照缺失（含宿主的 `no entry at` 错误）、格式不符都会在面板里给出中文原因。
 - 注册是幂等的：宿主重复 apply 同一客户端插件时，已有的 `ff-board` 侧栏项与主面板会被跳过，不再向控制台报“already has an entry”。
 - **客户端插件需要重启 DSH 才生效**；更新快照后点面板的"刷新"即可，无需重启。
 - 面板只读：改需求/任务仍走 FF 技能与 `openspec`，插件不写项目文件。
+
+## 可选架构主干图
+
+复用 [Arch-Grower](https://github.com/Tobi1chi/arch-grower)（固定源提交 `e2ebc241`）的泳道、连线和聚焦界面；保留 [MIT 许可](ARCH-GROWER-LICENSE.txt)。不引入它的执行命令、`.arch`、影子 Git 或完成判定。
+
+1. 选择现有项目推演文档。意图索引添加 `architecture_ref: "docs/architecture.md"`，保留非空的 `source_revision`。图只能绑定同一工作区内的这份文档；换目标后更新原记录和绑定，不重用旧图。
+2. 在该架构文档中放 **一个** 标注语言名为 `ff-architecture-v1` 的 JSON 围栏。文档正文用于人读，围栏只为绘图；它不能提供新的验收结论。
+3. 在项目根生成并打开本地文件（不需要服务、账号或网络）：
+
+   ```bash
+   node .forgeflow/dsh-plugin/generate-board.mjs --architecture-graph docs/architecture.md --html --write
+   ```
+
+   输出 `.forgeflow/architecture-board.html`。不用 `--write` 时只写标准输出。要更新 DSH 侧栏的图摘要和引用，使用同一命令去掉 `--html`，只写 `.forgeflow/board.json`。侧栏不执行项目 HTML；在本地浏览器打开交互图。独立 HTML 是生成时的快照，不会自动刷新。
+
+字段及样例见 [合成稽查架构文档](../iterations/0.11.0/pilot/architecture.md)：
+
+- `format`、`goal`（当前图标题）、`goal_id`（原目标需求 ID）、`source_revision`（与意图索引一致）、`design`。拟议填 `proposed`；`confirmed` 仍只是来源声明，另需同文档内 `confirmation_ref` 指向确认记录。
+- `nodes`：`id`、`label`、`stage`、`ref`、`requirement_ids`、`required`。必需节点必须映射已登记的需求。所有图内引用都是同文档显式锚点，例如 `<a id="R1"></a>` 对应 `"#R1"`。
+- `edges`：`from`、`to`、`kind`、可选 `label`。运行关系用 `flow`，允许分支和回路；架构依赖用 `dependency`，不允许循环。`path` 给出顺序，相邻节点必须有 `flow` 边。
+- `gaps`：仍未解决的条件与出处（`label`、`required`、`ref`）。标为必需的缺口不会因聚焦或折叠而隐去。没有图、版本不符、引用失配或内容不合法时，退回文档和问题提示，不编造节点。
+
+图只呈现原始目标、拟议关系、缺口、任务勾选及证据引用。完成率不等于验收，零缺口也不构成通过；正式检查与归档仍走 FF CLI 和既有规则。实际业务验收状态不由这个 view 判定。
+
+## 接手没有 FF 索引的旧项目
+
+先做原有 Intake/Diagnose 接手，辨别跑通了什么、哪些只是计划。需要看板时显式选择 `--takeover`，不因缺 FF 索引阻断接手：
+
+```bash
+node .forgeflow/dsh-plugin/generate-board.mjs --takeover --architecture-doc docs/current.md --target-doc docs/target.md --html --write
+```
+
+- `--architecture-doc` 是现状资料（源码/运行/已有记录的摘要），`--target-doc` 是目标资料。都可省略，缺失显示未知；文档存在不代表当前代码符合它。不要把同一文件同时填两栏。没有索引时只显示现有任务勾选和资料引用，需求及验收保持未知。
+- 以后有可追溯意图索引，可在接手模式中加 `--architecture-graph docs/target.md` 查看**目标**主干；不把它当现状图。现状图、当前与目标的结构差，只在有可靠对应证据时才做，0.11 不从源码自动建图或猜差异。
+- 去掉 `--html` 可写侧栏快照，分开显示两类资料。不改变原项目、验收和接手流程。
 
 ## 守卫的边界（best-effort）
 

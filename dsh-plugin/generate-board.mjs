@@ -12,10 +12,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { readArchitectureGraph } from './architecture-input.mjs';
+import { renderArchitectureHtml } from './render-architecture.mjs';
 
 export const FORMAT = 'ff-board-v1';
 const INTENT_CANDIDATES = ['planning/intent-view-links.json', 'source/planning/intent-view-links.json'];
 const DEFAULT_OUTPUT = '.forgeflow/board.json';
+const HTML_OUTPUT = '.forgeflow/architecture-board.html';
 
 function slash(value) {
   return value.replace(/\\/g, '/');
@@ -155,6 +158,27 @@ function architectureDocs(workspace, docs, sourceRoot) {
   });
 }
 
+// In takeover mode a reference is an explicitly selected local document, not proof of current code.
+function takeoverDocs(workspace, names, sourceRoot) {
+  const root = fs.realpathSync(workspace);
+  return names.map((name) => {
+    const candidate = resolveInput(workspace, name, sourceRoot);
+    const ref = slash(path.relative(workspace, candidate));
+    const inside = (rel) => rel && rel !== '..' && !rel.startsWith('../') && !path.isAbsolute(rel);
+    if (!inside(ref) || !/\.md$/i.test(ref)) throw new Error('接手资料必须是工作区内的 Markdown 文件');
+    try {
+      const real = fs.realpathSync(candidate);
+      if (!inside(slash(path.relative(root, real)))) throw new Error('接手资料不能指向工作区外');
+      const stat = fs.statSync(real);
+      if (!stat.isFile() || stat.size > 1024 * 1024) throw new Error('接手资料不是普通文件或超过 1 MiB');
+      return { ref, title: firstHeading(fs.readFileSync(real, 'utf8')) || path.basename(candidate), exists: true };
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+      return { ref, title: path.basename(candidate), exists: false };
+    }
+  });
+}
+
 /** Lines that are not inside a fenced code block (```` or longer, or ~~~). */
 function linesOutsideFences(text) {
   const visible = [];
@@ -256,29 +280,50 @@ export function buildBoard(options) {
   const intentPath = options.intent
     ? resolveInput(workspace, options.intent, options.sourceRoot)
     : INTENT_CANDIDATES.map(function (candidate) { return path.join(workspace, candidate); }).find(function (candidate) { return fs.existsSync(candidate); });
-  if (!intentPath || !fs.existsSync(intentPath)) {
-    throw new Error('找不到 intent-view-links.json；用 --intent 指定路径');
+  const hasIntent = Boolean(intentPath && fs.existsSync(intentPath));
+  if (!hasIntent && (!options.takeover || options.intent)) {
+    throw new Error('找不到 intent-view-links.json；用 --intent 指定路径，或用 --takeover 查看接手资料');
   }
-  const raw = readText(intentPath);
-  if (raw === null) throw new Error('无法读取意图映射：' + intentPath);
-  let mapping;
-  try {
-    mapping = JSON.parse(raw);
-  } catch (error) {
-    throw new Error('意图映射不是合法 JSON：' + error.message);
+  if (!options.takeover && options.targetDocs?.length) throw new Error('--target-doc 仅用于 --takeover');
+  let mapping = { format: 'intent-links-v1' };
+  if (hasIntent) {
+    const raw = readText(intentPath);
+    if (raw === null) throw new Error('无法读取意图映射：' + intentPath);
+    try {
+      mapping = JSON.parse(raw);
+    } catch (error) {
+      throw new Error('意图映射不是合法 JSON：' + error.message);
+    }
+    if (!mapping || mapping.format !== 'intent-links-v1') {
+      throw new Error('不支持的意图映射格式：' + String(mapping && mapping.format));
+    }
+    validateMapping(mapping);
   }
-  if (!mapping || mapping.format !== 'intent-links-v1') {
-    throw new Error('不支持的意图映射格式：' + String(mapping && mapping.format));
-  }
-  validateMapping(mapping);
-  const intentRel = slash(path.relative(workspace, intentPath));
+  const intentRel = hasIntent ? slash(path.relative(workspace, intentPath)) : null;
   const sourceRoot = options.sourceRoot !== undefined
     ? slash(options.sourceRoot).replace(/\/+$/, '')
-    : intentRel.startsWith('source/') ? 'source' : '';
+    : intentRel?.startsWith('source/') ? 'source' : '';
 
   const titleCache = new Map();
-  const sources = [intentRel];
-  const architecture = architectureDocs(workspace, options.architectureDocs || [], sourceRoot);
+  const sources = intentRel ? [intentRel] : [];
+  const observed = options.takeover ? takeoverDocs(workspace, options.architectureDocs || [], sourceRoot) : [];
+  const target = options.takeover ? takeoverDocs(workspace, options.targetDocs || [], sourceRoot) : [];
+  const architecture = options.takeover ? [...observed, ...target] : architectureDocs(workspace, options.architectureDocs || [], sourceRoot);
+  if (options.takeover && observed.some(doc => target.some(candidate => candidate.ref === doc.ref))) {
+    throw new Error('同一资料不能同时作为现状和目标；请分别指定');
+  }
+  let projection;
+  if (options.architectureGraph && !hasIntent) {
+    projection = { note: '缺少意图索引，目标主干图未绑定。只显示显式提供的资料，不能推断当前实现。' };
+  } else if (options.architectureGraph) {
+    const file = resolveInput(workspace, options.architectureGraph, sourceRoot);
+    projection = readArchitectureGraph({ workspace, file, intentPath, sourceRoot, mapping });
+    if (options.takeover && projection.item && observed.some(doc => doc.ref === projection.item.ref)) {
+      throw new Error('接手时现状资料不能作为目标主干图，请分开指定');
+    }
+    if (projection.item && !architecture.some(item => item.ref === projection.item.ref)) architecture.push(projection.item);
+    if (options.takeover && projection.item && !target.some(item => item.ref === projection.item.ref)) target.push(projection.item);
+  }
   for (const doc of architecture) sources.push(doc.ref);
 
   return {
@@ -287,11 +332,13 @@ export function buildBoard(options) {
     intent: { ref: intentRel, source_revision: mapping.source_revision || null, baseline_ref: normalizeRef(mapping.baseline_ref, sourceRoot) },
     requirements: buildEntries(mapping.requirements, 'requirement', workspace, sourceRoot, titleCache),
     architecture: {
-      kind: architecture.length ? 'documents' : 'none',
+      kind: projection?.graph ? 'graph' : architecture.length ? 'documents' : 'none',
       items: architecture,
-      note: architecture.length
+      ...(projection?.graph ? { graph: projection.graph } : {}),
+      ...(options.takeover ? { takeover: { observed, target, missingIntent: !hasIntent } } : {}),
+      note: projection?.note || (!hasIntent ? '未提供意图索引：需求及验收未知。现状与目标分别列出，不从文档存在推断实现。' : null) || (projection?.graph ? '架构图来自显式绑定的推演文档。任务、证据与验收独立，图不判断门禁。' : architecture.length
         ? '没有结构化项目架构模型；以下为参考文档，其中可能包含方法说明而非本项目的组件与依赖。'
-        : '没有提供架构文档；重新生成时可用 --architecture-doc 指定。',
+        : '没有提供架构文档；重新生成时可用 --architecture-doc 指定。'),
     },
     modules: buildEntries(mapping.modules, 'module', workspace, sourceRoot, titleCache),
     tasks: {
@@ -303,24 +350,52 @@ export function buildBoard(options) {
 }
 
 function parseArgs(argv) {
-  const options = { architectureDocs: [] };
+  const options = { architectureDocs: [], targetDocs: [] };
   for (let index = 0; index < argv.length; index += 1) {
     const arg = argv[index];
     if (arg === '--write') options.write = true;
+    else if (arg === '--html') options.html = true;
+    else if (arg === '--takeover') options.takeover = true;
     else if (arg === '--help' || arg === '-h') options.help = true;
-    else if (arg === '--workspace' || arg === '--intent' || arg === '--source-root' || arg === '--architecture-doc') {
+    else if (arg === '--workspace' || arg === '--intent' || arg === '--source-root' || arg === '--architecture-doc' || arg === '--architecture-graph' || arg === '--target-doc') {
       const value = argv[index + 1];
       if (value === undefined) throw new Error(arg + ' 需要一个值');
       index += 1;
       if (arg === '--workspace') options.workspace = value;
       else if (arg === '--intent') options.intent = value;
       else if (arg === '--source-root') options.sourceRoot = value;
+      else if (arg === '--architecture-graph') {
+        if (options.architectureGraph) throw new Error('--architecture-graph 只能指定一份架构文档');
+        options.architectureGraph = value;
+      } else if (arg === '--target-doc') options.targetDocs.push(value);
       else options.architectureDocs.push(value);
     } else {
       throw new Error('未知参数：' + arg);
     }
   }
   return options;
+}
+
+// Export only the fixed generated-view path; never follow a symlink or touch source records.
+function writeHtml(workspace, html) {
+  const dir = path.join(workspace, '.forgeflow');
+  if (!fs.existsSync(dir)) fs.mkdirSync(dir);
+  if (!fs.lstatSync(dir).isDirectory()) throw new Error('HTML 导出要求 .forgeflow 是普通目录');
+  const file = path.join(workspace, HTML_OUTPUT);
+  const state = fs.lstatSync(file, { throwIfNoEntry: false });
+  if (state && !state.isFile()) throw new Error('HTML 导出目标必须是普通文件');
+  const text = html + '\n';
+  if (state && readText(file) === text) return '架构看板未变化：' + HTML_OUTPUT;
+  const transfer = fs.mkdtempSync(path.join(dir, '.ff-board-'));
+  const next = path.join(transfer, 'view.html');
+  try {
+    fs.writeFileSync(next, text, { encoding: 'utf8', flag: 'wx' });
+    fs.renameSync(next, file);
+  } finally {
+    if (fs.existsSync(next)) fs.unlinkSync(next);
+    fs.rmdirSync(transfer);
+  }
+  return '架构看板已写入：' + HTML_OUTPUT;
 }
 
 export function main(argv) {
@@ -333,12 +408,18 @@ export function main(argv) {
     return 1;
   }
   if (options.help) {
-    console.log('用法：generate-board.mjs [--workspace DIR] [--intent FILE] [--source-root DIR] [--architecture-doc FILE]... [--write]');
+    console.log('用法：generate-board.mjs [--workspace DIR] [--intent FILE] [--source-root DIR] [--architecture-doc FILE]... [--architecture-graph FILE] [--takeover [--target-doc FILE]...] [--html] [--write]');
     return 0;
   }
   try {
     const board = buildBoard(options);
     const workspace = path.resolve(options.workspace || process.cwd());
+    if (options.html) {
+      const html = renderArchitectureHtml(board);
+      if (!options.write) process.stdout.write(html + '\n');
+      else console.log(writeHtml(workspace, html));
+      return 0;
+    }
     const progress = board.tasks.progress;
     const summary = '需求 ' + board.requirements.length + ' / 模块 ' + board.modules.length + ' / 任务 ' + board.tasks.items.length;
     const progressText = progress.total === null ? '进度未知（' + progress.reason + '）' : '勾选 ' + progress.done + '/' + progress.total;

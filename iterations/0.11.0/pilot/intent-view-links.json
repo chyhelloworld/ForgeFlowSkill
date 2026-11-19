@@ -1,0 +1,68 @@
+{
+  "format": "intent-links-v1",
+  "baseline_ref": "architecture.md#R1",
+  "source_revision": "synthetic-inspection-v1",
+  "architecture_ref": "architecture.md",
+  "requirements": [
+    {
+      "id": "R1",
+      "ref": "architecture.md#R1",
+      "parent_ids": []
+    }
+  ],
+  "modules": [
+    {
+      "id": "M-input",
+      "ref": "architecture.md#M-input",
+      "requirement_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "M-review",
+      "ref": "architecture.md#M-review",
+      "requirement_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "M-auth",
+      "ref": "architecture.md#M-auth",
+      "requirement_ids": [
+        "R1"
+      ]
+    },
+    {
+      "id": "M-output",
+      "ref": "architecture.md#M-output",
+      "requirement_ids": [
+        "R1"
+      ]
+    }
+  ],
+  "tasks": [
+    {
+      "id": "T-input",
+      "ref": "openspec/changes/synthetic-inspection/tasks.md#T-input",
+      "progress_ref": "openspec/changes/synthetic-inspection/tasks.md#T-input",
+      "requirement_ids": [
+        "R1"
+      ],
+      "module_ids": [
+        "M-input"
+      ]
+    },
+    {
+      "id": "T-output",
+      "ref": "openspec/changes/synthetic-inspection/tasks.md#T-output",
+      "progress_ref": "openspec/changes/synthetic-inspection/tasks.md#T-output",
+      "requirement_ids": [
+        "R1"
+      ],
+      "module_ids": [
+        "M-output"
+      ]
+    }
+  ],
+  "acceptance": []
+}

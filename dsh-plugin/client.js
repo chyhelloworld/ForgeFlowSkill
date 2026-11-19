@@ -297,17 +297,36 @@ function createPlugin(require) {
   function ArchitectureBlock(props) {
     var architecture = props.architecture || {};
     var items = architecture.items || [];
-    return h('div', null,
-      h('div', { style: { color: COLORS.muted, fontSize: '12px', lineHeight: '1.6', marginBottom: '8px' } }, architecture.note || '没有架构信息。'),
-      items.length ? items.map(function (item) {
+    var graph = architecture.kind === 'graph' && isObject(architecture.graph) ? architecture.graph : null;
+    var required = graph && Array.isArray(graph.gaps) ? graph.gaps.filter(function (item) { return item && item.required === true && typeof item.label === 'string'; }) : [];
+    var takeover = isObject(architecture.takeover) ? architecture.takeover : null;
+    var documentRows = function (docs) {
+      var available = Array.isArray(docs) ? docs.filter(function (doc) { return isObject(doc) && typeof doc.ref === 'string'; }) : [];
+      return available.length ? available.map(function (item) {
         return h(Row, { key: item.ref },
           h('div', { style: { display: 'flex', gap: '8px', alignItems: 'baseline', flexWrap: 'wrap' } },
-            h('span', { style: { color: COLORS.text, fontSize: '13px' } }, item.title || item.ref),
+            h('span', { style: { color: COLORS.text, fontSize: '13px' } }, typeof item.title === 'string' ? item.title : item.ref),
             item.exists === false ? pill('文件不存在', 'warn') : null,
           ),
           h('div', { style: { marginTop: '2px' } }, h(Ref, null, item.ref)),
         );
-      }) : h(Empty, null, '重新生成时可加 --architecture-doc 指定架构文档。'),
+      }) : h(Empty, null, '未知／未提供');
+    };
+    return h('div', null,
+      h('div', { style: { color: COLORS.muted, fontSize: '12px', lineHeight: '1.6', marginBottom: '8px' } }, architecture.note || '没有架构信息。'),
+      graph ? h(Row, null,
+        h('strong', null, typeof graph.goal === 'string' ? graph.goal : '主干图'),
+        h('p', null, '必需缺口：' + required.length + ' 项。业务验收未判定。'),
+        required.length ? h('ul', null, required.map(function (gap, i) {
+          return h('li', { key: i }, gap.label, typeof gap.ref === 'string' ? h(Ref, null, gap.ref) : null);
+        })) : null,
+        h('p', null, '交互图是单独的离线 HTML。用生成命令加 --html --write，打开 .forgeflow/architecture-board.html。'),
+      ) : null,
+      takeover ? h('div', null,
+        h('p', null, '旧项目接手：现状资料不是运行证明，目标资料不是当前实现。'),
+        h('strong', null, '现状资料'), documentRows(takeover.observed),
+        h('strong', null, '目标资料'), documentRows(takeover.target),
+      ) : items.length ? documentRows(items) : h(Empty, null, '重新生成时可加 --architecture-doc 指定架构文档。'),
     );
   }
 

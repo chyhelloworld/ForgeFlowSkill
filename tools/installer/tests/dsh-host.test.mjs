@@ -149,3 +149,16 @@ test('handshake names the stale side', () => {
   assert.match(stale.note, /重建/);
   assert.equal(handshake('0.9.7-dsh.1', '0.9.7-dsh.1', '1.14.2-ff.0.9.7-dsh.1').note, undefined);
 });
+
+test('installed DSH board CLI exports an offline takeover view without a project intent index', () => {
+  const p = setup('dsh');
+  const board = path.join(p, 'source-current.md');
+  fs.writeFileSync(board, '# 旧状态\n');
+  const result = spawnSync(process.execPath,
+    [path.join(p, pluginDir, 'generate-board.mjs'), '--takeover', '--architecture-doc', 'source-current.md', '--html', '--write'],
+    { cwd: p, encoding: 'utf8' });
+  assert.equal(result.status, 0, result.stderr);
+  assert.match(fs.readFileSync(path.join(p, '.forgeflow/architecture-board.html'), 'utf8'), /现状资料：<\/strong><code>source-current\.md/);
+  assert.equal(fs.existsSync(path.join(p, '.forgeflow/board.json')), false);
+  assert.equal(fs.readFileSync(board, 'utf8'), '# 旧状态\n');
+});

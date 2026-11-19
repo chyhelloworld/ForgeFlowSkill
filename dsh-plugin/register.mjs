@@ -103,6 +103,10 @@ export const PLUGIN_FILES = [
   'register.mjs',
   'client.js',
   'generate-board.mjs',
+  'architecture-input.mjs',
+  'render-architecture.mjs',
+  'architecture-template.html',
+  'ARCH-GROWER-LICENSE.txt',
   'cordis.patch.yml',
   'README.md',
 ];

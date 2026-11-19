@@ -18,7 +18,7 @@ export const rsiFile = '.forgeflow/ff-rsi.mjs';
 // Optional external-review runner: host-independent, installed next to ff-spec.
 export const reviewFile = '.forgeflow/ff-reviewer.mjs';
 export const pluginDir = '.forgeflow/dsh-plugin';
-export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
+export const pluginFiles = ['package.json', 'cordis.patch.yml', 'index.js', 'client.js', 'generate-board.mjs', 'architecture-input.mjs', 'render-architecture.mjs', 'architecture-template.html', 'ARCH-GROWER-LICENSE.txt', 'register.mjs', 'README.md'].map(name => `${pluginDir}/${name}`);
 export function hostBase(host) {
   if (!hosts.includes(host)) fail('Unknown host');
   return hostRoots[host];
