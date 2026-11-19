@@ -2,9 +2,9 @@
 name: ff-implement
 description: 执行已获准且计划有效的 ForgeFlow 纵向切片，修复与验证主要业务流程；不代替独立审核或宣布用户接受。
 metadata:
-  version: "0.10.0"
+  version: "0.11.0"
 ---
-# ff-implement 0.10.0
+# ff-implement 0.11.0
 
 ## 本轮一致性与复用（执行约定）
 

@@ -36,7 +36,7 @@ function fakeCodexExec(project, body) {
 }
 
 test('VERSION is the release version', () => {
-  assert.equal(VERSION, '0.10.0');
+  assert.equal(VERSION, '0.11.0');
 });
 
 test('parseArgs accepts known flags and rejects malformed input', () => {

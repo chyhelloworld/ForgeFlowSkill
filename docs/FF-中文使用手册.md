@@ -317,4 +317,4 @@ CHECKPOINT_CURRENT 只表示选定记录相符；done 回执需要绑定动作�
 
 ## 0.10 目标进度与有效推进
 
-当前候选为0.10.0，21技能不变。在目标项目查询 `node .forgeflow/ff-spec.mjs status --goal checkpoint.json --current-goal R2`。复用唯一计划、现有检查点及回执；勾选不等于已证，历史运行不等于当前活跃。停滞/低进度按可配置阈值给复盘建议，不新增隔夜调度。详情见[目标进度说明](user/goal-progress.md)与[本轮证据](../iterations/0.10.0/README.md)。
+当前候选为0.11.0，21技能不变。在目标项目查询 `node .forgeflow/ff-spec.mjs status --goal checkpoint.json --current-goal R2`。复用唯一计划、现有检查点及回执；勾选不等于已证，历史运行不等于当前活跃。停滞/低进度按可配置阈值给复盘建议，不新增隔夜调度。详情见[目标进度说明](user/goal-progress.md)与[本轮证据](../iterations/0.10.0/README.md)。

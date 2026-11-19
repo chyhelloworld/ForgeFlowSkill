@@ -14,7 +14,7 @@
 
 `0.9.14-dsh.1` 为资源生命周期与轻量接入候选：测试目录显式受控、成功清理可预览、失败现场保留；已激活 FF 技能携带四层审查短规则，DSH 双候选仅适用于重大取舍。安装文本和模拟事件测试不等于真实模型会话加载通过。详见[本轮范围与证据](iterations/resource-lifecycle-20261111/README.md)。
 
-当前为 **0.10.0 源码候选、21 项技能**，工作分支 `work/resource-lifecycle-20261111`。新增独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
+当前为 **0.11.0 源码候选、21 项技能**，工作分支 `work/arch-grower-board-ui`。本次仅推进候选版本，未启用看板或流程增量；见[兼容性对照](iterations/0.11.0/README.md)。0.10 基线包含独立 **0.1.0** [ff-writing-document 工作文档](docs/user/writing-document.md)，先澄清、先确认目录再写正文；以及独立 **0.1.0** [ff-diagram 软件图示](docs/user/diagrams.md)，参考国内软件工程/系统架构设计常用要求，按图种加载。推导参考只在用户选择后加载，架构评估独立可选；原v1/v2回执与既有前置审核不变。显式读技能的执行试用不等于原生自动加载。
 
 ff-design 新增可选[落地页专项参考](docs/user/landing-page-design.md)：目标与受众、疑虑与真实证据、先确认纲要再逐节实现；不改变后台/App业务界面和各项目品牌，不增加技能或运行时。
 
